@@ -14,6 +14,9 @@ export const metadata = {
   title: "Paramount Intelligence - Creative Solutions for Your Brand",
   description:
     "Empowering Brands with Innovative AI-Driven Strategies and Solutions.",
+  icons: {
+    icon: "/images/logo.jpeg",
+  },
 };
 
 export default function RootLayout({
