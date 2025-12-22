@@ -1,0 +1,335 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu } from "lucide-react";
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+
+const services = [
+  {
+    title: "AI Strategy Consulting",
+    href: "/services/ai-strategy",
+    description:
+      "Develop comprehensive AI transformation strategies tailored to your business.",
+  },
+  {
+    title: "Agentic AI Development",
+    href: "/services/agentic-ai",
+    description:
+      "Build intelligent autonomous agents that drive business automation.",
+  },
+  {
+    title: "Business Process Automation",
+    href: "/services/automation",
+    description:
+      "Streamline operations with cutting-edge automation solutions.",
+  },
+  {
+    title: "AI Integration",
+    href: "/services/integration",
+    description:
+      "Seamlessly integrate AI capabilities into your existing systems.",
+  },
+];
+
+const industries = [
+  {
+    title: "Financial Services",
+    href: "/industries/finance",
+    description: "AI solutions for banking, insurance, and investment firms.",
+  },
+  {
+    title: "Healthcare",
+    href: "/industries/healthcare",
+    description: "Transform patient care with intelligent automation.",
+  },
+  {
+    title: "Manufacturing",
+    href: "/industries/manufacturing",
+    description: "Optimize production with AI-driven insights.",
+  },
+  {
+    title: "Retail & E-commerce",
+    href: "/industries/retail",
+    description: "Enhance customer experience and operations.",
+  },
+];
+
+const insights = [
+  {
+    title: "Blog",
+    href: "/blog",
+    description: "Latest insights and thought leadership.",
+  },
+  {
+    title: "Case Studies",
+    href: "/case-studies",
+    description: "Success stories from our clients.",
+  },
+  {
+    title: "Whitepapers",
+    href: "/whitepapers",
+    description: "In-depth research and analysis.",
+  },
+];
+
+const careers = [
+  {
+    title: "Open Positions",
+    href: "/careers/positions",
+    description: "Explore current opportunities.",
+  },
+  {
+    title: "Life at PI",
+    href: "/careers/culture",
+    description: "Discover our culture and values.",
+  },
+  {
+    title: "Apply Now",
+    href: "/careers/apply",
+    description: "Submit your application.",
+  },
+];
+
+export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+      <div className="max-w-350 mx-auto px-8 lg:px-12 xl:px-16">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link
+            href="/"
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+          >
+            <Image
+              src="/images/logo.jpeg"
+              alt="Paramount Intelligence"
+              width={32}
+              height={32}
+              className="rounded"
+            />
+            <span className="text-xl font-bold text-gray-900 hidden sm:block">
+              Paramount Intelligence
+            </span>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList>
+              {/* Services */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
+                  Services
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
+                    {services.map((service) => (
+                      <ListItem
+                        key={service.title}
+                        title={service.title}
+                        href={service.href}
+                      >
+                        {service.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Industries */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
+                  Industries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
+                    {industries.map((industry) => (
+                      <ListItem
+                        key={industry.title}
+                        title={industry.title}
+                        href={industry.href}
+                      >
+                        {industry.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Case Studies */}
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/case-studies"
+                  className={
+                    navigationMenuTriggerStyle() +
+                    " text-sm text-gray-900 bg-white hover:bg-gray-50"
+                  }
+                >
+                  Case studies
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              {/* About Us */}
+              <NavigationMenuItem>
+                <NavigationMenuLink
+                  href="/about"
+                  className={
+                    navigationMenuTriggerStyle() +
+                    " text-sm text-gray-900 bg-white hover:bg-gray-50"
+                  }
+                >
+                  About us
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              {/* Insights */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
+                  Insights
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-75 gap-3 p-4">
+                    {insights.map((insight) => (
+                      <ListItem
+                        key={insight.title}
+                        title={insight.title}
+                        href={insight.href}
+                      >
+                        {insight.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              {/* Career */}
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
+                  Career
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-75 gap-3 p-4">
+                    {careers.map((career) => (
+                      <ListItem
+                        key={career.title}
+                        title={career.title}
+                        href={career.href}
+                      >
+                        {career.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          {/* Contact Button */}
+          <div className="hidden lg:block">
+            <Link
+              href="/contact"
+              className="bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all"
+            >
+              Contact us
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-gray-700 hover:text-gray-900"
+            aria-label="Toggle menu"
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-gray-100 py-4">
+            <nav className="flex flex-col space-y-4">
+              <Link
+                href="/services"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                Services
+              </Link>
+              <Link
+                href="/industries"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                Industries
+              </Link>
+              <Link
+                href="/case-studies"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                Case studies
+              </Link>
+              <Link
+                href="/about"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                About us
+              </Link>
+              <Link
+                href="/insights"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                Insights
+              </Link>
+              <Link
+                href="/careers"
+                className="text-sm text-gray-700 hover:text-gray-900"
+              >
+                Career
+              </Link>
+              <Link
+                href="/contact"
+                className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center"
+              >
+                Contact us
+              </Link>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & { title: string; href: string }
+>(({ className, title, children, href, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          ref={ref}
+          href={href}
+          className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-50 focus:text-gray-900"
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-gray-500">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";
