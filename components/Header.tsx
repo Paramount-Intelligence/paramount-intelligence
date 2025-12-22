@@ -17,28 +17,28 @@ import {
 
 const services = [
   {
-    title: "AI Strategy Consulting",
+    title: "LLM software: Custom Large Language Model",
     href: "/services/ai-strategy",
-    description:
-      "Develop comprehensive AI transformation strategies tailored to your business.",
   },
   {
-    title: "Agentic AI Development",
+    title: "RAG development Service",
     href: "/services/agentic-ai",
-    description:
-      "Build intelligent autonomous agents that drive business automation.",
   },
   {
-    title: "Business Process Automation",
+    title: "LangChain Development Experts",
     href: "/services/automation",
-    description:
-      "Streamline operations with cutting-edge automation solutions.",
   },
   {
-    title: "AI Integration",
+    title: "AI Consulting & Advisory",
     href: "/services/integration",
-    description:
-      "Seamlessly integrate AI capabilities into your existing systems.",
+  },
+  {
+    title: "LLM Development",
+    href: "/services/integration",
+  },
+  {
+    title: "LLM Ops service",
+    href: "/services/integration",
   },
 ];
 
@@ -46,22 +46,18 @@ const industries = [
   {
     title: "Financial Services",
     href: "/industries/finance",
-    description: "AI solutions for banking, insurance, and investment firms.",
   },
   {
     title: "Healthcare",
     href: "/industries/healthcare",
-    description: "Transform patient care with intelligent automation.",
   },
   {
     title: "Manufacturing",
     href: "/industries/manufacturing",
-    description: "Optimize production with AI-driven insights.",
   },
   {
     title: "Retail & E-commerce",
     href: "/industries/retail",
-    description: "Enhance customer experience and operations.",
   },
 ];
 
@@ -69,17 +65,14 @@ const insights = [
   {
     title: "Blog",
     href: "/blog",
-    description: "Latest insights and thought leadership.",
   },
   {
     title: "Case Studies",
     href: "/case-studies",
-    description: "Success stories from our clients.",
   },
   {
     title: "Whitepapers",
     href: "/whitepapers",
-    description: "In-depth research and analysis.",
   },
 ];
 
@@ -87,17 +80,14 @@ const careers = [
   {
     title: "Open Positions",
     href: "/careers/positions",
-    description: "Explore current opportunities.",
   },
   {
     title: "Life at PI",
     href: "/careers/culture",
-    description: "Discover our culture and values.",
   },
   {
     title: "Apply Now",
     href: "/careers/apply",
-    description: "Submit your application.",
   },
 ];
 
@@ -133,16 +123,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
                   Services
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
+                <NavigationMenuContent className="bg-gray-300">
+                  <ul className="grid w-100 text-gray-900 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
                     {services.map((service) => (
                       <ListItem
                         key={service.title}
                         title={service.title}
                         href={service.href}
-                      >
-                        {service.description}
-                      </ListItem>
+                      ></ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
@@ -153,16 +141,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
                   Industries
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
+                <NavigationMenuContent className="bg-gray-300">
+                  <ul className="grid w-100 text-gray-900 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
                     {industries.map((industry) => (
                       <ListItem
                         key={industry.title}
                         title={industry.title}
                         href={industry.href}
-                      >
-                        {industry.description}
-                      </ListItem>
+                      ></ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
@@ -199,16 +185,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
                   Insights
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-75 gap-3 p-4">
+                <NavigationMenuContent className="bg-gray-300">
+                  <ul className="grid text-gray-900 w-75 gap-3 p-4">
                     {insights.map((insight) => (
                       <ListItem
                         key={insight.title}
                         title={insight.title}
                         href={insight.href}
-                      >
-                        {insight.description}
-                      </ListItem>
+                      ></ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
@@ -219,16 +203,14 @@ export default function Header() {
                 <NavigationMenuTrigger className="text-sm text-gray-900 bg-white hover:bg-gray-50">
                   Career
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-75 gap-3 p-4">
+                <NavigationMenuContent className="bg-gray-300">
+                  <ul className="grid text-gray-900 w-75 gap-3 p-4">
                     {careers.map((career) => (
                       <ListItem
                         key={career.title}
                         title={career.title}
                         href={career.href}
-                      >
-                        {career.description}
-                      </ListItem>
+                      ></ListItem>
                     ))}
                   </ul>
                 </NavigationMenuContent>
