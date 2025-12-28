@@ -20,25 +20,6 @@ export default function TrustedBrands() {
           <h2 className="text-sm text-gray-700">
             Trusted by world-renowned brands
           </h2>
-          <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full border border-gray-200">
-            <div>
-              <div className="flex items-center gap-1">
-                <span className="text-xs font-bold text-gray-900">4.9</span>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className="w-3 h-3 text-yellow-400 fill-current"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <p className="text-[8px] text-gray-500">Based on 43 reviews</p>
-            </div>
-          </div>
         </div>
 
         {/* Brand Logos */}

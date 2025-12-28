@@ -7,7 +7,7 @@ export default function FeaturedIn() {
     { name: "Business Insider", logo: "/images/Business_Insider_Logo.svg" },
     { name: "TNW", logo: "/images/TNW_logo.svg" },
     { name: "WIRED", logo: "/images/Wired_logo.svg" },
-    { name: "TechCrunch", logo: "/images/techcrunch-vector-logo.svg" },
+    { name: "TechCrunch", logo: "/images/techcrunch-logo.svg" },
   ];
 
   return (
@@ -21,7 +21,7 @@ export default function FeaturedIn() {
           {publications.map((publication, index) => (
             <div
               key={index}
-              className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+              className="flex items-center justify-center transition-all duration-300"
             >
               <Image
                 src={publication.logo}

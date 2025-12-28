@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <div className="relative min-h-[70vh] overflow-hidden">
@@ -27,24 +24,24 @@ export default function Hero() {
             {/* Left Content */}
             <div className="text-black">
               <h1 className="text-3xl md:text-3xl lg:text-[50px] font-bold mb-3 leading-tight">
-                Applied Agentic AI
+                Applied AI & Automation
               </h1>
 
               <p className="text-[28.5px] md:text-shadow-md mb-3 leading-relaxed text-gray-800 font-light">
-                Engineering Consultancy Boutique
+                AI Strategy, Advisory & Engineering
               </p>
 
               {/* Features List */}
               <div className="mb-8">
                 <div className="flex items-start p-0 m-0">
                   <p className="text-black text-sm">
-                    Paramount Intelligence supports mid-market challengers in
-                    their Agentic AI-transformation to outrun the competition
-                    and Automate business operations by using the battle-tested
-                    TriStorm Agentic AI delivery framework. Paramount
-                    Intelligence delivers proven ROI through the practical,
-                    hands-on implementation experience of the PhDs and business
-                    experts on board.
+                    Paramount Intelligence is an independent consulting firm
+                    that supports organizations in applying AI and automation to
+                    drive real business outcomes. We combine AI strategy,
+                    advisory, and hands-on engineering to design and build
+                    production-ready systems that improve operational
+                    efficiency, support decision-making, and scale with the
+                    business.
                   </p>
                 </div>
               </div>

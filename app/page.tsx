@@ -4,7 +4,7 @@ import TrustedBrands from "@/components/TrustedBrands";
 import MissionStatement from "@/components/MissionStatement";
 import WhoWeServe from "@/components/WhoWeServe";
 import ServicesSection from "@/components/ServicesSection";
-import LLMServices from "@/components/LLMServices";
+import AIServices from "@/components/AIServices";
 import FeaturedIn from "@/components/FeaturedIn";
 import ProjectExperience from "@/components/ProjectExperience";
 import LatestArticles from "@/components/LatestArticles";
@@ -19,7 +19,7 @@ export default function Home() {
       <MissionStatement />
       <WhoWeServe />
       <ServicesSection />
-      <LLMServices />
+      <AIServices />
       <FeaturedIn />
       <ProjectExperience />
       <LatestArticles />

@@ -18,14 +18,14 @@ import {
 const services = [
   {
     title: "LLM software: Custom Large Language Model",
-    href: "/services/ai-strategy",
+    href: "/services/custom-llm-based-software",
   },
   {
-    title: "RAG development Service",
+    title: "RAG Advanced Engineering",
     href: "/services/agentic-ai",
   },
   {
-    title: "LangChain Development Experts",
+    title: "LangChain Development",
     href: "/services/automation",
   },
   {
@@ -33,31 +33,63 @@ const services = [
     href: "/services/integration",
   },
   {
-    title: "LLM Development",
+    title: "LLM Application Development",
     href: "/services/integration",
   },
   {
-    title: "LLM Ops service",
+    title: "LLMOps service",
+    href: "/services/integration",
+  },
+  {
+    title: "Automation",
+    href: "/services/integration",
+  },
+  {
+    title: "Web Scraping",
     href: "/services/integration",
   },
 ];
 
 const industries = [
   {
-    title: "Financial Services",
+    title: "AI Consulting & Automation",
     href: "/industries/finance",
   },
   {
-    title: "Healthcare",
-    href: "/industries/healthcare",
+    title: "Manufacturing & Industrial",
+    href: "/industries/manufacturing-industrial",
   },
   {
-    title: "Manufacturing",
-    href: "/industries/manufacturing",
+    title: "Technology & Enterprise Software",
+    href: "/industries/technology-enterprise-software",
   },
   {
-    title: "Retail & E-commerce",
-    href: "/industries/retail",
+    title: "Telecommunications",
+    href: "/industries/telecommunications",
+  },
+  {
+    title: "Fintech & Digital Payments",
+    href: "/industries/fintech-digital-payments",
+  },
+  {
+    title: "B2B Enterprise Solutions",
+    href: "/industries/b2b-enterprise-solutions",
+  },
+  {
+    title: "Digital Lifestyle & Entertainment",
+    href: "/industries/digital-lifestyle-entertainment",
+  },
+  {
+    title: "Mobility, Ride-Hailing & Delivery",
+    href: "/industries/mobility-ride-hailing-delivery",
+  },
+  {
+    title: "E-commerce & Marketplaces",
+    href: "/industries/e-commerce-marketplaces",
+  },
+  {
+    title: "Drilling, Engineering & Energy Services",
+    href: "/industries/drilling-engineering-energy-services",
   },
 ];
 

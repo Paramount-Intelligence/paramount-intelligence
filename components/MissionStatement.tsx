@@ -19,7 +19,7 @@ export default function MissionStatement() {
               {/* Top Left Label */}
               <div className="absolute top-0 left-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-br-lg">
                 <p className="text-sm font-semibold text-gray-900">
-                  CEO, Muhammad Junaid
+                  CEO, Syed Ali Azzam
                 </p>
                 <p className="text-xs text-gray-600">
                   Founder at Paramount Intelligence
@@ -70,13 +70,13 @@ export default function MissionStatement() {
           <div className="space-y-8">
             {/* Quote */}
             <div>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 italic leading-tight mt-2">
-                <span className="text-6xl -left-8.75 text-[#17599d] font-serif leading-none">
+              <h2 className="text-3xl md:text-3xl lg:text-3xl font-bold text-gray-900 italic leading-tight mt-2">
+                <span className="text-4xl -left-8.75 text-[#17599d] font-serif leading-none">
                   “
                 </span>
                 We strive to lead the field and we will not stop until we are
                 the best at what we do
-                <span className="text-6xl text-[#17599d] font-serif leading-none">
+                <span className="text-4xl text-[#17599d] font-serif leading-none">
                   ”
                 </span>
               </h2>
@@ -85,13 +85,14 @@ export default function MissionStatement() {
             {/* Mission Description */}
             <div className="border-l-4 border-[#17599d] pl-6">
               <p className="text-gray-700 leading-relaxed">
-                At Paramount Intelligence, our mission isn't corporate
-                rhetoric—it is deeply personal commitment. As recognized
-                founders, we know that technology is only transformative when it
-                solves real human problems. That is why, we are laser-focused on
-                one thing—help organizations implement Agentic AI in
-                mission-critical processes and workplace pain points, enabling
-                people to focus on what truly matters.
+                At Paramount Intelligence, our mission isn’t corporate rhetoric;
+                it is a deeply personal commitment. As an independent consulting
+                firm, we know that technology is only transformative when it
+                solves real business problems. That is why we are laser-focused
+                on one thing: helping organizations design and implement AI,
+                GenAI, LLM, and agent-based systems, along with automation, in
+                mission-critical processes and operational pain points, enabling
+                people and teams to focus on what truly matters.
               </p>
             </div>
           </div>

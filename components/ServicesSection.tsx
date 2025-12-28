@@ -49,11 +49,13 @@ export default function ServicesSection() {
                   AI Engineering
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  As a full end-to-end partner, we deliver advanced tailored
-                  autonomous AI systems and Agentic solutions. We automate
-                  processes through deep practical expertise in all fields, from
-                  orchestrating frameworks to engineering unique components
-                  using Machine Learning and Deep Learning.
+                  As a full end-to-end partner, we deliver advanced tailored AI
+                  systems, LLM applications, and agentic solutions built for
+                  real business workflows. We automate processes through deep
+                  practical expertise across the full delivery stack, from
+                  advanced RAG and LangChain orchestration to LLMOps, system
+                  integrations, web scraping and data extraction, and
+                  production-grade deployment that operates reliably at scale.
                 </p>
               </div>
 
@@ -75,11 +77,15 @@ export default function ServicesSection() {
                   AI Consulting & Advisory
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We provide strategic guidance and expert advisory services to
-                  help organizations navigate their AI transformation journey.
-                  Our consultants work closely with your team to identify
-                  opportunities, mitigate risks, and develop comprehensive AI
-                  strategies aligned with your business goals.
+                  We uniquely blend strategy, advisory services, and Gen AI and
+                  LLM technologies to help organizations achieve operational
+                  scalability, high ROI on AI investments, and improved
+                  efficiency through practical AI agents and automation. With a
+                  strong business and technical understanding, we align goals
+                  with execution reality by prioritizing use cases, mapping
+                  constraints, shaping architectures, and driving delivery from
+                  strategy through implementation, including automation
+                  workflows using Airtable, Zapier, and n8n.
                 </p>
               </div>
 
