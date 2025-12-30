@@ -37,8 +37,8 @@ export default function WhyChooseUs() {
                 key={index}
                 className="bg-gray-50 rounded-2xl p-8 space-y-4 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                  <Icon className="w-6 h-6 text-red-500" strokeWidth={2} />
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                  <Icon className="w-6 h-6 text-[#17599d]" strokeWidth={2} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">
                   {benefit.title}

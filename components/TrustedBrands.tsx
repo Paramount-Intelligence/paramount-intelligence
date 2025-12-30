@@ -36,7 +36,6 @@ export default function TrustedBrands() {
                   ))}
                 </div>
               </div>
-              <p className="text-[8px] text-gray-500">Based on 43 reviews</p>
             </div>
           </div>
         </div>

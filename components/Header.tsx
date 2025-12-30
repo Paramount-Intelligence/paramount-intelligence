@@ -202,7 +202,7 @@ export default function Header() {
               {/* About Us */}
               <NavigationMenuItem>
                 <NavigationMenuLink
-                  href="/about"
+                  href="/about-us"
                   className={
                     navigationMenuTriggerStyle() +
                     " text-sm text-gray-900 bg-white hover:bg-gray-50"
@@ -253,7 +253,7 @@ export default function Header() {
           {/* Contact Button */}
           <div className="hidden lg:block">
             <Link
-              href="/contact"
+              href="/contact-us"
               className="bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all"
             >
               Contact us
@@ -293,7 +293,7 @@ export default function Header() {
                 Case studies
               </Link>
               <Link
-                href="/about"
+                href="/about-us"
                 className="text-sm text-gray-700 hover:text-gray-900"
               >
                 About us
@@ -311,7 +311,7 @@ export default function Header() {
                 Career
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center"
               >
                 Contact us

@@ -133,7 +133,7 @@ export default function LLMServicesSection() {
                   onClick={() => setActiveService(service.id)}
                   className={`w-full text-left px-4 py-3 rounded-lg transition-colors ${
                     activeService === service.id
-                      ? "text-red-500 bg-white font-semibold border-l-4 border-red-500"
+                      ? "text-[#17599d] bg-white font-semibold border-l-4 border-[#17599d]"
                       : "text-gray-700 hover:bg-white hover:text-gray-900"
                   }`}
                 >
@@ -159,7 +159,7 @@ export default function LLMServicesSection() {
                       key={index}
                       className="flex items-start text-gray-700 leading-relaxed"
                     >
-                      <span className="text-red-500 mr-3 mt-1">•</span>
+                      <span className="text-[#17599d] mr-3 mt-1">•</span>
                       <span>{item}</span>
                     </li>
                   ))}

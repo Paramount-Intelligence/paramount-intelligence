@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 export default function ServicesSection() {
-  const [activeTab, setActiveTab] = useState<"automation" | "personalization" | "decision-making">(
-    "automation"
-  );
+  const [activeTab, setActiveTab] = useState<
+    "automation" | "personalization" | "decision-making"
+  >("automation");
 
   return (
     <section className="min-h-screen py-32 bg-white">
@@ -21,7 +21,7 @@ export default function ServicesSection() {
             onClick={() => setActiveTab("automation")}
             className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
               activeTab === "automation"
-                ? "text-red-500 border-red-500"
+                ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >
@@ -31,7 +31,7 @@ export default function ServicesSection() {
             onClick={() => setActiveTab("personalization")}
             className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
               activeTab === "personalization"
-                ? "text-red-500 border-red-500"
+                ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >
@@ -41,7 +41,7 @@ export default function ServicesSection() {
             onClick={() => setActiveTab("decision-making")}
             className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
               activeTab === "decision-making"
-                ? "text-red-500 border-red-500"
+                ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >

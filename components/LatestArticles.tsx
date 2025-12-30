@@ -61,7 +61,7 @@ export default function LatestArticles() {
                 </h3>
                 <Link
                   href={article.link}
-                  className="inline-flex items-center text-red-500 font-medium hover:text-red-600 transition-colors"
+                  className="inline-flex items-center text-[#17599d] font-medium hover:text-[#144a75] transition-colors"
                 >
                   <span className="mr-2">/</span>
                   Read article

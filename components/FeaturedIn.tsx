@@ -11,9 +11,9 @@ export default function FeaturedIn() {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 text-center mb-12">
+        <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-12">
           Our Clients are Featured In
         </h2>
 

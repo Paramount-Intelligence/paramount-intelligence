@@ -21,7 +21,7 @@ export default function ServicesSection() {
             onClick={() => setActiveTab("engineering")}
             className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
               activeTab === "engineering"
-                ? "text-red-500 border-red-500"
+                ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >
@@ -31,7 +31,7 @@ export default function ServicesSection() {
             onClick={() => setActiveTab("consulting")}
             className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
               activeTab === "consulting"
-                ? "text-red-500 border-red-500"
+                ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >
