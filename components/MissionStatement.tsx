@@ -9,7 +9,7 @@ export default function MissionStatement() {
           <div className="relative">
             <div className="relative rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/images/download.png"
+                src="/images/aliazzam-s.png"
                 alt="Paramount Intelligence Founders"
                 width={600}
                 height={600}

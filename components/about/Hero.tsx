@@ -30,7 +30,7 @@ export default function AboutHero() {
               measurable business impact.
             </p>
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
               Let's work together!

@@ -18,108 +18,104 @@ import {
 const services = [
   {
     title: "LLM software: Custom Large Language Model",
-    href: "/services/custom-llm-based-software",
+    href: "#",
   },
   {
     title: "RAG Advanced Engineering",
-    href: "/services/agentic-ai",
+    href: "#",
   },
   {
     title: "LangChain Development",
-    href: "/services/automation",
+    href: "#",
   },
   {
     title: "AI Consulting & Advisory",
-    href: "/services/integration",
+    href: "#",
   },
   {
     title: "LLM Application Development",
-    href: "/services/integration",
+    href: "#",
   },
   {
     title: "LLMOps service",
-    href: "/services/integration",
+    href: "#",
   },
   {
     title: "Automation",
-    href: "/services/integration",
+    href: "#",
   },
   {
     title: "Web Scraping",
-    href: "/services/integration",
+    href: "#",
   },
 ];
 
 const industries = [
   {
     title: "AI Consulting & Automation",
-    href: "/industries/finance",
+    href: "#",
   },
   {
     title: "Manufacturing & Industrial",
-    href: "/industries/manufacturing-industrial",
+    href: "#",
   },
   {
     title: "Technology & Enterprise Software",
-    href: "/industries/technology-enterprise-software",
+    href: "#",
   },
   {
     title: "Telecommunications",
-    href: "/industries/telecommunications",
+    href: "#",
   },
   {
     title: "Fintech & Digital Payments",
-    href: "/industries/fintech-digital-payments",
+    href: "#",
   },
   {
     title: "B2B Enterprise Solutions",
-    href: "/industries/b2b-enterprise-solutions",
+    href: "#",
   },
   {
     title: "Digital Lifestyle & Entertainment",
-    href: "/industries/digital-lifestyle-entertainment",
+    href: "#",
   },
   {
     title: "Mobility, Ride-Hailing & Delivery",
-    href: "/industries/mobility-ride-hailing-delivery",
+    href: "#",
   },
   {
     title: "E-commerce & Marketplaces",
-    href: "/industries/e-commerce-marketplaces",
+    href: "#",
   },
   {
     title: "Drilling, Engineering & Energy Services",
-    href: "/industries/drilling-engineering-energy-services",
+    href: "#",
   },
 ];
 
 const insights = [
   {
     title: "Blog",
-    href: "/blog",
-  },
-  {
-    title: "Case Studies",
-    href: "/case-studies",
+    href: "#",
   },
   {
     title: "Whitepapers",
-    href: "/whitepapers",
+    href: "#",
   },
 ];
 
 const careers = [
   {
     title: "Open Positions",
-    href: "/careers/positions",
+    href: "#",
   },
   {
     title: "Life at PI",
-    href: "/careers/culture",
+    href: "#",
   },
   {
     title: "Apply Now",
-    href: "/careers/apply",
+    href: "#",
   },
 ];
 
@@ -281,7 +277,7 @@ export default function Header() {
                 Services
               </Link>
               <Link
-                href="/industries"
+                href="#"
                 className="text-sm text-gray-700 hover:text-gray-900"
               >
                 Industries
@@ -299,13 +295,13 @@ export default function Header() {
                 About us
               </Link>
               <Link
-                href="/insights"
+                href="#"
                 className="text-sm text-gray-700 hover:text-gray-900"
               >
                 Insights
               </Link>
               <Link
-                href="/careers"
+                href="#"
                 className="text-sm text-gray-700 hover:text-gray-900"
               >
                 Career

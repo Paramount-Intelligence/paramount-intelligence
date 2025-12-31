@@ -5,9 +5,7 @@ import CaseStudiesHero from "@/components/casestudies/Hero";
 import CaseStudiesGrid from "@/components/casestudies/CaseStudiesGrid";
 
 export default function CaseStudiesClient() {
-  const [selectedIndustry, setSelectedIndustry] = useState(
-    "Education & EduTech"
-  );
+  const [selectedIndustry, setSelectedIndustry] = useState("All");
   const [selectedBusinessFunction, setSelectedBusinessFunction] =
     useState("All");
 

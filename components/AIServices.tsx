@@ -7,49 +7,49 @@ export default function AIServices() {
       title: "RAG Engineering",
       description:
         "We implement tailored Retrieval-Augmented Generation pipelines that connect LLMs to structured and unstructured business data. Our RAG systems are designed to reduce hallucinations, improve accuracy, and support real-time decision-making across mission-critical workflows.",
-      link: "#rag-engineering",
+      link: "#",
       imageSrc: "/images/Screenshot_1.png",
     },
     {
       title: "AI Consulting & Advisory",
       description:
         "We uniquely blend independent consulting judgment, strategy, and hands-on execution to help organizations apply AI, Gen AI, and automation with clarity and intent. Our advisory work supports leadership and delivery teams in prioritizing use cases, aligning vision with execution reality, and driving measurable operational outcomes.",
-      link: "#ai-consulting",
+      link: "#",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
       title: "AI Agents & Agentic Systems",
       description:
         "We design and implement agent-based systems that operate across real business workflows, enabling intelligent task execution, decision support, and process automation. Our agentic solutions integrate LLMs, data sources, and automation layers to function reliably in production environments.",
-      link: "#ai-agents",
+      link: "#",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
       title: "LangChain development",
       description:
         "We use LangChain to orchestrate complex agent workflows, tool usage, and multi-step reasoning across LLM-powered systems. Our work focuses on building maintainable, extensible architectures that support real-world agent behavior rather than isolated experiments.",
-      link: "#langchain",
+      link: "#",
       imageSrc: "/images/iStock-1270309856-1.jpg",
     },
     {
       title: "LLMOps",
       description:
         "We support the operationalization of LLM systems through deployment, monitoring, iteration, and lifecycle management. Our LLMOps services ensure reliability, scalability, and controlled evolution of production AI systems over time.",
-      link: "#llmops",
+      link: "#",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
     {
       title: "Automation & Workflow Systems",
       description:
         "We design and implement automation solutions using tools such as Airtable, Zapier, and n8n to streamline operations and eliminate manual work. Our automation work often delivers immediate ROI and serves as a foundation for AI and agent-based systems.",
-      link: "#automation-workflow",
+      link: "#",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
     {
       title: "Web Scraping & Data Extraction",
       description:
         "We build web scraping and data extraction pipelines to acquire, structure, and maintain external data required for AI, agent, and automation workflows. These systems address data gaps that often block AI adoption and enable downstream analytics and intelligent automation.",
-      link: "#web-scraping-data-extraction",
+      link: "#",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
   ];

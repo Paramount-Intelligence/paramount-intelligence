@@ -4,26 +4,30 @@ import { Linkedin } from "lucide-react";
 export default function Footer() {
   const footerLinks = {
     company: [
-      { name: "About us", href: "#about" },
-      { name: "Blog", href: "#blog" },
-      { name: "Privacy Policy", href: "#privacy" },
-      { name: "Contact us", href: "#contact" },
+      { name: "About us", href: "/about-us" },
+      { name: "Blog", href: "#" },
+      { name: "Privacy Policy", href: "#" },
+      { name: "Contact us", href: "/contact-us" },
     ],
     candidates: [
-      { name: "For Candidates", href: "#candidates" },
-      { name: "Candidates: Frequently Asked Questions", href: "#faq" },
+      { name: "For Candidates", href: "#" },
+      { name: "Candidates: Frequently Asked Questions", href: "#" },
       {
         name: "Remote practices for better work-life balance",
-        href: "#remote",
+        href: "#",
       },
     ],
     business: [
-      { name: "Services", href: "#services" },
-      { name: "Case studies", href: "#case-studies" },
-      { name: "AI Newsletter", href: "#newsletter" },
+      { name: "Services", href: "/services" },
+      { name: "Case studies", href: "/case-studies" },
+      { name: "AI Newsletter", href: "#" },
     ],
     social: [
-      { name: "LinkedIn", href: "#linkedin", icon: Linkedin },
+      {
+        name: "LinkedIn",
+        href: "https://www.linkedin.com/company/paramount-intelligence-co/",
+        icon: Linkedin,
+      },
     ],
   };
 
@@ -98,6 +102,8 @@ export default function Footer() {
                   <li key={index}>
                     <Link
                       href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="hover:text-white transition-colors text-sm flex items-center gap-2"
                     >
                       <Icon size={18} />
