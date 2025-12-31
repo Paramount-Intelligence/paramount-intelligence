@@ -16,23 +16,12 @@ export default function MissionStatement() {
                 className="w-full h-auto object-cover"
               />
 
-              {/* Top Left Label */}
-              <div className="absolute top-0 left-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-br-lg">
+              <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-tl-lg">
                 <p className="text-sm font-semibold text-gray-900">
                   CEO, Syed Ali Azzam
                 </p>
                 <p className="text-xs text-gray-600">
                   Founder at Paramount Intelligence
-                </p>
-              </div>
-
-              {/* Bottom Right Label */}
-              <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-tl-lg">
-                <p className="text-sm font-semibold text-gray-900">
-                  CTO, Co-founder
-                </p>
-                <p className="text-xs text-gray-600">
-                  Co-founder at Paramount Intelligence
                 </p>
               </div>
 

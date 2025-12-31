@@ -12,11 +12,14 @@ export default function TrustedBrands() {
     { name: "Bore and Bore", logo: "/images/BnB-logo.png" },
   ];
 
+  // Duplicate the brands array multiple times for seamless infinite looping
+  const duplicatedBrands = [...brands, ...brands, ...brands, ...brands];
+
   return (
-    <section className="py-4 bg-white">
+    <section className="py-4 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header with Rating */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-2">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
           <h2 className="text-sm text-gray-700">
             Trusted by world-renowned brands
           </h2>
@@ -40,22 +43,28 @@ export default function TrustedBrands() {
           </div>
         </div>
 
-        {/* Brand Logos */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
-          {brands.map((brand, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center transition-all duration-300"
-            >
-              <Image
-                src={brand.logo}
-                alt={brand.name}
-                width={150}
-                height={50}
-                className="w-auto h-8 object-contain"
-              />
-            </div>
-          ))}
+        {/* Scrolling Brand Logos */}
+        <div className="relative">
+          <div className="flex animate-scroll">
+            {duplicatedBrands.map((brand, index) => (
+              <div
+                key={index}
+                className="shrink-0 w-1/3 flex items-center justify-center px-8"
+              >
+                <Image
+                  src={brand.logo}
+                  alt={brand.name}
+                  width={150}
+                  height={50}
+                  className={`w-auto object-contain ${
+                    brand.name === "Veon" || brand.name === "Alibaba"
+                      ? "h-8"
+                      : "h-12"
+                  }`}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

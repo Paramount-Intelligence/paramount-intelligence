@@ -266,11 +266,11 @@ export default function ContactForm() {
                     Office
                   </h3>
                   <p className="text-gray-600">
-                    123 Business Avenue
+                    9838 57th Ave
                     <br />
-                    Suite 100
+                    Corona,
                     <br />
-                    New York, NY 10001
+                    New York (NY), 11373
                   </p>
                 </div>
               </div>

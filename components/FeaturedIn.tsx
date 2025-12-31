@@ -10,28 +10,38 @@ export default function FeaturedIn() {
     { name: "TechCrunch", logo: "/images/techcrunch-logo.svg" },
   ];
 
+  // Duplicate the publications array multiple times for seamless infinite looping
+  const duplicatedPublications = [
+    ...publications,
+    ...publications,
+    ...publications,
+    ...publications,
+  ];
+
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-8 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-12">
           Our Clients are Featured In
         </h2>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
-          {publications.map((publication, index) => (
-            <div
-              key={index}
-              className="flex items-center justify-center transition-all duration-300"
-            >
-              <Image
-                src={publication.logo}
-                alt={publication.name}
-                width={150}
-                height={50}
-                className="w-auto h-8 object-contain"
-              />
-            </div>
-          ))}
+        <div className="relative">
+          <div className="flex animate-scroll">
+            {duplicatedPublications.map((publication, index) => (
+              <div
+                key={index}
+                className="shrink-0 w-1/3 flex items-center justify-center px-8"
+              >
+                <Image
+                  src={publication.logo}
+                  alt={publication.name}
+                  width={150}
+                  height={50}
+                  className="w-auto h-8 object-contain"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <div className="relative min-h-[70vh] overflow-hidden">
+    <div className="relative mt-16 min-h-[70vh] overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -18,7 +18,7 @@ export default function Hero() {
       <div className="absolute inset-0"></div>
 
       {/* Content */}
-      <div className="relative z-10 min-h-[82vh] flex items-center px-4 py-16">
+      <div className="relative z-10 min-h-[70vh] flex items-center px-4">
         <div className="max-w-6xl mx-auto w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
