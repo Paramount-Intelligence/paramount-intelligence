@@ -37,7 +37,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <CaseStudyHero
         title={caseStudy.title}
         subtitle={caseStudy.subtitle}
-        image={caseStudy.heroImage}
+        heroImage={caseStudy.heroImage}
       />
 
       <ProjectDescription description={caseStudy.description} />

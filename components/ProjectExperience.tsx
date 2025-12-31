@@ -1,51 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import { caseStudiesData } from "@/lib/caseStudiesData";
 
 export default function ProjectExperience() {
-  const projects = [
-    {
-      title:
-        "Multi-channel AI Agent for personalized appointments in Healthcare",
-      description:
-        "A U.S. healthcare provider serving 120,000+ members across multiple states uses advanced technology to deliver high-quality, affordable care.",
-      fullDescription:
-        "By deploying a multi-channel, pre-appointment AI Agent, such doctor-new users tactic that first hours a week, while patient engagement has climbed over 25% thanks to personalized, accessible communication.",
-      imageSrc: "/images/health.png",
-      imagePosition: "right",
-      link: "#healthcare-project",
-    },
-    {
-      title: "Advanced RAG Engineering for real estate due diligence AI Agent",
-      description:
-        "US-based startup on a mission to transform how real estate developers conduct due diligence. By utilizing the power of artificial intelligence.",
-      fullDescription:
-        "AI Agent takes what used to be weeks of due diligence and gets it done in minutes, saving developers thousands of dollars per project while keeping the accuracy spot-on.",
-      imageSrc: "/images/Mapline-cover-2.jpg",
-      imagePosition: "left",
-      link: "#real-estate-project",
-    },
-    {
-      title:
-        "Intelligent automation with actionable AI Agents for the US telecommunication company",
-      description:
-        "This US-based telecommunication provider with over 45 years of industry experience delivers fiber-powered Internet and video services to 150,000+ households in 200+ communities.",
-      fullDescription:
-        "The client based in Miami the right partner for their long-term transformation journey – one who helps them think big, test early, while staying grounded in a culture of continuous improvement. With tailored data-driven, coherent transformation without compromising on quality and inventiveness.",
-      imageSrc: "/images/engineering.png",
-      imagePosition: "right",
-      link: "#telecom-project",
-    },
-    {
-      title:
-        "Swapping iron: making AI code designed from Nvidia run on Intel Gaudi",
-      description:
-        "Migrating Machine Learning and LLM solutions designed to run on Nvidia hardware to a different architecture - Intel Gaudi in accelerators.",
-      fullDescription: "",
-      imageSrc: "/images/Swap-Icon-cover.png",
-      imagePosition: "left",
-      link: "#migration-project",
-    },
-  ];
+  // Get 4 random case studies
+  const getRandomCaseStudies = () => {
+    const shuffled = [...caseStudiesData].sort(() => Math.random() - 0.5);
+    return shuffled.slice(0, 4);
+  };
+
+  const projects = getRandomCaseStudies().map((caseStudy, index) => ({
+    title: caseStudy.title,
+    description: caseStudy.subtitle,
+    fullDescription: caseStudy.description.substring(0, 200) + "...",
+    imageSrc: caseStudy.heroImage,
+    imagePosition: index % 2 === 0 ? "right" : "left",
+    link: `/case-studies/${caseStudy.slug}`,
+  }));
 
   return (
     <section className="py-16 bg-white">
@@ -100,7 +71,6 @@ export default function ProjectExperience() {
                   src={project.imageSrc}
                   alt={project.title}
                   fill
-                  className="object-cover"
                 />
               </div>
             </div>

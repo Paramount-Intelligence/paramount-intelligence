@@ -58,7 +58,7 @@ export default function CaseStudiesGrid({
               {currentCaseStudies.map((caseStudy) => (
                 <div
                   key={caseStudy.id}
-                  className="group bg-white overflow-hidden transition-transform hover:-translate-y-1"
+                  className="group bg-gray-100 rounded-4xl overflow-hidden transition-transform hover:-translate-y-1"
                 >
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
