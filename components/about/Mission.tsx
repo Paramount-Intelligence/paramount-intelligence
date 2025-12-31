@@ -39,7 +39,7 @@ export default function Mission() {
           {/* Right Image */}
           <div className="relative h-110 lg:h-135">
             <Image
-              src="/images/aliazzam.png"
+              src="/images/aliazzam-s.png"
               alt="Ali Azzam, Founding Partner"
               fill
               className="object-cover object-center"
