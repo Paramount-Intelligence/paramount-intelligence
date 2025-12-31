@@ -18,10 +18,10 @@ export default function MissionStatement() {
 
               <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-tl-lg">
                 <p className="text-sm font-semibold text-gray-900">
-                  CEO, Syed Ali Azzam
+                  Syed Ali Azzam
                 </p>
                 <p className="text-xs text-gray-600">
-                  Founder at Paramount Intelligence
+                  CEO & Founding Partner at Paramount Intelligence
                 </p>
               </div>
 
