@@ -6,7 +6,7 @@
     "dev": "next dev",
     "db-server": "node db-server.js",
     "dev:all": "concurrently \"npm run dev\" \"npm run db-server\"",
-    "build": "prisma migrate deploy && next build",
+    "build": "prisma migrate deploy && prisma generate && next build",
     "start": "next start"
   },
   "prisma": {
