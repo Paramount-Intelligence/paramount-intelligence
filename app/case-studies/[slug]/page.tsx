@@ -8,6 +8,9 @@ import MeetOurClient from "@/components/casestudies/detail/MeetOurClient";
 import InANutshell from "@/components/casestudies/detail/InANutshell";
 import { getApiUrl } from "@/lib/api";
 
+// Enable dynamic rendering for this route
+export const dynamic = "force-dynamic";
+
 interface CaseStudyPageProps {
   params: Promise<{
     slug: string;
@@ -16,7 +19,7 @@ interface CaseStudyPageProps {
 
 async function getCaseStudyBySlug(slug: string) {
   try {
-    const apiUrl = getApiUrl();
+    const apiUrl: string = getApiUrl();
     const response = await fetch(`${apiUrl}/api/admin/case-studies`, {
       cache: "no-store",
     });
@@ -27,28 +30,6 @@ async function getCaseStudyBySlug(slug: string) {
     console.error("Error fetching case study:", error);
     return null;
   }
-}
-
-async function getAllCaseSlugs() {
-  try {
-    const apiUrl = getApiUrl();
-    const response = await fetch(`${apiUrl}/api/admin/case-studies`, {
-      cache: "no-store",
-    });
-    if (!response.ok) return [];
-    const caseStudies = await response.json();
-    return caseStudies.map((cs: any) => cs.slug);
-  } catch (error) {
-    console.error("Error fetching case studies:", error);
-    return [];
-  }
-}
-
-export async function generateStaticParams() {
-  const slugs = await getAllCaseSlugs();
-  return slugs.map((slug: string) => ({
-    slug: slug,
-  }));
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
