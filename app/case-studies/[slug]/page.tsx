@@ -6,7 +6,10 @@ import CaseStudyHero from "@/components/casestudies/detail/CaseStudyHero";
 import ProjectDescription from "@/components/casestudies/detail/ProjectDescription";
 import MeetOurClient from "@/components/casestudies/detail/MeetOurClient";
 import InANutshell from "@/components/casestudies/detail/InANutshell";
-import { getApiUrl } from "@/lib/api";
+
+// Enable dynamic rendering for this route
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 interface CaseStudyPageProps {
   params: Promise<{
@@ -16,39 +19,15 @@ interface CaseStudyPageProps {
 
 async function getCaseStudyBySlug(slug: string) {
   try {
-    const apiUrl = getApiUrl();
-    const response = await fetch(`${apiUrl}/api/admin/case-studies`, {
-      cache: "no-store",
+    const { prisma } = await import("@/lib/prisma");
+    const caseStudy = await prisma.caseStudy.findUnique({
+      where: { slug },
     });
-    if (!response.ok) return null;
-    const caseStudies = await response.json();
-    return caseStudies.find((cs: any) => cs.slug === slug);
+    return caseStudy;
   } catch (error) {
     console.error("Error fetching case study:", error);
     return null;
   }
-}
-
-async function getAllCaseSlugs() {
-  try {
-    const apiUrl = getApiUrl();
-    const response = await fetch(`${apiUrl}/api/admin/case-studies`, {
-      cache: "no-store",
-    });
-    if (!response.ok) return [];
-    const caseStudies = await response.json();
-    return caseStudies.map((cs: any) => cs.slug);
-  } catch (error) {
-    console.error("Error fetching case studies:", error);
-    return [];
-  }
-}
-
-export async function generateStaticParams() {
-  const slugs = await getAllCaseSlugs();
-  return slugs.map((slug: string) => ({
-    slug: slug,
-  }));
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
