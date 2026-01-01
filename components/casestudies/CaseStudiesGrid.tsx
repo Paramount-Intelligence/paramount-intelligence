@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { caseStudiesData } from "@/lib/caseStudiesData";
+import { getApiUrl } from "@/lib/api";
 
 interface CaseStudiesGridProps {
   selectedIndustry: string;
@@ -15,7 +15,27 @@ export default function CaseStudiesGrid({
   selectedBusinessFunction,
 }: CaseStudiesGridProps) {
   const [currentPage, setCurrentPage] = useState(1);
+  const [caseStudiesData, setCaseStudiesData] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
   const itemsPerPage = 9;
+
+  // Fetch case studies from database
+  useEffect(() => {
+    const fetchCaseStudies = async () => {
+      try {
+        const response = await fetch(`${getApiUrl()}/api/admin/case-studies`);
+        if (!response.ok) throw new Error("Failed to fetch");
+        const data = await response.json();
+        setCaseStudiesData(data);
+      } catch (error) {
+        console.error("Error fetching case studies:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCaseStudies();
+  }, []);
 
   const filteredCaseStudies = caseStudiesData.filter((caseStudy) => {
     const industryMatch =
@@ -46,7 +66,11 @@ export default function CaseStudiesGrid({
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        {filteredCaseStudies.length === 0 ? (
+        {loading ? (
+          <div className="text-center py-16">
+            <p className="text-gray-600 text-lg">Loading case studies...</p>
+          </div>
+        ) : filteredCaseStudies.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-gray-600 text-lg">
               No case studies found matching your filters.
