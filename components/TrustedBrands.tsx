@@ -39,6 +39,7 @@ export default function TrustedBrands() {
                   ))}
                 </div>
               </div>
+              <span className="text-[9px] text-center text-gray-500">On Catalant</span>
             </div>
           </div>
         </div>
