@@ -132,7 +132,7 @@ export default function Header() {
             className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
           >
             <Image
-              src="/images/logo.jpeg"
+              src="/images/logo.png"
               alt="Paramount Intelligence"
               width={32}
               height={32}
