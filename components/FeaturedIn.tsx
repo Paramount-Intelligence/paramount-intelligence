@@ -22,7 +22,7 @@ export default function FeaturedIn() {
     <section className="py-8 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-12">
-          Our Clients are Featured In
+          Our work has been featured in
         </h2>
 
         <div className="relative">

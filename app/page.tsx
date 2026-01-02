@@ -22,7 +22,7 @@ export default function Home() {
       <AIServices />
       <FeaturedIn />
       <ProjectExperience />
-      <LatestArticles />
+      {/* <LatestArticles /> */}
       <Footer />
     </div>
   );
