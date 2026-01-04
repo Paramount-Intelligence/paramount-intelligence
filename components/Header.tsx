@@ -52,15 +52,11 @@ const services = [
 
 const industries = [
   {
-    title: "AI Consulting & Automation",
-    href: "#",
-  },
-  {
-    title: "Manufacturing & Industrial",
-    href: "#",
-  },
-  {
     title: "Technology & Enterprise Software",
+    href: "#",
+  },
+  {
+    title: "Manufacturing, Industrial & Energy",
     href: "#",
   },
   {
@@ -85,10 +81,6 @@ const industries = [
   },
   {
     title: "E-commerce & Marketplaces",
-    href: "#",
-  },
-  {
-    title: "Drilling, Engineering & Energy Services",
     href: "#",
   },
 ];

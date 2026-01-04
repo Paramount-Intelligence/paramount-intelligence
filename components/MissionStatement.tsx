@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Linkedin } from "lucide-react";
 
 export default function MissionStatement() {
   return (
@@ -17,12 +18,25 @@ export default function MissionStatement() {
               />
 
               <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-4 py-3 shadow-md rounded-tl-lg">
-                <p className="text-sm font-semibold text-gray-900">
-                  Syed Ali Azzam
-                </p>
-                <p className="text-xs text-gray-600">
-                  CEO & Founding Partner at Paramount Intelligence
-                </p>
+                <div className="flex items-start justify-between gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/syedaliazzam/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#0A66C2] hover:text-[#004182] transition-colors"
+                    aria-label="LinkedIn Profile"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">
+                      Syed Ali Azzam
+                    </p>
+                    <p className="text-xs text-gray-600">
+                      CEO & Founding Partner at Paramount Intelligence
+                    </p>
+                  </div>
+                </div>
               </div>
 
               {/* Top Left Badge */}

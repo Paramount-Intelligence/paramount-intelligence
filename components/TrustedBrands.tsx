@@ -23,7 +23,7 @@ export default function TrustedBrands() {
           <h2 className="text-sm text-gray-700">
             Trusted by teams at world-renowned brands
           </h2>
-          <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full border border-gray-200">
+          {/* <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full border border-gray-200">
             <div>
               <div className="flex items-center gap-1">
                 <span className="text-xs font-bold text-gray-900">4.9</span>
@@ -41,7 +41,7 @@ export default function TrustedBrands() {
               </div>
               <span className="text-[9px] text-center text-gray-500">On Catalant</span>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Scrolling Brand Logos */}
