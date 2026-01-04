@@ -23,7 +23,7 @@ export default function MissionStatement() {
                     href="https://www.linkedin.com/in/syedaliazzam/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#0A66C2] hover:text-[#004182] transition-colors"
+                    className="text-[#0A66C2] hover:text-[#004182] transition-colors mt-2"
                     aria-label="LinkedIn Profile"
                   >
                     <Linkedin className="w-5 h-5" />
