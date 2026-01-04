@@ -11,11 +11,11 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Paramount Intelligence - Creative Solutions for Your Brand",
+  title: "Paramount Intelligence - The Leading AI and Automation Firm",
   description:
     "Empowering Brands with Innovative AI-Driven Strategies and Solutions.",
   icons: {
-    icon: "/images/logo.jpeg",
+    icon: "/images/logo.png",
   },
 };
 

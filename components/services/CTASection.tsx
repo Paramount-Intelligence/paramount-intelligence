@@ -7,7 +7,7 @@ export default function CTASection() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/cta.png"
+          src="/images/services/cta.jpg"
           alt="CTA Background"
           fill
           className="object-cover"

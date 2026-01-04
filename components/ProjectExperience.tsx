@@ -12,22 +12,35 @@ export default function ProjectExperience() {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await fetch(
-          `${getApiUrl()}/api/case-studies`
-        );
+        const response = await fetch(`${getApiUrl()}/api/case-studies`);
         const caseStudiesData = await response.json();
-        // Get 4 random case studies
-        const shuffled = [...caseStudiesData].sort(() => Math.random() - 0.5);
-        const randomCaseStudies = shuffled.slice(0, 4);
 
-        const projectData = randomCaseStudies.map((caseStudy, index) => ({
-          title: caseStudy.title,
-          description: caseStudy.subtitle,
-          fullDescription: caseStudy.description.substring(0, 200) + "...",
-          imageSrc: caseStudy.heroImage,
-          imagePosition: index % 2 === 0 ? "right" : "left",
-          link: `/case-studies/${caseStudy.slug}`,
-        }));
+        // Filter for specific case studies
+        const specificTitles = [
+          "AI Voice Agents for Sales Enablement",
+          "AI Agents for Talent Matching",
+          "LLM-Powered Customer Support Chatbot",
+          "Dynamic Pricing Engine for Personalized Fare Optimization",
+        ];
+
+        const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
+          specificTitles.includes(cs.title)
+        );
+
+        // For future use - random selection:
+        // const shuffled = [...caseStudiesData].sort(() => Math.random() - 0.5);
+        // const randomCaseStudies = shuffled.slice(0, 4);
+
+        const projectData = filteredCaseStudies.map(
+          (caseStudy: any, index: number) => ({
+            title: caseStudy.title,
+            description: caseStudy.subtitle,
+            fullDescription: caseStudy.description.substring(0, 200) + "...",
+            imageSrc: caseStudy.heroImage,
+            imagePosition: index % 2 === 0 ? "right" : "left",
+            link: `/case-studies/${caseStudy.slug}`,
+          })
+        );
 
         setProjects(projectData);
       } catch (error) {
