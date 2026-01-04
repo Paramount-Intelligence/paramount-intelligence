@@ -19,7 +19,7 @@ export default function FeaturedIn() {
   ];
 
   return (
-    <section className="py-8 bg-gray-50 overflow-hidden">
+    <section className="py-8 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-12">
           Experience across organizations featured in
