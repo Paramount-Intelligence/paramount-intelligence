@@ -19,15 +19,14 @@ export default function Mission() {
               Fortune 1000 companies to design and deliver GenAI, LLM, RAG, and
               AI agent solutions that drive impact across operations,
               automation, and decision-making. He brings hands-on experience
-              building and deploying end-to-end AI systems, spanning data
-              orchestration, model integration, cloud infrastructure, and
-              workflow automation, with a strong emphasis on reliability,
-              security, and scalability. Ali has led multiple enterprise-grade
-              engagements through platforms such as Catalant, partnering
-              directly with Fortune 1000 stakeholders to move initiatives from
-              strategy to production. His focus is on building systems that
-              integrate seamlessly into existing organizations and continue
-              delivering value well beyond initial deployment.
+              building and deploying end-to-end AI systems, spanning model
+              integration, cloud infrastructure, and workflow automation, with a
+              strong emphasis on reliability, security, and scalability. Ali has
+              led multiple enterprise-grade engagements, partnering directly
+              with Fortune 1000 stakeholders to move initiatives from strategy
+              to deployment. His focus is on building systems that integrate
+              seamlessly into existing organizations and continue delivering
+              value well beyond initial rollout.
             </p>
             <div className="pt-4">
               <p className="font-bold text-gray-900">
