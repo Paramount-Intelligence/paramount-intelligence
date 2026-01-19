@@ -20,7 +20,7 @@ export default function Footer() {
     business: [
       { name: "Services", href: "/services" },
       { name: "Case studies", href: "/case-studies" },
-      { name: "AI Newsletter", href: "#" },
+      { name: "AI Newsletter", href: "/newsletter" },
     ],
     social: [
       {
