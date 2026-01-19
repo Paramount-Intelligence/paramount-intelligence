@@ -18,27 +18,27 @@ import {
 const services = [
   {
     title: "LLM software: Custom Large Language Model",
-    href: "#",
+    href: "/services/custom-llm-based-software",
   },
   {
     title: "RAG Advanced Engineering",
-    href: "#",
+    href: "/services/rag-development-service",
   },
   {
     title: "LangChain Development",
-    href: "#",
+    href: "/services/langchain-development-experts",
   },
   {
     title: "AI Consulting & Advisory",
-    href: "#",
+    href: "/services/ai-consultancy",
   },
   {
     title: "LLM Application Development",
-    href: "#",
+    href: "/services/large-language-models-development",
   },
   {
     title: "LLMOps service",
-    href: "#",
+    href: "/services/llm-ops-service",
   },
   {
     title: "Automation",
