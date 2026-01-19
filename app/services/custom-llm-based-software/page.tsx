@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import WhoWeServe from "@/components/services/llm/WhoWeServe";
-import ProjectExperience from "@/components/ProjectExperience";
+import ProjectExperience from "@/components/services/llm/ProjectExperience";
 import LatestArticles from "@/components/LatestArticles";
 import Footer from "@/components/Footer";
 import LLMHeader from "@/components/services/llm/Header";
