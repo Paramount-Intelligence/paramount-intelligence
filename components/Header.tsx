@@ -99,15 +99,15 @@ const insights = [
 const careers = [
   {
     title: "Open Positions",
-    href: "#",
+    href: "/careers/open-positions",
   },
   {
     title: "Life at PI",
-    href: "#",
+    href: "/careers/life-at-pi",
   },
   {
     title: "Apply Now",
-    href: "#",
+    href: "/careers/apply-now",
   },
 ];
 
