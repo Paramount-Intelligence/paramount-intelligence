@@ -17,24 +17,24 @@ import {
 
 const services = [
   {
-    title: "LLM software: Custom Large Language Model",
-    href: "/services/custom-llm-based-software",
+    title: "AI Solutions and Engineering",
+    href: "/services/ai-solutions-and-engineering",
   },
   {
-    title: "RAG Advanced Engineering",
-    href: "/services/rag-development-service",
+    title: "AI Strategy and Consulting",
+    href: "/services/ai-strategy-and-consulting",
   },
   {
-    title: "LangChain Development",
-    href: "/services/langchain-development-experts",
+    title: "Data and Analytics",
+    href: "/services/data-and-analytics",
   },
   {
-    title: "AI Consulting & Advisory",
-    href: "/services/ai-consultancy",
+    title: "Cloud Services",
+    href: "/services/cloud-services",
   },
   {
-    title: "LLM Application Development",
-    href: "/services/large-language-models-development",
+    title: "AI Workflow Automation",
+    href: "/services/ai-workflow-automation",
   },
   {
     title: "LLMOps service",
@@ -88,10 +88,6 @@ const industries = [
 const insights = [
   {
     title: "Blog",
-    href: "#",
-  },
-  {
-    title: "Whitepapers",
     href: "#",
   },
 ];

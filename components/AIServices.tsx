@@ -4,54 +4,54 @@ import Image from "next/image";
 export default function AIServices() {
   const services = [
     {
-      title: "RAG Engineering",
+      title: "AI Solutions & Engineering",
       description:
-        "We implement tailored Retrieval-Augmented Generation pipelines that connect LLMs to structured and unstructured business data. Our RAG systems are designed to reduce hallucinations, improve accuracy, and support real-time decision-making across mission-critical workflows.",
+        "We translate strategic intent into production-ready AI systems, designing and operationalizing Generative AI applications, agentic solutions, and scalable MLOps platforms that enhance core business workflows and deliver measurable ROI.",
       link: "#",
       imageSrc: "/images/Screenshot_1.png",
     },
     {
-      title: "AI Consulting & Advisory",
+      title: "AI Strategy & Consulting",
       description:
-        "We uniquely blend independent consulting judgment, strategy, and hands-on execution to help organizations apply AI, Gen AI, and automation with clarity and intent. Our advisory work supports leadership and delivery teams in prioritizing use cases, aligning vision with execution reality, and driving measurable operational outcomes.",
+        "We define the path from experimentation to enterprise value, providing strategy, readiness assessments, and governance frameworks that align AI initiatives with business objectives and long-term impact.",
       link: "#",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
-      title: "AI Agents & Agentic Systems",
+      title: "Data & Analytics",
       description:
-        "We design and implement agent-based systems that operate across real business workflows, enabling intelligent task execution, decision support, and process automation. Our agentic solutions integrate LLMs, data sources, and automation layers to function reliably in production environments.",
+        "We build the trusted data foundation that powers insight and AI engineering, secure, scalable platforms that transform raw data into confident, real-time decision-making.",
       link: "#",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
-      title: "LangChain development",
+      title: "Cloud Services",
       description:
-        "We use LangChain to orchestrate complex agent workflows, tool usage, and multi-step reasoning across LLM-powered systems. Our work focuses on building maintainable, extensible architectures that support real-world agent behavior rather than isolated experiments.",
+        "We architect resilient cloud foundations for intelligent growth, delivering modernization, multi-cloud management, and DevOps practices that convert strategy into scalable execution.",
       link: "#",
       imageSrc: "/images/iStock-1270309856-1.jpg",
     },
     {
-      title: "LLMOps",
+      title: "AI Workflow Automation",
       description:
-        "We support the operationalization of LLM systems through deployment, monitoring, iteration, and lifecycle management. Our LLMOps services ensure reliability, scalability, and controlled evolution of production AI systems over time.",
+        "We streamline operations through intelligent automation, designing end-to-end workflows that connect systems, remove bottlenecks, and accelerate outcomes across the enterprise.",
       link: "#",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
-    {
-      title: "Automation & Workflow Systems",
-      description:
-        "We design and implement automation solutions using tools such as Airtable, Zapier, and n8n to streamline operations and eliminate manual work. Our automation work often delivers immediate ROI and serves as a foundation for AI and agent-based systems.",
-      link: "#",
-      imageSrc: "/images/iStock-1456175011.jpg",
-    },
-    {
-      title: "Web Scraping & Data Extraction",
-      description:
-        "We build web scraping and data extraction pipelines to acquire, structure, and maintain external data required for AI, agent, and automation workflows. These systems address data gaps that often block AI adoption and enable downstream analytics and intelligent automation.",
-      link: "#",
-      imageSrc: "/images/iStock-1456175011.jpg",
-    },
+    // {
+    //   title: "Automation & Workflow Systems",
+    //   description:
+    //     "We design and implement automation solutions using tools such as Airtable, Zapier, and n8n to streamline operations and eliminate manual work. Our automation work often delivers immediate ROI and serves as a foundation for AI and agent-based systems.",
+    //   link: "#",
+    //   imageSrc: "/images/iStock-1456175011.jpg",
+    // },
+    // {
+    //   title: "Web Scraping & Data Extraction",
+    //   description:
+    //     "We build web scraping and data extraction pipelines to acquire, structure, and maintain external data required for AI, agent, and automation workflows. These systems address data gaps that often block AI adoption and enable downstream analytics and intelligent automation.",
+    //   link: "#",
+    //   imageSrc: "/images/iStock-1456175011.jpg",
+    // },
   ];
 
   return (
@@ -59,7 +59,7 @@ export default function AIServices() {
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         {/* Section Title */}
         <h2 className="text-3xl md:text-2xl lg:text-3xl font-bold text-gray-900 text-center mb-12">
-          Our AI & Automation Services
+          Our Technology Consulting Services
         </h2>
 
         {/* Services Grid */}

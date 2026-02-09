@@ -9,19 +9,20 @@ export default function ClientSuccess() {
           {/* Left Content */}
           <div className="space-y-6">
             <h2 className="text-4xl md:text-4xl text-black font-bold leading-tight">
-              We've helped our clients develop custom AI and LLMs applications
+              Proven, Production-Grade Impact
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              Thanks to our hands-on experience, we’ve helped them deploy AI
-              agents, LLM and RAG systems, and automation that drive measurable
-              ROI through improved efficiency, reduced operational friction, and
-              stronger decision-making across core workflows.
+              We help organizations turn strategic goals into scalable,
+              intelligent systems. Our partnerships deliver measurable ROI
+              through automated efficiency, data-driven insight, secure cloud
+              foundations, and production-ready AI accelerating growth and
+              strengthening decision-making across the business.
             </p>
             <Link
               href="/case-studies"
               className="inline-block bg-[#17599d] text-white px-8 py-3 font-semibold hover:bg-[#144a75] transition-colors"
             >
-              See more case studies
+              Explore our case studies
             </Link>
           </div>
 

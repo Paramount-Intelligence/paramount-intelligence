@@ -1,50 +1,57 @@
 export default function WhyGenerativeAI() {
   const stats = [
     {
-      percentage: "70%",
-      title: "CEOs expect business transformation",
+      percentage: "82%",
+      title: "Sales Teams Freed for Strategic Work",
       description:
-        "Seven of ten CEOs say that AI will significantly change the way their company creates, delivers, and captures value over the next three years (PwC's 28th CEO Survey)",
+        "Cloud-based automation eliminates manual effort, allowing teams to focus on higher-value customer engagement and revenue generation.",
     },
     {
-      percentage: "3-5x",
-      title: "Delivering ROI on automation",
+      percentage: "84%",
+      title: "Faster Financial Decision-Making",
       description:
-        "On average, Agentic Process Automation delivers a 3- to 6-fold return on investment within months",
+        "Finance organizations leveraging cloud automation make critical decisions significantly faster, improving business agility.",
     },
     {
-      percentage: "80%+",
-      title: "Projects fail without proper expertise",
+      percentage: "$20B+",
+      title: "Rapidly Expanding Automation Market",
       description:
-        "Most AI initiatives fail due to implementation challenges, underscoring the critical need for experienced transformation partners (by RAND)",
+        "The accelerating growth of cloud-driven automation reflects a structural shift toward intelligent, scalable operations.",
+    },
+    {
+      percentage: "30%",
+      title: "Enterprises Automating Core Networks",
+      description:
+        "A growing share of enterprises are automating the majority of network operations, signaling cloud as a strategic imperative rather than an IT upgrade.",
     },
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-          Why leading companies automate processes with Generative AI?
+          Why is a strategic cloud foundation critical for business
+          transformation?
         </h2>
 
         <p className="text-gray-700 leading-relaxed mb-12 max-w-5xl">
-          Generative AI is a category of artificial intelligence that creates
-          new, original content by learning patterns from vast datasets and
-          generating human-like text, images, code, audio, and other media
-          formats. Rather than simply analyzing or categorizing existing
-          information, Generative AI produces novel outputs that didn't
-          previously exist, enabling organizations to automate creative
-          processes, accelerate content production, and unlock new forms of
-          value creation across business functions
+          Cloud is no longer an infrastructure decision; it is the operating
+          backbone of modern business. While many organizations have migrated
+          workloads to the cloud, far fewer realize its full value due to
+          fragmented architectures, security gaps, and unmanaged complexity. A
+          strategic cloud foundation designed for automation, security, and
+          integration enables organizations to reduce technical debt, accelerate
+          innovation, and operate with the speed and resilience required to
+          compete.
         </p>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="border-2 border-red-500 rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
+              className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300"
             >
-              <h3 className="text-5xl font-bold text-red-500">
+              <h3 className="text-5xl font-bold text-[#17599d]">
                 {stat.percentage}
               </h3>
               <h4 className="text-xl font-bold text-gray-900">{stat.title}</h4>

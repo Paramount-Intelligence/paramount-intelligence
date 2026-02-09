@@ -8,7 +8,7 @@ import LLMHero from "@/components/services/models/Hero";
 import WhyGenerativeAI from "@/components/services/models/WhyGenerativeAI";
 import LLMServicesSection from "@/components/services/models/LLMServicesSection";
 import ScheduleCTA from "@/components/services/models/ScheduleCTA";
-import TrustedBrands from "@/components/services/models/TrustedBrands";
+import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/services/models/WhyChooseUs";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       <LLMServicesSection />
       <WhoWeServe />
       <TrustedBrands />
-      <ScheduleCTA />
+      {/* <ScheduleCTA /> */}
       <WhyChooseUs />
       <ProjectExperience />
       {/* <LatestArticles /> */}

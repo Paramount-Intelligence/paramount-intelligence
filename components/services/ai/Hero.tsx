@@ -22,17 +22,17 @@ export default function LLMHero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              AI Consulting Experts in Artificial Intelligence Solutions
+              Cloud Services
             </h1>
             <p className="text-sm text-white font-semibold leading-relaxed max-w-lg">
-              Consult your current and future projects with Vstorm - specialists
-              in the field of AI
+              We architect and operate secure, high-performance cloud platforms
+              that power intelligent, scalable growth.
             </p>
             <Link
               href="/contact"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
-              Schedule free consultation
+              Book a Call
             </Link>
           </div>
         </div>

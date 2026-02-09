@@ -3,114 +3,114 @@
 import { useState } from "react";
 
 export default function LLMServicesSection() {
-  const [activeService, setActiveService] = useState("consultation");
+  const [activeService, setActiveService] = useState("Data & Analytics Consulting");
 
   const services = [
     {
-      id: "consultation",
-      title: "LLM Consultation",
+      id: "Data & Analytics Consulting",
+      title: "Data & Analytics Consulting",
       content: {
-        title: "LLM Consultation",
+        title: "Data & Analytics Consulting",
         description:
-          "This service includes an in-depth analysis of your business needs, challenges, and goals. We guide you through the process of identifying where LLM-based solutions can bring the most value. The scope of this service involves:",
+          "We define and execute data strategies that turn information into a sustained competitive advantage. The scope of this service involves:",
         items: [
-          "Defining the potential applications of LLMs tailored to your industry.",
-          "Evaluating existing workflows and identifying areas for optimization.",
-          "Recommending tools, frameworks, and best practices for implementation.",
-          "Providing a roadmap for development and integration of LLM-based solutions.",
+          "Auditing data architecture, processes, and analytics maturity to identify gaps and priorities.",
+          "Developing data strategies and roadmaps aligned with business outcomes, such as customer intelligence and operational optimization.",
+          "Implementing business intelligence solutions for real-time KPI visibility and performance tracking.",
+          "Deploying advanced analytics, including predictive modeling and NLP for unstructured data.",
         ],
       },
     },
     {
-      id: "poc",
-      title: "Proof of Concept (PoC)",
+      id: "Data Engineering",
+      title: "Data Engineering",
       content: {
-        title: "Proof of Concept (PoC)",
+        title: "Data Engineering",
         description:
-          "We develop a working prototype to validate your LLM solution concept. This helps assess feasibility, identify potential challenges, and demonstrate value before full-scale development.",
+          "We build scalable, reliable data pipelines that ensure trusted information flows across the enterprise.",
         items: [
-          "Rapid prototyping of your LLM use case.",
-          "Testing technical feasibility and performance.",
-          "Gathering stakeholder feedback and requirements.",
-          "Defining technical architecture and approach.",
+          "Designing and implementing enterprise-grade ETL and ELT pipelines.",
+          "Modernizing legacy data environments and migrating to cloud-native platforms.",
+          "Building and managing data lakes for structured and unstructured data.",
+          "Enhancing datasets through augmentation to improve downstream analytics and AI performance.",
         ],
       },
     },
     {
-      id: "mvp",
-      title: "MVP Development",
+      id: "Data Management & Governance",
+      title: "Data Management & Governance",
       content: {
-        title: "MVP Development",
+        title: "Data Management & Governance",
         description:
-          "Building a Minimum Viable Product with core LLM functionalities to validate market fit and gather user feedback for iterative improvement.",
+          "We establish the controls, standards, and security that make data trustworthy and compliant.",
         items: [
-          "Core feature implementation with LLM integration.",
-          "User interface and experience design.",
-          "Performance optimization and testing.",
-          "Deployment to staging environment for validation.",
+          "Defining data governance frameworks covering ownership, quality, and lifecycle management.",
+          "Implementing security, privacy, and access controls aligned with regulatory requirements.",
+          "Establishing data quality processes to ensure accuracy and consistency.",
+          "Creating data catalogs and a single source of truth to improve data literacy and discoverability.",
         ],
       },
     },
     {
-      id: "full-solution",
-      title: "Full Solution Delivery",
+      id: "Analytics & Platform Implementation",
+      title: "Analytics & Platform Implementation",
       content: {
-        title: "Full Solution Delivery",
+        title: "Analytics & Platform Implementation",
         description:
-          "Complete end-to-end development and deployment of your LLM-based solution with all required features, integrations, and optimizations.",
+          "We architect future-proof analytics platforms that scale from reporting to enterprise AI.",
         items: [
-          "Comprehensive feature development and integration.",
-          "Scalable architecture and infrastructure setup.",
-          "Security implementation and compliance measures.",
-          "Production deployment and launch support.",
+          "Implementing cloud data warehouses and lakehouse architectures.",
+          "Designing connected data fabrics across multi-cloud and on-premise environments.",
+          "Building scalable MLOps platforms to deploy and manage machine learning models.",
+          "Developing dashboards and visualizations that translate analytics into action.",
         ],
       },
     },
     {
-      id: "audit",
-      title: "Project Audit",
+      id: "Data Science",
+      title: "Data Science",
       content: {
-        title: "Project Audit",
+        title: "Data Science",
         description:
-          "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
+          "We embed advanced intelligence into operations through custom analytical and machine learning models.",
         items: [
-          "Code quality and architecture review.",
-          "Performance and efficiency assessment.",
-          "Security and compliance evaluation.",
-          "Recommendations for improvements and optimizations.",
+          "Developing predictive and prescriptive models using machine learning and deep learning.",
+          "Operationalizing AI initiatives with MLOps best practices.",
+          "Building computer vision solutions for image analysis and automation.",
+          "Integrating generative AI responsibly to augment analytics and decision support.",
         ],
       },
     },
     {
-      id: "deployment",
-      title: "Deployment Services",
+      id: "Data Mining",
+      title: "Data Mining",
       content: {
-        title: "Deployment Services",
+        title: "Data Mining",
         description:
-          "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
+          "We uncover patterns, correlations, and trends that reveal hidden insights and opportunities.",
         items: [
-          "Infrastructure setup and configuration.",
-          "CI/CD pipeline implementation.",
-          "Monitoring and alerting setup.",
-          "Launch support and troubleshooting.",
+          "Applying statistical and machine learning techniques to analyze complex datasets.",
+          "Supporting fraud detection, risk assessment, and customer segmentation initiatives.",
+          "Performing association and market basket analysis to inform strategy.",
+          "Creating structured knowledge graphs to enhance search, recommendation, and AI systems.",
         ],
       },
     },
-    {
-      id: "maintenance",
-      title: "Maintenance & Scalability",
-      content: {
-        title: "Maintenance & Scalability",
-        description:
-          "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
-        items: [
-          "Regular updates and performance optimization.",
-          "Scaling infrastructure as demand grows.",
-          "Bug fixes and technical support.",
-          "Feature enhancements and improvements.",
-        ],
-      },
-    },
+    // {
+    //   id: "maintenance",
+    //   title: "Maintenance & Scalability",
+    //   content: {
+    //     title: "Maintenance & Scalability",
+    //     description:
+    //       "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
+    //     items: [
+    //       "Regular updates and performance optimization.",
+    //       "Scaling infrastructure as demand grows.",
+    //       "Bug fixes and technical support.",
+    //       "Feature enhancements and improvements.",
+    //     ],
+    //   },
+    // },
   ];
 
   const currentService = services.find((s) => s.id === activeService);
@@ -119,7 +119,7 @@ export default function LLMServicesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our LLM-based software services
+          Our Data and Analytics Services
         </h2>
         <p className="text-gray-600 mb-12">What we can help you with:</p>
 

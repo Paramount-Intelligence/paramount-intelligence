@@ -3,114 +3,114 @@
 import { useState } from "react";
 
 export default function LLMServicesSection() {
-  const [activeService, setActiveService] = useState("consultation");
+  const [activeService, setActiveService] = useState("AI Product Development");
 
   const services = [
     {
-      id: "consultation",
-      title: "LLM Consultation",
+      id: "AI Product Development",
+      title: "AI Product Development",
       content: {
-        title: "LLM Consultation",
+        title: "AI Product Development",
         description:
-          "This service includes an in-depth analysis of your business needs, challenges, and goals. We guide you through the process of identifying where LLM-based solutions can bring the most value. The scope of this service involves:",
+          "We manage the full lifecycle of AI-driven software products from concept and architecture through deployment, scaling, and continuous optimization.",
         items: [
-          "Defining the potential applications of LLMs tailored to your industry.",
-          "Evaluating existing workflows and identifying areas for optimization.",
-          "Recommending tools, frameworks, and best practices for implementation.",
-          "Providing a roadmap for development and integration of LLM-based solutions.",
+          "Conducting product discovery to define user-centric functionality and technical architecture.",
+          "Developing secure, scalable applications with embedded AI and machine learning capabilities.",
+          "Implementing DevOps and MLOps practices for reliable deployment, monitoring, and iteration.",
+          "Managing iterative improvement based on user feedback and performance metrics.",
         ],
       },
     },
     {
-      id: "poc",
-      title: "Proof of Concept (PoC)",
+      id: "Generative AI Applications",
+      title: "Generative AI Applications",
       content: {
-        title: "Proof of Concept (PoC)",
+        title: "Generative AI Applications",
         description:
-          "We develop a working prototype to validate your LLM solution concept. This helps assess feasibility, identify potential challenges, and demonstrate value before full-scale development.",
+          "We design and build secure generative AI applications for content creation, synthesis, and task automation grounded in a real business context.",
         items: [
-          "Rapid prototyping of your LLM use case.",
-          "Testing technical feasibility and performance.",
-          "Gathering stakeholder feedback and requirements.",
-          "Defining technical architecture and approach.",
+          "Identifying and prioritizing high-value generative AI use cases across text, image, and code.",
+          "Selecting, configuring, and fine-tuning foundation models for domain-specific performance.",
+          "Implementing secure application layers with guardrails and Retrieval-Augmented Generation (RAG).",
+          "Integrating generative capabilities directly into existing systems and user workflows.",
         ],
       },
     },
     {
-      id: "mvp",
-      title: "MVP Development",
+      id: "Agentic AI Systems",
+      title: "Agentic AI Systems",
       content: {
-        title: "MVP Development",
+        title: "Agentic AI Systems",
         description:
-          "Building a Minimum Viable Product with core LLM functionalities to validate market fit and gather user feedback for iterative improvement.",
+          "We engineer autonomous AI agents capable of planning, executing tasks, and completing multi-step business workflows.",
         items: [
-          "Core feature implementation with LLM integration.",
-          "User interface and experience design.",
-          "Performance optimization and testing.",
-          "Deployment to staging environment for validation.",
+          "Designing agent architectures with reasoning, tool use, and memory capabilities.",
+          "Developing and orchestrating multi-agent systems for complex operational environments.",
+          "Implementing oversight, auditability, and security controls for autonomous behavior.",
+          "Aligning agent performance with defined business objectives and measurable outcomes.",
         ],
       },
     },
     {
-      id: "full-solution",
-      title: "Full Solution Delivery",
+      id: "AI Platforms and Machine Learning",
+      title: "AI Platforms and Machine Learning",
       content: {
-        title: "Full Solution Delivery",
+        title: "AI Platforms and Machine Learning",
         description:
-          "Complete end-to-end development and deployment of your LLM-based solution with all required features, integrations, and optimizations.",
+          "We build and manage the foundational data and MLOps platforms required for repeatable, enterprise-scale AI.",
         items: [
-          "Comprehensive feature development and integration.",
-          "Scalable architecture and infrastructure setup.",
-          "Security implementation and compliance measures.",
-          "Production deployment and launch support.",
+          "Architecting cloud-native platforms for model training, versioning, and deployment.",
+          "Building automated pipelines for data preparation, training, monitoring, and retraining.",
+          "Establishing governance for model performance, data quality, and regulatory compliance.",
+          "Providing ongoing platform optimization, management, and operational support.",
         ],
       },
     },
     {
-      id: "audit",
-      title: "Project Audit",
+      id: "Voice AI Agents",
+      title: "Voice AI Agents",
       content: {
-        title: "Project Audit",
+        title: "Voice AI Agents",
         description:
-          "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
+          "We design and deploy intelligent voice systems for customer service, internal operations, and interactive products.",
         items: [
-          "Code quality and architecture review.",
-          "Performance and efficiency assessment.",
-          "Security and compliance evaluation.",
-          "Recommendations for improvements and optimizations.",
+          "Designing natural, context-aware conversational flows and voice experiences.",
+          "Integrating advanced speech recognition (ASR) and text-to-speech (TTS) technologies.",
+          "Connecting voice agents to knowledge bases, APIs, and transactional systems",
+          "Optimizing for accuracy, latency, reliability, and user experience.",
         ],
       },
     },
-    {
-      id: "deployment",
-      title: "Deployment Services",
-      content: {
-        title: "Deployment Services",
-        description:
-          "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
-        items: [
-          "Infrastructure setup and configuration.",
-          "CI/CD pipeline implementation.",
-          "Monitoring and alerting setup.",
-          "Launch support and troubleshooting.",
-        ],
-      },
-    },
-    {
-      id: "maintenance",
-      title: "Maintenance & Scalability",
-      content: {
-        title: "Maintenance & Scalability",
-        description:
-          "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
-        items: [
-          "Regular updates and performance optimization.",
-          "Scaling infrastructure as demand grows.",
-          "Bug fixes and technical support.",
-          "Feature enhancements and improvements.",
-        ],
-      },
-    },
+    // {
+    //   id: "deployment",
+    //   title: "Deployment Services",
+    //   content: {
+    //     title: "Deployment Services",
+    //     description:
+    //       "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
+    //     items: [
+    //       "Infrastructure setup and configuration.",
+    //       "CI/CD pipeline implementation.",
+    //       "Monitoring and alerting setup.",
+    //       "Launch support and troubleshooting.",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "maintenance",
+    //   title: "Maintenance & Scalability",
+    //   content: {
+    //     title: "Maintenance & Scalability",
+    //     description:
+    //       "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
+    //     items: [
+    //       "Regular updates and performance optimization.",
+    //       "Scaling infrastructure as demand grows.",
+    //       "Bug fixes and technical support.",
+    //       "Feature enhancements and improvements.",
+    //     ],
+    //   },
+    // },
   ];
 
   const currentService = services.find((s) => s.id === activeService);
@@ -119,7 +119,7 @@ export default function LLMServicesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our LLM-based software services
+          Our AI Solutions and Engineering Services
         </h2>
         <p className="text-gray-600 mb-12">What we can help you with:</p>
 

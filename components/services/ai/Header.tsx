@@ -21,7 +21,7 @@ export default function LLMHeader() {
             href="/services/custom-llm-based-software"
             className="hover:text-[#17599d] transition-colors"
           >
-            AI Consulting & Advisory
+            Cloud Services
           </Link>
         </nav>
       </div>
