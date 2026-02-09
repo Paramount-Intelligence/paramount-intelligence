@@ -24,24 +24,20 @@ export default function Hero() {
             {/* Left Content */}
             <div className="text-black">
               <h1 className="text-3xl md:text-3xl lg:text-[50px] font-bold mb-3 leading-tight">
-                Applied AI & Automation
+                AI Strategy, Advisory and Engineering
               </h1>
-
-              <p className="text-[28.5px] md:text-shadow-md mb-3 leading-relaxed text-gray-800 font-light">
-                AI Strategy, Advisory & Engineering
-              </p>
 
               {/* Features List */}
               <div className="mb-8">
                 <div className="flex items-start p-0 m-0">
                   <p className="text-black text-sm">
-                    Paramount Intelligence is an independent consulting firm
-                    that supports organizations in applying AI and automation to
-                    drive real business outcomes. We combine AI strategy,
-                    advisory, and hands-on engineering to design and build
-                    production-ready systems that improve operational
-                    efficiency, support decision-making, and scale with the
-                    business.
+                    Paramount Intelligence is a Technology Consulting &
+                    Engineering firm that designs, builds, and operationalizes
+                    intelligent systems for organizations. We apply AI, Data &
+                    Analytics, Cloud, and Automation to solve core business
+                    challenges, delivering production-ready solutions that
+                    improve efficiency, strengthen decision-making, and scale
+                    with growth.
                   </p>
                 </div>
               </div>
@@ -49,7 +45,7 @@ export default function Hero() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
                 <button className="bg-[#17599d] text-sm text-white px-4 py-2 font-semibold hover:bg-gray-800 rounded-sm transition-colors">
-                  Book a free consultation
+                  Book a free strategy session
                 </button>
               </div>
             </div>

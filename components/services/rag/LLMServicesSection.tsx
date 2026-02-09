@@ -3,114 +3,114 @@
 import { useState } from "react";
 
 export default function LLMServicesSection() {
-  const [activeService, setActiveService] = useState("consultation");
+  const [activeService, setActiveService] = useState("Business Optimization Consulting");
 
   const services = [
     {
-      id: "consultation",
-      title: "LLM Consultation",
+      id: "Business Optimization Consulting",
+      title: "Business Optimization Consulting",
       content: {
-        title: "LLM Consultation",
+        title: "Business Optimization Consulting",
         description:
-          "This service includes an in-depth analysis of your business needs, challenges, and goals. We guide you through the process of identifying where LLM-based solutions can bring the most value. The scope of this service involves:",
+          "We assess your operations to identify where AI and automation can deliver the greatest efficiency, cost reduction, and value creation. The scope of this service involves:",
         items: [
-          "Defining the potential applications of LLMs tailored to your industry.",
-          "Evaluating existing workflows and identifying areas for optimization.",
-          "Recommending tools, frameworks, and best practices for implementation.",
-          "Providing a roadmap for development and integration of LLM-based solutions.",
+          "Conducting structured workshops to map core processes and customer journeys.",
+          "Identifying bottlenecks, manual effort, and opportunities for intelligent augmentation.",
+          "Developing a prioritized transformation roadmap with clear ROI assumptions.",
+          "Advising on change management to support adoption and sustained impact.",
         ],
       },
     },
     {
-      id: "poc",
-      title: "Proof of Concept (PoC)",
+      id: "AI-Powered Product Strategy",
+      title: "AI-Powered Product Strategy",
       content: {
-        title: "Proof of Concept (PoC)",
+        title: "AI-Powered Product Strategy",
         description:
-          "We develop a working prototype to validate your LLM solution concept. This helps assess feasibility, identify potential challenges, and demonstrate value before full-scale development.",
+          "We help define, validate, and shape AI-enabled products from concept through market readiness.",
         items: [
-          "Rapid prototyping of your LLM use case.",
-          "Testing technical feasibility and performance.",
-          "Gathering stakeholder feedback and requirements.",
-          "Defining technical architecture and approach.",
+          "Facilitating strategy sessions to align product vision with market demand and user needs.",
+          "Applying structured validation frameworks to define viable AI features and scope.",
+          "Developing product roadmaps, MVP definitions, and investment business cases.",
+          "Ensuring a user-centric approach that balances innovation with usability.",
         ],
       },
     },
     {
-      id: "mvp",
-      title: "MVP Development",
+      id: "AI Readiness & Architecture Planning",
+      title: "AI Readiness & Architecture Planning",
       content: {
-        title: "MVP Development",
+        title: "AI Readiness & Architecture Planning",
         description:
-          "Building a Minimum Viable Product with core LLM functionalities to validate market fit and gather user feedback for iterative improvement.",
+          "We evaluate your current technology landscape and design a scalable foundation for secure AI adoption.",
         items: [
-          "Core feature implementation with LLM integration.",
-          "User interface and experience design.",
-          "Performance optimization and testing.",
-          "Deployment to staging environment for validation.",
+          "Assessing existing systems, data infrastructure, and cloud readiness.",
+          "Providing buy-vs-build analysis to determine the most effective capability path.",
+          "Designing secure, scalable architecture blueprints aligned with enterprise systems.",
+          "Creating phased implementation plans that manage risk and sequencing.",
         ],
       },
     },
     {
-      id: "full-solution",
-      title: "Full Solution Delivery",
+      id: "AI Leadership & Team Upskilling",
+      title: "AI Leadership & Team Upskilling",
       content: {
-        title: "Full Solution Delivery",
+        title: "AI Leadership & Team Upskilling",
         description:
-          "Complete end-to-end development and deployment of your LLM-based solution with all required features, integrations, and optimizations.",
+          "We enable leaders and teams to confidently govern, adopt, and operationalize AI.",
         items: [
-          "Comprehensive feature development and integration.",
-          "Scalable architecture and infrastructure setup.",
-          "Security implementation and compliance measures.",
-          "Production deployment and launch support.",
+          "Delivering executive briefings on AI opportunities, risks, and strategic tradeoffs.",
+          "Running hands-on workshops covering generative AI, applied use cases, and tooling.",
+          "Designing tailored training programs to close critical capability gaps.",
+          "Establishing governance and ethical use frameworks for responsible AI adoption.",
         ],
       },
     },
-    {
-      id: "audit",
-      title: "Project Audit",
-      content: {
-        title: "Project Audit",
-        description:
-          "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
-        items: [
-          "Code quality and architecture review.",
-          "Performance and efficiency assessment.",
-          "Security and compliance evaluation.",
-          "Recommendations for improvements and optimizations.",
-        ],
-      },
-    },
-    {
-      id: "deployment",
-      title: "Deployment Services",
-      content: {
-        title: "Deployment Services",
-        description:
-          "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
-        items: [
-          "Infrastructure setup and configuration.",
-          "CI/CD pipeline implementation.",
-          "Monitoring and alerting setup.",
-          "Launch support and troubleshooting.",
-        ],
-      },
-    },
-    {
-      id: "maintenance",
-      title: "Maintenance & Scalability",
-      content: {
-        title: "Maintenance & Scalability",
-        description:
-          "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
-        items: [
-          "Regular updates and performance optimization.",
-          "Scaling infrastructure as demand grows.",
-          "Bug fixes and technical support.",
-          "Feature enhancements and improvements.",
-        ],
-      },
-    },
+    // {
+    //   id: "audit",
+    //   title: "Project Audit",
+    //   content: {
+    //     title: "Project Audit",
+    //     description:
+    //       "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
+    //     items: [
+    //       "Code quality and architecture review.",
+    //       "Performance and efficiency assessment.",
+    //       "Security and compliance evaluation.",
+    //       "Recommendations for improvements and optimizations.",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "deployment",
+    //   title: "Deployment Services",
+    //   content: {
+    //     title: "Deployment Services",
+    //     description:
+    //       "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
+    //     items: [
+    //       "Infrastructure setup and configuration.",
+    //       "CI/CD pipeline implementation.",
+    //       "Monitoring and alerting setup.",
+    //       "Launch support and troubleshooting.",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "maintenance",
+    //   title: "Maintenance & Scalability",
+    //   content: {
+    //     title: "Maintenance & Scalability",
+    //     description:
+    //       "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
+    //     items: [
+    //       "Regular updates and performance optimization.",
+    //       "Scaling infrastructure as demand grows.",
+    //       "Bug fixes and technical support.",
+    //       "Feature enhancements and improvements.",
+    //     ],
+    //   },
+    // },
   ];
 
   const currentService = services.find((s) => s.id === activeService);
@@ -119,7 +119,7 @@ export default function LLMServicesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our LLM-based software services
+          Our AI Strategy and Consulting Services
         </h2>
         <p className="text-gray-600 mb-12">What we can help you with:</p>
 

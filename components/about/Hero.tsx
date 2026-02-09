@@ -22,12 +22,12 @@ export default function AboutHero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-whiteleading-tight">
-              Building Production AI That Scales
+              Building Technology That Scales in the Real World
             </h1>
             <p className="text-sm text-white font-semibold leading-relaxed max-w-lg">
-              We help startups, scaleups, and Fortune 1000 companies deploy AI
-              agents, LLM and RAG systems, and automation that delivers
-              measurable business impact.
+              Paramount Intelligence partners with startups, scale-ups, and
+              enterprises to translate strategic ambition into technical
+              reality.
             </p>
             <Link
               href="/contact-us"

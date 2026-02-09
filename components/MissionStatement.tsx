@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 
 export default function MissionStatement() {
   return (
-    <section className="pt-32 min-h-screen bg-gray-50 items-center">
+    <section className="pt-16 min-h-screen bg-gray-50 items-center">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Side - Founders Image */}
@@ -77,8 +77,9 @@ export default function MissionStatement() {
                 <span className="text-4xl -left-8.75 text-[#17599d] font-serif leading-none">
                   “
                 </span>
-                We strive to lead the field and we will not stop until we are
-                the best at what we do
+                True transformation happens when technology stops being a
+                project and starts being the engine of your business. We partner
+                with you to build that engine.
                 <span className="text-4xl text-[#17599d] font-serif leading-none">
                   ”
                 </span>
@@ -88,14 +89,15 @@ export default function MissionStatement() {
             {/* Mission Description */}
             <div className="border-l-4 border-[#17599d] pl-6">
               <p className="text-gray-700 leading-relaxed">
-                At Paramount Intelligence, our mission isn’t corporate rhetoric;
-                it is a deeply personal commitment. As an independent consulting
-                firm, we know that technology is only transformative when it
-                solves real business problems. That is why we are laser-focused
-                on one thing: helping organizations design and implement AI,
-                GenAI, LLM, and agent-based systems, along with automation, in
-                mission-critical processes and operational pain points, enabling
-                people and teams to focus on what truly matters.
+                In today’s environment, competitive advantage is built on
+                technology, but the path from strategy to secure, scalable
+                execution is rarely straightforward. That is why we are
+                laser-focused on one thing: helping organizations translate
+                strategic ambition into technical reality. We partner with you
+                to architect and operationalize the full technology stack,
+                integrating AI strategy, data and analytics, cloud
+                infrastructure directly into mission-critical processes to
+                deliver measurable outcomes and lasting operational impact.
               </p>
             </div>
           </div>

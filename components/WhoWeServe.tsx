@@ -13,43 +13,43 @@ export default function WhoWeServe() {
   const targetAudiences = [
     {
       title:
-        "Mid-market and enterprise teams planning their AI and automation initiatives who need to align vision with execution reality",
+        "Teams planning core technology initiatives who need to align vision with execution reality",
       description:
-        "We help decision makers gain clarity on goals, scope, and expectations for their initial deployments. We work across startups, mid-sized teams, and enterprise functions, supporting both advisory and hands-on implementation from first use case through production. Our team can assist you in:",
+        "We help decision-makers gain clarity on goals, scope, and execution paths for new initiatives. From first use case through production deployment, we support both advisory and hands-on delivery across AI, data, and cloud. We assist teams with:",
       points: [
-        "AI consulting and advisory for leadership and delivery teams on practical Gen AI and LLM use cases",
-        "Designing and building LLM applications aligned to real workflows",
-        "Developing AI agents for internal operations, customer-facing processes, and knowledge work",
-        "Advanced RAG engineering to connect LLM systems to business data and documents",
-        "LangChain development for agent workflows and orchestration",
+        "Technology and AI strategy aligned to business priorities and operating constraints",
+        "Designing and building AI and LLM applications aligned to real workflows",
+        "Developing AI agents, data pipelines, and analytics platforms for intelligent operations",
+        "Secure RAG architectures and cloud foundations to scale AI reliably",
+        "Legacy modernization and workflow automation to reduce friction and manual effort",
         "PoC and MVP delivery with a clear path to production readiness",
       ],
     },
     {
       title:
-        "Organizations that have implemented AI or automation but struggle to reach reliable adoption due to fragmented systems, unclear ownership, or weak data foundations",
+        "Organizations with underperforming technology initiatives that struggle to reach adoption",
       description:
-        "We diagnose why existing AI, Gen AI, LLM, and automation initiatives fail to deliver in practice. Our work focuses on identifying breakdowns across data availability, system design, and operating ownership, then restructuring deployments so they can function reliably in real-world conditions. Our experience includes:",
+        "Many AI and automation programs fail due to fragmented systems, unclear ownership, or weak foundations. We diagnose why deployments stall and restructure them to operate reliably in real-world conditions. Our work includes:",
       points: [
         "Independent advisory combined with hands-on engineering to reset stalled initiatives",
-        "Advanced RAG and agent system redesign to align with actual data and workflow constraints",
-        "LLMOps services to stabilize deployments, improve reliability, and support controlled iteration",
-        "Business process automation using Airtable, Zapier, and n8n to remove manual workarounds",
-        "Web scraping and data extraction pipelines where data gaps block AI and automation outcomes",
-        "Knowledge transfer and documentation to restore ownership within internal teams",
+        "Redesigning RAG systems, agent architectures, and data pipelines to fit actual constraints",
+        "LLMOps and cloud modernization to stabilize and scale existing deployments",
+        "Workflow automation and system integration to eliminate manual workarounds",
+        "Data foundation remediation, including external data acquisition where required",
+        "Knowledge transfer and documentation to restore internal ownership",
       ],
     },
     {
       title:
-        "Enterprises and fast-growing teams seeking to accelerate existing AI, Gen AI, LLM, agent, and automation initiatives with senior consulting and engineering support",
+        "Enterprises and fast-growing teams accelerating complex technology programs",
       description:
-        "Many organizations have direction, internal teams, and active initiatives, but face capacity and execution constraints. We help accelerate progress by working as a senior extension of leadership and delivery teams, taking ownership of defined workstreams and delivering production-grade components at speed. We help teams accelerate by: We help teams accelerate by:",
+        "Some organizations have direction and talent but lack execution capacity. We act as a senior extension of leadership, owning defined workstreams and delivering production-grade outcomes at speed. We help acceleration by:",
       points: [
-        "Advising on sequencing, prioritization, and execution tradeoffs for AI and automation programs",
-        "Designing and delivering AI agents, LLM applications, and automation across business functions",
-        "Integrating AI and agent systems across siloed legacy and modern platforms",
-        "Supporting productivity and operational acceleration across consulting, manufacturing, telecom, and ecommerce environments",
-        "Acting as an extension of existing product, data, and operations teams",
+        "Advising on sequencing, prioritization, and execution trade-offs",
+        "Delivering AI agents, LLM applications, and cloud-native data platforms",
+        "Integrating AI systems across legacy and modern environments",
+        "Driving operational productivity through targeted automation",
+        "Filling critical capability gaps across product, data, cloud, and operations teams",
         "Owning scoped sub-projects with clear accountability and measurable outcomes",
       ],
     },
@@ -62,17 +62,15 @@ export default function WhoWeServe() {
           {/* Left Side - Main Heading */}
           <div>
             <h2 className="text-3xl md:text-2xl lg:text-[26px] font-bold text-gray-900 leading-tight mb-6">
-              We proudly support startups, mid-market teams, and enterprises in
-              applying AI and automation as a reliable end-to-end consulting
-              partner
+              Who We Work With
             </h2>
             <p className="text-gray-600 text-sm leading-relaxed">
-              Paramount Intelligence supports organizations across the US and
-              global markets in identifying high-impact AI, GenAI, LLM, agent,
-              and automation opportunities. We work from strategy through
-              execution, helping teams solve operational pain points, reduce
-              friction across workflows, and unlock measurable productivity and
-              business outcomes through practical, production-ready systems.
+              We support startups, mid-market organizations, and enterprises as
+              a reliable partner for end-to-end technology consulting and
+              execution. Our teams work globally to design and operationalize
+              intelligent systems across AI, data, cloud, and automation,
+              turning complex business pain points into durable,
+              production-ready capabilities.
             </p>
           </div>
 
@@ -118,7 +116,7 @@ export default function WhoWeServe() {
                             key={pointIndex}
                             className="flex items-start gap-3"
                           >
-                            <span className="text-gray-900 font-bold mt-0.5">
+                            <span className="text-gray-900 font-bold mb-1">
                               •
                             </span>
                             <span className="text-gray-700 text-sm">

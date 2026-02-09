@@ -1,7 +1,14 @@
 import Image from "next/image";
 
 export default function TrustedBrands() {
-  const brands = [
+  type BrandName =
+    | "Gratia"
+    | "Donaldson"
+    | "Veon"
+    | "Alibaba"
+    | "Bore and Bore";
+
+  const brands: { name: BrandName; logo: string }[] = [
     {
       name: "Gratia",
       logo: "/images/Gratia-logo.svg",
@@ -47,24 +54,40 @@ export default function TrustedBrands() {
         {/* Scrolling Brand Logos */}
         <div className="relative">
           <div className="flex animate-scroll">
-            {duplicatedBrands.map((brand, index) => (
-              <div
-                key={index}
-                className="shrink-0 w-1/3 flex items-center justify-center px-8"
-              >
-                <Image
-                  src={brand.logo}
-                  alt={brand.name}
-                  width={150}
-                  height={50}
-                  className={`w-auto object-contain ${
-                    brand.name === "Veon" || brand.name === "Alibaba"
-                      ? "h-8"
-                      : "h-12"
-                  }`}
-                />
-              </div>
-            ))}
+            {duplicatedBrands.map((brand, index) => {
+              const brandLinks: Record<BrandName, string> = {
+                Gratia: "https://gogratia.com/",
+                Donaldson: "https://www.donaldson.com/en-us/",
+                Veon: "https://www.veon.com/",
+                Alibaba: "https://www.alibaba.com/",
+                "Bore and Bore": "https://boreandbore.com/",
+              };
+              return (
+                <div
+                  key={index}
+                  className="shrink-0 w-1/3 flex items-center justify-center px-8"
+                >
+                  <a
+                    href={brandLinks[brand.name]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    title={brand.name}
+                  >
+                    <Image
+                      src={brand.logo}
+                      alt={brand.name}
+                      width={150}
+                      height={50}
+                      className={`w-auto object-contain ${
+                        brand.name === "Veon" || brand.name === "Alibaba"
+                          ? "h-8"
+                          : "h-12"
+                      }`}
+                    />
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

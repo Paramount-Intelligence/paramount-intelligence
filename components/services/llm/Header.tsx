@@ -21,7 +21,7 @@ export default function LLMHeader() {
             href="/services/custom-llm-based-software"
             className="hover:text-[#17599d] transition-colors"
           >
-            LLM software: Custom Large Language Model
+            AI Solutions and Engineering
           </Link>
         </nav>
       </div>

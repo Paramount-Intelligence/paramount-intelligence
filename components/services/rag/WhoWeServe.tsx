@@ -8,11 +8,11 @@ export default function ServicesSection() {
   >("automation");
 
   return (
-    <section className="min-h-screen py-32 bg-white">
+    <section className="min-h-screen py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         {/* Main Heading */}
         <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
-          Our clients achieve
+          Our Clients Achieve
         </h2>
 
         {/* Tabs */}
@@ -56,15 +56,16 @@ export default function ServicesSection() {
               {/* Left Content */}
               <div className="space-y-6">
                 <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
-                  Hyper-automation
+                  Hyper-Automation
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Hyper-automation leads to significantly higher operational
-                  efficiency and reduced costs by automating complex processes
-                  across the organization. It allows businesses to scale their
-                  operations faster, minimize human errors, and optimize
-                  resource allocation, resulting in improved productivity and
-                  business agility.
+                  Hyper-automation extends beyond processes to encompass data,
+                  infrastructure, and workflows. By automating complex systems
+                  across the organization, we enable businesses to scale
+                  operations efficiently, minimize errors, and optimize
+                  resources. This results in significantly higher operational
+                  efficiency, reduced costs, and the agility to adapt to new
+                  opportunities.
                 </p>
               </div>
 
@@ -83,13 +84,15 @@ export default function ServicesSection() {
               {/* Left Content */}
               <div className="space-y-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  Hyper-personalization
+                  Hyper-Customization
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Hyper-personalization boosts customer engagement and loyalty
-                  by offering tailored experiences, leading to higher
-                  satisfaction, better conversion rates, and stronger brand
-                  connections, ultimately driving revenue growth.
+                  Hyper-personalization leverages integrated data and AI to
+                  tailor customer experiences and internal operations. This
+                  leads to stronger customer engagement, loyalty, and conversion
+                  rates, while also enabling more relevant products and
+                  services, ultimately driving sustainable revenue growth and
+                  competitive differentiation.
                 </p>
               </div>
 
@@ -108,13 +111,14 @@ export default function ServicesSection() {
               {/* Left Content */}
               <div className="space-y-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-gray-900">
-                  Enhanced decision-making processes
+                  Efficient Decision Making
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  AI-enhanced decision-making enables more accurate, data-driven
-                  choices, reducing risks, improving strategic planning, and
-                  speeding up responses to market changes, giving companies a
-                  competitive advantage.
+                  Robust data foundations and intelligent systems enable faster,
+                  more accurate, data-driven choices. By reducing risks,
+                  improving strategic foresight, and accelerating responses to
+                  market dynamics, we empower leadership with a decisive
+                  information advantage for superior planning and execution.
                 </p>
               </div>
 

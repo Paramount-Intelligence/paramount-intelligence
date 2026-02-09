@@ -3,114 +3,114 @@
 import { useState } from "react";
 
 export default function LLMServicesSection() {
-  const [activeService, setActiveService] = useState("consultation");
+  const [activeService, setActiveService] = useState("Process Mining & Discovery");
 
   const services = [
     {
-      id: "consultation",
-      title: "LLM Consultation",
+      id: "Process Mining & Discovery",
+      title: "Process Mining & Discovery",
       content: {
-        title: "LLM Consultation",
+        title: "Process Mining & Discovery",
         description:
-          "This service includes an in-depth analysis of your business needs, challenges, and goals. We guide you through the process of identifying where LLM-based solutions can bring the most value. The scope of this service involves:",
+          "We identify where automation delivers the highest value before systems are built. The scope of this service involves:",
         items: [
-          "Defining the potential applications of LLMs tailored to your industry.",
-          "Evaluating existing workflows and identifying areas for optimization.",
-          "Recommending tools, frameworks, and best practices for implementation.",
-          "Providing a roadmap for development and integration of LLM-based solutions.",
+          "Mapping and analyzing core processes across operations, finance, HR, and customer service.",
+          "Using process mining to surface inefficiencies, bottlenecks, and automation-ready steps.",
+          "Prioritizing use cases based on ROI, complexity, and strategic alignment.",
+          "Delivering a phased automation roadmap with clear sequencing.",
         ],
       },
     },
     {
-      id: "poc",
-      title: "Proof of Concept (PoC)",
+      id: "Robotic Process Automation (RPA)",
+      title: "Robotic Process Automation (RPA)",
       content: {
-        title: "Proof of Concept (PoC)",
+        title: "Robotic Process Automation (RPA)",
         description:
-          "We develop a working prototype to validate your LLM solution concept. This helps assess feasibility, identify potential challenges, and demonstrate value before full-scale development.",
+          "We deploy software robots to automate high-volume, rule-based work with precision and control.",
         items: [
-          "Rapid prototyping of your LLM use case.",
-          "Testing technical feasibility and performance.",
-          "Gathering stakeholder feedback and requirements.",
-          "Defining technical architecture and approach.",
+          "Selecting and implementing enterprise-grade RPA platforms suited to your environment.",
+          "Designing and testing bots for tasks such as data entry, reconciliation, and reporting.",
+          "Integrating bots with existing applications, databases, and APIs.",
+          "Establishing governance, monitoring, and exception handling.",
         ],
       },
     },
     {
-      id: "mvp",
-      title: "MVP Development",
+      id: "Intelligent Document Processing (IDP)",
+      title: "Intelligent Document Processing (IDP)",
       content: {
-        title: "MVP Development",
+        title: "Intelligent Document Processing (IDP)",
         description:
-          "Building a Minimum Viable Product with core LLM functionalities to validate market fit and gather user feedback for iterative improvement.",
+          "We transform unstructured documents into reliable, system-ready data.",
         items: [
-          "Core feature implementation with LLM integration.",
-          "User interface and experience design.",
-          "Performance optimization and testing.",
-          "Deployment to staging environment for validation.",
+          "Processing invoices, contracts, forms, and communications using AI and NLP.",
+          "Achieving high extraction accuracy while materially reducing manual error.",
+          "Routing validated data directly into ERPs, CRMs, and downstream systems.",
+          "Ensuring compliance through secure processing and audit trails.",
         ],
       },
     },
     {
-      id: "full-solution",
-      title: "Full Solution Delivery",
+      id: "Intelligent Workflow Integration & Management",
+      title: "Intelligent Workflow Integration & Management",
       content: {
-        title: "Full Solution Delivery",
+        title: "Intelligent Workflow Integration & Management",
         description:
-          "Complete end-to-end development and deployment of your LLM-based solution with all required features, integrations, and optimizations.",
+          "We connect people, systems, and decisions into cohesive, automated flows.",
         items: [
-          "Comprehensive feature development and integration.",
-          "Scalable architecture and infrastructure setup.",
-          "Security implementation and compliance measures.",
-          "Production deployment and launch support.",
+          "Designing multi-step workflows combining AI decisions, automation, and human approvals.",
+          "Integrating CRMs, ERPs, cloud services, and communication tools.",
+          "Eliminating data silos through end-to-end workflow orchestration.",
+          "Monitoring and optimizing workflows for speed, cost, and reliability.",
         ],
       },
     },
     {
-      id: "audit",
-      title: "Project Audit",
+      id: "AI-Powered Decisioning & Analytics",
+      title: "AI-Powered Decisioning & Analytics",
       content: {
-        title: "Project Audit",
+        title: "AI-Powered Decisioning & Analytics",
         description:
-          "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
+          "We embed intelligence directly into workflows to guide actions in real time.",
         items: [
-          "Code quality and architecture review.",
-          "Performance and efficiency assessment.",
-          "Security and compliance evaluation.",
-          "Recommendations for improvements and optimizations.",
+          "Developing predictive models for forecasting, fraud detection, and prioritization.",
+          "Implementing decision engines that recommend next-best actions.",
+          "Providing dashboards that surface workflow performance and ROI.",
+          "Applying generative AI for summarization, reporting, and operational insight.",
         ],
       },
     },
     {
-      id: "deployment",
-      title: "Deployment Services",
+      id: "Low-Code / No-Code Automation Platforms",
+      title: "Low-Code / No-Code Automation Platforms",
       content: {
-        title: "Deployment Services",
+        title: "Low-Code / No-Code Automation Platforms",
         description:
-          "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
+          "We enable business teams to extend automation safely and at scale.",
         items: [
-          "Infrastructure setup and configuration.",
-          "CI/CD pipeline implementation.",
-          "Monitoring and alerting setup.",
-          "Launch support and troubleshooting.",
+          "Advising on and implementing enterprise-grade low-code automation platforms.",
+          "Training teams to build and maintain workflows within governed environments.",
+          "Establishing standards for security, lifecycle management, and reuse.",
+          "Providing ongoing support, optimization, and scaling.",
         ],
       },
     },
-    {
-      id: "maintenance",
-      title: "Maintenance & Scalability",
-      content: {
-        title: "Maintenance & Scalability",
-        description:
-          "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
-        items: [
-          "Regular updates and performance optimization.",
-          "Scaling infrastructure as demand grows.",
-          "Bug fixes and technical support.",
-          "Feature enhancements and improvements.",
-        ],
-      },
-    },
+    // {
+    //   id: "maintenance",
+    //   title: "Maintenance & Scalability",
+    //   content: {
+    //     title: "Maintenance & Scalability",
+    //     description:
+    //       "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
+    //     items: [
+    //       "Regular updates and performance optimization.",
+    //       "Scaling infrastructure as demand grows.",
+    //       "Bug fixes and technical support.",
+    //       "Feature enhancements and improvements.",
+    //     ],
+    //   },
+    // },
   ];
 
   const currentService = services.find((s) => s.id === activeService);
@@ -119,7 +119,7 @@ export default function LLMServicesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our LLM-based software services
+          Our AI Workflow Automation Services
         </h2>
         <p className="text-gray-600 mb-12">What we can help you with:</p>
 

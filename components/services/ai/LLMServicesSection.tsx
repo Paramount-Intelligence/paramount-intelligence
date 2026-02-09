@@ -3,114 +3,116 @@
 import { useState } from "react";
 
 export default function LLMServicesSection() {
-  const [activeService, setActiveService] = useState("consultation");
+  const [activeService, setActiveService] = useState(
+    "Business Process Automation",
+  );
 
   const services = [
     {
-      id: "consultation",
-      title: "LLM Consultation",
+      id: "Business Process Automation",
+      title: "Business Process Automation",
       content: {
-        title: "LLM Consultation",
+        title: "Business Process Automation",
         description:
-          "This service includes an in-depth analysis of your business needs, challenges, and goals. We guide you through the process of identifying where LLM-based solutions can bring the most value. The scope of this service involves:",
+          "We use cloud-native platforms to automate repetitive work and orchestrate complex processes across the enterprise. The scope of this service involves:",
         items: [
-          "Defining the potential applications of LLMs tailored to your industry.",
-          "Evaluating existing workflows and identifying areas for optimization.",
-          "Recommending tools, frameworks, and best practices for implementation.",
-          "Providing a roadmap for development and integration of LLM-based solutions.",
+          "Analyzing core business processes to identify high-impact automation opportunities.",
+          "Designing and implementing cloud-based workflows using RPA, orchestration, and intelligent document processing.",
+          "Integrating automated processes with existing enterprise systems and data sources.",
+          "Monitoring performance and continuously optimizing workflows.",
         ],
       },
     },
     {
-      id: "poc",
-      title: "Proof of Concept (PoC)",
+      id: "DevOps & SecOps",
+      title: "DevOps & SecOps",
       content: {
-        title: "Proof of Concept (PoC)",
+        title: "DevOps & SecOps",
         description:
-          "We develop a working prototype to validate your LLM solution concept. This helps assess feasibility, identify potential challenges, and demonstrate value before full-scale development.",
+          "We implement disciplined DevOps and SecOps practices to accelerate delivery while embedding security throughout the lifecycle.",
         items: [
-          "Rapid prototyping of your LLM use case.",
-          "Testing technical feasibility and performance.",
-          "Gathering stakeholder feedback and requirements.",
-          "Defining technical architecture and approach.",
+          "Establishing automated CI/CD pipelines for faster, more reliable releases.",
+          "Implementing Infrastructure as Code for consistent and auditable environments.",
+          "Integrating security scanning, compliance checks, and secret management into pipelines.",
+          "Designing monitoring, logging, and incident response strategies.",
         ],
       },
     },
     {
-      id: "mvp",
-      title: "MVP Development",
+      id: "AWS, Azure, GCP & Oracle",
+      title: "Cloud Platform Integration",
       content: {
-        title: "MVP Development",
+        title: "Cloud Platform Integration",
         description:
-          "Building a Minimum Viable Product with core LLM functionalities to validate market fit and gather user feedback for iterative improvement.",
+          "We design, build, and manage cloud environments across all major platforms to optimize performance, security, and cost.",
         items: [
-          "Core feature implementation with LLM integration.",
-          "User interface and experience design.",
-          "Performance optimization and testing.",
-          "Deployment to staging environment for validation.",
+          "Providing architecture design and reviews focused on scalability, resilience, and cost efficiency.",
+          "Developing and deploying cloud-native applications using platform-specific services.",
+          "Managing multi-cloud and hybrid environments to reduce vendor lock-in.",
+          "Delivering ongoing optimization, cost management, and operational support.",
         ],
       },
     },
     {
-      id: "full-solution",
-      title: "Full Solution Delivery",
+      id: "Cloud Modernization & Migration",
+      title: "Cloud Modernization & Migration",
       content: {
-        title: "Full Solution Delivery",
+        title: "Cloud Modernization & Migration",
         description:
-          "Complete end-to-end development and deployment of your LLM-based solution with all required features, integrations, and optimizations.",
+          "We guide cloud journeys with a focus on business outcomes, not just workload movement.",
         items: [
-          "Comprehensive feature development and integration.",
-          "Scalable architecture and infrastructure setup.",
-          "Security implementation and compliance measures.",
-          "Production deployment and launch support.",
+          "Assessing application landscapes and defining cloud readiness and migration priorities.",
+          "Designing tailored migration strategies, including rehosting, replatforming, and refactoring.",
+          "Modernizing legacy systems using microservices and serverless architectures.",
+          "Optimizing performance, security, and cost post-migration.",
         ],
       },
     },
-    {
-      id: "audit",
-      title: "Project Audit",
-      content: {
-        title: "Project Audit",
-        description:
-          "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
-        items: [
-          "Code quality and architecture review.",
-          "Performance and efficiency assessment.",
-          "Security and compliance evaluation.",
-          "Recommendations for improvements and optimizations.",
-        ],
-      },
-    },
-    {
-      id: "deployment",
-      title: "Deployment Services",
-      content: {
-        title: "Deployment Services",
-        description:
-          "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
-        items: [
-          "Infrastructure setup and configuration.",
-          "CI/CD pipeline implementation.",
-          "Monitoring and alerting setup.",
-          "Launch support and troubleshooting.",
-        ],
-      },
-    },
-    {
-      id: "maintenance",
-      title: "Maintenance & Scalability",
-      content: {
-        title: "Maintenance & Scalability",
-        description:
-          "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
-        items: [
-          "Regular updates and performance optimization.",
-          "Scaling infrastructure as demand grows.",
-          "Bug fixes and technical support.",
-          "Feature enhancements and improvements.",
-        ],
-      },
-    },
+    // {
+    //   id: "audit",
+    //   title: "Project Audit",
+    //   content: {
+    //     title: "Project Audit",
+    //     description:
+    //       "Comprehensive evaluation of your existing LLM implementation to identify improvement opportunities, security gaps, and optimization potential.",
+    //     items: [
+    //       "Code quality and architecture review.",
+    //       "Performance and efficiency assessment.",
+    //       "Security and compliance evaluation.",
+    //       "Recommendations for improvements and optimizations.",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "deployment",
+    //   title: "Deployment Services",
+    //   content: {
+    //     title: "Deployment Services",
+    //     description:
+    //       "Professional deployment services ensuring smooth transition from development to production with minimal downtime and maximum reliability.",
+    //     items: [
+    //       "Infrastructure setup and configuration.",
+    //       "CI/CD pipeline implementation.",
+    //       "Monitoring and alerting setup.",
+    //       "Launch support and troubleshooting.",
+    //     ],
+    //   },
+    // },
+    // {
+    //   id: "maintenance",
+    //   title: "Maintenance & Scalability",
+    //   content: {
+    //     title: "Maintenance & Scalability",
+    //     description:
+    //       "Ongoing support and optimization to ensure your LLM solution continues to perform efficiently as your business grows.",
+    //     items: [
+    //       "Regular updates and performance optimization.",
+    //       "Scaling infrastructure as demand grows.",
+    //       "Bug fixes and technical support.",
+    //       "Feature enhancements and improvements.",
+    //     ],
+    //   },
+    // },
   ];
 
   const currentService = services.find((s) => s.id === activeService);
@@ -119,7 +121,7 @@ export default function LLMServicesSection() {
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Our LLM-based software services
+          Our Cloud Services
         </h2>
         <p className="text-gray-600 mb-12">What we can help you with:</p>
 

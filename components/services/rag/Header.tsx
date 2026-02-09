@@ -21,7 +21,7 @@ export default function LLMHeader() {
             href="/services/custom-llm-based-software"
             className="hover:text-[#17599d] transition-colors"
           >
-            RAG Advanced Engineering
+            AI Strategy and Consulting
           </Link>
         </nav>
       </div>

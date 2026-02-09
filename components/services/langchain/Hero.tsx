@@ -22,17 +22,17 @@ export default function LLMHero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              LangChain Development Experts
+              Data and Analytics
             </h1>
             <p className="text-sm text-white font-semibold leading-relaxed max-w-lg">
-              Let's make LLMs simple! Get better integration, performance and
-              scalability with the help of a LangChain Development Consultant.
+              We build the trusted data foundation that enables confident
+              decisions, advanced analytics, and scalable AI.
             </p>
             <Link
               href="/contact"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
-              Estimate your project
+              Book a Call
             </Link>
           </div>
         </div>

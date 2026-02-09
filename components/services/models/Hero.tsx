@@ -22,17 +22,17 @@ export default function LLMHero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
-              Large Language Models (LLM) development
+              AI Workflow Automation
             </h1>
             <p className="text-sm text-white font-semibold leading-relaxed max-w-lg">
-              Transform operations with hyper-automation, hyper-personalization,
-              and smarter decision-making using Large Language Model
+              We design intelligent, end-to-end workflows that reduce cost,
+              accelerate execution, and improve decision quality.
             </p>
             <Link
               href="/contact"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
-            Get a free consultation
+              Book a Call
             </Link>
           </div>
         </div>
