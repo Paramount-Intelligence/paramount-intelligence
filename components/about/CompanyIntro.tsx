@@ -1,6 +1,6 @@
 export default function CompanyIntro() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 flex flex-col items-center">
         <h1 className="text-3xl text-black w-3xl md:text-4xl font-bold text-center mb-8">
           From Strategy to Production-Ready Systems

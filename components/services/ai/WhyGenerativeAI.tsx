@@ -2,16 +2,16 @@ export default function WhyGenerativeAI() {
   const stats = [
     {
       percentage: "82%",
-      title: "Sales Teams Freed for Strategic Work",
+      title: "Faster Decision-Making",
       description:
-        "Cloud-based automation eliminates manual effort, allowing teams to focus on higher-value customer engagement and revenue generation.",
+        "Cloud-based automation eliminates manual effort, allowing teams to focus on critical decision-making and improve business agility.",
     },
-    {
-      percentage: "84%",
-      title: "Faster Financial Decision-Making",
-      description:
-        "Finance organizations leveraging cloud automation make critical decisions significantly faster, improving business agility.",
-    },
+    // {
+    //   percentage: "84%",
+    //   title: "Faster Financial Decision-Making",
+    //   description:
+    //     "Finance organizations leveraging cloud automation make critical decisions significantly faster, improving business agility.",
+    // },
     {
       percentage: "$20B+",
       title: "Rapidly Expanding Automation Market",
@@ -45,7 +45,7 @@ export default function WhyGenerativeAI() {
           compete.
         </p>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}

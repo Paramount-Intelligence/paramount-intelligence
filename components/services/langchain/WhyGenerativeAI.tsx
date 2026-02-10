@@ -18,12 +18,12 @@ export default function WhyGenerativeAI() {
       description:
         "Teams that prioritize data-backed decisions over intuition consistently outperform in operational efficiency.",
     },
-    {
-      percentage: "80%",
-      title: "Operational Efficiency with Business Intelligence ",
-      description:
-        "Embedded analytics and BI transform reporting into real-time, decision-oriented execution.",
-    },
+    // {
+    //   percentage: "80%",
+    //   title: "Operational Efficiency with Business Intelligence ",
+    //   description:
+    //     "Embedded analytics and BI transform reporting into real-time, decision-oriented execution.",
+    // },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default function WhyGenerativeAI() {
           anticipate change, and unlock new sources of value.
         </p>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}

@@ -32,7 +32,7 @@ export default function LLMHero() {
               href="/contact"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
-              Optimize your LLM
+              Book a free consultation
             </Link>
           </div>
         </div>

@@ -7,35 +7,35 @@ export default function AIServices() {
       title: "AI Solutions & Engineering",
       description:
         "We translate strategic intent into production-ready AI systems, designing and operationalizing Generative AI applications, agentic solutions, and scalable MLOps platforms that enhance core business workflows and deliver measurable ROI.",
-      link: "#",
+      link: "/services/ai-solutions-and-engineering",
       imageSrc: "/images/Screenshot_1.png",
     },
     {
       title: "AI Strategy & Consulting",
       description:
         "We define the path from experimentation to enterprise value, providing strategy, readiness assessments, and governance frameworks that align AI initiatives with business objectives and long-term impact.",
-      link: "#",
+      link: "/services/ai-strategy-and-consulting",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
       title: "Data & Analytics",
       description:
         "We build the trusted data foundation that powers insight and AI engineering, secure, scalable platforms that transform raw data into confident, real-time decision-making.",
-      link: "#",
+      link: "/services/data-and-analytics",
       imageSrc: "/images/33319793_koy7-scaled-e1729162173694.jpg",
     },
     {
       title: "Cloud Services",
       description:
         "We architect resilient cloud foundations for intelligent growth, delivering modernization, multi-cloud management, and DevOps practices that convert strategy into scalable execution.",
-      link: "#",
+      link: "/services/cloud-services",
       imageSrc: "/images/iStock-1270309856-1.jpg",
     },
     {
       title: "AI Workflow Automation",
       description:
         "We streamline operations through intelligent automation, designing end-to-end workflows that connect systems, remove bottlenecks, and accelerate outcomes across the enterprise.",
-      link: "#",
+      link: "/services/ai-workflow-automation",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
     // {

@@ -12,12 +12,12 @@ export default function WhyGenerativeAI() {
       description:
         "Organizations with a formal AI strategy realize materially higher returns by focusing investment on the highest-value use cases.",
     },
-    {
-      percentage: "70%",
-      title: "Higher Success with Structured Strategy",
-      description:
-        "Companies that begin with a documented AI roadmap are significantly more likely to achieve their intended outcomes.",
-    },
+    // {
+    //   percentage: "70%",
+    //   title: "Higher Success with Structured Strategy",
+    //   description:
+    //     "Companies that begin with a documented AI roadmap are significantly more likely to achieve their intended outcomes.",
+    // },
     {
       percentage: "$3.7M",
       title: "Average Value per Strategic AI Use Case",
@@ -44,7 +44,7 @@ export default function WhyGenerativeAI() {
           efficiency, innovation, and competitive advantage.
         </p>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}

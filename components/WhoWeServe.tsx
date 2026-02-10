@@ -56,7 +56,7 @@ export default function WhoWeServe() {
   ];
 
   return (
-    <section className="min-h-screen pt-32 bg-white">
+    <section className="min-h-screen pt-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="grid md:grid-cols-2 gap-12">
           {/* Left Side - Main Heading */}

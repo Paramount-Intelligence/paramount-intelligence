@@ -111,7 +111,7 @@ export default function ProjectExperience() {
               <div className="mt-12 text-center">
                 <Link
                   href="/case-studies"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-8 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
+                  className="inline-flex items-center gap-2 bg-gradient-to-r from-[#17599d] to-[#4f46e5] text-white py-3 px-8 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
                 >
                   See More Case Studies
                   <svg
