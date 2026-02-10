@@ -8,11 +8,11 @@ export default function ServicesSection() {
   );
 
   return (
-    <section className="min-h-screen py-32 bg-white">
+    <section className="min-h-screen py-8 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         {/* Main Heading */}
         <h2 className="text-4xl md:text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-12">
-          Technology Consulting, End-to-End
+          Technology Consulting
         </h2>
 
         {/* Tabs */}

@@ -18,12 +18,12 @@ export default function WhyGenerativeAI() {
       description:
         "AI-driven document and workflow automation significantly shortens cycle times across core operations.",
     },
-    {
-      percentage: "35% / 45%",
-      title: "Operational Gains from Workflow Intelligence",
-      description:
-        "Enterprises integrating AI into workflows report faster decision-making and materially reduced redundancy.",
-    },
+    // {
+    //   percentage: "35% / 45%",
+    //   title: "Operational Gains from Workflow Intelligence",
+    //   description:
+    //     "Enterprises integrating AI into workflows report faster decision-making and materially reduced redundancy.",
+    // },
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function WhyGenerativeAI() {
           fragmented tools struggle with complexity, rework, and stalled ROI.
         </p>
 
-        <div className="grid md:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}

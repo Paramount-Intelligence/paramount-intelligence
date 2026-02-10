@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function ClientSuccess() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

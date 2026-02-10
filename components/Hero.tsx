@@ -24,7 +24,7 @@ export default function Hero() {
             {/* Left Content */}
             <div className="text-black">
               <h1 className="text-3xl md:text-3xl lg:text-[50px] font-bold mb-3 leading-tight">
-                AI Strategy, Advisory and Engineering
+                AI Strategy, <br /> Advisory & <br /> Engineering
               </h1>
 
               {/* Features List */}
@@ -45,7 +45,7 @@ export default function Hero() {
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
                 <button className="bg-[#17599d] text-sm text-white px-4 py-2 font-semibold hover:bg-gray-800 rounded-sm transition-colors">
-                  Book a free strategy session
+                  Book a free consultation
                 </button>
               </div>
             </div>

@@ -15,9 +15,9 @@ export default function Services() {
       <AboutHeader />
       <AboutHero />
       <CompanyIntro />
-      <Mission />
       <Values />
-      <Approach />
+      <Mission />
+      {/* <Approach /> */}
       <ClientSuccess />
       <Footer />
     </div>

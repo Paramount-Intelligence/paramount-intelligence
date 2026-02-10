@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 
 export default function Mission() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl md:text-5xl text-black font-bold text-center mb-16">
           Leadership
@@ -29,11 +29,6 @@ export default function Mission() {
               leadership teams, helping organizations move initiatives from
               strategy through execution and into sustained operation.
             </p>
-            <div className="pt-4">
-              <p className="font-bold text-gray-900">
-                Syed Ali Azzam, Co-Founder & CEO
-              </p>
-            </div>
           </div>
 
           {/* Right Image */}

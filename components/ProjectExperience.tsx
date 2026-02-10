@@ -54,7 +54,7 @@ export default function ProjectExperience() {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-8 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-16">
           Some of our project experience:
