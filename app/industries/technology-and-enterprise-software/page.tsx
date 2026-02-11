@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import TechHeader from "@/components/industries/tech/Header";
 import TechHero from "@/components/industries/tech/Hero";
 import WhyGenerativeAI from "@/components/industries/tech/WhyGenerativeAI";
-import techindustriesSection from "@/components/industries/tech/techindustriesSection";
+// import techindustriesSection from "@/components/industries/tech/techindustriesSection";
 import ScheduleCTA from "@/components/industries/tech/ScheduleCTA";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/tech/WhyChooseUs";
@@ -18,7 +18,7 @@ export default function Home() {
       <TechHeader />
       <TechHero />
       <WhyGenerativeAI />
-      <techindustriesSection />
+      {/* <techindustriesSection /> */}
       <WhoWeServe />
       <TrustedBrands />
       {/* <ScheduleCTA /> */}
