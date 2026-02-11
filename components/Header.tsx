@@ -36,28 +36,28 @@ const services = [
     title: "AI Workflow Automation",
     href: "/services/ai-workflow-automation",
   },
-  {
-    title: "LLMOps service",
-    href: "/services/llm-ops-service",
-  },
-  {
-    title: "Automation",
-    href: "#",
-  },
-  {
-    title: "Web Scraping",
-    href: "#",
-  },
+  // {
+  //   title: "LLMOps service",
+  //   href: "/services/llm-ops-service",
+  // },
+  // {
+  //   title: "Automation",
+  //   href: "#",
+  // },
+  // {
+  //   title: "Web Scraping",
+  //   href: "#",
+  // },
 ];
 
 const industries = [
   {
     title: "Technology & Enterprise Software",
-    href: "#",
+    href: "/industries/technology-and-enterprise-software",
   },
   {
     title: "Manufacturing, Industrial & Energy",
-    href: "#",
+    href: "/industries/manufacturing-industrial-and-energy",
   },
   {
     title: "Telecommunications",
@@ -97,14 +97,14 @@ const careers = [
     title: "Open Positions",
     href: "/careers/open-positions",
   },
-  {
-    title: "Life at PI",
-    href: "/careers/life-at-pi",
-  },
-  {
-    title: "Apply Now",
-    href: "/careers/apply-now",
-  },
+  // {
+  //   title: "Life at PI",
+  //   href: "/careers/life-at-pi",
+  // },
+  // {
+  //   title: "Apply Now",
+  //   href: "/careers/apply-now",
+  // },
 ];
 
 export default function Header() {

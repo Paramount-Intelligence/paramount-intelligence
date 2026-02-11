@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function LLMHero() {
+export default function TechHero() {
   return (
     <section className="relative py-16 overflow-hidden min-h-[65vh] flex items-center">
       {/* Background Image */}
@@ -22,11 +22,12 @@ export default function LLMHero() {
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-              LLM Ops service
+              Engineering Intelligent, Scalable Software Platforms
             </h1>
             <p className="text-sm text-black font-semibold leading-relaxed max-w-lg">
-              Efficiently optimize, scale, and manage your Large Language Models
-              with tailored LLM Ops solutions
+              Technology and enterprise software platforms are evolving into
+              intelligent systems. We help organizations engineer them for scale
+              and reliability.
             </p>
             <Link
               href="/contact"
