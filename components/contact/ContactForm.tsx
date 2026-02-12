@@ -21,7 +21,7 @@ export default function ContactForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -31,20 +31,30 @@ export default function ContactForm() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
-
-    // Simulate form submission
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      setSubmitStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        company: "",
-        phone: "",
-        subject: "",
-        message: "",
+      const res = await fetch("/api/send-contact-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
+
+      const result = await res.json();
+      if (res.ok && result.success) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          company: "",
+          phone: "",
+          subject: "",
+          message: "",
+        });
+      } else {
+        console.error("Contact form error:", result);
+        setSubmitStatus("error");
+      }
     } catch (error) {
+      console.error("Contact form submission failed:", error);
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);

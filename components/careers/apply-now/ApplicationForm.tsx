@@ -22,7 +22,7 @@ export default function ApplicationForm() {
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    >,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -64,7 +64,7 @@ export default function ApplicationForm() {
 
       if (response.ok) {
         setMessage(
-          "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days. A confirmation email has been sent to your email address."
+          "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days. A confirmation email has been sent to your email address.",
         );
         setFormData({
           firstName: "",
@@ -80,7 +80,7 @@ export default function ApplicationForm() {
         });
       } else {
         setMessage(
-          `❌ Error submitting application: ${data.message || "Please try again later."}`
+          `❌ Error submitting application: ${data.message || "Please try again later."}`,
         );
       }
     } catch (error) {
