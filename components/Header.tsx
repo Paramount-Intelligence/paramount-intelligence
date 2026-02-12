@@ -61,34 +61,34 @@ const industries = [
   },
   {
     title: "Telecommunications",
-    href: "#",
+    href: "/industries/telecommunications",
   },
   {
     title: "Fintech & Digital Payments",
-    href: "#",
+    href: "/industries/fintech-and-digital-payments",
   },
   {
     title: "B2B Enterprise Solutions",
-    href: "#",
+    href: "/industries/b2b-enterprise-solutions",
   },
   {
     title: "Digital Lifestyle & Entertainment",
-    href: "#",
+    href: "/industries/digital-lifestyle-and-entertainment",
   },
   {
     title: "Mobility, Ride-Hailing & Delivery",
-    href: "#",
+    href: "/industries/mobility-ride-hailing-and-delivery",
   },
   {
     title: "E-commerce & Marketplaces",
-    href: "#",
+    href: "/industries/e-commerce-and-marketplaces",
   },
 ];
 
 const insights = [
   {
     title: "Blog",
-    href: "#",
+    href: "/blog",
   },
 ];
 

@@ -6,7 +6,8 @@ export default function TrustedBrands() {
     | "Donaldson"
     | "Veon"
     | "Alibaba"
-    | "Bore and Bore";
+    | "Bore and Bore"
+    | "Davidson";
 
   const brands: { name: BrandName; logo: string }[] = [
     {
@@ -17,10 +18,11 @@ export default function TrustedBrands() {
     { name: "Veon", logo: "/images/veon_logo.svg" },
     { name: "Alibaba", logo: "/images/alibaba-logo.png" },
     { name: "Bore and Bore", logo: "/images/BnB-logo.png" },
+    { name: "Davidson", logo: "/images/davidson-logo.png" },
   ];
 
   // Duplicate the brands array multiple times for seamless infinite looping
-  const duplicatedBrands = [...brands, ...brands, ...brands, ...brands];
+  const duplicatedBrands = [...brands, ...brands, ...brands, ...brands, ...brands, ...brands];
 
   return (
     <section className="py-4 bg-gray-50 overflow-hidden">
@@ -61,11 +63,12 @@ export default function TrustedBrands() {
                 Veon: "https://www.veon.com/",
                 Alibaba: "https://www.alibaba.com/",
                 "Bore and Bore": "https://boreandbore.com/",
+                Davidson: "https://www.davidson.group/",
               };
               return (
                 <div
                   key={index}
-                  className="shrink-0 w-1/3 flex items-center justify-center px-8"
+                  className="shrink-0 w-1/4 flex items-center justify-center px-8"
                 >
                   <a
                     href={brandLinks[brand.name]}
@@ -78,10 +81,11 @@ export default function TrustedBrands() {
                       alt={brand.name}
                       width={150}
                       height={50}
-                      className={`w-auto object-contain ${
-                        brand.name === "Veon" || brand.name === "Alibaba"
-                          ? "h-8"
-                          : "h-12"
+                      priority={brand.name === "Davidson"}
+                      className={`w-auto h-auto max-w-full object-contain ${
+                        brand.name === "Veon" || brand.name === "Alibaba" || brand.name === "Davidson"
+                          ? "max-h-8"
+                          : "max-h-12"
                       }`}
                     />
                   </a>

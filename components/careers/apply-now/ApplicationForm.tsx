@@ -39,25 +39,56 @@ export default function ApplicationForm() {
     setIsSubmitting(true);
     setMessage("");
 
-    // Simulate API call
-    setTimeout(() => {
-      setMessage(
-        "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days."
-      );
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        position: "",
-        linkedIn: "",
-        portfolio: "",
-        experience: "",
-        coverLetter: "",
-        resume: null,
+    try {
+      // Build FormData for multipart upload (to include resume file)
+      const payload = new FormData();
+      payload.append("firstName", formData.firstName);
+      payload.append("lastName", formData.lastName);
+      payload.append("email", formData.email);
+      payload.append("phone", formData.phone);
+      payload.append("position", formData.position);
+      payload.append("experience", formData.experience);
+      if (formData.linkedIn) payload.append("linkedIn", formData.linkedIn);
+      if (formData.portfolio) payload.append("portfolio", formData.portfolio);
+      payload.append("coverLetter", formData.coverLetter);
+      if (formData.resume) {
+        payload.append("resume", formData.resume as File);
+      }
+
+      const response = await fetch("/api/send-application-email", {
+        method: "POST",
+        body: payload,
       });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setMessage(
+          "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days. A confirmation email has been sent to your email address."
+        );
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          position: "",
+          linkedIn: "",
+          portfolio: "",
+          experience: "",
+          coverLetter: "",
+          resume: null,
+        });
+      } else {
+        setMessage(
+          `❌ Error submitting application: ${data.message || "Please try again later."}`
+        );
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setMessage("❌ Error submitting application. Please try again later.");
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   return (

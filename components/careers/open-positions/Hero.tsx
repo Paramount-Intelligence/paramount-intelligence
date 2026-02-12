@@ -1,9 +1,21 @@
+import Image from "next/image";
+
 export default function OpenPositionsHero() {
   return (
     <section className="relative py-16 md:py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 overflow-hidden">
       {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.4)_1px,transparent_1px)] bg-[size:30px_30px]" />
+      </div> */}
+
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/services/hero.png"
+          alt="Background"
+          fill
+          className="object-cover scale-x-[-1]"
+          priority
+        />
       </div>
 
       {/* Gradient orbs */}
@@ -12,14 +24,14 @@ export default function OpenPositionsHero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight">
             Open
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">
+            <span className="block bg-clip-text text-[#17599d]">
               Positions
             </span>
           </h1>
 
-          <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">
+          <p className="text-xl md:text-2xl text-gray-900 font-semibold leading-relaxed mb-8">
             Join a team of innovators building the future of AI. We're looking
             for talented individuals who are passionate about pushing the
             boundaries of what's possible.
