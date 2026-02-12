@@ -12,7 +12,7 @@ export default function OpenPositionsPage() {
       <OpenPositionsHeader />
       <OpenPositionsHero />
       <JobListings />
-      <Benefits />
+      {/* <Benefits /> */}
       <Footer />
     </div>
   );

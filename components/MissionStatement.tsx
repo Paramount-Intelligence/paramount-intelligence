@@ -3,7 +3,7 @@ import { Linkedin } from "lucide-react";
 
 export default function MissionStatement() {
   return (
-    <section className="pt-4 min-h-[70vh] bg-gray-50 items-center">
+    <section className="pt-16 min-h-[70vh] bg-gray-50 items-center">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Side - Founders Image */}
