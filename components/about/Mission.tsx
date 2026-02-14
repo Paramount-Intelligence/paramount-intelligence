@@ -65,9 +65,9 @@ export default function Mission() {
           </div>
         </div>
 
-        <div className=" mt-24 grid lg:grid-cols-2 gap-12 items-center">
+        {/* <div className=" mt-24 grid lg:grid-cols-2 gap-12 items-center"> */}
           {/* Right Image */}
-          <div className="relative h-90 lg:h-115 rounded-2xl overflow-hidden shadow-xl">
+          {/* <div className="relative h-90 lg:h-115 rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/images/aliazzam-s.png"
               alt="Paramount Intelligence Founders"
@@ -97,10 +97,10 @@ export default function Mission() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Left Content */}
-          <div className="space-y-6">
+          {/* <div className="space-y-6">
             <p className="text-lg text-gray-700 leading-relaxed text-justify">
               Abdullah helps leadership teams translate business ambition into
               structured, measurable performance systems that drive clarity,
@@ -120,8 +120,8 @@ export default function Mission() {
               associated with Deloitte and large organizations such as Saudi
               Aramco.
             </p>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
       </div>
     </section>
   );

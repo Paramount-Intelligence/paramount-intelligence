@@ -15,16 +15,16 @@ export default function AboutHero() {
         <source src="/videos/background-video.mp4" type="video/mp4" />
       </video>
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 z-0"></div>
+      <div className="absolute inset-0 z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-whiteleading-tight">
+            <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black">
               Building Technology That Scales in the Real World
             </h1>
-            <p className="text-sm text-white font-semibold leading-relaxed max-w-lg">
+            <p className="text-sm text-gray-700 font-semibold leading-relaxed max-w-lg">
               Paramount Intelligence partners with startups, scale-ups, and
               enterprises to translate strategic ambition into technical
               reality.
