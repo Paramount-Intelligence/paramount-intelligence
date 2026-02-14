@@ -9,13 +9,15 @@ export default function OpenPositionsHero() {
       </div> */}
 
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/services/hero.png"
-          alt="Background"
-          fill
-          className="object-cover scale-x-[-1]"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
+        >
+          <source src="/videos/background-video.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Gradient orbs */}
@@ -26,9 +28,7 @@ export default function OpenPositionsHero() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight">
             Open
-            <span className="block bg-clip-text text-[#17599d]">
-              Positions
-            </span>
+            <span className="block bg-clip-text text-[#17599d]">Positions</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-900 font-semibold leading-relaxed mb-8">

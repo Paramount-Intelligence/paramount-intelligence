@@ -108,7 +108,7 @@ export default function JobListings() {
     <section className="py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl text-center font-bold text-gray-900 mb-6">
             Current Openings
           </h2>
 
@@ -120,7 +120,7 @@ export default function JobListings() {
                 onClick={() => setFilter(dept)}
                 className={`px-6 py-2 rounded-full font-medium transition-all ${
                   filter === dept
-                    ? "bg-blue-600 text-white shadow-lg"
+                    ? "bg-[#17599d] text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
@@ -135,7 +135,7 @@ export default function JobListings() {
           {filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300"
+              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                 <div>
@@ -143,7 +143,7 @@ export default function JobListings() {
                     {job.title}
                   </h3>
                   <div className="flex flex-wrap gap-3">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-[#17599d] text-white px-3 py-1 rounded-full text-sm font-medium">
                       {job.department}
                     </span>
                     <span className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-300">
@@ -173,7 +173,7 @@ export default function JobListings() {
 
               <Link
                 href="/careers/apply-now"
-                className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-8 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg hover:shadow-xl"
+                className="inline-block bg-[#17599d] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#17599d] transition-all shadow-lg hover:shadow-xl"
               >
                 Apply Now
               </Link>

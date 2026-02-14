@@ -7,7 +7,9 @@ export default function TrustedBrands() {
     | "Veon"
     | "Alibaba"
     | "Bore and Bore"
-    | "Davidson";
+    | "Davidson"
+    | "Aramco"
+    | "Deloitte";
 
   const brands: { name: BrandName; logo: string }[] = [
     {
@@ -19,6 +21,8 @@ export default function TrustedBrands() {
     { name: "Alibaba", logo: "/images/alibaba-logo.png" },
     { name: "Bore and Bore", logo: "/images/BnB-logo.png" },
     { name: "Davidson", logo: "/images/davidson-logo.png" },
+    { name: "Aramco", logo: "/images/aramco-logo.png" },
+    { name: "Deloitte", logo: "/images/deloitte.png" },
   ];
 
   // Duplicate the brands array multiple times for seamless infinite looping
@@ -28,8 +32,8 @@ export default function TrustedBrands() {
     <section className="py-4 bg-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header with Rating */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-          <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
+          <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-2">
             Trusted by teams at world-renowned brands
           </h2>
           {/* <div className="flex items-center gap-3 bg-gray-100 px-4 py-2 rounded-full border border-gray-200">
@@ -64,6 +68,8 @@ export default function TrustedBrands() {
                 Alibaba: "https://www.alibaba.com/",
                 "Bore and Bore": "https://boreandbore.com/",
                 Davidson: "https://www.davidson.group/",
+                Aramco: "https://www.aramco.com/",
+                Deloitte: "https://www2.deloitte.com/global/en.html",
               };
               return (
                 <div

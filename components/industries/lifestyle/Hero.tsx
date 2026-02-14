@@ -3,16 +3,18 @@ import Image from "next/image";
 
 export default function LifestyleHero() {
   return (
-    <section className="relative py-16 overflow-hidden min-h-[65vh] flex items-center">
+    <section className="relative py-16 overflow-hidden min-h-[55vh] flex items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/services/hero.png"
-          alt="Background"
-          fill
-          className="object-cover scale-x-[-1]"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
+        >
+          <source src="/videos/background-video.mp4" type="video/mp4" />
+        </video>
       </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0 z-0"></div>
@@ -30,7 +32,7 @@ export default function LifestyleHero() {
               under constant demand.
             </p>
             <Link
-              href="/contact"
+              href="https://calendly.com/syedaliazzam"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
               Book a free consultation
