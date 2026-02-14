@@ -4,13 +4,15 @@ export default function ApplyNowHero() {
   return (
     <section className="relative py-16 md:py-24 bg-gradient-to-br from-green-900 via-teal-900 to-blue-900 overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/services/hero.png"
-          alt="Background"
-          fill
-          className="object-cover scale-x-[-1]"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
+        >
+          <source src="/videos/background-video.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Gradient orbs */}
@@ -21,9 +23,7 @@ export default function ApplyNowHero() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-black mb-6 leading-tight">
             Apply
-            <span className="block bg-clip-text text-[#17599d]">
-              Now
-            </span>
+            <span className="block bg-clip-text text-[#17599d]">Now</span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-900 font-semibold leading-relaxed mb-8">

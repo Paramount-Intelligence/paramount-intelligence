@@ -2,7 +2,7 @@
 
 export default function Hero() {
   return (
-    <div className="relative mt-16 min-h-[70vh] overflow-hidden">
+    <div className="relative mt-20 min-h-[70vh] overflow-hidden">
       {/* Video Background */}
       <video
         autoPlay
@@ -43,10 +43,15 @@ export default function Hero() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-12">
-                <button className="bg-[#17599d] text-sm text-white px-4 py-2 font-semibold hover:bg-gray-800 rounded-sm transition-colors">
+              <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                <a
+                  href="https://calendly.com/syedaliazzam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[#17599d] text-sm text-white px-4 py-2 font-semibold hover:bg-gray-800 rounded-sm transition-colors text-center"
+                >
                   Book a free consultation
-                </button>
+                </a>
               </div>
             </div>
           </div>

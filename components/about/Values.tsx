@@ -6,7 +6,7 @@ export default function Values() {
         <div className="mb-10">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Mission */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-4">Mission</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 To translate strategic business ambition into scalable technical
@@ -15,7 +15,7 @@ export default function Values() {
             </div>
 
             {/* Vision */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-4">Vision</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
                 To be the most trusted partner for organizations building
@@ -27,13 +27,13 @@ export default function Values() {
 
         {/* Core Values Section */}
         <div>
-          <h2 className="text-4xl md:text-5xl text-black font-bold text-center mb-10">
+          <h2 className="text-4xl md:text-5xl text-black font-bold text-center mt-20 mb-12">
             Our Core Values
           </h2>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Own the Outcome */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-3">
                 Own the Outcome
               </h3>
@@ -44,7 +44,7 @@ export default function Values() {
             </div>
 
             {/* Engineer for Reality */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-3">
                 Engineer for Reality
               </h3>
@@ -56,7 +56,7 @@ export default function Values() {
             </div>
 
             {/* Lead with Expertise */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-3">
                 Lead with Expertise
               </h3>
@@ -67,7 +67,7 @@ export default function Values() {
             </div>
 
             {/* Partner with Transparency */}
-            <div className="border-2 border-[#17599d] rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
+            <div className="border-2 border-[#17599d] text-center rounded-lg p-6 space-y-4 hover:shadow-lg transition-shadow duration-300">
               <h3 className="text-2xl font-bold text-black mb-3">
                 Partner with Transparency
               </h3>
