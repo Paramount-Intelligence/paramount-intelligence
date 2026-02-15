@@ -20,11 +20,12 @@ export default function MobilityHero() {
       <div className="absolute inset-0 z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-              Powering Real-Time, High-Volume Mobility Operations
+              Powering Real-Time, <br />
+              High-Volume Mobility Operations
             </h1>
             <p className="text-sm text-black font-semibold leading-relaxed max-w-lg">
               Mobility platforms depend on real-time systems to balance demand,
@@ -32,7 +33,7 @@ export default function MobilityHero() {
               perform reliably at scale.
             </p>
             <Link
-              href="https://calendly.com/syedaliazzam"
+              href="https://calendly.com/syedaliazzam/advisory?back=1"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
               Book a free consultation

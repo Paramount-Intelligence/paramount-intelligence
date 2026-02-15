@@ -14,7 +14,7 @@ interface MeetOurClientProps {
 export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
   return (
     <section className="py-12 bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-8">
           Meet our client
         </h2>

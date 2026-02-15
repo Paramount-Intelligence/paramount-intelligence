@@ -7,7 +7,7 @@ import FintechHero from "@/components/industries/fintech/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/fintech/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/fintech/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/fintech/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/fintech/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />

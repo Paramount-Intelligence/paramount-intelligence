@@ -7,7 +7,7 @@ import LifestyleHero from "@/components/industries/lifestyle/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/lifestyle/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/lifestyle/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/lifestyle/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/lifestyle/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />

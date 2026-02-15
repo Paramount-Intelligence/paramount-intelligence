@@ -7,7 +7,7 @@ import MobilityHero from "@/components/industries/mobility/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/mobility/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/mobility/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/mobility/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/mobility/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />

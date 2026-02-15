@@ -1,6 +1,44 @@
 "use client";
 
+// MobileDropdown component for collapsible mobile menu sections
 import * as React from "react";
+type MobileDropdownProps = {
+  label: React.ReactNode;
+  children: React.ReactNode;
+};
+
+function MobileDropdown(props: MobileDropdownProps) {
+  const { label, children } = props;
+  const [open, setOpen] = React.useState(false);
+  return (
+    <div>
+      <button
+        type="button"
+        className="w-full flex items-center justify-between text-sm text-gray-700 hover:text-gray-900 font-medium py-1 px-0 focus:outline-none"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open ? true : false}
+      >
+        <span>{label}</span>
+        <svg
+          className={`w-4 h-4 ml-2 transition-transform ${open ? "rotate-90" : ""}`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+      {open && <div className="pl-2 pb-2">{children}</div>}
+    </div>
+  );
+}
+
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "lucide-react";
@@ -257,46 +295,70 @@ export default function Header() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-gray-100 py-4">
-            <nav className="flex flex-col space-y-4">
-              <Link
-                href="/services"
-                className="text-sm text-gray-700 hover:text-gray-900"
-              >
-                Services
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-gray-700 hover:text-gray-900"
-              >
-                Industries
-              </Link>
+            <nav className="flex flex-col space-y-2">
+              {/* Services Dropdown */}
+              <MobileDropdown label="Services">
+                {services.map((service) => (
+                  <Link
+                    key={service.title}
+                    href={service.href}
+                    className="block pl-4 py-1 text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    {service.title}
+                  </Link>
+                ))}
+              </MobileDropdown>
+
+              {/* Industries Dropdown */}
+              <MobileDropdown label="Industries">
+                {industries.map((industry) => (
+                  <Link
+                    key={industry.title}
+                    href={industry.href}
+                    className="block pl-4 py-1 text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    {industry.title}
+                  </Link>
+                ))}
+              </MobileDropdown>
+
               <Link
                 href="/case-studies"
-                className="text-sm text-gray-700 hover:text-gray-900"
+                className="text-sm text-gray-700 hover:text-gray-900 py-1"
               >
                 Case studies
               </Link>
               <Link
                 href="/about-us"
-                className="text-sm text-gray-700 hover:text-gray-900"
+                className="text-sm text-gray-700 hover:text-gray-900 py-1"
               >
                 About us
               </Link>
-              <Link
-                href="#"
-                className="text-sm text-gray-700 hover:text-gray-900"
-              >
-                Insights
-              </Link>
-              <Link
-                href="#"
-                className="text-sm text-gray-700 hover:text-gray-900"
-              >
-                Career
-              </Link>
+              <MobileDropdown label="Insights">
+                {insights.map((insight) => (
+                  <Link
+                    key={insight.title}
+                    href={insight.href}
+                    className="block pl-4 py-1 text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    {insight.title}
+                  </Link>
+                ))}
+              </MobileDropdown>
+              <MobileDropdown label="Career">
+                {careers.map((career) => (
+                  <Link
+                    key={career.title}
+                    href={career.href}
+                    className="block pl-4 py-1 text-sm text-gray-700 hover:text-gray-900"
+                  >
+                    {career.title}
+                  </Link>
+                ))}
+              </MobileDropdown>
               <Link
                 href="/contact-us"
-                className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center"
+                className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center mt-2"
               >
                 Contact us
               </Link>
