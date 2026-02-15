@@ -18,9 +18,10 @@ export default function Footer() {
       },
     ],
     business: [
+      { name: "Industries", href: "/industries" },
       { name: "Services", href: "/services" },
       { name: "Case studies", href: "/case-studies" },
-      { name: "AI Newsletter", href: "/newsletter" },
+      { name: "Hire Us through Toptal", href: "#" },
     ],
     social: [
       {
@@ -32,9 +33,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0a1628] text-gray-400 py-12">
+    <footer className="bg-[#0a1628] text-gray-400 pt-4 pb-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-4">
           {/* Company */}
           <div>
             <h3 className="text-white font-semibold text-lg mb-4">Company</h3>
@@ -117,7 +118,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8">
+        <div className="border-t border-gray-700 pt-4">
           <p className="text-sm text-gray-500 text-center">
             All rights reserved
           </p>

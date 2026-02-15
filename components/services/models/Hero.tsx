@@ -31,7 +31,7 @@ export default function LLMHero() {
               accelerate execution, and improve decision quality.
             </p>
             <Link
-              href="https://calendly.com/syedaliazzam"
+              href="https://calendly.com/syedaliazzam/advisory?back=1"
               className="inline-block text-xs bg-[#17599d] text-white px-16 py-2 font-semibold hover:bg-[#144a75] transition-colors"
             >
               Book a free consultation

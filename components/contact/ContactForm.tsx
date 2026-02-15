@@ -262,7 +262,7 @@ export default function ContactForm() {
                     href="tel:+16059712580"
                     className="text-gray-600 hover:text-[#17599d] transition-colors"
                   >
-                    +16059712580
+                    +1 (605) 971-2580
                   </a>
                 </div>
               </div>
@@ -276,9 +276,7 @@ export default function ContactForm() {
                     Office
                   </h3>
                   <p className="text-gray-600">
-                    9838 57th Ave
-                    <br />
-                    Corona,
+                    9838 57th Ave, Corona,
                     <br />
                     New York (NY), 11373
                   </p>
@@ -296,7 +294,7 @@ export default function ContactForm() {
                 the opportunities and create a roadmap for success.
               </p>
               <a
-                href="#"
+                href="https://calendly.com/syedaliazzam/advisory?back=1"
                 className="inline-block bg-[#17599d] text-white px-6 py-3 font-semibold hover:bg-[#144a75] transition-colors"
               >
                 Schedule Consultation

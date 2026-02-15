@@ -7,7 +7,7 @@ import TelecomHero from "@/components/industries/telecom/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/telecom/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/telecom/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/telecom/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/telecom/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />

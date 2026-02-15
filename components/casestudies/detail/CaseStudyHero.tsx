@@ -9,7 +9,7 @@ interface CaseStudyHeroProps {
 export default function CaseStudyHero({ title, subtitle, heroImage }: CaseStudyHeroProps) {
   return (
     <section className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+      <div className="max-w-5xl mx-auto px-6 lg:px-12 xl:px-16">
         {/* Title */}
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           {title}

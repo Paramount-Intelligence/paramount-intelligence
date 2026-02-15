@@ -7,7 +7,7 @@ import B2bHero from "@/components/industries/b2b/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/b2b/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/b2b/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/b2b/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/b2b/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />

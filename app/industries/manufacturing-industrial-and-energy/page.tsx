@@ -7,7 +7,7 @@ import EnergyHero from "@/components/industries/energy/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/energy/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/energy/SoftwareProducts";
-import LLMServicesSection from "@/components/industries/energy/LLMServicesSection";
+import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/energy/AddAICapabilities";
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <LLMServicesSection />
+      <AIServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />
