@@ -35,7 +35,7 @@ export default function ServicesSection() {
                 : "text-gray-900 border-transparent hover:text-gray-600"
             }`}
           >
-            Hyper-personalization
+            Hyper-Customization
           </button>
           <button
             onClick={() => setActiveTab("decision-making")}
@@ -87,7 +87,7 @@ export default function ServicesSection() {
                   Hyper-Customization
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Hyper-personalization leverages integrated data and AI to
+                  Hyper-customization leverages integrated data and AI to
                   tailor customer experiences and internal operations. This
                   leads to stronger customer engagement, loyalty, and conversion
                   rates, while also enabling more relevant products and

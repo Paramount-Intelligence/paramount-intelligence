@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import TechHeader from "@/components/industries/tech/Header";
 import TechHero from "@/components/industries/tech/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/industries/tech/WhyChooseUs";
+import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/tech/SoftwareProducts";
 import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/tech/AddAICapabilities";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden bg-white">
       <Header />
-      <TechHeader />
+      {/* <TechHeader /> */}
       <TechHero />
       <SoftwareProducts />
       <TrustedBrands />

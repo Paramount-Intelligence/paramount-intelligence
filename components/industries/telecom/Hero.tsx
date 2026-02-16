@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import TelecomHeader from "@/components/industries/telecom/Header";
 
 export default function TelecomHero() {
   return (
-    <section className="relative py-16 overflow-hidden min-h-[55vh] flex items-center">
+    <section className="relative py-16 mt-12 overflow-hidden min-h-[55vh] items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video
@@ -18,6 +19,7 @@ export default function TelecomHero() {
       </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0 z-0"></div>
+      <TelecomHeader />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
         <div className="items-center">

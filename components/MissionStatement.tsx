@@ -30,7 +30,7 @@ export default function MissionStatement() {
                   </a>
                   <div>
                     <p className="text-sm font-semibold text-gray-900">
-                      Syed Ali Azzam
+                      Ali Azzam
                     </p>
                     <p className="text-xs text-gray-600">
                       CEO & Founding Partner at Paramount Intelligence
