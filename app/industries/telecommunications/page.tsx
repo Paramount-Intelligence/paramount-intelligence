@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import TelecomHeader from "@/components/industries/telecom/Header";
 import TelecomHero from "@/components/industries/telecom/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/industries/telecom/WhyChooseUs";
+import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/telecom/SoftwareProducts";
 import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/telecom/AddAICapabilities";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden bg-white">
       <Header />
-      <TelecomHeader />
+      {/* <TelecomHeader /> */}
       <TelecomHero />
       <SoftwareProducts />
       <TrustedBrands />

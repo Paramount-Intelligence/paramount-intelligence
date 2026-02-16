@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import FintechHeader from "@/components/industries/fintech/Header";
 import FintechHero from "@/components/industries/fintech/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/industries/fintech/WhyChooseUs";
+import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/fintech/SoftwareProducts";
 import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/fintech/AddAICapabilities";
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden bg-white">
       <Header />
-      <FintechHeader />
+      {/* <FintechHeader /> */}
       <FintechHero />
       <SoftwareProducts />
       <TrustedBrands />

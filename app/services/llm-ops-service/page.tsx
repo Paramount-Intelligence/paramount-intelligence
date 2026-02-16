@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import WhoWeServe from "@/components/services/ops/WhoWeServe";
+import WhoWeServe from "@/components/services/WhoWeServe";
 import ProjectExperience from "@/components/services/ops/ProjectExperience";
 import LatestArticles from "@/components/LatestArticles";
 import Footer from "@/components/Footer";
@@ -9,13 +9,13 @@ import WhyGenerativeAI from "@/components/services/ops/WhyGenerativeAI";
 import LLMServicesSection from "@/components/services/ops/LLMServicesSection";
 import ScheduleCTA from "@/components/services/ops/ScheduleCTA";
 import TrustedBrands from "@/components/services/ops/TrustedBrands";
-import WhyChooseUs from "@/components/services/ops/WhyChooseUs";
+import WhyChooseUs from "@/components/services/WhyChooseUs";
 
 export default function Home() {
   return (
     <div className="min-h-screen text-white overflow-x-hidden bg-white">
       <Header />
-      <LLMHeader />
+      {/* <LLMHeader /> */}
       <LLMHero />
       <WhyGenerativeAI />
       <LLMServicesSection />

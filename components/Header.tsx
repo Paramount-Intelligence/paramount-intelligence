@@ -16,7 +16,7 @@ function MobileDropdown(props: MobileDropdownProps) {
         type="button"
         className="w-full flex items-center justify-between text-sm text-gray-700 hover:text-gray-900 font-medium py-1 px-0 focus:outline-none"
         onClick={() => setOpen((v) => !v)}
-        aria-expanded={open ? true : false}
+        aria-expanded={open}
       >
         <span>{label}</span>
         <svg
@@ -126,7 +126,7 @@ const industries = [
 const insights = [
   {
     title: "Blog",
-    href: "/blog",
+    href: "https://automate-with-ai.beehiiv.com/",
   },
 ];
 

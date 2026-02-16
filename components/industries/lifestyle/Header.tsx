@@ -3,22 +3,22 @@ import Link from "next/link";
 
 export default function LifestyleHeader() {
   return (
-    <header className="w-full bg-white py-6 mt-20">
+    <header className="relative w-full py-6 z-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <nav className="flex items-center space-x-2 text-sm text-gray-500">
+        <nav className="flex items-center space-x-2 text-sm text-gray-900 font-bold">
           <Link href="/" className="hover:text-[#17599d] transition-colors">
             Home
           </Link>
           <span>/</span>
           <Link
-            href="/services"
+            href="/industries"
             className="hover:text-[#17599d] transition-colors"
           >
             Industries
           </Link>
           <span>/</span>
           <Link
-            href="/services/custom-llm-based-software"
+            href="/industries/digital-lifestyle-and-entertainment"
             className="hover:text-[#17599d] transition-colors"
           >
             Digital Lifestyle & Entertainment

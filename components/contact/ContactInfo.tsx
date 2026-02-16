@@ -9,9 +9,9 @@ export default function ContactInfo() {
             Why Choose Paramount Intelligence?
           </h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            We combine AI strategy, advisory, and hands-on engineering to design
-            and build production-ready systems that improve operational
-            efficiency and scale with your business.
+            We specialize in transforming businesses through advanced
+            technology. Here’s why partnering with us is the right choice for
+            your organization.
           </p>
         </div>
 
@@ -21,12 +21,12 @@ export default function ContactInfo() {
               <Users className="w-8 h-8 text-[#17599d]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Expert Team
+              Proven Expertise
             </h3>
             <p className="text-gray-600">
-              Our team of AI specialists and engineers brings years of
-              experience in delivering production-ready AI solutions across
-              industries.
+              We combine strategy, advisory, and hands-on engineering to design
+              and implement production-ready solutions that optimize operations
+              and support long-term growth.
             </p>
           </div>
 
@@ -35,11 +35,11 @@ export default function ContactInfo() {
               <Globe className="w-8 h-8 text-[#17599d]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Global Reach
+              Global Experience
             </h3>
             <p className="text-gray-600">
-              We work with organizations worldwide, from startups to Fortune
-              1000 companies, delivering impactful AI and automation solutions.
+              From startups to Fortune 1000 companies, we have a track record of
+              delivering impactful solutions across industries globally.
             </p>
           </div>
 
@@ -48,11 +48,11 @@ export default function ContactInfo() {
               <Clock className="w-8 h-8 text-[#17599d]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-3">
-              Rapid Response
+              Strategic, Hands-On Support
             </h3>
             <p className="text-gray-600">
-              We understand time is critical. Our team responds quickly to
-              inquiries and works efficiently to deliver results on schedule.
+              Our approach isn’t just theoretical, we execute. We work closely
+              with you from strategy through to implementation.
             </p>
           </div>
         </div>
@@ -62,8 +62,10 @@ export default function ContactInfo() {
             Ready to Transform Your Business?
           </h3>
           <p className="text-xl mb-8 text-gray-100 max-w-2xl mx-auto">
-            Let's work together to apply AI and automation to drive measurable
-            business outcomes for your organization.
+            Let’s work together to apply intelligent systems, data-driven
+            insights, cloud solutions, and automation that will drive
+            sustainable and scalable business outcomes. We look forward to being
+            your trusted partner.
           </p>
           <a
             href="#"

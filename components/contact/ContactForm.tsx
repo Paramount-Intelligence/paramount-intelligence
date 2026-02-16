@@ -289,9 +289,11 @@ export default function ContactForm() {
                 Book a Free Consultation
               </h3>
               <p className="text-gray-600 mb-6">
-                Schedule a complimentary 30-minute consultation to discuss your
-                AI and automation needs. Our experts will help you understand
-                the opportunities and create a roadmap for success.
+                Schedule a 30-minute consultation to explore how intelligent
+                systems, data analytics, cloud solutions, and automation can
+                benefit your organization. Our experts will guide you through
+                the opportunities, challenges, and create a clear roadmap for
+                success.
               </p>
               <a
                 href="https://calendly.com/syedaliazzam/advisory?back=1"

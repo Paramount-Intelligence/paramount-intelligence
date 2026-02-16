@@ -25,14 +25,14 @@ export default function TrustedBrands() {
     { name: "Deloitte", logo: "/images/deloitte.png" },
   ];
 
-  // Duplicate the brands array multiple times for seamless infinite looping
-  const duplicatedBrands = [...brands, ...brands, ...brands, ...brands, ...brands, ...brands];
+  // Duplicate the brands array for seamless infinite looping
+  const duplicatedBrands = [...brands, ...brands];
 
   return (
-    <section className="py-4 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        {/* Header with Rating */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-6">
+    <section className="py-4 bg-gray-50">
+      {/* Header with Rating */}
+      <div className="max-w-7xl mx-auto px-6 mb-6">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
           <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-2">
             Trusted by teams at world-renowned brands
           </h2>
@@ -56,49 +56,46 @@ export default function TrustedBrands() {
             </div>
           </div> */}
         </div>
+      </div>
 
-        {/* Scrolling Brand Logos */}
-        <div className="relative">
-          <div className="flex animate-scroll">
-            {duplicatedBrands.map((brand, index) => {
-              const brandLinks: Record<BrandName, string> = {
-                Gratia: "https://gogratia.com/",
-                Donaldson: "https://www.donaldson.com/en-us/",
-                Veon: "https://www.veon.com/",
-                Alibaba: "https://www.alibaba.com/",
-                "Bore and Bore": "https://boreandbore.com/",
-                Davidson: "https://www.davidson.group/",
-                Aramco: "https://www.aramco.com/",
-                Deloitte: "https://www2.deloitte.com/global/en.html",
-              };
-              return (
-                <div
-                  key={index}
-                  className="shrink-0 w-1/4 flex items-center justify-center px-8"
+      {/* Scrolling Brand Logos - Full Width */}
+      <div className="relative overflow-hidden w-full">
+        <div className="flex gap-24 animate-scroll">
+          {duplicatedBrands.map((brand, index) => {
+            const brandLinks: Record<BrandName, string> = {
+              Gratia: "https://gogratia.com/",
+              Donaldson: "https://www.donaldson.com/en-us/",
+              Veon: "https://www.veon.com/",
+              Alibaba: "https://www.alibaba.com/",
+              "Bore and Bore": "https://boreandbore.com/",
+              Davidson: "https://www.davidson.group/",
+              Aramco: "https://www.aramco.com/",
+              Deloitte: "https://www2.deloitte.com/global/en.html",
+            };
+            return (
+              <div
+                key={index}
+                className="flex-shrink-0 flex items-center justify-center w-40"
+              >
+                <a
+                  href={brandLinks[brand.name]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={brand.name}
+                  className="block"
                 >
-                  <a
-                    href={brandLinks[brand.name]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={brand.name}
-                  >
-                    <Image
-                      src={brand.logo}
-                      alt={brand.name}
-                      width={150}
-                      height={50}
-                      priority={brand.name === "Davidson"}
-                      className={`w-auto h-auto max-w-full object-contain ${
-                        brand.name === "Veon" || brand.name === "Alibaba" || brand.name === "Davidson"
-                          ? "max-h-8"
-                          : "max-h-12"
-                      }`}
-                    />
-                  </a>
-                </div>
-              );
-            })}
-          </div>
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={150}
+                    height={60}
+                    priority={index < 8}
+                    className="w-auto h-12 max-w-full object-contain transition-all duration-300"
+                  />
+                </a>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

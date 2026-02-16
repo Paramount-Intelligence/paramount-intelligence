@@ -5,13 +5,13 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { name: "About us", href: "/about-us" },
-      { name: "Blog", href: "#" },
-      { name: "Privacy Policy", href: "#" },
+      { name: "Blog", href: "https://automate-with-ai.beehiiv.com/" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Contact us", href: "/contact-us" },
     ],
     candidates: [
-      { name: "For Candidates", href: "#" },
-      { name: "Candidates: Frequently Asked Questions", href: "#" },
+      { name: "For Candidates", href: "/for-candidates" },
+      { name: "Candidates: Frequently Asked Questions", href: "/faq" },
       {
         name: "Remote practices for better work-life balance",
         href: "#",
