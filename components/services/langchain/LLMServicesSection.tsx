@@ -90,6 +90,7 @@ export default function LLMServicesSection() {
           "We uncover patterns, correlations, and trends that reveal hidden insights and opportunities.",
         items: [
           "Applying statistical and machine learning techniques to analyze complex datasets.",
+          "Designing and managing scalable web scraping pipelines and automated data extraction frameworks to build structured, high-quality datasets",
           "Supporting fraud detection, risk assessment, and customer segmentation initiatives.",
           "Performing association and market basket analysis to inform strategy.",
           "Creating structured knowledge graphs to enhance search, recommendation, and AI systems.",

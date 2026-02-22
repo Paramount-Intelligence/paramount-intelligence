@@ -4,36 +4,43 @@ export default function HiringProcess() {
       number: "1",
       title: "Application Review",
       description:
-        "Our team reviews your application and resume within 3-5 business days.",
-      time: "3-5 days",
+        "We review your background, experience, and problem-solving exposure to understand how your skills align with our consulting and engineering work.",
+      time: "3–5 Business Days",
     },
     {
       number: "2",
-      title: "Initial Screening",
+      title: " Initial Conversation",
       description:
-        "A brief conversation with our HR team to discuss your background and interests.",
-      time: "30 minutes",
+        "A focused discussion to understand your experience, career goals, and expectations, and to provide clarity on our work, standards, and environment.",
+      time: "15–30 Minutes",
     },
     {
       number: "3",
-      title: "Technical Interview",
+      title: "Practical or Technical Assessment",
       description:
-        "Deep dive into your technical skills and problem-solving approach with our engineers.",
+        "Depending on the role, you will complete a structured assessment reflecting real-world scenarios across AI, data, cloud, automation, or platform engineering.",
       time: "1-2 hours",
     },
     {
       number: "4",
-      title: "Team Meet",
+      title: "Technical or Strategy Interview",
       description:
-        "Meet potential team members and learn more about our culture and projects.",
-      time: "1 hour",
+        "A deep discussion with senior engineers or consultants to evaluate structured thinking, technical depth, and problem-solving approach.",
+      time: "30–60 Minutes",
+    },
+    {
+      number: "4",
+      title: "Team Interaction",
+      description:
+        "Meet potential team members and discuss how you collaborate, communicate, and operate within high-impact project environments.",
+      time: "45–60 Minutes",
     },
     {
       number: "5",
       title: "Final Decision",
       description:
-        "We'll make our decision and extend an offer if you're the right fit!",
-      time: "2-3 days",
+        "We provide clear feedback and extend an offer if there is strong mutual alignment.",
+      time: "2–3 Business Days",
     },
   ];
 
@@ -45,7 +52,8 @@ export default function HiringProcess() {
             Our Hiring Process
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A transparent, efficient process designed to find the perfect match
+            A structured, transparent process designed to assess capability,
+            alignment, and long-term potential.
           </p>
         </div>
 
@@ -79,8 +87,8 @@ export default function HiringProcess() {
 
         <div className="mt-12 text-center">
           <p className="text-gray-600 text-lg">
-            💡 <strong>Pro Tip:</strong> The entire process typically takes 2-3
-            weeks from application to offer
+            💡 <strong>Note:</strong> The full process typically spans 2–3
+            weeks from application to final decision.
           </p>
         </div>
       </div>

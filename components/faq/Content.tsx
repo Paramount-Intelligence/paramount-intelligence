@@ -8,60 +8,59 @@ export default function FAQContent() {
 
   const faqs = [
     {
-      question: "What types of roles are available at Paramount Intelligence?",
+      question: "What roles are available at Paramount Intelligence?",
       answer:
-        "At Paramount Intelligence, we offer a range of roles across multiple service areas, including AI Solutions & Engineering, AI Strategy & Consulting, Data Analytics, Cloud Services, and Workflow Automation. Positions range from technical experts to consulting roles and leadership opportunities. Check our Careers page for the latest available positions.",
+        "We offer roles in AI strategy, data analytics, cloud services, AI solutions engineering, and workflow automation. Check our Careers page for the latest available positions.",
       link: "/careers/open-positions",
       linkText: "View Open Positions",
     },
     {
       question:
-        "Is it mandatory to have experience in AI, data, or automation to apply?",
+        "Do I need prior experience in AI, data, or automation to apply?",
       answer:
-        "While experience in AI, data analytics, or automation can be helpful, we value diverse perspectives and skill sets. We welcome candidates from different industries who are passionate about solving complex problems with technology. We provide opportunities for skill development and growth in emerging technologies.",
+        "While experience in AI or data analytics is valuable, we also encourage candidates from diverse backgrounds who are passionate about technology and eager to learn. We provide extensive training and mentorship.",
     },
     {
-      question: "What is the company culture like at Paramount Intelligence?",
+      question: "What is the company culture like?",
       answer:
-        "Our culture is dynamic, innovative, and deeply collaborative. At Paramount Intelligence, we focus on driving results, delivering high-impact solutions for our clients, and maintaining a flexible, inclusive work environment. We value learning, accountability, and work-life balance, with the opportunity to work on diverse and challenging projects across different industries.",
-    },
-    {
-      question:
-        "How can I grow and develop my career at Paramount Intelligence?",
-      answer:
-        "At Paramount Intelligence, we are committed to your continuous learning and growth. You'll work alongside experts in AI, data analytics, cloud, and automation, and have access to a variety of training resources, mentorship opportunities, and challenging projects. Whether through formal training or hands-on project experience, we ensure that our team members have the tools they need to thrive.",
+        "Paramount Intelligence fosters a dynamic, innovative, and collaborative culture. We prioritize results while maintaining work-life balance and providing opportunities for growth and development.",
     },
     {
       question: "What kind of projects will I work on?",
       answer:
-        "Our projects span across a wide range of industries including technology, finance, healthcare, manufacturing, and retail. You'll work on impactful initiatives such as AI-driven solutions, cloud-based automation, data infrastructure, and more. You'll help shape innovative, high-performing systems for companies at the forefront of their industries.",
+        "You’ll work on high-impact, real-world projects in AI, data analytics, cloud solutions, and automation. Projects span across diverse industries, enabling you to tackle complex challenges and contribute to innovative business solutions.",
     },
     {
-      question: "How do I apply to join Paramount Intelligence?",
+      question: "How can I grow my career at Paramount Intelligence?",
       answer:
-        "To apply, visit our Careers page, where you can submit your resume and cover letter for the role you're interested in. If no roles align with your skills, you can also send a general inquiry. We're always open to connecting with talented professionals who share our passion for innovation and technology.",
+        "We offer continuous learning and career development opportunities, including mentorship from senior leaders, specialized training, and the chance to work on cutting-edge technology projects.",
+    },
+    {
+      question: "How do I apply?",
+      answer:
+        "Visit our Careers page to submit your resume and cover letter for available roles. We’re always open to connecting with talented professionals passionate about technology and innovation.",
       link: "/careers/open-positions",
       linkText: "Apply Now",
     },
     {
       question: "What is the interview process like?",
       answer:
-        "The process typically involves an initial screening call, followed by interviews with team members or hiring managers. We may include a technical assessment for relevant roles and discussions around how your skills and experiences align with the needs of Paramount Intelligence. We focus on your approach to problem-solving and understanding of the role, as well as how you fit within our company culture.",
+        "Our process typically includes a screening call, followed by interviews with team members or hiring managers. Depending on the role, there may be a technical assessment or case study.",
     },
     {
-      question: "Can I work on projects across multiple industries?",
+      question: "Can I work across multiple industries?",
       answer:
-        "Yes! Our team works across diverse industries, and we encourage cross-industry collaboration. You'll have the chance to engage in projects across sectors like healthcare, finance, e-commerce, manufacturing, and more. This breadth of experience will expand your knowledge base and provide you with a well-rounded career.",
+        "Yes! We work across various industries, including technology, fintech, e-commerce, manufacturing, and more. You’ll have the chance to gain cross-industry experience and expand your skill set.",
     },
     {
-      question: "Do you provide training and development for employees?",
+      question: "Do you offer training and development opportunities?",
       answer:
-        "Yes, we provide ample opportunities for continuous development. Whether it's through specialized training in AI, cloud services, or data analytics, or by working on cutting-edge projects, we ensure you have the tools and resources you need to excel. We also offer mentorship programs to help you grow and advance in your career.",
+        "Yes, we prioritize continuous learning. You'll have access to a variety of resources, mentorship, and hands-on projects to support your professional growth.",
     },
     {
-      question: "How long is the hiring process?",
+      question: "How long does the hiring process take?",
       answer:
-        "Our hiring process typically takes 2-4 weeks, but it may vary depending on the role and number of candidates. We ensure clear communication throughout the process, keeping you informed every step of the way.",
+        "The process typically takes 2-4 weeks, but may vary depending on the role and number of candidates. We will keep you informed throughout the process.",
     },
   ];
 

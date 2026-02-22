@@ -11,9 +11,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata = {
-  title: "Paramount Intelligence - The Leading AI and Automation Firm",
+  title: "Paramount Intelligence - Technology Consulting and Engineering Firm",
   description:
-    "Empowering Brands with Innovative AI-Driven Strategies and Solutions.",
+    "Paramount Intelligence is a technology consulting and engineering firm delivering AI, data, cloud, and automation solutions that drive measurable business impact.",
   icons: {
     icon: "/images/logo.png",
   },

@@ -18,7 +18,7 @@ export default function ProjectExperience() {
         // Filter for all LLM-related case studies
         const langModelTitles = [
           "LLM-Powered Customer Support Chatbot",
-          "AI Voice Agents for Sales Enablement",
+          "AI-Powered Hiring and Candidate Assessment System",
         ];
 
         const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
@@ -48,7 +48,7 @@ export default function ProjectExperience() {
   }, []);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-3xl md:text-4xl text-center font-bold text-gray-900 mb-16">
           Some of our project experience

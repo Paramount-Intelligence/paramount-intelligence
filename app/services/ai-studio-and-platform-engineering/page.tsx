@@ -1,14 +1,11 @@
 import Header from "@/components/Header";
 import WhoWeServe from "@/components/services/WhoWeServe";
-import ProjectExperience from "@/components/services/ops/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
+import ProjectExperience from "@/components/services/studio/ProjectExperience";
 import Footer from "@/components/Footer";
-import LLMHeader from "@/components/services/ops/Header";
-import LLMHero from "@/components/services/ops/Hero";
-import WhyGenerativeAI from "@/components/services/ops/WhyGenerativeAI";
-import LLMServicesSection from "@/components/services/ops/LLMServicesSection";
-import ScheduleCTA from "@/components/services/ops/ScheduleCTA";
-import TrustedBrands from "@/components/services/ops/TrustedBrands";
+import LLMHero from "@/components/services/studio/Hero";
+import WhyGenerativeAI from "@/components/services/studio/WhyGenerativeAI";
+import LLMServicesSection from "@/components/services/studio/LLMServicesSection";
+import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/services/WhyChooseUs";
 
 export default function Home() {
@@ -21,7 +18,7 @@ export default function Home() {
       <LLMServicesSection />
       <WhoWeServe />
       <TrustedBrands />
-      <ScheduleCTA />
+      {/* <ScheduleCTA /> */}
       <WhyChooseUs />
       <ProjectExperience />
       {/* <LatestArticles /> */}

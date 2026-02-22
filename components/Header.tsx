@@ -74,10 +74,10 @@ const services = [
     title: "AI Workflow Automation",
     href: "/services/ai-workflow-automation",
   },
-  // {
-  //   title: "LLMOps service",
-  //   href: "/services/llm-ops-service",
-  // },
+  {
+    title: "AI Studio & Platform Engineering",
+    href: "/services/ai-studio-and-platform-engineering",
+  },
   // {
   //   title: "Automation",
   //   href: "#",

@@ -38,13 +38,13 @@ export default function AIServices() {
       link: "/services/ai-workflow-automation",
       imageSrc: "/images/iStock-1456175011.jpg",
     },
-    // {
-    //   title: "Automation & Workflow Systems",
-    //   description:
-    //     "We design and implement automation solutions using tools such as Airtable, Zapier, and n8n to streamline operations and eliminate manual work. Our automation work often delivers immediate ROI and serves as a foundation for AI and agent-based systems.",
-    //   link: "#",
-    //   imageSrc: "/images/iStock-1456175011.jpg",
-    // },
+    {
+      title: "AI Studio & Platform Engineering",
+      description:
+        "We design and build AI studios and cloud-native platform foundations that enable multimodal content generation, agent-driven workflows, and production-scale AI systems operating securely on Oracle Cloud Infrastructure.",
+      link: "/services/ai-studio-and-platform-engineering",
+      imageSrc: "/images/iStock-1456175011.jpg",
+    },
     // {
     //   title: "Web Scraping & Data Extraction",
     //   description:

@@ -3,14 +3,17 @@ import Link from "next/link";
 
 export default function IndustriesHeader() {
   return (
-    <header className="w-full bg-white py-6 mt-20">
+    <header className="relative w-full py-6 mt-20 z-10">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <nav className="flex items-center space-x-2 text-sm text-gray-600">
-          <Link href="/" className="hover:text-gray-900 transition-colors">
+        <nav className="flex items-center font-bold space-x-2 text-sm text-gray-900">
+          <Link href="/" className="hover:text-[#17599d] transition-colors">
             Home
           </Link>
           <span>/</span>
-          <Link href="/industries" className="hover:text-gray-900 transition-colors">
+          <Link
+            href="/industries"
+            className="hover:text-[#17599d] transition-colors"
+          >
             Industries
           </Link>
         </nav>

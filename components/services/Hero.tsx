@@ -1,9 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import ServicesHeader from "@/components/services/Header";
 
 export default function ServicesHero() {
   return (
-    <section className="relative py-8 overflow-hidden min-h-[55vh] flex items-center">
+    <section className="relative py-16 overflow-hidden min-h-[55vh] items-center">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <video
@@ -18,18 +19,23 @@ export default function ServicesHero() {
       </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0 z-0"></div>
+      <ServicesHeader />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-              Our AI & LLMs services
+              Our Expertise in Technology <br /> Consulting & Engineering
             </h1>
             <p className="text-sm text-black font-semibold leading-relaxed max-w-lg">
-              We help startups, scaleups, and tech companies to drive ROI by
-              hyper-personalization, hyper-automation, and enhanced
-              decision-making processes through AI and LLM-based software
+              At Paramount Intelligence, we bridge the gap between strategy and
+              execution. Our tailored services in AI strategy, data analytics,
+              cloud solutions, and automation help businesses build scalable,
+              production-ready systems that drive operational efficiency,
+              innovation, and measurable ROI. Let us guide you from vision to
+              impactful implementation with solutions designed for long-term
+              success.
             </p>
             <Link
               href="https://calendly.com/syedaliazzam/advisory?back=1"
