@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
-import OpsHeader from "@/components/services/ops/Header";
+import ModelsHeader from "@/components/services/models/Header";
 
-export default function LLMHero() {
+export default function StudioHero() {
   return (
     <section className="relative py-16 overflow-hidden min-h-[55vh] items-center">
       {/* Background Image */}
@@ -19,18 +19,20 @@ export default function LLMHero() {
       </div>
       {/* Dark Overlay */}
       <div className="absolute inset-0 z-0"></div>
-      <OpsHeader />
+      <ModelsHeader />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-6">
             <h1 className="text-4xl md:text-4xl lg:text-5xl font-bold text-black leading-tight">
-              LLM Ops service
+              AI Studio & Platform Engineering
             </h1>
             <p className="text-sm text-black font-semibold leading-relaxed max-w-lg">
-              Efficiently optimize, scale, and manage your Large Language Models
-              with tailored LLM Ops solutions
+              We design and build AI studios and cloud-native platform
+              foundations that enable multimodal content generation,
+              agent-driven workflows, and production-scale AI systems operating
+              securely on Oracle Cloud Infrastructure.
             </p>
             <Link
               href="https://calendly.com/syedaliazzam/advisory?back=1"

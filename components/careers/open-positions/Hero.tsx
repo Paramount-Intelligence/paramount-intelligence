@@ -32,9 +32,13 @@ export default function OpenPositionsHero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-900 font-semibold leading-relaxed mb-8">
-            Join a team of innovators building the future of AI. We're looking
-            for talented individuals who are passionate about pushing the
-            boundaries of what's possible.
+            Join our growing consulting and engineering team designing
+            intelligent, production-ready systems across AI, data, cloud,
+            automation, and platform engineering.
+            <br />
+            <br />
+            We partner with startups and Fortune 1000 organizations to translate strategic ambition into
+            scalable technical reality.
           </p>
         </div>
       </div>

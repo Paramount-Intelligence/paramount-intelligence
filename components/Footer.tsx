@@ -12,10 +12,10 @@ export default function Footer() {
     candidates: [
       { name: "For Candidates", href: "/for-candidates" },
       { name: "Candidates: Frequently Asked Questions", href: "/faq" },
-      {
-        name: "Remote practices for better work-life balance",
-        href: "#",
-      },
+      // {
+      //   name: "Remote practices for better work-life balance",
+      //   href: "#",
+      // },
     ],
     business: [
       { name: "Industries", href: "/industries" },
@@ -33,7 +33,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0a1628] text-gray-400 pt-4 pb-4">
+    <footer className="bg-[#0a1628] text-gray-400 pt-8 pb-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="grid md:grid-cols-4 gap-8 mb-4">
           {/* Company */}

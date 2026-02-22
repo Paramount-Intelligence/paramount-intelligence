@@ -27,14 +27,17 @@ export default function ApplyNowHero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-900 font-semibold leading-relaxed mb-8">
-            Take the first step towards an exciting career in AI. We're excited
-            to learn more about you and how you can contribute to our mission.
+            Take the next step toward building production-grade technology
+            systems that power real businesses. Whether you are an experienced
+            professional or an ambitious learner ready to grow, we value people
+            who are committed to mastering their craft and contributing
+            meaningfully to real-world impact.
           </p>
 
           <div className="flex flex-wrap justify-center gap-8 text-gray-900">
             <div className="flex items-center gap-2">
               <svg
-                className="w-5 h-5 text-green-400"
+                className="w-5 h-5 text-green-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -48,7 +51,7 @@ export default function ApplyNowHero() {
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="w-5 h-5 text-green-400"
+                className="w-5 h-5 text-green-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >
@@ -58,11 +61,11 @@ export default function ApplyNowHero() {
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Fast Response</span>
+              <span>Structured Review</span>
             </div>
             <div className="flex items-center gap-2">
               <svg
-                className="w-5 h-5 text-green-400"
+                className="w-5 h-5 text-green-600"
                 fill="currentColor"
                 viewBox="0 0 20 20"
               >

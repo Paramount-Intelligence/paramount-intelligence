@@ -25,14 +25,17 @@ export default function CandidatesHero() {
             Join Paramount Intelligence
           </h1>
           <p className="text-2xl md:text-3xl text-black font-semibold leading-tight mb-4">
-            A Place to Grow, Innovate, and Make an Impact
+            Empower Your Career with Cutting-Edge Technology
           </p>
           <p className="text-lg text-black leading-relaxed">
-            At Paramount Intelligence, we are more than just a company—we are a
-            community of innovators, creators, and problem-solvers. We are
-            committed to driving real business outcomes through AI, data,
-            automation, and cloud solutions. But more importantly, we're
-            passionate about your growth.
+            At Paramount Intelligence, we are more than a company; we are a
+            community of innovators and engineers committed to transforming
+            businesses through intelligent technology. As a leading Technology
+            Consulting and Engineering firm, we specialize in AI Strategy, Cloud
+            Services, Data Analytics, AI Workflow Automation, and more. We work
+            with companies across industries to turn complex problems into
+            actionable, scalable solutions that drive operational excellence and
+            innovation.
           </p>
         </div>
       </div>

@@ -8,88 +8,88 @@ export default function JobListings() {
 
   const jobs = [
     {
-      id: 1,
+      id: "senior-ai-engineer",
       title: "Senior AI Engineer",
       department: "Engineering",
       location: "Remote",
       type: "Full-time",
-      description:
-        "Lead the development of cutting-edge AI solutions using LLMs, RAG systems, and advanced ML techniques.",
-      requirements: [
-        "5+ years in AI/ML",
-        "Experience with LLMs",
-        "Python expertise",
-      ],
+      openPositions: 1,
+      briefDescription:
+        "Lead the design, architecture, and deployment of enterprise-grade AI systems across client environments.",
+      overview:
+        "We are seeking a Senior AI Engineer to lead the design, architecture, and deployment of enterprise-grade AI systems across client environments. This role goes beyond experimentation. You will build production-ready LLM applications, Retrieval-Augmented Generation systems, agentic architectures, and advanced machine learning pipelines that integrate directly into business-critical workflows.",
     },
     {
-      id: 2,
+      id: "machine-learning-engineer",
       title: "Machine Learning Engineer",
       department: "Engineering",
       location: "Hybrid",
       type: "Full-time",
-      description:
-        "Design and implement machine learning models for production systems at scale.",
-      requirements: [
-        "3+ years ML experience",
-        "TensorFlow/PyTorch",
-        "Cloud platforms",
-      ],
+      openPositions: 1,
+      briefDescription:
+        "Design, develop, and deploy scalable ML models that operate reliably in production environments.",
+      overview:
+        "We are looking for a Machine Learning Engineer to design, develop, and deploy scalable ML models that operate reliably in production environments. This role focuses on translating structured and unstructured data into intelligent systems that power enterprise workflows across industries.",
     },
     {
-      id: 3,
+      id: "ai-product-manager",
       title: "AI Product Manager",
       department: "Product",
       location: "Remote",
       type: "Full-time",
-      description:
-        "Define product strategy and roadmap for AI-powered solutions, working closely with clients and engineering teams.",
-      requirements: [
-        "4+ years product management",
-        "AI/ML knowledge",
-        "B2B experience",
-      ],
+      openPositions: 1,
+      briefDescription:
+        "Define and drive the strategy, roadmap, and execution of AI-enabled solutions across client engagements.",
+      overview:
+        "We are seeking an AI Product Manager to define and drive the strategy, roadmap, and execution of AI-enabled solutions across client engagements. This role operates at the intersection of business strategy, engineering capability, and client objectives.",
     },
     {
-      id: 4,
+      id: "data-scientist",
       title: "Data Scientist",
       department: "Data Science",
       location: "Remote",
       type: "Full-time",
-      description:
-        "Extract insights from complex datasets and build predictive models to drive business decisions.",
-      requirements: [
-        "3+ years data science",
-        "Statistical modeling",
-        "SQL & Python",
-      ],
+      openPositions: 1,
+      briefDescription:
+        "Extract structured insight from complex datasets and build predictive models that support strategic decision-making.",
+      overview:
+        "We are seeking a Data Scientist to extract structured insight from complex datasets and build predictive models that directly support strategic and operational decision-making. This role sits at the intersection of Data & Analytics, AI Strategy, and client-facing consulting engagements.",
     },
     {
-      id: 5,
+      id: "ai-solutions-architect",
       title: "AI Solutions Architect",
       department: "Engineering",
       location: "Hybrid",
       type: "Full-time",
-      description:
-        "Design end-to-end AI solutions for enterprise clients, ensuring scalability and reliability.",
-      requirements: [
-        "6+ years solution architecture",
-        "Cloud platforms",
-        "AI/ML systems",
-      ],
+      openPositions: 1,
+      briefDescription:
+        "Design end-to-end intelligent systems for enterprise clients across AI, data, cloud, and automation.",
+      overview:
+        "We are seeking an AI Solutions Architect to design end-to-end intelligent systems for enterprise clients. This role is responsible for translating strategic requirements into scalable, secure, and production-grade architectures across AI, data, cloud, automation, and AI Studio & Platform Engineering initiatives.",
     },
     {
-      id: 6,
-      title: "AI Research Intern",
-      department: "Research",
-      location: "Remote",
+      id: "ai-automation-intern",
+      title: "AI & Automation Intern",
+      department: "Engineering",
+      location: "On-site Preferred",
       type: "Internship",
-      description:
-        "Work on cutting-edge AI research projects alongside our research team.",
-      requirements: [
-        "Currently pursuing MS/PhD",
-        "Strong ML fundamentals",
-        "Research experience",
-      ],
+      openPositions: 3,
+      briefDescription:
+        "Support engineering and consulting teams on real-world AI, data, and workflow automation initiatives.",
+      overview:
+        "We are seeking highly motivated AI & Automation Interns to support engineering and consulting teams on real-world AI, data, and workflow automation initiatives. This is not a shadow role. You will contribute to structured experimentation, prototyping, automation workflows, and research initiatives across active client engagements and internal AI Studio & Platform Engineering efforts.",
+    },
+    {
+      id: "business-consulting-intern",
+      title: "Business Consulting Intern",
+      department: "Consulting",
+      location: "On-site Preferred",
+      type: "Internship",
+      openPositions: 1,
+      briefDescription:
+        "Support live consulting engagements across strategy, analytics, digital transformation, and technology-enabled execution.",
+      overview:
+        "Paramount Intelligence is a technology consulting and engineering firm delivering data-driven and technology-enabled transformation programs to global clients, including Fortune 1000 organizations. The Business Consulting Intern will support live engagements across strategy, analytics, digital transformation, and technology-enabled execution initiatives.",
     },
   ];
 
@@ -98,7 +98,7 @@ export default function JobListings() {
     "Engineering",
     "Product",
     "Data Science",
-    "Research",
+    "Consulting",
   ];
 
   const filteredJobs =
@@ -113,7 +113,7 @@ export default function JobListings() {
           </h2>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 justify-center">
             {departments.map((dept) => (
               <button
                 key={dept}
@@ -135,48 +135,42 @@ export default function JobListings() {
           {filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-xl transition-all duration-300"
+              className="bg-white rounded-xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                <div className="flex-1">
+                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
                     {job.title}
                   </h3>
-                  <div className="flex flex-wrap gap-3">
-                    <span className="bg-[#17599d] text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    <span className="bg-[#17599d] text-white px-3 py-1 rounded-full text-xs font-semibold">
                       {job.department}
                     </span>
-                    <span className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-300">
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                       📍 {job.location}
                     </span>
-                    <span className="bg-white text-gray-700 px-3 py-1 rounded-full text-sm font-medium border border-gray-300">
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                       ⏰ {job.type}
                     </span>
+                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
+                      {job.openPositions} Open{" "}
+                      {job.openPositions === 1 ? "Position" : "Positions"}
+                    </span>
                   </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    {job.briefDescription}
+                  </p>
                 </div>
               </div>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
-                {job.description}
-              </p>
-
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-2">
-                  Key Requirements:
-                </h4>
-                <ul className="list-disc list-inside space-y-1 text-gray-700">
-                  {job.requirements.map((req, idx) => (
-                    <li key={idx}>{req}</li>
-                  ))}
-                </ul>
+              <div className="flex justify-end">
+                <Link
+                  href={`/careers/open-positions/${job.id}`}
+                  className="inline-block bg-[#17599d] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#144a75] transition-all"
+                >
+                  View Details →
+                </Link>
               </div>
-
-              <Link
-                href="/careers/apply-now"
-                className="inline-block bg-[#17599d] text-white py-3 px-8 rounded-lg font-semibold hover:bg-[#17599d] transition-all shadow-lg hover:shadow-xl"
-              >
-                Apply Now
-              </Link>
             </div>
           ))}
         </div>
