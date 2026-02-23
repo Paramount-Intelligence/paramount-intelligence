@@ -18,7 +18,8 @@ export default function ProjectExperience() {
         // Filter for all LLM-related case studies
         const llmTitles = [
           "LLM-Powered Customer Support Chatbot",
-          "Transforming HR Operations with LLM Agents in Action",
+          "Customer Virtual Assistant with Voice-Enabled Humanoid Interface",
+          "AI Agents for Talent Matching",
         ];
 
         const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
