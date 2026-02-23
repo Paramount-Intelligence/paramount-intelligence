@@ -7,8 +7,8 @@ import FintechHero from "@/components/industries/fintech/Hero";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/fintech/SoftwareProducts";
-import AIServices from "@/components/AIServices";
 import AddAICapabilities from "@/components/industries/fintech/AddAICapabilities";
+import IndustriesServices from "@/components/industries/IndustriesServices";
 
 export default function Home() {
   return (
@@ -20,7 +20,7 @@ export default function Home() {
       <TrustedBrands />
       <AddAICapabilities />
       <ProjectExperience />
-      <AIServices />
+      <IndustriesServices />
       <WhoWeServe />
       <WhyChooseUs />
       <Footer />
