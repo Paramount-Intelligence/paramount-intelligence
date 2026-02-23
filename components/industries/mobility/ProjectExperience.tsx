@@ -17,9 +17,8 @@ export default function ProjectExperience() {
 
         // Filter for specific case studies
         const specificTitles = [
-          "AI Voice Agents for Sales Enablement",
-          "AI Agents for Talent Matching",
-          "LLM-Powered Customer Support Chatbot",
+          "Location-Based Fraud Detection System for Mobility Operations",
+          "Demand Forecasting and Fulfillment Optimization",
           "Dynamic Pricing Engine for Personalized Fare Optimization",
         ];
 

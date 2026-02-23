@@ -17,8 +17,9 @@ export default function ProjectExperience() {
 
         // Filter for all LLM-related case studies
         const langModelTitles = [
-          "AI-First Operations Transformation",
-          "Operational Bottleneck Diagnosis and AI Automation",
+          "Global Gender Analytics and Inference Deployment",
+          "Real-Time Commercial Performance & Transaction Intelligence Platform for a Global E-Commerce Marketplace",
+          "Real-Time Delivery and Operations Intelligence Platform",
         ];
 
         const filteredCaseStudies = caseStudiesData.filter((cs: any) =>

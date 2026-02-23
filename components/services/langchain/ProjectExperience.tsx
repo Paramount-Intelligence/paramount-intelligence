@@ -17,8 +17,9 @@ export default function ProjectExperience() {
 
         // Filter for all LangChain-related case studies
         const langChainTitles = [
-          "AI-First Operations Transformation",
-          "Operational Bottleneck Diagnosis and AI Automation",
+          "Geospatial Socioeconomic Intelligence Platform for Public & Development Programs",
+          "Real-Time Commercial Performance & Transaction Intelligence Platform for a Global E-Commerce Marketplace",
+          "Real-Time Delivery and Operations Intelligence Platform",
         ];
 
         const filteredCaseStudies = caseStudiesData.filter((cs: any) =>

@@ -17,8 +17,9 @@ export default function ProjectExperience() {
 
         // Filter for all RAG-related case studies
         const ragTitles = [
-          "LLM-Powered Customer Support Chatbot",
-          "Automated Email Response and Ticket Handling System",
+          "Operational Bottleneck Diagnosis and AI Automation",
+          "Customer Service Performance and Cost Optimization",
+          "Dynamic Marketplace Optimization & Competitive Intelligence Platform for a Ride-Hailing Business",
         ];
 
         const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
