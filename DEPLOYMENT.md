@@ -6,12 +6,40 @@
 ```
 DATABASE_URL="postgresql://postgres:7747@localhost:5432/paramount_intelligence?schema=public"
 NEXT_PUBLIC_API_URL="http://localhost:3001"
+
+# SMTP for job application email workflow
+SMTP_HOST="smtp.your-provider.com"
+SMTP_PORT="587"
+SMTP_SECURE="false"
+SMTP_USER="your-smtp-username"
+SMTP_PASSWORD="your-smtp-password"
+SMTP_FROM_EMAIL="careers@paramountintelligence.co"
+CAREERS_EMAIL="careers@paramountintelligence.co"
+
+# Airtable for job application record persistence
+AIRTABLE_PERSONAL_ACCESS_TOKEN="pat_your_new_token"
+AIRTABLE_BASE_ID="appXXXXXXXXXXXXXX"
+AIRTABLE_TABLE_NAME="Job Applications"
 ```
 
 ### Production (.env.production)
 ```
 DATABASE_URL="your-production-database-url"
 NEXT_PUBLIC_API_URL="https://your-api-domain.com"
+
+# SMTP for job application email workflow
+SMTP_HOST="smtp.your-provider.com"
+SMTP_PORT="587"
+SMTP_SECURE="false"
+SMTP_USER="your-smtp-username"
+SMTP_PASSWORD="your-smtp-password"
+SMTP_FROM_EMAIL="careers@paramountintelligence.co"
+CAREERS_EMAIL="careers@paramountintelligence.co"
+
+# Airtable for job application record persistence
+AIRTABLE_PERSONAL_ACCESS_TOKEN="pat_your_new_token"
+AIRTABLE_BASE_ID="appXXXXXXXXXXXXXX"
+AIRTABLE_TABLE_NAME="Job Applications"
 ```
 
 ## Deployment Options

@@ -1,37 +1,223 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 
+type ApplicationFormData = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  position: string;
+  experience: string;
+  linkedIn: string;
+  portfolio: string;
+  coverLetter: string;
+  university: string;
+  degree: string;
+  education: string;
+  semester: string;
+};
+
+type ResumeAttachment = {
+  filename: string;
+  content: Buffer;
+};
+
+type AirtableCreateResponse = {
+  records?: Array<{
+    id?: string;
+    createdTime?: string;
+  }>;
+};
+
+const getStringValue = (value: unknown): string => {
+  if (typeof value === "string") {
+    return value.trim();
+  }
+
+  return "";
+};
+
+const parseMultipartFormData = async (
+  request: NextRequest,
+): Promise<{ formData: ApplicationFormData; resumeAttachment?: ResumeAttachment }> => {
+  const form = await request.formData();
+
+  const formData: ApplicationFormData = {
+    firstName: getStringValue(form.get("firstName")),
+    lastName: getStringValue(form.get("lastName")),
+    email: getStringValue(form.get("email")),
+    phone: getStringValue(form.get("phone")),
+    position: getStringValue(form.get("position")),
+    experience: getStringValue(form.get("experience")),
+    linkedIn: getStringValue(form.get("linkedIn")),
+    portfolio: getStringValue(form.get("portfolio")),
+    coverLetter: getStringValue(form.get("coverLetter")),
+    university: getStringValue(form.get("university")),
+    degree: getStringValue(form.get("degree")),
+    education: getStringValue(form.get("education")),
+    semester: getStringValue(form.get("semester")),
+  };
+
+  const resume = form.get("resume");
+  if (resume && typeof resume !== "string" && typeof resume.arrayBuffer === "function") {
+    const arrayBuffer = await resume.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const filename = resume.name || "resume";
+    return { formData, resumeAttachment: { filename, content: buffer } };
+  }
+
+  return { formData };
+};
+
+const parseJsonFormData = async (request: NextRequest): Promise<ApplicationFormData> => {
+  const body = await request.json();
+  return {
+    firstName: getStringValue(body.firstName),
+    lastName: getStringValue(body.lastName),
+    email: getStringValue(body.email),
+    phone: getStringValue(body.phone),
+    position: getStringValue(body.position),
+    experience: getStringValue(body.experience),
+    linkedIn: getStringValue(body.linkedIn),
+    portfolio: getStringValue(body.portfolio),
+    coverLetter: getStringValue(body.coverLetter),
+    university: getStringValue(body.university),
+    degree: getStringValue(body.degree),
+    education: getStringValue(body.education),
+    semester: getStringValue(body.semester),
+  };
+};
+
+const saveApplicationToAirtable = async (
+  formData: ApplicationFormData,
+  resumeAttachment?: ResumeAttachment,
+): Promise<{ recordId: string }> => {
+  const personalAccessToken = process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
+  const baseId = process.env.AIRTABLE_BASE_ID;
+  const tableName = process.env.AIRTABLE_TABLE_NAME;
+
+  if (!personalAccessToken || !baseId || !tableName) {
+    throw new Error(
+      "Airtable is not configured. Set AIRTABLE_PERSONAL_ACCESS_TOKEN, AIRTABLE_BASE_ID, and AIRTABLE_TABLE_NAME.",
+    );
+  }
+
+  const fullName = `${formData.firstName} ${formData.lastName}`.trim();
+  const fields: Record<string, string | number> = {
+    "Full Name": fullName,
+    Email: formData.email,
+    "Phone Number": formData.phone,
+    "Position Applied for": formData.position,
+    "Cover Letter": formData.coverLetter,
+  };
+
+  if (formData.university) {
+    fields.University = formData.university;
+  }
+
+  if (formData.degree) {
+    fields.Degree = formData.degree;
+  }
+
+  if (formData.education) {
+    fields.Education = formData.education;
+  }
+
+  if (formData.semester) {
+    const parsedSemester = Number(formData.semester);
+    fields.Semester = Number.isNaN(parsedSemester) ? formData.semester : parsedSemester;
+  }
+
+  // Resume is handled via email attachment. Airtable Attachment fields require objects
+  // with publicly accessible URLs, so we do not send Resume here.
+
+  const airtableEndpoint = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
+
+  const postRecord = async (recordFields: Record<string, string | number>) => {
+    const response = await fetch(airtableEndpoint, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${personalAccessToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        records: [{ fields: recordFields }],
+      }),
+    });
+
+    const responseText = await response.text();
+    let responseJson: AirtableCreateResponse | null = null;
+    try {
+      responseJson = responseText ? (JSON.parse(responseText) as AirtableCreateResponse) : null;
+    } catch {
+      responseJson = null;
+    }
+
+    return { response, responseText, responseJson };
+  };
+
+  let airtableResult = await postRecord(fields);
+  if (airtableResult.response.ok) {
+    const recordId = airtableResult.responseJson?.records?.[0]?.id;
+    if (!recordId) {
+      throw new Error("Airtable request succeeded but no record ID was returned.");
+    }
+
+    return { recordId };
+  }
+
+  const airtableErrorText = airtableResult.responseText;
+
+  // Some Airtable select fields reject unknown options when token lacks schema-write permissions.
+  // Retry once without select-like fields to keep submission flow working.
+  if (
+    airtableResult.response.status === 422 &&
+    airtableErrorText.includes("INVALID_MULTIPLE_CHOICE_OPTIONS")
+  ) {
+    const fallbackFields = { ...fields };
+    delete fallbackFields["Position Applied for"];
+    delete fallbackFields.Education;
+
+    airtableResult = await postRecord(fallbackFields);
+    if (airtableResult.response.ok) {
+      const recordId = airtableResult.responseJson?.records?.[0]?.id;
+      if (!recordId) {
+        throw new Error("Airtable fallback request succeeded but no record ID was returned.");
+      }
+
+      return { recordId };
+    }
+
+    throw new Error(
+      `Airtable request failed (${airtableResult.response.status}): ${airtableResult.responseText}`,
+    );
+  }
+
+  throw new Error(`Airtable request failed (${airtableResult.response.status}): ${airtableErrorText}`);
+};
+
 export async function POST(request: NextRequest) {
   try {
     // Support both JSON and multipart/form-data (for file upload)
     const contentType = request.headers.get("content-type") || "";
-    let formData: any = {};
-    let resumeAttachment: { filename: string; content: Buffer } | undefined = undefined;
+    let formData: ApplicationFormData;
+    let resumeAttachment: ResumeAttachment | undefined;
 
     if (contentType.includes("multipart/form-data")) {
-      const form = await request.formData();
-      formData = {
-        firstName: (form.get("firstName") as FormDataEntryValue) || "",
-        lastName: (form.get("lastName") as FormDataEntryValue) || "",
-        email: (form.get("email") as FormDataEntryValue) || "",
-        phone: (form.get("phone") as FormDataEntryValue) || "",
-        position: (form.get("position") as FormDataEntryValue) || "",
-        experience: (form.get("experience") as FormDataEntryValue) || "",
-        linkedIn: (form.get("linkedIn") as FormDataEntryValue) || "",
-        portfolio: (form.get("portfolio") as FormDataEntryValue) || "",
-        coverLetter: (form.get("coverLetter") as FormDataEntryValue) || "",
-      };
-
-      const resume = form.get("resume") as any;
-      if (resume && typeof resume.arrayBuffer === "function") {
-        const arrayBuffer = await resume.arrayBuffer();
-        const buffer = Buffer.from(arrayBuffer);
-        const filename = resume.name || "resume";
-        resumeAttachment = { filename, content: buffer };
-      }
+      const multipartData = await parseMultipartFormData(request);
+      formData = multipartData.formData;
+      resumeAttachment = multipartData.resumeAttachment;
     } else {
-      formData = await request.json();
+      formData = await parseJsonFormData(request);
     }
+
+    const airtableResult = await saveApplicationToAirtable(formData, resumeAttachment);
+    console.info("Airtable record created", {
+      baseId: process.env.AIRTABLE_BASE_ID,
+      tableName: process.env.AIRTABLE_TABLE_NAME,
+      recordId: airtableResult.recordId,
+      applicantEmail: formData.email,
+    });
 
     // Configure your SMTP settings here
     const transporter = nodemailer.createTransport({
@@ -124,15 +310,19 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { success: true, message: "Application submitted and email sent successfully" },
+      {
+        success: true,
+        message: "Application submitted and email sent successfully",
+        airtableRecordId: airtableResult.recordId,
+      },
       { status: 200 }
     );
   } catch (error) {
-    console.error("Email sending error:", error);
+    console.error("Application submission error:", error);
     return NextResponse.json(
       {
         success: false,
-        message: "Failed to send email. Please try again later.",
+        message: "Failed to submit application. Please try again later.",
         error: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }

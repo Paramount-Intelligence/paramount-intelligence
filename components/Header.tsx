@@ -126,7 +126,7 @@ const industries = [
 const insights = [
   {
     title: "Blog",
-    href: "https://automate-with-ai.beehiiv.com/",
+    href: "https://transformwithtechnology.beehiiv.com/",
   },
 ];
 
