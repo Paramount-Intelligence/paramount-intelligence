@@ -5,7 +5,7 @@ export default function Footer() {
   const footerLinks = {
     company: [
       { name: "About us", href: "/about-us" },
-      { name: "Blog", href: "https://automate-with-ai.beehiiv.com/" },
+      { name: "Blog", href: "https://transformwithtechnology.beehiiv.com/" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Contact us", href: "/contact-us" },
     ],
@@ -21,7 +21,10 @@ export default function Footer() {
       { name: "Industries", href: "/industries" },
       { name: "Services", href: "/services" },
       { name: "Case studies", href: "/case-studies" },
-      { name: "Hire Us through Toptal", href: "#" },
+      {
+        name: "Hire Us through Toptal",
+        href: "https://www.toptal.com/developers/resume/syed-ali-azzam#M5nb10",
+      },
     ],
     social: [
       {
