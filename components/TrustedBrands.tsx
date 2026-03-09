@@ -9,7 +9,8 @@ export default function TrustedBrands() {
     | "Bore and Bore"
     | "Davidson"
     | "Aramco"
-    | "Deloitte";
+    | "Deloitte"
+    | "Delivery Hero";
 
   const brands: { name: BrandName; logo: string }[] = [
     {
@@ -23,6 +24,7 @@ export default function TrustedBrands() {
     { name: "Davidson", logo: "/images/davidson-logo.png" },
     { name: "Aramco", logo: "/images/aramco-logo.png" },
     { name: "Deloitte", logo: "/images/deloitte.png" },
+    { name: "Delivery Hero", logo: "/images/delivery-hero.png" },
   ];
 
   // Duplicate the brands array for seamless infinite looping
@@ -71,6 +73,7 @@ export default function TrustedBrands() {
               Davidson: "https://www.davidson.group/",
               Aramco: "https://www.aramco.com/",
               Deloitte: "https://www2.deloitte.com/global/en.html",
+              "Delivery Hero": "https://www.deliveryhero.com/",
             };
             return (
               <div

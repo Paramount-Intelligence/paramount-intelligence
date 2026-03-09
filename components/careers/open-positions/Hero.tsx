@@ -16,7 +16,7 @@ export default function OpenPositionsHero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover scale-x-[-1]"
         >
-          <source src="/videos/background-video.mp4" type="video/mp4" />
+          <source src="/videos/background-video.webm" type="video/webm" />
         </video>
       </div>
 
