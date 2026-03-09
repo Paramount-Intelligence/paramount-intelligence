@@ -59,7 +59,7 @@ export default function ServicesSection() {
 
               {/* Right Visualization */}
               <div className="flex items-center rounded-2xl overflow-hidden justify-center">
-                <img
+                <img loading="lazy"
                   src="/images/Conversational-AI-1.jpg"
                   alt="Conversational AI"
                 />
@@ -86,7 +86,7 @@ export default function ServicesSection() {
 
               {/* Right Visualization */}
               <div className="flex items-center rounded-2xl overflow-hidden justify-center">
-                <img
+                <img loading="lazy"
                   src="/images/tendrils-czerwonego-dymu-1.jpg"
                   alt="Tendrils of Red Smoke"
                 />
