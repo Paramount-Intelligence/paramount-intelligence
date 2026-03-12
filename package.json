@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "db-server": "node db-server.js",
-    "dev:all": "concurrently \"npm run dev\" \"npm run db-server\"",
-    "build": "prisma migrate deploy && prisma generate && next build",
+    "build": "prisma migrate deploy && prisma generate && next build --webpack",
     "start": "next start"
   },
   "prisma": {
