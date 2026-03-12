@@ -23,7 +23,7 @@ export default function CaseStudiesGrid({
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await fetch(`${getApiUrl()}/api/admin/case-studies`);
+        const response = await fetch(`api/admin/case-studies`);
         if (!response.ok) throw new Error("Failed to fetch");
         const data = await response.json();
         setCaseStudiesData(data);

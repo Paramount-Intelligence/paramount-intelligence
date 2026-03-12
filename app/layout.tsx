@@ -1,4 +1,5 @@
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
 // import { config } from "@fortawesome/fontawesome-svg-core";
 // config.autoAddCss = false;
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <div className="max-w-480 mx-auto">{children}</div>
+        <Analytics />
       </body>
     </html>
   );

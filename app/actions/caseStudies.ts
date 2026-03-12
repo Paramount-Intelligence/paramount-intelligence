@@ -47,7 +47,7 @@ export async function createCaseStudy(data: {
   clientIndustry: string;
   clientMarket: string;
   clientTechnology: string;
-  challenge: string;
+  challenges: string;
   solution: string;
   benefits: string;
 }) {
@@ -66,7 +66,7 @@ export async function createCaseStudy(data: {
         clientIndustry: data.clientIndustry,
         clientMarket: data.clientMarket,
         clientTechnology: data.clientTechnology,
-        challenge: data.challenge,
+        challenges: data.challenges,
         solution: data.solution,
         benefits: data.benefits,
       },
@@ -95,7 +95,7 @@ export async function updateCaseStudy(
     clientIndustry: string;
     clientMarket: string;
     clientTechnology: string;
-    challenge: string;
+    challenges: string;
     solution: string;
     benefits: string;
   }
@@ -116,7 +116,7 @@ export async function updateCaseStudy(
         clientIndustry: data.clientIndustry,
         clientMarket: data.clientMarket,
         clientTechnology: data.clientTechnology,
-        challenge: data.challenge,
+        challenges: data.challenges,
         solution: data.solution,
         benefits: data.benefits,
       },

@@ -1,3 +1,5 @@
+import { formatBulletPoints } from "@/lib/formatBulletPoints";
+
 interface NutshellContent {
   challenge: string;
   solution: string;
@@ -11,7 +13,7 @@ interface InANutshellProps {
 export default function InANutshell({ content }: InANutshellProps) {
   return (
     <section className="py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 xl:px-16">
+      <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-12">
           In a Nutshell
         </h2>
@@ -22,9 +24,9 @@ export default function InANutshell({ content }: InANutshellProps) {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Client's Challenge
             </h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              {content.challenge}
-            </p>
+            <div className="text-gray-700 leading-relaxed text-lg">
+              {formatBulletPoints(content.challenge)}
+            </div>
           </div>
 
           {/* Our Solution */}
@@ -32,9 +34,9 @@ export default function InANutshell({ content }: InANutshellProps) {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Our Solution
             </h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              {content.solution}
-            </p>
+            <div className="text-gray-700 leading-relaxed text-lg">
+              {formatBulletPoints(content.solution)}
+            </div>
           </div>
 
           {/* Client's Benefits */}
@@ -42,9 +44,9 @@ export default function InANutshell({ content }: InANutshellProps) {
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Client's Benefits
             </h3>
-            <p className="text-gray-700 leading-relaxed text-lg">
-              {content.benefits}
-            </p>
+            <div className="text-gray-700 leading-relaxed text-lg">
+              {formatBulletPoints(content.benefits)}
+            </div>
           </div>
         </div>
       </div>

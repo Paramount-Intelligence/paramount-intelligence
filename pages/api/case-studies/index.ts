@@ -35,7 +35,7 @@ export default async function handler(
           clientIndustry: req.body.clientIndustry,
           clientMarket: req.body.clientMarket,
           clientTechnology: req.body.clientTechnology,
-          challenge: req.body.challenge,
+          challenges: req.body.challenges,
           solution: req.body.solution,
           benefits: req.body.benefits,
         },
