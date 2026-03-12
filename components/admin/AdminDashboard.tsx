@@ -40,7 +40,9 @@ export default function AdminDashboard() {
 
   const fetchCaseStudies = async () => {
     try {
-      const response = await fetch(`${getApiUrl()}/api/admin/case-studies`);
+      const response = await fetch(`api/admin/case-studies`,{
+  credentials: "include" // ✅ send HTTP-only cookies
+});
       if (!response.ok) throw new Error("Failed to fetch");
       const data = await response.json();
       setCaseStudies(data);
@@ -59,6 +61,7 @@ export default function AdminDashboard() {
         `${getApiUrl()}/api/admin/case-studies/${id}`,
         {
           method: "DELETE",
+          credentials: "include"
         }
       );
       if (!response.ok) throw new Error("Failed to delete");
@@ -95,12 +98,31 @@ export default function AdminDashboard() {
     );
   }
 
+  // inside AdminDashboard component
+const handleLogout = async () => {
+  try {
+    const res = await fetch('/api/admin/logout', {
+      method: 'POST',
+      credentials: 'include', // important to clear httpOnly cookie
+    });
+
+    if (!res.ok) throw new Error('Logout failed');
+
+    // Redirect to login after logout
+    window.location.href = '/admin/login';
+  } catch (err) {
+    console.error(err);
+    alert('Failed to logout');
+  }
+};
+
   return (
     <div className="max-w-7xl mt-16 mx-auto px-6 py-12">
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-3xl font-bold text-gray-900">
           Case Studies Management
         </h1>
+        <div className="flex items-center gap-4">
         <button
           onClick={handleAdd}
           className="flex items-center gap-2 bg-[#17599d] text-white px-6 py-3 rounded-lg hover:bg-[#144a75] transition-colors"
@@ -108,7 +130,18 @@ export default function AdminDashboard() {
           <Plus className="w-5 h-5" />
           Add Case Study
         </button>
+        <button
+      onClick={handleLogout}
+      className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-800 transition-colors"
+    >
+      Log Out
+    </button>
+    
+        
       </div>
+       </div>
+
+      
 
       {showForm && (
         <CaseStudyForm caseStudy={editingCaseStudy} onClose={handleFormClose} />

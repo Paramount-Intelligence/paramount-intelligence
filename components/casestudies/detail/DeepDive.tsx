@@ -1,51 +1,62 @@
 import { formatBulletPoints } from "@/lib/formatBulletPoints";
 
-interface NutshellContent {
+interface DeepDiveContent {
+  overview: string;
+  client: string;
   challenge: string;
-  solution: string;
-  benefits: string;
+  keyConstraints: string;
 }
 
-interface InANutshellProps {
-  content: NutshellContent;
+interface DeepDiveProps {
+  content: DeepDiveContent;
 }
 
-export default function InANutshell({ content }: InANutshellProps) {
+export default function DeepDive({ content }: DeepDiveProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-12 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-12">
-          In a Nutshell
+          Deep Dive
         </h2>
 
         <div className="space-y-12">
-          {/* Client's Challenge */}
+          {/* Overview */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Client's Challenge
+              Overview
+            </h3>
+            <div className="text-gray-700 leading-relaxed text-lg">
+              {formatBulletPoints(content.overview)}
+            </div>
+          </div>
+
+          {/* Client Reference */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Client
+            </h3>
+            <div className="text-gray-700 leading-relaxed text-lg">
+              {formatBulletPoints(content.client)}
+            </div>
+          </div>
+
+          {/* Challenge */}
+          <div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Challenge
             </h3>
             <div className="text-gray-700 leading-relaxed text-lg">
               {formatBulletPoints(content.challenge)}
             </div>
           </div>
 
-          {/* Our Solution */}
+          {/* Key Constraints */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Our Solution
+              Key Constraints
             </h3>
             <div className="text-gray-700 leading-relaxed text-lg">
-              {formatBulletPoints(content.solution)}
-            </div>
-          </div>
-
-          {/* Client's Benefits */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Client's Benefits
-            </h3>
-            <div className="text-gray-700 leading-relaxed text-lg">
-              {formatBulletPoints(content.benefits)}
+              {formatBulletPoints(content.keyConstraints)}
             </div>
           </div>
         </div>

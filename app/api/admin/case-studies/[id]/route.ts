@@ -1,105 +1,102 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import jwt from "jsonwebtoken";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
-interface RouteParams {
-  params: Promise<{
-    id: string;
-  }>;
+// Helper to check the cookie manually if verifyAdmin isn't working as expected
+function getAuth(req: NextRequest) {
+  const token = req.cookies.get("adminToken")?.value;
+  if (!token) throw new Error("Unauthorized");
+  
+  try {
+    return jwt.verify(token, process.env.JWT_SECRET!);
+  } catch (err) {
+    throw new Error("Unauthorized: Invalid Token");
+  }
 }
 
 // GET single case study by ID
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
+    getAuth(req); // 🔐 Protect route using the cookie
     const { id } = await params;
-    
-    // Dynamic import to avoid Turbopack issues
-    const { prisma } = await import('@/lib/prisma');
-    
+
     const caseStudy = await prisma.caseStudy.findUnique({
-      where: { id }
+      where: { id },
     });
 
     if (!caseStudy) {
-      return NextResponse.json(
-        { error: 'Case study not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: "Case study not found" }, { status: 404 });
     }
 
     return NextResponse.json(caseStudy);
-  } catch (error) {
-    console.error('Error fetching case study:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch case study' },
-      { status: 500 }
-    );
+  } catch (error: any) {
+    const status = error.message.includes("Unauthorized") ? 401 : 500;
+    return NextResponse.json({ error: error.message }, { status });
   }
 }
 
 // PUT - Update case study
-export async function PUT(request: NextRequest, { params }: RouteParams) {
+export async function PUT(
+  req: NextRequest,
+  { params }: { params: { id: string } }
+) {
   try {
+    getAuth(req);
     const { id } = await params;
-    const body = await request.json();
-    
-    // Dynamic import to avoid Turbopack issues
-    const { prisma } = await import('@/lib/prisma');
-    
-    const caseStudy = await prisma.caseStudy.update({
+    const body = await req.json();
+
+    // Remove 'id' and any invalid fields before updating
+    const { id: _, ...dataToUpdate } = body;
+
+    const updated = await prisma.caseStudy.update({
       where: { id },
-      data: {
-        slug: body.slug,
-        title: body.title,
-        subtitle: body.subtitle,
-        image: body.image,
-        heroImage: body.heroImage,
-        industry: body.industry,
-        businessFunction: body.businessFunction,
-        description: body.description,
-        clientName: body.clientName,
-        clientIndustry: body.clientIndustry,
-        clientMarket: body.clientMarket,
-        clientTechnology: body.clientTechnology,
-        challenge: body.challenge,
-        solution: body.solution,
-        benefits: body.benefits,
-      }
+      data: { ...dataToUpdate },
     });
-    
-    return NextResponse.json({
-      message: 'Case study updated successfully',
-      data: caseStudy
-    });
-  } catch (error) {
-    console.error('Error updating case study:', error);
-    return NextResponse.json(
-      { error: 'Failed to update case study' },
-      { status: 500 }
-    );
+
+    return NextResponse.json({ message: "Case study updated", data: updated });
+  } catch (error: any) {
+    const status = error.message.includes("Unauthorized") ? 401 : 500;
+    return NextResponse.json({ error: error.message }, { status });
   }
 }
 
-// DELETE case study
-export async function DELETE(request: NextRequest, { params }: RouteParams) {
+// DELETE - Delete case study
+
+
+export async function DELETE(
+  req: NextRequest, 
+  { params }: { params: { id: string } }
+) {
   try {
+    // 1. Authenticate
+    getAuth(req);
+
+    // 2. Await params (Required in Next.js 15+)
     const { id } = await params;
 
-    // Dynamic import to avoid Turbopack issues
-    const { prisma } = await import('@/lib/prisma');
-    
+    if (!id) {
+      return NextResponse.json({ error: "No ID provided" }, { status: 400 });
+    }
+
+    // 3. Direct DB Delete
     await prisma.caseStudy.delete({
-      where: { id }
+      where: { id: id },
     });
-    
-    return NextResponse.json({ 
-      message: 'Case study deleted successfully' 
-    });
-  } catch (error) {
-    console.error('Error deleting case study:', error);
+
+    return NextResponse.json({ message: "Deleted successfully" }, { status: 200 });
+  } catch (error: any) {
+    console.error("DELETE ERROR:", error.message);
+    const status = error.message.includes("Unauthorized") ? 401 : 500;
     return NextResponse.json(
-      { error: 'Failed to delete case study' },
-      { status: 500 }
+      { error: error.message || "Delete failed" }, 
+      { status }
     );
   }
 }
+
+// Add PUT here as well following the same fetch pattern...

@@ -12,7 +12,7 @@ export default function ProjectExperience() {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await fetch(`${getApiUrl()}/api/case-studies`);
+        const response = await fetch(`api/case-studies`);
         const caseStudiesData = await response.json();
 
         // Filter for specific case studies
