@@ -1,69 +1,42 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
-// GET all case studies
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    // Dynamic import to avoid Turbopack issues
-    const { prisma } = await import('@/lib/prisma');
-    
+    // Direct database call
     const caseStudies = await prisma.caseStudy.findMany({
-      orderBy: {
-        createdAt: 'desc'
-      }
+      orderBy: { createdAt: 'desc' },
     });
-
     return NextResponse.json(caseStudies);
-  } catch (error) {
-    console.error('Error fetching case studies:', error);
-    return NextResponse.json(
-      { error: 'Failed to fetch case studies' },
-      { status: 500 }
-    );
+  } catch (error: any) {
+    console.error("GET ERROR:", error);
+    return NextResponse.json({ error: "Database connection failed" }, { status: 500 });
   }
 }
 
-// POST - Create new case study
-export async function POST(request: NextRequest) {
+export async function POST(req: NextRequest) {
   try {
-    const body = await request.json();
+    const body = await req.json();
     
-    // Dynamic import to avoid Turbopack issues
-    const { prisma } = await import('@/lib/prisma');
-    
-    const caseStudy = await prisma.caseStudy.create({
+    // Destructure to remove 'id' if the form sent it as an empty string
+    const { id,  ...dataToSave } = body;
+
+    const newCaseStudy = await prisma.caseStudy.create({
       data: {
-        slug: body.slug,
-        title: body.title,
-        subtitle: body.subtitle,
-        image: body.image,
-        heroImage: body.heroImage,
-        industry: body.industry,
-        businessFunction: body.businessFunction,
-        description: body.description,
-        clientName: body.clientName,
-        clientIndustry: body.clientIndustry,
-        clientMarket: body.clientMarket,
-        clientTechnology: body.clientTechnology,
-        challenge: body.challenge,
-        solution: body.solution,
-        benefits: body.benefits,
-      }
+        ...dataToSave,
+        // Ensure JSON fields are handled correctly
+        solutionAgents: dataToSave.solutionAgents || [],
+      },
     });
-    
-    return NextResponse.json(
-      { 
-        message: 'Case study created successfully',
-        data: caseStudy 
-      }, 
-      { status: 201 }
-    );
-  } catch (error) {
-    console.error('Error creating case study:', error);
-    return NextResponse.json(
-      { error: 'Failed to create case study' },
-      { status: 500 }
-    );
+
+    return NextResponse.json(newCaseStudy, { status: 201 });
+  } catch (error: any) {
+    console.error("POST ERROR:", error);
+    return NextResponse.json({ 
+      error: "Failed to save to database", 
+      details: error.message 
+    }, { status: 500 });
   }
 }

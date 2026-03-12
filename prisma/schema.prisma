@@ -1,15 +1,12 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
@@ -24,21 +21,56 @@ model CaseStudy {
   industry         String
   businessFunction String
   description      String   @db.Text
+
+  // --- Client Info (Deep Dive) ---
+  clientName       String?
+  clientIndustry   String?
+  clientMarket     String?
+  clientTechnology String?
+
+  // ---NutShell ---
+  challenges String @db.Text
+  solution String @db.Text
+  benefits String @db.Text
+
   
-  // Client Info
-  clientName       String
-  clientIndustry   String
-  clientMarket     String
-  clientTechnology String
+
+  // -- Deep Dive ---
+   overview String? @db.Text
+   client String?   @db.Text
+   challenge String?   @db.Text
+   keyConstraints String?   @db.Text
+
   
-  // Nutshell
-  challenge        String   @db.Text
-  solution         String   @db.Text
-  benefits         String   @db.Text
+
+  // --- Solution (The 7 Agents/Modules) ---
   
-  createdAt        DateTime @default(now())
-  updatedAt        DateTime @updatedAt
+  solutionAgents Json?   // Stores Array<{ title: string, description: string }>
+
+  // --- Technology Stack ---
+
+  tech Json?     // Stores Array<{ title: string, description: string }>
+
+  
+
+  // --- Unique Solution ---
+  uniqueSolution String?
+
+
+  // --- Final Notes ---
+  results String? @db.Text
+  summary        String? @db.Text
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
   @@index([industry])
   @@index([businessFunction])
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  createdAt DateTime @default(now())
 }

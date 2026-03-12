@@ -11,10 +11,10 @@ export interface CaseStudyData {
   businessFunction: string;
   description: string;
   clientInfo: {
-    name: string;
-    industry: string;
-    market: string;
-    technology: string;
+    name: string | null;
+    industry: string | null;
+    market: string | null;
+    technology: string | null;
   };
   nutshell: {
     challenge: string;
@@ -47,7 +47,7 @@ export async function getAllCaseStudies(): Promise<CaseStudyData[]> {
       technology: cs.clientTechnology,
     },
     nutshell: {
-      challenge: cs.challenge,
+      challenge: cs.challenges,
       solution: cs.solution,
       benefits: cs.benefits,
     },
@@ -78,7 +78,7 @@ export async function getCaseStudyBySlug(slug: string): Promise<CaseStudyData | 
       technology: caseStudy.clientTechnology,
     },
     nutshell: {
-      challenge: caseStudy.challenge,
+      challenge: caseStudy.challenges,
       solution: caseStudy.solution,
       benefits: caseStudy.benefits,
     },
