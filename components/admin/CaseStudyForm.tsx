@@ -21,25 +21,53 @@ interface CaseStudy {
   businessFunction: string;
   description: string;
 
-  clientName: string;
-  clientIndustry: string;
-  clientMarket: string;
-  clientTechnology: string;
+  clientName: string | null;
+  clientIndustry: string | null;
+  clientMarket: string | null;
+  clientTechnology: string | null;
 
   challenges: string;
   solution: string;
   benefits: string;
 
+  overview: string | null;
+  client: string | null;
+  challenge: string | null;
+  keyConstraints: string | null;
+
+  solutionAgents: { title: string; description: string }[] | null;
+  uniqueSolution: string | null;
+
+  tech: { title: string; description: string }[] | null;
+
+  results: string | null;
+  summary: string | null;
+}
+
+interface FormState {
+  id?: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  heroImage: string;
+  industry: string;
+  businessFunction: string;
+  description: string;
+  clientName: string;
+  clientIndustry: string;
+  clientMarket: string;
+  clientTechnology: string;
+  challenges: string;
+  solution: string;
+  benefits: string;
   overview: string;
   client: string;
   challenge: string;
   keyConstraints: string;
-
   solutionAgents: { title: string; description: string }[];
   uniqueSolution: string;
-
   tech: { title: string; description: string }[];
-
   results: string;
   summary: string;
 }
@@ -53,7 +81,7 @@ export default function CaseStudyForm({
   caseStudy,
   onClose,
 }: CaseStudyFormProps) {
-  const [formData, setFormData] = useState<CaseStudy>({
+  const [formData, setFormData] = useState<FormState>({
     slug: "",
     title: "",
     subtitle: "",
@@ -87,11 +115,30 @@ export default function CaseStudyForm({
   });
 
   const [loading, setLoading] = useState(false);
-  const [uploadingField, setUploadingField] = useState<"image" | "heroImage" | null>(null);
+  const [uploadingField, setUploadingField] = useState<
+    "image" | "heroImage" | null
+  >(null);
 
   useEffect(() => {
     if (caseStudy) {
-      setFormData(caseStudy);
+      setFormData({
+        ...caseStudy,
+        clientName: caseStudy.clientName ?? "",
+        clientIndustry: caseStudy.clientIndustry ?? "",
+        clientMarket: caseStudy.clientMarket ?? "",
+        clientTechnology: caseStudy.clientTechnology ?? "",
+        overview: caseStudy.overview ?? "",
+        client: caseStudy.client ?? "",
+        challenge: caseStudy.challenge ?? "",
+        keyConstraints: caseStudy.keyConstraints ?? "N/A",
+        solutionAgents: caseStudy.solutionAgents ?? [
+          { title: "", description: "" },
+        ],
+        uniqueSolution: caseStudy.uniqueSolution ?? "N/A",
+        tech: caseStudy.tech ?? [{ title: "", description: "" }],
+        results: caseStudy.results ?? "N/A",
+        summary: caseStudy.summary ?? "",
+      });
     }
   }, [caseStudy]);
 
@@ -119,7 +166,7 @@ export default function CaseStudyForm({
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => {
@@ -135,10 +182,10 @@ export default function CaseStudyForm({
     index: number,
     field: string,
     value: string,
-    type: "solutionAgents" | "tech"
+    type: "solutionAgents" | "tech",
   ) => {
     setFormData((prev) => {
-      const updatedList = [...prev[type]];
+      const updatedList = [...(prev[type] || [])];
       updatedList[index] = { ...updatedList[index], [field]: value };
       return { ...prev, [type]: updatedList };
     });
@@ -147,14 +194,14 @@ export default function CaseStudyForm({
   const addJsonItem = (type: "solutionAgents" | "tech") => {
     setFormData((prev) => ({
       ...prev,
-      [type]: [...prev[type], { title: "", description: "" }],
+      [type]: [...(prev[type] || []), { title: "", description: "" }],
     }));
   };
 
   const removeJsonItem = (index: number, type: "solutionAgents" | "tech") => {
     setFormData((prev) => ({
       ...prev,
-      [type]: prev[type].filter((_, i) => i !== index),
+      [type]: (prev[type] || []).filter((_, i) => i !== index),
     }));
   };
 
@@ -181,7 +228,8 @@ export default function CaseStudyForm({
         throw new Error("Failed to get upload signature");
       }
 
-      const { signature, apiKey, cloudName, folder } = await signatureRes.json();
+      const { signature, apiKey, cloudName, folder } =
+        await signatureRes.json();
 
       const widget = window.cloudinary.createUploadWidget(
         {
@@ -219,7 +267,7 @@ export default function CaseStudyForm({
           if (result?.event === "close") {
             setUploadingField(null);
           }
-        }
+        },
       );
 
       widget.open();
@@ -262,7 +310,7 @@ export default function CaseStudyForm({
   const renderImageField = (
     label: string,
     field: "image" | "heroImage",
-    value: string
+    value: string,
   ) => {
     return (
       <div>
@@ -378,7 +426,11 @@ export default function CaseStudyForm({
 
               <div className="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-5">
                 {renderImageField("Image", "image", formData.image)}
-                {renderImageField("Hero Image", "heroImage", formData.heroImage)}
+                {renderImageField(
+                  "Hero Image",
+                  "heroImage",
+                  formData.heroImage,
+                )}
               </div>
 
               <div>
@@ -429,67 +481,162 @@ export default function CaseStudyForm({
 
           {/* --- Client Info --- */}
           <section className="bg-gradient-to-br from-green-50 to-green-100/50 p-6 rounded-lg border border-green-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">Client Info</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              Client Info
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Client Name</label>
-                <input type="text" name="clientName" value={formData.clientName} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Client Name
+                </label>
+                <input
+                  type="text"
+                  name="clientName"
+                  value={formData.clientName}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Industry</label>
-                <input type="text" name="clientIndustry" value={formData.clientIndustry} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Industry
+                </label>
+                <input
+                  type="text"
+                  name="clientIndustry"
+                  value={formData.clientIndustry}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Market</label>
-                <input type="text" name="clientMarket" value={formData.clientMarket} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Market
+                </label>
+                <input
+                  type="text"
+                  name="clientMarket"
+                  value={formData.clientMarket}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Technology</label>
-                <input type="text" name="clientTechnology" value={formData.clientTechnology} onChange={handleChange} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Technology
+                </label>
+                <input
+                  type="text"
+                  name="clientTechnology"
+                  value={formData.clientTechnology}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white"
+                />
               </div>
             </div>
           </section>
 
           {/* --- NutShell --- */}
           <section className="bg-gradient-to-br from-yellow-50 to-yellow-100/50 p-6 rounded-lg border border-yellow-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">NutShell</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              NutShell
+            </h3>
             <div className="space-y-5">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Challenges</label>
-                <textarea name="challenges" value={formData.challenges} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Challenges
+                </label>
+                <textarea
+                  name="challenges"
+                  value={formData.challenges}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Solution</label>
-                <textarea name="solution" value={formData.solution} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Solution
+                </label>
+                <textarea
+                  name="solution"
+                  value={formData.solution}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Benefits</label>
-                <textarea name="benefits" value={formData.benefits} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Benefits
+                </label>
+                <textarea
+                  name="benefits"
+                  value={formData.benefits}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
             </div>
           </section>
 
           {/* --- Deep Dive --- */}
           <section className="bg-gradient-to-br from-purple-50 to-purple-100/50 p-6 rounded-lg border border-purple-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">Deep Dive</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              Deep Dive
+            </h3>
             <div className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-2 block">Overview</label>
-                  <textarea name="overview" value={formData.overview} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                  <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                    Overview
+                  </label>
+                  <textarea
+                    name="overview"
+                    value={formData.overview}
+                    onChange={handleChange}
+                    rows={4}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                  />
                 </div>
                 <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-2 block">Client</label>
-                  <textarea name="client" value={formData.client} onChange={handleChange} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                  <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                    Client
+                  </label>
+                  <textarea
+                    name="client"
+                    value={formData.client}
+                    onChange={handleChange}
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                  />
                 </div>
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Challenge</label>
-                <textarea name="challenge" value={formData.challenge} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Challenge
+                </label>
+                <textarea
+                  name="challenge"
+                  value={formData.challenge}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Key Constraints</label>
-                <textarea name="keyConstraints" value={formData.keyConstraints} onChange={handleChange} rows={5} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" placeholder="- First constraint&#10;- Second constraint&#10;- Third constraint" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Key Constraints
+                </label>
+                <textarea
+                  name="keyConstraints"
+                  value={formData.keyConstraints}
+                  onChange={handleChange}
+                  rows={5}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                  placeholder="- First constraint&#10;- Second constraint&#10;- Third constraint"
+                />
               </div>
             </div>
           </section>
@@ -497,22 +644,64 @@ export default function CaseStudyForm({
           {/* --- Solution (JSON) --- */}
           <section className="bg-gradient-to-br from-red-50 to-red-100/50 p-6 rounded-lg border border-red-200">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-[#17599d]">
-              <h3 className="text-xl font-bold text-[#17599d]">Solution Agents</h3>
-              <button type="button" onClick={() => addJsonItem('solutionAgents')} className="flex items-center gap-2 text-sm bg-[#17599d] text-white px-4 py-2 rounded-lg hover:bg-[#12467d] transition-all duration-200 shadow-md hover:shadow-lg">
+              <h3 className="text-xl font-bold text-[#17599d]">
+                Solution Agents
+              </h3>
+              <button
+                type="button"
+                onClick={() => addJsonItem("solutionAgents")}
+                className="flex items-center gap-2 text-sm bg-[#17599d] text-white px-4 py-2 rounded-lg hover:bg-[#12467d] transition-all duration-200 shadow-md hover:shadow-lg"
+              >
                 <Plus className="w-5 h-5" /> Add Agent
               </button>
             </div>
             <div className="space-y-4">
               {formData.solutionAgents.map((agent, index) => (
-                <div key={index} className="p-5 border-2 border-gray-300 rounded-lg bg-white hover:border-[#17599d] transition-all duration-200 relative group">
+                <div
+                  key={index}
+                  className="p-5 border-2 border-gray-300 rounded-lg bg-white hover:border-[#17599d] transition-all duration-200 relative group"
+                >
                   <div className="flex justify-between items-start mb-3">
-                    <span className="text-xs font-bold text-gray-500 bg-gray-200 px-3 py-1 rounded-full">Agent {index + 1}</span>
-                    <button type="button" onClick={() => removeJsonItem(index, 'solutionAgents')} className="text-red-500 hover:text-red-700 hover:bg-red-100 p-2 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100" title="Delete Agent">
+                    <span className="text-xs font-bold text-gray-500 bg-gray-200 px-3 py-1 rounded-full">
+                      Agent {index + 1}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => removeJsonItem(index, "solutionAgents")}
+                      className="text-red-500 hover:text-red-700 hover:bg-red-100 p-2 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
+                      title="Delete Agent"
+                    >
                       <Trash2 className="w-5 h-5" />
                     </button>
                   </div>
-                  <input type="text" placeholder="Agent Title" value={agent.title} onChange={(e) => handleJsonChange(index, 'title', e.target.value, 'solutionAgents')} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 mb-3 bg-white" />
-                  <textarea placeholder="Agent Description" value={agent.description} onChange={(e) => handleJsonChange(index, 'description', e.target.value, 'solutionAgents')} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                  <input
+                    type="text"
+                    placeholder="Agent Title"
+                    value={agent.title}
+                    onChange={(e) =>
+                      handleJsonChange(
+                        index,
+                        "title",
+                        e.target.value,
+                        "solutionAgents",
+                      )
+                    }
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 mb-3 bg-white"
+                  />
+                  <textarea
+                    placeholder="Agent Description"
+                    value={agent.description}
+                    onChange={(e) =>
+                      handleJsonChange(
+                        index,
+                        "description",
+                        e.target.value,
+                        "solutionAgents",
+                      )
+                    }
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                  />
                 </div>
               ))}
             </div>
@@ -522,21 +711,56 @@ export default function CaseStudyForm({
           <section className="bg-gradient-to-br from-orange-50 to-orange-100/50 p-6 rounded-lg border border-orange-200">
             <div className="flex justify-between items-center mb-5 pb-3 border-b-2 border-[#17599d]">
               <h3 className="text-xl font-bold text-[#17599d]">Tech Stack</h3>
-              <button type="button" onClick={() => addJsonItem('tech')} className="flex items-center gap-2 text-sm bg-[#17599d] text-white px-4 py-2 rounded-lg hover:bg-[#12467d] transition-all duration-200 shadow-md hover:shadow-lg">
+              <button
+                type="button"
+                onClick={() => addJsonItem("tech")}
+                className="flex items-center gap-2 text-sm bg-[#17599d] text-white px-4 py-2 rounded-lg hover:bg-[#12467d] transition-all duration-200 shadow-md hover:shadow-lg"
+              >
                 <Plus className="w-5 h-5" /> Add Tech Item
               </button>
             </div>
             <div className="space-y-4">
               {formData.tech.map((item, index) => (
-                <div key={index} className="p-5 border-2 border-gray-300 rounded-lg bg-white hover:border-[#17599d] transition-all duration-200 relative group">
+                <div
+                  key={index}
+                  className="p-5 border-2 border-gray-300 rounded-lg bg-white hover:border-[#17599d] transition-all duration-200 relative group"
+                >
                   <div className="flex justify-between items-start mb-3">
-                    <span className="text-xs font-bold text-gray-500 bg-gray-200 px-3 py-1 rounded-full">Tech {index + 1}</span>
-                    <button type="button" onClick={() => removeJsonItem(index, 'tech')} className="text-red-500 hover:text-red-700 hover:bg-red-100 p-2 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100" title="Delete Tech Item">
+                    <span className="text-xs font-bold text-gray-500 bg-gray-200 px-3 py-1 rounded-full">
+                      Tech {index + 1}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => removeJsonItem(index, "tech")}
+                      className="text-red-500 hover:text-red-700 hover:bg-red-100 p-2 rounded-lg transition-all duration-200 opacity-0 group-hover:opacity-100"
+                      title="Delete Tech Item"
+                    >
                       <Trash2 className="w-5 h-5" />
                     </button>
                   </div>
-                  <input type="text" placeholder="Tech Title (e.g. Backend)" value={item.title} onChange={(e) => handleJsonChange(index, 'title', e.target.value, 'tech')} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 mb-3 bg-white" />
-                  <textarea placeholder="Tech Details (e.g. Node.js, Prisma)" value={item.description} onChange={(e) => handleJsonChange(index, 'description', e.target.value, 'tech')} rows={3} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                  <input
+                    type="text"
+                    placeholder="Tech Title (e.g. Backend)"
+                    value={item.title}
+                    onChange={(e) =>
+                      handleJsonChange(index, "title", e.target.value, "tech")
+                    }
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 mb-3 bg-white"
+                  />
+                  <textarea
+                    placeholder="Tech Details (e.g. Node.js, Prisma)"
+                    value={item.description}
+                    onChange={(e) =>
+                      handleJsonChange(
+                        index,
+                        "description",
+                        e.target.value,
+                        "tech",
+                      )
+                    }
+                    rows={3}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                  />
                 </div>
               ))}
             </div>
@@ -544,30 +768,59 @@ export default function CaseStudyForm({
 
           {/* --- What Made the Solution Unique --- */}
           <section className="bg-gradient-to-br from-indigo-50 to-indigo-100/50 p-6 rounded-lg border border-indigo-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">What Made the Solution Unique</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              What Made the Solution Unique
+            </h3>
             <div>
-              <textarea name="uniqueSolution" value={formData.uniqueSolution} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" placeholder="- Unique feature 1&#10;- Unique feature 2&#10;- Unique feature 3" />
+              <textarea
+                name="uniqueSolution"
+                value={formData.uniqueSolution}
+                onChange={handleChange}
+                rows={4}
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                placeholder="- Unique feature 1&#10;- Unique feature 2&#10;- Unique feature 3"
+              />
             </div>
           </section>
 
           {/* --- Results --- */}
           <section className="bg-gradient-to-br from-teal-50 to-teal-100/50 p-6 rounded-lg border border-teal-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">Results</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              Results
+            </h3>
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">Final Results</label>
-                <textarea name="results" value={formData.results} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  Final Results
+                </label>
+                <textarea
+                  name="results"
+                  value={formData.results}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
             </div>
           </section>
 
           {/* --- Summary --- */}
           <section className="bg-gradient-to-br from-pink-50 to-pink-100/50 p-6 rounded-lg border border-pink-200">
-            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">Summary</h3>
+            <h3 className="text-xl font-bold text-[#17599d] mb-5 pb-3 border-b-2 border-[#17599d]">
+              Summary
+            </h3>
             <div className="space-y-4">
               <div>
-                <label className="text-sm font-semibold text-gray-700 mb-2 block">SEO Summary / Footer Brief</label>
-                <textarea name="summary" value={formData.summary} onChange={handleChange} rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none" />
+                <label className="text-sm font-semibold text-gray-700 mb-2 block">
+                  SEO Summary / Footer Brief
+                </label>
+                <textarea
+                  name="summary"
+                  value={formData.summary}
+                  onChange={handleChange}
+                  rows={4}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-all duration-200 bg-white resize-none"
+                />
               </div>
             </div>
           </section>
@@ -589,8 +842,8 @@ export default function CaseStudyForm({
               {loading
                 ? "Saving..."
                 : caseStudy
-                ? "Update Case Study"
-                : "Create Case Study"}
+                  ? "Update Case Study"
+                  : "Create Case Study"}
             </button>
           </div>
         </form>
@@ -598,11 +851,3 @@ export default function CaseStudyForm({
     </div>
   );
 }
-
-
-
-
-
-
-
-

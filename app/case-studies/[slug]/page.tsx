@@ -65,8 +65,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     keyConstraints: caseStudy.keyConstraints,
   };
 
-  const solutionAgents = caseStudy.solutionAgents || [];
-  const techStack = caseStudy.tech || [];
+  const solutionAgents = (caseStudy.solutionAgents || []) as Array<{
+    title: string;
+    description: string;
+  }>;
+  const techStack = (caseStudy.tech || []) as Array<{
+    title: string;
+    description: string;
+  }>;
   const uniqueSolution = caseStudy.uniqueSolution || "";
   const results = caseStudy.results || "";
   const summary = caseStudy.summary || "";

@@ -59,16 +59,16 @@ for (const caseStudy of caseStudiesData) {
         benefits: caseStudy.nutshell.benefits,     // lowercase 'b'
 
         // --- Deep Dive ---
-        overview: caseStudy.clientInfo.description || "N/A",
+        overview: "N/A",
         client: caseStudy.clientInfo.name || "N/A",
         challenge: caseStudy.nutshell.challenge, 
         keyConstraints: "N/A", // Fixed spelling (added 'r')
 
         // --- Solution JSON ---
-        solutionAgents: caseStudy.solutionAgents || [],
+        solutionAgents: [],
 
         // --- Tech Stack ---
-        tech: caseStudy.techStack || [],
+        tech: [],
 
         // -- Unique Solution (FIXED: camelCase) --
         uniqueSolution: "N/A",

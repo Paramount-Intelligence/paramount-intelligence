@@ -19,7 +19,7 @@ function getAuth(req: NextRequest) {
 // GET single case study by ID
 export async function GET(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     getAuth(req); // 🔐 Protect route using the cookie
@@ -43,7 +43,7 @@ export async function GET(
 // PUT - Update case study
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     getAuth(req);
@@ -70,7 +70,7 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest, 
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     // 1. Authenticate

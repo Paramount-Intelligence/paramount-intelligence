@@ -1,10 +1,10 @@
 import { User, TrendingUp, Globe, Code } from "lucide-react";
 
 interface ClientInfo {
-  name: string;
-  industry: string;
-  market: string;
-  technology: string;
+  name: string | null;
+  industry: string | null;
+  market: string | null;
+  technology: string | null;
 }
 
 interface MeetOurClientProps {
@@ -21,40 +21,50 @@ export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
 
         <div className="space-y-6">
           {/* Client */}
-          <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
-            <User className="w-6 h-6 text-gray-600 mt-1" />
-            <div>
-              <span className="font-semibold text-gray-900">Client: </span>
-              <span className="text-gray-700">{clientInfo.name}</span>
+          {clientInfo.name && (
+            <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
+              <User className="w-6 h-6 text-gray-600 mt-1" />
+              <div>
+                <span className="font-semibold text-gray-900">Client: </span>
+                <span className="text-gray-700">{clientInfo.name}</span>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Industry */}
-          <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
-            <TrendingUp className="w-6 h-6 text-gray-600 mt-1" />
-            <div>
-              <span className="font-semibold text-gray-900">Industry: </span>
-              <span className="text-gray-700">{clientInfo.industry}</span>
+          {clientInfo.industry && (
+            <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
+              <TrendingUp className="w-6 h-6 text-gray-600 mt-1" />
+              <div>
+                <span className="font-semibold text-gray-900">Industry: </span>
+                <span className="text-gray-700">{clientInfo.industry}</span>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Market */}
-          <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
-            <Globe className="w-6 h-6 text-gray-600 mt-1" />
-            <div>
-              <span className="font-semibold text-gray-900">Market: </span>
-              <span className="text-gray-700">{clientInfo.market}</span>
+          {clientInfo.market && (
+            <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
+              <Globe className="w-6 h-6 text-gray-600 mt-1" />
+              <div>
+                <span className="font-semibold text-gray-900">Market: </span>
+                <span className="text-gray-700">{clientInfo.market}</span>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Technology */}
-          <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
-            <Code className="w-6 h-6 text-gray-600 mt-1" />
-            <div>
-              <span className="font-semibold text-gray-900">Technology: </span>
-              <span className="text-gray-700">{clientInfo.technology}</span>
+          {clientInfo.technology && (
+            <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
+              <Code className="w-6 h-6 text-gray-600 mt-1" />
+              <div>
+                <span className="font-semibold text-gray-900">
+                  Technology:{" "}
+                </span>
+                <span className="text-gray-700">{clientInfo.technology}</span>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
