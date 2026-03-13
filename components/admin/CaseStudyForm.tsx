@@ -115,12 +115,14 @@ export default function CaseStudyForm({
   });
 
   const [loading, setLoading] = useState(false);
+  const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
   const [uploadingField, setUploadingField] = useState<
     "image" | "heroImage" | null
   >(null);
 
   useEffect(() => {
     if (caseStudy) {
+      setSlugManuallyEdited(false);
       setFormData({
         ...caseStudy,
         clientName: caseStudy.clientName ?? "",
@@ -169,9 +171,12 @@ export default function CaseStudyForm({
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
+    if (name === "slug") {
+      setSlugManuallyEdited(true);
+    }
     setFormData((prev) => {
       const updated = { ...prev, [name]: value };
-      if (name === "title" && !caseStudy) {
+      if (name === "title" && !slugManuallyEdited) {
         updated.slug = generateSlug(value);
       }
       return updated;
