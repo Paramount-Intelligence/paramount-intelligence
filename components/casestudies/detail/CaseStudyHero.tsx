@@ -1,4 +1,3 @@
-// CaseStudyHero.tsx
 import Image from "next/image";
 
 interface CaseStudyHeroProps {
@@ -7,7 +6,6 @@ interface CaseStudyHeroProps {
   heroImage: string;
 }
 
-// Valid URL check — http/https se shuru hona zaroori hai
 const isValidUrl = (url: string): boolean => {
   if (!url || url.trim() === "") return false;
   try {
@@ -30,13 +28,17 @@ export default function CaseStudyHero({ title, subtitle, heroImage }: CaseStudyH
         <p className="text-lg pt-3 text-gray-700 font-semibold mb-8">{subtitle}</p>
 
         {hasValidImage ? (
-          <div className="relative w-full h-80 md:h-[500px] lg:h-[480px] rounded-2xl overflow-hidden">
+          /* Container size wahi purana rakha hai */
+          <div className="relative w-full h-80 md:h-[500px] lg:h-[480px] rounded-2xl overflow-hidden bg-gray-50">
             <Image
               src={heroImage.trim()}
               alt={title}
               fill
               priority
-              className="object-cover object-center"
+              /* Mobile (default) par 'object-contain' taake image puri nazar aaye.
+                 Desktop (md) par 'object-cover' taake gap nazar na aaye.
+              */
+              className="object-contain md:object-cover object-center"
             />
           </div>
         ) : (
