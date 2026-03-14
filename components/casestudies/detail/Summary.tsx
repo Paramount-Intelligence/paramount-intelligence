@@ -7,7 +7,7 @@ interface SummaryProps {
 
 export default function Summary({ content }: SummaryProps) {
   return (
-    <section className="py-16 bg-gray-50 ">
+    <section className="py-6 bg-gray-50 ">
       <div className="max-w-4xl mx-auto px-6  xl:px-12">
         <div className="flex items-start gap-6">
           <div className="flex-shrink-0">

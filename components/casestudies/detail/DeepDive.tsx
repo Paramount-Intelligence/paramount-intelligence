@@ -13,7 +13,7 @@ interface DeepDiveProps {
 
 export default function DeepDive({ content }: DeepDiveProps) {
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-6 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-12">Deep Dive</h2>
 

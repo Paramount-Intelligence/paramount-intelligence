@@ -11,20 +11,21 @@ export default function CaseStudyHero({ title, subtitle, heroImage }: CaseStudyH
     <section className="py-12 bg-white">
       <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-16">
         {/* Title */}
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
           {title}
         </h1>
 
         {/* Subtitle */}
-        <p className="text-lg text-gray-700 font-semibold mb-8">{subtitle}</p>
+        <p className="text-lg pt-3 text-gray-700 font-semibold mb-8">{subtitle}</p>
 
         {/* Hero Image */}
-        <div className="relative w-full h-100 md:h-125 lg:h-150 rounded-2xl overflow-hidden">
+        <div className="relative w-full h-80 md:h-125 lg:h-120  rounded-2xl overflow-hidden">
           <Image
             src={heroImage}
             alt={title}
             fill
             priority
+            className="object-cover object-center"
           />
         </div>
       </div>

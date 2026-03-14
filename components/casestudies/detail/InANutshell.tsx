@@ -12,7 +12,7 @@ interface InANutshellProps {
 
 export default function InANutshell({ content }: InANutshellProps) {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-6 bg-white">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-12">
           In a Nutshell
