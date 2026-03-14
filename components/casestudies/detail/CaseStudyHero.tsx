@@ -28,17 +28,18 @@ export default function CaseStudyHero({ title, subtitle, heroImage }: CaseStudyH
         <p className="text-lg pt-3 text-gray-700 font-semibold mb-8">{subtitle}</p>
 
         {hasValidImage ? (
-          <div className="relative w-full aspect-[16/9] rounded-2xl overflow-hidden">
+          <div className="relative w-full rounded-2xl overflow-hidden">
             <Image
               src={heroImage.trim()}
               alt={title}
-              fill
+              width={1600}
+              height={900}
               priority
-              className="object-cover"
+              className="w-full h-auto block"
             />
           </div>
         ) : (
-          <div className="w-full aspect-[16/9] rounded-2xl bg-gray-200 flex items-center justify-center">
+          <div className="w-full h-80 rounded-2xl bg-gray-200 flex items-center justify-center">
             <span className="text-gray-400 text-sm">No image available</span>
           </div>
         )}
