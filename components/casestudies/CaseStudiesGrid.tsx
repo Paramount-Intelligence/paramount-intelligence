@@ -85,13 +85,27 @@ export default function CaseStudiesGrid({
                   className="group bg-gray-100 rounded-4xl overflow-hidden transition-transform hover:-translate-y-1"
                 >
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
-                    <Image
-                      src={caseStudy.image}
-                      alt={caseStudy.title}
-                      fill
-                      className="object-cover transition-transform group-hover:scale-105"
-                    />
+                  <div className="relative h-64 overflow-hidden bg-gray-100 flex items-center justify-center">
+                    {caseStudy.image &&
+                    typeof caseStudy.image === "string" &&
+                    caseStudy.image.trim() !== "" &&
+                    caseStudy.image !== "nil" &&
+                    (caseStudy.image.startsWith("http") ||
+                      caseStudy.image.startsWith("/")) ? (
+                      <Image
+                        src={caseStudy.image.trim()}
+                        alt={caseStudy.title || "Case Study"}
+                        fill
+                        className="object-cover transition-transform group-hover:scale-105"
+                        unoptimized // Adding this ensures Next.js doesn't try to pre-parse the URL on the server
+                      />
+                    ) : (
+                      <div className="flex flex-col items-center text-gray-400">
+                        <span className="text-xs font-semibold uppercase tracking-wider">
+                          No Image available
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   {/* Content */}
@@ -135,7 +149,7 @@ export default function CaseStudiesGrid({
                       >
                         {page}
                       </button>
-                    )
+                    ),
                   )}
                 </div>
 
