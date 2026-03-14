@@ -12,8 +12,21 @@ interface MeetOurClientProps {
 }
 
 export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
+  // Helper to check if string is valid and not "N/A"
+  const isValid = (value: string | null | undefined) => {
+    return value && value.trim() !== "" && value.trim().toUpperCase() !== "N/A";
+  };
+
+  // Check if any field has actual data to show the whole section
+  const hasData = isValid(clientInfo.name) || 
+                  isValid(clientInfo.industry) || 
+                  isValid(clientInfo.market) || 
+                  isValid(clientInfo.technology);
+
+  if (!hasData) return null;
+
   return (
-    <section className="py-16 bg-white border-t border-gray-200">
+    <section className="py-6 bg-white border-t border-gray-200">
       <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
         <h2 className="text-4xl font-bold text-gray-900 mb-8">
           Meet our client
@@ -21,7 +34,7 @@ export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
 
         <div className="space-y-6">
           {/* Client */}
-          {clientInfo.name && (
+          {isValid(clientInfo.name) && (
             <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
               <User className="w-6 h-6 text-gray-600 mt-1" />
               <div>
@@ -32,7 +45,7 @@ export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
           )}
 
           {/* Industry */}
-          {clientInfo.industry && (
+          {isValid(clientInfo.industry) && (
             <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
               <TrendingUp className="w-6 h-6 text-gray-600 mt-1" />
               <div>
@@ -43,7 +56,7 @@ export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
           )}
 
           {/* Market */}
-          {clientInfo.market && (
+          {isValid(clientInfo.market) && (
             <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
               <Globe className="w-6 h-6 text-gray-600 mt-1" />
               <div>
@@ -54,7 +67,7 @@ export default function MeetOurClient({ clientInfo }: MeetOurClientProps) {
           )}
 
           {/* Technology */}
-          {clientInfo.technology && (
+          {isValid(clientInfo.technology) && (
             <div className="flex items-start gap-4 pb-6 border-b border-gray-200">
               <Code className="w-6 h-6 text-gray-600 mt-1" />
               <div>
