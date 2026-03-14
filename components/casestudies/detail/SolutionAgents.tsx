@@ -10,6 +10,18 @@ interface SolutionAgentsProps {
 }
 
 export default function SolutionAgents({ agents }: SolutionAgentsProps) {
+  // 1. Filter out agents that have "N/A" in title or description
+  const validAgents = (agents || []).filter(
+    (agent) =>
+      agent.title &&
+      agent.title.trim().toUpperCase() !== "N/A" &&
+      agent.description &&
+      agent.description.trim().toUpperCase() !== "N/A"
+  );
+
+  // 2. If no valid agents exist, don't render the section at all
+  if (validAgents.length === 0) return null;
+
   return (
     <section className="py-6 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-12 xl:px-16">
@@ -18,7 +30,7 @@ export default function SolutionAgents({ agents }: SolutionAgentsProps) {
         </h2>
 
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
-          {agents.map((agent, index) => (
+          {validAgents.map((agent, index) => (
             <div
               key={index}
               className="p-6 rounded-xl border border-[#011a43]/20 bg-[#17599d] text-white shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
