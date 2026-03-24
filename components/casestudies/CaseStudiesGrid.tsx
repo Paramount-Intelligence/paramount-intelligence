@@ -43,7 +43,7 @@ export default function CaseStudiesGrid({
       caseStudy.industry.includes(selectedIndustry);
     const functionMatch =
       selectedBusinessFunction === "All" ||
-      caseStudy.businessFunction === selectedBusinessFunction;
+      caseStudy.businessFunction.includes(selectedBusinessFunction);
     return industryMatch && functionMatch;
   });
 
