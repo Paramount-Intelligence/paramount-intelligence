@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+
 type ApplicationFormData = {
   firstName: string;
   lastName: string;
@@ -28,6 +30,37 @@ type AirtableCreateResponse = {
     createdTime?: string;
   }>;
 };
+
+const uploadResumeToCloudinary = async (resume: ResumeAttachment): Promise<string> => {
+  const timestamp = Math.floor(Date.now() / 1000);
+  const folder = "resumes";
+  
+  // Create signature
+  const crypto = await import("crypto");
+  const signatureString = `access_mode=public&folder=${folder}&timestamp=${timestamp}${process.env.CLOUDINARY_API_SECRET}`;
+  const signature = crypto.createHash("sha1").update(signatureString).digest("hex");
+
+  const formData = new FormData();
+  const blob = new Blob([new Uint8Array(resume.content)], {
+    type: "application/octet-stream",
+  });
+  formData.append("file", blob, resume.filename);
+  formData.append("timestamp", String(timestamp));
+  formData.append("api_key", process.env.CLOUDINARY_API_KEY!);
+  formData.append("signature", signature);
+  formData.append("folder", folder);
+  formData.append("access_mode", "public");
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/auto/upload`,
+    { method: "POST", body: formData }
+  );
+
+  const data = await res.json();
+  if (!data.secure_url) throw new Error(`Cloudinary upload failed: ${JSON.stringify(data)}`);
+  return data.secure_url;
+};
+
 
 const getStringValue = (value: unknown): string => {
   if (typeof value === "string") {
@@ -103,7 +136,7 @@ const saveApplicationToAirtable = async (
   }
 
   const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-  const fields: Record<string, string | number> = {
+  const fields: Record<string, any> = {
     "Full Name": fullName,
     Email: formData.email,
     "Phone Number": formData.phone,
@@ -131,6 +164,13 @@ const saveApplicationToAirtable = async (
 
   // Resume is handled via email attachment. Airtable Attachment fields require objects
   // with publicly accessible URLs, so we do not send Resume here.
+  if (resumeAttachment) {
+  const resumeUrl = await uploadResumeToCloudinary(resumeAttachment);
+  console.log("✅ Resume uploaded to Cloudinary:", resumeUrl);
+  const resumeField = [{ url: resumeUrl, filename: resumeAttachment.filename }];
+  console.log("✅ Sending to Airtable:", JSON.stringify(resumeField));
+  fields["Resume"] = resumeField;
+}
 
   const airtableEndpoint = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
 
@@ -157,7 +197,10 @@ const saveApplicationToAirtable = async (
     return { response, responseText, responseJson };
   };
 
+  
+
   let airtableResult = await postRecord(fields);
+  console.log("Airtable response:", airtableResult.responseText);
   if (airtableResult.response.ok) {
     const recordId = airtableResult.responseJson?.records?.[0]?.id;
     if (!recordId) {
