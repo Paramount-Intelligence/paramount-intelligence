@@ -1,6 +1,8 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 
+export const runtime = "nodejs";
+
 type ApplicationFormData = {
   firstName: string;
   lastName: string;
@@ -39,7 +41,9 @@ const uploadResumeToCloudinary = async (resume: ResumeAttachment): Promise<strin
   const signature = crypto.createHash("sha1").update(signatureString).digest("hex");
 
   const formData = new FormData();
-  const blob = new Blob([resume.content], { type: "application/octet-stream" });
+  const blob = new Blob([new Uint8Array(resume.content)], {
+    type: "application/octet-stream",
+  });
   formData.append("file", blob, resume.filename);
   formData.append("timestamp", String(timestamp));
   formData.append("api_key", process.env.CLOUDINARY_API_KEY!);
