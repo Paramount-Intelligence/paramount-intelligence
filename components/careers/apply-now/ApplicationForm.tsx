@@ -213,7 +213,15 @@ export default function ApplicationForm() {
                 <option value="AI Solutions Architect">
                   AI Solutions Architect
                 </option>
-                <option value="AI Research Intern">AI Research Intern</option>
+                <option value="AI & Automation Intern">
+                  AI & Automation Intern
+                </option>
+                <option value="Business Consulting Intern">
+                  Business Consulting Intern
+                </option>
+                <option value="Marketing & Personal Branding Intern">
+                  Marketing & Personal Branding Intern
+                </option>
                 <option value="Other">Other</option>
               </select>
             </div>
