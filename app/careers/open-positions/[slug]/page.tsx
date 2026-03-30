@@ -306,6 +306,48 @@ const jobsData: { [key: string]: any } = {
       "Market-competitive compensation",
     ],
   },
+  "marketing-personal-branding-intern": {
+    title: "Marketing & Personal Branding Intern",
+    department: "Marketing",
+    location: "On-site Preferred",
+    type: "Internship",
+    openPositions: 1,
+    overview:
+      "We are seeking a creative and high-energy Marketing & Personal Branding Intern to bridge the gap between corporate identity and executive presence. This role is unique: you will not just be marketing a company; you will be responsible for crafting and amplifying the personal brands of our key leadership and technical experts. You will work at the intersection of reputation management, thought leadership, and digital storytelling to position our team as the go-to authorities in the AI and Automation space.",
+    responsibilities: [
+      "Draft compelling LinkedIn posts, articles, and newsletters for leadership to establish thought leadership",
+      'Assist in developing a "Personal Brand Matrix" for team members, identifying their unique voices and pillars of expertise',
+      "Script and help coordinate short-form video content (Reels/Shorts) and professional photography sessions",
+      "Monitor and manage interactions on executive profiles to build meaningful industry connections",
+      "Ensure personal brand messaging aligns with the overall corporate AI Studio & Engineering vision",
+      "Stay ahead of platform algorithm changes and trending topics within the AI and tech community",
+    ],
+    requirements: [
+      "Currently pursuing a final-year Bachelor's or Master's degree in Marketing, PR, Journalism, or a related field",
+      'Exceptional writing skills with the ability to mimic different "voices" and tones',
+      "Deep understanding of LinkedIn's ecosystem and professional networking etiquette",
+      "Confidence in interviewing internal experts to extract insights for content",
+      "Basic understanding of aesthetics and personal presentation for digital media",
+    ],
+    preferred: [
+      "A strong personal digital presence or a portfolio of managed accounts",
+      "A genuine interest in how AI and automation are changing the professional landscape",
+      "Experience in public relations, talent management, or influencer marketing",
+      "Ability to quickly grasp AI terminology to write accurately on behalf of engineers",
+    ],
+    whatWeValue: [
+      "Discretion and trust in handling executive-level communication",
+      "Discipline in maintaining a consistent posting cadence",
+      'Proactive storytelling - finding the "hook" in everyday engineering wins',
+      "Ability to take feedback and iterate on creative concepts",
+    ],
+    whatYouGain: [
+      "High-level access to the leadership team and senior engineers",
+      "Mastery of personal branding - one of the most in-demand marketing skills today",
+      "Direct impact by seeing the growth of professional networks and industry influence",
+      "Real-world experience in how personal brands drive enterprise business development",
+    ],
+  },
 };
 
 interface PageProps {
