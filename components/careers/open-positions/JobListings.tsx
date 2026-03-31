@@ -91,6 +91,18 @@ export default function JobListings() {
       overview:
         "Paramount Intelligence is a technology consulting and engineering firm delivering data-driven and technology-enabled transformation programs to global clients, including Fortune 1000 organizations. The Business Consulting Intern will support live engagements across strategy, analytics, digital transformation, and technology-enabled execution initiatives.",
     },
+    {
+      id: "marketing-personal-branding-intern",
+      title: "Marketing & Personal Branding Intern",
+      department: "Marketing",
+      location: "On-site Preferred",
+      type: "Internship",
+      openPositions: 1,
+      briefDescription:
+        "Build leadership thought leadership and executive personal brands across LinkedIn, video, and digital storytelling.",
+      overview:
+        "We are seeking a creative and high-energy Marketing & Personal Branding Intern to bridge the gap between corporate identity and executive presence. You will be responsible for crafting and amplifying the personal brands of our key leadership and technical experts through reputation management, thought leadership, and digital storytelling.",
+    },
   ];
 
   const departments = [
@@ -99,6 +111,7 @@ export default function JobListings() {
     "Product",
     "Data Science",
     "Consulting",
+    "Marketing",
   ];
 
   const filteredJobs =
