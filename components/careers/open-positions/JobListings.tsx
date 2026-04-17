@@ -103,6 +103,19 @@ export default function JobListings() {
       overview:
         "We are seeking a creative and high-energy Marketing & Personal Branding Intern to bridge the gap between corporate identity and executive presence. You will be responsible for crafting and amplifying the personal brands of our key leadership and technical experts through reputation management, thought leadership, and digital storytelling.",
     },
+    {
+      id: "strategy-consultant",
+      title: "Strategy Consultant",
+      department: "Consulting",
+      location: "Onsite - Islamabad, Multi Gardens B-17",
+      type: "Full-Time Contractual",
+      timezone: "ET",
+      openPositions: 1,
+      briefDescription:
+        "Ideal for early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives alongside ex-MBB consultants.",
+      overview:
+        "We are hiring a Strategy Consultant for a key contractual position within our growing team. This role is ideal for ambitious early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives. Our core work involves supporting Fortune 1000 companies, and we collaborate with ex-MBB consultants, providing exposure to high-impact consulting engagements and professional standards.",
+    },
   ];
 
   const departments = [
@@ -165,6 +178,11 @@ export default function JobListings() {
                     <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                       ⏰ {job.type}
                     </span>
+                    {(job as any).timezone && (
+                      <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
+                        🕐 {(job as any).timezone}
+                      </span>
+                    )}
                     <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
                       {job.openPositions} Open{" "}
                       {job.openPositions === 1 ? "Position" : "Positions"}

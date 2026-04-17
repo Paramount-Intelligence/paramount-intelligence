@@ -348,6 +348,42 @@ const jobsData: { [key: string]: any } = {
       "Real-world experience in how personal brands drive enterprise business development",
     ],
   },
+  "strategy-consultant": {
+    title: "Strategy Consultant",
+    department: "Consulting",
+    location: "Onsite - Islamabad, Multi Gardens B-17",
+    type: "Full-Time Contractual",
+    timezone: "ET",
+    openPositions: 1,
+    overview:
+      "We are hiring a Strategy Consultant for a key contractual position within our growing team. This role is ideal for ambitious early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives.\nOur core work involves supporting Fortune 1000 companies, and we collaborate with ex-MBB consultants, providing exposure to high-impact consulting engagements and professional standards.",
+    responsibilities: [
+      "Conduct market research, competitor analysis, and industry benchmarking",
+      "Identify market opportunities and support go-to-market (GTM) initiatives",
+      "Prepare client presentations, pitch decks, reports, and proposals",
+      "Support lead generation, pipeline development, and marketplace growth efforts",
+      "Analyze data and transform findings into actionable business insights",
+      "Coordinate with leadership, internal teams, and clients on active projects",
+      "Assist in business development and strategic consulting assignments",
+    ],
+    requirements: [
+      "0-1 year of experience",
+      "Strong analytical, research, and problem-solving abilities",
+      "Good communication and coordination skills",
+      "Strong command of PowerPoint, Excel, and documentation tools is preferred",
+      "Educational background in: BBA, Accounting & Finance, Economics or Related Business Fields",
+    ],
+    preferred: [],
+    whatWeValue: [],
+    whatYouGain: [
+      "Fixed monthly salary package",
+      "Performance-based bonus opportunities",
+      "Relevant training and mentoring",
+      "Exposure to a fast-growing and dynamic environment",
+      "Strong learning and career development opportunities",
+      "Shared accommodation may be provided for out-of-city candidates (subject to availability)",
+    ],
+  },
 };
 
 interface PageProps {
@@ -488,21 +524,23 @@ export default async function JobDetailPage({ params }: PageProps) {
             )}
 
             {/* What We Value */}
-            <section>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                What We Value
-              </h2>
-              <ul className="space-y-3 text-gray-700">
-                {job.whatWeValue.map((item: string, idx: number) => (
-                  <li key={idx} className="flex items-start">
-                    <span className="text-[#17599d] mr-3 mt-1 font-bold">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </section>
+            {job.whatWeValue.length > 0 && (
+              <section>
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">
+                  What We Value
+                </h2>
+                <ul className="space-y-3 text-gray-700">
+                  {job.whatWeValue.map((item: string, idx: number) => (
+                    <li key={idx} className="flex items-start">
+                      <span className="text-[#17599d] mr-3 mt-1 font-bold">
+                        •
+                      </span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
 
             {/* What You'll Gain */}
             <section>
@@ -549,6 +587,17 @@ export default async function JobDetailPage({ params }: PageProps) {
                 </h3>
                 <p className="text-xl font-bold text-gray-900">{job.type}</p>
               </div>
+
+              {job.timezone && (
+                <div>
+                  <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
+                    Time Zone
+                  </h3>
+                  <p className="text-xl font-bold text-gray-900">
+                    {job.timezone}
+                  </p>
+                </div>
+              )}
 
               <div>
                 <h3 className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
