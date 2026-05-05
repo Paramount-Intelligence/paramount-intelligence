@@ -1,0 +1,25 @@
+
+> paramount-intelligence@0.1.0 dev
+> next dev --webpack
+
+▲ Next.js 16.1.0 (webpack)
+- Local:         http://localhost:3000
+- Network:       http://172.29.128.1:3000
+- Environments: .env
+
+✓ Starting...
+✓ Ready in 1828ms
+ GET /admin 200 in 1211ms (compile: 997ms, proxy.ts: 85ms, render: 129ms)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."slug", "public"."CaseStudy"."title", "public"."CaseStudy"."subtitle", "public"."CaseStudy"."image", "public"."CaseStudy"."heroImage", "public"."CaseStudy"."industry", "public"."CaseStudy"."businessFunction", "public"."CaseStudy"."description", "public"."CaseStudy"."clientName", "public"."CaseStudy"."clientIndustry", "public"."CaseStudy"."clientMarket", "public"."CaseStudy"."clientTechnology", "public"."CaseStudy"."challenges", "public"."CaseStudy"."solution", "public"."CaseStudy"."benefits", "public"."CaseStudy"."overview", "public"."CaseStudy"."client", "public"."CaseStudy"."challenge", "public"."CaseStudy"."keyConstraints", "public"."CaseStudy"."solutionAgents", "public"."CaseStudy"."tech", "public"."CaseStudy"."uniqueSolution", "public"."CaseStudy"."results", "public"."CaseStudy"."summary", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE 1=1 ORDER BY "public"."CaseStudy"."createdAt" DESC OFFSET $1
+ GET /api/admin/case-studies 200 in 4.3s (compile: 467ms, render: 3.9s)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."slug", "public"."CaseStudy"."title", "public"."CaseStudy"."subtitle", "public"."CaseStudy"."image", "public"."CaseStudy"."heroImage", "public"."CaseStudy"."industry", "public"."CaseStudy"."businessFunction", "public"."CaseStudy"."description", "public"."CaseStudy"."clientName", "public"."CaseStudy"."clientIndustry", "public"."CaseStudy"."clientMarket", "public"."CaseStudy"."clientTechnology", "public"."CaseStudy"."challenges", "public"."CaseStudy"."solution", "public"."CaseStudy"."benefits", "public"."CaseStudy"."overview", "public"."CaseStudy"."client", "public"."CaseStudy"."challenge", "public"."CaseStudy"."keyConstraints", "public"."CaseStudy"."solutionAgents", "public"."CaseStudy"."tech", "public"."CaseStudy"."uniqueSolution", "public"."CaseStudy"."results", "public"."CaseStudy"."summary", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE 1=1 ORDER BY "public"."CaseStudy"."createdAt" DESC OFFSET $1
+ GET /api/admin/case-studies 200 in 593ms (compile: 3ms, render: 590ms)
+prisma:query SELECT "public"."CaseStudy"."id", "public"."CaseStudy"."slug", "public"."CaseStudy"."title", "public"."CaseStudy"."subtitle", "public"."CaseStudy"."image", "public"."CaseStudy"."heroImage", "public"."CaseStudy"."industry", "public"."CaseStudy"."businessFunction", "public"."CaseStudy"."description", "public"."CaseStudy"."clientName", "public"."CaseStudy"."clientIndustry", "public"."CaseStudy"."clientMarket", "public"."CaseStudy"."clientTechnology", "public"."CaseStudy"."challenges", "public"."CaseStudy"."solution", "public"."CaseStudy"."benefits", "public"."CaseStudy"."overview", "public"."CaseStudy"."client", "public"."CaseStudy"."challenge", "public"."CaseStudy"."keyConstraints", "public"."CaseStudy"."solutionAgents", "public"."CaseStudy"."tech", "public"."CaseStudy"."uniqueSolution", "public"."CaseStudy"."results", "public"."CaseStudy"."summary", "public"."CaseStudy"."createdAt", "public"."CaseStudy"."updatedAt" FROM "public"."CaseStudy" WHERE 1=1 ORDER BY "public"."CaseStudy"."createdAt" DESC OFFSET $1
+ GET /api/admin/case-studies 200 in 486ms (compile: 6ms, render: 480ms)
+ GET /api/admin/airtable/permanent-members 200 in 4.9s (compile: 385ms, render: 4.6s)
+ GET /api/admin/airtable/summary 200 in 5.0s (compile: 384ms, render: 4.6s)
+ GET /api/admin/airtable/applicants 200 in 5.2s (compile: 385ms, render: 4.8s)
+ GET /api/admin/airtable/permanent-members 200 in 1003ms (compile: 3ms, render: 1000ms)
+ GET /api/admin/airtable/applicants 200 in 1295ms (compile: 2ms, render: 1293ms)
+ GET /api/admin/airtable/summary 200 in 1605ms (compile: 2ms, render: 1603ms)
+[?25h
