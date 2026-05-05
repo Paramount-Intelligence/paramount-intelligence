@@ -9,7 +9,8 @@ export default function TrustedBrands() {
     | "Bore and Bore"
     | "Davidson"
     | "Aramco"
-    | "Deloitte";
+    | "Deloitte"
+    | "Toptal";
 
   const brands: { name: BrandName; logo: string }[] = [
     {
@@ -22,7 +23,8 @@ export default function TrustedBrands() {
     { name: "Bore and Bore", logo: "/images/BnB-logo.png" },
     { name: "Davidson", logo: "/images/davidson-logo.png" },
     { name: "Aramco", logo: "/images/aramco-logo.png" },
-    { name: "Deloitte", logo: "/images/deloitte.png" },
+    { name: "Deloitte", logo: "/images/Deloitte.png" },
+    { name: "Toptal", logo: "/images/toptal.png" },
   ];
 
   // Duplicate the brands array for seamless infinite looping
@@ -71,6 +73,7 @@ export default function TrustedBrands() {
               Davidson: "https://www.davidson.group/",
               Aramco: "https://www.aramco.com/",
               Deloitte: "https://www2.deloitte.com/global/en.html",
+              Toptal: "https://www.toptal.com/",
             };
             return (
               <div
@@ -90,7 +93,11 @@ export default function TrustedBrands() {
                     width={150}
                     height={60}
                     priority={index < 8}
-                    className="w-auto h-12 max-w-full object-contain transition-all duration-300"
+                    className={`w-auto max-w-full object-contain transition-all duration-300 mix-blend-multiply ${
+                      brand.name === "Toptal" || brand.name === "Deloitte"
+                        ? "h-20"
+                        : "h-12"
+                    }`}
                   />
                 </a>
               </div>

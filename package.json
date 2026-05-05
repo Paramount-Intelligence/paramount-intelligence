@@ -6,11 +6,13 @@
     "dev": "next dev --webpack",
     "build": "prisma migrate deploy && prisma generate && next build --webpack",
     "start": "next start"
-  },                                                      
-  "prisma": {           
-    "seed": "tsx prisma/seed.ts"    
-  },    
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
   "dependencies": {
+    "@livekit/components-react": "^2.9.20",
+    "@livekit/components-styles": "^1.2.0",
     "@prisma/client": "^5.22.0",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@vercel/analytics": "^1.6.1",
@@ -22,6 +24,8 @@
     "dotenv": "^17.3.1",
     "express": "^4.21.2",
     "jsonwebtoken": "^9.0.3",
+    "livekit-client": "^2.18.7",
+    "livekit-server-sdk": "^2.15.2",
     "lucide-react": "^0.562.0",
     "next": "16.1.0",
     "next-cloudinary": "^6.17.5",
