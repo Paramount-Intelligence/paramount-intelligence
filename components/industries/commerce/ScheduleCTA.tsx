@@ -10,6 +10,7 @@ export default function ScheduleCTA() {
           src="/images/services/llm/Lets-define-how-Generative-AI.png"
           alt="Schedule Background"
           fill
+          sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
       </div>

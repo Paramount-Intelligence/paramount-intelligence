@@ -23,7 +23,7 @@ export default function TrustedBrands() {
     { name: "Bore and Bore", logo: "/images/BnB-logo.png" },
     { name: "Davidson", logo: "/images/davidson-logo.png" },
     { name: "Aramco", logo: "/images/aramco-logo.png" },
-    { name: "Deloitte", logo: "/images/Deloitte.png" },
+    { name: "Deloitte", logo: "/images/deloitte.png" },
     { name: "Toptal", logo: "/images/toptal.png" },
   ];
 
@@ -92,7 +92,6 @@ export default function TrustedBrands() {
                     alt={brand.name}
                     width={150}
                     height={60}
-                    priority={index < 8}
                     className={`w-auto max-w-full object-contain transition-all duration-300 mix-blend-multiply ${
                       brand.name === "Toptal" || brand.name === "Deloitte"
                         ? "h-20"
