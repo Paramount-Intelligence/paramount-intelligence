@@ -96,6 +96,7 @@ export default function CaseStudiesGrid({
                         src={caseStudy.image.trim()}
                         alt={caseStudy.title || "Case Study"}
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform group-hover:scale-105"
                         unoptimized // Adding this ensures Next.js doesn't try to pre-parse the URL on the server
                       />

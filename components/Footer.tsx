@@ -47,6 +47,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    prefetch={link.href.startsWith("/") ? false : undefined}
                     className="hover:text-white transition-colors text-sm"
                   >
                     {link.name}
@@ -66,6 +67,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    prefetch={false}
                     className="hover:text-white transition-colors text-sm"
                   >
                     {link.name}
@@ -85,6 +87,7 @@ export default function Footer() {
                 <li key={index}>
                   <Link
                     href={link.href}
+                    prefetch={link.href.startsWith("/") ? false : undefined}
                     className="hover:text-white transition-colors text-sm"
                   >
                     {link.name}

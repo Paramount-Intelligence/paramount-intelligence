@@ -106,7 +106,7 @@ export default function ProjectExperience() {
                       : ""
                   }`}
                 >
-                  <Image src={project.imageSrc} alt={project.title} fill />
+                  <Image src={project.imageSrc} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" />
                 </div>
               </div>
             ))}

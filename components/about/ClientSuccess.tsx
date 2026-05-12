@@ -32,6 +32,7 @@ export default function ClientSuccess() {
               src="/images/about/case.png"
               alt="Custom AI and LLMs applications dashboard"
               fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-contain"
             />
           </div>

@@ -1,5 +1,6 @@
 import { Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import AssistantWidget from "@/components/AssistantWidget";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
 // import { config } from "@fortawesome/fontawesome-svg-core";
 // config.autoAddCss = false;

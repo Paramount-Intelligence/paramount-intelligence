@@ -38,7 +38,7 @@ export default function AdminPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      <Header showAdminLogout />
       <AdminDashboard />
       <Footer />
     </div>
