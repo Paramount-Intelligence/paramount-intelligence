@@ -421,6 +421,7 @@ const ListItem = React.forwardRef<
         <Link
           ref={ref}
           href={href}
+          prefetch={false}
           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-50 focus:text-gray-900"
           {...props}
         >
