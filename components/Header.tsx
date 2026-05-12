@@ -41,7 +41,7 @@ function MobileDropdown(props: MobileDropdownProps) {
 
 import Link from "next/link";
 import Image from "next/image";
-import { Menu } from "lucide-react";
+import { LogOut, Menu } from "lucide-react";
 
 import {
   NavigationMenu,
@@ -145,8 +145,27 @@ const careers = [
   // },
 ];
 
-export default function Header() {
+type HeaderProps = {
+  showAdminLogout?: boolean;
+};
+
+export default function Header({ showAdminLogout = false }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
+  const handleAdminLogout = async () => {
+    try {
+      const res = await fetch("/api/admin/logout", {
+        method: "POST",
+        credentials: "include",
+      });
+
+      if (!res.ok) throw new Error("Logout failed");
+      window.location.href = "/admin/login";
+    } catch (err) {
+      console.error(err);
+      alert("Failed to logout");
+    }
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
@@ -272,14 +291,25 @@ export default function Header() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          {/* Contact Button */}
+          {/* Contact / Admin Action */}
           <div className="hidden lg:block">
-            <Link
-              href="/contact-us"
-              className="bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all"
-            >
-              Contact us
-            </Link>
+            {showAdminLogout ? (
+              <button
+                type="button"
+                onClick={handleAdminLogout}
+                className="inline-flex items-center gap-2 bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all"
+              >
+                <LogOut className="h-4 w-4" />
+                Log out
+              </button>
+            ) : (
+              <Link
+                href="/contact-us"
+                className="bg-black text-white px-6 py-2.5 text-sm font-medium hover:bg-gray-800 transition-all"
+              >
+                Contact us
+              </Link>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -356,12 +386,23 @@ export default function Header() {
                   </Link>
                 ))}
               </MobileDropdown>
-              <Link
-                href="/contact-us"
-                className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center mt-2"
-              >
-                Contact us
-              </Link>
+              {showAdminLogout ? (
+                <button
+                  type="button"
+                  onClick={handleAdminLogout}
+                  className="inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center mt-2"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Log out
+                </button>
+              ) : (
+                <Link
+                  href="/contact-us"
+                  className="bg-black text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-gray-800 transition-all text-center mt-2"
+                >
+                  Contact us
+                </Link>
+              )}
             </nav>
           </div>
         )}
@@ -380,6 +421,7 @@ const ListItem = React.forwardRef<
         <Link
           ref={ref}
           href={href}
+          prefetch={false}
           className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-50 hover:text-gray-900 focus:bg-gray-50 focus:text-gray-900"
           {...props}
         >

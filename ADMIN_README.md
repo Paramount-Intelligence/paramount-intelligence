@@ -73,6 +73,31 @@ Updates an existing case study
 ### DELETE /api/admin/case-studies/[id]
 Deletes a case study
 
+### GET /api/admin/airtable/applicants
+Fetches normalized Airtable applicant records for the protected admin dashboard.
+
+### GET /api/admin/airtable/permanent-members
+Fetches normalized Airtable permanent member records for the protected admin dashboard.
+
+### GET /api/admin/airtable/summary
+Fetches Airtable KPI and sync summary data for the protected admin dashboard.
+
+## Airtable Environment Variables
+
+Set these values server-side only. Do not expose Airtable credentials with `NEXT_PUBLIC_` prefixes.
+
+```env
+AIRTABLE_PERSONAL_ACCESS_TOKEN=your_airtable_token
+# AIRTABLE_API_KEY is also supported as a fallback token name.
+AIRTABLE_BASE_ID=your_airtable_base_id
+AIRTABLE_APPLICANTS_TABLE_NAME=Job Applications
+AIRTABLE_APPLICANTS_VIEW_NAME=Grid view
+# Optional comma-separated list for additional table visibility.
+AIRTABLE_ADDITIONAL_TABLE_NAMES=
+```
+
+Permanent members are derived from the applicants table where `Stage` is `Hired`.
+
 ## Seeding Data
 
 To reset and re-seed the database with the original 22 case studies:
