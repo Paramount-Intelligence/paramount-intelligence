@@ -10,6 +10,22 @@ interface CaseStudiesGridProps {
   selectedBusinessFunction: string;
 }
 
+const featuredCaseStudyTitles = [
+  "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
+  "LLM-Powered Customer Support Chatbot",
+  "Pricing Intelligence and Recommendation Engine",
+];
+
+const normalizeCaseStudyTitle = (title: string) =>
+  title.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+
+const featuredCaseStudyOrder = new Map(
+  featuredCaseStudyTitles.map((title, index) => [
+    normalizeCaseStudyTitle(title),
+    index,
+  ]),
+);
+
 export default function CaseStudiesGrid({
   selectedIndustry,
   selectedBusinessFunction,
@@ -37,7 +53,18 @@ export default function CaseStudiesGrid({
     fetchCaseStudies();
   }, []);
 
-  const filteredCaseStudies = caseStudiesData.filter((caseStudy) => {
+  const orderedCaseStudies = [...caseStudiesData].sort((first, second) => {
+    const firstPriority =
+      featuredCaseStudyOrder.get(normalizeCaseStudyTitle(first.title)) ??
+      Number.POSITIVE_INFINITY;
+    const secondPriority =
+      featuredCaseStudyOrder.get(normalizeCaseStudyTitle(second.title)) ??
+      Number.POSITIVE_INFINITY;
+
+    return firstPriority - secondPriority;
+  });
+
+  const filteredCaseStudies = orderedCaseStudies.filter((caseStudy) => {
     const industryMatch =
       selectedIndustry === "All" ||
       caseStudy.industry.includes(selectedIndustry);

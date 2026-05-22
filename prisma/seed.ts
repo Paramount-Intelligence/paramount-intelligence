@@ -38,7 +38,7 @@ for (const caseStudy of caseStudiesData) {
     await prisma.caseStudy.create({
       data: {
         id: caseStudy.id,
-        slug: caseStudy.slug,
+        slug: caseStudy.slug, 
         title: caseStudy.title,
         subtitle: caseStudy.subtitle,
         image: caseStudy.image,
