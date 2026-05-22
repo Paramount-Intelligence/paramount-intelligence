@@ -145,6 +145,7 @@ type RecordsResponse<T> = {
 type Tab = "overview" | "case-studies" | "applicants" | "members" | "airtable";
 
 const pageSize = 10;
+const caseStudyPageSize = 5;
 
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "overview", label: "Overview" },
@@ -190,7 +191,9 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
   const [applicants, setApplicants] = useState<Applicant[]>([]);
-  const [applicantFieldColumns, setApplicantFieldColumns] = useState<string[]>([]);
+  const [applicantFieldColumns, setApplicantFieldColumns] = useState<string[]>(
+    [],
+  );
   const [members, setMembers] = useState<Member[]>([]);
   const [summary, setSummary] = useState<AirtableSummary | null>(null);
   const [loading, setLoading] = useState(true);
@@ -200,15 +203,21 @@ export default function AdminDashboard() {
   const [memberError, setMemberError] = useState("");
   const [summaryError, setSummaryError] = useState("");
   const [showForm, setShowForm] = useState(false);
-  const [editingCaseStudy, setEditingCaseStudy] = useState<CaseStudy | null>(null);
+  const [editingCaseStudy, setEditingCaseStudy] = useState<CaseStudy | null>(
+    null,
+  );
   const [applicantSearch, setApplicantSearch] = useState("");
   const [memberSearch, setMemberSearch] = useState("");
   const [applicantStatus, setApplicantStatus] = useState("all");
-  const [applicantPositionGranted, setApplicantPositionGranted] = useState("all");
+  const [applicantPositionGranted, setApplicantPositionGranted] =
+    useState("all");
   const [memberStatus, setMemberStatus] = useState("all");
+  const [caseStudyPage, setCaseStudyPage] = useState(1);
   const [applicantPage, setApplicantPage] = useState(1);
   const [memberPage, setMemberPage] = useState(1);
-  const [selectedApplicant, setSelectedApplicant] = useState<Applicant | null>(null);
+  const [selectedApplicant, setSelectedApplicant] = useState<Applicant | null>(
+    null,
+  );
 
   useEffect(() => {
     refreshDashboard();
@@ -221,6 +230,7 @@ export default function AdminDashboard() {
     if (!response.ok) throw new Error("Failed to fetch case studies");
     const data = (await response.json()) as CaseStudy[];
     setCaseStudies(data);
+    setCaseStudyPage(1);
     setCaseStudyError("");
   };
 
@@ -230,32 +240,47 @@ export default function AdminDashboard() {
     setMemberError("");
     setSummaryError("");
 
-    const [applicantResult, memberResult, summaryResult] = await Promise.allSettled([
-      fetch("/api/admin/airtable/applicants", { credentials: "include" }),
-      fetch("/api/admin/airtable/permanent-members", { credentials: "include" }),
-      fetch("/api/admin/airtable/summary", { credentials: "include" }),
-    ]);
+    const [applicantResult, memberResult, summaryResult] =
+      await Promise.allSettled([
+        fetch("/api/admin/airtable/applicants", { credentials: "include" }),
+        fetch("/api/admin/airtable/permanent-members", {
+          credentials: "include",
+        }),
+        fetch("/api/admin/airtable/summary", { credentials: "include" }),
+      ]);
 
     if (applicantResult.status === "fulfilled" && applicantResult.value.ok) {
-      const payload = (await applicantResult.value.json()) as RecordsResponse<Applicant>;
+      const payload =
+        (await applicantResult.value.json()) as RecordsResponse<Applicant>;
       setApplicants(payload.records);
       setApplicantFieldColumns(
         payload.columns?.length
           ? payload.columns
-          : Array.from(new Set(payload.records.flatMap((record) => Object.keys(record.fields || {})))),
+          : Array.from(
+              new Set(
+                payload.records.flatMap((record) =>
+                  Object.keys(record.fields || {}),
+                ),
+              ),
+            ),
       );
     } else {
       setApplicantError("Applicants could not be loaded from Airtable.");
     }
 
     if (memberResult.status === "fulfilled" && memberResult.value.ok) {
-      const payload = (await memberResult.value.json()) as RecordsResponse<Member>;
+      const payload =
+        (await memberResult.value.json()) as RecordsResponse<Member>;
       setMembers(payload.records);
       if (payload.configured === false) {
-        setMemberError(payload.message || "Permanent members table is not configured yet.");
+        setMemberError(
+          payload.message || "Permanent members table is not configured yet.",
+        );
       }
     } else {
-      setMemberError("Permanent members could not be loaded. Check the Airtable members table configuration.");
+      setMemberError(
+        "Permanent members could not be loaded. Check the Airtable members table configuration.",
+      );
     }
 
     if (summaryResult.status === "fulfilled" && summaryResult.value.ok) {
@@ -286,10 +311,13 @@ export default function AdminDashboard() {
     if (!confirm("Are you sure you want to delete this case study?")) return;
 
     try {
-      const response = await fetch(`${getApiUrl()}/api/admin/case-studies/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+      const response = await fetch(
+        `${getApiUrl()}/api/admin/case-studies/${id}`,
+        {
+          method: "DELETE",
+          credentials: "include",
+        },
+      );
       if (!response.ok) throw new Error("Failed to delete");
       fetchCaseStudies();
     } catch (error) {
@@ -315,12 +343,24 @@ export default function AdminDashboard() {
   };
 
   const applicantStatusOptions = useMemo(
-    () => ["all", ...Array.from(new Set(applicants.map((item) => item.applicationStatus).filter(Boolean)))],
+    () => [
+      "all",
+      ...Array.from(
+        new Set(
+          applicants.map((item) => item.applicationStatus).filter(Boolean),
+        ),
+      ),
+    ],
     [applicants],
   );
 
   const memberStatusOptions = useMemo(
-    () => ["all", ...Array.from(new Set(members.map((item) => item.status).filter(Boolean)))],
+    () => [
+      "all",
+      ...Array.from(
+        new Set(members.map((item) => item.status).filter(Boolean)),
+      ),
+    ],
     [members],
   );
 
@@ -330,7 +370,10 @@ export default function AdminDashboard() {
       ...Array.from(
         new Set(
           applicants
-            .map((item) => item.fields?.["Position Granted"] || item.positionGranted)
+            .map(
+              (item) =>
+                item.fields?.["Position Granted"] || item.positionGranted,
+            )
             .filter(Boolean),
         ),
       ),
@@ -358,7 +401,13 @@ export default function AdminDashboard() {
         (member) =>
           statusMatches(member.status, memberStatus) &&
           includesText(
-            [member.memberName, member.email, member.role, member.department, member.notes],
+            [
+              member.memberName,
+              member.email,
+              member.role,
+              member.department,
+              member.notes,
+            ],
             memberSearch,
           ),
       ),
@@ -372,6 +421,10 @@ export default function AdminDashboard() {
   const pagedMembers = filteredMembers.slice(
     (memberPage - 1) * pageSize,
     memberPage * pageSize,
+  );
+  const pagedCaseStudies = caseStudies.slice(
+    (caseStudyPage - 1) * caseStudyPageSize,
+    caseStudyPage * caseStudyPageSize,
   );
 
   const pendingApplicants = applicants.filter((item) =>
@@ -446,14 +499,32 @@ export default function AdminDashboard() {
       render: (row) => (
         <div>
           <p className="font-semibold text-slate-950">{row.memberName}</p>
-          <p className="mt-1 text-xs text-slate-500">{row.email || "No email"}</p>
+          <p className="mt-1 text-xs text-slate-500">
+            {row.email || "No email"}
+          </p>
         </div>
       ),
     },
-    { key: "role", header: "Role", render: (row) => row.role || "Not provided" },
-    { key: "department", header: "Department", render: (row) => row.department || "Not provided" },
-    { key: "status", header: "Status", render: (row) => <StatusBadge status={row.status} /> },
-    { key: "joining", header: "Joining Date", render: (row) => formatDate(row.joiningDate) },
+    {
+      key: "role",
+      header: "Role",
+      render: (row) => row.role || "Not provided",
+    },
+    {
+      key: "department",
+      header: "Department",
+      render: (row) => row.department || "Not provided",
+    },
+    {
+      key: "status",
+      header: "Status",
+      render: (row) => <StatusBadge status={row.status} />,
+    },
+    {
+      key: "joining",
+      header: "Joining Date",
+      render: (row) => formatDate(row.joiningDate),
+    },
     { key: "notes", header: "Notes", render: (row) => row.notes || "No notes" },
   ];
 
@@ -464,14 +535,32 @@ export default function AdminDashboard() {
       render: (row) => (
         <div className="max-w-sm">
           <p className="font-semibold text-slate-950">{row.title}</p>
-          <p className="mt-1 line-clamp-2 text-xs text-slate-500">{row.subtitle}</p>
+          <p className="mt-1 line-clamp-2 text-xs text-slate-500">
+            {row.subtitle}
+          </p>
         </div>
       ),
     },
-    { key: "category", header: "Category", render: (row) => row.industry || "Uncategorized" },
-    { key: "function", header: "Business Function", render: (row) => row.businessFunction || "Not set" },
-    { key: "status", header: "Status", render: () => <StatusBadge status="Published" /> },
-    { key: "created", header: "Created", render: (row) => formatDate(row.createdAt) },
+    {
+      key: "category",
+      header: "Category",
+      render: (row) => row.industry || "Uncategorized",
+    },
+    {
+      key: "function",
+      header: "Business Function",
+      render: (row) => row.businessFunction || "Not set",
+    },
+    {
+      key: "status",
+      header: "Status",
+      render: () => <StatusBadge status="Published" />,
+    },
+    {
+      key: "created",
+      header: "Created",
+      render: (row) => formatDate(row.createdAt),
+    },
     {
       key: "actions",
       header: "Actions",
@@ -520,8 +609,8 @@ export default function AdminDashboard() {
                 Admin Dashboard
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
-                Manage company content, applicants, members, and Airtable records
-                from a protected enterprise control center.
+                Manage company content, applicants, members, and Airtable
+                records from a protected enterprise control center.
               </p>
             </div>
             <div className="flex flex-wrap justify-start gap-3 lg:ml-auto lg:justify-end">
@@ -561,21 +650,67 @@ export default function AdminDashboard() {
 
         {showForm && (
           <div className="mt-6">
-            <CaseStudyForm caseStudy={editingCaseStudy} onClose={handleFormClose} />
+            <CaseStudyForm
+              caseStudy={editingCaseStudy}
+              onClose={handleFormClose}
+            />
           </div>
         )}
 
         <div className="mt-6 space-y-6">
           {activeTab === "overview" && (
             <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              <KpiCard label="Total Applicants" value={applicants.length} helper="Airtable applicant records" icon={<Users className="h-5 w-5" />} />
-              <KpiCard label="Permanent Members" value={members.length} helper={memberError || "Hired members"} icon={<UserCheck className="h-5 w-5" />} />
-              <KpiCard label="Pending Applicants" value={pendingApplicants} helper="Awaiting review" icon={<Clock3 className="h-5 w-5" />} />
-              <KpiCard label="Approved Applicants" value={approvedApplicants} helper="Marked approved in Airtable" icon={<CheckCircle2 className="h-5 w-5" />} />
-              <KpiCard label="Rejected Applicants" value={rejectedApplicants} helper="Marked rejected in Airtable" icon={<XCircle className="h-5 w-5" />} />
-              <KpiCard label="Total Case Studies" value={caseStudies.length} helper="Published company stories" icon={<FileText className="h-5 w-5" />} />
-              <KpiCard label="Recent Applications" value={summary?.applicants.recent.length || Math.min(applicants.length, 5)} helper="Latest Airtable records loaded" icon={<BriefcaseBusiness className="h-5 w-5" />} />
-              <KpiCard label="Last Airtable Sync" value={formatDateTime(summary?.syncedAt)} helper={summaryError || "Server-side Airtable fetch"} icon={<Database className="h-5 w-5" />} />
+              <KpiCard
+                label="Total Applicants"
+                value={applicants.length}
+                helper="Airtable applicant records"
+                icon={<Users className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Permanent Members"
+                value={members.length}
+                helper={memberError || "Hired members"}
+                icon={<UserCheck className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Pending Applicants"
+                value={pendingApplicants}
+                helper="Awaiting review"
+                icon={<Clock3 className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Approved Applicants"
+                value={approvedApplicants}
+                helper="Marked approved in Airtable"
+                icon={<CheckCircle2 className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Rejected Applicants"
+                value={rejectedApplicants}
+                helper="Marked rejected in Airtable"
+                icon={<XCircle className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Total Case Studies"
+                value={caseStudies.length}
+                helper="Published company stories"
+                icon={<FileText className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Recent Applications"
+                value={
+                  summary?.applicants.recent.length ||
+                  Math.min(applicants.length, 5)
+                }
+                helper="Latest Airtable records loaded"
+                icon={<BriefcaseBusiness className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Last Airtable Sync"
+                value={formatDateTime(summary?.syncedAt)}
+                helper={summaryError || "Server-side Airtable fetch"}
+                icon={<Database className="h-5 w-5" />}
+              />
             </section>
           )}
 
@@ -598,11 +733,33 @@ export default function AdminDashboard() {
                 />
               </div>
               {caseStudyError ? (
-                <div className="p-5 pt-0"><ErrorState title="Case studies unavailable" description={caseStudyError} /></div>
+                <div className="p-5 pt-0">
+                  <ErrorState
+                    title="Case studies unavailable"
+                    description={caseStudyError}
+                  />
+                </div>
               ) : caseStudies.length === 0 ? (
-                <div className="p-5 pt-0"><EmptyState title="No case studies found" description="Create a case study to begin building the company library." /></div>
+                <div className="p-5 pt-0">
+                  <EmptyState
+                    title="No case studies found"
+                    description="Create a case study to begin building the company library."
+                  />
+                </div>
               ) : (
-                <DataTable columns={caseStudyColumns} rows={caseStudies} getRowKey={(row) => row.id} />
+                <>
+                  <DataTable
+                    columns={caseStudyColumns}
+                    rows={pagedCaseStudies}
+                    getRowKey={(row) => row.id}
+                  />
+                  <Pagination
+                    page={caseStudyPage}
+                    total={caseStudies.length}
+                    pageSize={caseStudyPageSize}
+                    onPageChange={setCaseStudyPage}
+                  />
+                </>
               )}
             </DataPanel>
           )}
@@ -635,9 +792,15 @@ export default function AdminDashboard() {
               {airtableLoading ? (
                 <LoadingSkeleton />
               ) : applicantError ? (
-                <ErrorState title="Applicants unavailable" description={applicantError} />
+                <ErrorState
+                  title="Applicants unavailable"
+                  description={applicantError}
+                />
               ) : filteredApplicants.length === 0 ? (
-                <EmptyState title="No applicants match this view" description="Try a different search term or status filter." />
+                <EmptyState
+                  title="No applicants match this view"
+                  description="Try a different search term or status filter."
+                />
               ) : (
                 <>
                   <DataTable
@@ -677,13 +840,27 @@ export default function AdminDashboard() {
               {airtableLoading ? (
                 <LoadingSkeleton />
               ) : memberError ? (
-                <ErrorState title="Permanent members unavailable" description={memberError} />
+                <ErrorState
+                  title="Permanent members unavailable"
+                  description={memberError}
+                />
               ) : filteredMembers.length === 0 ? (
-                <EmptyState title="No members match this view" description="Try a different search term or status filter." />
+                <EmptyState
+                  title="No members match this view"
+                  description="Try a different search term or status filter."
+                />
               ) : (
                 <>
-                  <DataTable columns={memberColumns} rows={pagedMembers} getRowKey={(row) => row.id} />
-                  <Pagination page={memberPage} total={filteredMembers.length} onPageChange={setMemberPage} />
+                  <DataTable
+                    columns={memberColumns}
+                    rows={pagedMembers}
+                    getRowKey={(row) => row.id}
+                  />
+                  <Pagination
+                    page={memberPage}
+                    total={filteredMembers.length}
+                    onPageChange={setMemberPage}
+                  />
                 </>
               )}
             </RecordsSection>
@@ -708,12 +885,23 @@ export default function AdminDashboard() {
                 />
               </div>
               <div className="grid gap-4 p-5 pt-0 md:grid-cols-2">
-                <AirtableRecordCard title="Applicants" count={applicants.length} status={applicantError ? "Needs attention" : "Connected"} />
-                <AirtableRecordCard title="Permanent Members" count={members.length} status={memberError ? "Needs attention" : "Stage = Hired"} />
+                <AirtableRecordCard
+                  title="Applicants"
+                  count={applicants.length}
+                  status={applicantError ? "Needs attention" : "Connected"}
+                />
+                <AirtableRecordCard
+                  title="Permanent Members"
+                  count={members.length}
+                  status={memberError ? "Needs attention" : "Stage = Hired"}
+                />
               </div>
               {summaryError && (
                 <div className="p-5 pt-0">
-                  <ErrorState title="Summary unavailable" description={summaryError} />
+                  <ErrorState
+                    title="Summary unavailable"
+                    description={summaryError}
+                  />
                 </div>
               )}
             </DataPanel>
@@ -769,7 +957,11 @@ function RecordsSection({
           eyebrow="Airtable"
           title={title}
           description={description}
-          action={<span className="text-sm font-semibold text-slate-500">{count} records</span>}
+          action={
+            <span className="text-sm font-semibold text-slate-500">
+              {count} records
+            </span>
+          }
         />
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <div className="relative min-w-0 flex-1">
@@ -830,10 +1022,12 @@ function RecordsSection({
 function Pagination({
   page,
   total,
+  pageSize = 10,
   onPageChange,
 }: {
   page: number;
   total: number;
+  pageSize?: number;
   onPageChange: (page: number) => void;
 }) {
   const totalPages = Math.max(1, Math.ceil(total / pageSize));
@@ -881,7 +1075,9 @@ function ApplicantDetails({
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
                 Applicant Record
               </p>
-              <h2 className="mt-2 text-2xl font-semibold">{applicant.candidateName}</h2>
+              <h2 className="mt-2 text-2xl font-semibold">
+                {applicant.candidateName}
+              </h2>
               <p className="mt-2 text-sm text-slate-300">
                 {applicant.roleAppliedFor || "Role not set"} |{" "}
                 {applicant.email || "Email not set"}
