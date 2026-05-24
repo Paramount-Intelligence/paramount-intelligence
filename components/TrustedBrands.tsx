@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function TrustedBrands() {
   type BrandName =
-    | "Gratia"
+    // | "Gratia"
     | "Donaldson"
     | "Veon"
     | "Alibaba"
@@ -21,13 +21,13 @@ export default function TrustedBrands() {
   };
 
   const brands: Brand[] = [
-    {
-      name: "Gratia",
-      logo: "/images/Gratia-logo.svg",
-      width: 135,
-      height: 52,
-      slotWidth: 220,
-    },
+      // {
+      //   name: "Gratia",
+      //   logo: "/images/Gratia-logo.svg",
+      //   width: 135,
+      //   height: 52,
+      //   slotWidth: 220,
+      // },
     {
       name: "Donaldson",
       logo: "/images/donaldson-logo.png",
@@ -89,7 +89,7 @@ export default function TrustedBrands() {
   const brandGroups = [brands, brands];
 
   const brandLinks: Record<BrandName, string> = {
-    Gratia: "https://gogratia.com/",
+    // Gratia: "https://gogratia.com/",
     Donaldson: "https://www.donaldson.com/en-us/",
     Veon: "https://www.veon.com/",
     Alibaba: "https://www.alibaba.com/",

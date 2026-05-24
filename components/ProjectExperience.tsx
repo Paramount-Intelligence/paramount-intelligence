@@ -3,7 +3,18 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getApiUrl } from "@/lib/api";
+
+const specificTitles = [
+  "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
+  "LLM-Powered Customer Support Chatbot",
+  "Pricing Intelligence and Recommendation Engine",
+];
+
+const normalizeTitle = (title: string) => title.trim().toLowerCase();
+
+const titleOrder = new Map(
+  specificTitles.map((title, index) => [normalizeTitle(title), index]),
+);
 
 export default function ProjectExperience() {
   const [projects, setProjects] = useState<any[]>([]);
@@ -12,19 +23,21 @@ export default function ProjectExperience() {
   useEffect(() => {
     const fetchCaseStudies = async () => {
       try {
-        const response = await fetch(`api/case-studies`);
+        const titleQuery = specificTitles
+          .map((title) => `title=${encodeURIComponent(title)}`)
+          .join("&");
+        const response = await fetch(`/api/case-studies?${titleQuery}`);
+        if (!response.ok) throw new Error("Failed to fetch case studies");
+
         const caseStudiesData = await response.json();
 
-        // Filter for specific case studies
-        const specificTitles = [
-          "Geospatial Socioeconomic Intelligence Platform for Public & Development Programs",
-          "LLM-Powered Customer Support Chatbot",
-          "Dynamic Pricing Engine for Personalized Fare Optimization",
-        ];
-
-        const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
-          specificTitles.includes(cs.title)
-        );
+        const filteredCaseStudies = caseStudiesData
+          .filter((cs: any) => titleOrder.has(normalizeTitle(cs.title)))
+          .sort(
+            (first: any, second: any) =>
+              titleOrder.get(normalizeTitle(first.title))! -
+              titleOrder.get(normalizeTitle(second.title))!,
+          );
 
         // For future use - random selection:
         // const shuffled = [...caseStudiesData].sort(() => Math.random() - 0.5);
@@ -32,13 +45,15 @@ export default function ProjectExperience() {
 
         const projectData = filteredCaseStudies.map(
           (caseStudy: any, index: number) => ({
-            title: caseStudy.title,
+            title: caseStudy.title.trim(),
             description: caseStudy.subtitle,
-            fullDescription: caseStudy.description.substring(0, 200) + "...",
+            fullDescription: caseStudy.description
+              ? caseStudy.description.substring(0, 200) + "..."
+              : "",
             imageSrc: caseStudy.heroImage,
             imagePosition: index % 2 === 0 ? "right" : "left",
             link: `/case-studies/${caseStudy.slug}`,
-          })
+          }),
         );
 
         setProjects(projectData);
@@ -106,7 +121,12 @@ export default function ProjectExperience() {
                       : ""
                   }`}
                 >
-                  <Image src={project.imageSrc} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image
+                    src={project.imageSrc}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
             ))}
