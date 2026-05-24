@@ -1,17 +1,41 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
 
+const getTitleFilters = (queryValue: string | string[] | undefined) => {
+  if (!queryValue) return [];
+
+  const values = Array.isArray(queryValue) ? queryValue : [queryValue];
+
+  return values
+    .flatMap((value) => value.split(','))
+    .map((value) => value.trim())
+    .filter(Boolean);
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   if (req.method === 'GET') {
     try {
+      const titleFilters = getTitleFilters(req.query.title);
+
       const caseStudies = await prisma.caseStudy.findMany({
+        where: titleFilters.length
+          ? {
+              OR: titleFilters.map((title) => ({
+                title: {
+                  contains: title,
+                  mode: 'insensitive' as const,
+                },
+              })),
+            }
+          : {},
         orderBy: {
           createdAt: 'desc',
         },
       });
+
       return res.status(200).json(caseStudies);
     } catch (error) {
       console.error('Error fetching case studies:', error);
