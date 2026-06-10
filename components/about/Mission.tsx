@@ -69,7 +69,7 @@ export default function Mission() {
           {/* Right Image */}
           <div className="relative h-64 sm:h-96 md:h-110 lg:h-135 rounded-2xl overflow-hidden shadow-xl">
             <Image
-              src="/images/abdullah.jpeg"
+              src="/images/marty.png"
               alt="Paramount Intelligence Founders"
               width={400}
               height={400}
@@ -79,7 +79,7 @@ export default function Mission() {
             <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 shadow-md rounded-tl-lg w-full sm:w-auto">
               <div className="flex items-start justify-between gap-3">
                 <a
-                  href="https://www.linkedin.com/in/syedabdullahmujahid/"
+                  href="https://www.linkedin.com/in/martykaufman/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#0A66C2] hover:text-[#004182] transition-colors mt-2"
@@ -89,10 +89,10 @@ export default function Mission() {
                 </a>
                 <div>
                   <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                    Syed Abdullah
+                    Marty Kaufman
                   </p>
                   <p className="text-[11px] sm:text-xs text-gray-600">
-                    Head of Data, Strategy & Transformation
+                    Co-founder & Chief Commercial Officer
                   </p>
                 </div>
               </div>
@@ -102,25 +102,10 @@ export default function Mission() {
           {/* Left Content */}
           <div className="space-y-4 sm:space-y-6">
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
-              Abdullah helps leadership teams translate business ambition into
-              structured, measurable performance systems that drive clarity,
-              accountability, and transformation at scale. He partners with
-              senior stakeholders to define KPI architectures, design enterprise
-              performance frameworks, and build decision-grade analytics
-              platforms that strengthen visibility across commercial,
-              operational, and financial functions.
+              Marty works with organizations to align business objectives with practical AI, data, cloud, and automation solutions that address real operational needs. As Co-founder and Chief Commercial Officer, Marty partners closely with client executives to understand their priorities and guide technology initiatives with clarity, purpose, and a focus on measurable business value rather than technology followership.
               <br />
               <br />
-              With over 10 years of experience across data, analytics, AI
-              strategy, and enterprise transformation environments, he brings
-              strong expertise in performance governance, digital enablement,
-              ERP-driven modernization, and cross-functional execution. His work
-              spans complex enterprise programs, including initiatives
-              associated with Deloitte and large organizations such as Saudi
-              Aramco. Abdullah focuses on converting fragmented data landscapes
-              into governed, scalable systems that support strategic planning,
-              risk management, and sustained operational control within
-              sophisticated enterprises.
+              Marty has held commercial, growth, strategy, and consulting leadership roles at boutique firms and several of the world's largest professional services organizations. Across these experiences, he has helped dozens of strategy, management, and AI consulting firms drive sustained growth, strengthen client relationships, and sharpen the alignment between client needs and practical technology solutions. He is passionate about helping organizations integrate AI, data, cloud, and automation in ways that accelerate performance while managing risk.
             </p>
           </div>
         </div>
