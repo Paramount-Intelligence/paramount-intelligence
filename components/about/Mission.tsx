@@ -13,21 +13,10 @@ export default function Mission() {
           {/* Left Content */}
           <div className="space-y-4 sm:space-y-6">
             <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
-              Ali works with organizations to unlock real business value from
-              intelligent technology by translating strategic vision into
-              production systems teams depend on every day. As Founding Partner
-              of Paramount Intelligence, Ali Azzam partners closely with startups,
-              scale-ups, and Fortune 1000 organizations to design and deliver
-              integrated solutions across AI, data, cloud, and automation.
+              Ali helps organizations unlock measurable business value from intelligent technology by translating strategic vision into production-ready systems teams rely on every day. As Founding Partner of Paramount Intelligence, he partners with startups, scale-ups, and Fortune 1000 organizations to design and deliver integrated solutions across AI, data, cloud, automation, intelligent agents, chatbots, and workflow orchestration.
               <br />
               <br />
-              Ali Azzam as a technical leader brings hands-on experience building and operationalizing
-              end-to-end systems from AI model integration and data architecture
-              to cloud platforms and intelligent workflow automation with a
-              strong emphasis on reliability, security, and scalability. Ali has
-              led enterprise-grade engagements in close collaboration with
-              leadership teams, helping organizations move initiatives from
-              strategy through execution and into sustained operation.
+              Combining strategic leadership with hands-on technical expertise, his work spans AI model integration, data architecture, cloud platforms, agentic workflows, and enterprise automation. He has led enterprise-grade engagements with leadership teams, helping organizations move from strategy and design through execution, adoption, and sustained operation, with a strong focus on reliability, security, and scalability.
             </p>
           </div>
 
@@ -105,7 +94,7 @@ export default function Mission() {
               Marty works with organizations to align business objectives with practical AI, data, cloud, and automation solutions that address real operational needs. As Co-founder and Chief Commercial Officer, Marty partners closely with client executives to understand their priorities and guide technology initiatives with clarity, purpose, and a focus on measurable business value rather than technology followership.
               <br />
               <br />
-              Marty has held commercial, growth, strategy, and consulting leadership roles at boutique firms and several of the world's largest professional services organizations. Across these experiences, he has helped dozens of strategy, management, and AI consulting firms drive sustained growth, strengthen client relationships, and sharpen the alignment between client needs and practical technology solutions. He is passionate about helping organizations integrate AI, data, cloud, and automation in ways that accelerate performance while managing risk.
+              As a commercial leader, Marty brings extensive experience leading client and growth functions across professional services organizations, from boutique consultancies to some of the world's largest firms. He has supported dozens of strategy, management, and AI consulting firms through periods of sustained growth and improved client retention. His expertise in building long-term client relationships and aligning business challenges with relevant service offerings helps organizations move confidently from strategy to successful execution.
             </p>
           </div>
         </div>
