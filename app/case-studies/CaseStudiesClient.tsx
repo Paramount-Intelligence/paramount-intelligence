@@ -5,20 +5,12 @@ import CaseStudiesHero from "@/components/casestudies/Hero";
 import CaseStudiesGrid from "@/components/casestudies/CaseStudiesGrid";
 
 export default function CaseStudiesClient() {
-  const [selectedIndustry, setSelectedIndustry] = useState("All");
-  const [selectedBusinessFunction, setSelectedBusinessFunction] =
-    useState("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
   return (
     <>
-      <CaseStudiesHero
-        onIndustryChange={setSelectedIndustry}
-        onBusinessFunctionChange={setSelectedBusinessFunction}
-      />
-      <CaseStudiesGrid
-        selectedIndustry={selectedIndustry}
-        selectedBusinessFunction={selectedBusinessFunction}
-      />
+      <CaseStudiesHero onSearchChange={setSearchQuery} />
+      <CaseStudiesGrid searchQuery={searchQuery} />
     </>
   );
 }

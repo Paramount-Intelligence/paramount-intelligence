@@ -6,8 +6,7 @@ import Link from "next/link";
 import { getApiUrl } from "@/lib/api";
 
 interface CaseStudiesGridProps {
-  selectedIndustry: string;
-  selectedBusinessFunction: string;
+  searchQuery: string;
 }
 
 const featuredCaseStudyTitles = [
@@ -27,8 +26,7 @@ const featuredCaseStudyOrder = new Map(
 );
 
 export default function CaseStudiesGrid({
-  selectedIndustry,
-  selectedBusinessFunction,
+  searchQuery,
 }: CaseStudiesGridProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [caseStudiesData, setCaseStudiesData] = useState<any[]>([]);
@@ -65,19 +63,21 @@ export default function CaseStudiesGrid({
   });
 
   const filteredCaseStudies = orderedCaseStudies.filter((caseStudy) => {
-    const industryMatch =
-      selectedIndustry === "All" ||
-      caseStudy.industry.includes(selectedIndustry);
-    const functionMatch =
-      selectedBusinessFunction === "All" ||
-      caseStudy.businessFunction.includes(selectedBusinessFunction);
-    return industryMatch && functionMatch;
+    if (!searchQuery.trim()) return true;
+
+    const query = searchQuery.toLowerCase().trim();
+    const titleMatch = caseStudy.title?.toLowerCase().includes(query);
+    const descriptionMatch = caseStudy.description?.toLowerCase().includes(query);
+    const industryMatch = caseStudy.industry?.toLowerCase().includes(query);
+    const businessFunctionMatch = caseStudy.businessFunction?.toLowerCase().includes(query);
+
+    return titleMatch || descriptionMatch || industryMatch || businessFunctionMatch;
   });
 
-  // Reset to page 1 when filters change
+  // Reset to page 1 when search query changes
   useEffect(() => {
     setCurrentPage(1);
-  }, [selectedIndustry, selectedBusinessFunction]);
+  }, [searchQuery]);
 
   // Calculate pagination
   const totalPages = Math.ceil(filteredCaseStudies.length / itemsPerPage);
@@ -100,7 +100,7 @@ export default function CaseStudiesGrid({
         ) : filteredCaseStudies.length === 0 ? (
           <div className="text-center py-16">
             <p className="text-gray-600 text-lg">
-              No case studies found matching your filters.
+              No case studies found matching your search.
             </p>
           </div>
         ) : (

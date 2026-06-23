@@ -1,4 +1,3 @@
-// SolutionAgents.tsx
 import { CheckCircle } from "lucide-react";
 import { formatBulletPoints } from "@/lib/formatBulletPoints";
 
@@ -31,10 +30,9 @@ export default function SolutionAgents({ agents }: SolutionAgentsProps) {
 
         <div className="flex flex-col gap-3">
           {validAgents.map((agent, index) => (
-            // SolutionAgents.tsx - only the card div changes
             <div
               key={index}
-              className="flex items-start gap-4 bg-[#6a8ee4] rounded-xl border border-white/25 px-5 py-4 hover:border-white/40 hover:bg-[#5c80da] transition-all duration-200"
+              className="flex items-start gap-4 rounded-xl border border-white/15 px-5 py-4 transition-all duration-200 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#1e3a8a] hover:border-white/30 hover:to-[#2563eb]"
             >
               <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-white/15 flex items-center justify-center mt-0.5">
                 <CheckCircle className="w-4 h-4 text-white" />
@@ -43,7 +41,7 @@ export default function SolutionAgents({ agents }: SolutionAgentsProps) {
                 <h3 className="text-lg font-semibold text-white mb-1">
                   {agent.title}
                 </h3>
-                <div className="text-lg text-blue-50 leading-relaxed [&_p]:mb-0 [&_p]:text-lg [&_p]:text-blue-50 [&_ul]:mb-0 [&_ul]:text-lg [&_ul]:space-y-1 [&_ul]:text-blue-50 [&_ul]:marker:text-white/90">
+                <div className="text-lg leading-relaxed [&_p]:mb-0 [&_p]:text-lg [&_ul]:mb-0 [&_ul]:text-lg [&_ul]:space-y-1 text-slate-200 [&_p]:text-slate-200 [&_ul]:text-slate-200 [&_ul]:marker:text-slate-300">
                   {formatBulletPoints(agent.description)}
                 </div>
               </div>
@@ -54,3 +52,4 @@ export default function SolutionAgents({ agents }: SolutionAgentsProps) {
     </section>
   );
 }
+

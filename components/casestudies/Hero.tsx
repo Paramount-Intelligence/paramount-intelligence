@@ -1,126 +1,25 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { Search, X } from "lucide-react";
 
 interface CaseStudiesHeroProps {
-  onIndustryChange: (industry: string) => void;
-  onBusinessFunctionChange: (businessFunction: string) => void;
+  onSearchChange: (query: string) => void;
 }
 
 export default function CaseStudiesHero({
-  onIndustryChange,
-  onBusinessFunctionChange,
+  onSearchChange,
 }: CaseStudiesHeroProps) {
-  const [selectedIndustry, setSelectedIndustry] = useState("All");
-  const [selectedBusinessFunction, setSelectedBusinessFunction] =
-    useState("All");
+  const [query, setQuery] = useState("");
 
-  const industries = [
-  "Financial Data & Investment Intelligence",
-  "Fintech & Digital Financial Services",
-  "Telecommunications",
-  "E-Commerce & Retail Technology",
-  "Staffing, Recruitment & Professional Services",
-  "Global Marketing & Advertising",
-  "AI & Productivity Software",
-  "Ride-Hailing & Mobility",
-  "Ride-Hailing & Delivery",
-  "Telecommunications & Digital Services",
-  "Professional Services & Consulting",
-  "B2B Services & Sales Operations",
-  "Professional Services & Operations",
-  "Professional Services & Technology",
-  "Digital Banking & Financial Services",
-  "Real Estate Analytics & Short Term Rentals",
-  "E-Commerce",
-  "Healthcare Technology",
-  "Industrial Manufacturing & Distribution"
-];
-
-  const businessFunctions = [
-  "CRM Automation",
-  "Email Processing",
-  "Investor Relations",
-  "Data Structuring",
-  "Legal Review",
-  "Contract Management",
-  "Risk Analysis",
-  "Procurement",
-  "Customer Support",
-  "Infrastructure Engineering",
-  "AI Operations",
-  "Marketing Analytics",
-  "Product Analytics",
-  "A/B Testing",
-  "Data Engineering",
-  "Recruitment",
-  "Operations",
-  "AI Training",
-  "Workflow Automation",
-  "Marketing",
-  "Content Production",
-  "Creative Automation",
-  "Personal Productivity",
-  "Email Management",
-  "Calendar Management",
-  "Pricing Strategy",
-  "Revenue Management",
-  "Marketplace Operations",
-  "Fraud Prevention",
-  "Risk Management",
-  "Customer Segmentation",
-  "Promotional Strategy",
-  "Supply Planning",
-  "Demand Management",
-  "Customer Experience",
-  "Real-Time Analytics",
-  "Cost Management",
-  "Engineering",
-  "Market Research",
-  "Financial Inclusion",
-  "Credit Risk",
-  "Lending",
-  "Customer Retention",
-  "Brand Management",
-  "Cost Reduction",
-  "Self-Service",
-  "Email Automation",
-  "Ticket Management",
-  "Staffing",
-  "Workforce Planning",
-  "Sales Operations",
-  "Lead Generation",
-  "Revenue Growth",
-  "Process Improvement",
-  "HR Operations",
-  "Onboarding",
-  "Customer Engagement",
-  "Digital Banking",
-  "Product Discovery",
-  "Investment Strategy",
-  "Property Management",
-  "Listing Optimization",
-  "Business Intelligence",
-  "Executive Reporting",
-  "Competitive Intelligence",
-  "Patient Advocacy",
-  "Insurance Navigation",
-  "Healthcare Operations"
-];
-  const handleIndustryChange = (value: string) => {
-    setSelectedIndustry(value);
-    onIndustryChange(value);
+  const handleSearchChange = (value: string) => {
+    setQuery(value);
+    onSearchChange(value);
   };
 
-  const handleBusinessFunctionChange = (value: string) => {
-    setSelectedBusinessFunction(value);
-    onBusinessFunctionChange(value);
-  };
-
-  const clearIndustry = () => {
-    setSelectedIndustry("All");
-    onIndustryChange("All");
+  const handleClear = () => {
+    setQuery("");
+    onSearchChange("");
   };
 
   return (
@@ -135,89 +34,30 @@ export default function CaseStudiesHero({
           Case Studies
         </h1>
 
-        {/* Filter Section */}
-        <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-          {/* Industries Dropdown */}
-          <div>
-            <label className="block text-white text-sm font-medium mb-2">
-              Industries
-            </label>
-            <div className="relative">
-              <select
-                title="Select Industry"
-                value={selectedIndustry}
-                onChange={(e) => handleIndustryChange(e.target.value)}
-                className="w-full bg-white text-gray-900 px-4 py-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                {industries.map((industry) => (
-                  <option key={industry} value={industry}>
-                    {industry}
-                  </option>
-                ))}
-              </select>
-              {selectedIndustry !== "All" && (
-                <button
-                  onClick={clearIndustry}
-                  className="absolute right-10 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                >
-                  ✕
-                </button>
-              )}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
+        {/* Search Input Container */}
+        <div className="relative max-w-2xl w-full">
+          <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+            <Search className="h-5 w-5 text-gray-400" />
           </div>
-
-          {/* Business Functions Dropdown */}
-          <div>
-            <label className="block text-white text-sm font-medium mb-2">
-              Business Functions
-            </label>
-            <div className="relative">
-              <select
-                title="Select Business Function"
-                value={selectedBusinessFunction}
-                onChange={(e) => handleBusinessFunctionChange(e.target.value)}
-                className="w-full bg-white text-gray-900 px-4 py-3 pr-10 appearance-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                {businessFunctions.map((func) => (
-                  <option key={func} value={func}>
-                    {func}
-                  </option>
-                ))}
-              </select>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
-                <svg
-                  className="w-4 h-4 text-gray-600"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </div>
-          </div>
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => handleSearchChange(e.target.value)}
+            placeholder="Search case studies by title, description, or domain..."
+            className="w-full bg-white text-gray-900 pl-12 pr-12 py-3.5 rounded-xl border border-transparent shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-base transition-all duration-200"
+          />
+          {query && (
+            <button
+              onClick={handleClear}
+              className="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
+              title="Clear search"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          )}
         </div>
       </div>
     </section>
   );
 }
+
