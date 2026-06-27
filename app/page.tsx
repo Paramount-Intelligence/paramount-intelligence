@@ -7,12 +7,13 @@ import ServicesSection from "@/components/ServicesSection";
 import AIServices from "@/components/AIServices";
 import FeaturedIn from "@/components/FeaturedIn";
 import ProjectExperience from "@/components/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
 import Footer from "@/components/Footer";
+import ScrollRevealInit from "@/components/ui/ScrollRevealInit";
 
 export default function Home() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
+      <ScrollRevealInit />
       <Header />
       <Hero />
       <TrustedBrands />
@@ -22,7 +23,6 @@ export default function Home() {
       <AIServices />
       <FeaturedIn />
       <ProjectExperience />
-      {/* <LatestArticles /> */}
       <Footer />
     </div>
   );
