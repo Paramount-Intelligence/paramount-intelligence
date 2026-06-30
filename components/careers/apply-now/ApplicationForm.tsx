@@ -40,7 +40,6 @@ export default function ApplicationForm() {
     setMessage("");
 
     try {
-      // Build FormData for multipart upload (to include resume file)
       const payload = new FormData();
       payload.append("firstName", formData.firstName);
       payload.append("lastName", formData.lastName);
@@ -64,7 +63,7 @@ export default function ApplicationForm() {
 
       if (response.ok) {
         setMessage(
-          "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days. A confirmation email has been sent to your email address.",
+          "🎉 Application submitted successfully! We'll review your application and get back to you within 3-5 business days."
         );
         setFormData({
           firstName: "",
@@ -80,7 +79,7 @@ export default function ApplicationForm() {
         });
       } else {
         setMessage(
-          `❌ Error submitting application: ${data.message || "Please try again later."}`,
+          `❌ Error submitting application: ${data.message || "Please try again later."}`
         );
       }
     } catch (error) {
@@ -92,25 +91,38 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: "#1e6fd9" }}
+            >
+              Apply
+            </span>
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#0d1f3c" }}>
             Application Form
           </h2>
-          <p className="text-xl text-gray-600">
-            Fill out the form below and we'll get back to you soon
+          <p className="text-base sm:text-lg text-gray-700">
+            Fill out the form below and we'll get back to you soon.
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-gray-50 to-teal-50 rounded-2xl p-8 md:p-12 shadow-xl border border-gray-200">
+        <div className="bg-white p-8 md:p-12 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Personal Information */}
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   First Name *
                 </label>
@@ -121,7 +133,7 @@ export default function ApplicationForm() {
                   value={formData.firstName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="John"
                 />
               </div>
@@ -129,7 +141,7 @@ export default function ApplicationForm() {
               <div>
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   Last Name *
                 </label>
@@ -140,7 +152,7 @@ export default function ApplicationForm() {
                   value={formData.lastName}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="Doe"
                 />
               </div>
@@ -151,7 +163,7 @@ export default function ApplicationForm() {
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   Email Address *
                 </label>
@@ -162,7 +174,7 @@ export default function ApplicationForm() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="john@example.com"
                 />
               </div>
@@ -170,7 +182,7 @@ export default function ApplicationForm() {
               <div>
                 <label
                   htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   Phone Number *
                 </label>
@@ -181,7 +193,7 @@ export default function ApplicationForm() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="+1 (555) 123-4567"
                 />
               </div>
@@ -191,7 +203,7 @@ export default function ApplicationForm() {
             <div>
               <label
                 htmlFor="position"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Position Applied For *
               </label>
@@ -201,7 +213,7 @@ export default function ApplicationForm() {
                 value={formData.position}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900 bg-white"
               >
                 <option value="">Select a position</option>
                 <option value="Senior AI Engineer">Senior AI Engineer</option>
@@ -214,13 +226,13 @@ export default function ApplicationForm() {
                   AI Solutions Architect
                 </option>
                 <option value="AI & Automation Intern">
-                  AI & Automation Intern
+                  AI &amp; Automation Intern
                 </option>
                 <option value="Business Consulting Intern">
                   Business Consulting Intern
                 </option>
                 <option value="Marketing & Personal Branding Intern">
-                  Marketing & Personal Branding Intern
+                  Marketing &amp; Personal Branding Intern
                 </option>
                 <option value="Other">Other</option>
               </select>
@@ -229,7 +241,7 @@ export default function ApplicationForm() {
             <div>
               <label
                 htmlFor="experience"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Years of Experience *
               </label>
@@ -239,7 +251,7 @@ export default function ApplicationForm() {
                 value={formData.experience}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900 bg-white"
               >
                 <option value="">Select experience level</option>
                 <option value="0-1">0-1 years</option>
@@ -255,7 +267,7 @@ export default function ApplicationForm() {
               <div>
                 <label
                   htmlFor="linkedIn"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   LinkedIn Profile
                 </label>
@@ -265,7 +277,7 @@ export default function ApplicationForm() {
                   name="linkedIn"
                   value={formData.linkedIn}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="https://linkedin.com/in/yourprofile"
                 />
               </div>
@@ -273,7 +285,7 @@ export default function ApplicationForm() {
               <div>
                 <label
                   htmlFor="portfolio"
-                  className="block text-sm font-medium text-gray-700 mb-2"
+                  className="block text-sm font-semibold text-gray-700 mb-2"
                 >
                   Portfolio/GitHub
                 </label>
@@ -283,7 +295,7 @@ export default function ApplicationForm() {
                   name="portfolio"
                   value={formData.portfolio}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900"
                   placeholder="https://github.com/yourprofile"
                 />
               </div>
@@ -293,7 +305,7 @@ export default function ApplicationForm() {
             <div>
               <label
                 htmlFor="resume"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Resume/CV * (PDF, DOC, DOCX - Max 5MB)
               </label>
@@ -304,7 +316,7 @@ export default function ApplicationForm() {
                 onChange={handleFileChange}
                 required
                 accept=".pdf,.doc,.docx"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-teal-50 file:text-teal-700 hover:file:bg-teal-100"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-[#1e6fd9] hover:file:bg-blue-100"
               />
             </div>
 
@@ -312,7 +324,7 @@ export default function ApplicationForm() {
             <div>
               <label
                 htmlFor="coverLetter"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-semibold text-gray-700 mb-2"
               >
                 Cover Letter / Why do you want to join us? *
               </label>
@@ -323,7 +335,7 @@ export default function ApplicationForm() {
                 onChange={handleChange}
                 required
                 rows={6}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all text-gray-900"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent outline-none transition-all text-gray-900 resize-none"
                 placeholder="Tell us about yourself and why you're interested in this position..."
               />
             </div>
@@ -332,20 +344,18 @@ export default function ApplicationForm() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-teal-600 to-blue-600 text-white py-4 px-8 rounded-lg font-semibold text-lg hover:from-teal-700 hover:to-blue-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full btn-primary py-4 justify-center disabled:opacity-50 disabled:cursor-not-allowed text-sm"
             >
-              {isSubmitting
-                ? "Submitting Application..."
-                : "Submit Application"}
+              {isSubmitting ? "Submitting Application..." : "Submit Application"}
             </button>
 
             {message && (
-              <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center">
+              <div className="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800 text-center font-medium text-sm">
                 {message}
               </div>
             )}
 
-            <p className="text-sm text-gray-500 text-center">
+            <p className="text-xs text-gray-500 text-center">
               By submitting this form, you agree to our privacy policy and
               consent to be contacted regarding your application.
             </p>

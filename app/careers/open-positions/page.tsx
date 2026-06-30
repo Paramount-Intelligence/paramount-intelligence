@@ -7,7 +7,7 @@ import Benefits from "@/components/careers/open-positions/Benefits";
 
 export default function OpenPositionsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <OpenPositionsHeader />
       <OpenPositionsHero />

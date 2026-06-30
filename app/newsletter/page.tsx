@@ -9,7 +9,7 @@ import Testimonials from "@/components/newsletter/Testimonials";
 
 export default function NewsletterPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <NewsletterHeader />
       <NewsletterHero />

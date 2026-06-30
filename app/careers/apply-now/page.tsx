@@ -7,7 +7,7 @@ import HiringProcess from "@/components/careers/apply-now/HiringProcess";
 
 export default function ApplyNowPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <ApplyNowHeader />
       <ApplyNowHero />

@@ -21,13 +21,13 @@ export default function TrustedBrands() {
   };
 
   const brands: Brand[] = [
-      // {
-      //   name: "Gratia",
-      //   logo: "/images/Gratia-logo.svg",
-      //   width: 135,
-      //   height: 52,
-      //   slotWidth: 220,
-      // },
+    // {
+    //   name: "Gratia",
+    //   logo: "/images/Gratia-logo.svg",
+    //   width: 135,
+    //   height: 52,
+    //   slotWidth: 220,
+    // },
     {
       name: "Donaldson",
       logo: "/images/donaldson-logo.png",
@@ -101,23 +101,50 @@ export default function TrustedBrands() {
   };
 
   return (
-    <section className="py-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 mb-6">
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          <h2 className="text-2xl md:text-2xl font-semibold text-gray-900 text-center mb-2">
+    <section
+      className="relative py-4 md:py-4"
+      style={{ background: "#cbced1ff" }}
+    >
+      {/* Edge fade masks so logos don't appear to clip abruptly */}
+      <div
+        className="pointer-events-none absolute inset-y-0 left-0 w-16 md:w-32 z-10"
+        style={{
+          background:
+            "linear-gradient(to right, #0d1f3c 0%, rgba(13,31,60,0) 100%)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute inset-y-0 right-0 w-16 md:w-32 z-10"
+        style={{
+          background:
+            "linear-gradient(to left, #0d1f3c 0%, rgba(13,31,60,0) 100%)",
+        }}
+      />
+      {/* Heading */}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col items-center justify-center gap-3 text-center">
+          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-blue-500">
+            <span className="h-px w-6 bg-blue-500" />
+            Trusted Partners
+            <span className="h-px w-6 bg-blue-500" />
+          </span>
+          <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 tracking-tight">
             Trusted by teams at world-renowned brands
           </h2>
         </div>
       </div>
 
+      {/* Logo marquee */}
       <div className="relative overflow-hidden w-full">
+
+
         <div className="trusted-brands-track flex w-max items-center">
           {brandGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="flex flex-shrink-0 items-center">
               {group.map((brand) => (
                 <div
                   key={`${groupIndex}-${brand.name}`}
-                  className="flex-shrink-0 flex items-center justify-center h-24"
+                  className="flex-shrink-0 flex items-center justify-center h-28 px-2"
                   style={{
                     width: `${brand.slotWidth}px`,
                   }}
@@ -127,13 +154,15 @@ export default function TrustedBrands() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={brand.name}
-                    className="flex items-center justify-center w-full h-full"
+                    className="group flex items-center justify-center w-full h-full rounded-xl transition-colors duration-300 hover:bg-white/[0.04]"
                   >
                     <div
                       className="relative flex items-center justify-center"
                       style={{
                         width: `${brand.width}px`,
-                        height: `${brand.height}px`,
+                        // Cap height so tall/square logos (e.g. Deloitte)
+                        // don't dominate the row's visual weight.
+                        height: `${Math.min(brand.height, 64)}px`,
                       }}
                     >
                       <Image
@@ -141,7 +170,7 @@ export default function TrustedBrands() {
                         alt={brand.name}
                         fill
                         sizes={`${brand.width}px`}
-                        className="object-contain object-center mix-blend-multiply transition-transform duration-300"
+                        className="object-contain object-center transition-all duration-300 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 group-hover:grayscale-0"
                       />
                     </div>
                   </a>

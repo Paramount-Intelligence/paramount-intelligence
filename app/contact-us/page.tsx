@@ -7,7 +7,7 @@ import ContactInfo from "@/components/contact/ContactInfo";
 
 export default function ContactUs() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       {/* <ContactHeader /> */}
       <ContactHero />

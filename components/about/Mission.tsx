@@ -3,16 +3,52 @@ import { Linkedin } from "lucide-react";
 
 export default function Mission() {
   return (
-    <section className="py-10 sm:py-14 md:py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 xl:px-16">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl text-black font-bold text-center mb-10 sm:mb-14 md:mb-16">
-          Leadership
-        </h2>
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-4 sm:space-y-6">
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+        
+        {/* Header */}
+        <div className="text-center mb-20">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: "#1e6fd9" }}
+            >
+              Our Leadership
+            </span>
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0d1f3c" }}>
+            The Founders of Paramount Intelligence
+          </h2>
+        </div>
+
+        {/* Profile 1 - Syed Ali Azzam */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-20 bg-white/70 p-6 md:p-8 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">
+          {/* Left Text */}
+          <div className="lg:col-span-7 space-y-5 order-2 lg:order-1">
+            <div className="flex items-center gap-4">
+              <h3 className="text-2xl md:text-3xl font-bold" style={{ color: "#0d1f3c" }}>
+                Syed Ali Azzam
+              </h3>
+              <a
+                href="https://www.linkedin.com/in/syedaliazzam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-8 h-8 rounded-lg bg-[rgba(30,111,217,0.08)] hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white transition-all duration-200"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#1e6fd9" }}>
+              CEO &amp; Founding Partner
+            </p>
+
+            <p className="text-base text-gray-700 leading-relaxed text-justify">
               Ali helps organizations unlock measurable business value from intelligent technology by translating strategic vision into production-ready systems teams rely on every day. As Founding Partner of Paramount Intelligence, he partners with startups, scale-ups, and Fortune 1000 organizations to design and deliver integrated solutions across AI, data, cloud, automation, intelligent agents, chatbots, and workflow orchestration.
               <br />
               <br />
@@ -21,76 +57,56 @@ export default function Mission() {
           </div>
 
           {/* Right Image */}
-          <div className="relative h-64 sm:h-80 md:h-96 lg:h-115 rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/aliazzam-s.png"
-              alt="Paramount Intelligence Founders"
-              width={600}
-              height={600}
-              className="w-full h-auto object-cover"
-            />
-
-            <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 shadow-md rounded-tl-lg w-full sm:w-auto">
-              <div className="flex items-start justify-between gap-3">
-                <a
-                  href="https://www.linkedin.com/in/syedaliazzam/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0A66C2] hover:text-[#004182] transition-colors mt-2"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                    Syed Ali Azzam
-                  </p>
-                  <p className="text-[11px] sm:text-xs text-gray-600">
-                    CEO & Founding Partner at Paramount Intelligence
-                  </p>
-                </div>
-              </div>
+          <div className="lg:col-span-5 order-1 lg:order-2">
+            <div className="relative aspect-square max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-[rgba(30,111,217,0.2)]">
+              <Image
+                src="/images/aliazzam-s.png"
+                alt="Syed Ali Azzam"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
 
-        <div className="mt-16 sm:mt-20 md:mt-24 grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Right Image */}
-          <div className="relative h-64 sm:h-96 md:h-110 lg:h-135 rounded-2xl overflow-hidden shadow-xl">
-            <Image
-              src="/images/marty.png"
-              alt="Paramount Intelligence Founders"
-              width={400}
-              height={400}
-              className="w-full h-auto object-cover"
-            />
-
-            <div className="absolute bottom-0 right-0 bg-white/90 backdrop-blur-sm px-3 py-2 sm:px-4 sm:py-3 shadow-md rounded-tl-lg w-full sm:w-auto">
-              <div className="flex items-start justify-between gap-3">
-                <a
-                  href="https://www.linkedin.com/in/martykaufman/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[#0A66C2] hover:text-[#004182] transition-colors mt-2"
-                  aria-label="LinkedIn Profile"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <div>
-                  <p className="text-xs sm:text-sm font-semibold text-gray-900">
-                    Marty Kaufman
-                  </p>
-                  <p className="text-[11px] sm:text-xs text-gray-600">
-                    Co-founder & Chief Commercial Officer
-                  </p>
-                </div>
-              </div>
+        {/* Profile 2 - Marty Kaufman */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-white/70 p-6 md:p-8 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">
+          {/* Left Image */}
+          <div className="lg:col-span-5">
+            <div className="relative aspect-square max-w-[400px] mx-auto rounded-2xl overflow-hidden shadow-2xl border border-[rgba(30,111,217,0.2)]">
+              <Image
+                src="/images/marty.png"
+                alt="Marty Kaufman"
+                fill
+                sizes="(max-width: 768px) 100vw, 400px"
+                className="object-cover"
+              />
             </div>
           </div>
 
-          {/* Left Content */}
-          <div className="space-y-4 sm:space-y-6">
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify">
+          {/* Right Text */}
+          <div className="lg:col-span-7 space-y-5">
+            <div className="flex items-center gap-4">
+              <h3 className="text-2xl md:text-3xl font-bold" style={{ color: "#0d1f3c" }}>
+                Marty Kaufman
+              </h3>
+              <a
+                href="https://www.linkedin.com/in/martykaufman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-8 h-8 rounded-lg bg-[rgba(30,111,217,0.08)] hover:bg-[#0A66C2] text-[#0A66C2] hover:text-white transition-all duration-200"
+                aria-label="LinkedIn Profile"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
+            
+            <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#1e6fd9" }}>
+              Co-founder &amp; Chief Commercial Officer
+            </p>
+
+            <p className="text-base text-gray-700 leading-relaxed text-justify">
               Marty works with organizations to align business objectives with practical AI, data, cloud, and automation solutions that address real operational needs. As Co-founder and Chief Commercial Officer, Marty partners closely with client executives to understand their priorities and guide technology initiatives with clarity, purpose, and a focus on measurable business value rather than technology followership.
               <br />
               <br />
@@ -98,6 +114,7 @@ export default function Mission() {
             </p>
           </div>
         </div>
+
       </div>
     </section>
   );

@@ -24,14 +24,27 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-purple-900 via-indigo-900 to-blue-900">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: "#1e6fd9" }}
+            >
+              Testimonials
+            </span>
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ color: "#0d1f3c" }}>
             Hear From Our Team
           </h2>
-          <p className="text-xl text-purple-200 max-w-3xl mx-auto">
-            Real stories from the people who make PI special
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto">
+            Real stories from the people who make PI special.
           </p>
         </div>
 
@@ -39,25 +52,25 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white/10 backdrop-blur-lg rounded-xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              className="bg-white rounded-2xl p-8 border border-[rgba(30,111,217,0.15)] shadow-md hover:shadow-xl hover:translate-y-[-2px] transition-all duration-300 flex flex-col justify-between"
             >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white font-bold text-lg">
+              <p className="text-sm text-gray-600 leading-relaxed italic mb-6">
+                "{testimonial.quote}"
+              </p>
+              
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold text-base bg-gradient-to-br from-[#1e6fd9] to-[#1559b4] shadow-md shrink-0">
                   {testimonial.avatar}
                 </div>
                 <div>
-                  <div className="font-bold text-white">
+                  <h4 className="font-bold text-sm" style={{ color: "#0d1f3c" }}>
                     {testimonial.author}
-                  </div>
-                  <div className="text-sm text-purple-200">
+                  </h4>
+                  <p className="text-xs font-semibold" style={{ color: "#1e6fd9" }}>
                     {testimonial.role}
-                  </div>
+                  </p>
                 </div>
               </div>
-
-              <p className="text-gray-200 leading-relaxed italic">
-                "{testimonial.quote}"
-              </p>
             </div>
           ))}
         </div>
