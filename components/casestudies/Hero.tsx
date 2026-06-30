@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, X } from "lucide-react";
+import CaseStudiesHeader from "@/components/casestudies/Header";
 
 interface CaseStudiesHeroProps {
   onSearchChange: (query: string) => void;
@@ -49,6 +50,11 @@ export default function CaseStudiesHero({
       </div>
 
       <div className="relative z-10 w-full animate-fade-in-up">
+        {/* Render CaseStudiesHeader breadcrumbs internally at top of hero */}
+        <div className="mb-10 -mt-8">
+          <CaseStudiesHeader />
+        </div>
+
         <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
           <h1
             className="font-bold leading-[1.1] text-white mb-8"

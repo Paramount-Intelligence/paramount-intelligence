@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import LLMHeader from "@/components/services/llm/Header";
 
 export default function LLMHero() {
