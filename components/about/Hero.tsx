@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AboutHeader from "@/components/about/Header";
 
 export default function AboutHero() {
   return (
@@ -25,42 +26,48 @@ export default function AboutHero() {
         <source src="/videos/background-video.webm" type="video/webm" />
       </video>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 animate-fade-in-up">
-            <h1
-              className="font-bold leading-[1.1] text-white"
-              style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
-            >
-              Building Technology That{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #6ba8ff 0%, #3b88f5 100%)",
-                  WebkitBackgroundClip: "text",
-                  backgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
+
+      <div className="relative z-10 w-full animate-fade-in-up">
+        {/* Render AboutHeader breadcrumbs internally at top of hero */}
+        <AboutHeader />
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="space-y-6">
+              <h1
+                className="font-bold leading-[1.1] text-white"
+                style={{ fontSize: "clamp(32px, 4.5vw, 56px)" }}
               >
-                Scales
-              </span>{" "}
-              in the Real World
-            </h1>
-            <p className="text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: "#b5c8e2" }}>
-              Paramount Intelligence partners with startups, scale-ups, and
-              enterprises to translate strategic ambition into technical
-              reality.
-            </p>
-            <div className="pt-2">
-              <Link
-                href="/contact-us"
-                className="btn-primary text-sm inline-flex"
-              >
-                Let's work together
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
+                Building Technology That{" "}
+                <span
+                  style={{
+                    background: "linear-gradient(135deg, #6ba8ff 0%, #3b88f5 100%)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    WebkitTextFillColor: "transparent",
+                  }}
+                >
+                  Scales
+                </span>{" "}
+                in the Real World
+              </h1>
+              <p className="text-base sm:text-lg leading-relaxed max-w-xl" style={{ color: "#b5c8e2" }}>
+                Paramount Intelligence partners with startups, scale-ups, and
+                enterprises to translate strategic ambition into technical
+                reality.
+              </p>
+              <div className="pt-2">
+                <Link
+                  href="/contact-us"
+                  className="btn-primary text-sm inline-flex"
+                >
+                  Let's work together
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
