@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getApiUrl } from "@/lib/api";
 
 interface CaseStudiesGridProps {
   searchQuery: string;
@@ -91,15 +90,17 @@ export default function CaseStudiesGrid({
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
         {loading ? (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg">Loading case studies...</p>
+            <p className="text-gray-600 text-lg font-medium">Loading case studies...</p>
           </div>
         ) : filteredCaseStudies.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-gray-600 text-lg">
+            <p className="text-gray-600 text-lg font-medium">
               No case studies found matching your search.
             </p>
           </div>
@@ -109,10 +110,10 @@ export default function CaseStudiesGrid({
               {currentCaseStudies.map((caseStudy) => (
                 <div
                   key={caseStudy.id}
-                  className="group bg-gray-100 rounded-4xl overflow-hidden transition-transform hover:-translate-y-1"
+                  className="group bg-white rounded-2xl overflow-hidden border border-[rgba(30,111,217,0.15)] shadow-md hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 flex flex-col h-full"
                 >
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden bg-gray-100 flex items-center justify-center">
+                  <div className="relative h-60 overflow-hidden bg-gray-100 flex items-center justify-center shrink-0">
                     {caseStudy.image &&
                     typeof caseStudy.image === "string" &&
                     caseStudy.image.trim() !== "" &&
@@ -124,29 +125,46 @@ export default function CaseStudiesGrid({
                         alt={caseStudy.title || "Case Study"}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        className="object-cover transition-transform group-hover:scale-105"
-                        unoptimized // Adding this ensures Next.js doesn't try to pre-parse the URL on the server
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        unoptimized
                       />
                     ) : (
-                      <div className="flex flex-col items-center text-gray-400">
+                      <div className="flex flex-col items-center text-gray-400 p-6">
                         <span className="text-xs font-semibold uppercase tracking-wider">
                           No Image available
                         </span>
                       </div>
                     )}
+                    {/* Tiny badge inside image container */}
+                    {caseStudy.industry && (
+                      <span className="absolute top-4 left-4 px-2.5 py-1 bg-[#0d1f3c]/90 text-[#6ba8ff] text-[10px] font-bold tracking-wider uppercase rounded-md backdrop-blur-sm border border-[rgba(30,111,217,0.2)]">
+                        {caseStudy.industry}
+                      </span>
+                    )}
                   </div>
 
                   {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-gray-900 mb-4 leading-tight">
-                      {caseStudy.title}
-                    </h3>
-                    <Link
-                      href={`/case-studies/${caseStudy.slug}`}
-                      className="inline-flex items-center text-[#17599d] font-semibold hover:text-[#144a75] transition-colors"
-                    >
-                      / Read more
-                    </Link>
+                  <div className="p-6 flex flex-col justify-between flex-1 space-y-6">
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold leading-snug line-clamp-3 mb-2" style={{ color: "#0d1f3c" }}>
+                        {caseStudy.title}
+                      </h3>
+                      {caseStudy.description && (
+                        <p className="text-sm text-gray-500 line-clamp-3 leading-relaxed">
+                          {caseStudy.description}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="pt-2">
+                      <Link
+                        href={`/case-studies/${caseStudy.slug}`}
+                        className="inline-flex items-center gap-1.5 text-sm font-bold text-[#1e6fd9] hover:text-[#1559b4] transition-all group/link"
+                      >
+                        Read case study
+                        <span className="transform translate-x-0 group-hover/link:translate-x-1 transition-transform">→</span>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -154,11 +172,11 @@ export default function CaseStudiesGrid({
 
             {/* Pagination */}
             {totalPages > 1 && (
-              <div className="flex justify-center items-center gap-2 mt-12">
+              <div className="flex justify-center items-center gap-3 mt-16">
                 <button
                   onClick={() => goToPage(currentPage - 1)}
                   disabled={currentPage === 1}
-                  className="px-4 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-4 py-2.5 rounded-xl border border-[rgba(30,111,217,0.15)] text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm font-semibold shadow-sm"
                 >
                   Previous
                 </button>
@@ -169,11 +187,16 @@ export default function CaseStudiesGrid({
                       <button
                         key={page}
                         onClick={() => goToPage(page)}
-                        className={`px-4 py-2 border transition-colors ${
-                          currentPage === page
-                            ? "bg-[#17599d] text-white border-[#17599d]"
-                            : "border-gray-300 text-gray-700 hover:bg-gray-50"
-                        }`}
+                        className="w-10 h-10 rounded-xl border flex items-center justify-center text-sm font-bold transition-all shadow-sm"
+                        style={{
+                          color: currentPage === page ? "#ffffff" : "#5a7399",
+                          background: currentPage === page
+                            ? "linear-gradient(135deg, #1e6fd9, #1559b4)"
+                            : "#ffffff",
+                          borderColor: currentPage === page
+                            ? "#1e6fd9"
+                            : "rgba(30,111,217,0.15)",
+                        }}
                       >
                         {page}
                       </button>
@@ -184,7 +207,7 @@ export default function CaseStudiesGrid({
                 <button
                   onClick={() => goToPage(currentPage + 1)}
                   disabled={currentPage === totalPages}
-                  className="px-4 py-2 border border-gray-300 text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-4 py-2.5 rounded-xl border border-[rgba(30,111,217,0.15)] text-gray-700 bg-white hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm font-semibold shadow-sm"
                 >
                   Next
                 </button>

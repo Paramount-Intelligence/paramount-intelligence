@@ -1,7 +1,9 @@
 export default function PrivacyContent() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-6 lg:px-12 xl:px-16">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
+        <div className="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">
         {/* Introduction */}
         <div className="mb-12">
           <p className="text-gray-700 leading-relaxed text-lg">
@@ -435,14 +437,14 @@ export default function PrivacyContent() {
           </div>
         </div>
 
-        {/* Consent */}
-        <div className="bg-opacity-5 border-l-4 border-[#17599d] p-6 rounded-r-lg">
+        <div className="bg-opacity-5 border-l-4 border-[#1e6fd9] p-6 rounded-r-lg">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Consent</h2>
           <p className="text-gray-700 leading-relaxed">
             By using our website or engaging with our services, you consent to
             the processing of your personal data as outlined in this policy. You
             also consent to our use of cookies, as described above.
           </p>
+        </div>
         </div>
       </div>
     </section>

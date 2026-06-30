@@ -9,7 +9,7 @@ import JoinCTA from "@/components/careers/life-at-pi/JoinCTA";
 
 export default function LifeAtPIPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <LifeAtPIHeader />
       <LifeAtPIHero />

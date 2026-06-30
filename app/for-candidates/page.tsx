@@ -11,7 +11,7 @@ export const metadata = {
 
 export default function ForCandidates() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <CandidatesHero />
       <CandidatesContent />

@@ -10,7 +10,7 @@ import ClientSuccess from "@/components/about/ClientSuccess";
 
 export default function Services() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <AboutHeader />
       <AboutHero />

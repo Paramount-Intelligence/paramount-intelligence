@@ -1,9 +1,9 @@
 export default function NewsletterHeader() {
   return (
-    <div className="bg-gradient-to-r from-blue-900 via-blue-800 to-indigo-900 py-2">
+    <div className="mt-20 py-2.5" style={{ background: "linear-gradient(135deg, #1e6fd9 0%, #1559b4 100%)" }}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <p className="text-center text-white text-sm">
-          Stay ahead with AI insights • Join 10,000+ professionals
+        <p className="text-center text-white text-xs sm:text-sm font-semibold tracking-wider">
+          📧 THE AI INTELLIGENCE NEWSLETTER | Stay ahead with weekly AI insights
         </p>
       </div>
     </div>

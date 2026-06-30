@@ -385,19 +385,18 @@ const NavListItem = React.forwardRef<
   React.ComponentPropsWithoutRef<"a"> & { title: string; href: string }
 >(({ title, href, ...props }, ref) => (
   <li>
-    <NavigationMenuLink asChild>
+    <NavigationMenuLink asChild className="flex flex-row items-center gap-3 p-2.5 rounded-lg bg-transparent text-[#b5c8e2] hover:text-white transition-colors duration-200 hover:bg-[rgba(30,111,217,0.15)]">
       <Link
         ref={ref}
         href={href}
         prefetch={false}
-        className="group flex select-none items-center gap-2 rounded-lg p-2.5 no-underline outline-none transition-all hover:bg-[rgba(30,111,217,0.15)]"
+        className="group flex w-full select-none items-center gap-3 no-underline outline-none"
         {...props}
       >
         <div
-          className="w-1 h-1 rounded-full flex-shrink-0 transition-colors group-hover:bg-[#3b88f5]"
-          style={{ background: "rgba(143,164,196,0.5)" }}
+          className="w-1.5 h-1.5 rounded-full flex-shrink-0 transition-colors bg-[#3b88f5]/40 group-hover:bg-[#3b88f5]"
         />
-        <span className="text-sm font-medium text-[#b5c8e2] group-hover:text-white leading-tight transition-colors">
+        <span className="text-sm font-semibold leading-tight transition-colors">
           {title}
         </span>
       </Link>

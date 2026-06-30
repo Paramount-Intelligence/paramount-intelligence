@@ -5,7 +5,7 @@ import CaseStudiesClient from "./CaseStudiesClient";
 
 export default function CaseStudies() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
       <CaseStudiesHeader />
       <CaseStudiesClient />

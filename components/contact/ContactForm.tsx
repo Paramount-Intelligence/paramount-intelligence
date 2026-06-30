@@ -62,12 +62,14 @@ export default function ContactForm() {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <div className="grid lg:grid-cols-2 gap-12">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+        <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <div className="bg-white p-8 md:p-10 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6" style={{ color: "#0d1f3c" }}>
               Send us a message
             </h2>
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -86,7 +88,7 @@ export default function ContactForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all"
                     placeholder="John Doe"
                   />
                 </div>
@@ -105,7 +107,7 @@ export default function ContactForm() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -125,7 +127,7 @@ export default function ContactForm() {
                     name="company"
                     value={formData.company}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all"
                     placeholder="Your Company"
                   />
                 </div>
@@ -143,7 +145,7 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all"
                     placeholder="+1 (555) 000-0000"
                   />
                 </div>
@@ -162,7 +164,7 @@ export default function ContactForm() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all bg-white"
                 >
                   <option value="">Select a subject</option>
                   <option value="consultation">Free Consultation</option>
@@ -170,7 +172,7 @@ export default function ContactForm() {
                     AI Engineering Services
                   </option>
                   <option value="ai-consulting">
-                    AI Consulting & Advisory
+                    AI Consulting &amp; Advisory
                   </option>
                   <option value="partnership">Partnership Opportunities</option>
                   <option value="general">General Inquiry</option>
@@ -191,34 +193,33 @@ export default function ContactForm() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#17599d] focus:border-transparent transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#1e6fd9] focus:border-transparent transition-all resize-none"
                   placeholder="Tell us about your project or inquiry..."
                 />
               </div>
 
               {submitStatus === "success" && (
-                <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded">
+                <div className="p-4 bg-green-50 border border-green-200 text-green-800 rounded-lg text-sm font-semibold">
                   Thank you for your message! We'll get back to you shortly.
                 </div>
               )}
 
               {submitStatus === "error" && (
-                <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded">
-                  Sorry, there was an error submitting your message. Please try
-                  again.
+                <div className="p-4 bg-red-50 border border-red-200 text-red-800 rounded-lg text-sm font-semibold">
+                  Sorry, there was an error submitting your message. Please try again.
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#17599d] text-white px-8 py-4 font-semibold hover:bg-[#144a75] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full btn-primary py-4 justify-center disabled:opacity-50 disabled:cursor-not-allowed text-sm"
               >
                 {isSubmitting ? (
                   <>Sending...</>
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
+                    <Send className="w-4 h-4" />
                     Send Message
                   </>
                 )}
@@ -227,80 +228,87 @@ export default function ContactForm() {
           </div>
 
           {/* Contact Information */}
-          <div className="lg:pl-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Contact Information
-            </h2>
+          <div className="lg:pl-8 flex flex-col justify-between py-2">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: "#0d1f3c" }}>
+                Contact Information
+              </h2>
 
-            <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6 text-[#17599d]" />
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0 border border-[rgba(30,111,217,0.15)] shadow-md">
+                    <Mail className="w-5 h-5 text-[#1e6fd9]" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold mb-1" style={{ color: "#0d1f3c" }}>
+                      Email
+                    </h3>
+                    <a
+                      href="mailto:contact@paramountintelligence.com"
+                      className="text-sm text-gray-600 hover:text-[#1e6fd9] transition-colors font-medium"
+                    >
+                      paramountintelligence.central@gmail.com
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                    Email
-                  </h3>
-                  <a
-                    href="mailto:contact@paramountintelligence.com"
-                    className="text-gray-600 hover:text-[#17599d] transition-colors"
-                  >
-                    paramountintelligence.central@gmail.com
-                  </a>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                  <Phone className="w-6 h-6 text-[#17599d]" />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0 border border-[rgba(30,111,217,0.15)] shadow-md">
+                    <Phone className="w-5 h-5 text-[#1e6fd9]" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold mb-1" style={{ color: "#0d1f3c" }}>
+                      Phone
+                    </h3>
+                    <a
+                      href="tel:+16059712580"
+                      className="text-sm text-gray-600 hover:text-[#1e6fd9] transition-colors font-medium"
+                    >
+                      +1 (605) 971-2580
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                    Phone
-                  </h3>
-                  <a
-                    href="tel:+16059712580"
-                    className="text-gray-600 hover:text-[#17599d] transition-colors"
-                  >
-                    +1 (605) 971-2580
-                  </a>
-                </div>
-              </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center shrink-0">
-                  <MapPin className="w-6 h-6 text-[#17599d]" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                    Office
-                  </h3>
-                  <p className="text-gray-600">
-                    9838 57th Ave, Corona,
-                    <br />
-                    New York (NY), 11373
-                  </p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0 border border-[rgba(30,111,217,0.15)] shadow-md">
+                    <MapPin className="w-5 h-5 text-[#1e6fd9]" />
+                  </div>
+                  <div>
+                    <h3 className="text-base font-bold mb-1" style={{ color: "#0d1f3c" }}>
+                      Office
+                    </h3>
+                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
+                      9838 57th Ave, Corona,
+                      <br />
+                      New York (NY), 11373
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <div className="mt-12 p-8 bg-gray-50 rounded-2xl">
-              <h3 className="text-xl font-bold text-gray-900 mb-4">
+            <div className="mt-12 p-8 bg-white/70 backdrop-blur-sm rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-lg space-y-4">
+              <h3 className="text-lg font-bold" style={{ color: "#0d1f3c" }}>
                 Book a Free Consultation
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-sm text-gray-600 leading-relaxed">
                 Schedule a 30-minute consultation to explore how intelligent
                 systems, data analytics, cloud solutions, and automation can
-                benefit your organization. Our experts will guide you through
-                the opportunities, challenges, and create a clear roadmap for
-                success.
+                benefit your organization.
               </p>
-              <a
-                href="https://calendly.com/syedaliazzam/advisory?back=1"
-                className="inline-block bg-[#17599d] text-white px-6 py-3 font-semibold hover:bg-[#144a75] transition-colors"
-              >
-                Schedule Consultation
-              </a>
+              <div>
+                <a
+                  href="https://calendly.com/syedaliazzam/advisory?back=1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-xs px-6 py-3 inline-flex"
+                >
+                  Schedule Consultation
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>

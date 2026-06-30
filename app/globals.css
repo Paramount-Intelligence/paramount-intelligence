@@ -558,3 +558,110 @@ a {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(30, 111, 217, 0.3), transparent);
 }
+
+/* ============================================================
+   GLOBAL SUBPAGE AUTOMATIC THEME OVERRIDES
+   ============================================================ */
+
+/* 1. Force min-h-screen bg-white wrapper pages to render in light theme (#cbced1 background) */
+div.min-h-screen.bg-white,
+div.min-h-screen.mt-16.bg-white {
+  background-color: #cbced1 !important;
+  color: #0d1f3c !important;
+}
+
+/* 2. Theme all dynamic subpage sections to inherit #cbced1 and correct text color */
+div.min-h-screen.bg-white section.bg-white,
+div.min-h-screen.bg-white section.bg-gray-50,
+div.min-h-screen.bg-white section.bg-gray-100,
+div.min-h-screen.bg-white section.bg-gray-900,
+div.min-h-screen.mt-16.bg-white section {
+  background-color: #cbced1 !important;
+  background-image: radial-gradient(circle, rgba(30, 111, 217, 0.1) 1px, transparent 1px) !important;
+  background-size: 32px 32px !important;
+}
+
+/* 3. Style nested containers and cards inside these sections */
+div.min-h-screen.bg-white div.bg-white,
+div.min-h-screen.bg-white div.bg-gray-50,
+div.min-h-screen.bg-white div.bg-gray-100,
+div.min-h-screen.mt-16.bg-white div.bg-white,
+div.min-h-screen.mt-16.bg-white div.bg-gray-50 {
+  background-color: #ffffff !important;
+  border: 1px solid rgba(30, 111, 217, 0.15) !important;
+  border-radius: 16px !important;
+}
+
+/* 4. Global overrides for brand blue to electric blue mapping */
+.text-\[\#17599d\] {
+  color: #1e6fd9 !important;
+}
+.bg-\[\#17599d\] {
+  background: linear-gradient(135deg, #1e6fd9 0%, #1559b4 100%) !important;
+  color: #ffffff !important;
+}
+.border-\[\#17599d\] {
+  border-color: rgba(30, 111, 217, 0.25) !important;
+}
+.hover\:text-\[\#144a75\]:hover,
+.hover\:bg-\[\#144a75\]:hover {
+  color: #1559b4 !important;
+}
+
+/* 5. Active sidebar items inside dynamic tabs */
+div.min-h-screen.bg-white button.text-\[\#17599d\].bg-white.border-l-4.border-\[\#17599d\],
+div.min-h-screen.bg-white button.text-\[\#17599d\].bg-white.font-semibold {
+  color: #1e6fd9 !important;
+  border-left-color: #1e6fd9 !important;
+  background-color: rgba(30, 111, 217, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(30, 111, 217, 0.05) !important;
+}
+
+/* 6. Dynamic Hero subpage sections overrides (e.g. LLMHero, StrategyHero etc.) */
+div.min-h-screen.bg-white section:has(video),
+div.min-h-screen.mt-16.bg-white section:has(video) {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(30, 111, 217, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(27, 58, 107, 0.35) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(13, 31, 60, 0.5) 0%, transparent 45%),
+    linear-gradient(160deg, #060d1a 0%, #0d1f3c 50%, #060d1a 100%) !important;
+}
+
+div.min-h-screen.bg-white section:has(video) h1,
+div.min-h-screen.bg-white section:has(video) h2,
+div.min-h-screen.mt-16.bg-white section:has(video) h1,
+div.min-h-screen.mt-16.bg-white section:has(video) h2 {
+  background: linear-gradient(135deg, #ffffff 0%, #6ba8ff 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+div.min-h-screen.bg-white section:has(video) p,
+div.min-h-screen.mt-16.bg-white section:has(video) p {
+  color: #b5c8e2 !important;
+}
+
+div.min-h-screen.bg-white section:has(video) video,
+div.min-h-screen.mt-16.bg-white section:has(video) video {
+  opacity: 0.08 !important;
+}
+
+div.min-h-screen.bg-white section:has(video) header nav,
+div.min-h-screen.bg-white section:has(video) header nav a,
+div.min-h-screen.mt-16.bg-white section:has(video) header nav,
+div.min-h-screen.mt-16.bg-white section:has(video) header nav a {
+  color: #8fa4c4 !important;
+  font-weight: 500 !important;
+}
+
+div.min-h-screen.bg-white section:has(video) header nav a:hover,
+div.min-h-screen.mt-16.bg-white section:has(video) header nav a:hover {
+  color: #ffffff !important;
+}
+
+div.min-h-screen.bg-white section:has(video) header nav span,
+div.min-h-screen.mt-16.bg-white section:has(video) header nav span {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+

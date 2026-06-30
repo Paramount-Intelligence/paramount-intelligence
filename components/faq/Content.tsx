@@ -69,37 +69,50 @@ export default function FAQContent() {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12 xl:px-16">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-4xl mx-auto px-6">
         {/* FAQ List */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl overflow-hidden border border-[rgba(30,111,217,0.15)] shadow-md hover:shadow-lg transition-all duration-300"
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
+                className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50/50 transition-colors"
               >
-                <span className="text-lg font-semibold text-gray-900 pr-4">
+                <span className="text-base sm:text-lg font-bold pr-4" style={{ color: "#0d1f3c" }}>
                   {index + 1}. {faq.question}
                 </span>
-                {openIndex === index ? (
-                  <ChevronUp className="shrink-0 w-6 h-6 text-[#17599d]" />
-                ) : (
-                  <ChevronDown className="shrink-0 w-6 h-6 text-gray-400" />
-                )}
+                <div
+                  className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors"
+                  style={{
+                    background: openIndex === index ? "rgba(30,111,217,0.1)" : "rgba(0,0,0,0.04)",
+                  }}
+                >
+                  {openIndex === index ? (
+                    <ChevronUp className="w-4 h-4 text-[#1e6fd9]" />
+                  ) : (
+                    <ChevronDown className="w-4 h-4 text-gray-500" />
+                  )}
+                </div>
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6 bg-gray-50">
-                  <p className="text-gray-700 leading-relaxed mb-4">
+                <div className="px-6 pb-6 animate-slide-down">
+                  <div
+                    className="w-full h-px mb-4"
+                    style={{ background: "rgba(30,111,217,0.1)" }}
+                  />
+                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
                     {faq.answer}
                   </p>
                   {faq.link && (
                     <Link
                       href={faq.link}
-                      className="inline-flex items-center text-[#17599d] font-semibold hover:underline"
+                      className="inline-flex items-center gap-1 text-sm font-semibold text-[#1e6fd9] hover:underline"
                     >
                       {faq.linkText} →
                     </Link>
@@ -111,20 +124,26 @@ export default function FAQContent() {
         </div>
 
         {/* Contact CTA */}
-        <div className="mt-16 bg-linear-to-r from-[#17599d] to-[#0c3a6a] p-8 rounded-lg text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">
+        <div className="mt-20 bg-gradient-navy rounded-2xl p-10 md:p-12 text-center border border-[rgba(30,111,217,0.25)] shadow-2xl relative overflow-hidden text-white">
+          <div className="absolute inset-0 geo-grid opacity-10 pointer-events-none" />
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Still Have Questions?
           </h2>
-          <p className="text-gray-100 mb-6 max-w-2xl mx-auto">
+          <p className="text-sm mb-8 max-w-2xl mx-auto" style={{ color: "#b5c8e2" }}>
             Can't find the answer you're looking for? Our team is here to help.
             Reach out to us and we'll get back to you as soon as possible.
           </p>
-          <Link
-            href="/contact-us"
-            className="inline-block bg-white text-[#17599d] px-8 py-3 rounded font-semibold hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            Contact Us
-          </Link>
+          <div>
+            <Link
+              href="/contact-us"
+              className="btn-primary text-sm inline-flex"
+            >
+              Contact Us
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </section>

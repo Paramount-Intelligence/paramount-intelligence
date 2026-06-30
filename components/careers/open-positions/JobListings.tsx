@@ -107,14 +107,13 @@ export default function JobListings() {
       id: "strategy-consultant",
       title: "Strategy Consultant",
       department: "Consulting",
-      location: "Onsite - Islamabad, Multi Gardens B-17",
-      type: "Full-Time Contractual",
-      timezone: "ET",
+      location: "Onsite - B-17 Multi Gardens",
+      type: "Full-Time Contract",
       openPositions: 1,
       briefDescription:
-        "Ideal for early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives alongside ex-MBB consultants.",
+        "Ideal for early-career professionals seeking practical experience in market research, business strategy, client coordination, and growth initiatives.",
       overview:
-        "We are hiring a Strategy Consultant for a key contractual position within our growing team. This role is ideal for ambitious early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives. Our core work involves supporting Fortune 1000 companies, and we collaborate with ex-MBB consultants, providing exposure to high-impact consulting engagements and professional standards.",
+        "We are hiring a Strategy Consultant for a key contractual position within our growing team. This role is ideal for ambitious early-career professionals seeking practical experience in market research, business strategy, client coordination, and commercial growth initiatives.",
     },
   ];
 
@@ -131,24 +130,45 @@ export default function JobListings() {
     filter === "All" ? jobs : jobs.filter((job) => job.department === filter);
 
   return (
-    <section className="py-16 md:py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl text-center font-bold text-gray-900 mb-6">
+    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
+        <div className="mb-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+            <span
+              className="text-xs font-semibold tracking-widest uppercase"
+              style={{ color: "#1e6fd9" }}
+            >
+              Careers
+            </span>
+            <div className="accent-line" style={{ background: "#1e6fd9" }} />
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl font-bold mb-8" style={{ color: "#0d1f3c" }}>
             Current Openings
           </h2>
 
           {/* Filter Buttons */}
-          <div className="flex flex-wrap gap-3 justify-center">
+          <div className="flex flex-wrap gap-2 justify-center max-w-2xl mx-auto">
             {departments.map((dept) => (
               <button
                 key={dept}
                 onClick={() => setFilter(dept)}
-                className={`px-6 py-2 rounded-full font-medium transition-all ${
-                  filter === dept
-                    ? "bg-[#17599d] text-white shadow-lg"
-                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                }`}
+                className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200"
+                style={{
+                  color: filter === dept ? "#ffffff" : "#5a7399",
+                  background: filter === dept
+                    ? "linear-gradient(135deg, #1e6fd9, #1559b4)"
+                    : "rgba(255, 255, 255, 0.4)",
+                  border: filter === dept
+                    ? "1px solid #1e6fd9"
+                    : "1px solid rgba(30,111,217,0.15)",
+                  boxShadow: filter === dept
+                    ? "0 4px 16px rgba(30,111,217,0.25)"
+                    : "none",
+                }}
               >
                 {dept}
               </button>
@@ -157,49 +177,50 @@ export default function JobListings() {
         </div>
 
         {/* Job Cards */}
-        <div className="space-y-6">
+        <div className="grid gap-6 max-w-4xl mx-auto">
           {filteredJobs.map((job) => (
             <div
               key={job.id}
-              className="bg-white rounded-xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300"
+              className="bg-white rounded-2xl p-6 md:p-8 border border-[rgba(30,111,217,0.15)] shadow-md hover:shadow-xl hover:translate-y-[-2px] transition-all duration-300 flex flex-col md:flex-row md:items-center justify-between gap-6"
             >
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
-                <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                    {job.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="bg-[#17599d] text-white px-3 py-1 rounded-full text-xs font-semibold">
-                      {job.department}
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                      📍 {job.location}
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                      ⏰ {job.type}
-                    </span>
-                    {(job as any).timezone && (
-                      <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                        🕐 {(job as any).timezone}
-                      </span>
-                    )}
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs font-semibold">
-                      {job.openPositions} Open{" "}
-                      {job.openPositions === 1 ? "Position" : "Positions"}
-                    </span>
-                  </div>
-                  <p className="text-gray-700 leading-relaxed">
-                    {job.briefDescription}
-                  </p>
+              <div className="space-y-4 flex-1">
+                <div className="flex flex-wrap items-center gap-3">
+                  <span
+                    className="px-2.5 py-1 rounded-full text-xs font-semibold"
+                    style={{
+                      background: "rgba(30,111,217,0.1)",
+                      color: "#1e6fd9",
+                      border: "1px solid rgba(30,111,217,0.2)",
+                    }}
+                  >
+                    {job.department}
+                  </span>
+                  <span className="text-gray-500 text-xs font-medium flex items-center gap-1">
+                    📍 {job.location}
+                  </span>
+                  <span className="text-gray-500 text-xs font-medium flex items-center gap-1">
+                    ⏰ {job.type}
+                  </span>
                 </div>
+
+                <h3 className="text-xl md:text-2xl font-bold" style={{ color: "#0d1f3c" }}>
+                  {job.title}
+                </h3>
+                
+                <p className="text-sm text-gray-600 leading-relaxed max-w-2xl">
+                  {job.briefDescription}
+                </p>
               </div>
 
-              <div className="flex justify-end">
+              <div className="flex md:self-center shrink-0">
                 <Link
                   href={`/careers/open-positions/${job.id}`}
-                  className="inline-block bg-[#17599d] text-white py-2 px-6 rounded-lg font-semibold hover:bg-[#144a75] transition-all"
+                  className="btn-primary text-xs px-6 py-3 inline-flex whitespace-nowrap"
                 >
-                  View Details →
+                  View Details
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
                 </Link>
               </div>
             </div>
