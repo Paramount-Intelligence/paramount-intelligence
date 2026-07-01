@@ -294,6 +294,39 @@ export default function CaseStudyForm({ caseStudy, onClose }: CaseStudyFormProps
   const [loading, setLoading] = useState(false);
   const [slugManuallyEdited, setSlugManuallyEdited] = useState(false);
   const [uploadingField, setUploadingField] = useState<"image" | "heroImage" | null>(null);
+  const [rawText, setRawText] = useState("");
+  const [parsing, setParsing] = useState(false);
+  const [showAiParser, setShowAiParser] = useState(false);
+
+  const handleParseText = async () => {
+    if (!rawText.trim()) {
+      alert("Please paste some text first.");
+      return;
+    }
+    setParsing(true);
+    try {
+      const res = await fetch("/api/admin/case-studies/parse", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: rawText }),
+      });
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to parse text");
+      }
+      const data = await res.json();
+      setFormData(data);
+      setSlugManuallyEdited(false);
+      alert("Form successfully populated from case study text!");
+      setShowAiParser(false);
+    } catch (err: any) {
+      console.error(err);
+      alert("AI Parsing failed: " + err.message);
+    } finally {
+      setParsing(false);
+    }
+  };
+
 
   useEffect(() => {
     if (caseStudy) {
@@ -502,6 +535,64 @@ export default function CaseStudyForm({ caseStudy, onClose }: CaseStudyFormProps
         </div>
 
         <form onSubmit={handleSubmit} className="px-8 py-8 max-h-[80vh] overflow-y-auto space-y-8">
+
+          {/* AI Auto-Populate Parser */}
+          <section className="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-lg border border-purple-200">
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-purple-600 animate-pulse"></span>
+                <h3 className="text-xl font-bold text-purple-900">AI Case Study Parser</h3>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowAiParser(!showAiParser)}
+                className="text-xs font-semibold bg-purple-600 text-white px-3 py-1.5 rounded-md hover:bg-purple-700 transition-all"
+              >
+                {showAiParser ? "Hide AI Parser" : "Use AI Parser"}
+              </button>
+            </div>
+            
+            {showAiParser && (
+              <div className="mt-4 space-y-4 animate-slide-down">
+                <p className="text-sm text-purple-700 leading-relaxed">
+                  Paste the entire text of the case study below. Gemini AI will analyze the content and automatically fill out all form fields (including title, industry, challenges, solution agents, and tech stack). You can then review and edit the fields before saving.
+                </p>
+                <textarea
+                  value={rawText}
+                  onChange={(e) => setRawText(e.target.value)}
+                  placeholder="Paste the case study text here..."
+                  rows={8}
+                  className="w-full px-4 py-3 border border-purple-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 bg-white text-gray-900 resize-y text-sm font-normal"
+                />
+                <div className="flex gap-3">
+                  <button
+                    type="button"
+                    onClick={handleParseText}
+                    disabled={parsing || !rawText.trim()}
+                    className="flex-1 inline-flex items-center justify-center gap-2 bg-purple-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-purple-700 disabled:opacity-50 transition-all shadow-md hover:shadow-lg text-sm"
+                  >
+                    {parsing ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                        Parsing Case Study...
+                      </>
+                    ) : (
+                      "Auto-populate Form fields with AI"
+                    )}
+                  </button>
+                  {rawText && (
+                    <button
+                      type="button"
+                      onClick={() => setRawText("")}
+                      className="px-4 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 font-semibold text-sm"
+                    >
+                      Clear
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
+          </section>
 
           {/* Basic Information */}
           <section className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-6 rounded-lg border border-blue-200">

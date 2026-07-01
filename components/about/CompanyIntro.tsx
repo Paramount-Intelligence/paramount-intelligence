@@ -1,6 +1,6 @@
 export default function CompanyIntro() {
   return (
-    <section className="py-20 relative overflow-hidden" style={{ background: "#cbced1" }}>
+    <section className="py-20 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
       <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16 flex flex-col items-center">

@@ -7,7 +7,7 @@ import Link from "next/link";
 const specificTitles = [
   "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
   "LLM-Powered Customer Support Chatbot",
-  "Pricing Intelligence and Recommendation Engine",
+  "AI-Powered Support Copilot for Enterprise DevOps Platform",
 ];
 
 const normalizeTitle = (title: string) => title.trim().toLowerCase();
@@ -167,9 +167,8 @@ export default function ProjectExperience() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className={`grid md:grid-cols-2 gap-10 items-center ${
-                  project.imagePosition === "left" ? "md:grid-flow-dense" : ""
-                }`}
+                className={`grid md:grid-cols-2 gap-10 items-center ${project.imagePosition === "left" ? "md:grid-flow-dense" : ""
+                  }`}
                 style={{
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(28px)",
@@ -178,15 +177,14 @@ export default function ProjectExperience() {
               >
                 {/* Text Content */}
                 <div
-                  className={`space-y-5 ${
-                    project.imagePosition === "left" ? "md:col-start-2" : ""
-                  }`}
+                  className={`space-y-5 ${project.imagePosition === "left" ? "md:col-start-2" : ""
+                    }`}
                 >
                   {/* Large index number */}
                   <div
                     className="text-6xl font-black leading-none select-none"
                     style={{
-                      color: "rgba(30,111,217,0.18)",
+                      color: "rgba(107, 168, 255, 0.35)",
                       fontVariantNumeric: "tabular-nums",
                     }}
                   >
@@ -240,11 +238,10 @@ export default function ProjectExperience() {
 
                 {/* Image */}
                 <div
-                  className={`relative h-64 md:h-80 rounded-2xl overflow-hidden group/img ${
-                    project.imagePosition === "left"
+                  className={`relative h-64 md:h-80 rounded-2xl overflow-hidden group/img ${project.imagePosition === "left"
                       ? "md:col-start-1 md:row-start-1"
                       : ""
-                  }`}
+                    }`}
                   style={{
                     border: "1px solid rgba(30,111,217,0.2)",
                     boxShadow: "0 24px 60px rgba(0,0,0,0.35)",

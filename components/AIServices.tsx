@@ -54,7 +54,7 @@ export default function AIServices() {
   ];
 
   return (
-    <section className="py-10 relative overflow-hidden" style={{ background: "#cbced1ff" }}>
+    <section className="py-10 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
       {/* Subtle bg dots */}
       <div className="absolute inset-0 geo-dots opacity-40 pointer-events-none" />
 

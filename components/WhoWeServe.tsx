@@ -53,7 +53,7 @@ export default function WhoWeServe() {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1ff" }}>
+    <section className="py-24 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
       {/* Subtle top accent */}
       <div className="mb-0" />
 

@@ -103,7 +103,7 @@ export default function TrustedBrands() {
   return (
     <section
       className="relative py-4 md:py-4"
-      style={{ background: "#cbced1ff" }}
+      style={{ background: "#f1f3f6" }}
     >
       {/* Edge fade masks so logos don't appear to clip abruptly */}
       <div
@@ -123,11 +123,6 @@ export default function TrustedBrands() {
       {/* Heading */}
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col items-center justify-center gap-3 text-center">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] uppercase text-blue-500">
-            <span className="h-px w-6 bg-blue-500" />
-            Trusted Partners
-            <span className="h-px w-6 bg-blue-500" />
-          </span>
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-600 tracking-tight">
             Trusted by teams at world-renowned brands
           </h2>

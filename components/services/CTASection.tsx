@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="relative py-24 overflow-hidden" style={{ background: "#cbced1" }}>
+    <section className="relative py-24 overflow-hidden" style={{ background: "#f1f3f6" }}>
       {/* Background decoration */}
       <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 

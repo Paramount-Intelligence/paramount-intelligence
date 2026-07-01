@@ -11,7 +11,7 @@ interface CaseStudiesGridProps {
 const featuredCaseStudyTitles = [
   "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
   "LLM-Powered Customer Support Chatbot",
-  "Pricing Intelligence and Recommendation Engine",
+  "AI-Powered Support Copilot for Enterprise DevOps Platform",
 ];
 
 const normalizeCaseStudyTitle = (title: string) =>
@@ -90,7 +90,7 @@ export default function CaseStudiesGrid({
   };
 
   return (
-    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+    <section className="py-24 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
       <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
@@ -115,11 +115,11 @@ export default function CaseStudiesGrid({
                   {/* Image */}
                   <div className="relative h-60 overflow-hidden bg-gray-100 flex items-center justify-center shrink-0">
                     {caseStudy.image &&
-                    typeof caseStudy.image === "string" &&
-                    caseStudy.image.trim() !== "" &&
-                    caseStudy.image !== "nil" &&
-                    (caseStudy.image.startsWith("http") ||
-                      caseStudy.image.startsWith("/")) ? (
+                      typeof caseStudy.image === "string" &&
+                      caseStudy.image.trim() !== "" &&
+                      caseStudy.image !== "nil" &&
+                      (caseStudy.image.startsWith("http") ||
+                        caseStudy.image.startsWith("/")) ? (
                       <Image
                         src={caseStudy.image.trim()}
                         alt={caseStudy.title || "Case Study"}

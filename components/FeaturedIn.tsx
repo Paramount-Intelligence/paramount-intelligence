@@ -16,7 +16,7 @@ export default function FeaturedIn() {
     <section
       className="py-4"
       style={{
-        background: "#cbced1ff",
+        background: "#f1f3f6",
         borderBottom: "1px solid rgba(30,111,217,0.08)",
       }}
     >

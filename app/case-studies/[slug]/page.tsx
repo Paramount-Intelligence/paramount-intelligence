@@ -80,7 +80,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <div className="min-h-screen overflow-x-hidden bg-white">
       <Header />
-      <CaseStudiesHeader />
+      <CaseStudiesHeader title={caseStudy.title} />
 
       <CaseStudyHero
         title={caseStudy.title}
