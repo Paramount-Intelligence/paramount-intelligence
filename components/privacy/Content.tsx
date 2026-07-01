@@ -1,6 +1,6 @@
 export default function PrivacyContent() {
   return (
-    <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+    <section className="py-24 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
       <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <div className="bg-white/90 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-[rgba(30,111,217,0.15)] shadow-xl">

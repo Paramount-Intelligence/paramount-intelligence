@@ -76,7 +76,7 @@ export default function CandidatesContent() {
   return (
     <div className="w-full">
       {/* Introduction & Expectation Section */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
         <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
@@ -196,7 +196,7 @@ export default function CandidatesContent() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden" style={{ background: "#cbced1" }}>
+      <section className="py-24 relative overflow-hidden" style={{ background: "#f1f3f6" }}>
         <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 
         <div className="relative z-10 max-w-4xl mx-auto px-6 text-center space-y-6">

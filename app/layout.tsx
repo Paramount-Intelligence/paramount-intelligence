@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <div className="max-w-480 mx-auto">{children}</div>
+        {children}
         <Analytics />
       </body>
     </html>

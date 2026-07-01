@@ -563,20 +563,20 @@ a {
    GLOBAL SUBPAGE AUTOMATIC THEME OVERRIDES
    ============================================================ */
 
-/* 1. Force min-h-screen bg-white wrapper pages to render in light theme (#cbced1 background) */
+/* 1. Force min-h-screen bg-white wrapper pages to render in light theme (#f1f3f6 background) */
 div.min-h-screen.bg-white,
 div.min-h-screen.mt-16.bg-white {
-  background-color: #cbced1 !important;
+  background-color: #f1f3f6 !important;
   color: #0d1f3c !important;
 }
 
-/* 2. Theme all dynamic subpage sections to inherit #cbced1 and correct text color */
+/* 2. Theme all dynamic subpage sections to inherit #f1f3f6 and correct text color */
 div.min-h-screen.bg-white section.bg-white,
 div.min-h-screen.bg-white section.bg-gray-50,
 div.min-h-screen.bg-white section.bg-gray-100,
 div.min-h-screen.bg-white section.bg-gray-900,
 div.min-h-screen.mt-16.bg-white section {
-  background-color: #cbced1 !important;
+  background-color: #f1f3f6 !important;
   background-image: radial-gradient(circle, rgba(30, 111, 217, 0.1) 1px, transparent 1px) !important;
   background-size: 32px 32px !important;
 }
