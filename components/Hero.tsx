@@ -193,7 +193,7 @@ export default function Hero() {
 
                   {/* Capability list */}
                   <div className="space-y-2.5">
-                    {["LLM Applications", "Agentic Systems", "RAG Architectures", "MLOps Platforms"].map((item) => (
+                    {["Agentic Systems", "RAG Architectures", "LLM Applications", "MLOps Platforms"].map((item) => (
                       <div
                         key={item}
                         className="flex items-center gap-3 py-2 px-3 rounded-lg"

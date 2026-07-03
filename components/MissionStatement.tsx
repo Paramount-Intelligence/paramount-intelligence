@@ -85,7 +85,7 @@ export default function MissionStatement() {
                 className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: "#6ba8ff" }}
               >
-                Our Mission
+                Message from Our CEO
               </span>
             </div>
 
@@ -101,8 +101,7 @@ export default function MissionStatement() {
                 >
                   "
                 </span>
-                True transformation happens when technology stops being a
-                project and starts being the{" "}
+                True transformation happens when technology stops being a project and starts being the{" "}
                 <span
                   style={{
                     background: "linear-gradient(135deg, #6ba8ff 0%, #3b88f5 100%)",
@@ -113,7 +112,7 @@ export default function MissionStatement() {
                 >
                   engine
                 </span>{" "}
-                of your business.
+                of your business. We partner with you to build that engine.
                 <span
                   className="text-5xl font-serif leading-none"
                   style={{ color: "#3b88f5" }}
