@@ -4,8 +4,6 @@ import { useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import {
   BriefcaseBusiness,
-  CheckCircle2,
-  Clock3,
   Database,
   Edit,
   FileText,
@@ -20,6 +18,7 @@ import {
 } from "lucide-react";
 import CaseStudyForm from "./CaseStudyForm";
 import { getApiUrl } from "@/lib/api";
+import { PimsEmployee } from "@/lib/pims";
 import {
   DataPanel,
   EmptyState,
@@ -61,88 +60,19 @@ interface CaseStudy {
   updatedAt: string;
 }
 
-type Applicant = {
-  id: string;
-  candidateName: string;
-  university: string;
-  email: string;
-  phone: string;
-  roleAppliedFor: string;
-  degree: string;
-  education: string;
-  semester: string;
-  gpa: string;
-  experience: string;
-  skills: string;
-  resumeLink: string;
-  resume: string;
-  coverLetter: string;
-  applicationStatus: string;
-  location: string;
-  notes: string;
-  source: string;
-  interviewDate: string;
-  interviewer: string;
-  interviewNotes: string;
-  interviewResult: string;
-  positionGranted: string;
-  parsedName: string;
-  contactInformation: string;
-  educationSummary: string;
-  workExperience: string;
-  emailSent: string;
-  emailSentTime: string;
-  assessmentSubmission: string;
-  submissionDate: string;
-  applicationReceivedDate: string;
-  submissionReminderEmail: string;
-  submissionReminderEmailDate: string;
-  created: string;
-  notForUs: string;
-  createdDate: string;
-  lastUpdatedDate: string;
-  fields: Record<string, string>;
-};
-
-type Member = {
-  id: string;
-  memberName: string;
-  email: string;
-  role: string;
-  department: string;
-  status: string;
-  joiningDate: string;
-  notes: string;
-  createdDate: string;
-  lastUpdatedDate: string;
-};
-
-type AirtableSummary = {
+type PimsSummary = {
   syncedAt: string;
-  applicants: {
+  employees: {
     total: number;
-    pending: number;
-    approved: number;
-    rejected: number;
-    recent: Applicant[];
-    statusCounts: Record<string, number>;
+    active: number;
+    inactive: number;
+    roles: Record<string, number>;
+    departments: Record<string, number>;
+    recent: PimsEmployee[];
   };
-  members: {
-    total: number;
-    configured: boolean;
-  };
-  additionalTables: Array<{ name: string; configured: boolean }>;
 };
 
-type RecordsResponse<T> = {
-  records: T[];
-  syncedAt: string;
-  configured?: boolean;
-  message?: string;
-  columns?: string[];
-};
-
-type Tab = "overview" | "case-studies" | "applicants" | "members" | "airtable";
+type Tab = "overview" | "case-studies" | "employees" | "inactive-users";
 
 const pageSize = 10;
 const caseStudyPageSize = 5;
@@ -150,9 +80,8 @@ const caseStudyPageSize = 5;
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "overview", label: "Overview" },
   { id: "case-studies", label: "Case Studies" },
-  { id: "applicants", label: "Applicants" },
-  { id: "members", label: "Permanent Members" },
-  { id: "airtable", label: "Airtable Records" },
+  { id: "employees", label: "PIMS Employees" },
+  { id: "inactive-users", label: "Inactive (3+ Days)" },
 ];
 
 const formatDate = (value?: string) => {
@@ -168,7 +97,7 @@ const formatDate = (value?: string) => {
 };
 
 const formatDateTime = (value?: string) => {
-  if (!value) return "Not synced yet";
+  if (!value) return "Not connected";
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
 
@@ -190,32 +119,23 @@ const statusMatches = (status: string, filter: string) =>
 export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState<Tab>("overview");
   const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
-  const [applicants, setApplicants] = useState<Applicant[]>([]);
-  const [applicantFieldColumns, setApplicantFieldColumns] = useState<string[]>(
-    [],
-  );
-  const [members, setMembers] = useState<Member[]>([]);
-  const [summary, setSummary] = useState<AirtableSummary | null>(null);
+  const [employees, setEmployees] = useState<PimsEmployee[]>([]);
+  const [summary, setSummary] = useState<PimsSummary | null>(null);
   const [loading, setLoading] = useState(true);
-  const [airtableLoading, setAirtableLoading] = useState(true);
+  const [pimsLoading, setPimsLoading] = useState(true);
   const [caseStudyError, setCaseStudyError] = useState("");
-  const [applicantError, setApplicantError] = useState("");
-  const [memberError, setMemberError] = useState("");
-  const [summaryError, setSummaryError] = useState("");
+  const [pimsError, setPimsError] = useState("");
   const [showForm, setShowForm] = useState(false);
   const [editingCaseStudy, setEditingCaseStudy] = useState<CaseStudy | null>(
     null,
   );
-  const [applicantSearch, setApplicantSearch] = useState("");
-  const [memberSearch, setMemberSearch] = useState("");
-  const [applicantStatus, setApplicantStatus] = useState("all");
-  const [applicantPositionGranted, setApplicantPositionGranted] =
-    useState("all");
-  const [memberStatus, setMemberStatus] = useState("all");
+  const [employeeSearch, setEmployeeSearch] = useState("");
+  const [employeeRole, setEmployeeRole] = useState("all");
+  const [employeeStatus, setEmployeeStatus] = useState("all");
   const [caseStudyPage, setCaseStudyPage] = useState(1);
-  const [applicantPage, setApplicantPage] = useState(1);
-  const [memberPage, setMemberPage] = useState(1);
-  const [selectedApplicant, setSelectedApplicant] = useState<Applicant | null>(
+  const [employeePage, setEmployeePage] = useState(1);
+  const [inactivePage, setInactivePage] = useState(1);
+  const [selectedEmployee, setSelectedEmployee] = useState<PimsEmployee | null>(
     null,
   );
 
@@ -234,63 +154,40 @@ export default function AdminDashboard() {
     setCaseStudyError("");
   };
 
-  const refreshAirtable = async () => {
-    setAirtableLoading(true);
-    setApplicantError("");
-    setMemberError("");
-    setSummaryError("");
+  const refreshPims = async () => {
+    setPimsLoading(true);
+    setPimsError("");
 
-    const [applicantResult, memberResult, summaryResult] =
-      await Promise.allSettled([
-        fetch("/api/admin/airtable/applicants", { credentials: "include" }),
-        fetch("/api/admin/airtable/permanent-members", {
+    try {
+      const [employeesResult, summaryResult] = await Promise.allSettled([
+        fetch(`/api/admin/pims/employees?t=${Date.now()}`, { 
           credentials: "include",
+          cache: "no-store"
         }),
-        fetch("/api/admin/airtable/summary", { credentials: "include" }),
+        fetch(`/api/admin/pims/summary?t=${Date.now()}`, { 
+          credentials: "include",
+          cache: "no-store"
+        }),
       ]);
 
-    if (applicantResult.status === "fulfilled" && applicantResult.value.ok) {
-      const payload =
-        (await applicantResult.value.json()) as RecordsResponse<Applicant>;
-      setApplicants(payload.records);
-      setApplicantFieldColumns(
-        payload.columns?.length
-          ? payload.columns
-          : Array.from(
-              new Set(
-                payload.records.flatMap((record) =>
-                  Object.keys(record.fields || {}),
-                ),
-              ),
-            ),
-      );
-    } else {
-      setApplicantError("Applicants could not be loaded from Airtable.");
-    }
-
-    if (memberResult.status === "fulfilled" && memberResult.value.ok) {
-      const payload =
-        (await memberResult.value.json()) as RecordsResponse<Member>;
-      setMembers(payload.records);
-      if (payload.configured === false) {
-        setMemberError(
-          payload.message || "Permanent members table is not configured yet.",
-        );
+      if (employeesResult.status === "fulfilled" && employeesResult.value.ok) {
+        const payload = await employeesResult.value.json();
+        setEmployees(payload.records);
+      } else {
+        setPimsError("Employees could not be loaded from PIMS.");
       }
-    } else {
-      setMemberError(
-        "Permanent members could not be loaded. Check the Airtable members table configuration.",
-      );
-    }
 
-    if (summaryResult.status === "fulfilled" && summaryResult.value.ok) {
-      const payload = (await summaryResult.value.json()) as AirtableSummary;
-      setSummary(payload);
-    } else {
-      setSummaryError("Airtable summary could not be loaded.");
+      if (summaryResult.status === "fulfilled" && summaryResult.value.ok) {
+        const payload = await summaryResult.value.json();
+        setSummary(payload);
+      } else {
+        setPimsError("PIMS summary could not be loaded.");
+      }
+    } catch {
+      setPimsError("Failed to connect to PIMS database.");
+    } finally {
+      setPimsLoading(false);
     }
-
-    setAirtableLoading(false);
   };
 
   const refreshDashboard = async () => {
@@ -300,7 +197,7 @@ export default function AdminDashboard() {
         fetchCaseStudies().catch(() => {
           setCaseStudyError("Case studies could not be loaded.");
         }),
-        refreshAirtable(),
+        refreshPims(),
       ]);
     } finally {
       setLoading(false);
@@ -342,163 +239,95 @@ export default function AdminDashboard() {
     fetchCaseStudies();
   };
 
-  const applicantStatusOptions = useMemo(
+  const roleOptions = useMemo(
     () => [
       "all",
       ...Array.from(
-        new Set(
-          applicants.map((item) => item.applicationStatus).filter(Boolean),
-        ),
+        new Set(employees.map((item) => item.role).filter(Boolean)),
       ),
     ],
-    [applicants],
+    [employees],
   );
 
-  const memberStatusOptions = useMemo(
+  const statusOptions = useMemo(
     () => [
       "all",
       ...Array.from(
-        new Set(members.map((item) => item.status).filter(Boolean)),
+        new Set(employees.map((item) => item.status).filter(Boolean)),
       ),
     ],
-    [members],
+    [employees],
   );
 
-  const positionGrantedOptions = useMemo(
-    () => [
-      "all",
-      ...Array.from(
-        new Set(
-          applicants
-            .map(
-              (item) =>
-                item.fields?.["Position Granted"] || item.positionGranted,
-            )
-            .filter(Boolean),
-        ),
-      ),
-    ],
-    [applicants],
-  );
-
-  const filteredApplicants = useMemo(
+  const filteredEmployees = useMemo(
     () =>
-      applicants.filter(
-        (applicant) =>
-          statusMatches(applicant.applicationStatus, applicantStatus) &&
-          statusMatches(
-            applicant.fields?.["Position Granted"] || applicant.positionGranted,
-            applicantPositionGranted,
-          ) &&
-          includesText(Object.values(applicant.fields || {}), applicantSearch),
-      ),
-    [applicants, applicantPositionGranted, applicantSearch, applicantStatus],
-  );
-
-  const filteredMembers = useMemo(
-    () =>
-      members.filter(
-        (member) =>
-          statusMatches(member.status, memberStatus) &&
+      employees.filter(
+        (emp) =>
+          statusMatches(emp.role, employeeRole) &&
+          statusMatches(emp.status, employeeStatus) &&
           includesText(
             [
-              member.memberName,
-              member.email,
-              member.role,
-              member.department,
-              member.notes,
+              emp.fullName,
+              emp.email,
+              emp.designation || "",
+              emp.department || "",
             ],
-            memberSearch,
+            employeeSearch,
           ),
       ),
-    [members, memberSearch, memberStatus],
+    [employees, employeeRole, employeeStatus, employeeSearch],
   );
 
-  const pagedApplicants = filteredApplicants.slice(
-    (applicantPage - 1) * pageSize,
-    applicantPage * pageSize,
+  const filteredInactiveEmployees = useMemo(() => {
+    const threeDaysAgo = Date.now() - 3 * 24 * 60 * 60 * 1000;
+    return employees.filter(
+      (emp) => {
+        // Exclude accounts that are status = 'inactive'
+        if (emp.status.toLowerCase() === "inactive") return false;
+
+        if (emp.lastCheckIn) {
+          const lastCheckInTime = new Date(emp.lastCheckIn).getTime();
+          if (lastCheckInTime >= threeDaysAgo) return false;
+        }
+        return (
+          statusMatches(emp.role, employeeRole) &&
+          statusMatches(emp.status, employeeStatus) &&
+          includesText(
+            [
+              emp.fullName,
+              emp.email,
+              emp.designation || "",
+              emp.department || "",
+            ],
+            employeeSearch,
+          )
+        );
+      }
+    );
+  }, [employees, employeeRole, employeeStatus, employeeSearch]);
+
+  const pagedEmployees = filteredEmployees.slice(
+    (employeePage - 1) * pageSize,
+    employeePage * pageSize,
   );
-  const pagedMembers = filteredMembers.slice(
-    (memberPage - 1) * pageSize,
-    memberPage * pageSize,
+
+  const pagedInactiveEmployees = filteredInactiveEmployees.slice(
+    (inactivePage - 1) * pageSize,
+    inactivePage * pageSize,
   );
+
   const pagedCaseStudies = caseStudies.slice(
     (caseStudyPage - 1) * caseStudyPageSize,
     caseStudyPage * caseStudyPageSize,
   );
 
-  const pendingApplicants = applicants.filter((item) =>
-    item.applicationStatus.toLowerCase().includes("pending"),
-  ).length;
-  const approvedApplicants = applicants.filter((item) =>
-    item.applicationStatus.toLowerCase().includes("approved"),
-  ).length;
-  const rejectedApplicants = applicants.filter((item) =>
-    item.applicationStatus.toLowerCase().includes("reject"),
-  ).length;
-
-  const applicantColumns: DataTableColumn<Applicant>[] = useMemo(
-    () => [
-      ...applicantFieldColumns.map((field) => ({
-        key: field,
-        header: field,
-        render: (row: Applicant) => {
-          const value = row.fields?.[field] || "";
-
-          if (field === "Resume" && row.resumeLink) {
-            return (
-              <a
-                href={row.resumeLink}
-                target="_blank"
-                rel="noreferrer"
-                onClick={(event) => event.stopPropagation()}
-                className="font-semibold text-[#17599d] hover:text-[#0f3f70]"
-              >
-                View resume
-              </a>
-            );
-          }
-
-          if (field === "Stage") {
-            return <StatusBadge status={value || row.applicationStatus} />;
-          }
-
-          return value ? (
-            <span className="line-clamp-3 min-w-32 max-w-xs whitespace-pre-wrap">
-              {value}
-            </span>
-          ) : (
-            <span className="text-slate-400">-</span>
-          );
-        },
-      })),
-      {
-        key: "details",
-        header: "Details",
-        render: (row: Applicant) => (
-          <button
-            type="button"
-            onClick={(event) => {
-              event.stopPropagation();
-              setSelectedApplicant(row);
-            }}
-            className="rounded-md border border-slate-200 px-3 py-1.5 text-xs font-semibold text-[#17599d] hover:bg-slate-50"
-          >
-            View
-          </button>
-        ),
-      },
-    ],
-    [applicantFieldColumns],
-  );
-
-  const memberColumns: DataTableColumn<Member>[] = [
+  const employeeColumns: DataTableColumn<PimsEmployee>[] = [
     {
-      key: "member",
-      header: "Member",
+      key: "name",
+      header: "Employee Name",
       render: (row) => (
         <div>
-          <p className="font-semibold text-slate-950">{row.memberName}</p>
+          <p className="font-semibold text-slate-950">{row.fullName}</p>
           <p className="mt-1 text-xs text-slate-500">
             {row.email || "No email"}
           </p>
@@ -508,7 +337,14 @@ export default function AdminDashboard() {
     {
       key: "role",
       header: "Role",
-      render: (row) => row.role || "Not provided",
+      render: (row) => (
+        <span className="capitalize">{row.role || "Not set"}</span>
+      ),
+    },
+    {
+      key: "designation",
+      header: "Designation",
+      render: (row) => row.designation || "Not provided",
     },
     {
       key: "department",
@@ -521,11 +357,83 @@ export default function AdminDashboard() {
       render: (row) => <StatusBadge status={row.status} />,
     },
     {
-      key: "joining",
+      key: "created",
       header: "Joining Date",
-      render: (row) => formatDate(row.joiningDate),
+      render: (row) => formatDate(row.createdAt),
     },
-    { key: "notes", header: "Notes", render: (row) => row.notes || "No notes" },
+    {
+      key: "details",
+      header: "Details",
+      render: (row) => (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            setSelectedEmployee(row);
+          }}
+          className="rounded-md border border-slate-200 px-3 py-1.5 text-xs font-semibold text-[#17599d] hover:bg-slate-50"
+        >
+          View
+        </button>
+      ),
+    },
+  ];
+
+  const inactiveColumns: DataTableColumn<PimsEmployee>[] = [
+    {
+      key: "name",
+      header: "Employee Name",
+      render: (row) => (
+        <div>
+          <p className="font-semibold text-slate-950">{row.fullName}</p>
+          <p className="mt-1 text-xs text-slate-500">
+            {row.email || "No email"}
+          </p>
+        </div>
+      ),
+    },
+    {
+      key: "role",
+      header: "Role",
+      render: (row) => (
+        <span className="capitalize">{row.role || "Not set"}</span>
+      ),
+    },
+    {
+      key: "designation",
+      header: "Designation",
+      render: (row) => row.designation || "Not provided",
+    },
+    {
+      key: "lastCheckIn",
+      header: "Last Checked In",
+      render: (row) => row.lastCheckIn ? (
+        <span className="text-slate-700 font-medium">{formatDateTime(row.lastCheckIn)}</span>
+      ) : (
+        <span className="text-rose-600 font-semibold bg-rose-50 border border-rose-100 rounded px-2 py-0.5">Never checked in</span>
+      ),
+    },
+    {
+      key: "status",
+      header: "Status",
+      render: (row) => <StatusBadge status={row.status} />,
+    },
+    {
+      key: "details",
+      header: "Details",
+      render: (row) => (
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            setSelectedEmployee(row);
+          }}
+          className="rounded-md border border-slate-200 px-3 py-1.5 text-xs font-semibold text-[#17599d] hover:bg-slate-50"
+        >
+          View
+        </button>
+      ),
+    },
   ];
 
   const caseStudyColumns: DataTableColumn<CaseStudy>[] = [
@@ -609,8 +517,8 @@ export default function AdminDashboard() {
                 Admin Dashboard
               </h1>
               <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-300">
-                Manage company content, applicants, members, and Airtable
-                records from a protected enterprise control center.
+                Manage company content and monitor employees/users directly synced from
+                the Paramount Intelligence Monitoring System (PIMS) database.
               </p>
             </div>
             <div className="flex flex-wrap justify-start gap-3 lg:ml-auto lg:justify-end">
@@ -637,11 +545,10 @@ export default function AdminDashboard() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${
-                activeTab === tab.id
-                  ? "border-[#17599d] text-[#17599d]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+              className={`whitespace-nowrap border-b-2 px-4 py-3 text-sm font-semibold transition-colors ${activeTab === tab.id
+                ? "border-[#17599d] text-[#17599d]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
+                }`}
             >
               {tab.label}
             </button>
@@ -661,33 +568,21 @@ export default function AdminDashboard() {
           {activeTab === "overview" && (
             <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
               <KpiCard
-                label="Total Applicants"
-                value={applicants.length}
-                helper="Airtable applicant records"
+                label="Total Employees"
+                value={employees.length}
+                helper="All registered users in PIMS"
                 icon={<Users className="h-5 w-5" />}
               />
               <KpiCard
-                label="Permanent Members"
-                value={members.length}
-                helper={memberError || "Hired members"}
+                label="Active Employees"
+                value={summary?.employees.active || 0}
+                helper="Users with active status"
                 icon={<UserCheck className="h-5 w-5" />}
               />
               <KpiCard
-                label="Pending Applicants"
-                value={pendingApplicants}
-                helper="Awaiting review"
-                icon={<Clock3 className="h-5 w-5" />}
-              />
-              <KpiCard
-                label="Approved Applicants"
-                value={approvedApplicants}
-                helper="Marked approved in Airtable"
-                icon={<CheckCircle2 className="h-5 w-5" />}
-              />
-              <KpiCard
-                label="Rejected Applicants"
-                value={rejectedApplicants}
-                helper="Marked rejected in Airtable"
+                label="Inactive Employees"
+                value={summary?.employees.inactive || 0}
+                helper="Users with inactive status"
                 icon={<XCircle className="h-5 w-5" />}
               />
               <KpiCard
@@ -697,19 +592,22 @@ export default function AdminDashboard() {
                 icon={<FileText className="h-5 w-5" />}
               />
               <KpiCard
-                label="Recent Applications"
-                value={
-                  summary?.applicants.recent.length ||
-                  Math.min(applicants.length, 5)
-                }
-                helper="Latest Airtable records loaded"
-                icon={<BriefcaseBusiness className="h-5 w-5" />}
+                label="Managers"
+                value={summary?.employees.roles.manager || 0}
+                helper="PIMS Manager accounts"
+                icon={<ShieldCheck className="h-5 w-5" />}
               />
               <KpiCard
-                label="Last Airtable Sync"
-                value={formatDateTime(summary?.syncedAt)}
-                helper={summaryError || "Server-side Airtable fetch"}
-                icon={<Database className="h-5 w-5" />}
+                label="Admins"
+                value={summary?.employees.roles.admin || 0}
+                helper="PIMS Admin accounts"
+                icon={<ShieldCheck className="h-5 w-5" />}
+              />
+              <KpiCard
+                label="Interns"
+                value={summary?.employees.roles.intern || 0}
+                helper="PIMS Intern accounts"
+                icon={<BriefcaseBusiness className="h-5 w-5" />}
               />
             </section>
           )}
@@ -764,155 +662,119 @@ export default function AdminDashboard() {
             </DataPanel>
           )}
 
-          {activeTab === "applicants" && (
+          {activeTab === "employees" && (
             <RecordsSection
-              title="Airtable applicants"
-              description="Search and filter candidate applications synced from Airtable."
-              searchValue={applicantSearch}
+              title="PIMS Employees"
+              description="Search and filter employee user profiles directly from the PIMS database."
+              searchValue={employeeSearch}
               onSearch={(value) => {
-                setApplicantSearch(value);
-                setApplicantPage(1);
+                setEmployeeSearch(value);
+                setEmployeePage(1);
               }}
-              statusValue={applicantStatus}
+              statusValue={employeeStatus}
               onStatus={(value) => {
-                setApplicantStatus(value);
-                setApplicantPage(1);
+                setEmployeeStatus(value);
+                setEmployeePage(1);
               }}
-              statusOptions={applicantStatusOptions}
-              secondaryFilterLabel="Position granted"
-              secondaryFilterValue={applicantPositionGranted}
+              statusOptions={statusOptions}
+              secondaryFilterLabel="Role"
+              secondaryFilterValue={employeeRole}
               onSecondaryFilter={(value) => {
-                setApplicantPositionGranted(value);
-                setApplicantPage(1);
+                setEmployeeRole(value);
+                setEmployeePage(1);
               }}
-              secondaryFilterOptions={positionGrantedOptions}
-              count={filteredApplicants.length}
-              onRefresh={refreshAirtable}
+              secondaryFilterOptions={roleOptions}
+              count={filteredEmployees.length}
+              onRefresh={refreshPims}
             >
-              {airtableLoading ? (
+              {pimsLoading ? (
                 <LoadingSkeleton />
-              ) : applicantError ? (
+              ) : pimsError ? (
                 <ErrorState
-                  title="Applicants unavailable"
-                  description={applicantError}
+                  title="PIMS data unavailable"
+                  description={pimsError}
                 />
-              ) : filteredApplicants.length === 0 ? (
+              ) : filteredEmployees.length === 0 ? (
                 <EmptyState
-                  title="No applicants match this view"
-                  description="Try a different search term or status filter."
+                  title="No employees match this view"
+                  description="Try a different search term, role, or status filter."
                 />
               ) : (
                 <>
                   <DataTable
-                    columns={applicantColumns}
-                    rows={pagedApplicants}
+                    columns={employeeColumns}
+                    rows={pagedEmployees}
                     getRowKey={(row) => row.id}
-                    onRowClick={setSelectedApplicant}
                   />
                   <Pagination
-                    page={applicantPage}
-                    total={filteredApplicants.length}
-                    onPageChange={setApplicantPage}
+                    page={employeePage}
+                    total={filteredEmployees.length}
+                    onPageChange={setEmployeePage}
                   />
                 </>
               )}
             </RecordsSection>
           )}
 
-          {activeTab === "members" && (
+          {activeTab === "inactive-users" && (
             <RecordsSection
-              title="Permanent members"
-              description="Applicants from Airtable whose Stage field is Hired."
-              searchValue={memberSearch}
+              title="Inactive Employees (3+ Days)"
+              description="Employees who have not logged in or shown activity within the last 3 days."
+              searchValue={employeeSearch}
               onSearch={(value) => {
-                setMemberSearch(value);
-                setMemberPage(1);
+                setEmployeeSearch(value);
+                setInactivePage(1);
               }}
-              statusValue={memberStatus}
+              statusValue={employeeStatus}
               onStatus={(value) => {
-                setMemberStatus(value);
-                setMemberPage(1);
+                setEmployeeStatus(value);
+                setInactivePage(1);
               }}
-              statusOptions={memberStatusOptions}
-              count={filteredMembers.length}
-              onRefresh={refreshAirtable}
+              statusOptions={statusOptions}
+              secondaryFilterLabel="Role"
+              secondaryFilterValue={employeeRole}
+              onSecondaryFilter={(value) => {
+                setEmployeeRole(value);
+                setInactivePage(1);
+              }}
+              secondaryFilterOptions={roleOptions}
+              count={filteredInactiveEmployees.length}
+              onRefresh={refreshPims}
             >
-              {airtableLoading ? (
+              {pimsLoading ? (
                 <LoadingSkeleton />
-              ) : memberError ? (
+              ) : pimsError ? (
                 <ErrorState
-                  title="Permanent members unavailable"
-                  description={memberError}
+                  title="PIMS data unavailable"
+                  description={pimsError}
                 />
-              ) : filteredMembers.length === 0 ? (
+              ) : filteredInactiveEmployees.length === 0 ? (
                 <EmptyState
-                  title="No members match this view"
-                  description="Try a different search term or status filter."
+                  title="No inactive employees match this view"
+                  description="All employees have been active recently."
                 />
               ) : (
                 <>
                   <DataTable
-                    columns={memberColumns}
-                    rows={pagedMembers}
+                    columns={inactiveColumns}
+                    rows={pagedInactiveEmployees}
                     getRowKey={(row) => row.id}
                   />
                   <Pagination
-                    page={memberPage}
-                    total={filteredMembers.length}
-                    onPageChange={setMemberPage}
+                    page={inactivePage}
+                    total={filteredInactiveEmployees.length}
+                    onPageChange={setInactivePage}
                   />
                 </>
               )}
             </RecordsSection>
-          )}
-
-          {activeTab === "airtable" && (
-            <DataPanel>
-              <div className="p-5">
-                <SectionHeader
-                  eyebrow="Airtable Operations"
-                  title="Airtable records"
-                  description="Server-side Airtable integrations currently visible to the admin dashboard."
-                  action={
-                    <button
-                      onClick={refreshAirtable}
-                      className="inline-flex items-center gap-2 rounded-md border border-slate-200 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-                    >
-                      <RefreshCw className="h-4 w-4" />
-                      Refresh Airtable
-                    </button>
-                  }
-                />
-              </div>
-              <div className="grid gap-4 p-5 pt-0 md:grid-cols-2">
-                <AirtableRecordCard
-                  title="Applicants"
-                  count={applicants.length}
-                  status={applicantError ? "Needs attention" : "Connected"}
-                />
-                <AirtableRecordCard
-                  title="Permanent Members"
-                  count={members.length}
-                  status={memberError ? "Needs attention" : "Stage = Hired"}
-                />
-              </div>
-              {summaryError && (
-                <div className="p-5 pt-0">
-                  <ErrorState
-                    title="Summary unavailable"
-                    description={summaryError}
-                  />
-                </div>
-              )}
-            </DataPanel>
           )}
         </div>
       </div>
-      {selectedApplicant && (
-        <ApplicantDetails
-          applicant={selectedApplicant}
-          columns={applicantFieldColumns}
-          onClose={() => setSelectedApplicant(null)}
+      {selectedEmployee && (
+        <EmployeeDetails
+          employee={selectedEmployee}
+          onClose={() => setSelectedEmployee(null)}
         />
       )}
     </main>
@@ -954,7 +816,7 @@ function RecordsSection({
     <DataPanel>
       <div className="space-y-5 p-5">
         <SectionHeader
-          eyebrow="Airtable"
+          eyebrow="PIMS DB"
           title={title}
           description={description}
           action={
@@ -1057,15 +919,38 @@ function Pagination({
   );
 }
 
-function ApplicantDetails({
-  applicant,
-  columns,
+function EmployeeDetails({
+  employee,
   onClose,
 }: {
-  applicant: Applicant;
-  columns: string[];
+  employee: PimsEmployee;
   onClose: () => void;
 }) {
+  const [attendance, setAttendance] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    async function fetchAttendance() {
+      setLoading(true);
+      setError("");
+      try {
+        const response = await fetch(
+          `/api/admin/pims/attendance?userId=${employee.id}&t=${Date.now()}`,
+          { credentials: "include", cache: "no-store" }
+        );
+        if (!response.ok) throw new Error("Failed to load attendance details");
+        const data = await response.json();
+        setAttendance(data.records || []);
+      } catch (err: any) {
+        setError(err.message || "Could not retrieve attendance logs.");
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchAttendance();
+  }, [employee.id]);
+
   return (
     <div className="fixed inset-0 z-[70] bg-slate-950/45 p-4 backdrop-blur-sm">
       <div className="ml-auto flex h-full w-full max-w-4xl flex-col overflow-hidden rounded-lg bg-white shadow-2xl">
@@ -1073,14 +958,14 @@ function ApplicantDetails({
           <div className="flex items-start justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
-                Applicant Record
+                PIMS Employee Record
               </p>
               <h2 className="mt-2 text-2xl font-semibold">
-                {applicant.candidateName}
+                {employee.fullName}
               </h2>
               <p className="mt-2 text-sm text-slate-300">
-                {applicant.roleAppliedFor || "Role not set"} |{" "}
-                {applicant.email || "Email not set"}
+                {employee.designation || "Designation not set"} |{" "}
+                {employee.email || "Email not set"}
               </p>
             </div>
             <button
@@ -1093,67 +978,160 @@ function ApplicantDetails({
           </div>
         </div>
 
-        <div className="overflow-y-auto p-5">
-          <div className="mb-5 flex flex-wrap items-center gap-3">
-            <StatusBadge status={applicant.applicationStatus} />
-            {applicant.resumeLink && (
-              <a
-                href={applicant.resumeLink}
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-md bg-[#17599d] px-3 py-2 text-sm font-semibold text-white hover:bg-[#0f3f70]"
-              >
-                Open Resume
-              </a>
+        <div className="overflow-y-auto p-5 space-y-6">
+          <div className="flex flex-wrap items-center gap-3">
+            <StatusBadge status={employee.status} />
+            {employee.phone && (
+              <span className="text-sm text-slate-500 font-medium">
+                <strong>Phone:</strong> {employee.phone}
+              </span>
             )}
           </div>
 
           <section className="rounded-lg border border-slate-200 bg-slate-50 p-4">
             <h3 className="text-sm font-semibold text-slate-950">
-              Complete Airtable record
+              Employee Profile Details
             </h3>
             <dl className="mt-4 grid gap-4 lg:grid-cols-2">
-              {columns.map((field) => {
-                const value = String(applicant.fields?.[field] || "").trim();
-
-                return (
-                  <div key={field} className="rounded-md bg-white p-3">
-                    <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
-                      {field}
-                    </dt>
-                    <dd className="mt-1 whitespace-pre-wrap text-sm leading-6 text-slate-800">
-                      {value || <span className="text-slate-400">-</span>}
-                    </dd>
-                  </div>
-                );
-              })}
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Full Name
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800">
+                  {employee.fullName}
+                </dd>
+              </div>
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Email
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800">
+                  {employee.email}
+                </dd>
+              </div>
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Role
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800 capitalize">
+                  {employee.role}
+                </dd>
+              </div>
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Designation
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800">
+                  {employee.designation || <span className="text-slate-400">-</span>}
+                </dd>
+              </div>
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Department
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800">
+                  {employee.department || <span className="text-slate-400">-</span>}
+                </dd>
+              </div>
+              <div className="rounded-md bg-white p-3">
+                <dt className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">
+                  Joining Date
+                </dt>
+                <dd className="mt-1 text-sm leading-6 text-slate-800">
+                  {formatDate(employee.createdAt)}
+                </dd>
+              </div>
             </dl>
+          </section>
+
+          <section className="rounded-lg border border-slate-200 bg-white p-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <h3 className="text-sm font-semibold text-slate-950">
+                Recent Attendance Logs
+              </h3>
+              <span className="text-xs text-slate-500 font-medium">
+                Last 50 sessions
+              </span>
+            </div>
+
+            <div className="mt-4 overflow-x-auto">
+              {loading ? (
+                <div className="py-8 text-center text-sm text-slate-500">
+                  <RefreshCw className="h-5 w-5 animate-spin mx-auto text-slate-400 mb-2" />
+                  Loading attendance records...
+                </div>
+              ) : error ? (
+                <div className="py-8 text-center text-sm text-rose-600">
+                  {error}
+                </div>
+              ) : attendance.length === 0 ? (
+                <div className="py-8 text-center text-sm text-slate-500">
+                  No attendance records found for this employee.
+                </div>
+              ) : (
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead>
+                    <tr className="border-b border-slate-200 text-slate-500 uppercase tracking-wider font-semibold">
+                      <th className="py-2 px-3">Check In</th>
+                      <th className="py-2 px-3">Check Out</th>
+                      <th className="py-2 px-3">Mode</th>
+                      <th className="py-2 px-3">Hours</th>
+                      <th className="py-2 px-3">Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {attendance.map((session) => {
+                      const hours = session.total_hours
+                        ? Number(session.total_hours).toFixed(2)
+                        : "-";
+                      const mode = session.work_mode === "wfh" ? "WFH" : "Office";
+                      
+                      let classificationColor = "bg-slate-100 text-slate-800 border-slate-200";
+                      if (session.attendance_classification === "full_day") {
+                        classificationColor = "bg-emerald-50 text-emerald-700 border-emerald-200";
+                      } else if (session.attendance_classification === "half_day") {
+                        classificationColor = "bg-amber-50 text-amber-700 border-amber-200";
+                      } else if (session.attendance_classification === "insufficient") {
+                        classificationColor = "bg-rose-50 text-rose-700 border-rose-200";
+                      }
+
+                      return (
+                        <tr key={session.id} className="border-b border-slate-100 hover:bg-slate-50">
+                          <td className="py-3 px-3 whitespace-nowrap text-slate-900">
+                            {formatDateTime(session.check_in_at)}
+                          </td>
+                          <td className="py-3 px-3 whitespace-nowrap text-slate-900">
+                            {session.check_out_at
+                              ? formatDateTime(session.check_out_at)
+                              : <span className="font-semibold text-emerald-600">Active (Checked In)</span>}
+                          </td>
+                          <td className="py-3 px-3 whitespace-nowrap text-slate-700 capitalize">
+                            <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium ${
+                              session.work_mode === "wfh" 
+                                ? "bg-blue-50 text-blue-700 border-blue-200" 
+                                : "bg-indigo-50 text-indigo-700 border-indigo-200"
+                            }`}>
+                              {mode}
+                            </span>
+                          </td>
+                          <td className="py-3 px-3 whitespace-nowrap font-medium text-slate-900">
+                            {hours} hrs
+                          </td>
+                          <td className="py-3 px-3 whitespace-nowrap">
+                            <span className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-semibold ${classificationColor}`}>
+                              {session.attendance_classification ? session.attendance_classification.replace("_", " ") : "Normal"}
+                            </span>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              )}
+            </div>
           </section>
         </div>
       </div>
     </div>
-  );
-}
-
-function AirtableRecordCard({
-  title,
-  count,
-  status,
-}: {
-  title: string;
-  count: number;
-  status: string;
-}) {
-  return (
-    <article className="rounded-lg border border-slate-200 bg-slate-50 p-5">
-      <div className="flex items-center justify-between gap-3">
-        <div>
-          <h3 className="text-sm font-semibold text-slate-950">{title}</h3>
-          <p className="mt-2 text-2xl font-semibold text-slate-950">{count}</p>
-        </div>
-        <ShieldCheck className="h-5 w-5 text-[#17599d]" />
-      </div>
-      <p className="mt-4 text-sm text-slate-500">{status}</p>
-    </article>
   );
 }
