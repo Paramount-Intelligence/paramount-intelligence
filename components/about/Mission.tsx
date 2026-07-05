@@ -7,7 +7,7 @@ export default function Mission() {
       <div className="absolute inset-0 geo-dots opacity-25 pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 xl:px-16">
-        
+
         {/* Header */}
         <div className="text-center mb-20">
           <div className="flex items-center justify-center gap-3 mb-3">
@@ -20,9 +20,6 @@ export default function Mission() {
             </span>
             <div className="accent-line" style={{ background: "#1e6fd9" }} />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold" style={{ color: "#0d1f3c" }}>
-            The Founders of Paramount Intelligence
-          </h2>
         </div>
 
         {/* Profile 1 - Syed Ali Azzam */}
@@ -43,7 +40,7 @@ export default function Mission() {
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
-            
+
             <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#1e6fd9" }}>
               CEO &amp; Founding Partner
             </p>
@@ -101,7 +98,7 @@ export default function Mission() {
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
-            
+
             <p className="text-xs font-semibold tracking-wider uppercase" style={{ color: "#1e6fd9" }}>
               Co-founder &amp; Chief Commercial Officer
             </p>

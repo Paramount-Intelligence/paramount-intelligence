@@ -66,9 +66,9 @@ export default function TrustedBrands() {
     {
       name: "Deloitte",
       logo: "/images/deloitte.png",
-      width: 170,
-      height: 180,
-      slotWidth: 180,
+      width: 180,
+      height: 120,
+      slotWidth: 190,
     },
     {
       name: "Schneider Electric",

@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const specificTitles = [
   "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
-  "LLM-Powered Customer Support Chatbot",
+  "In-App AI Assistant for Telco Customer Self-Care",
   "AI-Powered Support Copilot for Enterprise DevOps Platform",
 ];
 
@@ -99,12 +99,6 @@ export default function ProjectExperience() {
             </span>
             <div className="accent-line" />
           </div>
-          <h2
-            className="text-4xl md:text-5xl font-bold"
-            style={{ color: "#ffffff" }}
-          >
-            Some of our project experience
-          </h2>
         </div>
 
         {/* Loading skeleton */}
@@ -238,9 +232,9 @@ export default function ProjectExperience() {
 
                 {/* Image */}
                 <div
-                  className={`relative h-64 md:h-80 rounded-2xl overflow-hidden group/img ${project.imagePosition === "left"
-                      ? "md:col-start-1 md:row-start-1"
-                      : ""
+                  className={`relative aspect-[16/9] rounded-2xl overflow-hidden group/img ${project.imagePosition === "left"
+                    ? "md:col-start-1 md:row-start-1"
+                    : ""
                     }`}
                   style={{
                     border: "1px solid rgba(30,111,217,0.2)",
@@ -258,7 +252,7 @@ export default function ProjectExperience() {
                   ) : (
                     /* Fallback placeholder when no image */
                     <div
-                      className="w-full h-full flex items-center justify-center"
+                      className="absolute inset-0 flex items-center justify-center"
                       style={{
                         background:
                           "linear-gradient(135deg, rgba(30,111,217,0.15) 0%, rgba(13,31,60,0.8) 100%)",

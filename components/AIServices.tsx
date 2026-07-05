@@ -77,9 +77,6 @@ export default function AIServices() {
           >
             Full-Spectrum AI & Technology Solutions
           </h2>
-          <p className="mt-4 text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
-            From strategy to engineering to scale — we cover the complete technology lifecycle.
-          </p>
         </div>
 
         {/* Services Grid */}

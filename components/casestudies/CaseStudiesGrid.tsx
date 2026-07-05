@@ -112,8 +112,7 @@ export default function CaseStudiesGrid({
                   key={caseStudy.id}
                   className="group bg-white rounded-2xl overflow-hidden border border-[rgba(30,111,217,0.15)] shadow-md hover:shadow-xl hover:translate-y-[-4px] transition-all duration-300 flex flex-col h-full"
                 >
-                  {/* Image */}
-                  <div className="relative h-60 overflow-hidden bg-gray-100 flex items-center justify-center shrink-0">
+                  <div className="relative aspect-[16/9] overflow-hidden bg-gray-50 shrink-0">
                     {caseStudy.image &&
                       typeof caseStudy.image === "string" &&
                       caseStudy.image.trim() !== "" &&
@@ -129,7 +128,7 @@ export default function CaseStudiesGrid({
                         unoptimized
                       />
                     ) : (
-                      <div className="flex flex-col items-center text-gray-400 p-6">
+                      <div className="absolute inset-0 flex flex-col items-center justify-center text-gray-400 p-6">
                         <span className="text-xs font-semibold uppercase tracking-wider">
                           No Image available
                         </span>

@@ -100,13 +100,13 @@ export default function ProjectExperience() {
 
                 {/* Image */}
                 <div
-                  className={`relative h-64 md:h-80 rounded-2xl overflow-hidden ${
+                  className={`relative aspect-[16/9] rounded-2xl overflow-hidden ${
                     project.imagePosition === "left"
                       ? "md:col-start-1 md:row-start-1"
                       : ""
                   }`}
                 >
-                  <Image src={project.imageSrc} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" />
+                  <Image src={project.imageSrc} alt={project.title} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
                 </div>
               </div>
             ))}
