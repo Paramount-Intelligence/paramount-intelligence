@@ -7,7 +7,7 @@ import Link from "next/link";
 const specificTitles = [
   "Multi Agent Shopping Intelligence on AWS Bedrock AgentCore",
   "In-App AI Assistant for Telco Customer Self-Care",
-  "AI-Powered Support Copilot for Enterprise DevOps Platform",
+  "AI-Powered Support Copilot for PE backed Enterprise DevOps Platform",
 ];
 
 const normalizeTitle = (title: string) => title.trim().toLowerCase();

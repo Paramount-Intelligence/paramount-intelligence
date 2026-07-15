@@ -60,9 +60,14 @@ export async function POST(req: NextRequest) {
     }
 
     const geminiApiKey = process.env.GEMINI_API_KEY;
-    if (!geminiApiKey) {
+    const openaiApiKey = process.env.OPENAI_API_KEY;
+    const groqApiKey = process.env.GROQ_API_KEY;
+    if (!geminiApiKey && !openaiApiKey && !groqApiKey) {
       return NextResponse.json(
-        { error: "GEMINI_API_KEY is not configured in the server environment (.env file)." },
+        {
+          error:
+            "No AI key configured. Set GEMINI_API_KEY, OPENAI_API_KEY, and/or GROQ_API_KEY in .env.local, then restart the server.",
+        },
         { status: 500 }
       );
     }
@@ -120,53 +125,172 @@ Case Study Text to parse:
 ${text}
 `;
 
-    // Try models in order: gemini-2.5-flash, gemini-2.0-flash, gemini-flash-latest
-    const modelsToTry = [
-      "gemini-2.5-flash",
-      "gemini-2.0-flash",
-      "gemini-flash-latest"
-    ];
+    let parsedText: string | null = null;
+    const errors: string[] = [];
 
-    let response = null;
-    let lastError = null;
+    type ChatProvider = {
+      label: string;
+      models: string[];
+      call: (model: string) => Promise<{ ok: boolean; text: string | null; err: string }>;
+    };
 
-    for (const model of modelsToTry) {
-      try {
-        console.log(`Attempting parse with model: ${model}`);
-        response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { responseMimeType: "application/json" }
-          })
-        });
+    const providers: ChatProvider[] = [];
 
-        if (response.ok) {
-          console.log(`Successfully parsed with model: ${model}`);
-          break;
-        } else {
-          const errBody = await response.text();
-          lastError = `Model ${model} failed with status ${response.status}: ${errBody}`;
-          console.warn(lastError);
+    // Gemini — prefer current free-tier models; skip deprecated 2.0 / closed 2.5-flash-lite
+    if (geminiApiKey) {
+      providers.push({
+        label: "Gemini",
+        models: [
+          "gemini-3.1-flash-lite",
+          "gemini-3-flash-preview",
+          "gemini-2.5-flash",
+          "gemini-flash-latest",
+        ],
+        call: async (model) => {
+          const response = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                contents: [{ parts: [{ text: prompt }] }],
+                generationConfig: { responseMimeType: "application/json" },
+              }),
+            }
+          );
+          if (!response.ok) {
+            return { ok: false, text: null, err: await response.text() };
+          }
+          const result = await response.json();
+          return {
+            ok: true,
+            text: result.candidates?.[0]?.content?.parts?.[0]?.text ?? null,
+            err: "",
+          };
+        },
+      });
+    }
+
+    // Groq free tier — OpenAI-compatible; good escape hatch with no card required
+    if (groqApiKey) {
+      providers.push({
+        label: "Groq",
+        models: ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"],
+        call: async (model) => {
+          const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${groqApiKey}`,
+            },
+            body: JSON.stringify({
+              model,
+              temperature: 0.2,
+              response_format: { type: "json_object" },
+              messages: [
+                {
+                  role: "system",
+                  content:
+                    "You extract case study fields into JSON. Return only a valid JSON object matching the user schema. No markdown.",
+                },
+                { role: "user", content: prompt },
+              ],
+            }),
+          });
+          if (!response.ok) {
+            return { ok: false, text: null, err: await response.text() };
+          }
+          const result = await response.json();
+          return {
+            ok: true,
+            text: result.choices?.[0]?.message?.content ?? null,
+            err: "",
+          };
+        },
+      });
+    }
+
+    // OpenAI — needs billable credits (insufficient_quota = empty balance, not RPM)
+    if (openaiApiKey) {
+      providers.push({
+        label: "OpenAI",
+        models: ["gpt-4o-mini", "gpt-4o"],
+        call: async (model) => {
+          const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${openaiApiKey}`,
+            },
+            body: JSON.stringify({
+              model,
+              temperature: 0.2,
+              response_format: { type: "json_object" },
+              messages: [
+                {
+                  role: "system",
+                  content:
+                    "You extract case study fields into JSON. Return only a valid JSON object matching the user schema. No markdown.",
+                },
+                { role: "user", content: prompt },
+              ],
+            }),
+          });
+          if (!response.ok) {
+            return { ok: false, text: null, err: await response.text() };
+          }
+          const result = await response.json();
+          return {
+            ok: true,
+            text: result.choices?.[0]?.message?.content ?? null,
+            err: "",
+          };
+        },
+      });
+    }
+
+    for (const provider of providers) {
+      if (parsedText) break;
+      for (const model of provider.models) {
+        try {
+          console.log(`Attempting parse with ${provider.label} model: ${model}`);
+          const { ok, text, err } = await provider.call(model);
+          if (ok && text) {
+            parsedText = text;
+            console.log(`Successfully parsed with ${provider.label} model: ${model}`);
+            break;
+          }
+          const detail = ok
+            ? `${provider.label} ${model}: empty response body`
+            : `${provider.label} ${model} failed: ${err}`;
+          errors.push(detail);
+          console.warn(detail);
+        } catch (err: any) {
+          const detail = `${provider.label} ${model} threw: ${err.message}`;
+          errors.push(detail);
+          console.error(detail);
         }
-      } catch (err: any) {
-        lastError = `Request to model ${model} threw error: ${err.message}`;
-        console.error(lastError);
       }
     }
 
-    if (!response || !response.ok) {
-      return NextResponse.json({
-        error: "All attempted Gemini models failed to parse text",
-        details: lastError
-      }, { status: 502 });
-    }
-
-    const result = await response.json();
-    const parsedText = result.candidates?.[0]?.content?.parts?.[0]?.text;
     if (!parsedText) {
-      return NextResponse.json({ error: "Gemini API returned an empty response" }, { status: 502 });
+      const hasQuotaError = errors.some(
+        (e) =>
+          e.includes("429") ||
+          e.includes("RESOURCE_EXHAUSTED") ||
+          e.includes("quota") ||
+          e.includes("insufficient_quota")
+      );
+      return NextResponse.json(
+        {
+          error: hasQuotaError
+            ? "All AI providers are out of quota. Options: (1) add GROQ_API_KEY from console.groq.com (free), (2) add credits to OpenAI billing, (3) enable Google AI billing or a new Gemini project key, (4) wait for Gemini daily free reset."
+            : "All configured AI providers failed to parse text",
+          details: errors[errors.length - 1] ?? "No providers available",
+          attempted: errors.length,
+        },
+        { status: 502 }
+      );
     }
 
     // Attempt to parse the JSON
