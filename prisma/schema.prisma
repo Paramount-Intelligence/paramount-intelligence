@@ -2,13 +2,15 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  directUrl  = env("DIRECT_URL")
+  extensions = [vector]
 }
 
 model CaseStudy {
@@ -64,8 +66,146 @@ model CaseStudy {
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 
+  peBacked      Boolean?
+  clientType    String?
+  fundContext   String?
+  contributors  String[]  @default([])
+  agentEnabled  Boolean   @default(false)
+
+  techTags      CaseTech[]
+  assets        CaseAsset[]
+  chunks        CaseChunk[]
+
   @@index([industry])
   @@index([businessFunction])
+  @@index([peBacked])
+  @@index([agentEnabled])
+}
+
+model CaseTech {
+  id      String    @id @default(cuid())
+  caseId  String
+  case    CaseStudy @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  name    String
+  @@unique([caseId, name])
+  @@index([name])
+}
+
+model TechAlias {
+  alias     String @id
+  canonical String
+  @@index([canonical])
+}
+
+enum AssetKind {
+  ONE_PAGER
+  DEMO_VIDEO
+  FULL_NARRATIVE
+  DECK_SLIDE
+}
+
+model CaseAsset {
+  id         String    @id @default(cuid())
+  caseId     String
+  case       CaseStudy @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  kind       AssetKind
+  uri        String
+  sourceDeck String?
+  verified   Boolean   @default(false)
+  @@index([caseId, kind])
+}
+
+model CaseChunk {
+  id        String    @id @default(cuid())
+  caseId    String
+  case      CaseStudy @relation(fields: [caseId], references: [id], onDelete: Cascade)
+  heading   String?
+  content   String    @db.Text
+  embedding Unsupported("vector(1536)")?
+  @@index([caseId])
+}
+
+enum Role {
+  EXTERNAL
+  ADMIN
+}
+
+model AgentUser {
+  id            String   @id @default(cuid())
+  email         String   @unique
+  verified      Boolean  @default(false)
+  role          Role     @default(EXTERNAL)
+  blocked       Boolean  @default(false)
+  partnerLinkId String?
+  createdAt     DateTime @default(now())
+  conversations Conversation[]
+}
+
+model PartnerLink {
+  id     String  @id @default(cuid())
+  slug   String  @unique
+  label  String
+  active Boolean @default(true)
+}
+
+model Conversation {
+  id            String    @id @default(cuid())
+  userId        String
+  user          AgentUser @relation(fields: [userId], references: [id])
+  partnerLinkId String?
+  createdAt     DateTime  @default(now())
+  messages      Message[]
+  lead          Lead?
+}
+
+model Message {
+  id             String       @id @default(cuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  role           String
+  content        String       @db.Text
+  citedCaseIds   String[]     @default([])
+  toolsUsed      String[]     @default([])
+  tokensIn       Int          @default(0)
+  tokensOut      Int          @default(0)
+  ttsChars       Int          @default(0)
+  rating         Int?
+  createdAt      DateTime     @default(now())
+  @@index([conversationId])
+}
+
+model Lead {
+  id             String       @id @default(cuid())
+  conversationId String       @unique
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  name           String
+  company        String?
+  email          String
+  context        String?      @db.Text
+  notifiedAt     DateTime?
+  createdAt      DateTime     @default(now())
+}
+
+model PromptVersion {
+  id         String   @id @default(cuid())
+  layer      String
+  body       String   @db.Text
+  author     String
+  isLive     Boolean  @default(false)
+  evalPassed Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model UsageDay {
+  id        String   @id @default(cuid())
+  day       DateTime @db.Date
+  userId    String?
+  llmTokens Int      @default(0)
+  ttsChars  Int      @default(0)
+  searches  Int      @default(0)
+  docsGen   Int      @default(0)
+  usdCost   Decimal  @default(0)
+  @@unique([day, userId])
 }
 
 model Admin {
