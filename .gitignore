@@ -43,3 +43,7 @@ next-env.d.ts
 # test_api
 test_api.ts
 inspect_db.ts
+
+/scripts
+tech-candidates.csv
+pe-review.csv

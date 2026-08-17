@@ -10,7 +10,8 @@ export default function TrustedBrands() {
     | "Aramco"
     | "Deloitte"
     | "Schneider Electric"
-    | "Toptal";
+    | "Toptal"
+    | "PE-Backed Firm";
 
   type Brand = {
     name: BrandName;
@@ -84,11 +85,18 @@ export default function TrustedBrands() {
       height: 48,
       slotWidth: 195,
     },
+    {
+      name: "PE-Backed Firm",
+      logo: "/images/pe-backed.png",
+      width: 200,
+      height: 64,
+      slotWidth: 260,
+    },
   ];
 
   const brandGroups = [brands, brands];
 
-  const brandLinks: Record<BrandName, string> = {
+  const brandLinks: Partial<Record<BrandName, string>> = {
     // Gratia: "https://gogratia.com/",
     Donaldson: "https://www.donaldson.com/en-us/",
     Veon: "https://www.veon.com/",
@@ -136,21 +144,9 @@ export default function TrustedBrands() {
         <div className="trusted-brands-track flex w-max items-center">
           {brandGroups.map((group, groupIndex) => (
             <div key={groupIndex} className="flex flex-shrink-0 items-center">
-              {group.map((brand) => (
-                <div
-                  key={`${groupIndex}-${brand.name}`}
-                  className="flex-shrink-0 flex items-center justify-center h-28 px-2"
-                  style={{
-                    width: `${brand.slotWidth}px`,
-                  }}
-                >
-                  <a
-                    href={brandLinks[brand.name]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={brand.name}
-                    className="group flex items-center justify-center w-full h-full rounded-xl transition-colors duration-300 hover:bg-white/[0.04]"
-                  >
+              {group.map((brand) => {
+                  const href = brandLinks[brand.name];
+                  const logo = (
                     <div
                       className="relative flex items-center justify-center"
                       style={{
@@ -168,9 +164,37 @@ export default function TrustedBrands() {
                         className="object-contain object-center transition-all duration-300 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 group-hover:grayscale-0"
                       />
                     </div>
-                  </a>
-                </div>
-              ))}
+                  );
+
+                  return (
+                    <div
+                      key={`${groupIndex}-${brand.name}`}
+                      className="flex-shrink-0 flex items-center justify-center h-28 px-2"
+                      style={{
+                        width: `${brand.slotWidth}px`,
+                      }}
+                    >
+                      {href ? (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          title={brand.name}
+                          className="group flex items-center justify-center w-full h-full rounded-xl transition-colors duration-300 hover:bg-white/[0.04]"
+                        >
+                          {logo}
+                        </a>
+                      ) : (
+                        <div
+                          title={brand.name}
+                          className="group flex items-center justify-center w-full h-full rounded-xl"
+                        >
+                          {logo}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
             </div>
           ))}
         </div>
