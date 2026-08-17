@@ -8,7 +8,6 @@ export default function TrustedBrands() {
     | "Alibaba"
     | "Davidson"
     | "Aramco"
-    | "Deloitte"
     | "Schneider Electric"
     | "Toptal"
     | "PE-Backed Firm";
@@ -65,13 +64,6 @@ export default function TrustedBrands() {
       slotWidth: 270,
     },
     {
-      name: "Deloitte",
-      logo: "/images/deloitte.png",
-      width: 180,
-      height: 120,
-      slotWidth: 190,
-    },
-    {
       name: "Schneider Electric",
       logo: "/images/Schneider-electric.png",
       width: 205,
@@ -103,7 +95,6 @@ export default function TrustedBrands() {
     Alibaba: "https://www.alibaba.com/",
     Davidson: "https://www.davidson.group/",
     Aramco: "https://www.aramco.com/",
-    Deloitte: "https://www2.deloitte.com/global/en.html",
     "Schneider Electric": "https://www.se.com/ww/en/",
     Toptal: "https://www.toptal.com/",
   };
@@ -151,7 +142,7 @@ export default function TrustedBrands() {
                       className="relative flex items-center justify-center"
                       style={{
                         width: `${brand.width}px`,
-                        // Cap height so tall/square logos (e.g. Deloitte)
+                        // Cap height so tall/square logos
                         // don't dominate the row's visual weight.
                         height: `${Math.min(brand.height, 64)}px`,
                       }}
