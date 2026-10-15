@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../docs";
 
 /* ============================================================
    PARAMOUNT INTELLIGENCE — DESIGN SYSTEM
@@ -665,3 +666,15 @@ div.min-h-screen.mt-16.bg-white section:has(video) header nav span {
   color: rgba(255, 255, 255, 0.3) !important;
 }
 
+
+/* ============================================================
+   REDESIGN TRANSITION
+   Older pages wrap everything in .overflow-x-hidden, which turns the wrapper
+   into a scroll container and stops the new sticky header from sticking.
+   clip still hides sideways overflow without that side effect.
+   Remove once every page uses the new layout.
+   ============================================================ */
+
+.overflow-x-hidden:has(> header.nav) {
+  overflow-x: clip;
+}
