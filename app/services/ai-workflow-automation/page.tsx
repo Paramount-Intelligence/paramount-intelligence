@@ -1,31 +1,17 @@
-import Header from "@/components/Header";
-import WhoWeServe from "@/components/services/WhoWeServe";
-import ProjectExperience from "@/components/services/models/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
-import Footer from "@/components/Footer";
-import LLMHeader from "@/components/services/models/Header";
-import LLMHero from "@/components/services/models/Hero";
-import WhyGenerativeAI from "@/components/services/models/WhyGenerativeAI";
-import LLMServicesSection from "@/components/services/models/LLMServicesSection";
-import ScheduleCTA from "@/components/services/models/ScheduleCTA";
-import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/services/WhyChooseUs";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import AiWorkflowAutomation from "@/components/services/pages/AiWorkflowAutomation";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Workflow Automation Services | Paramount Intelligence",
+  description:
+    "Reduce repetitive handling with integrated workflows for documents, approvals, support, and business systems, with clear exception paths.",
+};
+
+export default function AiWorkflowAutomationPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
-      <Header />
-      {/* <LLMHeader /> */}
-      <LLMHero />
-      <WhyGenerativeAI />
-      <LLMServicesSection />
-      <WhoWeServe />
-      <TrustedBrands />
-      {/* <ScheduleCTA /> */}
-      <WhyChooseUs />
-      <ProjectExperience />
-      {/* <LatestArticles /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <AiWorkflowAutomation />
+    </SitePage>
   );
 }

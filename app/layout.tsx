@@ -9,9 +9,10 @@ import LogoTap from "@/components/site/LogoTap";
 import "./globals.css";
 import "./site.css";
 
+// 300–800, as the reference loads it: text set heavier (a <b> inside bold text) renders at 800.
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   display: "swap",
   variable: "--font-montserrat",
 });

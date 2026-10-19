@@ -1,31 +1,17 @@
-import Header from "@/components/Header";
-import WhoWeServe from "@/components/services/WhoWeServe";
-import ProjectExperience from "@/components/services/llm/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import AiSolutionsAndEngineering from "@/components/services/pages/AiSolutionsAndEngineering";
 
-import LLMHero from "@/components/services/llm/Hero";
-import WhyGenerativeAI from "@/components/services/llm/WhyGenerativeAI";
-import LLMServicesSection from "@/components/services/llm/LLMServicesSection";
-import ScheduleCTA from "@/components/services/llm/ScheduleCTA";
-import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/services/WhyChooseUs";
+export const metadata: Metadata = {
+  title: "AI & Agentic Engineering | Paramount Intelligence",
+  description:
+    "Build AI agents, copilots, and custom AI features integrated with existing systems, with evaluation, human review, and production delivery.",
+};
 
-export default function Home() {
+export default function AiSolutionsAndEngineeringPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
-      <Header />
-      
-      <LLMHero />
-      <WhyGenerativeAI />
-      <LLMServicesSection />
-      <WhoWeServe />
-      <TrustedBrands />
-      {/* <ScheduleCTA /> */}
-      <WhyChooseUs />
-      <ProjectExperience />
-      {/* <LatestArticles /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <AiSolutionsAndEngineering />
+    </SitePage>
   );
 }
