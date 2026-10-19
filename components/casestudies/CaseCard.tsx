@@ -7,6 +7,8 @@ type CaseCardProps = {
   card: CaseCardData;
   /** Some pages describe a case in their own words (industry pages). */
   summary?: string;
+  /** Off the current page of the Case Studies listing. */
+  hidden?: boolean;
 };
 
 function tabs(card: CaseCardData) {
@@ -20,9 +22,9 @@ function tabs(card: CaseCardData) {
 }
 
 /** Reference `.ccard`: the drawing on a grey panel, then organisation, industry, title, summary and tags. */
-export default function CaseCard({ card, summary }: CaseCardProps) {
+export default function CaseCard({ card, summary, hidden }: CaseCardProps) {
   return (
-    <Link className="ccard pc" href={card.route ?? ROUTES.caseStudies} data-search={card.search}>
+    <Link className="ccard pc" href={card.route ?? ROUTES.caseStudies} data-search={card.search} hidden={hidden}>
       <div className="art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: card.art + tabs(card) }} />
       <div className="in">
         <div className="meta">
