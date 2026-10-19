@@ -1,5 +1,5 @@
 /* Redesign design system. Copied from docs/website-redesign/reference/assets/site.css; keep in sync with the reference.
-   Only change: --f and --mono use the next/font variables set in app/layout.tsx. */
+   Changes: --f and --mono use the next/font variables set in app/layout.tsx; the element rules are scoped (below). */
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
 
 /* Layout: the Paramount decks as a website. White pages and #F3F3F3 bands, thin navy outline boxes, light royal-blue titles, cyan "+" accents; the cover gradient opens the page and the charcoal close ends it. One schematic per section; copy reads as captions to it. Single light theme by choice, matching the decks. */
@@ -12,16 +12,27 @@
   --wrap:1200px; --gut:clamp(16px,4vw,40px);
   color-scheme:light;
 }
+/* App integration (not in the reference). The reference is built on browser defaults, but this app also loads
+   Tailwind's preflight, which the pages that aren't redesigned yet rely on. So the reference's element rules apply
+   only inside the redesign: the header (.nav), the footer (.foot) and each redesigned page's root (.pi-page).
+   Inside it, preflight is undone: revert-layer in Tailwind's base layer rolls back to the browser defaults. */
+@layer base{
+  :where(.nav,.foot,.pi-page),:where(.nav,.foot,.pi-page)::before,:where(.nav,.foot,.pi-page)::after,
+  :where(.nav,.foot,.pi-page) :not(.\#),:where(.nav,.foot,.pi-page) :not(.\#)::before,:where(.nav,.foot,.pi-page) :not(.\#)::after,
+  :where(.nav,.foot,.pi-page) :not(.\#)::placeholder,:where(.nav,.foot,.pi-page) :not(.\#)::file-selector-button,
+  :where(.nav,.foot,.pi-page) :not(.\#)::backdrop{all:revert-layer}
+}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{color:inherit}
-button{font-family:inherit;color:inherit}
-h1,h2,h3,h4{margin:0;text-wrap:balance}
-p{margin:0}
-ul{margin:0;padding:0;list-style:none}
-:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+body{margin:0;background:var(--white);overflow-x:hidden}
+:where(.nav,.foot,.pi-page){color:var(--text);font-family:var(--f);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+:where(.nav,.foot,.pi-page) img{max-width:100%;display:block}
+:where(.nav,.foot,.pi-page) a{color:inherit}
+:where(.nav,.foot,.pi-page) button{font-family:inherit;color:inherit}
+:where(.nav,.foot,.pi-page) :is(h1,h2,h3,h4){margin:0;text-wrap:balance}
+:where(.nav,.foot,.pi-page) p{margin:0}
+:where(.nav,.foot,.pi-page) ul{margin:0;padding:0;list-style:none}
+:where(.nav,.foot,.pi-page) :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
 .sec{padding-block:clamp(64px,8vw,104px)}
 .band{background:var(--band)}

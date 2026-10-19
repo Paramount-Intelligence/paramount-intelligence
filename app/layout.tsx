@@ -34,7 +34,7 @@ export const metadata = {
   description:
     "Paramount Intelligence is a technology consulting and engineering firm delivering AI, data, cloud, and automation solutions that drive measurable business impact.",
   icons: {
-    icon: "/images/logo.png",
+    icon: "/images/logo-icon.png",
   },
 };
 
@@ -43,8 +43,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // data-scroll-behavior: Next.js turns smooth scrolling off while it changes route, so every page opens at the top.
   return (
-    <html lang="en" className={`${montserrat.variable} ${plexMono.variable}`}>
+    <html lang="en" className={`${montserrat.variable} ${plexMono.variable}`} data-scroll-behavior="smooth">
       <body className={montserrat.className}>
         {children}
         <LogoTap />
