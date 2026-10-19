@@ -33,7 +33,7 @@ The site is being redesigned. The approved design is in `docs/website-redesign/r
 
 - Use the copy in the reference pages as written. Don't invent metrics, clients or claims.
 - Never publish internal notes: anything marked internal, "INTERNAL REVIEW", "NOT FOR PUBLICATION", developer notes, or attribution holds.
-- The ten full case study pages were supplied by Ali. Keep their content, numbers, colours and interactions exactly as they are. Keep their masking ("[PRICE]", blurred names, fictional demo names) and their "Client data protected" notes.
+- The nineteen full case study pages were supplied by Ali. Keep their content, numbers, colours and interactions exactly as they are. Keep their masking ("[PRICE]", blurred names, fictional demo names) and their "Client data protected" notes.
 - Work that is still in progress carries an amber "Work in progress" tag wherever it appears.
 - Case study cards show no attribution tags ("Leadership experience", "Paramount engagement", "Advisory engagement").
 

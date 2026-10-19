@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Flexagon Implementation Execution Portal | Paramount Intelligence</title>
@@ -986,6 +987,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .ep-smap [data-n="qd"],.ep-smap [data-n="pg"]{border-style:dashed}
 .ep-atabs{background:var(--navy)}
 .ep-snap em{font-style:normal}
+/* consultant journey (problem chapter) */
+.ep-jy{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.ep-jy li{display:grid;gap:4px;align-content:start;padding:0 16px;border-left:1px solid var(--line);min-width:0}
+.ep-jy li:first-child{padding-left:0;border-left:0}
+.ep-jy li:last-child{padding-right:0}
+.ep-jy em{font-style:normal;font-family:var(--mono);font-size:.62rem;color:var(--muted)}
+.ep-jy b{font-size:.88rem;color:var(--navy)}
+.ep-jy span{font-size:.8rem;line-height:1.5}
+.ep-jy span a{color:var(--royal);font-weight:600}
+.ep-jy li>a{font-size:.72rem;font-weight:600;color:var(--royal);text-decoration:none;margin-top:4px}
+.ep-jy li>a:hover{text-decoration:underline}
+@media (max-width:900px){.ep-jy{grid-template-columns:1fr}.ep-jy li{padding:12px 0;border-left:0;border-top:1px solid var(--line)}.ep-jy li:first-child{padding-top:0;border-top:0}.ep-jy li:last-child{padding-bottom:0}}
+/* exemplar rule note */
+.ep-xnote{margin:0;font-size:.76rem;line-height:1.5;color:var(--text)}
+/* scope tag on result figures */
+.ep-nums .se-num .ep-scope{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.ep-nums .se-num .ep-scope.pf{color:var(--royal)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 </style>
 <style>/* site top bar, closing card and footer (scoped) */
@@ -1347,6 +1366,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Questions buried in prose:</b> open items weren't tracked to resolution.</li>
       <li><b>No portfolio view:</b> leadership couldn't see what was drafted, reviewed or approved, or what it cost.</li>
     </ul></div>
+    <div class="note rv"><span class="lbl">How a consultant works in the portal</span><ol class="ep-jy">
+      <li><em>Step 1</em><b>Open the engagement</b><span>Start from the signed SOW written in the <a href="case-study-flexagon-sow-generator.html">SOW Generator</a>. One click opens the project, with SOW scope and checklist values already in.</span><a href="#chain">02 · Data chain →</a></li>
+      <li><em>Step 2</em><b>Generate the drafts</b><span>Requirements generate first, per technology in scope, grounded in Flexagon's own knowledge, the SOW and the checklist.</span><a href="#ground">03 · Grounding →</a></li>
+      <li><em>Step 3</em><b>Resolve open questions</b><span>Answer each TO CONFIRM, add requested screenshots and regenerate incomplete content. An answer given once fills the same question everywhere.</span><a href="#review">05 · Review →</a></li>
+      <li><em>Step 4</em><b>Approve and check</b><span>Approve each group once its flags are clear. Approved Requirements start Solution Design, and the Review Center shows what is still open across all four documents.</span><a href="#quality">07 · Review Center →</a></li>
+      <li><em>Step 5</em><b>Release to the customer</b><span>A document downloads as a Word file once every section in it is approved. The customer receives the documents, not access to the portal.</span><a href="#mgmt">08 · Reporting →</a></li>
+    </ol></div>
   </div>
 </section>
 
@@ -1410,6 +1436,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       </div>
       <div class="ep-leg"><span><i class="e"></i>Empty</span><span><i class="g"></i>Generating</span><span><i class="d"></i>Draft</span><span><i class="a"></i>Approved</span><em>129 sections · the average engagement · time compressed</em></div>
     </div>
+    <div class="note rv"><span class="lbl">How the documents carry into delivery</span><ul class="pts cols">
+      <li><b>Requirements:</b> the implementation requirements for each technology in scope. Approved first, because Solution Design builds on them.</li>
+      <li><b>Solution Design:</b> how the scope will be built, generated from the approved Requirements so the two stay consistent.</li>
+      <li><b>Implementation Runbook:</b> step-by-step guidance for the actual build and configuration work, drawn from the project scope and approved design, in the same workspace as the SOW, checklist, Requirements and Solution Design.</li>
+      <li><b>User Documentation:</b> the guides needed after implementation, for end users, administrators, approvers and auditors.</li>
+    </ul></div>
   </div>
 </section>
 
@@ -1440,6 +1472,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       </div>
       <div class="ep-exem box" id="exem">
         <div class="h"><b>Steer with exemplars</b><span>Add up to two approved sections from other engagements</span></div>
+        <p class="ep-xnote">Only approved or consultant-refined sections of the same document type are offered. An exemplar steers the structure of the draft. Scope still comes from this engagement's signed SOW, and the prompt discourages adding technologies or integrations outside it.</p>
         <input id="xin" type="search" placeholder="Search by company or section name…" aria-label="Search approved sections">
         <div class="ep-xres" id="xres"></div>
         <div class="ep-xadd"><small>Added by consultant</small><div id="xadded"></div></div>
@@ -1478,7 +1511,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv">
       <span class="eyebrow">07 · AI Review Center</span>
       <h2 class="title">A second pair of eyes across every document</h2>
-      <p class="sub">Cross-document checks for what's unresolved, what's at risk, how healthy the engagement is, and whether anything was approved that shouldn't have been. Open each check.</p>
+      <p class="sub">The AI Assist tools help a consultant with one task at a time. The Review Center works across the whole engagement: cross-document checks for what's unresolved, what's at risk, how healthy the engagement is, and whether anything was approved that shouldn't have been. Open each check.</p>
     </div>
     <div class="ep-q rv" id="q">
       <div class="ep-qcards" id="qcards" role="tablist" aria-label="Review checks"></div>
@@ -1500,7 +1533,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <div class="ep-mtabs" id="mtabs" role="tablist" aria-label="Management views"></div>
       <div class="ep-mbody" id="mbody"></div>
     </div>
-    <p class="demo-note" style="margin-top:8px">Portfolio totals are real; engagement names, people and weekly progress are illustrative.</p>
+    <p class="demo-note" style="margin-top:8px">Portfolio totals are real; engagement names, people and weekly progress are illustrative. The Portfolio tab covers every engagement; the other tabs show a single engagement.</p>
   </div>
 </section>
 
@@ -1547,12 +1580,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <p class="sub">The Execution Portal is in production for Flexagon delivery consultants and runs across the active engagement portfolio.</p>
     </div>
     <div class="se-nums ep-nums">
-      <div class="se-num rv"><b data-to="18">18</b><span>active client engagements managed in one portal</span></div>
-      <div class="se-num rv"><b data-to="1390" data-fmt="1">1,390</b><span>document sections drafted and moved into review</span></div>
-      <div class="se-num rv"><b data-to="129">129</b><span>sections per engagement on average, across four documents</span></div>
-      <div class="se-num rv"><b data-to="289">289</b><span>grounded AI generations per engagement</span></div>
-      <div class="se-num rv"><b data-to="1.58" data-dec="2" data-suf="M">1.58M</b><span>tokens processed against approved knowledge</span></div>
-      <div class="se-num rv"><b data-to="108">108</b><span>workflow events in one engagement's timestamped audit trail</span></div>
+      <div class="se-num rv"><small class="ep-scope pf">Portfolio-wide</small><b data-to="18">18</b><span>client engagements managed in one portal</span></div>
+      <div class="se-num rv"><small class="ep-scope pf">Portfolio-wide</small><b data-to="1390" data-fmt="1">1,390</b><span>document sections drafted and moved into review</span></div>
+      <div class="se-num rv"><small class="ep-scope">Per engagement · size</small><b data-to="129">129</b><span>sections per engagement on average, across four documents</span></div>
+      <div class="se-num rv"><small class="ep-scope">Per engagement · activity</small><b data-to="289">289</b><span>grounded AI generations per engagement</span></div>
+      <div class="se-num rv"><small class="ep-scope">Per engagement · activity</small><b data-to="1.58" data-dec="2" data-suf="M">1.58M</b><span>input tokens per engagement, processed against approved knowledge</span></div>
+      <div class="se-num rv"><small class="ep-scope">Per engagement · activity</small><b data-to="108">108</b><span>workflow events in one engagement's timestamped audit trail</span></div>
     </div>
     <div class="ep-ba rv" id="ba"></div>
     <div class="verdict rv"><b>The result</b><span>Consultants refine instead of draft. Documentation stays consistent across engagements, every customer-facing commitment is reviewed by a person, and leadership sees progress from contract to handover.</span></div>

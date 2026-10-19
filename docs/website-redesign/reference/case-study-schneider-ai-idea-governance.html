@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Schneider Electric AI Idea Governance | Paramount Intelligence</title>
@@ -701,6 +702,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .ag-roles b{color:var(--navy);font-size:.88rem}
 .ag-roles em{font-style:normal;justify-self:start;font-size:.64rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 7px;background:var(--navy);color:#fff}
 .ag-roles span{font-size:.76rem}
+.band .ag-roles,.band .ag-roles .lbl{background:var(--grey)} .band .ag-roles div{background:#fff}
 
 /* RESULTS */
 .ag-nums{margin-top:0}
@@ -1111,6 +1113,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
     <div class="ag-rules rv" id="rulesx"></div>
     <div class="verdict rv"><b>The success test</b><span>An engineer must never experience the process as bureaucracy.</span></div>
+    <div class="note rv"><span class="lbl">Registering an idea is not authorising it</span><ul class="pts cols">
+      <li><b>A record, not a permission:</b> registering makes an idea visible and lets the engineer ask for support. It does not authorise the work.</li>
+      <li><b>Stages track progress:</b> Triaged, Approved and the later stages show where an idea stands. An engineer does not wait for any of them before starting to build.</li>
+      <li><b>Review where it is needed:</b> ideas that may touch confidential, R&amp;D, customer or export-controlled material are flagged at intake for the governance owner to review.</li>
+      <li><b>The minimum layer:</b> it is not an enterprise AI governance suite. It adds intake, tracking, support and reporting inside Schneider Electric's existing security boundaries, licensing and administration.</li>
+    </ul></div>
   </div>
 </section>
 
@@ -1156,7 +1164,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv">
       <span class="eyebrow">04 · Steps 3 to 5 · Triage, pipeline and Teams</span>
       <h2 class="title">Seven stages. Drag a card, and everyone hears.</h2>
-      <p class="sub">Drag a card to another column, or tap a card and then a column. The move is validated, saved to SharePoint and announced in Teams.</p>
+      <p class="sub">Drag a card to another column, or tap a card and then a column, as the governance owner would. Engineers can see the board but cannot move cards. The move is validated, saved to SharePoint and announced in Teams.</p>
     </div>
     <div class="ag-board box rv" id="board">
       <div class="ag-bh"><span class="ag-wb"><i></i>Write-back on</span><span class="ag-safe sm">Sanitised data</span></div>
@@ -1172,6 +1180,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Teams, not email:</b> a status-change flow posts the matching message; it ignores items at Submitted, so the intake write never fires it.</li>
       <li><b>Honest failures:</b> if a save fails, the board reports an error and asks the user to refresh, because a timed-out save may still have completed.</li>
     </ul></div>
+    <div class="ag-roles rv"><span class="lbl">Following one idea that asks for help</span>
+      <div><small>Step 1 · Intake</small><b>The engineer asks for help</b><em>Engineer</em><span>Answers the support question, for example "Need help to get started", then picks the kind of help: technical solution architecture, deployment or stakeholder communication.</span></div>
+      <div><small>Step 2 · Alert</small><b>Both sides are told in Teams</b><em>Intake flow</em><span>The engineer gets a confirmation. The governance owner gets an alert that includes the support answer, and the idea counts toward Needs support on the dashboard.</span></div>
+      <div><small>Step 3 · Triage</small><b>A support contact is assigned</b><em>Governance owner</em><span>Reviews the idea and assigns a support contact, who can edit the ideas they are helping with. The assignment appears in the activity feed.</span></div>
+      <div><small>Step 4 · Approved to Deployed</small><b>The engineer hears every move</b><em>Status change flow</em><span>At Approved, the Teams message names the support contact, who will reach out to plan the first build steps. In Build and Deployed arrive the same way.</span></div>
+    </div>
   </div>
 </section>
 
@@ -1197,11 +1211,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="ag-audit"><b>Audit trail</b><ol id="saudit"></ol></div>
       </div>
     </div>
-    <div class="note rv"><span class="lbl">How sensitive ideas are handled</span><ul class="pts cols">
-      <li><b>Set by the engineer's own answer:</b> any answer other than No, including Not sure, sets the flag. Over-flagging is the safer error.</li>
-      <li><b>Visible at once:</b> the governance alert starts with [SENSITIVE DATA REVIEW] and the idea lands in a dedicated Sensitive Review view.</li>
-      <li><b>Locked when needed:</b> item-level permissions restrict the record to governance owners and the assigned support contact.</li>
-      <li><b>Same register:</b> sensitive ideas stay in the one list, so reporting and the lifecycle work the same way.</li>
+    <div class="note rv"><span class="lbl">How a sensitive idea is handled, in order</span><ul class="pts cols">
+      <li><b>1 · The engineer's answer sets the flag:</b> any answer other than No, including Not sure, sets it. Over-flagging is the safer error.</li>
+      <li><b>2 · The intake flow raises it:</b> the governance alert starts with [SENSITIVE DATA REVIEW] and the idea lands in a dedicated Sensitive Review view for the governance owner.</li>
+      <li><b>3 · The governance owner restricts it when needed:</b> item-level permissions limit the record to governance owners and the assigned support contact. The wider engineering community can no longer see it.</li>
+      <li><b>4 · Same register:</b> sensitive ideas stay in the one list, so reporting and the lifecycle work the same way.</li>
     </ul></div>
   </div>
 </section>
@@ -1212,7 +1226,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv">
       <span class="eyebrow">06 · Step 7 · The leadership dashboard</span>
       <h2 class="title">The question the sponsor started with, answered</h2>
-      <p class="sub">What AI work exists, on which platform, built by whom, and where it stands. This dashboard reads the same board you just moved cards on.</p>
+      <p class="sub">What AI work exists, on which platform, built by whom, and where it stands. This dashboard reads the same register as the board you just moved cards on.</p>
     </div>
     <div class="ag-dash box rv" id="dash">
       <div class="ag-kpis" id="dkpi"></div>
@@ -1227,6 +1241,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>A built-in check:</b> with no status filter, the seven stage counts add up to the total; that is how the team checks the numbers.</li>
       <li><b>A live activity feed:</b> status changes, Teams messages, new submissions, flags and support assignments, with who or what did each.</li>
       <li><b>An inventory of shipped AI:</b> deployed ideas form a running list of tools the hub can show to the wider business.</li>
+    </ul></div>
+    <div class="note rv"><span class="lbl">Register and dashboard: who uses which</span><ul class="pts cols">
+      <li><b>The register is the record:</b> every idea, owner, stage, support need and triage note lives in the AI Idea Registry SharePoint list, with version history.</li>
+      <li><b>The dashboard is a read-out:</b> Power BI counts, charts and the board are built over the register. A card move is written back to the register.</li>
+      <li><b>Engineers:</b> submit in Microsoft Forms and hear back in Teams. They can view the dashboard, views and board, but cannot edit items or move cards.</li>
+      <li><b>Governance owners:</b> manage the portfolio. They triage, set priorities, assign support and set permissions on register items, and move cards on the board.</li>
     </ul></div>
   </div>
 </section>

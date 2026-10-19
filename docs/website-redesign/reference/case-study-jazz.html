@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Jazz In-App AI Assistant | Paramount Intelligence</title>
@@ -712,7 +713,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
     <div class="nut">
       <h3>In a nutshell</h3>
-      <p>A production AI assistant embedded in Jazz's live consumer app. Customers verify with OTP, then get answers from their own account and Jazz's approved documents, without leaving the app.</p>
+      <p>We built and deployed a production AI assistant embedded in Jazz's live consumer app. Customers verify with OTP, then get answers from their own account and Jazz's approved documents, without leaving the app.</p>
     </div>
   </div>
 </section>
@@ -780,7 +781,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <button type="button" data-k="knowledge"><i style="background:var(--cyan)"></i>Approved knowledge</button>
       <button type="button" data-k="action"><i style="background:var(--green)"></i>Guided actions</button>
     </div>
-    <div class="note rv"><span class="lbl">How SIA handles each kind</span><ul class="pts cols"><li><b>My account data:</b> after OTP, SIA reads the verified customer's own balance, usage, bundles, recharges, call history and SIM details.</li><li><b>Approved knowledge:</b> coverage, network policy and SOP questions are answered by Amazon Kendra from Jazz's approved documents, not improvised.</li><li><b>Guided actions:</b> subscribing to a bundle, usage alerts and complaints are guided step by step and confirmed before anything changes.</li><li><b>Both kinds of answer, one chat:</b> generic and account-specific questions are handled in the same conversation, inside the app.</li></ul></div>
+    <div class="note rv"><span class="lbl">How SIA handles each kind</span><ul class="pts cols"><li><b>My account data:</b> after OTP, SIA reads the verified customer's own balance, usage, bundles, recharges, call history and SIM details.</li><li><b>Approved knowledge:</b> coverage, network policy and SOP questions are answered by Amazon Kendra from Jazz's approved documents, not improvised.</li><li><b>Actions SIA completes:</b> it registers complaints with a reference ID, initiates support requests and escalates what it can't resolve.</li><li><b>Actions SIA guides:</b> bundle subscriptions and usage alerts go step by step, and nothing changes until the customer confirms. SIA never activates a package or changes a plan on its own.</li><li><b>Both kinds of answer, one chat:</b> generic and account-specific questions are handled in the same conversation, inside the app.</li></ul></div>
   </div>
 </section>
 
@@ -853,6 +854,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </ul>
       </div>
     </div>
+    <div class="note rv"><span class="lbl">What we delivered</span><ul class="pts cols"><li><b>Built and deployed SIA:</b> a customer-facing AI assistant inside Simosa, live in production.</li><li><b>Connected it to Jazz's systems:</b> internal customer data for account answers, and approved SOPs, policies and documents through Amazon Kendra.</li><li><b>Secured access:</b> phone-number and OTP verification before any account data is accessed.</li><li><b>Built a sandboxed LLM layer:</b> AWS Bedrock with a locally hosted Llama model on EC2, keeping subscriber data in a controlled environment.</li><li><b>Designed it for production scale:</b> multi-tenant, load-balanced and autoscaled on AWS, with DynamoDB for session and memory.</li><li><b>Set the action limits:</b> confirmation before customer-impacting actions, and clean escalation when SIA can't resolve a query.</li></ul></div>
   </div>
 </section>
 
@@ -913,7 +915,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         </div>
       </div>
     </div>
-    <div class="note rv"><span class="lbl">What's happening underneath</span><ul class="pts cols"><li><b>Verify first:</b> phone number + OTP confirms the customer before any account data is accessed.</li><li><b>Account questions take the private path:</b> load-balanced and autoscaled, a sandboxed Llama model on EC2, with AWS Bedrock as the reasoning layer.</li><li><b>Knowledge questions take the approved path:</b> Amazon Kendra retrieves from Jazz's SOPs and policies, and Bedrock writes a grounded answer.</li><li><b>Memory across the chat:</b> DynamoDB keeps session context, so follow-up questions just work.</li><li><b>Clear action boundaries:</b> anything customer-impacting needs the customer to confirm; unresolved cases escalate cleanly to a person.</li><li><b>Every reply is a safe answer:</b> grounded in the customer's data or Jazz's approved knowledge, never open-ended model output.</li></ul></div>
+    <div class="note rv"><span class="lbl">What's happening underneath</span><ul class="pts cols"><li><b>Verify first:</b> phone number + OTP confirms the customer before any account data is accessed.</li><li><b>Account questions take the private path:</b> load-balanced and autoscaled. Llama, hosted locally on EC2, handles the verified customer's account data inside the sandbox; AWS Bedrock is the reasoning layer that composes the reply.</li><li><b>Knowledge questions take the approved path:</b> Amazon Kendra retrieves from Jazz's SOPs and policies, and Bedrock writes a grounded answer.</li><li><b>Memory across the chat:</b> DynamoDB keeps session context, so follow-up questions just work.</li><li><b>Clear action boundaries:</b> anything customer-impacting needs the customer to confirm; unresolved cases escalate cleanly to a person.</li><li><b>Every reply is a safe answer:</b> grounded in the customer's data or Jazz's approved knowledge, never open-ended model output.</li></ul></div>
   </div>
 </section>
 
@@ -930,7 +932,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <div class="gen"><div class="hd"><span>Typical support chatbot</span><span class="score">Sent away <b id="sgen">0</b></span></div><div class="log" id="lgen" aria-live="polite"></div></div>
       <div class="sia"><div class="hd"><span>SIA in Simosa · verified</span><span class="score">Solved in-app <b id="ssia">0</b></span></div><div class="log" id="lsia" aria-live="polite"></div></div>
     </div>
-    <div class="note rv" style="max-width:960px;margin-inline:auto;margin-top:34px"><span class="lbl">Four things a standard chatbot can't do</span><ul class="pts cols"><li><b>Inside their own product:</b> embedded in the app 40M customers use daily, not a website widget or third-party tool.</li><li><b>Actually personalised:</b> after OTP, it pulls the customer's real account data, so answers are specific to them, not generic FAQs.</li><li><b>Sandboxed LLM:</b> Bedrock plus a locally hosted Llama on EC2 give AI capability without exposing subscriber data.</li><li><b>Enforced action boundaries:</b> it guides, confirms and escalates. It never changes a plan on its own.</li></ul></div>
+    <div class="note rv" style="max-width:960px;margin-inline:auto;margin-top:34px"><span class="lbl">Four things a standard chatbot can't do</span><ul class="pts cols"><li><b>Inside their own product:</b> embedded in the app 40M customers use daily, not a website widget or third-party tool.</li><li><b>Actually personalised:</b> after OTP, it pulls the customer's real account data, so answers are specific to them, not generic FAQs.</li><li><b>Sandboxed LLM:</b> Bedrock plus a locally hosted Llama on EC2 give AI capability without exposing subscriber data.</li><li><b>Enforced action boundaries:</b> it guides, waits for the customer to confirm, and escalates. It never changes a plan on its own.</li></ul></div>
   </div>
 </section>
 
@@ -962,7 +964,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <ul class="pts"><li><b>Multi-tenant, load-balanced, autoscaled</b> on AWS.</li><li><b>Ready for all 40M</b> active app users as adoption grows.</li></ul>
       </div>
     </div>
-    <div class="verdict rv"><b>The result</b><span>Scalable, in-product support that meets customers where they already are: secure, personalised and grounded in Jazz's own knowledge.</span></div>
+    <div class="verdict rv"><b>The result</b><span>Customers get faster answers to common account and service questions without leaving the app. Jazz's support team receives only the cases that need a person.</span></div>
     <div class="store box rv">
       <img src="images/simosa-app-icon.webp" alt="Simosa app icon">
       <div class="who"><b>SIMOSA – Jazz World</b><span>On Google Play and the App Store · Jazz Digital Pakistan</span></div>

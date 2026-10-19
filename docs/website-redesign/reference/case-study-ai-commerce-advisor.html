@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>AI Commerce Advisor | Paramount Intelligence</title>
@@ -1043,7 +1044,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
     <div class="nut">
       <h3>In a nutshell</h3>
-      <p>A production-grade multi-agent shopping assistant on AWS Bedrock AgentCore. Customers describe what they need in their own words; the agent searches a live catalog, compares with context, manages the cart and checks out, with memory that persists across every turn and every visit.</p>
+      <p>Toptal engaged Paramount to design and build a production-grade shopping assistant as part of an agentic ecommerce initiative on AWS Bedrock AgentCore, focused on camping and outdoor gear. Customers describe what they need in their own words; the multi-agent assistant searches a live catalog, compares with context, manages the cart and checks out, with memory that persists across every turn and every visit.</p>
     </div>
   </div>
 </section>
@@ -1071,7 +1072,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <div class="ac-carts" id="carts">
         <span class="k">Industry figure</span>
         <div class="big"><b>70%+</b></div>
-        <p>of online carts are abandoned. Not for lack of wanting to buy; for lack of guidance.</p>
+        <p>of online carts are abandoned. This assistant works on one part of the problem: helping customers find and choose the right product.</p>
         <div class="ac-cartrow" id="cartrow" aria-hidden="true"></div>
       </div>
     </div>
@@ -1091,7 +1092,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv">
       <span class="eyebrow">02 · The complication</span>
       <h2 class="title">A conversation that never loses its place</h2>
-      <p class="sub">AgentCore can send each turn of a conversation to a different container. Anything kept in one container's memory disappears on the next turn.</p>
+      <p class="sub">AgentCore can route turns of the same conversation to different runtime containers. State kept only in one container's memory is not there when a turn lands in another.</p>
     </div>
     <div class="ac-hop box rv" id="hop">
       <div class="bar">
@@ -1114,9 +1115,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div data-s="cart"><b>DynamoDB</b>Cart</div>
         <div data-s="profile"><b>DynamoDB</b>Customer profile</div>
       </div>
+      <p class="demo-note" style="margin-top:10px">Illustration. When a turn lands on a different container, only state stored outside it carries over.</p>
     </div>
     <div class="note rv"><span class="lbl">What had to hold in production</span><ul class="pts cols">
-      <li><b>State outside the process:</b> session, cart and history persist in DynamoDB and S3, so any container can pick up any turn.</li>
+      <li><b>State outside the process:</b> session, cart, history and profile persist in DynamoDB and S3, so any container can pick up a turn, and the conversation carries over through recovery and later visits.</li>
       <li><b>Structured output for the screen:</b> every reply carries text plus signals that tell the React UI which panel to draw.</li>
       <li><b>Relevant retrieval:</b> catalog search had to stay accurate across very different ways of asking, with a Knowledge Base fallback.</li>
       <li><b>Deterministic money moves:</b> cart and checkout run through tools with fixed contracts, not free-form model output.</li>
@@ -1222,6 +1224,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>The cart moved with the conversation:</b> “add two more tents” updated quantity, pricing and the live budget tracker at once.</li>
       <li><b>One last useful pick:</b> water purification tablets, flagged as essential for backcountry safety, added with a single “sure”.</li>
     </ul></div>
+    <div class="verdict rv"><b>Confirmed order</b><span>Checkout runs through the deterministic checkout tool, not the model: it totals the cart held in DynamoDB, applies the bundle and loyalty discounts and confirms the order. The purchase is then added to the customer’s profile.</span></div>
   </div>
 </section>
 

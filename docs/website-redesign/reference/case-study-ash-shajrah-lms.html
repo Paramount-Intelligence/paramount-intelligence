@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Ash-Shajrah Learning Hub | Paramount Intelligence</title>
@@ -634,6 +635,23 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .lm-flowdot i{position:absolute;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,var(--cyan),transparent);left:-20%}
 .lm-flowdot.go i{animation:sweep 1.1s ease forwards}
 @keyframes sweep{to{left:102%}}
+/* STEP STRIPS: family journey, voucher to access */
+.lm-jyi{font-size:.86rem;margin-bottom:14px;max-width:72ch}
+.lm-jy{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:960px){.lm-jy{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.lm-jy{grid-template-columns:1fr}}
+.lm-jy li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:4px 10px;align-content:start;padding:12px;border:1.5px solid var(--line);background:#fff;font-size:.8rem;line-height:1.45;min-width:0}
+.lm-jy li>*{grid-column:2;min-width:0}
+.lm-jy li>em{grid-column:1;grid-row:1/span 3;font-style:normal;font-family:var(--mono);font-size:.66rem;width:24px;height:24px;display:grid;place-items:center;background:var(--navy);color:#fff}
+.lm-jy b{color:var(--navy);font-size:.86rem}
+.lm-jy a{font-size:.7rem;font-weight:600;color:var(--royal);text-decoration:none}
+.lm-jy a:hover{text-decoration:underline}
+.lm-jy li.loop{border-style:dashed;border-color:var(--royal)}
+.lm-jy li.ok{border-color:var(--green);background:#eafaf2}
+.lm-jy li.ok>em{background:var(--green)}
+.lm-jyn{margin-top:12px;font-size:.8rem;padding:10px 12px;background:var(--pale);color:var(--navy)}
+.lm-airef{font-size:.72rem;font-weight:600;color:var(--royal);text-decoration:none}
+.lm-airef:hover{text-decoration:underline}
 
 /* LEARNING: did the lecture happen */
 .lm-lec{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
@@ -1350,7 +1368,22 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Role checks on every API:</b> each sensitive endpoint confirms the caller's role before acting.</li>
       <li><b>Business rules on top:</b> coordinators can't exceed the discount cap; only unpaid or rejected vouchers accept new proof.</li>
       <li><b>One login, many roles:</b> sign in with email, phone or username; staff with several roles choose one at login.</li>
+      <li><b>Parents see their own children:</b> the parent portal shows only their own children's lectures, homework, attendance and fees.</li>
+      <li><b>Teachers stay in their portal:</b> teachers work in the teacher portal only and cannot open parent or student portals.</li>
     </ul></div>
+    <div class="note rv"><span class="lbl">One family's journey through the platform</span>
+      <p class="lm-jyi">One record carries a family from first enquiry to live class. Each step is enforced in code, logged to the audit trail and sent to the right people by email or WhatsApp.</p>
+      <ol class="lm-jy">
+        <li><em>01</em><b>Enquiry</b><span>The parent fills in the contact form. A lead is created and a coordinator is alerted.</span><a href="#admissions">04 · Admissions ↓</a></li>
+        <li><em>02</em><b>Interview</b><span>The parent interview is tracked before the admission form is sent.</span><a href="#admissions">04 · Admissions ↓</a></li>
+        <li><em>03</em><b>Admission form</b><span>A personal link arrives by email and WhatsApp. Reminders follow at 10, 20 and 30 days until it is submitted.</span><a href="#admissions">04 · Admissions ↓</a></li>
+        <li><em>04</em><b>Fee voucher</b><span>Submitting the form creates the admission record and its voucher, with any discount or scholarship applied.</span><a href="#finance">05 · Finance engine ↓</a></li>
+        <li><em>05</em><b>Payment</b><span>The parent uploads proof on the public payment page, with no login. A coordinator approves or rejects it.</span><a href="#verify">06 · Payment verification ↓</a></li>
+        <li><em>06</em><b>Accounts</b><span>Approval creates the parent and student accounts, enrols the child in a class and emails the logins.</span><a href="#verify">06 · Payment verification ↓</a></li>
+        <li><em>07</em><b>Live classes</b><span>The child joins lectures on Google Meet. Verified lectures, recordings and homework appear in the parent and student portals.</span><a href="#learning">07 · Learning engine ↓</a></li>
+        <li class="loop"><em>08</em><b>Every month</b><span>A new voucher is issued. Unpaid dues carry forward, and an overdue voucher pauses access until its payment is approved.</span><a href="#finance">05 · Finance engine ↓</a></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -1449,6 +1482,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Accounts on approval:</b> parent and student accounts, enrolment, a roll number and login details, sent to the parent by email.</li>
       <li><b>Rejections explained:</b> a rejected payment emails the reason and a link to resubmit; every decision is audited.</li>
     </ul></div>
+    <div class="note rv"><span class="lbl">From a monthly fee to restored access</span>
+      <ol class="lm-jy">
+        <li><em>01</em><b>Fee calculated</b><span>The voucher is itemised from the regular fee, less any discount or scholarship, and emailed with a payment link.</span></li>
+        <li><em>02</em><b>Proof submitted</b><span>The parent uploads payment proof. Only an unpaid or rejected voucher accepts it.</span></li>
+        <li><em>03</em><b>Reviewed</b><span>A coordinator approves or rejects it through the verification engine. A rejection emails the reason and a link to resubmit.</span></li>
+        <li class="ok"><em>04</em><b>Approved</b><span>The voucher is marked verified, the fee history and carry-forward are updated, and an approval email is sent.</span></li>
+      </ol>
+      <p class="lm-jyn"><b>Access:</b> when a monthly voucher is overdue, LMS access stays paused while it is unpaid, submitted or rejected. It returns automatically the moment the payment is approved.</p>
+    </div>
   </div>
 </section>
 
@@ -1495,7 +1537,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv">
       <span class="eyebrow">08 · Smart learning</span>
       <h2 class="title">Learning that children can see</h2>
-      <p class="sub">Children at Ash-Shajrah learn by doing, with AI as a patient helper. They draw, build and watch, then try it themselves. Have a go at all three.</p>
+      <p class="sub">Children at Ash-Shajrah learn by doing, with AI as a patient helper. They draw, build and watch, then try it themselves. The panels below are try-it versions built for this page, and the video is a lesson excerpt. Have a go at all three.</p>
     </div>
 
     <div class="lm-play">
@@ -1631,7 +1673,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <span>Next.js 16</span><span>React 19</span><span>Tailwind CSS v4</span><span>Framer Motion</span><span>FullCalendar</span><span>jsPDF</span><span>NextAuth v5</span><span>PostgreSQL</span><span>Prisma</span><span>Supabase Storage</span><span>Google Calendar · Meet · Drive · Admin Reports</span><span>SMTP</span><span>WhatsApp Cloud API</span><span>Resend</span><span>Google Gemini</span><span>Google Flow</span>
     </div>
     <div class="note rv"><span class="lbl">What comes next</span><ul class="pts cols">
-      <li><b>AI rollout:</b> admissions lead scoring and the support assistant first, then lecture summaries and engagement scoring.</li>
+      <li><b>AI rollout:</b> first lead scoring, in place of fixed reminders, and the support assistant, for questions coordinators answer again and again. Then lecture summaries that pre-fill completion reports, and engagement scoring from attendance.</li>
       <li><b>Analytics:</b> funnel conversion, cohort retention and finance forecasting on the existing audit and fee data.</li>
       <li><b>A mobile-first parent app</b> for fees, lectures, homework and the assistant.</li>
       <li><b>Multi-institution tenancy:</b> from one school to a hostable EdTech product.</li>
@@ -1863,19 +1905,19 @@ const IMG={"web": "images/alh-01-website.webp", "form": "images/alh-02-admission
 })();
 
 /* AI layer */
-(()=>{ const A=[['Interested students','Manual follow-up, guesswork on which leads matter','Lead scoring and next-best-action','Ranks leads by likelihood to enrol and drafts the right follow-up on the right channel, replacing fixed reminder buckets.'],
-   ['Parent interview','Reading long free-text answers','Interview summaries and fit signals','Condenses each interview into a one-screen brief, so decisions take minutes.'],
-   ['Admission documents','Eyeballing ID documents and birth certificates','Document verification','OCR reads ID documents and birth certificates and flags mismatches with the admission form.'],
-   ['Fees and scholarships','Reconciling proofs, drafting decisions','Payment reconciliation agent','Matches proofs to vouchers and pre-sorts each as clean, needs review or suspicious before a person looks.'],
-   ['Lectures','No one knows exactly what was taught','Recording transcripts and summaries','Meet recordings become summaries that pre-fill the teacher’s completion report for review.'],
+(()=>{ const A=[['Interested students','The same fixed reminders for every lead, and guesswork on which leads matter','Lead scoring and next-best-action','Ranks leads by likelihood to enrol and drafts the right follow-up on the right channel, replacing fixed reminder buckets.',['admissions','04 · Admissions']],
+   ['Parent interview','Reading long free-text answers','Interview summaries and fit signals','Condenses each interview into a one-screen brief, so decisions take minutes.',['admissions','04 · Admissions']],
+   ['Admission documents','Eyeballing ID documents and birth certificates','Document verification','OCR reads ID documents and birth certificates and flags mismatches with the admission form.',['admissions','04 · Admissions']],
+   ['Fees and scholarships','Reconciling proofs, drafting decisions','Payment reconciliation agent','Matches proofs to vouchers and pre-sorts each as clean, needs review or suspicious before a person looks.',['verify','06 · Payment verification']],
+   ['Lectures','Teachers write every completion report themselves','Recording transcripts and summaries','Meet recordings become summaries that pre-fill the teacher’s completion report for review.',['learning','07 · Learning engine']],
    ['Homework','Slow, uneven feedback','AI feedback and assisted grading','First-pass feedback the teacher edits and approves. Never graded blind.'],
-   ['Attendance','Raw minutes, no engagement insight','Engagement scoring and at-risk alerts','Flags a child who is quietly disengaging, in time for someone to act.'],
+   ['Attendance','Raw minutes, no engagement insight','Engagement scoring and at-risk alerts','Flags a child who is quietly disengaging, in time for someone to act.',['learning','07 · Learning engine']],
    ['Support','Coordinators answer the same questions','Grounded assistant for families','Answers “when is the next fee due?” from the family’s own records, strictly scoped by role.'],
-   ['Finance','Surprise defaults, reactive gating','Fee-default prediction','Spots families likely to fall behind, so outreach comes before access is paused.']];
+   ['Finance','Surprise defaults, reactive gating','Fee-default prediction','Spots families likely to fall behind, so outreach comes before access is paused.',['finance','05 · Finance engine']]];
   const st=$('#aistages'),card=$('#aicard'); st.innerHTML=A.map((a,i)=>`<button type="button" class="lm-ais" role="tab" data-i="${i}">${a[0]}<i>AI →</i></button>`).join(''); const B=$$('#aistages .lm-ais');
   let user=false;
   function show(i){ B.forEach((b,k)=>{ b.classList.toggle('on',k===i); b.setAttribute('aria-selected',k===i); }); const a=A[i];
-    card.innerHTML=`<div class="before"><small>Today: human bottleneck</small><b>${a[1]}</b></div><div class="arr">→</div><div class="after"><small>AI contribution · designed</small><b>${a[2]}</b><p>${a[3]}</p></div>`; }
+    card.innerHTML=`<div class="before"><small>Today: human bottleneck</small><b>${a[1]}</b>${a[4]?`<a class="lm-airef" href="#${a[4][0]}">Today's workflow: ${a[4][1]} ↑</a>`:''}</div><div class="arr">→</div><div class="after"><small>AI contribution · designed</small><b>${a[2]}</b><p>${a[3]}</p></div>`; }
   B.forEach(b=>b.addEventListener('click',()=>{ user=true; show(+b.dataset.i); })); show(0); let i=0;
   onView(st,()=>{ if(RM) return; const t=setInterval(()=>{ if(user) return clearInterval(t); i=(i+1)%A.length; show(i); },3000); },.4);
 })();

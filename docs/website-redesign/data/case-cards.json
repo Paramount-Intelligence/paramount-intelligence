@@ -63,7 +63,7 @@
   "title": "Flexagon: support knowledge in one workflow",
   "summary": "A support copilot brings ticket context, enterprise knowledge, and reviewable response drafts into the support process.",
   "org": "Flexagon",
-  "industry": "PE-backed · Enterprise Software, DevOps & Configuration Management",
+  "industry": "Enterprise Software, DevOps & Configuration Management",
   "tech": "n8n, Anthropic Claude, OpenAI Embeddings, Qdrant, PostgreSQL, Freshdesk, Confluence, Jira, RAG Architecture",
   "tags": [
    "Anthropic Claude",
@@ -101,7 +101,7 @@
   "title": "One system for school admissions, finance, and learning",
   "summary": "A school operations platform connects enquiries, enrolment, payments, classes, and communication in one role-based application.",
   "org": "Confidential Education Provider",
-  "industry": "EdTech, School Operations",
+  "industry": "EdTech, School Operations, Learning Management Systems",
   "tech": "Next.js, React, Tailwind CSS, Framer Motion, FullCalendar, PostgreSQL, Prisma, Raw SQL, Supabase Storage, Google Calendar, Google Meet, Google Drive, Google Admin Reports, SMTP, WhatsApp Cloud API, Resend, pgvector, LangGraph, CrewAI, n8n, FastAPI",
   "tags": [
    "Next.js",
@@ -117,8 +117,8 @@
   "n": "05",
   "order": 7,
   "currentRoute": "/case-studies/multimodal-rag-co-pilot-advisory-for-industrial-automation-engineering",
-  "title": "An engineering copilot blueprint for Schneider Electric",
-  "summary": "An advisory engagement defined how engineering teams could access technical knowledge through a governed multimodal copilot.",
+  "title": "Schneider Electric: a senior engineer's knowledge, on call",
+  "summary": "A multimodal co-pilot inside EcoStruxure Automation Expert answers engineers from more than 10,000 verified documents, diagrams included.",
   "org": "Schneider Electric",
   "industry": "Industrial Automation & Engineering Technology",
   "tech": "Vertex AI, Gemini Multimodal Parser, Cloud Spanner, Google Cloud Storage, Microsoft AI Foundry, Microsoft Entra ID, RAG Architecture",
@@ -174,7 +174,7 @@
   "currentRoute": "/case-studies/pricing-intelligence-and-recommendation-engine",
   "title": "A manageable platform for product-data collection",
   "summary": "A web application and orchestration layer help teams schedule, monitor, and review product-data collection workflows.",
-  "org": "MSA Project Team",
+  "org": "Donaldson",
   "industry": "Industrial Parts, Ecommerce Data & Product Intelligence",
   "tech": "ParseHub, Next.js, React, Flask, Snowflake, Azure Kubernetes Service (AKS), Azure Container Registry (ACR), GitHub Actions, Docker, Kubernetes, Playwright, Selenium, DrissionPage, BeautifulSoup4, lxml, Pandas",
   "tags": [
@@ -202,13 +202,162 @@
    "React",
    "Terraform"
   ],
-  "fullCaseStudyPage": null,
+  "fullCaseStudyPage": "case-study-syngenta-agentcore-registry.html",
   "workInProgress": false,
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"288\" height=\"148\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"6\" width=\"288\" height=\"24\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"16\" y=\"22\">Registry</text><text class=\"sv-s\" x=\"16\" y=\"48\">ASSET</text><text class=\"sv-s\" x=\"132\" y=\"48\">OWNER</text><text class=\"sv-s\" x=\"214\" y=\"48\">STATUS</text><path d=\"M16 54H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><rect x=\"10\" y=\"57\" width=\"280\" height=\"22\" fill=\"#eaf1ff\" class=\"arow\" opacity=\"0.9\"/><text class=\"sv-t\" x=\"16\" y=\"72\">Agent · claims</text><rect x=\"132\" y=\"63\" width=\"52\" height=\"7\" fill=\"#d9dbe0\" class=\"ag\"/><rect x=\"214\" y=\"61\" width=\"62\" height=\"16\" fill=\"#3dbe8b\"/><text class=\"sv-w\" x=\"245\" y=\"73\" text-anchor=\"middle\" style=\"font-size:9.5px\">Approved</text><text class=\"sv-t\" x=\"16\" y=\"98\">Gateway · search</text><rect x=\"132\" y=\"89\" width=\"44\" height=\"7\" fill=\"#d9dbe0\" class=\"ag\" style=\"animation-delay:-0.90s\"/><rect x=\"214\" y=\"87\" width=\"62\" height=\"16\" fill=\"#eaf1ff\" stroke=\"#204ecf\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"245\" y=\"99\" text-anchor=\"middle\" style=\"font-size:9.5px\">Draft</text><text class=\"sv-t\" x=\"16\" y=\"124\">Agent · pricing</text><rect x=\"132\" y=\"115\" width=\"56\" height=\"7\" fill=\"#d9dbe0\" class=\"ag\" style=\"animation-delay:-1.80s\"/><rect x=\"214\" y=\"113\" width=\"62\" height=\"16\" fill=\"#fff\" stroke=\"#455065\" stroke-width=\"1\" stroke-dasharray=\"3 2\"/><text class=\"sv-t\" x=\"245\" y=\"125\" text-anchor=\"middle\" style=\"font-size:9.5px;fill:#455065\">Deprecated</text><path d=\"M16 140H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/></g></svg>"
  },
  {
-  "n": "47",
+  "n": "26",
   "order": 12,
+  "currentRoute": "/case-studies/ai-powered-enterprise-video-generation-platform-on-oracle-cloud",
+  "title": "Enterprise video ads in minutes, not weeks",
+  "summary": "An AI platform on Oracle Cloud turns simple business inputs into complete, platform-ready video ads in under 5 minutes.",
+  "org": "Global enterprise marketing platform",
+  "industry": "Global Marketing, Advertising, Consumer Goods",
+  "tech": "Oracle Cloud Infrastructure, generative AI models, programmatic video rendering, enterprise marketing integrations",
+  "tags": [
+   "Oracle Cloud",
+   "Generative AI",
+   "Video rendering"
+  ],
+  "fullCaseStudyPage": "case-study-enterprise-video-generation.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><text class=\"sv-s\" x=\"37\" y=\"34\" text-anchor=\"middle\">01</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"37.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Research</text><path d=\"M70 70H78\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M73 66L78 70L73 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"111\" y=\"34\" text-anchor=\"middle\">02</text><rect x=\"78\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"111.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Script</text><path d=\"M144 70H152\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M147 66L152 70L147 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"185\" y=\"34\" text-anchor=\"middle\">03</text><rect x=\"152\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"185.0\" y=\"67.5\" text-anchor=\"middle\" style=\"font-size:10px\">Visuals</text><text class=\"sv-t\" x=\"185.0\" y=\"80.5\" text-anchor=\"middle\" style=\"font-size:10px\">&amp; voice</text><path d=\"M218 70H226\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M221 66L226 70L221 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"259\" y=\"34\" text-anchor=\"middle\">04</text><rect x=\"226\" y=\"42\" width=\"66\" height=\"56\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"259.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Render</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"2.5\" class=\"astep\"/><path d=\"M10 110V116H290V110\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"150\" y=\"134\" text-anchor=\"middle\">ONE CREATIVE WORKFLOW</text></g></svg>"
+ },
+ {
+  "n": "40",
+  "order": 13,
+  "currentRoute": "/case-studies/real-time-platform-intelligence-ecosystem-monitoring",
+  "title": "Every journey, watched live",
+  "summary": "A real-time intelligence layer tracks millions of user journey events and shows where a journey breaks, and why, before it becomes a complaint.",
+  "org": "Leading ride-hailing and delivery platform",
+  "industry": "Ride-hailing, Logistics, On-Demand Services",
+  "tech": "Real-Time Event Tracking, Streaming Analytics, SQL, BI Dashboards, AI-Assisted Querying",
+  "tags": [
+   "Event tracking",
+   "Streaming analytics",
+   "SQL",
+   "BI"
+  ],
+  "fullCaseStudyPage": "case-study-real-time-platform-intelligence.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><text class=\"sv-s\" x=\"37\" y=\"34\" text-anchor=\"middle\">01</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"37\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Customers</text><path d=\"M12 85L22 81L32 84L42 79L52 82L62 77\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M70 70H78\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M73 66L78 70L73 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"111\" y=\"34\" text-anchor=\"middle\">02</text><rect x=\"78\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"111\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Supply</text><path d=\"M86 83L96 84L106 80L116 82L126 78L136 80\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M144 70H152\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M147 66L152 70L147 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"185\" y=\"34\" text-anchor=\"middle\">03</text><rect x=\"152\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"185\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">System</text><text class=\"sv-t\" x=\"185\" y=\"70\" text-anchor=\"middle\" style=\"font-size:9px\">health</text><path d=\"M160 80L170 82L180 81L190 83L200 82L210 84\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M218 70H226\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M221 66L226 70L221 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"259\" y=\"34\" text-anchor=\"middle\">04</text><rect x=\"226\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"259\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Marketing</text><path d=\"M234 86L244 83L254 84L264 80L274 81L284 76\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"2.5\" class=\"astep\"/><path d=\"M10 110V116H290V110\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"150\" y=\"134\" text-anchor=\"middle\">ONE MONITORING VIEW</text></g></svg>"
+ },
+ {
+  "n": "33",
+  "order": 14,
+  "currentRoute": "/case-studies/automated-email-response-and-ticket-handling-system-for-zero-touch-customer-support",
+  "title": "Email triage and responses with exception routing",
+  "summary": "A telecom support workflow classifies messages, prepares routine responses, and routes cases that need attention.",
+  "org": "National telecommunications and digital services provider",
+  "industry": "Telecommunications, Digital Services",
+  "tech": "Workflow Automation, NLP, Cloud Services, Email Automation",
+  "tags": [
+   "Workflow automation",
+   "NLP",
+   "Email automation"
+  ],
+  "fullCaseStudyPage": "case-study-zero-touch-email-support.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"14\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"31.0\" text-anchor=\"middle\">Billing</text><rect x=\"6\" y=\"66\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"83.0\" text-anchor=\"middle\">Plan change</text><rect x=\"6\" y=\"118\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"135.0\" text-anchor=\"middle\">Complaint</text><path d=\"M84 27C110 27 108 79 124 79M84 79H124M84 131C110 131 108 79 124 79\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M84 27C110 27 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\" path=\"M84 79H124\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\" path=\"M84 131C110 131 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\"/></circle><rect x=\"124\" y=\"58\" width=\"74\" height=\"42\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"161.0\" y=\"76.0\" text-anchor=\"middle\">Classify</text><text class=\"sv-w\" x=\"161.0\" y=\"90.0\" text-anchor=\"middle\">&amp; draft</text><path d=\"M198 79H214\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\" path=\"M198 79H214\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\"/></circle><rect x=\"214\" y=\"40\" width=\"80\" height=\"78\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"222\" y=\"56\">OUTCOME</text><circle cx=\"228\" cy=\"72\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><text class=\"sv-t\" x=\"238\" y=\"76\" style=\"font-size:10.5px\">Reply</text><circle cx=\"228\" cy=\"89\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"238\" y=\"93\" style=\"font-size:10.5px\">Review</text><circle cx=\"228\" cy=\"106\" r=\"4\" fill=\"#455065\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"238\" y=\"110\" style=\"font-size:10.5px\">Escalate</text></g></svg>"
+ },
+ {
+  "n": "32",
+  "order": 15,
+  "currentRoute": "/case-studies/ai-agents-for-talent-matching-and-automated-talent-project-mapping",
+  "title": "Project requirements matched to relevant expertise",
+  "summary": "AI agents prepare ranked candidate shortlists for a consulting platform, with placement decisions retained by its team.",
+  "org": "Global consulting and professional services platform",
+  "industry": "Professional Services, Consulting, Talent Platforms",
+  "tech": "AI Agents, Large Language Models, NLP, Workflow Automation",
+  "tags": [
+   "AI agents",
+   "LLMs",
+   "NLP"
+  ],
+  "fullCaseStudyPage": "case-study-ai-talent-matching.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"288\" height=\"148\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"6\" width=\"288\" height=\"22\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"16\" y=\"21\" style=\"font-size:10.5px\">Shortlist · project brief</text><rect x=\"12\" y=\"38\" width=\"276\" height=\"26\" fill=\"#eaf1ff\"/><circle cx=\"26\" cy=\"51\" r=\"8\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"26\" y=\"54.5\" text-anchor=\"middle\" style=\"font-size:9px\">1</text><text class=\"sv-t\" x=\"42\" y=\"55\" style=\"font-size:10.5px\">Expert match 1</text><rect x=\"176\" y=\"48\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"48\" width=\"92\" height=\"6\" fill=\"#204ecf\" class=\"ag\"/><circle cx=\"26\" cy=\"79\" r=\"8\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"26\" y=\"82.5\" text-anchor=\"middle\" style=\"font-size:9px\">2</text><text class=\"sv-t\" x=\"42\" y=\"83\" style=\"font-size:10.5px\">Expert match 2</text><rect x=\"176\" y=\"76\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"76\" width=\"80\" height=\"6\" fill=\"#09b6f9\" class=\"ag\" style=\"animation-delay:-0.90s\"/><circle cx=\"26\" cy=\"107\" r=\"8\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"26\" y=\"110.5\" text-anchor=\"middle\" style=\"font-size:9px\">3</text><text class=\"sv-t\" x=\"42\" y=\"111\" style=\"font-size:10.5px\">Expert match 3</text><rect x=\"176\" y=\"104\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"104\" width=\"66\" height=\"6\" fill=\"#09b6f9\" class=\"ag\" style=\"animation-delay:-1.80s\"/><path d=\"M16 128H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><circle cx=\"22\" cy=\"142\" r=\"5\" fill=\"#3dbe8b\"/><path d=\"M19.5 142l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-s\" x=\"34\" y=\"145.5\">Placement decided by the client team</text></g></svg>"
+ },
+ {
+  "n": "25",
+  "order": 16,
+  "currentRoute": "/case-studies/ai-enablement-and-workflow-automation-for-staffing-and-consultancy-firm",
+  "title": "Connected AI workflows for a professional-services firm",
+  "summary": "An enablement and automation engagement helps recruitment, client-service, and operations teams apply AI to recurring work.",
+  "org": "Staffing and consultancy firm",
+  "industry": "Staffing, Recruitment, Consultancy, Professional Services",
+  "tech": "Microsoft Copilot, ChatGPT, Claude, Slack, O365, Egnyte, Metal Platform",
+  "tags": [
+   "Microsoft Copilot",
+   "ChatGPT",
+   "Claude",
+   "Slack"
+  ],
+  "fullCaseStudyPage": "case-study-ai-enablement-staffing.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><path d=\"M150 80L44 26M150 80L256 26M150 80L44 134M150 80L256 134\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" class=\"am\"/><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.2s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M44 26L150 80\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.2s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.2s\" begin=\"-1.10s\" repeatCount=\"indefinite\" path=\"M150 80L256 26\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.2s\" begin=\"-1.10s\" repeatCount=\"indefinite\"/></circle><rect x=\"96\" y=\"58\" width=\"108\" height=\"44\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"150\" y=\"77\" text-anchor=\"middle\">AI workflows</text><text class=\"sv-s\" x=\"150\" y=\"92\" text-anchor=\"middle\" style=\"fill:#9fb3e8\">with each team</text><rect x=\"6\" y=\"12\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"50.0\" y=\"30.0\" text-anchor=\"middle\">Recruitment</text><rect x=\"206\" y=\"12\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"250.0\" y=\"30.0\" text-anchor=\"middle\" style=\"font-size:10.5px\">Client service</text><rect x=\"6\" y=\"120\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"50.0\" y=\"138.0\" text-anchor=\"middle\">Operations</text><rect x=\"206\" y=\"120\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"250.0\" y=\"138.0\" text-anchor=\"middle\">Slack · O365</text></g></svg>"
+ },
+ {
+  "n": "23",
+  "order": 17,
+  "currentRoute": "/case-studies/ai-infrastructure-for-a-multi-model-chatbot-platform-serving-80m-telecom-users",
+  "title": "AI request infrastructure for a telecom platform",
+  "summary": "A request-management layer coordinates traffic, model selection, and recovery across a multi-model AI service.",
+  "org": "Telecommunications provider",
+  "industry": "Telecommunications",
+  "tech": "AWS, Vertex AI, Python, distributed systems, API gateways, Load balancers, Auto scaling",
+  "tags": [
+   "AWS",
+   "Vertex AI",
+   "API gateways",
+   "Autoscaling"
+  ],
+  "fullCaseStudyPage": "case-study-multi-model-ai-infrastructure.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"56\" width=\"72\" height=\"46\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"42.0\" y=\"76.0\" text-anchor=\"middle\">AI</text><text class=\"sv-t\" x=\"42.0\" y=\"90.0\" text-anchor=\"middle\">requests</text><path d=\"M78 79H102\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M97 75L102 79L97 83\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.3s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M78 79H100\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.3s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><rect x=\"102\" y=\"54\" width=\"92\" height=\"50\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"148.0\" y=\"76.0\" text-anchor=\"middle\">Request</text><text class=\"sv-w\" x=\"148.0\" y=\"90.0\" text-anchor=\"middle\">layer</text><path d=\"M194 79C206 79 204 27 214 27M194 79H214\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M194 79C206 79 204 131 214 131\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" class=\"am\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.8s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M194 79C206 79 204 27 214 27\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.8s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.8s\" begin=\"-0.90s\" repeatCount=\"indefinite\" path=\"M194 79H214\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.8s\" begin=\"-0.90s\" repeatCount=\"indefinite\"/></circle><rect x=\"214\" y=\"14\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><circle cx=\"226\" cy=\"27\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\"/><text class=\"sv-t\" x=\"236\" y=\"31\" style=\"font-size:10.5px\">Vertex AI</text><rect x=\"214\" y=\"66\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><circle cx=\"226\" cy=\"79\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"236\" y=\"83\" style=\"font-size:10.5px\">AWS</text><rect x=\"214\" y=\"118\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\"/><circle cx=\"226\" cy=\"131\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"236\" y=\"135\" style=\"font-size:10.5px\">Fallback</text></g></svg>"
+ },
+ {
+  "n": "22",
+  "order": 18,
+  "currentRoute": "/case-studies/ai-systems-for-contract-document-ingestion-and-risk-analysis",
+  "title": "Contract analysis inside procurement workflows",
+  "summary": "An AI document pipeline captures agreements, structures their contents, and highlights clauses for review.",
+  "org": "Fintech platform",
+  "industry": "Fintech and Digital Financial Services",
+  "tech": "AWS Cloud, Retrieval Augmented Generation (RAG), Large Language Models, OCR-based document processing, Python AI services",
+  "tags": [
+   "AWS",
+   "RAG",
+   "LLMs",
+   "OCR"
+  ],
+  "fullCaseStudyPage": "case-study-contract-risk-analysis.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><path d=\"M6 8H96L116 28V152H6Z\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><path d=\"M96 8V28H116\" fill=\"#eaf1ff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"14\" y=\"26\" style=\"font-size:10.5px\">Scanned PDF</text><rect x=\"14\" y=\"42\" width=\"74\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"14\" y=\"54\" width=\"90\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"63\" width=\"74\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"63\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"66\" width=\"66\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"78\" width=\"92\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"14\" y=\"90\" width=\"80\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"99\" width=\"96\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"99\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"102\" width=\"88\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"114\" width=\"58\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"123\" width=\"92\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"123\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"126\" width=\"84\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"138\" width=\"70\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"38\" width=\"100\" height=\"2.5\" fill=\"#09b6f9\" class=\"as\" style=\"--d:104px\"/><path d=\"M122 80H148\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M143 76L148 80L143 84\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M122 80H146\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle cx=\"135\" cy=\"66\" r=\"9\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"135\" y=\"69.5\" text-anchor=\"middle\" style=\"font-size:7.5px\">AI</text><rect x=\"156\" y=\"14\" width=\"138\" height=\"116\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"166\" y=\"32\" style=\"font-size:8.6px\">CLAUSES FLAGGED</text><path d=\"M166 39H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"166\" y=\"58\" style=\"font-size:10.5px\">Payment terms</text><rect x=\"166\" y=\"64\" width=\"96\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"54\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><path d=\"M278.5 54l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"83\" style=\"font-size:10.5px\">Termination</text><rect x=\"166\" y=\"89\" width=\"78\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"79\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-1.60s\"/><path d=\"M278.5 79l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"108\" style=\"font-size:10.5px\">Liability</text><rect x=\"166\" y=\"114\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"104\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><path d=\"M278.5 104l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><rect x=\"156\" y=\"136\" width=\"138\" height=\"18\" fill=\"#3dbe8b\"/><text class=\"sv-w\" x=\"225\" y=\"148.5\" text-anchor=\"middle\" style=\"font-size:9.5px\">Ready for review</text></g></svg>"
+ },
+ {
+  "n": "28",
+  "order": 19,
+  "currentRoute": "/case-studies/ai-powered-investor-email-processing-and-crm-data-structuring",
+  "title": "Investor emails turned into traceable CRM records",
+  "summary": "An AI workflow extracts relevant information from incoming messages and prepares structured records linked to the source.",
+  "org": "Investment data and intelligence firm",
+  "industry": "Financial Data & Investment Intelligence",
+  "tech": "Anthropic Claude, Python, FastAPI, Multi-Agent Architecture",
+  "tags": [
+   "Anthropic Claude",
+   "Python",
+   "FastAPI",
+   "Multi-agent"
+  ],
+  "fullCaseStudyPage": "case-study-investor-email-intelligence.html",
+  "workInProgress": false,
+  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"14\" width=\"110\" height=\"132\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><path d=\"M6 14L61 52L116 14\" fill=\"none\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"14\" y=\"70\" style=\"font-size:10px\">Investor email</text><rect x=\"14\" y=\"80\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"89\" width=\"78\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"89\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"92\" width=\"70\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"104\" width=\"92\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"113\" width=\"68\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"113\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"116\" width=\"60\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"128\" width=\"80\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"76\" width=\"100\" height=\"2.5\" fill=\"#09b6f9\" class=\"as\" style=\"--d:56px\"/><path d=\"M122 80H148\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M143 76L148 80L143 84\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M122 80H146\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle cx=\"135\" cy=\"66\" r=\"9\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"135\" y=\"69.5\" text-anchor=\"middle\" style=\"font-size:7.5px\">AI</text><rect x=\"156\" y=\"14\" width=\"138\" height=\"116\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"166\" y=\"32\" style=\"font-size:8.6px\">CRM RECORD</text><path d=\"M166 39H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"166\" y=\"58\" style=\"font-size:10.5px\">Firm</text><rect x=\"166\" y=\"64\" width=\"96\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"54\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><path d=\"M278.5 54l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"83\" style=\"font-size:10.5px\">Contact</text><rect x=\"166\" y=\"89\" width=\"78\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"79\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-1.60s\"/><path d=\"M278.5 79l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"108\" style=\"font-size:10.5px\">Request</text><rect x=\"166\" y=\"114\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"104\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><path d=\"M278.5 104l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><rect x=\"156\" y=\"136\" width=\"138\" height=\"18\" fill=\"#3dbe8b\"/><text class=\"sv-w\" x=\"225\" y=\"148.5\" text-anchor=\"middle\" style=\"font-size:9.5px\">Linked to source</text></g></svg>"
+ },
+ {
+  "n": "47",
+  "order": 20,
   "currentRoute": "/case-studies/truecontext-field-pulse",
   "title": "TrueContext: field submissions turned into usable information",
   "summary": "AI processing turns technician submissions into structured records, summaries, and insights connected to field-service workflows.",
@@ -226,12 +375,12 @@
  },
  {
   "n": "02",
-  "order": 13,
+  "order": 21,
   "currentRoute": "/case-studies/credit-risk-lifestyle-index-for-fintech",
   "title": "Interpretable risk signals for digital finance",
   "summary": "A behavioral and lifestyle index gives financial teams additional context when conventional credit information is limited.",
   "org": "JazzCash",
-  "industry": "Digital Financial Services, Telecommunications",
+  "industry": "Digital Financial Services, Telecommunications, FinTech",
   "tech": "Machine Learning, Geospatial Analytics, Behavioral Modeling, Mobility Intelligence, Large-Scale Data Engineering, Predictive Segmentation, APIs, Dashboards",
   "tags": [
    "Machine learning",
@@ -244,12 +393,12 @@
  },
  {
   "n": "03",
-  "order": 14,
+  "order": 22,
   "currentRoute": "/case-studies/multi-agent-ai-analytics-platform-for-enterprise-decision-intelligence",
   "title": "Business questions answered across company data",
   "summary": "An AI analytics application lets business users explore connected data through natural-language questions, with separate access boundaries for each organization.",
   "org": "B2B Enterprise Analytics Platform",
-  "industry": "Enterprise Analytics, Business Intelligence",
+  "industry": "Enterprise Analytics, Business Intelligence, Data Platforms",
   "tech": "LangGraph, BigQuery, Teradata, Snowflake, MySQL, PostgreSQL, MongoDB, CSV/Excel, Dash, Plotly, SQL Generation, Multi-Agent Architecture, Self-Hosted Models, Human-in-the-Loop Workflows",
   "tags": [
    "LangGraph",
@@ -263,7 +412,7 @@
  },
  {
   "n": "09",
-  "order": 15,
+  "order": 23,
   "currentRoute": "/case-studies/dynamic-marketplace-optimization-competitive-intelligence-platform",
   "title": "Marketplace and competitor signals in one view",
   "summary": "A data platform connects operating events with competitor pricing information to support marketplace decisions.",
@@ -281,7 +430,7 @@
  },
  {
   "n": "10",
-  "order": 16,
+  "order": 24,
   "currentRoute": "/case-studies/ai-driven-investment-and-optimization-engine-for-short-term-rental-portfolios",
   "title": "Property decisions informed by market and listing data",
   "summary": "An analytics application combines market information, property economics, and image analysis to support short-term rental portfolio decisions.",
@@ -299,7 +448,7 @@
  },
  {
   "n": "11",
-  "order": 17,
+  "order": 25,
   "currentRoute": "/case-studies/ai-powered-hiring-and-candidate-assessment-system-for-automated-talent-lifecycle",
   "title": "A connected workflow for hiring and onboarding",
   "summary": "A hiring application coordinates screening, assessments, communication, and interview steps across the candidate journey.",
@@ -317,12 +466,12 @@
  },
  {
   "n": "13",
-  "order": 18,
+  "order": 26,
   "currentRoute": "/case-studies/hr-analytics-and-workforce-intelligence-dashboard",
   "title": "A consistent workforce view across organizations",
   "summary": "An HR analytics platform brings hiring, departures, workforce composition, and payroll information into standardized reporting.",
   "org": "HR service line supporting multiple organizations",
-  "industry": "HR Consulting, Payroll Services",
+  "industry": "HR Consulting, Payroll Services, Workforce Advisory",
   "tech": "BI dashboards, HR data integration, workforce analytics",
   "tags": [
    "BI dashboards",
@@ -335,7 +484,7 @@
  },
  {
   "n": "14",
-  "order": 19,
+  "order": 27,
   "currentRoute": "/case-studies/enterprise-cost-allocation-and-profitability-analytics-platform",
   "title": "Product and service costs traced to their drivers",
   "summary": "An activity-based costing platform helps a banking institution examine costs and profitability across operating units.",
@@ -353,12 +502,12 @@
  },
  {
   "n": "15",
-  "order": 20,
+  "order": 28,
   "currentRoute": "/case-studies/timesheet-analytics-and-workforce-productivity-dashboard",
   "title": "Time and utilization across service lines",
   "summary": "A workforce analytics dashboard makes chargeable work, non-chargeable activity, and project effort easier to examine.",
   "org": "Multi-service professional organization",
-  "industry": "Professional Services, Financial Advisory",
+  "industry": "Professional Services, Financial Advisory, Accounting, Tax, Consulting",
   "tech": "Data integration, BI dashboards, workforce analytics, KPI frameworks",
   "tags": [
    "Data integration",
@@ -371,12 +520,12 @@
  },
  {
   "n": "16",
-  "order": 21,
+  "order": 29,
   "currentRoute": "/case-studies/unlocking-a-first-ever-pharmacy-launch-across-apac-with-ml-powered-catalog-automation",
   "title": "Catalog automation for a pharmacy marketplace launch",
   "summary": "A product-matching pipeline connects inconsistent vendor names to a shared catalog, reducing manual onboarding effort.",
   "org": "Leading quick commerce marketplace platform",
-  "industry": "Quick Commerce, Marketplace Operations",
+  "industry": "Quick Commerce, Marketplace Operations, E Commerce",
   "tech": "Machine learning, natural language processing, fuzzy matching, marketplace backend integration",
   "tags": [
    "Machine learning",
@@ -389,12 +538,12 @@
  },
  {
   "n": "17",
-  "order": 22,
+  "order": 30,
   "currentRoute": "/case-studies/hospitality-profitability-intelligence-dashboard",
   "title": "Portfolio profitability visible across hotel properties",
   "summary": "A hospitality dashboard connects operating data and financial results across properties and departments.",
   "org": "Leading hospitality group operating multiple hotel properties",
-  "industry": "Hospitality, Hotel Operations",
+  "industry": "Hospitality, Hotel Operations, Financial Analytics",
   "tech": "Business Intelligence dashboards, data integration architecture, ERP and PMS systems, financial analytics frameworks",
   "tags": [
    "BI dashboards",
@@ -407,7 +556,7 @@
  },
  {
   "n": "18",
-  "order": 23,
+  "order": 31,
   "currentRoute": "/case-studies/asset-management-intelligence-dashboard-for-hospitality-portfolio",
   "title": "Asset condition and value across a hospitality portfolio",
   "summary": "An asset dashboard gives portfolio and property teams a shared view of records, condition, and financial information.",
@@ -425,12 +574,12 @@
  },
  {
   "n": "20",
-  "order": 24,
+  "order": 32,
   "currentRoute": "/case-studies/multi-agent-backend-systems-for-healthcare-insurance-navigation",
   "title": "Coordinated agents for healthcare insurance workflows",
   "summary": "A backend platform coordinates agent tasks and maintains patient-case context through multi-step insurance workflows.",
   "org": "AI-driven healthcare technology platform",
-  "industry": "Healthcare Technology, Insurance Navigation",
+  "industry": "Healthcare Technology, Insurance Navigation, Patient Advocacy",
   "tech": "Python, LangGraph, FastAPI, PostgreSQL, AWS, Multi-Agent Systems",
   "tags": [
    "LangGraph",
@@ -444,7 +593,7 @@
  },
  {
   "n": "21",
-  "order": 25,
+  "order": 33,
   "currentRoute": "/case-studies/real-time-commercial-performance-and-transaction-intelligence-platform",
   "title": "Commercial performance visible as transactions happen",
   "summary": "A cloud data platform gives marketplace teams a shared view of revenue, orders, and fulfillment activity.",
@@ -461,51 +610,13 @@
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"288\" height=\"148\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"6\" width=\"288\" height=\"22\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"16\" y=\"21\" style=\"font-size:10.5px\">Marketplace performance</text><rect x=\"248\" y=\"11\" width=\"38\" height=\"12\" fill=\"#3dbe8b\" class=\"af\"/><text class=\"sv-w\" x=\"267\" y=\"20\" text-anchor=\"middle\" style=\"font-size:7.5px\">LIVE</text><rect x=\"16\" y=\"36\" width=\"84\" height=\"32\" fill=\"#f3f3f3\"/><text class=\"sv-s\" x=\"24\" y=\"49\" style=\"font-size:8.6px\">REVENUE</text><rect x=\"24\" y=\"55\" width=\"56\" height=\"6\" fill=\"#0f256e\" class=\"ag\"/><rect x=\"108\" y=\"36\" width=\"84\" height=\"32\" fill=\"#f3f3f3\"/><text class=\"sv-s\" x=\"116\" y=\"49\" style=\"font-size:8.6px\">ORDERS</text><rect x=\"116\" y=\"55\" width=\"44\" height=\"6\" fill=\"#204ecf\" class=\"ag\" style=\"animation-delay:-1.10s\"/><rect x=\"200\" y=\"36\" width=\"84\" height=\"32\" fill=\"#f3f3f3\"/><text class=\"sv-s\" x=\"208\" y=\"49\" style=\"font-size:8.6px\">FULFILLMENT</text><rect x=\"208\" y=\"55\" width=\"50\" height=\"6\" fill=\"#09b6f9\" class=\"ag\" style=\"animation-delay:-2.20s\"/><path d=\"M18 128L52 120L86 124L120 106L154 110L188 94L222 98L256 82L282 86V144H18Z\" fill=\"#eaf1ff\" stroke=\"None\" stroke-width=\"0\"/><path d=\"M18 128L52 120L86 124L120 106L154 110L188 94L222 98L256 82L282 86\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"2\"/><circle class=\"mv\" r=\"3.5\" fill=\"#0f256e\" opacity=\"0\"><animateMotion dur=\"4.2s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M18 128L52 120L86 124L120 106L154 110L188 94L222 98L256 82L282 86\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"4.2s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle cx=\"282\" cy=\"86\" r=\"3.5\" fill=\"#09b6f9\" class=\"ap\"/><path d=\"M16 144H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/></g></svg>"
  },
  {
-  "n": "22",
-  "order": 26,
-  "currentRoute": "/case-studies/ai-systems-for-contract-document-ingestion-and-risk-analysis",
-  "title": "Contract analysis inside procurement workflows",
-  "summary": "An AI document pipeline captures agreements, structures their contents, and highlights clauses for review.",
-  "org": "Fintech platform",
-  "industry": "Fintech and Digital Financial Services",
-  "tech": "AWS Cloud, Retrieval Augmented Generation (RAG), Large Language Models, OCR-based document processing, Python AI services",
-  "tags": [
-   "AWS",
-   "RAG",
-   "LLMs",
-   "OCR"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><path d=\"M6 8H96L116 28V152H6Z\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><path d=\"M96 8V28H116\" fill=\"#eaf1ff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"14\" y=\"26\" style=\"font-size:10.5px\">Scanned PDF</text><rect x=\"14\" y=\"42\" width=\"74\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"14\" y=\"54\" width=\"90\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"63\" width=\"74\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"63\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"66\" width=\"66\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"78\" width=\"92\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"14\" y=\"90\" width=\"80\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"99\" width=\"96\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"99\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"102\" width=\"88\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"114\" width=\"58\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"123\" width=\"92\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"123\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"126\" width=\"84\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"138\" width=\"70\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"38\" width=\"100\" height=\"2.5\" fill=\"#09b6f9\" class=\"as\" style=\"--d:104px\"/><path d=\"M122 80H148\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M143 76L148 80L143 84\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M122 80H146\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle cx=\"135\" cy=\"66\" r=\"9\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"135\" y=\"69.5\" text-anchor=\"middle\" style=\"font-size:7.5px\">AI</text><rect x=\"156\" y=\"14\" width=\"138\" height=\"116\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"166\" y=\"32\" style=\"font-size:8.6px\">CLAUSES FLAGGED</text><path d=\"M166 39H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"166\" y=\"58\" style=\"font-size:10.5px\">Payment terms</text><rect x=\"166\" y=\"64\" width=\"96\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"54\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><path d=\"M278.5 54l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"83\" style=\"font-size:10.5px\">Termination</text><rect x=\"166\" y=\"89\" width=\"78\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"79\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-1.60s\"/><path d=\"M278.5 79l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"108\" style=\"font-size:10.5px\">Liability</text><rect x=\"166\" y=\"114\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"104\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><path d=\"M278.5 104l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><rect x=\"156\" y=\"136\" width=\"138\" height=\"18\" fill=\"#3dbe8b\"/><text class=\"sv-w\" x=\"225\" y=\"148.5\" text-anchor=\"middle\" style=\"font-size:9.5px\">Ready for review</text></g></svg>"
- },
- {
-  "n": "23",
-  "order": 27,
-  "currentRoute": "/case-studies/ai-infrastructure-for-a-multi-model-chatbot-platform-serving-80m-telecom-users",
-  "title": "AI request infrastructure for a telecom platform",
-  "summary": "A request-management layer coordinates traffic, model selection, and recovery across a multi-model AI service.",
-  "org": "Telecommunications provider",
-  "industry": "Telecommunications",
-  "tech": "AWS, Vertex AI, Python, distributed systems, API gateways, Load balancers, Auto scaling",
-  "tags": [
-   "AWS",
-   "Vertex AI",
-   "API gateways",
-   "Autoscaling"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"56\" width=\"72\" height=\"46\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"42.0\" y=\"76.0\" text-anchor=\"middle\">AI</text><text class=\"sv-t\" x=\"42.0\" y=\"90.0\" text-anchor=\"middle\">requests</text><path d=\"M78 79H102\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M97 75L102 79L97 83\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.3s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M78 79H100\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.3s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><rect x=\"102\" y=\"54\" width=\"92\" height=\"50\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"148.0\" y=\"76.0\" text-anchor=\"middle\">Request</text><text class=\"sv-w\" x=\"148.0\" y=\"90.0\" text-anchor=\"middle\">layer</text><path d=\"M194 79C206 79 204 27 214 27M194 79H214\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M194 79C206 79 204 131 214 131\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" class=\"am\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.8s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M194 79C206 79 204 27 214 27\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.8s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.8s\" begin=\"-0.90s\" repeatCount=\"indefinite\" path=\"M194 79H214\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.8s\" begin=\"-0.90s\" repeatCount=\"indefinite\"/></circle><rect x=\"214\" y=\"14\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><circle cx=\"226\" cy=\"27\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\"/><text class=\"sv-t\" x=\"236\" y=\"31\" style=\"font-size:10.5px\">Vertex AI</text><rect x=\"214\" y=\"66\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><circle cx=\"226\" cy=\"79\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"236\" y=\"83\" style=\"font-size:10.5px\">AWS</text><rect x=\"214\" y=\"118\" width=\"80\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\"/><circle cx=\"226\" cy=\"131\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"236\" y=\"135\" style=\"font-size:10.5px\">Fallback</text></g></svg>"
- },
- {
   "n": "24",
-  "order": 28,
+  "order": 34,
   "currentRoute": "/case-studies/advanced-conversion-rate-optimization-system-for-an-e-commerce-marketplace",
   "title": "A stronger evidence base for product experiments",
   "summary": "A marketplace analytics system connects behavioral data, experiment analysis, and customer segmentation.",
   "org": "E-commerce marketplace operating across multiple regions",
-  "industry": "E-commerce, Retail Technology",
+  "industry": "E-commerce, Retail Technology, Digital Marketplace",
   "tech": "Google Analytics, BigQuery, SQL, Python, Firebase, Google Tag Manager, statistical modeling, Looker Data Studio",
   "tags": [
    "BigQuery",
@@ -518,50 +629,13 @@
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"136\" height=\"104\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"18\" y=\"26\">Variant A</text><rect x=\"22\" y=\"66\" width=\"18\" height=\"34\" fill=\"#204ecf\" class=\"ab\"/><rect x=\"50\" y=\"52\" width=\"18\" height=\"48\" fill=\"#09b6f9\" class=\"ab\" style=\"animation-delay:-0.50s\"/><rect x=\"78\" y=\"60\" width=\"18\" height=\"40\" fill=\"#0f256e\" class=\"ab\" style=\"animation-delay:-1.00s\"/><rect x=\"106\" y=\"70\" width=\"18\" height=\"30\" fill=\"#204ecf\" class=\"ab\" style=\"animation-delay:-1.50s\"/><path d=\"M16 100H132\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><rect x=\"158\" y=\"6\" width=\"136\" height=\"104\" fill=\"#eaf1ff\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"170\" y=\"26\">Variant B</text><circle cx=\"278\" cy=\"22\" r=\"7\" fill=\"#3dbe8b\"/><path d=\"M275 22l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.4\"/><rect x=\"174\" y=\"56\" width=\"18\" height=\"44\" fill=\"#204ecf\" class=\"ab\" style=\"animation-delay:-0.30s\"/><rect x=\"202\" y=\"38\" width=\"18\" height=\"62\" fill=\"#09b6f9\" class=\"ab\" style=\"animation-delay:-0.80s\"/><rect x=\"230\" y=\"44\" width=\"18\" height=\"56\" fill=\"#0f256e\" class=\"ab\" style=\"animation-delay:-1.30s\"/><rect x=\"258\" y=\"54\" width=\"18\" height=\"46\" fill=\"#204ecf\" class=\"ab\" style=\"animation-delay:-1.80s\"/><path d=\"M168 100H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-s\" x=\"6\" y=\"136\">SEGMENTS</text><rect x=\"70\" y=\"124\" width=\"37\" height=\"17\" fill=\"#f3f3f3\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-s\" x=\"88.5\" y=\"135.9\" text-anchor=\"middle\" style=\"font-size:9.5px\">New</text><rect x=\"113\" y=\"124\" width=\"64\" height=\"17\" fill=\"#f3f3f3\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-s\" x=\"145.0\" y=\"135.9\" text-anchor=\"middle\" style=\"font-size:9.5px\">Returning</text><rect x=\"183\" y=\"124\" width=\"64\" height=\"17\" fill=\"#f3f3f3\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-s\" x=\"215.0\" y=\"135.9\" text-anchor=\"middle\" style=\"font-size:9.5px\">High value</text></g></svg>"
  },
  {
-  "n": "25",
-  "order": 29,
-  "currentRoute": "/case-studies/ai-enablement-and-workflow-automation-for-staffing-and-consultancy-firm",
-  "title": "Connected AI workflows for a professional-services firm",
-  "summary": "An enablement and automation engagement helps recruitment, client-service, and operations teams apply AI to recurring work.",
-  "org": "Staffing and consultancy firm",
-  "industry": "Staffing, Recruitment",
-  "tech": "Microsoft Copilot, ChatGPT, Claude, Slack, O365, Egnyte, Metal Platform",
-  "tags": [
-   "Microsoft Copilot",
-   "ChatGPT",
-   "Claude",
-   "Slack"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><path d=\"M150 80L44 26M150 80L256 26M150 80L44 134M150 80L256 134\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\" stroke-dasharray=\"4 3\" class=\"am\"/><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.2s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M44 26L150 80\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.2s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.2s\" begin=\"-1.10s\" repeatCount=\"indefinite\" path=\"M150 80L256 26\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.2s\" begin=\"-1.10s\" repeatCount=\"indefinite\"/></circle><rect x=\"96\" y=\"58\" width=\"108\" height=\"44\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"150\" y=\"77\" text-anchor=\"middle\">AI workflows</text><text class=\"sv-s\" x=\"150\" y=\"92\" text-anchor=\"middle\" style=\"fill:#9fb3e8\">with each team</text><rect x=\"6\" y=\"12\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"50.0\" y=\"30.0\" text-anchor=\"middle\">Recruitment</text><rect x=\"206\" y=\"12\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"250.0\" y=\"30.0\" text-anchor=\"middle\" style=\"font-size:10.5px\">Client service</text><rect x=\"6\" y=\"120\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"50.0\" y=\"138.0\" text-anchor=\"middle\">Operations</text><rect x=\"206\" y=\"120\" width=\"88\" height=\"28\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"250.0\" y=\"138.0\" text-anchor=\"middle\">Slack · O365</text></g></svg>"
- },
- {
-  "n": "26",
-  "order": 30,
-  "currentRoute": "/case-studies/ai-powered-enterprise-video-generation-platform-on-oracle-cloud",
-  "title": "Enterprise video creation in a connected application",
-  "summary": "A generation platform combines research, scripts, visuals, voice, and rendering in one creative workflow.",
-  "org": "Global enterprise with a diverse portfolio of consumer and B2B brands",
-  "industry": "Global Marketing, Advertising",
-  "tech": "Oracle Cloud Infrastructure, generative AI models, programmatic video rendering, enterprise marketing integrations",
-  "tags": [
-   "Oracle Cloud",
-   "Generative AI",
-   "Video rendering"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><text class=\"sv-s\" x=\"37\" y=\"34\" text-anchor=\"middle\">01</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"37.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Research</text><path d=\"M70 70H78\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M73 66L78 70L73 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"111\" y=\"34\" text-anchor=\"middle\">02</text><rect x=\"78\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"111.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Script</text><path d=\"M144 70H152\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M147 66L152 70L147 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"185\" y=\"34\" text-anchor=\"middle\">03</text><rect x=\"152\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"185.0\" y=\"67.5\" text-anchor=\"middle\" style=\"font-size:10px\">Visuals</text><text class=\"sv-t\" x=\"185.0\" y=\"80.5\" text-anchor=\"middle\" style=\"font-size:10px\">&amp; voice</text><path d=\"M218 70H226\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M221 66L226 70L221 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"259\" y=\"34\" text-anchor=\"middle\">04</text><rect x=\"226\" y=\"42\" width=\"66\" height=\"56\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"259.0\" y=\"74.0\" text-anchor=\"middle\" style=\"font-size:10px\">Render</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"2.5\" class=\"astep\"/><path d=\"M10 110V116H290V110\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"150\" y=\"134\" text-anchor=\"middle\">ONE CREATIVE WORKFLOW</text></g></svg>"
- },
- {
   "n": "27",
-  "order": 31,
+  "order": 35,
   "currentRoute": "/case-studies/voice-driven-ai-assistant-for-mobile-task-automation",
   "title": "Voice commands connected to email and calendar work",
   "summary": "A mobile assistant turns spoken requests into structured workflows across email and scheduling tools.",
   "org": "Venture-backed AI startup developing personal assistant technology",
-  "industry": "Artificial Intelligence, Mobile Applications",
+  "industry": "Artificial Intelligence, Mobile Applications, Productivity Software",
   "tech": "OpenAI API, LangChain, LangGraph, React Native, Python, Node.js, Google Workspace APIs",
   "tags": [
    "OpenAI API",
@@ -574,27 +648,8 @@
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><path d=\"M96 43H112\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" class=\"am\"/><rect x=\"6\" y=\"30\" width=\"90\" height=\"26\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"51.0\" y=\"47.0\" text-anchor=\"middle\" style=\"font-size:10px\">Voice request</text><path d=\"M96 109H112\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" class=\"am\"/><rect x=\"6\" y=\"96\" width=\"90\" height=\"26\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"51.0\" y=\"113.0\" text-anchor=\"middle\" style=\"font-size:10px\">Structured task</text><path d=\"M188 43H204\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" class=\"am\"/><rect x=\"204\" y=\"30\" width=\"90\" height=\"26\" fill=\"#eaf1ff\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"249.0\" y=\"47.0\" text-anchor=\"middle\" style=\"font-size:10px\">Calendar</text><path d=\"M188 109H204\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.2\" stroke-dasharray=\"3 3\" class=\"am\"/><rect x=\"204\" y=\"96\" width=\"90\" height=\"26\" fill=\"#eaf1ff\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"249.0\" y=\"113.0\" text-anchor=\"middle\" style=\"font-size:10px\">Email</text><rect x=\"112\" y=\"4\" width=\"76\" height=\"152\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\" rx=\"10\"/><rect x=\"138\" y=\"9\" width=\"24\" height=\"4\" fill=\"#0f256e\" rx=\"2\"/><rect x=\"118\" y=\"18\" width=\"64\" height=\"16\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"150\" y=\"29.5\" text-anchor=\"middle\" style=\"font-size:9px\">Assistant</text><g class=\"aseq\" style=\"animation-delay:0.0s\"><rect x=\"120\" y=\"42\" width=\"62\" height=\"18\" fill=\"#eaf1ff\"/><text class=\"sv-t\" x=\"151.0\" y=\"54\" text-anchor=\"middle\" style=\"font-size:7.6px\">“Move my 3pm”</text></g><g class=\"aseq\" style=\"animation-delay:0.7s\"><rect x=\"118\" y=\"65\" width=\"62\" height=\"18\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"149.0\" y=\"77\" text-anchor=\"middle\" style=\"font-size:7.6px\">Meeting moved</text></g><g class=\"aseq\" style=\"animation-delay:1.4s\"><rect x=\"122.6\" y=\"88\" width=\"59.4\" height=\"18\" fill=\"#eaf1ff\"/><text class=\"sv-t\" x=\"152.29999999999998\" y=\"100\" text-anchor=\"middle\" style=\"font-size:7.6px\">“Reply to it”</text></g><g class=\"aseq\" style=\"animation-delay:2.1s\"><rect x=\"118\" y=\"111\" width=\"57.12\" height=\"18\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"146.56\" y=\"123\" text-anchor=\"middle\" style=\"font-size:7.6px\">Draft ready</text></g><rect x=\"118\" y=\"138\" width=\"64\" height=\"12\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><circle cx=\"175\" cy=\"144\" r=\"3\" fill=\"#09b6f9\" class=\"ap\"/></g></svg>"
  },
  {
-  "n": "28",
-  "order": 32,
-  "currentRoute": "/case-studies/ai-powered-investor-email-processing-and-crm-data-structuring",
-  "title": "Investor emails turned into traceable CRM records",
-  "summary": "An AI workflow extracts relevant information from incoming messages and prepares structured records linked to the source.",
-  "org": "Investment data and intelligence firm",
-  "industry": "Financial Data & Investment Intelligence",
-  "tech": "Anthropic Claude, Python, FastAPI, Multi-Agent Architecture",
-  "tags": [
-   "Anthropic Claude",
-   "Python",
-   "FastAPI",
-   "Multi-agent"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"14\" width=\"110\" height=\"132\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><path d=\"M6 14L61 52L116 14\" fill=\"none\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"14\" y=\"70\" style=\"font-size:10px\">Investor email</text><rect x=\"14\" y=\"80\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"89\" width=\"78\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"89\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"92\" width=\"70\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"104\" width=\"92\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"113\" width=\"68\" height=\"11\" fill=\"#eaf1ff\"/><rect x=\"10\" y=\"113\" width=\"3\" height=\"11\" fill=\"#204ecf\"/><rect x=\"14\" y=\"116\" width=\"60\" height=\"5\" fill=\"#204ecf\" opacity=\"0.55\"/><rect x=\"14\" y=\"128\" width=\"80\" height=\"5\" fill=\"#d9dbe0\"/><rect x=\"10\" y=\"76\" width=\"100\" height=\"2.5\" fill=\"#09b6f9\" class=\"as\" style=\"--d:56px\"/><path d=\"M122 80H148\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M143 76L148 80L143 84\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M122 80H146\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.6s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle cx=\"135\" cy=\"66\" r=\"9\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"135\" y=\"69.5\" text-anchor=\"middle\" style=\"font-size:7.5px\">AI</text><rect x=\"156\" y=\"14\" width=\"138\" height=\"116\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"166\" y=\"32\" style=\"font-size:8.6px\">CRM RECORD</text><path d=\"M166 39H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><text class=\"sv-t\" x=\"166\" y=\"58\" style=\"font-size:10.5px\">Firm</text><rect x=\"166\" y=\"64\" width=\"96\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"54\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><path d=\"M278.5 54l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"83\" style=\"font-size:10.5px\">Contact</text><rect x=\"166\" y=\"89\" width=\"78\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"79\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-1.60s\"/><path d=\"M278.5 79l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-t\" x=\"166\" y=\"108\" style=\"font-size:10.5px\">Request</text><rect x=\"166\" y=\"114\" width=\"88\" height=\"5\" fill=\"#d9dbe0\"/><circle cx=\"281\" cy=\"104\" r=\"5\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-0.80s\"/><path d=\"M278.5 104l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><rect x=\"156\" y=\"136\" width=\"138\" height=\"18\" fill=\"#3dbe8b\"/><text class=\"sv-w\" x=\"225\" y=\"148.5\" text-anchor=\"middle\" style=\"font-size:9.5px\">Linked to source</text></g></svg>"
- },
- {
   "n": "29",
-  "order": 33,
+  "order": 36,
   "currentRoute": "/case-studies/voice-enabled-3d-ai-customer-virtual-assistant-for-conversational-banking",
   "title": "Conversational product guidance for a digital bank",
   "summary": "A voice-enabled virtual assistant helps visitors explore banking products through a conversational website experience.",
@@ -613,7 +668,7 @@
  },
  {
   "n": "30",
-  "order": 34,
+  "order": 37,
   "currentRoute": "/case-studies/operational-bottleneck-diagnosis-and-ai-automation-for-workflow-efficiency",
   "title": "Workflow diagnosis followed by targeted automation",
   "summary": "An operating assessment identifies where work waits, then connects automation to the delays that matter.",
@@ -631,7 +686,7 @@
  },
  {
   "n": "31",
-  "order": 35,
+  "order": 38,
   "currentRoute": "/case-studies/ai-voice-agents-for-sales-enablement-and-lead-qualification-automation",
   "title": "Voice qualification connected to the sales workflow",
   "summary": "AI voice agents collect early-stage requirements and route enquiries into the sales process.",
@@ -648,44 +703,8 @@
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"14\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"31.0\" text-anchor=\"middle\" style=\"font-size:10.5px\">Inbound call</text><rect x=\"6\" y=\"66\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"83.0\" text-anchor=\"middle\" style=\"font-size:10.5px\">Web enquiry</text><rect x=\"6\" y=\"118\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"135.0\" text-anchor=\"middle\">Callback</text><path d=\"M84 27C110 27 108 79 124 79M84 79H124M84 131C110 131 108 79 124 79\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M84 27C110 27 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\" path=\"M84 79H124\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\" path=\"M84 131C110 131 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\"/></circle><rect x=\"124\" y=\"58\" width=\"74\" height=\"42\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"161.0\" y=\"76.0\" text-anchor=\"middle\">Voice</text><text class=\"sv-w\" x=\"161.0\" y=\"90.0\" text-anchor=\"middle\">agent</text><path d=\"M198 79H214\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\" path=\"M198 79H214\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\"/></circle><rect x=\"214\" y=\"40\" width=\"80\" height=\"78\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"222\" y=\"56\">ROUTED TO</text><circle cx=\"228\" cy=\"72\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><text class=\"sv-t\" x=\"238\" y=\"76\" style=\"font-size:10.5px\">Sales</text><circle cx=\"228\" cy=\"89\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"238\" y=\"93\" style=\"font-size:10.5px\">Nurture</text><circle cx=\"228\" cy=\"106\" r=\"4\" fill=\"#455065\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"238\" y=\"110\" style=\"font-size:10.5px\">Not a fit</text></g></svg>"
  },
  {
-  "n": "32",
-  "order": 36,
-  "currentRoute": "/case-studies/ai-agents-for-talent-matching-and-automated-talent-project-mapping",
-  "title": "Project requirements matched to relevant expertise",
-  "summary": "AI agents prepare ranked candidate shortlists for a consulting platform, with placement decisions retained by its team.",
-  "org": "Global consulting and professional services platform",
-  "industry": "Professional Services, Consulting",
-  "tech": "AI Agents, Large Language Models, NLP, Workflow Automation",
-  "tags": [
-   "AI agents",
-   "LLMs",
-   "NLP"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"288\" height=\"148\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><rect x=\"6\" y=\"6\" width=\"288\" height=\"22\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"16\" y=\"21\" style=\"font-size:10.5px\">Shortlist · project brief</text><rect x=\"12\" y=\"38\" width=\"276\" height=\"26\" fill=\"#eaf1ff\"/><circle cx=\"26\" cy=\"51\" r=\"8\" fill=\"#0f256e\"/><text class=\"sv-w\" x=\"26\" y=\"54.5\" text-anchor=\"middle\" style=\"font-size:9px\">1</text><text class=\"sv-t\" x=\"42\" y=\"55\" style=\"font-size:10.5px\">Expert match 1</text><rect x=\"176\" y=\"48\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"48\" width=\"92\" height=\"6\" fill=\"#204ecf\" class=\"ag\"/><circle cx=\"26\" cy=\"79\" r=\"8\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"26\" y=\"82.5\" text-anchor=\"middle\" style=\"font-size:9px\">2</text><text class=\"sv-t\" x=\"42\" y=\"83\" style=\"font-size:10.5px\">Expert match 2</text><rect x=\"176\" y=\"76\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"76\" width=\"80\" height=\"6\" fill=\"#09b6f9\" class=\"ag\" style=\"animation-delay:-0.90s\"/><circle cx=\"26\" cy=\"107\" r=\"8\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.2\"/><text class=\"sv-t\" x=\"26\" y=\"110.5\" text-anchor=\"middle\" style=\"font-size:9px\">3</text><text class=\"sv-t\" x=\"42\" y=\"111\" style=\"font-size:10.5px\">Expert match 3</text><rect x=\"176\" y=\"104\" width=\"100\" height=\"6\" fill=\"#d9dbe0\"/><rect x=\"176\" y=\"104\" width=\"66\" height=\"6\" fill=\"#09b6f9\" class=\"ag\" style=\"animation-delay:-1.80s\"/><path d=\"M16 128H284\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><circle cx=\"22\" cy=\"142\" r=\"5\" fill=\"#3dbe8b\"/><path d=\"M19.5 142l2 2 3-4\" fill=\"none\" stroke=\"#fff\" stroke-width=\"1.3\"/><text class=\"sv-s\" x=\"34\" y=\"145.5\">Placement decided by the client team</text></g></svg>"
- },
- {
-  "n": "33",
-  "order": 37,
-  "currentRoute": "/case-studies/automated-email-response-and-ticket-handling-system-for-zero-touch-customer-support",
-  "title": "Email triage and responses with exception routing",
-  "summary": "A telecom support workflow classifies messages, prepares routine responses, and routes cases that need attention.",
-  "org": "National telecommunications and digital services provider",
-  "industry": "Telecommunications, Digital Services",
-  "tech": "Workflow Automation, NLP, Cloud Services, Email Automation",
-  "tags": [
-   "Workflow automation",
-   "NLP",
-   "Email automation"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"14\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"31.0\" text-anchor=\"middle\">Billing</text><rect x=\"6\" y=\"66\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"83.0\" text-anchor=\"middle\">Plan change</text><rect x=\"6\" y=\"118\" width=\"78\" height=\"26\" fill=\"#fff\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"45.0\" y=\"135.0\" text-anchor=\"middle\">Complaint</text><path d=\"M84 27C110 27 108 79 124 79M84 79H124M84 131C110 131 108 79 124 79\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\" path=\"M84 27C110 27 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"0s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\" path=\"M84 79H124\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-0.80s\" repeatCount=\"indefinite\"/></circle><circle class=\"mv\" r=\"3\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\" path=\"M84 131C110 131 108 79 124 79\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"2.4s\" begin=\"-1.60s\" repeatCount=\"indefinite\"/></circle><rect x=\"124\" y=\"58\" width=\"74\" height=\"42\" fill=\"#0f256e\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-w\" x=\"161.0\" y=\"76.0\" text-anchor=\"middle\">Classify</text><text class=\"sv-w\" x=\"161.0\" y=\"90.0\" text-anchor=\"middle\">&amp; draft</text><path d=\"M198 79H214\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><circle class=\"mv\" r=\"2.5\" fill=\"#09b6f9\" opacity=\"0\"><animateMotion dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\" path=\"M198 79H214\"/><animate attributeName=\"opacity\" values=\"0;1;1;0\" keyTimes=\"0;.12;.82;1\" dur=\"1.2s\" begin=\"-0.40s\" repeatCount=\"indefinite\"/></circle><rect x=\"214\" y=\"40\" width=\"80\" height=\"78\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"222\" y=\"56\">OUTCOME</text><circle cx=\"228\" cy=\"72\" r=\"4\" fill=\"#3dbe8b\" class=\"ap\" style=\"animation-delay:-2.40s\"/><text class=\"sv-t\" x=\"238\" y=\"76\" style=\"font-size:10.5px\">Reply</text><circle cx=\"228\" cy=\"89\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"238\" y=\"93\" style=\"font-size:10.5px\">Review</text><circle cx=\"228\" cy=\"106\" r=\"4\" fill=\"#455065\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"238\" y=\"110\" style=\"font-size:10.5px\">Escalate</text></g></svg>"
- },
- {
   "n": "34",
-  "order": 38,
+  "order": 39,
   "currentRoute": "/case-studies/llm-powered-customer-support-chatbot",
   "title": "Grounded customer support at telecom scale",
   "summary": "A support chatbot combines approved knowledge with relevant customer information and routes uncertain requests to people.",
@@ -704,7 +723,7 @@
  },
  {
   "n": "35",
-  "order": 39,
+  "order": 40,
   "currentRoute": "/case-studies/customer-pulse-sentiment-intelligence-dashboard",
   "title": "Customer sentiment brought into an operating view",
   "summary": "A dashboard combines support feedback and social signals to help teams investigate changes in customer sentiment.",
@@ -722,7 +741,7 @@
  },
  {
   "n": "36",
-  "order": 40,
+  "order": 41,
   "currentRoute": "/case-studies/predicting-4g-customer-churn-for-proactive-retention-using-machine-learning",
   "title": "Earlier visibility into customer churn risk",
   "summary": "A prediction workflow gives retention teams customer-risk signals within their existing operating tools.",
@@ -740,7 +759,7 @@
  },
  {
   "n": "37",
-  "order": 41,
+  "order": 42,
   "currentRoute": "/case-studies/deploying-global-gender-analytics-at-scale-through-production-gender-inference",
   "title": "Production delivery for demographic analytics",
   "summary": "A model deployment makes probabilistic demographic estimates available to authorized analytics workflows across markets.",
@@ -759,7 +778,7 @@
  },
  {
   "n": "38",
-  "order": 42,
+  "order": 43,
   "currentRoute": "/case-studies/credit-risk-lifestyle-index-for-alternative-financial-reliability-estimation",
   "title": "Alternative signals for financial-reliability analysis",
   "summary": "A behavioral index organizes usage and location-related signals into interpretable bands for financial analysis.",
@@ -777,12 +796,12 @@
  },
  {
   "n": "39",
-  "order": 43,
+  "order": 44,
   "currentRoute": "/case-studies/geospatial-wealth-index-for-national-socioeconomic-segmentation",
   "title": "Geospatial information made usable for market analysis",
   "summary": "A modeling and analytics platform combines geographic and behavioral sources into socioeconomic views.",
   "org": "National telecommunications and digital services provider",
-  "industry": "Telecommunications, Digital Services",
+  "industry": "Telecommunications, Digital Services, Development Analytics",
   "tech": "Geospatial analytics, machine learning, APIs, web scraping, dashboards, large scale data engineering",
   "tags": [
    "Geospatial analytics",
@@ -794,32 +813,13 @@
   "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><rect x=\"6\" y=\"6\" width=\"170\" height=\"148\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><polygon points=\"10,10 70,10 64,60 10,70\" fill=\"#ffffff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"70,10 130,10 120,52 64,60\" fill=\"#eaf1ff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"130,10 172,10 172,66 120,52\" fill=\"#c9d8fb\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"10,70 64,60 74,112 10,118\" fill=\"#eaf1ff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"64,60 120,52 128,104 74,112\" fill=\"#8fb0f3\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"120,52 172,66 172,120 128,104\" fill=\"#204ecf\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"10,118 74,112 70,150 10,150\" fill=\"#c9d8fb\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"74,112 128,104 132,150 70,150\" fill=\"#eaf1ff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><polygon points=\"128,104 172,120 172,150 132,150\" fill=\"#ffffff\" stroke=\"#d9dbe0\" stroke-width=\"1\"/><rect x=\"186\" y=\"22\" width=\"108\" height=\"116\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"196\" y=\"40\" style=\"font-size:8.6px\">AREA VIEW</text><circle cx=\"200\" cy=\"62\" r=\"4\" fill=\"#204ecf\" class=\"ap\" style=\"animation-delay:-2.40s\"/><text class=\"sv-t\" x=\"210\" y=\"66\" style=\"font-size:10.5px\">Geography</text><circle cx=\"200\" cy=\"86\" r=\"4\" fill=\"#09b6f9\" class=\"ap\" style=\"animation-delay:-1.60s\"/><text class=\"sv-t\" x=\"210\" y=\"90\" style=\"font-size:10.5px\">Behavior</text><circle cx=\"200\" cy=\"110\" r=\"4\" fill=\"#0f256e\" class=\"ap\" style=\"animation-delay:-0.80s\"/><text class=\"sv-t\" x=\"210\" y=\"114\" style=\"font-size:10.5px\">Area index</text></g></svg>"
  },
  {
-  "n": "40",
-  "order": 44,
-  "currentRoute": "/case-studies/real-time-platform-intelligence-ecosystem-monitoring",
-  "title": "Operational signals across the marketplace journey",
-  "summary": "A monitoring platform connects customer behavior, supply, system health, and marketing performance.",
-  "org": "Leading ride-hailing and delivery platform",
-  "industry": "Ride-hailing, Logistics",
-  "tech": "Real-Time Event Tracking, Streaming Analytics, SQL, BI Dashboards, AI-Assisted Querying",
-  "tags": [
-   "Event tracking",
-   "Streaming analytics",
-   "SQL",
-   "BI"
-  ],
-  "fullCaseStudyPage": null,
-  "workInProgress": false,
-  "cardArtSvg": "<svg viewBox=\"0 0 300 160\"><g font-family=\"Montserrat\"><text class=\"sv-s\" x=\"37\" y=\"34\" text-anchor=\"middle\">01</text><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"37\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Customers</text><path d=\"M12 85L22 81L32 84L42 79L52 82L62 77\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M70 70H78\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M73 66L78 70L73 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"111\" y=\"34\" text-anchor=\"middle\">02</text><rect x=\"78\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"111\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Supply</text><path d=\"M86 83L96 84L106 80L116 82L126 78L136 80\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M144 70H152\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M147 66L152 70L147 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"185\" y=\"34\" text-anchor=\"middle\">03</text><rect x=\"152\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"185\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">System</text><text class=\"sv-t\" x=\"185\" y=\"70\" text-anchor=\"middle\" style=\"font-size:9px\">health</text><path d=\"M160 80L170 82L180 81L190 83L200 82L210 84\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><path d=\"M218 70H226\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><path d=\"M221 66L226 70L221 74\" fill=\"none\" stroke=\"#204ecf\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"259\" y=\"34\" text-anchor=\"middle\">04</text><rect x=\"226\" y=\"42\" width=\"66\" height=\"56\" fill=\"#fff\" stroke=\"#0f256e\" stroke-width=\"1.5\"/><text class=\"sv-t\" x=\"259\" y=\"58\" text-anchor=\"middle\" style=\"font-size:9px\">Marketing</text><path d=\"M234 86L244 83L254 84L264 80L274 81L284 76\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"1.5\"/><rect x=\"4\" y=\"42\" width=\"66\" height=\"56\" fill=\"none\" stroke=\"#09b6f9\" stroke-width=\"2.5\" class=\"astep\"/><path d=\"M10 110V116H290V110\" fill=\"none\" stroke=\"#d9dbe0\" stroke-width=\"1.5\"/><text class=\"sv-s\" x=\"150\" y=\"134\" text-anchor=\"middle\">ONE MONITORING VIEW</text></g></svg>"
- },
- {
   "n": "41",
   "order": 45,
   "currentRoute": "/case-studies/customer-service-performance-cost-optimization",
   "title": "Support effort connected to cost and service decisions",
   "summary": "An analytics engagement identifies repetitive queries and helps teams direct support effort where it is needed.",
   "org": "Leading ride-hailing and delivery platform",
-  "industry": "Ride-hailing, Logistics",
+  "industry": "Ride-hailing, Logistics, On-Demand Services",
   "tech": "Customer Support Analytics, SQL-Based BI, Operational Dashboards",
   "tags": [
    "Support analytics",
@@ -837,7 +837,7 @@
   "title": "Live delivery performance across cities and zones",
   "summary": "An operations platform gives Bykea teams visibility into fulfillment, rider utilization, and emerging delivery bottlenecks.",
   "org": "Bykea",
-  "industry": "Ride-hailing, Logistics",
+  "industry": "Ride-hailing, Logistics, On-Demand Services",
   "tech": "Product Development, Real-Time Analytics, Event Streaming, SQL, Firebase, BigQuery, BI Dashboards, AI Chat Interface",
   "tags": [
    "Real-time analytics",
@@ -856,7 +856,7 @@
   "title": "Demand forecasts connected to supply decisions",
   "summary": "A forecasting workflow helps ride-hailing teams prepare for demand by city and time period.",
   "org": "Ride-hailing platform",
-  "industry": "Ride-hailing, Mobility",
+  "industry": "Ride-hailing, Mobility, On-Demand Services",
   "tech": "Time-Series Forecasting, Predictive Analytics",
   "tags": [
    "Time-series forecasting",
@@ -873,7 +873,7 @@
   "title": "Marketing incentives matched to customer behavior",
   "summary": "A segmentation workflow helps a marketplace target vouchers using recency, frequency, and customer value.",
   "org": "Leading ride-hailing and mobility platform in South Asia",
-  "industry": "Ride-hailing, Mobility",
+  "industry": "Ride-hailing, Mobility, On-Demand Services",
   "tech": "Behavioral Analytics, RFM Segmentation, SQL-Based Data Pipelines",
   "tags": [
    "Behavioral analytics",
@@ -891,7 +891,7 @@
   "title": "Location anomalies surfaced before payouts",
   "summary": "A fraud-detection workflow analyzes trip and location patterns to help operations investigate suspicious activity.",
   "org": "Leading ride-hailing and mobility platform in South Asia",
-  "industry": "Ride-hailing, Logistics",
+  "industry": "Ride-hailing, Logistics, Mobility",
   "tech": "Streaming Analytics, Machine Learning, Geospatial Intelligence",
   "tags": [
    "Streaming analytics",
