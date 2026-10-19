@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Flexagon Support Copilot | Paramount Intelligence</title>
@@ -1110,6 +1111,13 @@ p{margin:0}
         <p>Supported attachments are downloaded, then read or analyzed so the draft can reason over screenshots, logs and documents. Results are cached by file fingerprint, so the same file is never processed twice, and count and size limits keep processing predictable.</p>
       </div>
     </div>
+    <div class="att rv">
+      <div><h3><svg class="ico"><use href="#i-gauge"/></svg>Confidence score</h3></div>
+      <div>
+        <div class="ft"><span>0 to 100</span><span>Every draft</span><span>Saved in Postgres</span><span>Gate 4 of 5</span></div>
+        <p>Claude scores its own confidence in each draft, from 0 to 100, and returns the score with the draft and the context it used. It is the copilot's signal of how reliable a draft is before anything goes out. The score is saved with the draft in Postgres, and at routing a score of 60 or below sends the draft to a support engineer.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1165,6 +1173,12 @@ p{margin:0}
       <h2 class="title">The support engineer stays in charge</h2>
       <p class="sub">The private note links to a Review Interface. There the engineer can edit by hand, ask the AI to revise, add context and approve. Try each action.</p>
     </div>
+    <div class="note rv" style="margin-top:0;margin-bottom:28px"><span class="lbl">What changes for a support engineer</span><ul class="pts cols">
+      <li><b>Before:</b> one ticket often meant checking six places by hand, then writing the reply from a blank page.</li>
+      <li><b>Routine messages:</b> thank-yous, requests to close and reports that the issue is fixed are handled without an AI draft, and the action is logged.</li>
+      <li><b>Real follow-ups:</b> by default, the ticket already carries a private note with a researched draft, the context it used and a review link.</li>
+      <li><b>The engineer's part:</b> open the review link, check the evidence and references behind the draft, edit it or ask the AI to revise it, then approve it and send it to the customer.</li>
+    </ul></div>
     <ol class="rsteps rv" id="rSteps">
       <li class="done"><b>01</b>Private note with link</li>
       <li class="on"><b>02</b>Ticket and draft loaded</li>
@@ -1212,6 +1226,7 @@ We'll review the log and confirm the next step.</div>
       <li><b>Approve:</b> the final draft is converted to HTML, marked as approved and posted as a private note.</li>
       <li><b>Everything recorded:</b> drafts, edits and decisions stay in Postgres for audit and debugging.</li>
     </ul></div>
+    <div class="verdict rv"><b>After approval</b><span>The approved draft sits on the ticket as a private note, and the engineer sends it to the customer from Freshdesk. On the review path, nothing reaches a customer before an engineer approves it.</span></div>
   </div>
 </section>
 
@@ -1394,7 +1409,7 @@ const watch=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{th
   const D={
     fd:{t:'Freshdesk ticket events',g:'Freshdesk',p:'Every new ticket or customer reply sends a webhook to the copilot. Freshdesk is also where every result lands: notes, replies and status updates.',rows:[['Trigger','New ticket or customer reply'],['Receives back','Private notes, public replies, status updates']]},
     main:{t:'Core orchestration workflow',g:'n8n · 58 nodes',p:'Receives the event, waits 90 seconds so the latest reply is visible, loads the ticket, classifies the latest customer message, blocks duplicates, requests a draft and routes the result.',rows:[['Stages','13, from webhook to reply or review'],['Safeguards','Duplicate protection, routing gates, logged skips']]},
-    route:{t:'Routing decision',g:'n8n · inside the core flow',p:'Refreshes the ticket, then checks five gates: a valid draft, support mailbox scope, assignment to the approved AI responder, confidence above 60 and no reply already sent.',rows:[['All pass','Direct public reply'],['Any fail','Private note for human review']]},
+    route:{t:'Routing decision',g:'n8n · inside the core flow',p:'Refreshes the ticket so its assignment is current, then applies the five gates. The decision section below explains each gate and lets you try them.',rows:[['All pass','Direct public reply'],['Any fail','Private note for human review']]},
     reply:{t:'Direct public reply',g:'Freshdesk',p:'The customer-facing reply is formatted and posted, the ticket is set to Waiting on Customer, and the send is logged so the same reply never goes out twice.',rows:[['Requires','All five gates'],['Then','Status set to Waiting on Customer']]},
     note:{t:'Private review note',g:'Freshdesk',p:'When a direct reply is not allowed, the draft is posted as a private note that only agents can see, with a link to the Review Interface.',rows:[['Contains','The draft and a review link'],['Used for','Everything the gates do not clear']]},
     draft:{t:'Draft and Edit API',g:'n8n · 21 nodes · Claude',p:'An AI agent built on Anthropic Claude writes or revises the draft from ticket context, conversation history, attachments, engineer-added context, approved canned responses and retrieval tools.',rows:[['Returns','Draft, confidence score, context used'],['Also used for','AI revisions from the Review Interface']]},
@@ -1404,7 +1419,7 @@ const watch=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{th
     apis:{t:'Review APIs',g:'n8n · 4 workflows',p:'Single-purpose APIs behind the Review Interface: Load Ticket (9 nodes), Manual Edit (4), External Context (6) and Approval (7).',rows:[['Approval','Final draft to HTML, approval marker, private note'],['Context','Saved for the next draft']]},
     pg:{t:'Postgres state store',g:'PostgreSQL',p:'Keeps ticket sessions, context versions, drafts, confidence scores, routing decisions, skip reasons and the attachment cache, so every decision can be traced.',rows:[['Key records','Ticket sessions and context versions'],['Used for','Duplicate checks, review, audit, debugging']]}
   };
-  const TR=[['fd','A customer replies, and Freshdesk sends a webhook.'],['main','The core workflow waits 90 seconds, loads the ticket and classifies the message.'],['pg','It reads the ticket session and checks the context hash for duplicates.'],['att','Attachments are extracted, or read from the cache.'],['kb','Relevant docs, past tickets and Jira records are retrieved.'],['draft','Claude drafts the reply and scores its confidence.'],['route','Five gates decide between direct reply and human review.'],['note','A gate fails, so the draft is posted as a private note.'],['ui','A support engineer opens the review link.'],['apis','Edits and context are saved, and the approved reply is posted.']];
+  const TR=[['fd','A customer replies, and Freshdesk sends a webhook.'],['main','The core workflow waits 90 seconds, loads the ticket and classifies the message.'],['pg','It reads the ticket session and checks the context hash for duplicates.'],['att','Attachments are extracted, or read from the cache.'],['kb','Relevant docs, past tickets and Jira records are retrieved.'],['draft','Claude drafts the reply and scores its confidence.'],['route','Five gates decide between direct reply and human review.'],['note','A gate fails, so the draft is posted as a private note.'],['ui','A support engineer opens the review link.'],['apis','Edits and context are saved, and the approved reply is posted as a private note.']];
   const nodes=$$('.nd',lanes); let tracing=false, tok=0;
   const show=(k,step)=>{ const d=D[k]; nodes.forEach(n=>n.classList.toggle('on',n.dataset.n===k));
     info.innerHTML=`<span class="step">${step||''}</span><span class="tg">${d.g}</span><h3>${d.t}</h3><p>${d.p}</p><dl>${d.rows.map(r=>`<dt>${r[0]}</dt><dd>${r[1]}</dd>`).join('')}</dl><div class="acts"><button type="button" class="btn btn-navy" id="trBtn"><svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="${tracing?'M4 3h3v10H4zM9 3h3v10H9z':'M4 2.5v11l9-5.5z'}" fill="currentColor"/></svg>${tracing?'Stop the trace':'Trace a ticket'}</button></div>`;

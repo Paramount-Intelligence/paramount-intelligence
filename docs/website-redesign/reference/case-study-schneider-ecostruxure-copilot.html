@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Schneider Electric EcoStruxure Co-Pilot | Paramount Intelligence</title>
@@ -1115,7 +1116,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>A knowledge bottleneck:</b> when senior engineers were busy, away or left, their knowledge became hard to reach and work slowed.</li>
       <li><b>Repeat questions:</b> up to 40% of senior engineers' time went on repetitive questions and logic checks.</li>
       <li><b>A steep learning curve:</b> junior engineers needed close oversight to avoid configuration errors.</li>
-      <li><b>Slow change:</b> modifying a control topology or adding a production line meant weeks of manual code checks.</li>
+      <li><b>Slow change:</b> modifying a control topology or adding a production line meant weeks of manual code checks, with configuration logic reviewed by hand for errors.</li>
     </ul></div>
   </div>
 </section>
@@ -1194,6 +1195,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Configured, not coded:</b> Vertex AI Studio handles chunking and embeddings; Cloud Spanner scales with built-in sharding and strict isolation.</li>
       <li><b>Behaviour outside the code:</b> prompts, guardrails and output rules are versioned in the console and change without redeploying.</li>
     </ul></div>
+    <div class="verdict rv"><b>Where expertise comes from</b><span>Documents. The co-pilot answers only from the knowledge base, which holds historical technical documentation alongside manuals, schematics and SOPs. What one expert knows reaches every engineer once it is written down and added.</span></div>
   </div>
 </section>
 
@@ -1224,7 +1226,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Step 5, the engineer asks:</b> inside EcoStruxure; Foundry checks identity through Entra ID and applies safety controls first.</li>
       <li><b>Step 6, retrieval:</b> Foundry calls the Vertex AI RAG Engine through a secure API gateway; Spanner returns the best passages and diagram descriptions.</li>
       <li><b>Step 7, the governed answer:</b> a foundation model such as Gemini or GPT writes from that context; Foundry checks it before it is shown.</li>
-      <li><b>Beyond troubleshooting:</b> for configuration tasks it pre-generates automation code blocks, checks them for errors and suggests reusable libraries.</li>
+      <li><b>Beyond troubleshooting:</b> for configuration tasks it pre-generates automation code blocks, checks each block for errors before the engineer sees it and suggests reusable libraries.</li>
     </ul></div>
   </div>
 </section>
@@ -1245,6 +1247,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="se-col" data-o="ex"><span class="t">Schneider EcoStruxure</span><b>Automation Expert</b><ul></ul></div>
       </div>
     </div>
+    <div class="note rv"><span class="lbl">Why two platforms</span><ul class="pts cols">
+      <li><b>Set by the brief:</b> the design had to span Google Cloud and Microsoft environments and meet enterprise-grade identity governance and security requirements.</li>
+      <li><b>Google Cloud for retrieval:</b> native ingestion, Gemini parsing for diagrams and Cloud Spanner vector storage that scales to large engineering datasets, on managed services rather than custom vector database infrastructure.</li>
+      <li><b>Microsoft AI Foundry for governance:</b> identity through Entra ID, safety enforcement, agent lifecycle management and orchestration of the retrieval call, in one runtime.</li>
+    </ul></div>
     <div class="verdict rv"><b>The split</b><span>Google Cloud's retrieval at scale, under Microsoft's enterprise governance, with nothing new for engineers to learn.</span></div>
   </div>
 </section>

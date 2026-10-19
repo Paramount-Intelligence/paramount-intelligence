@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Donaldson Market Intelligence Platform | Paramount Intelligence</title>
@@ -1139,7 +1140,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <section class="wrap" aria-label="Client data protection">
   <div class="ag-protect rv">
     <span class="ag-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5" class="t"/></svg></span>
-    <div><b>Client data protected</b><span>Prices and most part numbers are masked, and records, counts and screens use sample values. The platform is real; the data shown is not.</span></div>
+    <div><b>Client data protected</b><span>Prices and most part numbers are masked. Records, projects, page counts and statuses in the demos, console replica and product screens are sample values: the platform is real, that data is not. The two result figures marked “Platform snapshot” are platform-level counts at one point in time, not live figures.</span></div>
     <span class="ag-redact" aria-hidden="true"><i></i><i></i><i></i></span>
   </div>
 </section>
@@ -1203,7 +1204,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="note rv"><span class="lbl">What happens to every record</span><ul class="pts cols">
       <li><b>Normalized once:</b> product name, part number, brand, price, currency, country, source URL, page number and extraction time.</li>
       <li><b>Part numbers untangled:</b> the first primary part number is kept, and cross-reference numbers go in their own field.</li>
-      <li><b>Prices made comparable:</b> European decimals such as 1.234,56 become 1234.56, and currency symbols map to ISO codes.</li>
+      <li><b>One price format, source currency:</b> European decimals such as 1.234,56 become 1234.56, and currency symbols map to ISO codes. Each price stays in the currency of its source, with the ISO code in its own field.</li>
       <li><b>Never twice:</b> ingestion is idempotent per run token, so replaying a run never duplicates rows.</li>
     </ul></div>
   </div>
@@ -1256,6 +1257,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Built for the site:</b> Selenium, Playwright or DrissionPage, chosen per target, with local locales where markets need them.</li>
       <li><b>One path out:</b> scraper output goes through the same ingestion, storage and export path as ParseHub runs.</li>
     </ul></div>
+    <div class="note rv"><span class="lbl">Where operation ends and engineering begins</span><ul class="pts cols">
+      <li><b>Configured projects:</b> business users find, run, resume, schedule and export them in the console, and import project metadata in bulk. The user guide covers each step.</li>
+      <li><b>New or changed ParseHub sources:</b> a project built in ParseHub reaches the console through project sync. The client guide covers templates, fields, regex and adapting a project to a new brand.</li>
+      <li><b>Custom scrapers:</b> these are Python code. Adding one, or repairing one after a site changes, is engineering work, documented in the scraping-suite guide.</li>
+      <li><b>The platform itself:</b> changes to the API, database, automation or deployment follow the technical handover's change procedures and the deployment guide.</li>
+    </ul></div>
   </div>
 </section>
 
@@ -1275,7 +1282,13 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       </aside>
       <div class="dn-main" id="amain"></div>
     </div>
-    <p class="demo-note" style="margin-top:8px">Working replica built for this page · sample projects and masked values · no live systems are called</p>
+    <p class="demo-note" style="margin-top:8px">Working replica built for this page · sample projects and masked values · the project, run and record totals repeat the platform snapshot from the result · no live systems are called</p>
+    <div class="note rv"><span class="lbl">From a finished run to a price comparison</span><ul class="pts cols">
+      <li><b>Check coverage:</b> each project shows pages collected against the total pages in its metadata, and a project whose resume stops advancing shows as Blocked until someone reviews it. Coverage is checked against the catalog, not assumed from a finished run.</li>
+      <li><b>Check the records:</b> ingestion tests every record for a part number, a numeric price, a recognized currency and a valid source URL. A row that looks wrong traces back to its source URL, page number, run and session.</li>
+      <li><b>Export the right scope:</b> the latest run or a whole cumulative session, as CSV for business review or JSON for system-to-system handoff.</li>
+      <li><b>Compare the market:</b> Donaldson and competing brands arrive in one record shape, so analysts can set Donaldson prices and part numbers beside competitors' in the same market without reworking formats first.</li>
+    </ul></div>
   </div>
 </section>
 

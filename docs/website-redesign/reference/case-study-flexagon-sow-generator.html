@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Flexagon SOW Generator | Paramount Intelligence</title>
@@ -77,6 +78,7 @@ p{margin:0}
 .verdict{margin-top:18px;display:flex;gap:18px;align-items:center;background:var(--navy);color:#fff;padding:18px 24px}
 .verdict b{color:var(--cyan);font-weight:700;white-space:nowrap}
 @media (max-width:640px){.verdict{flex-direction:column;align-items:flex-start;gap:6px}}
+.verdict a{color:#fff;font-weight:600;text-underline-offset:3px}
 
 /* NAV */
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
@@ -1171,7 +1173,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <div class="fx-lrail" id="lrail" role="tablist" aria-label="SOW lifecycle"></div>
       <div class="fx-lbody box" id="lbody" aria-live="polite"></div>
     </div>
-    <div class="verdict rv"><b>The principle</b><span>Once a timeline has been reviewed, the approved version is authoritative. The final document is always rendered from it, never silently regenerated.</span></div>
+    <div class="verdict rv"><b>The principle</b><span>Once a timeline has been reviewed, the approved version is authoritative. The final document is always rendered from it, never silently regenerated. Reopening a saved SOW loads that approved timeline as it was saved, not a fresh one.</span></div>
+    <div class="note rv"><span class="lbl">One engagement, start to finish</span><ul class="pts">
+      <li><b>Enter it once:</b> someone on the sales or delivery team fills in the company, SOW details, scope, technical answers and signers in the Form App, and saves a draft.</li>
+      <li><b>Review the plan:</b> the platform builds the timeline from the rules; a reviewer edits tasks, adds rows and reorders them, then saves it as approved.</li>
+      <li><b>Change the scope:</b> if scope changes after review, the platform removes only the generated rows owned by the dropped scope, adds the new scope before the closing phases, and keeps the reviewer's edits.</li>
+      <li><b>Render the document:</b> the Word file is built from the approved timeline, using the standard or Upgrade &amp; Training template.</li>
+      <li><b>Hand off to readiness:</b> once the SOW is signed, its scope seeds the readiness checklist, one section per technology, to prepare the project for implementation.</li>
+    </ul></div>
   </div>
 </section>
 
@@ -1195,7 +1204,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="note rv"><span class="lbl">How a timeline is assembled</span><ul class="pts cols">
       <li><b>Normalize first:</b> scope is reduced to four canonical groups, aliases are resolved against the catalog, and duplicates removed.</li>
       <li><b>Content from Qdrant:</b> technology blocks come from the sow_templates collection; rules, fixed blocks and hour overrides from PostgreSQL.</li>
-      <li><b>Capacity-aware:</b> a week holds 40 hours; content that overflows creates continuation weeks.</li>
+      <li><b>Capacity-aware:</b> a codified planning rule (BR-025) gives each timeline week a capacity of 40 hours; content that overflows creates continuation weeks.</li>
       <li><b>Fixed closing phases:</b> Requirements opens when DevOps exists; Cutover, HyperCare and Project Wrap close, sized by DevOps count.</li>
     </ul></div>
   </div>
@@ -1222,6 +1231,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       </div>
       <div class="fx-rverd" id="rverd" aria-live="polite"></div>
     </div>
+    <div class="verdict rv"><b>Removed vs kept</b><span>Dropping scope is deliberate, so the generated rows it owns go with it. Rows a reviewer added stay, even when they share a week with the removed scope.</span></div>
     <div class="note rv"><span class="lbl">How reconciliation works</span><ul class="pts cols">
       <li><b>The backend decides the delta:</b> added, removed and unchanged scope are calculated from previous and current scope, never trusted from the browser.</li>
       <li><b>Rows know their owner:</b> generated rows carry scope group, key, label and source week, so only removed scope's rows are removed.</li>
@@ -1310,6 +1320,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>Strongest match first:</b> section title, then technology label, then tool category, then main category, each tried across the whole catalog.</li>
       <li><b>Export ready:</b> completed checklists export per technology, and the Services Copilot can update or export them by command.</li>
     </ul></div>
+    <div class="verdict rv"><b>Next in the chain</b><span>The checklist is the step between the signed SOW and implementation. The <a href="case-study-flexagon-execution-portal.html">Flexagon Execution Portal</a> case study picks up from there: it turns the SOW and its completed checklist into review-ready implementation documents.</span></div>
   </div>
 </section>
 

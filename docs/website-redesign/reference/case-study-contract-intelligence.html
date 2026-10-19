@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Contract Intelligence Copilot | Paramount Intelligence</title>
@@ -529,6 +530,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 .ci-steps li.on{color:var(--navy);font-weight:600}
 .ci-steps li.on .n{background:var(--royal);border-color:var(--royal);color:#fff}
 .ci-steps li.done .n{border-color:var(--royal);color:var(--royal)}
+.ci-journey li{color:var(--text);font-size:.9rem;line-height:1.5;align-items:start}
+.ci-journey li b{color:var(--navy)}
+.ci-journey li:last-child{border-bottom:0}
+.ci-journey li>span:last-child{padding-top:4px}
 .ci-run{display:flex;gap:8px;flex-wrap:wrap}
 .ci-run button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.8rem;padding:9px 14px;cursor:pointer}
 .ci-run button.pri{background:var(--cyan);border-color:var(--cyan)}
@@ -1043,7 +1048,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <p class="lede">Contract Intelligence Copilot: AI contract review built on Claude and serverless AWS, for a global life sciences enterprise.</p>
       <ul class="pts">
         <li><b>Validate:</b> every clause checked against the client's 10-clause standard.</li>
-        <li><b>Compare:</b> two vendor contracts side by side, with a recommendation.</li>
+        <li><b>Compare:</b> two vendor contracts side by side, with a recommendation on whose terms are stronger.</li>
         <li><b>Ask:</b> plain-English questions, answered with the clause cited.</li>
       </ul>
       <div class="ctas">
@@ -1139,7 +1144,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       </div>
     </div>
     <div class="note rv"><span class="lbl">Why each one mattered</span><ul class="pts cols">
-      <li><b>Real-world files:</b> contracts arrive as PDF, DOCX or TXT, so all three had to work out of the box.</li>
+      <li><b>Real-world files:</b> contracts arrive as PDF, DOCX or TXT, so all three had to work out of the box. Text-based PDFs work today. Scanned contracts need OCR, which is planned for Phase 3.</li>
       <li><b>Long documents:</b> vendor proposals can approach 200 pages and still need a full read.</li>
       <li><b>Structured output:</b> reviewers need statuses, fields and fixes they can act on, not free-form AI prose.</li>
       <li><b>Secure handling:</b> enterprise contracts stay encrypted, with credentials kept out of the code.</li>
@@ -1279,7 +1284,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
       <li><b>A negotiation tip on every row,</b> plus an overall recommendation and the top 3 things to push back on.</li>
       <li><b>Chat built into the same screen:</b> any question about either contract, answered with the actual clause cited.</li>
       <li><b>One click to a draft negotiation letter</b> for the weaker vendor, ready for legal to review.</li>
+      <li><b>A verdict on terms, not on the vendor:</b> the recommendation says whose contract terms are stronger. It does not assess the vendors themselves, so choosing one stays with the team.</li>
+      <li><b>10 clauses in the standard, 25 in the real comparison:</b> the Validator checks one contract against the client's 10-clause standard. The comparison weighs two contracts against each other, clause by clause, so it is not limited to those ten: the real one under Proof covers 25 clauses.</li>
     </ul></div>
+    <div class="note rv"><span class="lbl">One contract, from upload to decision</span>
+      <ol class="ci-steps ci-journey">
+        <li class="done"><span class="n">1</span><span><b>Upload.</b> The vendor's contract goes into the document library once, as a PDF, DOCX or TXT file.</span></li>
+        <li class="done"><span class="n">2</span><span><b>Validate.</b> Claude extracts the key terms and rates every clause against the client's 10-clause standard: GREEN, AMBER or RED, with a fix for each flagged clause.</span></li>
+        <li class="done"><span class="n">3</span><span><b>Triage.</b> Procurement flags the high-risk items, so legal reads the flagged clauses, not every page.</span></li>
+        <li class="done"><span class="n">4</span><span><b>Ask.</b> Reviewers question any clause in the AI Chat and get answers that cite the clause.</span></li>
+        <li class="done"><span class="n">5</span><span><b>Push back.</b> The drafted follow-up questions go to the vendor. For two competing vendors, the comparison adds the top 3 points to negotiate and a draft negotiation letter for legal to review.</span></li>
+        <li class="done"><span class="n">6</span><span><b>Decide.</b> The client's team decides whether to sign or go back to the vendor, using the report. The prototype does not route approvals: approval routing and workflow tracking are listed under next steps.</span></li>
+      </ol>
+      <p class="demo-note" style="margin-top:14px"><b>Example from the demos above:</b> §14.1 auto-renews with no opt-out window, so it is rated RED. The fix is a 60-day opt-out. The vendor answers the drafted questions, and the contract is signed after that one change.</p>
+    </div>
   </div>
 </section>
 
@@ -1289,7 +1307,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     <div class="head rv"><span class="eyebrow">Proof</span><h2 class="title">Real screens from the prototype</h2><p class="sub">Captured from the working app. Client, vendor and document names are blurred.</p></div>
     <div class="ci-shots rv">
       <figure><div class="fr"><img src="images/ci-01-proposal-validator.webp" alt="Proposal Validator results: metadata, an AMBER overall risk with 9 compliant, 7 needs review and 1 non-compliant clauses, and the clause review table" loading="lazy"></div><figcaption><b>Proposal Validator.</b> Overall risk, clause counts and the clause-by-clause review with recommendations.</figcaption></figure>
-      <figure><div class="fr"><img src="images/ci-02-contract-comparison.webp" alt="Vendor comparison results: recommended vendor stronger on 24 of 25 clauses, top negotiation priorities, Claude's overall assessment and the clause-by-clause table" loading="lazy"></div><figcaption><b>Contract Comparison.</b> Recommended vendor (stronger on 24 of 25 clauses), negotiation priorities and Claude's overall assessment.</figcaption></figure>
+      <figure><div class="fr"><img src="images/ci-02-contract-comparison.webp" alt="Vendor comparison results: recommended vendor stronger on 24 of 25 clauses, top negotiation priorities, Claude's overall assessment and the clause-by-clause table" loading="lazy"></div><figcaption><b>Contract Comparison.</b> Recommended vendor on contract terms (stronger on 24 of 25 clauses), negotiation priorities and Claude's overall assessment.</figcaption></figure>
     </div>
   </div>
 </section>
