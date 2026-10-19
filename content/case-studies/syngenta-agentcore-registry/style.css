@@ -1,0 +1,897 @@
+.cs-syngenta-agentcore-registry{
+  --navy:#0f256e;  --royal:#204ecf;  --cyan:#09b6f9;  --green:#3dbe8b;
+  --grey:#f3f3f3;  --line:#d9dbe0;   --pale:#eaf1ff;  --warn:#c2410c;
+  --text:#2b3245;  --muted:#6b7385;  --white:#ffffff;
+  --cover-a:#262d3d; --cover-b:#1a3a9e;
+  --sia-bg:#0e0c22; --sia-card:#1a1838; --sia-line:#3a3470; --sia-user:#3b37c9; --sia-glow:#7b5cff;
+  --f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+.cs-syngenta-agentcore-registry,.cs-syngenta-agentcore-registry *{box-sizing:border-box}
+.cs-syngenta-agentcore-registry{scroll-behavior:smooth}
+.cs-syngenta-agentcore-registry{margin:0;background:var(--white);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.cs-syngenta-agentcore-registry img{max-width:100%;display:block}
+.cs-syngenta-agentcore-registry a{color:inherit}
+.cs-syngenta-agentcore-registry button{font-family:inherit}
+.cs-syngenta-agentcore-registry :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.cs-syngenta-agentcore-registry h1,.cs-syngenta-agentcore-registry h2,.cs-syngenta-agentcore-registry h3{margin:0;text-wrap:balance}
+.cs-syngenta-agentcore-registry p{margin:0}
+.cs-syngenta-agentcore-registry .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.cs-syngenta-agentcore-registry .band{background:var(--grey)}
+.cs-syngenta-agentcore-registry .ch{padding-block:clamp(64px,9vw,112px)}
+.cs-syngenta-agentcore-registry .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan)}
+.cs-syngenta-agentcore-registry .title{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:400;color:var(--royal);line-height:1.12;letter-spacing:-.01em}
+.cs-syngenta-agentcore-registry .sub{color:var(--text);font-size:1.02rem;max-width:62ch}
+.cs-syngenta-agentcore-registry .head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,48px)}
+.cs-syngenta-agentcore-registry .plus{color:var(--cyan);font-weight:700;margin-right:6px}
+.cs-syngenta-agentcore-registry .rule{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:700;color:var(--navy)}
+.cs-syngenta-agentcore-registry .rule::before,.cs-syngenta-agentcore-registry .rule::after{content:"";flex:1;height:2px;background:var(--navy)}
+.cs-syngenta-agentcore-registry .rule span{white-space:nowrap}
+.cs-syngenta-agentcore-registry .rule.dots{position:relative}
+.cs-syngenta-agentcore-registry .box{border:1.5px solid var(--navy);background:var(--white)}
+.cs-syngenta-agentcore-registry .cap{font-size:.78rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .pill-tag{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--green);color:#fff;padding:6px 12px}
+.cs-syngenta-agentcore-registry .pulse{width:8px;height:8px;border-radius:50%;background:#fff;animation:cs-syngenta-agentcore-registry-pl 1.8s infinite}
+@keyframes cs-syngenta-agentcore-registry-pl{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}80%,100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+.cs-syngenta-agentcore-registry .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;text-decoration:none;padding:13px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.cs-syngenta-agentcore-registry .btn:hover{transform:translateY(-2px)}
+.cs-syngenta-agentcore-registry .btn-cyan{background:var(--cyan);color:var(--navy)}
+.cs-syngenta-agentcore-registry .btn-line{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.cs-syngenta-agentcore-registry .btn-line:hover{background:rgba(255,255,255,.1)}
+.cs-syngenta-agentcore-registry .btn-navy{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .seg{display:inline-flex;border:1.5px solid var(--navy)}
+.cs-syngenta-agentcore-registry .seg button{border:0;background:#fff;color:var(--navy);font-weight:600;font-size:.82rem;padding:9px 16px;cursor:pointer;transition:background .25s,color .25s}
+.cs-syngenta-agentcore-registry .seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .rv{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.cs-syngenta-agentcore-registry.js .rv.pending{transform:translateY(26px);opacity:.3}
+.cs-syngenta-agentcore-registry .pts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cs-syngenta-agentcore-registry .pts li{position:relative;padding-left:20px;font-size:.93rem;line-height:1.55;color:var(--text);min-width:0}
+.cs-syngenta-agentcore-registry .pts li::before{content:"+";position:absolute;left:0;top:-1px;color:var(--cyan);font-weight:800;font-size:1.05rem}
+.cs-syngenta-agentcore-registry .pts li b{color:var(--navy);font-weight:700}
+.cs-syngenta-agentcore-registry .pts.cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px}
+@media (max-width:760px){.cs-syngenta-agentcore-registry .pts.cols{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .note{position:relative;border:1.5px solid var(--navy);padding:28px 26px 22px;margin-top:34px;background:#fff}
+.cs-syngenta-agentcore-registry .note .lbl{position:absolute;top:-11px;left:18px;background:#fff;padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+.cs-syngenta-agentcore-registry .band .note{background:var(--grey)} .cs-syngenta-agentcore-registry .band .note .lbl{background:var(--grey)}
+.cs-syngenta-agentcore-registry .simsec .note{background:#fff} .cs-syngenta-agentcore-registry .simsec .note .lbl{background:#fff}
+.cs-syngenta-agentcore-registry .hero .pts{margin-top:22px;gap:8px}
+.cs-syngenta-agentcore-registry .hero .pts li{color:#c9d4f2;font-size:.95rem}
+.cs-syngenta-agentcore-registry .hero .pts li b{color:#fff}
+.cs-syngenta-agentcore-registry .kpis .pts{gap:8px}
+.cs-syngenta-agentcore-registry .kpis .pts li{font-size:.86rem}
+.cs-syngenta-agentcore-registry .verdict{margin-top:18px;display:flex;gap:18px;align-items:center;background:var(--navy);color:#fff;padding:18px 24px}
+.cs-syngenta-agentcore-registry .verdict b{color:var(--cyan);font-weight:700;white-space:nowrap}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .verdict{flex-direction:column;align-items:flex-start;gap:6px}}
+.cs-syngenta-agentcore-registry .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.cs-syngenta-agentcore-registry .nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cs-syngenta-agentcore-registry .nav img{height:34px;width:auto}
+.cs-syngenta-agentcore-registry .nav nav{display:flex;gap:2px}
+.cs-syngenta-agentcore-registry .nav nav a{font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 12px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.cs-syngenta-agentcore-registry .nav nav a:hover,.cs-syngenta-agentcore-registry .nav nav a.on{color:var(--navy);border-color:var(--cyan)}
+.cs-syngenta-agentcore-registry .nav .btn{padding:9px 16px;font-size:.8rem}
+@media (max-width:960px){.cs-syngenta-agentcore-registry .nav nav{display:none}}
+.cs-syngenta-agentcore-registry .hero{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a) 0%,#1e2f6a 55%,var(--cover-b) 100%);overflow:hidden}
+.cs-syngenta-agentcore-registry .hero .tab{position:absolute;top:0;right:clamp(16px,4vw,40px)}
+.cs-syngenta-agentcore-registry .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(64px,8vw,104px) clamp(48px,6vw,80px)}
+.cs-syngenta-agentcore-registry .hero-grid>*{min-width:0}
+.cs-syngenta-agentcore-registry .hero .eyebrow{color:#9fb3e8}
+.cs-syngenta-agentcore-registry .hero h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:18px}
+.cs-syngenta-agentcore-registry .hero h1 b{color:var(--cyan);font-weight:700}
+.cs-syngenta-agentcore-registry .hero .lede{margin-top:20px;color:#c9d4f2;font-size:1.06rem;max-width:46ch}
+.cs-syngenta-agentcore-registry .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.cs-syngenta-agentcore-registry .hero .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:44px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.cs-syngenta-agentcore-registry .hero .meta div{display:grid;gap:2px}
+.cs-syngenta-agentcore-registry .hero .meta span{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-syngenta-agentcore-registry .hero .meta b{font-weight:500;font-size:.92rem}
+.cs-syngenta-agentcore-registry .matrix-card{border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);padding:clamp(18px,3vw,28px);display:grid;gap:20px}
+.cs-syngenta-agentcore-registry .mx-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cs-syngenta-agentcore-registry .mx-legend button{all:unset;cursor:pointer;display:grid;gap:2px;padding:10px 12px;border:1px solid rgba(160,185,240,.3);transition:background .25s,border-color .25s}
+.cs-syngenta-agentcore-registry .mx-legend button b{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .mx-legend button span{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9fb3e8}
+.cs-syngenta-agentcore-registry .mx-legend button.on{background:rgba(255,255,255,.1);border-color:#fff}
+.cs-syngenta-agentcore-registry .mx-legend button:nth-child(3) b{color:var(--cyan)}
+.cs-syngenta-agentcore-registry .mx-legend button:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .matrix{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(5px,1vw,9px)}
+.cs-syngenta-agentcore-registry .matrix i{aspect-ratio:1;border-radius:50%;background:rgba(160,185,240,.22);transition:background .5s,transform .5s,box-shadow .5s}
+.cs-syngenta-agentcore-registry .matrix i.app{background:#fff}
+.cs-syngenta-agentcore-registry .matrix i.sia{background:var(--cyan);box-shadow:0 0 14px rgba(9,182,249,.8);transform:scale(1.12)}
+.cs-syngenta-agentcore-registry .matrix i.half{background:linear-gradient(90deg,var(--cyan) 50%,#fff 50%)}
+.cs-syngenta-agentcore-registry .mx-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.74rem;color:#9fb3e8}
+.cs-syngenta-agentcore-registry .mx-cap b{color:#fff;font-weight:600}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .hero-grid{grid-template-columns:1fr}}
+@media (max-width:440px){.cs-syngenta-agentcore-registry .mx-legend{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .mx-legend button{grid-template-columns:auto 1fr;align-items:baseline;gap:10px}}
+.cs-syngenta-agentcore-registry .client{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid var(--line)}
+.cs-syngenta-agentcore-registry .client .who{background:var(--grey);padding:26px 28px;display:grid;gap:8px;min-width:260px}
+.cs-syngenta-agentcore-registry .client .who h3{font-size:.95rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .client dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:.88rem}
+.cs-syngenta-agentcore-registry .client dt{font-weight:700;color:var(--navy)}
+.cs-syngenta-agentcore-registry .client dd{margin:0}
+.cs-syngenta-agentcore-registry .client .nut{padding:26px 28px;display:grid;gap:8px;align-content:center}
+.cs-syngenta-agentcore-registry .client .nut h3{font-size:.95rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .client .nut p{max-width:70ch}
+@media (max-width:760px){.cs-syngenta-agentcore-registry .client{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .client .who{min-width:0}}
+.cs-syngenta-agentcore-registry .scene-wrap{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:stretch}
+.cs-syngenta-agentcore-registry .scene-wrap>*{min-width:0}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .scene-wrap{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .scene{padding:clamp(12px,2vw,20px)}
+.cs-syngenta-agentcore-registry .scene svg{width:100%;height:auto;display:block}
+.cs-syngenta-agentcore-registry .scene .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.cs-syngenta-agentcore-registry .scene .bar b{color:var(--navy);font-size:.95rem}
+.cs-syngenta-agentcore-registry .exits{display:grid;align-content:center;gap:10px;padding:28px;background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .exits .n{font-size:clamp(4rem,9vw,6.5rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;transition:color .4s}
+.cs-syngenta-agentcore-registry .exits.zero .n{color:var(--green)}
+.cs-syngenta-agentcore-registry .exits span{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-syngenta-agentcore-registry .exits p{color:#c9d4f2;font-size:.9rem}
+.cs-syngenta-agentcore-registry .sv-out{transition:opacity .6s}
+.cs-syngenta-agentcore-registry .mode-after .sv-out{opacity:.14}
+.cs-syngenta-agentcore-registry .sv-in{opacity:0;transition:opacity .6s}
+.cs-syngenta-agentcore-registry .mode-after .sv-in{opacity:1}
+.cs-syngenta-agentcore-registry .sv-lbl{font-family:var(--f);font-size:13px;font-weight:600;fill:var(--navy)}
+.cs-syngenta-agentcore-registry .sv-sm{font-family:var(--f);font-size:11px;fill:var(--muted)}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sv-lbl{font-size:21px}.cs-syngenta-agentcore-registry .sv-sm{font-size:17px}}
+.cs-syngenta-agentcore-registry .hub{position:relative;height:520px}
+.cs-syngenta-agentcore-registry .hub svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cs-syngenta-agentcore-registry .hub .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2f5be0,var(--navy));color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 0 0 10px rgba(32,78,207,.08),0 0 0 22px rgba(32,78,207,.05);z-index:2}
+.cs-syngenta-agentcore-registry .hub .core b{font-size:1.7rem;font-weight:700;letter-spacing:.02em;display:block}
+.cs-syngenta-agentcore-registry .hub .core span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#bcd0ff}
+.cs-syngenta-agentcore-registry .qchip{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-size:.84rem;font-weight:600;padding:9px 14px;background:#fff;border:1.5px solid var(--line);color:var(--navy);transition:opacity .35s,border-color .35s,transform .35s;z-index:3;cursor:default}
+.cs-syngenta-agentcore-registry .qchip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.cs-syngenta-agentcore-registry .qchip.dim{opacity:.18}
+.cs-syngenta-agentcore-registry .qchip.hot{border-color:currentColor;transform:translate(-50%,-50%) scale(1.06)}
+.cs-syngenta-agentcore-registry .k-account{color:var(--royal)} .cs-syngenta-agentcore-registry .k-knowledge{color:#0a8fc4} .cs-syngenta-agentcore-registry .k-action{color:#1f9a68}
+.cs-syngenta-agentcore-registry .qchip.k-account i{background:var(--royal)} .cs-syngenta-agentcore-registry .qchip.k-knowledge i{background:var(--cyan)} .cs-syngenta-agentcore-registry .qchip.k-action i{background:var(--green)}
+.cs-syngenta-agentcore-registry .qchip span{color:var(--navy)}
+.cs-syngenta-agentcore-registry .legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.cs-syngenta-agentcore-registry .legend button{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;padding:9px 14px;font-weight:600;font-size:.82rem;color:var(--navy);cursor:pointer;transition:border-color .25s,background .25s}
+.cs-syngenta-agentcore-registry .legend button i{width:10px;height:10px;border-radius:50%}
+.cs-syngenta-agentcore-registry .legend button.on{border-color:var(--navy);background:var(--pale)}
+@media (max-width:820px){
+  .cs-syngenta-agentcore-registry .hub{height:auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-top:190px}
+  .cs-syngenta-agentcore-registry .hub svg{display:none}
+  .cs-syngenta-agentcore-registry .hub .core{top:80px;width:130px;height:130px}
+  .cs-syngenta-agentcore-registry .qchip{position:static;transform:none}
+  .cs-syngenta-agentcore-registry .qchip.hot{transform:scale(1.04)}
+}
+.cs-syngenta-agentcore-registry .locks{display:grid;grid-template-columns:1fr 340px 1fr;gap:clamp(16px,3vw,36px);align-items:center}
+.cs-syngenta-agentcore-registry .locks>*{min-width:0}
+.cs-syngenta-agentcore-registry .locks .col{display:grid;gap:16px}
+.cs-syngenta-agentcore-registry .lock{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:18px;border:1.5px solid var(--line);background:#fff;transition:border-color .35s,box-shadow .35s}
+.cs-syngenta-agentcore-registry .lock .ic{width:52px;height:52px;display:grid;place-items:center;border:1.5px solid var(--navy);color:var(--navy);transition:background .35s,color .35s}
+.cs-syngenta-agentcore-registry .lock h3{font-size:1rem;color:var(--navy);font-weight:700}
+.cs-syngenta-agentcore-registry .lock p{font-size:.84rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .lock.on{border-color:var(--navy);box-shadow:0 14px 30px -22px rgba(15,37,110,.6)}
+.cs-syngenta-agentcore-registry .lock.on .ic{background:var(--royal);border-color:var(--royal);color:#fff}
+.cs-syngenta-agentcore-registry .lock:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .ring{position:relative;max-width:340px;width:100%;margin-inline:auto}
+.cs-syngenta-agentcore-registry .ring svg{width:100%;height:auto;display:block}
+.cs-syngenta-agentcore-registry .ring .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.cs-syngenta-agentcore-registry .ring .mid b{font-size:2.6rem;font-weight:700;color:var(--navy);line-height:1;display:block;font-variant-numeric:tabular-nums;transition:color .4s}
+.cs-syngenta-agentcore-registry .ring .mid span{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .ring.all .mid b{color:var(--green)}
+.cs-syngenta-agentcore-registry .arc{fill:none;stroke:var(--line);stroke-width:18;transition:stroke .5s}
+.cs-syngenta-agentcore-registry .arc.on{stroke:var(--royal)}
+.cs-syngenta-agentcore-registry .ring.all .arc{stroke:var(--green)}
+@media (max-width:980px){.cs-syngenta-agentcore-registry .locks{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .ring{order:-1;max-width:260px}}
+.cs-syngenta-agentcore-registry .inapp{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.cs-syngenta-agentcore-registry .inapp>*{min-width:0}
+@media (max-width:820px){.cs-syngenta-agentcore-registry .inapp{grid-template-columns:1fr;justify-items:center}}
+.cs-syngenta-agentcore-registry .phone{position:relative;width:280px;max-width:80vw;aspect-ratio:9/19.2;border-radius:40px;padding:10px;background:#11152b;box-shadow:0 30px 60px -28px rgba(15,37,110,.65),inset 0 0 0 1.5px #2b3150}
+.cs-syngenta-agentcore-registry .phone .scr{position:relative;width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000}
+.cs-syngenta-agentcore-registry .phone .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .5s}
+.cs-syngenta-agentcore-registry .phone .scr img.on{opacity:1}
+.cs-syngenta-agentcore-registry .phone::after{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:999px;background:#05060f;z-index:5}
+.cs-syngenta-agentcore-registry .tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid #fff;background:rgba(9,182,249,.45);opacity:0;z-index:4;pointer-events:none}
+.cs-syngenta-agentcore-registry .tap.go{animation:cs-syngenta-agentcore-registry-tap .9s ease-out}
+@keyframes cs-syngenta-agentcore-registry-tap{0%{opacity:0;transform:scale(1.6)}30%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(1.3)}}
+.cs-syngenta-agentcore-registry .path4{display:grid;gap:0;counter-reset:s}
+.cs-syngenta-agentcore-registry .path4 li{list-style:none;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);transition:color .3s}
+.cs-syngenta-agentcore-registry .path4 li b{display:block;color:inherit;font-size:1.02rem}
+.cs-syngenta-agentcore-registry .path4 li .n{width:40px;height:40px;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;font-size:.85rem;transition:all .3s}
+.cs-syngenta-agentcore-registry .path4 li.on{color:var(--navy)}
+.cs-syngenta-agentcore-registry .path4 li.on .n{background:var(--royal);border-color:var(--royal);color:#fff}
+.cs-syngenta-agentcore-registry .path4 li.done .n{border-color:var(--royal);color:var(--royal)}
+.cs-syngenta-agentcore-registry .path4{padding:0;margin:0}
+.cs-syngenta-agentcore-registry .notlist{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cs-syngenta-agentcore-registry .notlist span{font-size:.84rem;padding:8px 14px;border:1.5px solid var(--line);color:var(--muted)}
+.cs-syngenta-agentcore-registry .notlist span s{text-decoration-thickness:1.5px}
+.cs-syngenta-agentcore-registry .notlist span.yes{border-color:var(--navy);color:var(--navy);font-weight:600;background:var(--pale)}
+.cs-syngenta-agentcore-registry .strip{overflow-x:auto;scroll-snap-type:x proximity;cursor:grab;padding-block:8px 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.cs-syngenta-agentcore-registry .strip.drag{cursor:grabbing;scroll-snap-type:none}
+.cs-syngenta-agentcore-registry .strip-row{display:flex;gap:22px;width:max-content;padding-inline:var(--gut)}
+.cs-syngenta-agentcore-registry .shot{width:190px;flex:none;scroll-snap-align:center;display:grid;gap:10px;user-select:none}
+.cs-syngenta-agentcore-registry .shot .phone{width:190px;border-radius:28px;padding:7px}
+.cs-syngenta-agentcore-registry .shot .phone .scr{border-radius:22px}
+.cs-syngenta-agentcore-registry .shot .phone .scr img{opacity:1;pointer-events:none}
+.cs-syngenta-agentcore-registry .shot .phone::after{top:12px;width:48px;height:12px}
+.cs-syngenta-agentcore-registry .shot b{font-size:.84rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .shot span{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--cyan)}
+.cs-syngenta-agentcore-registry .strip-hint{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .arrows{display:flex;gap:8px}
+.cs-syngenta-agentcore-registry .arrows button{width:42px;height:42px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center}
+.cs-syngenta-agentcore-registry .arrows button:hover{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .simsec{background:linear-gradient(180deg,var(--grey),#fff)}
+.cs-syngenta-agentcore-registry .simgrid{display:grid;grid-template-columns:330px 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.cs-syngenta-agentcore-registry .simgrid>*{min-width:0}
+@media (max-width:960px){.cs-syngenta-agentcore-registry .simgrid{grid-template-columns:1fr;justify-items:center}.cs-syngenta-agentcore-registry .simgrid>.archcol{width:100%}}
+.cs-syngenta-agentcore-registry .simcol{display:grid;gap:14px;justify-items:center;position:sticky;top:84px}
+@media (max-width:960px){.cs-syngenta-agentcore-registry .simcol{position:static}}
+.cs-syngenta-agentcore-registry .sim{width:310px;max-width:88vw;height:640px;border-radius:44px;padding:11px;background:#11152b;box-shadow:0 40px 70px -30px rgba(15,37,110,.7),inset 0 0 0 1.5px #2b3150;position:relative}
+.cs-syngenta-agentcore-registry .sim::after{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:74px;height:19px;border-radius:999px;background:#05060f;z-index:9}
+.cs-syngenta-agentcore-registry .sim .scr{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(400px 260px at 50% -40px,rgba(140,40,90,.55),transparent 70%),var(--sia-bg);color:#ece9ff;display:flex;flex-direction:column}
+.cs-syngenta-agentcore-registry .sim .status{display:flex;justify-content:space-between;padding:14px 22px 0;font-size:.7rem;font-weight:600;color:#fff}
+.cs-syngenta-agentcore-registry .sim .top{display:flex;align-items:center;justify-content:center;position:relative;padding:12px 0 10px;font-weight:700;font-size:.95rem;letter-spacing:.06em}
+.cs-syngenta-agentcore-registry .sim .top small{position:absolute;right:16px;font-size:.55rem;font-weight:700;letter-spacing:.12em;color:var(--green);display:flex;align-items:center;gap:5px;opacity:0;transition:opacity .4s}
+.cs-syngenta-agentcore-registry .sim .top small i{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.cs-syngenta-agentcore-registry .sim.authed .top small{opacity:1}
+.cs-syngenta-agentcore-registry .chat{flex:1;overflow-y:auto;padding:6px 12px 10px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;scrollbar-width:none}
+.cs-syngenta-agentcore-registry .chat::-webkit-scrollbar{display:none}
+.cs-syngenta-agentcore-registry .msg{max-width:86%;font-size:.76rem;line-height:1.42;padding:9px 11px;border-radius:14px;animation:cs-syngenta-agentcore-registry-msg .35s both}
+@keyframes cs-syngenta-agentcore-registry-msg{from{opacity:0;transform:translateY(8px)}}
+.cs-syngenta-agentcore-registry .msg.u{align-self:flex-end;background:var(--sia-user);color:#fff;border-bottom-right-radius:4px}
+.cs-syngenta-agentcore-registry .msg.b{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-bottom-left-radius:4px}
+.cs-syngenta-agentcore-registry .msg.b.w{max-width:94%;width:94%}
+.cs-syngenta-agentcore-registry .msg .k{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a99cff;margin-bottom:4px;display:block}
+.cs-syngenta-agentcore-registry .msg .big{font-size:1.35rem;font-weight:700;color:#fff;line-height:1.1}
+.cs-syngenta-agentcore-registry .msg .big small{font-size:.7rem;color:#c8c2ff}
+.cs-syngenta-agentcore-registry .msg .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--sia-line)}
+.cs-syngenta-agentcore-registry .msg .row:first-of-type{border-top:0}
+.cs-syngenta-agentcore-registry .msg .row em{font-style:normal;color:#b9b3e6;font-size:.68rem}
+.cs-syngenta-agentcore-registry .msg .row b{font-size:.74rem}
+.cs-syngenta-agentcore-registry .msg .price{font-size:.66rem;font-weight:700;color:#ffb27a;border:1px solid #6a3d38;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.cs-syngenta-agentcore-registry .msg .btns{display:flex;gap:6px;margin-top:8px}
+.cs-syngenta-agentcore-registry .msg .btns button{flex:1;border:0;border-radius:8px;padding:7px;font-size:.7rem;font-weight:700;cursor:pointer;background:var(--sia-glow);color:#fff}
+.cs-syngenta-agentcore-registry .msg .btns button.ghost{background:transparent;border:1px solid var(--sia-line);color:#c8c2ff}
+.cs-syngenta-agentcore-registry .msg .btns button:disabled{opacity:.45;cursor:default}
+.cs-syngenta-agentcore-registry .msg .ok{color:var(--green);font-weight:700}
+.cs-syngenta-agentcore-registry .msg .ring2{display:flex;align-items:center;gap:12px}
+.cs-syngenta-agentcore-registry .msg .ring2 svg{flex:none}
+.cs-syngenta-agentcore-registry .msg .ref{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:.66rem;border:1px solid var(--green);color:var(--green);padding:3px 7px;border-radius:6px}
+.cs-syngenta-agentcore-registry .msg .bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.cs-syngenta-agentcore-registry .msg .bars i{width:6px;background:var(--green);border-radius:2px}
+.cs-syngenta-agentcore-registry .typing{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-radius:14px;padding:10px 12px;display:flex;gap:4px}
+.cs-syngenta-agentcore-registry .typing i{width:6px;height:6px;border-radius:50%;background:#a99cff;animation:cs-syngenta-agentcore-registry-ty 1s infinite}
+.cs-syngenta-agentcore-registry .typing i:nth-child(2){animation-delay:.15s}.cs-syngenta-agentcore-registry .typing i:nth-child(3){animation-delay:.3s}
+@keyframes cs-syngenta-agentcore-registry-ty{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.cs-syngenta-agentcore-registry .qs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 6px;scrollbar-width:none}
+.cs-syngenta-agentcore-registry .qs::-webkit-scrollbar{display:none}
+.cs-syngenta-agentcore-registry .qs button{flex:none;border:1px solid var(--sia-line);background:rgba(123,92,255,.12);color:#e3deff;font-size:.68rem;font-weight:600;padding:7px 10px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
+.cs-syngenta-agentcore-registry .qs button:hover,.cs-syngenta-agentcore-registry .qs button.on{background:rgba(123,92,255,.35);border-color:var(--sia-glow)}
+.cs-syngenta-agentcore-registry .inbar{margin:4px 12px 16px;display:flex;align-items:center;gap:8px;border:1px solid var(--sia-line);border-radius:999px;padding:6px 6px 6px 14px;font-size:.7rem;color:#8d86c4}
+.cs-syngenta-agentcore-registry .inbar span{flex:1}
+.cs-syngenta-agentcore-registry .inbar i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#d946ef,#7b5cff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.8rem}
+.cs-syngenta-agentcore-registry .login{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(300px 300px at 50% 30%,rgba(200,40,80,.45),transparent 70%),#1a0f24;transition:transform .7s cubic-bezier(.6,0,.2,1),opacity .7s}
+.cs-syngenta-agentcore-registry .login.gone{transform:translateY(-100%);opacity:0;pointer-events:none}
+.cs-syngenta-agentcore-registry .login .brandmark{position:absolute;top:34%;left:0;right:0;text-align:center;font-weight:800;font-size:1.5rem;letter-spacing:.08em;color:#ff6b6b}
+.cs-syngenta-agentcore-registry .login .brandmark small{display:block;font-size:.6rem;letter-spacing:.2em;color:#e9b7c4;font-weight:600;margin-top:6px}
+.cs-syngenta-agentcore-registry .sheet{background:#fff;color:#1d1d2b;border-radius:22px 22px 0 0;padding:20px 20px 26px;display:grid;gap:12px}
+.cs-syngenta-agentcore-registry .sheet h4{margin:0;text-align:center;font-size:1rem}
+.cs-syngenta-agentcore-registry .sheet .lbl{text-align:center;font-size:.66rem;color:#777}
+.cs-syngenta-agentcore-registry .field{display:flex;gap:10px;align-items:center;border-bottom:1.5px solid #e2e2ea;padding:6px 4px;font-size:.95rem;font-weight:600;min-height:36px}
+.cs-syngenta-agentcore-registry .field em{font-style:normal;color:#999}
+.cs-syngenta-agentcore-registry .otp{display:flex;gap:10px;justify-content:center}
+.cs-syngenta-agentcore-registry .otp span{width:38px;height:44px;border:1.5px solid #e2e2ea;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:1.1rem;transition:border-color .2s}
+.cs-syngenta-agentcore-registry .otp span.f{border-color:#7b5cff}
+.cs-syngenta-agentcore-registry .sheet .go{border:0;border-radius:999px;padding:11px;font-weight:700;font-size:.78rem;color:#fff;background:linear-gradient(90deg,#c084fc,#f9a8d4);letter-spacing:.06em}
+.cs-syngenta-agentcore-registry .sheet .safe{display:flex;gap:8px;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#1f9a68;letter-spacing:.06em}
+.cs-syngenta-agentcore-registry .route{width:310px;max-width:88vw;display:flex;align-items:center;gap:10px;border:1.5px solid var(--navy);background:#fff;padding:10px 14px;font-size:.78rem;font-weight:600;color:var(--navy);min-height:46px}
+.cs-syngenta-agentcore-registry .route i{width:10px;height:10px;border-radius:50%;flex:none;background:var(--line);transition:background .3s}
+.cs-syngenta-agentcore-registry .simctl{display:flex;gap:8px;align-items:center;font-size:.76rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .simctl button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.76rem;padding:7px 12px;cursor:pointer}
+.cs-syngenta-agentcore-registry .simctl button:hover{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .archcol{display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .archbox{padding:clamp(10px,2vw,18px);position:relative}
+.cs-syngenta-agentcore-registry .archbox svg{width:100%;height:auto;display:block;max-height:min(600px,64vh)}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .archbox svg{max-height:none}}
+.cs-syngenta-agentcore-registry .archbox .lgd{display:flex;gap:16px;flex-wrap:wrap;font-size:.74rem;font-weight:600;color:var(--navy);margin:2px 4px 10px}
+.cs-syngenta-agentcore-registry .archbox .lgd span{display:flex;align-items:center;gap:6px}
+.cs-syngenta-agentcore-registry .archbox .lgd i{width:14px;height:3px}
+.cs-syngenta-agentcore-registry .anode{cursor:pointer}
+.cs-syngenta-agentcore-registry .anode .bx{fill:#fff;stroke:var(--navy);stroke-width:1.5;transition:fill .35s,stroke .35s}
+.cs-syngenta-agentcore-registry .anode .gl{fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s}
+.cs-syngenta-agentcore-registry .anode text{font-family:var(--f);font-weight:600;fill:var(--navy)}
+.cs-syngenta-agentcore-registry .anode.lit .bx{fill:var(--lc,#204ecf);stroke:var(--lc,#204ecf)}
+.cs-syngenta-agentcore-registry .anode.lit .gl{stroke:#fff}
+.cs-syngenta-agentcore-registry .anode.sel .bx{stroke-width:3}
+.cs-syngenta-agentcore-registry .anode.dim{opacity:.35}
+.cs-syngenta-agentcore-registry .anode{transition:opacity .4s}
+.cs-syngenta-agentcore-registry .wire{fill:none;stroke:#b9c2d6;stroke-width:1.6;stroke-dasharray:4 5;animation:cs-syngenta-agentcore-registry-fl 1.4s linear infinite}
+.cs-syngenta-agentcore-registry .wire.wk{stroke:#7fd3f7}.cs-syngenta-agentcore-registry .wire.wa{stroke:#8ea6ea}
+@keyframes cs-syngenta-agentcore-registry-fl{to{stroke-dashoffset:-18}}
+.cs-syngenta-agentcore-registry .gbox{fill:none;stroke-width:1.5}
+.cs-syngenta-agentcore-registry .glabel{font-family:var(--f);font-size:10.5px;font-weight:700;letter-spacing:.12em}
+.cs-syngenta-agentcore-registry .trace{background:#0d1a44;color:#cfe0ff;font-family:var(--mono);font-size:.74rem;padding:14px 16px;height:168px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+.cs-syngenta-agentcore-registry .trace div{display:flex;gap:10px;animation:cs-syngenta-agentcore-registry-msg .3s both}
+.cs-syngenta-agentcore-registry .trace div i{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none}
+.cs-syngenta-agentcore-registry .trace .t-h{color:#7f93c9}
+.cs-syngenta-agentcore-registry .info{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cs-syngenta-agentcore-registry .info>div{padding:16px 18px;min-width:0}
+.cs-syngenta-agentcore-registry .info h3{font-size:.95rem;color:var(--navy);margin:4px 0}
+.cs-syngenta-agentcore-registry .info p{font-size:.86rem}
+.cs-syngenta-agentcore-registry .info .sand{background:var(--pale);border:1.5px solid var(--royal)}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .info{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--navy);max-width:960px;margin-inline:auto}
+.cs-syngenta-agentcore-registry .duel>div{min-width:0;display:flex;flex-direction:column}
+.cs-syngenta-agentcore-registry .duel .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.cs-syngenta-agentcore-registry .duel .gen{background:#eef0f4}
+.cs-syngenta-agentcore-registry .duel .gen .hd{color:var(--muted);border-bottom:1px solid var(--line)}
+.cs-syngenta-agentcore-registry .duel .sia{background:var(--sia-bg);color:#ece9ff}
+.cs-syngenta-agentcore-registry .duel .sia .hd{color:#a99cff;border-bottom:1px solid var(--sia-line)}
+.cs-syngenta-agentcore-registry .duel .log{height:330px;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth;scrollbar-width:none}
+.cs-syngenta-agentcore-registry .duel .log::-webkit-scrollbar{display:none}
+.cs-syngenta-agentcore-registry .duel .m{max-width:88%;font-size:.84rem;line-height:1.45;padding:10px 12px;animation:cs-syngenta-agentcore-registry-msg .35s both}
+.cs-syngenta-agentcore-registry .duel .gen .u{align-self:flex-end;background:#c9ced9;color:#222}
+.cs-syngenta-agentcore-registry .duel .gen .b{align-self:flex-start;background:#fff;border:1px solid var(--line);color:#4a4f5c}
+.cs-syngenta-agentcore-registry .duel .gen .b.bad{border-color:#e9b49c}
+.cs-syngenta-agentcore-registry .duel .gen .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--warn);text-transform:uppercase}
+.cs-syngenta-agentcore-registry .duel .sia .u{align-self:flex-end;background:var(--sia-user);color:#fff;border-radius:12px 12px 4px 12px}
+.cs-syngenta-agentcore-registry .duel .sia .b{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-radius:12px 12px 12px 4px}
+.cs-syngenta-agentcore-registry .duel .sia .b b.big{font-size:1.25rem;color:#fff}
+.cs-syngenta-agentcore-registry .duel .sia .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--green);text-transform:uppercase}
+.cs-syngenta-agentcore-registry .duel .typing{margin:0}
+.cs-syngenta-agentcore-registry .duel .gen .typing{background:#fff;border-color:var(--line)}
+.cs-syngenta-agentcore-registry .duel .gen .typing i{background:#9aa1b2}
+.cs-syngenta-agentcore-registry .score{display:flex;gap:6px;align-items:center;font-size:.7rem;letter-spacing:.06em}
+.cs-syngenta-agentcore-registry .score b{font-size:.9rem;font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .askrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 auto 18px;max-width:960px}
+.cs-syngenta-agentcore-registry .askrow button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.84rem;padding:10px 16px;cursor:pointer;transition:background .2s,color .2s}
+.cs-syngenta-agentcore-registry .askrow button:hover,.cs-syngenta-agentcore-registry .askrow button.on{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .askrow button:disabled{opacity:.5;cursor:default}
+.cs-syngenta-agentcore-registry .diffs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:22px auto 0;border:1.5px solid var(--line);max-width:960px;background:#fff}
+.cs-syngenta-agentcore-registry .diffs div{padding:16px 18px;display:grid;gap:6px;min-width:0}
+.cs-syngenta-agentcore-registry .diffs div+div{border-left:1.5px solid var(--line)}
+.cs-syngenta-agentcore-registry .diffs h3{font-size:.86rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .diffs s{color:var(--muted);font-size:.8rem;text-decoration-thickness:1.5px}
+.cs-syngenta-agentcore-registry .diffs b{font-size:.84rem;color:var(--royal);font-weight:600}
+@media (max-width:820px){.cs-syngenta-agentcore-registry .diffs{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-syngenta-agentcore-registry .diffs div:nth-child(3){border-left:0}.cs-syngenta-agentcore-registry .diffs div:nth-child(n+3){border-top:1.5px solid var(--line)}}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .duel{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .duel .log{height:250px}}
+.cs-syngenta-agentcore-registry .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cs-syngenta-agentcore-registry .kpis>div{padding:22px;display:grid;gap:14px;align-content:start;min-width:0;border-top:4px solid var(--royal);background:#fff}
+@media (max-width:960px){.cs-syngenta-agentcore-registry .kpis{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .kpis h3{font-size:1rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .kpis .num{font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:700;color:var(--royal);line-height:1;font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .kpis .cap{min-height:2.4em}
+.cs-syngenta-agentcore-registry .cells{display:grid;grid-template-columns:repeat(20,1fr);gap:3px}
+.cs-syngenta-agentcore-registry .cells i{aspect-ratio:1;border:1px dashed #9fb0d6;transition:background .4s,border-color .4s}
+.cs-syngenta-agentcore-registry .cells i.f{background:var(--green);border:1px solid var(--green)}
+.cs-syngenta-agentcore-registry .cells i.h{background:linear-gradient(90deg,var(--green) 50%,transparent 50%);border:1px solid var(--green)}
+.cs-syngenta-agentcore-registry .kpis canvas,.cs-syngenta-agentcore-registry .kpis svg{width:100%;height:150px;display:block}
+.cs-syngenta-agentcore-registry .store{margin-top:22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:20px 24px}
+.cs-syngenta-agentcore-registry .store img{width:60px;height:60px;border-radius:14px}
+.cs-syngenta-agentcore-registry .store .who{flex:1;min-width:200px}
+.cs-syngenta-agentcore-registry .store .who b{display:block;color:var(--navy)}
+.cs-syngenta-agentcore-registry .store .who span{font-size:.84rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .store .nums{display:flex;gap:30px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .store .nums div{display:grid}
+.cs-syngenta-agentcore-registry .store .nums b{font-size:1.35rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .store .nums span{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cs-syngenta-agentcore-registry .stack span{font-size:.8rem;font-weight:600;color:var(--navy);padding:7px 12px;border:1.5px solid var(--line);background:#fff}
+.cs-syngenta-agentcore-registry .close{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a),#1e2f6a 55%,var(--cover-b));overflow:hidden}
+.cs-syngenta-agentcore-registry .close .wrap{padding-block:clamp(72px,10vw,120px);display:grid;gap:22px;position:relative}
+.cs-syngenta-agentcore-registry .close .eyebrow{color:#9fb3e8}
+.cs-syngenta-agentcore-registry .close h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.05;max-width:17ch}
+.cs-syngenta-agentcore-registry .close h2 b{color:var(--cyan);font-weight:700}
+.cs-syngenta-agentcore-registry .close p{color:#c9d4f2;max-width:56ch}
+.cs-syngenta-agentcore-registry .close .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.cs-syngenta-agentcore-registry .close .meta div{display:grid;gap:2px}
+.cs-syngenta-agentcore-registry .close .meta span{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-syngenta-agentcore-registry .close .meta b{font-weight:500;font-size:.92rem}
+.cs-syngenta-agentcore-registry .close .mk{position:absolute;right:-50px;bottom:-60px;width:min(380px,55vw);opacity:.13;pointer-events:none}
+.cs-syngenta-agentcore-registry footer{border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px}
+
+@media (prefers-reduced-motion:reduce){
+  .cs-syngenta-agentcore-registry,.cs-syngenta-agentcore-registry *,.cs-syngenta-agentcore-registry::before,.cs-syngenta-agentcore-registry *::before,.cs-syngenta-agentcore-registry::after,.cs-syngenta-agentcore-registry *::after{animation:none!important;transition:none!important}
+  .cs-syngenta-agentcore-registry.js .rv.pending{transform:none;opacity:1}
+}
+.cs-syngenta-agentcore-registry .hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}
+.cs-syngenta-agentcore-registry .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}
+.cs-syngenta-agentcore-registry .hero .wrap{position:relative}
+.cs-syngenta-agentcore-registry .demo-note{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.cs-syngenta-agentcore-registry .mono{font-family:var(--mono)}
+@keyframes cs-syngenta-agentcore-registry-sein{from{opacity:0;transform:translateY(8px)}}
+.cs-syngenta-agentcore-registry .se-btn{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:600 .8rem var(--f);padding:8px 14px;cursor:pointer}
+.cs-syngenta-agentcore-registry .se-btn:hover{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .se-btn.pri{background:var(--cyan);border-color:var(--cyan);color:var(--navy)}
+.cs-syngenta-agentcore-registry .se-btn:disabled{opacity:.45;cursor:not-allowed}
+.cs-syngenta-agentcore-registry .se-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.cs-syngenta-agentcore-registry .se-proof{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .se-proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-syngenta-agentcore-registry .se-proof button{all:unset;box-sizing:border-box;cursor:zoom-in;display:grid;gap:6px}
+.cs-syngenta-agentcore-registry .se-proof button:first-child{grid-column:span 2;grid-row:span 2}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .se-proof button:first-child{grid-row:auto}}
+.cs-syngenta-agentcore-registry .se-proof button:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .se-proof img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border:1.5px solid var(--navy);transition:transform .3s,box-shadow .3s;background:#eef2f8}
+.cs-syngenta-agentcore-registry .se-proof button:first-child img{aspect-ratio:auto;height:auto}
+.cs-syngenta-agentcore-registry .se-proof button:hover img{transform:translateY(-3px);box-shadow:0 16px 28px -22px rgba(15,37,110,.7)}
+.cs-syngenta-agentcore-registry .se-proof span{font-size:.76rem}
+.cs-syngenta-agentcore-registry .se-proof span b{color:var(--navy);display:block;font-size:.8rem}
+.cs-syngenta-agentcore-registry .se-lb{position:fixed;inset:0;background:rgba(10,18,48,.88);z-index:200;display:grid;place-items:center;padding:20px}
+.cs-syngenta-agentcore-registry .se-lb[hidden]{display:none!important}
+.cs-syngenta-agentcore-registry .se-lb figure{margin:0;max-width:min(1300px,100%);display:grid;gap:10px}
+.cs-syngenta-agentcore-registry .se-lb img{width:100%;height:auto;max-height:82vh;object-fit:contain;background:#fff}
+.cs-syngenta-agentcore-registry .se-lb figcaption{color:#fff;font-size:.86rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.cs-syngenta-agentcore-registry .se-lb button{border:1.5px solid #fff;background:transparent;color:#fff;font-weight:600;padding:7px 12px;cursor:pointer;font-family:var(--f)}
+
+.cs-syngenta-agentcore-registry .se-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .se-nums{grid-template-columns:1fr 1fr}}
+.cs-syngenta-agentcore-registry .se-num{border-top:4px solid var(--royal);background:#fff;border-left:1.5px solid var(--navy);border-right:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.cs-syngenta-agentcore-registry .se-num b{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;color:var(--royal);line-height:1.05;font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .se-num span{font-size:.8rem}
+.cs-syngenta-agentcore-registry .se-num small{font-size:.66rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .ag-protect{margin-top:18px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;border:1.5px solid var(--navy);border-left:6px solid var(--cyan);padding:14px 18px;background:#fff}
+.cs-syngenta-agentcore-registry .ag-shield{width:42px;height:42px;display:grid;place-items:center;background:var(--navy)}
+.cs-syngenta-agentcore-registry .ag-shield svg{width:24px;height:24px;fill:none;stroke:var(--cyan);stroke-width:1.8;stroke-linejoin:round}
+.cs-syngenta-agentcore-registry .ag-shield svg .t{stroke:#fff;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:12;stroke-dashoffset:12;animation:cs-syngenta-agentcore-registry-agtick 1.2s .6s forwards}
+@keyframes cs-syngenta-agentcore-registry-agtick{to{stroke-dashoffset:0}}
+.cs-syngenta-agentcore-registry .ag-protect b{display:block;color:var(--navy);font-size:.92rem;letter-spacing:.02em}
+.cs-syngenta-agentcore-registry .ag-protect span{font-size:.82rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .ag-redact{display:grid;gap:5px;width:90px}
+.cs-syngenta-agentcore-registry .ag-redact i{display:block;height:8px;background:var(--navy);animation:cs-syngenta-agentcore-registry-agred 3.2s ease-in-out infinite}
+.cs-syngenta-agentcore-registry .ag-redact i:nth-child(2){width:70%;animation-delay:.3s}.cs-syngenta-agentcore-registry .ag-redact i:nth-child(3){width:85%;animation-delay:.6s}
+@keyframes cs-syngenta-agentcore-registry-agred{0%,100%{transform:scaleX(1);transform-origin:left}50%{transform:scaleX(.55);transform-origin:left;background:var(--cyan)}}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .ag-protect{grid-template-columns:auto minmax(0,1fr)}.cs-syngenta-agentcore-registry .ag-redact{display:none}}
+.cs-syngenta-agentcore-registry .tag-wip{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 11px;background:#f5b83d;color:#3a2a00}
+.cs-syngenta-agentcore-registry .tag-wip.sm{font-size:.56rem;padding:2px 7px;margin-left:6px;vertical-align:middle;letter-spacing:.1em}
+.cs-syngenta-agentcore-registry .sy-st{display:inline-block;font-size:.56rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;white-space:nowrap}
+.cs-syngenta-agentcore-registry .sy-st.DRAFT{background:#e9edf5;color:#4a5571}.cs-syngenta-agentcore-registry .sy-st.PENDING_APPROVAL{background:#fff3d6;color:#8a6200}.cs-syngenta-agentcore-registry .sy-st.APPROVED{background:#e3f7ee;color:#1f8a5c}.cs-syngenta-agentcore-registry .sy-st.REJECTED{background:#fde6e6;color:#c03030}.cs-syngenta-agentcore-registry .sy-st.DEPRECATED{background:#efe9fb;color:#6a4fc0}
+.cs-syngenta-agentcore-registry .sy-pr{display:inline-block;font-family:var(--mono);font-size:.58rem;font-weight:600;padding:1px 6px;border:1px solid currentColor;white-space:nowrap}
+.cs-syngenta-agentcore-registry .sy-pr.A2A{color:#204ecf}.cs-syngenta-agentcore-registry .sy-pr.AGUI{color:#7b5cf0}.cs-syngenta-agentcore-registry .sy-pr.MCP{color:#0a8fc4}.cs-syngenta-agentcore-registry .sy-pr.HTTP{color:#8a93a8}.cs-syngenta-agentcore-registry .sy-pr.UNKNOWN{color:#8a93a8}.cs-syngenta-agentcore-registry .sy-pr.CUSTOM{color:#b07a00}
+@keyframes cs-syngenta-agentcore-registry-sypulse{50%{opacity:.35}}
+.cs-syngenta-agentcore-registry .sy-hero{display:grid;grid-template-columns:minmax(0,1fr) 34px minmax(0,1fr);gap:10px;align-items:stretch}
+.cs-syngenta-agentcore-registry .sy-hero small{display:block;font-family:var(--mono);font-size:.6rem;color:#9fd9ff;margin-bottom:6px}
+.cs-syngenta-agentcore-registry .sy-hest,.cs-syngenta-agentcore-registry .sy-hreg{border:1.5px solid rgba(160,185,240,.45);background:rgba(255,255,255,.05);padding:10px;display:grid;grid-template-rows:auto 1fr;min-height:300px}
+.cs-syngenta-agentcore-registry .sy-hest .f{position:relative;overflow:hidden;min-height:260px}
+.cs-syngenta-agentcore-registry .sy-hest .f .beam{position:absolute;left:0;right:0;top:-30%;height:30%;background:linear-gradient(180deg,transparent,rgba(9,182,249,.28),transparent);border-bottom:1.5px solid rgba(9,182,249,.8);opacity:0;pointer-events:none}
+.cs-syngenta-agentcore-registry .sy-hest .f .beam.go{opacity:1;animation:cs-syngenta-agentcore-registry-sybeam 2.2s linear both}
+@keyframes cs-syngenta-agentcore-registry-sybeam{to{top:100%}}
+.cs-syngenta-agentcore-registry .sy-node{position:absolute;display:flex;white-space:nowrap;max-width:48%;overflow:hidden;align-items:center;gap:4px;font-family:var(--mono);font-size:.56rem;color:#c9d4f2;padding:3px 6px;border:1px solid rgba(160,185,240,.5);background:rgba(15,37,110,.55);transition:all .45s;animation:cs-syngenta-agentcore-registry-syfloat 4s ease-in-out infinite}
+.cs-syngenta-agentcore-registry .sy-node i{width:7px;height:7px;display:block;background:#9fb1df}
+.cs-syngenta-agentcore-registry .sy-node.A2A i{background:#5b8cff}.cs-syngenta-agentcore-registry .sy-node.AGUI i{background:#a68cff}.cs-syngenta-agentcore-registry .sy-node.MCP i{background:#09b6f9}.cs-syngenta-agentcore-registry .sy-node.HTTP i,.cs-syngenta-agentcore-registry .sy-node.UNKNOWN i{background:#646c7e}
+.cs-syngenta-agentcore-registry .sy-node.hit{border-color:#09b6f9;color:#fff;box-shadow:0 0 0 3px rgba(9,182,249,.25)}
+.cs-syngenta-agentcore-registry .sy-node.skip{opacity:.28}
+.cs-syngenta-agentcore-registry .sy-node.gone{opacity:.15;transform:scale(.8)}
+@keyframes cs-syngenta-agentcore-registry-syfloat{50%{transform:translateY(-4px)}}
+.cs-syngenta-agentcore-registry .sy-harrow{display:grid;place-items:center}
+.cs-syngenta-agentcore-registry .sy-harrow span{width:2px;height:70%;background:linear-gradient(180deg,transparent,#09b6f9,transparent);position:relative}
+.cs-syngenta-agentcore-registry .sy-harrow span::after{content:"";position:absolute;left:-4px;top:-10px;width:10px;height:10px;background:#09b6f9;animation:cs-syngenta-agentcore-registry-syflow 1.4s linear infinite}
+@keyframes cs-syngenta-agentcore-registry-syflow{to{top:100%;opacity:0}}
+.cs-syngenta-agentcore-registry .sy-hreg .l{display:grid;gap:4px;align-content:start;min-height:220px}
+.cs-syngenta-agentcore-registry .sy-hrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;align-items:center;background:#fff;padding:5px 7px;animation:cs-syngenta-agentcore-registry-sein .35s both}
+.cs-syngenta-agentcore-registry .sy-hrow b{font-size:.64rem;color:var(--navy);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;font-weight:600}
+.cs-syngenta-agentcore-registry .sy-hrow em{font-style:normal}
+.cs-syngenta-agentcore-registry .sy-hreg .c{display:flex;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:.6rem;color:#9fd9ff;border-top:1px dashed rgba(160,185,240,.35);padding-top:6px;margin-top:6px;min-height:20px}
+@media (max-width:620px){.cs-syngenta-agentcore-registry .sy-hero{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .sy-harrow{height:30px}.cs-syngenta-agentcore-registry .sy-harrow span{width:70%;height:2px;background:linear-gradient(90deg,transparent,#09b6f9,transparent)}.cs-syngenta-agentcore-registry .sy-harrow span::after{display:none}.cs-syngenta-agentcore-registry .sy-hest,.cs-syngenta-agentcore-registry .sy-hreg{min-height:0}.cs-syngenta-agentcore-registry .sy-hest .f{min-height:200px}}
+.cs-syngenta-agentcore-registry .sy-hunt{padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .sy-htop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-q{display:flex;gap:10px;align-items:center;flex:1 1 360px;min-width:0}
+.cs-syngenta-agentcore-registry .sy-q span{width:28px;height:28px;flex:none;display:grid;place-items:center;background:var(--royal);color:#fff;font-weight:700;font-size:.8rem}
+.cs-syngenta-agentcore-registry .sy-q b{color:var(--navy);font-size:.95rem;font-weight:600}
+.cs-syngenta-agentcore-registry .sy-hstat{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sy-hstat{grid-template-columns:1fr 1fr}}
+.cs-syngenta-agentcore-registry .sy-hstat span{display:grid;gap:1px;padding:8px 12px;background:var(--grey)}
+.cs-syngenta-agentcore-registry .sy-hstat b{font-size:1.15rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.cs-syngenta-agentcore-registry .sy-hstat small{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-hstat .bad b{color:#c2410c}.cs-syngenta-agentcore-registry .sy-hstat .good b{color:#1f8a5c}
+.cs-syngenta-agentcore-registry .sy-hbody{min-height:290px}
+.cs-syngenta-agentcore-registry .sy-places{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+@media (max-width:760px){.cs-syngenta-agentcore-registry .sy-places{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.cs-syngenta-agentcore-registry .sy-places{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-place{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px dashed var(--line);background:#fff;padding:12px;display:grid;gap:6px;align-content:start;min-height:120px;transition:all .3s}
+.cs-syngenta-agentcore-registry .sy-place:hover{border-color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-place:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .sy-place>small{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-place>b{font-size:.84rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-place .fr{display:grid;gap:3px}
+.cs-syngenta-agentcore-registry .sy-place .fr span{font-family:var(--mono);font-size:.64rem;padding:3px 6px;background:#fff6ef;color:#8a2d07;animation:cs-syngenta-agentcore-registry-sein .3s both}
+.cs-syngenta-agentcore-registry .sy-place .fr span.ok{background:#eaf1ff;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-place.open{border-style:solid;border-color:#c2410c;background:#fffaf6}
+.cs-syngenta-agentcore-registry .sy-place .hint{font-size:.66rem;color:var(--royal);font-weight:600}
+.cs-syngenta-agentcore-registry .sy-reg{display:grid;gap:10px}
+.cs-syngenta-agentcore-registry .sy-sbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:center;border:1.5px solid var(--navy);padding:6px 6px 6px 12px;background:#fff}
+.cs-syngenta-agentcore-registry .sy-sbar input{border:0;font:500 .92rem var(--f);color:var(--text);min-width:0;outline:none;padding:6px 0}
+.cs-syngenta-agentcore-registry .sy-sbar span{font-size:.7rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-rcard{border:1.5px solid var(--green);background:#f1fbf6;padding:12px 14px;display:grid;gap:8px;animation:cs-syngenta-agentcore-registry-sein .35s both}
+.cs-syngenta-agentcore-registry .sy-rcard .t{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.cs-syngenta-agentcore-registry .sy-rcard .t b{color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-rcard dl{margin:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sy-rcard dl{grid-template-columns:1fr 1fr}}
+.cs-syngenta-agentcore-registry .sy-rcard dt{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-rcard dd{margin:0;font-size:.78rem;color:var(--text);overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-hidden{font-size:.74rem;color:var(--muted);padding:8px 12px;border:1px dashed var(--line)}
+.cs-syngenta-agentcore-registry .sy-scan{padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .sy-stop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-sgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,.8fr);gap:14px;align-items:start}
+@media (max-width:960px){.cs-syngenta-agentcore-registry .sy-sgrid{grid-template-columns:1fr 1fr}.cs-syngenta-agentcore-registry .sy-rule{grid-column:1/-1;order:3}}
+@media (max-width:620px){.cs-syngenta-agentcore-registry .sy-sgrid{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-sgrid>*{min-width:0}
+.cs-syngenta-agentcore-registry .sy-sgrid small,.cs-syngenta-agentcore-registry .sy-acc small,.cs-syngenta-agentcore-registry .sy-glog>small{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.cs-syngenta-agentcore-registry .sy-dots{display:grid;grid-template-columns:repeat(auto-fill,minmax(26px,1fr));gap:4px}
+.cs-syngenta-agentcore-registry .sy-dots i{aspect-ratio:1;display:grid;place-items:center;font-style:normal;font-family:var(--mono);font-size:.46rem;font-weight:700;color:#fff;background:#c3cad8;transition:all .3s;position:relative}
+.cs-syngenta-agentcore-registry .sy-dots i.A2A{background:#204ecf}.cs-syngenta-agentcore-registry .sy-dots i.AGUI{background:#7b5cf0}.cs-syngenta-agentcore-registry .sy-dots i.MCP{background:#0a8fc4}.cs-syngenta-agentcore-registry .sy-dots i.HTTP,.cs-syngenta-agentcore-registry .sy-dots i.UNKNOWN{background:#9aa3b5}
+.cs-syngenta-agentcore-registry .sy-dots i.cur{outline:3px solid var(--cyan);outline-offset:1px;z-index:1}
+.cs-syngenta-agentcore-registry .sy-dots i.skip{opacity:.22}
+.cs-syngenta-agentcore-registry .sy-dots i.done::after{content:"";position:absolute;right:-2px;top:-2px;width:8px;height:8px;background:var(--green);border:1.5px solid #fff}
+.cs-syngenta-agentcore-registry .sy-dots i.cus::after{background:#f5b83d}
+.cs-syngenta-agentcore-registry .sy-leg{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;font-size:.64rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-leg span{display:flex;align-items:center;gap:4px}.cs-syngenta-agentcore-registry .sy-leg span i{width:9px;height:9px;display:block}
+.cs-syngenta-agentcore-registry .sy-cur{border:1.5px solid var(--navy);background:#fff;padding:12px;min-height:150px;display:grid;gap:8px;align-content:start}
+.cs-syngenta-agentcore-registry .sy-cur .n{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-cur .n b{font-family:var(--mono);font-size:.78rem;color:var(--navy);overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-cur ol{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.cs-syngenta-agentcore-registry .sy-cur li{display:grid;grid-template-columns:18px minmax(0,1fr);gap:6px;font-size:.76rem;animation:cs-syngenta-agentcore-registry-sein .25s both}
+.cs-syngenta-agentcore-registry .sy-cur li em{font-style:normal;font-weight:800;text-align:center}
+.cs-syngenta-agentcore-registry .sy-cur li.y em{color:#1f8a5c}.cs-syngenta-agentcore-registry .sy-cur li.n em{color:#c2410c}.cs-syngenta-agentcore-registry .sy-cur li.s em{color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-cur .res{font-size:.78rem;font-weight:700;padding:6px 9px;animation:cs-syngenta-agentcore-registry-sein .3s both}
+.cs-syngenta-agentcore-registry .sy-cur .res.a{background:#eaf1ff;color:var(--royal)}.cs-syngenta-agentcore-registry .sy-cur .res.m{background:#e5f6fd;color:#0a6e96}.cs-syngenta-agentcore-registry .sy-cur .res.c{background:#fff3d6;color:#8a6200}.cs-syngenta-agentcore-registry .sy-cur .res.s{background:var(--grey);color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-log{margin:8px 0 0;background:#0d1a44;color:#cfe0ff;font-family:var(--mono);font-size:.64rem;line-height:1.55;padding:10px;height:150px;overflow:auto;white-space:pre-wrap;word-break:break-word}
+.cs-syngenta-agentcore-registry .sy-log .g{color:#7be0b0}.cs-syngenta-agentcore-registry .sy-log .y{color:#f5b83d}.cs-syngenta-agentcore-registry .sy-log .m{color:#8a9bd0}
+.cs-syngenta-agentcore-registry .sy-tot{display:grid;gap:6px}
+.cs-syngenta-agentcore-registry .sy-tot>div{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;border:1.5px solid var(--line);background:#fff;padding:8px 10px}
+.cs-syngenta-agentcore-registry .sy-tot>div b{font-size:1.4rem;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1}
+.cs-syngenta-agentcore-registry .sy-tot>div span{font-size:.72rem}
+.cs-syngenta-agentcore-registry .sy-tot>div.all{background:var(--navy);border-color:var(--navy)}.cs-syngenta-agentcore-registry .sy-tot>div.all b,.cs-syngenta-agentcore-registry .sy-tot>div.all span{color:#fff}
+.cs-syngenta-agentcore-registry .sy-skip{margin-top:10px;font-size:.72rem;color:var(--muted);display:grid;gap:3px}
+.cs-syngenta-agentcore-registry .sy-skip b{color:var(--text)}
+.cs-syngenta-agentcore-registry .sy-norm{display:grid;gap:12px}
+.cs-syngenta-agentcore-registry .sy-ntabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--navy);background:#fff}
+@media (max-width:700px){.cs-syngenta-agentcore-registry .sy-ntabs{grid-template-columns:1fr 1fr}}
+.cs-syngenta-agentcore-registry .sy-ntabs button{all:unset;box-sizing:border-box;cursor:pointer;padding:11px 12px;display:grid;gap:3px;border-left:1px solid var(--line);transition:background .25s}
+.cs-syngenta-agentcore-registry .sy-ntabs button:first-child{border-left:0}
+.cs-syngenta-agentcore-registry .sy-ntabs button b{font-size:.84rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-ntabs button span{font-size:.66rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-ntabs button[aria-selected="true"]{background:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-ntabs button[aria-selected="true"] b{color:#fff}.cs-syngenta-agentcore-registry .sy-ntabs button[aria-selected="true"] span{color:#9fd9ff}
+.cs-syngenta-agentcore-registry .sy-ntabs button:focus-visible{outline:2px solid var(--cyan);outline-offset:-2px}
+.cs-syngenta-agentcore-registry .sy-ngrid{display:grid;grid-template-columns:minmax(0,1fr) 90px minmax(0,1fr);gap:12px;align-items:stretch}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-ngrid{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-ngrid>*{min-width:0}
+.cs-syngenta-agentcore-registry .sy-raw{border:1.5px solid var(--navy);display:grid;grid-template-rows:auto 1fr;background:#0d1a44}
+.cs-syngenta-agentcore-registry .sy-raw .h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 12px;background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .sy-raw .h b{font-size:.8rem}
+.cs-syngenta-agentcore-registry .sy-raw .h code{font-family:var(--mono);font-size:.62rem;color:var(--cyan);overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-raw pre{margin:0;padding:12px;color:#cfe0ff;font-family:var(--mono);font-size:.64rem;line-height:1.55;overflow:auto;max-height:360px;white-space:pre-wrap;word-break:break-word;animation:cs-syngenta-agentcore-registry-sein .3s both}
+.cs-syngenta-agentcore-registry .sy-raw pre .k{color:#9fd9ff}.cs-syngenta-agentcore-registry .sy-raw pre .s{color:#f5d38a}.cs-syngenta-agentcore-registry .sy-raw pre .hl{background:rgba(9,182,249,.25)}
+.cs-syngenta-agentcore-registry .sy-arrow{display:grid;place-items:center;align-content:center;gap:4px;font-family:var(--mono);font-size:.66rem;color:var(--royal);text-align:center}
+.cs-syngenta-agentcore-registry .sy-arrow span{font-size:1.6rem;color:var(--cyan)}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-arrow span{transform:rotate(90deg)}}
+.cs-syngenta-agentcore-registry .sy-rec{padding:14px;display:grid;gap:10px;align-content:start;animation:cs-syngenta-agentcore-registry-sein .3s both}
+.cs-syngenta-agentcore-registry .sy-rec .t{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}
+.cs-syngenta-agentcore-registry .sy-rec .t b{font-family:var(--mono);font-size:.8rem;color:var(--navy);overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-rec table{border-collapse:collapse;width:100%;font-size:.74rem}
+.cs-syngenta-agentcore-registry .sy-rec td{padding:5px 6px;border-bottom:1px solid #eef0f5;vertical-align:top}
+.cs-syngenta-agentcore-registry .sy-rec td:first-child{width:38%;color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.cs-syngenta-agentcore-registry .sy-rec td em{font-style:normal;float:right;font-size:.54rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:1px 5px;margin-left:6px}
+.cs-syngenta-agentcore-registry .sy-rec td em.ro{background:var(--grey);color:var(--muted)}.cs-syngenta-agentcore-registry .sy-rec td em.ed{background:#e3f7ee;color:#1f8a5c}
+.cs-syngenta-agentcore-registry .sy-rec td .sy-chip{display:inline-block;font-size:.66rem;padding:1px 6px;background:var(--pale);color:var(--royal);margin:0 3px 3px 0}
+.cs-syngenta-agentcore-registry .sy-up{display:flex;gap:12px;align-items:center;flex-wrap:wrap;min-height:40px}
+.cs-syngenta-agentcore-registry .sy-up p{margin:0;font-size:.84rem;flex:1 1 300px}
+.cs-syngenta-agentcore-registry .sy-up .ok{color:#1f6a48;font-weight:600}
+.cs-syngenta-agentcore-registry .sy-gov{padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .sy-gtop{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-gtop small{display:block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.cs-syngenta-agentcore-registry .sy-ggrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-ggrid{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-ggrid>*{min-width:0}
+.cs-syngenta-agentcore-registry .sy-sm svg{width:100%;height:auto;display:block}
+.cs-syngenta-agentcore-registry .sy-sm .nd rect{fill:#fff;stroke:#c3cad8;stroke-width:1.5;transition:all .35s}
+.cs-syngenta-agentcore-registry .sy-sm .nd text{font-family:var(--f);font-size:12px;font-weight:700;fill:#2b3245}
+.cs-syngenta-agentcore-registry .sy-sm .nd text.s{font-size:9.5px;font-weight:500;fill:#646c7e}
+.cs-syngenta-agentcore-registry .sy-sm .nd.on rect{stroke:#0f256e;stroke-width:3;fill:#eaf1ff}
+.cs-syngenta-agentcore-registry .sy-sm .nd.on text{fill:#0f256e}
+.cs-syngenta-agentcore-registry .sy-sm .ed path{fill:none;stroke:#c3cad8;stroke-width:1.6;transition:stroke .3s}
+.cs-syngenta-agentcore-registry .sy-sm .ed text{font-family:var(--mono);font-size:9px;fill:#8a93a8}
+.cs-syngenta-agentcore-registry .sy-sm .ed.fire path{stroke:#09b6f9;stroke-width:3}
+.cs-syngenta-agentcore-registry .sy-sm .ed.fire text{fill:#0a6e96;font-weight:700}
+.cs-syngenta-agentcore-registry .sy-sm .ed.bad path{stroke:#c03030;stroke-dasharray:5 4;stroke-width:2.2}
+.cs-syngenta-agentcore-registry .sy-sm .ar{fill:#c3cad8}
+.cs-syngenta-agentcore-registry .sy-smlist{display:none}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .sy-sm svg{display:none}.cs-syngenta-agentcore-registry .sy-smlist{display:flex;flex-wrap:wrap;gap:5px}.cs-syngenta-agentcore-registry .sy-smlist span{font-size:.7rem;font-weight:700;padding:6px 9px;border:1.5px solid var(--line);color:var(--muted)}.cs-syngenta-agentcore-registry .sy-smlist span.on{border-color:var(--navy);background:var(--navy);color:#fff}}
+.cs-syngenta-agentcore-registry .sy-gcard{border:1.5px solid var(--navy);background:#fff;display:grid;align-content:start}
+.cs-syngenta-agentcore-registry .sy-gcard .h{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);background:#fafbfd}
+.cs-syngenta-agentcore-registry .sy-gcard .h b{font-family:var(--mono);font-size:.78rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-gcard .bd{padding:12px;display:grid;gap:10px}
+.cs-syngenta-agentcore-registry .sy-gcard label{display:grid;gap:4px;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-gcard textarea,.cs-syngenta-agentcore-registry .sy-gcard input[type=text]{font:500 .8rem var(--f);color:var(--text);border:1.5px solid var(--line);padding:7px 9px;resize:vertical;min-width:0;text-transform:none;letter-spacing:0}
+.cs-syngenta-agentcore-registry .sy-gcard textarea:disabled,.cs-syngenta-agentcore-registry .sy-gcard input:disabled{background:var(--grey);color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-gcard .ro{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.cs-syngenta-agentcore-registry .sy-gcard .ro div{background:var(--grey);padding:6px 8px;display:grid;gap:1px}
+.cs-syngenta-agentcore-registry .sy-gcard .ro span{font-size:.54rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-gcard .ro b{font-size:.72rem;color:var(--text);font-weight:600;overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-gcard .tags{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.cs-syngenta-agentcore-registry .sy-gcard .tags span{font-size:.68rem;padding:2px 7px;background:var(--pale);color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-gcard .tags button{border:1px dashed var(--royal);background:#fff;color:var(--royal);font:600 .66rem var(--f);padding:2px 7px;cursor:pointer}
+.cs-syngenta-agentcore-registry .sy-gcard .why{font-size:.76rem;padding:7px 9px;background:#fdf0f0;border-left:4px solid #c03030;color:#8a1f1f}
+.cs-syngenta-agentcore-registry .sy-gcard .acts{display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--line);padding:10px 12px}
+.cs-syngenta-agentcore-registry .sy-gcard .acts button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:600 .74rem var(--f);padding:7px 10px;cursor:pointer}
+.cs-syngenta-agentcore-registry .sy-gcard .acts button.p{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .sy-gcard .acts button.r{border-color:#c03030;color:#c03030}
+.cs-syngenta-agentcore-registry .sy-gcard .acts button.x{border-style:dashed;color:var(--muted);border-color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-gcard .rj{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px;padding:0 12px 12px}
+.cs-syngenta-agentcore-registry .sy-gcard .hide{padding:20px 12px;text-align:center;color:var(--muted);font-size:.84rem}
+.cs-syngenta-agentcore-registry .sy-ghist{display:grid;gap:3px;padding:0 12px 12px}
+.cs-syngenta-agentcore-registry .sy-ghist span{font-size:.68rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-glog{border-top:1px solid var(--line);padding-top:10px}
+.cs-syngenta-agentcore-registry .sy-glog>div{display:grid;gap:4px;max-height:170px;overflow:auto}
+.cs-syngenta-agentcore-registry .sy-req{display:grid;grid-template-columns:52px minmax(0,1.3fr) minmax(0,2fr);gap:8px;align-items:center;font-size:.72rem;padding:6px 8px;border:1px solid var(--line);animation:cs-syngenta-agentcore-registry-sein .25s both}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sy-req{grid-template-columns:44px minmax(0,1fr)}.cs-syngenta-agentcore-registry .sy-req span{grid-column:1/-1}}
+.cs-syngenta-agentcore-registry .sy-req b{font-family:var(--mono);font-size:.7rem;text-align:center;padding:2px 0}
+.cs-syngenta-agentcore-registry .sy-req b.c2{background:#e3f7ee;color:#1f8a5c}.cs-syngenta-agentcore-registry .sy-req b.c4{background:#fde6e6;color:#c03030}.cs-syngenta-agentcore-registry .sy-req b.c3{background:#fff3d6;color:#8a6200}
+.cs-syngenta-agentcore-registry .sy-req code{font-family:var(--mono);font-size:.66rem;color:var(--royal);overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .sy-acc{display:grid;grid-template-columns:260px minmax(0,1fr) minmax(0,1fr);gap:14px;align-items:start}
+@media (max-width:1000px){.cs-syngenta-agentcore-registry .sy-acc{grid-template-columns:1fr 1fr}.cs-syngenta-agentcore-registry .sy-akeys{grid-column:1/-1}}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sy-acc{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-acc>*{min-width:0}
+.cs-syngenta-agentcore-registry .sy-akeys,.cs-syngenta-agentcore-registry .sy-apath,.cs-syngenta-agentcore-registry .sy-alist{padding:14px;display:grid;gap:10px;align-content:start}
+.cs-syngenta-agentcore-registry .sy-tok{display:grid;gap:5px}
+@media (max-width:1000px){.cs-syngenta-agentcore-registry .sy-tok{grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}}
+.cs-syngenta-agentcore-registry .sy-tok button{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px solid var(--line);padding:8px 10px;display:grid;gap:1px;transition:all .25s}
+.cs-syngenta-agentcore-registry .sy-tok button b{font-size:.8rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-tok button span{font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-tok button[aria-pressed="true"]{border-color:var(--navy);background:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-tok button[aria-pressed="true"] b{color:#fff}.cs-syngenta-agentcore-registry .sy-tok button[aria-pressed="true"] span{color:#9fd9ff}
+.cs-syngenta-agentcore-registry .sy-tok button:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .sy-chk{display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:.76rem;cursor:pointer}
+.cs-syngenta-agentcore-registry .sy-chk code{font-family:var(--mono);font-size:.66rem;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-apath ol{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.cs-syngenta-agentcore-registry .sy-apath li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start;border:1.5px solid var(--line);padding:7px 9px;font-size:.76rem;transition:all .3s;background:#fff}
+.cs-syngenta-agentcore-registry .sy-apath li em{font-style:normal;width:20px;height:20px;display:grid;place-items:center;background:var(--line);font-size:.62rem;font-weight:700;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-apath li b{display:block;font-size:.78rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-apath li span{font-size:.7rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-apath li.on{border-color:var(--navy);box-shadow:0 0 0 3px rgba(9,182,249,.3)}
+.cs-syngenta-agentcore-registry .sy-apath li.ok{border-color:var(--green)}.cs-syngenta-agentcore-registry .sy-apath li.ok em{background:var(--green);color:#fff}
+.cs-syngenta-agentcore-registry .sy-apath li.no{border-color:#c03030;background:#fdf0f0}.cs-syngenta-agentcore-registry .sy-apath li.no em{background:#c03030;color:#fff}
+.cs-syngenta-agentcore-registry .sy-apath li.off{opacity:.3}
+.cs-syngenta-agentcore-registry .sy-ares{font-size:.8rem;padding:8px 10px;background:var(--grey);border-left:4px solid var(--royal);min-height:38px}
+.cs-syngenta-agentcore-registry .sy-ares.ok{background:#eefaf4;border-left-color:var(--green)}.cs-syngenta-agentcore-registry .sy-ares.no{background:#fdf0f0;border-left-color:#c03030;color:#8a1f1f}
+.cs-syngenta-agentcore-registry .sy-ares code{font-family:var(--mono);font-size:.66rem}
+.cs-syngenta-agentcore-registry #arecs{display:grid;gap:4px}
+.cs-syngenta-agentcore-registry .sy-ar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center;padding:6px 8px;border:1px solid var(--line);font-size:.74rem;transition:all .35s}
+.cs-syngenta-agentcore-registry .sy-ar b{font-family:var(--mono);font-size:.68rem;color:var(--navy);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.cs-syngenta-agentcore-registry .sy-ar.in{border-color:var(--green);background:#f1fbf6}
+.cs-syngenta-agentcore-registry .sy-ar.out{opacity:.28;filter:grayscale(1)}
+.cs-syngenta-agentcore-registry .sy-arch{padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .sy-atop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-abtn{display:flex;gap:6px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-abtn button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cs-syngenta-agentcore-registry .sy-amap{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:stretch}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-amap{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.cs-syngenta-agentcore-registry .sy-amap{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-amap .col{display:grid;gap:8px;align-content:start;border:1.5px dashed var(--line);padding:10px;background:#fafbfd}
+.cs-syngenta-agentcore-registry .sy-amap .col>small{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-amap .n{border:1.5px solid var(--line);background:#fff;padding:9px 10px;display:grid;gap:2px;transition:all .3s;position:relative}
+.cs-syngenta-agentcore-registry .sy-amap .n b{font-size:.78rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-amap .n span{font-size:.64rem;color:var(--muted);line-height:1.35}
+.cs-syngenta-agentcore-registry .sy-amap .n em{position:absolute;top:6px;right:6px;font-style:normal;font-family:var(--mono);font-size:.56rem;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-amap .n.on{border-color:var(--navy);background:var(--pale);box-shadow:0 0 0 3px rgba(9,182,249,.3)}
+.cs-syngenta-agentcore-registry .sy-amap .n.dim{opacity:.35}
+.cs-syngenta-agentcore-registry .sy-adet{background:var(--navy);color:#c9d4f2;padding:12px 16px;font-size:.84rem;min-height:48px}
+.cs-syngenta-agentcore-registry .sy-adet b{color:#fff}
+.cs-syngenta-agentcore-registry .sy-adet ol{margin:6px 0 0;padding-left:18px;display:grid;gap:3px;font-size:.78rem}
+.cs-syngenta-agentcore-registry .sy-adet li{animation:cs-syngenta-agentcore-registry-sein .3s both}
+.cs-syngenta-agentcore-registry .sy-layers{display:grid;gap:6px}
+.cs-syngenta-agentcore-registry .sy-ly{display:grid;grid-template-columns:200px minmax(0,1fr);gap:10px;align-items:center;border:1.5px solid var(--line);background:#fff;padding:10px 12px;transition:all .3s}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .sy-ly{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-ly b{font-size:.84rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-ly div{display:flex;flex-wrap:wrap;gap:4px}
+.cs-syngenta-agentcore-registry .sy-ly div span{font-size:.68rem;padding:3px 8px;background:var(--grey)}
+.cs-syngenta-agentcore-registry .sy-ly.gov{border-color:var(--navy);background:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-ly.gov b{color:#fff}.cs-syngenta-agentcore-registry .sy-ly.gov div span{background:rgba(255,255,255,.12);color:#fff}
+.cs-syngenta-agentcore-registry .sy-ly.gov div span.us{background:var(--cyan);color:var(--navy);font-weight:700}
+.cs-syngenta-agentcore-registry .sy-ly.src{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(9,182,249,.25)}
+.cs-syngenta-agentcore-registry .sy-ly:focus-visible{outline:2px solid var(--cyan)}
+.cs-syngenta-agentcore-registry .sy-flip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-flip{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .sy-flip{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-fc{all:unset;box-sizing:border-box;cursor:pointer;perspective:900px;min-height:200px;display:block;width:100%;text-align:left}
+.cs-syngenta-agentcore-registry .sy-fc .in{display:block}
+.cs-syngenta-agentcore-registry .sy-fc .tx{display:block;font-size:.8rem;line-height:1.5}
+.cs-syngenta-agentcore-registry .sy-fc .fa .tx{color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-fc:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.cs-syngenta-agentcore-registry .sy-fc .in{position:relative;width:100%;height:100%;min-height:200px;transition:transform .6s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.cs-syngenta-agentcore-registry .sy-fc.on .in{transform:rotateY(180deg)}
+.cs-syngenta-agentcore-registry .sy-fc .fa,.cs-syngenta-agentcore-registry .sy-fc .ba{position:absolute;inset:0;padding:16px;display:grid;gap:8px;align-content:start;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1.5px solid var(--navy)}
+.cs-syngenta-agentcore-registry .sy-fc .fa{background:#fff}
+.cs-syngenta-agentcore-registry .sy-fc .ba{background:var(--navy);color:#c9d4f2;transform:rotateY(180deg)}
+.cs-syngenta-agentcore-registry .sy-fc small{font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.cs-syngenta-agentcore-registry .sy-fc .fa small{color:#c2410c}.cs-syngenta-agentcore-registry .sy-fc .ba small{color:var(--cyan)}
+.cs-syngenta-agentcore-registry .sy-fc b{font-size:1rem;line-height:1.3}
+.cs-syngenta-agentcore-registry .sy-fc .fa b{color:var(--navy)}.cs-syngenta-agentcore-registry .sy-fc .ba b{color:#fff;font-size:.92rem}
+.cs-syngenta-agentcore-registry .sy-fc p{margin:0;font-size:.78rem}
+.cs-syngenta-agentcore-registry .sy-fc .fa p{color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-fc .go{position:absolute;bottom:12px;right:14px;font-size:.66rem;font-weight:700;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-fc .ba .go{color:var(--cyan)}
+@media (prefers-reduced-motion:reduce){.cs-syngenta-agentcore-registry .sy-fc .in{transition:none}}
+.cs-syngenta-agentcore-registry .sy-pipe{padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-syngenta-agentcore-registry .sy-pbtn{display:flex;gap:6px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .sy-pbtn .se-btn{font-family:var(--mono);font-size:.72rem}
+.cs-syngenta-agentcore-registry .sy-pbtn .se-btn.pri{font-family:var(--f)}
+.cs-syngenta-agentcore-registry .sy-stages{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}
+@media (max-width:860px){.cs-syngenta-agentcore-registry .sy-stages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-syngenta-agentcore-registry .sy-stg{border:1.5px solid var(--line);background:#fff;padding:10px;display:grid;gap:4px;align-content:start;transition:all .3s;position:relative}
+.cs-syngenta-agentcore-registry .sy-stg em{font-style:normal;font-size:.56rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.cs-syngenta-agentcore-registry .sy-stg b{font-size:.8rem;color:var(--navy)}
+.cs-syngenta-agentcore-registry .sy-stg span{font-size:.66rem;color:var(--muted);line-height:1.35}
+.cs-syngenta-agentcore-registry .sy-stg.run{border-color:var(--navy);box-shadow:0 0 0 3px rgba(9,182,249,.3)}
+.cs-syngenta-agentcore-registry .sy-stg.run::after{content:"";position:absolute;top:8px;right:8px;width:8px;height:8px;background:var(--cyan);animation:cs-syngenta-agentcore-registry-sypulse .7s infinite}
+.cs-syngenta-agentcore-registry .sy-stg.ok{border-color:var(--green);background:#f1fbf6}.cs-syngenta-agentcore-registry .sy-stg.ok em{color:#1f8a5c}
+.cs-syngenta-agentcore-registry .sy-stg.wait{border-color:#f5b83d;background:#fffaf0}.cs-syngenta-agentcore-registry .sy-stg.wait em{color:#8a6200}
+.cs-syngenta-agentcore-registry .sy-stg.skip{opacity:.35}
+.cs-syngenta-agentcore-registry .sy-pmsg{font-size:.84rem;padding:9px 12px;background:var(--grey);border-left:4px solid var(--royal);min-height:40px}
+.cs-syngenta-agentcore-registry .sy-pmsg.ok{background:#eefaf4;border-left-color:var(--green)}.cs-syngenta-agentcore-registry .sy-pmsg.no{background:#fdf0f0;border-left-color:#c03030;color:#8a1f1f}.cs-syngenta-agentcore-registry .sy-pmsg.wait{background:#fff8e6;border-left-color:#f5b83d}
+.cs-syngenta-agentcore-registry .sy-tl{margin-top:16px;border:1.5px solid var(--navy);background:#fff;padding:18px 16px 14px;position:relative}
+.cs-syngenta-agentcore-registry .sy-tl .lbl{position:absolute;top:-11px;left:18px;background:#fff;padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-tl ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;position:relative}
+.cs-syngenta-agentcore-registry .sy-tl ol::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-tl ol{grid-template-columns:1fr;gap:10px}.cs-syngenta-agentcore-registry .sy-tl ol::before{left:9px;right:auto;top:0;bottom:0;width:2px;height:auto}}
+.cs-syngenta-agentcore-registry .sy-tl li{position:relative;display:grid;gap:3px;padding-top:24px;opacity:.25;transform:translateY(6px);transition:all .45s}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-tl li{padding:0 0 0 28px}}
+.cs-syngenta-agentcore-registry .sy-tl li::before{content:"";position:absolute;left:0;top:2px;width:16px;height:16px;background:#fff;border:2px solid var(--royal)}
+.cs-syngenta-agentcore-registry .sy-tl li.in{opacity:1;transform:none}
+.cs-syngenta-agentcore-registry .sy-tl li.in::before{background:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-tl li:last-child::before{background:var(--green);border-color:var(--green)}
+.cs-syngenta-agentcore-registry .sy-tl li em{font-style:normal;font-family:var(--mono);font-size:.62rem;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-tl li b{font-size:.78rem;color:var(--navy);line-height:1.3}
+.cs-syngenta-agentcore-registry .sy-life{margin-top:34px;padding:20px 18px 16px}
+.cs-syngenta-agentcore-registry .sy-life ol{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.cs-syngenta-agentcore-registry .sy-life li{align-content:start}
+.cs-syngenta-agentcore-registry .sy-life li span{font-size:.76rem;line-height:1.45;color:var(--text)}
+.cs-syngenta-agentcore-registry .sy-life li:last-child::before{background:var(--royal);border-color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-life li.ok::before{background:var(--green);border-color:var(--green)}
+.cs-syngenta-agentcore-registry .sy-life p{margin-top:16px;padding-top:12px;border-top:1.5px solid var(--line);font-size:.84rem;line-height:1.5}
+.cs-syngenta-agentcore-registry .sy-life p b{color:var(--navy)}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-life ol{grid-template-columns:1fr;gap:12px}}
+.cs-syngenta-agentcore-registry .sy-nums{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.cs-syngenta-agentcore-registry .sy-nums{grid-template-columns:1fr 1fr}}
+.cs-syngenta-agentcore-registry .sy-ba{position:relative;margin-top:30px;border:1.5px solid var(--navy);padding:26px 16px 12px;display:grid;grid-template-columns:1fr 1fr;gap:6px 18px;background:#fff}
+@media (max-width:760px){.cs-syngenta-agentcore-registry .sy-ba{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .sy-ba .lbl{position:absolute;top:-11px;left:18px;background:#fff;padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+.cs-syngenta-agentcore-registry .sy-ba>div{display:grid;grid-template-columns:minmax(0,1fr) 20px minmax(0,1fr);gap:8px;align-items:center;padding:8px 0;border-bottom:1px dashed var(--line);opacity:0;transform:translateY(6px);transition:all .45s}
+.cs-syngenta-agentcore-registry .sy-ba.in>div{opacity:1;transform:none}
+.cs-syngenta-agentcore-registry .sy-ba>div:nth-child(3){transition-delay:.08s}.cs-syngenta-agentcore-registry .sy-ba>div:nth-child(4){transition-delay:.16s}.cs-syngenta-agentcore-registry .sy-ba>div:nth-child(5){transition-delay:.24s}.cs-syngenta-agentcore-registry .sy-ba>div:nth-child(6){transition-delay:.32s}.cs-syngenta-agentcore-registry .sy-ba>div:nth-child(7){transition-delay:.4s}
+.cs-syngenta-agentcore-registry .sy-ba .b{font-size:.8rem;color:#8a2d07;text-decoration:line-through;text-decoration-color:rgba(138,45,7,.35)}
+.cs-syngenta-agentcore-registry .sy-ba i{font-style:normal;color:var(--cyan);font-weight:700;text-align:center}
+.cs-syngenta-agentcore-registry .sy-ba .a{font-size:.84rem;color:var(--navy);font-weight:600}
+.cs-syngenta-agentcore-registry .se-proof button:first-child{grid-template-rows:minmax(0,1fr) auto}
+.cs-syngenta-agentcore-registry .se-proof button:first-child img{height:100%;min-height:0;aspect-ratio:auto;object-fit:cover;object-position:top left}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .se-proof button:first-child img{height:auto;aspect-ratio:16/10}}
+.cs-syngenta-agentcore-registry .sy-stg.no{border-color:#c03030;background:#fdf0f0}.cs-syngenta-agentcore-registry .sy-stg.no em{color:#c03030}
+.cs-syngenta-agentcore-registry .sy-gcard .hint{font-size:.7rem;color:var(--muted);padding:0 12px 10px}
+.cs-syngenta-agentcore-registry .pi-nav,.cs-syngenta-agentcore-registry .pi-foot{--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--green:#3dbe8b;--dark:#262d3d;--slate:#455065;--line:#d9dbe0;--band:#f3f3f3;--pale:#eaf1ff;--text:#2b3245;--muted:#646c7e;--white:#ffffff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;--wrap:1200px;--gut:clamp(16px,4vw,40px);font-family:var(--f);line-height:1.6}.cs-syngenta-agentcore-registry .pi-nav *,.cs-syngenta-agentcore-registry .pi-foot *{box-sizing:border-box}.cs-syngenta-agentcore-registry .pi-nav ul,.cs-syngenta-agentcore-registry .pi-foot ul{margin:0;padding:0;list-style:none}.cs-syngenta-agentcore-registry .pi-nav img,.cs-syngenta-agentcore-registry .pi-foot img{display:block;max-width:none}.cs-syngenta-agentcore-registry .pi-wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}.cs-syngenta-agentcore-registry .pi-mob[hidden]{display:none!important}.cs-syngenta-agentcore-registry .pi-nav h4,.cs-syngenta-agentcore-registry .pi-foot h4{margin:0}.cs-syngenta-agentcore-registry .pi-foot p{margin:0}.cs-syngenta-agentcore-registry .pi-nav button{font-family:inherit}.cs-syngenta-agentcore-registry .pi-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--royal)}
+.cs-syngenta-agentcore-registry .pi-btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem;text-decoration:none;padding:14px 24px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s;white-space:nowrap}
+.cs-syngenta-agentcore-registry .pi-btn:hover{transform:translateY(-2px)}
+@media (max-width:520px){.cs-syngenta-agentcore-registry .pi-btn{white-space:normal;text-align:left}}
+.cs-syngenta-agentcore-registry .pi-btn svg{width:16px;height:16px;transition:transform .2s}
+.cs-syngenta-agentcore-registry .pi-btn:hover svg{transform:translateX(3px)}
+.cs-syngenta-agentcore-registry .pi-btn-cyan{background:var(--cyan);color:var(--navy)}
+.cs-syngenta-agentcore-registry .pi-ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.cs-syngenta-agentcore-registry .pi-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.cs-syngenta-agentcore-registry .pi-nav .pi-wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.cs-syngenta-agentcore-registry .pi-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
+.cs-syngenta-agentcore-registry .pi-brand img{height:38px;width:auto}
+.cs-syngenta-agentcore-registry .pi-brand b{font-weight:700;font-size:1.02rem;line-height:1.05;letter-spacing:-.01em}
+.cs-syngenta-agentcore-registry .pi-menu{display:flex;align-items:center;gap:2px;height:100%}
+.cs-syngenta-agentcore-registry .pi-menu>li{position:relative;height:100%;display:flex;align-items:center}
+.cs-syngenta-agentcore-registry .pi-menu>li>a,.cs-syngenta-agentcore-registry .pi-menu>li>button{display:flex;align-items:center;gap:6px;height:100%;padding:0 13px;font-size:.86rem;font-weight:600;color:var(--slate);text-decoration:none;background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;transition:color .2s,border-color .2s}
+.cs-syngenta-agentcore-registry .pi-menu>li>button svg{width:12px;height:12px;transition:transform .2s}
+.cs-syngenta-agentcore-registry .pi-menu>li>a:hover,.cs-syngenta-agentcore-registry .pi-menu>li>button:hover,.cs-syngenta-agentcore-registry .pi-menu>li.pi-open>button{color:var(--navy)}
+.cs-syngenta-agentcore-registry .pi-menu>li>a.pi-on{color:var(--navy);border-color:var(--cyan)}
+.cs-syngenta-agentcore-registry .pi-menu>li.pi-open>button svg{transform:rotate(180deg)}
+.cs-syngenta-agentcore-registry .pi-drop{position:absolute;top:100%;left:-12px;background:var(--white);border:1.5px solid var(--navy);box-shadow:0 24px 50px -28px rgba(15,37,110,.55);padding:10px;display:none;z-index:90}
+.cs-syngenta-agentcore-registry .pi-menu>li.pi-open .pi-drop{display:grid}
+.cs-syngenta-agentcore-registry .pi-drop.pi-svc{width:640px;grid-template-columns:1fr 1fr;gap:2px}
+.cs-syngenta-agentcore-registry .pi-drop.pi-ind{width:360px;gap:2px}
+.cs-syngenta-agentcore-registry .pi-drop a{display:grid;gap:3px;padding:12px 14px;text-decoration:none;transition:background .2s}
+.cs-syngenta-agentcore-registry .pi-drop a:hover{background:var(--pale)}
+.cs-syngenta-agentcore-registry .pi-drop a b{font-size:.88rem;color:var(--navy);font-weight:700}
+.cs-syngenta-agentcore-registry .pi-drop a span{font-size:.78rem;color:var(--muted);line-height:1.45}
+.cs-syngenta-agentcore-registry .pi-drop .pi-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid var(--line);margin-top:6px;padding:12px 14px 4px}
+.cs-syngenta-agentcore-registry .pi-drop .pi-foot a{display:inline-flex;padding:0;font-size:.82rem;font-weight:700;color:var(--royal)}
+.cs-syngenta-agentcore-registry .pi-drop .pi-foot a:hover{background:none;text-decoration:underline}
+.cs-syngenta-agentcore-registry .pi-nav-cta{display:flex;align-items:center;gap:10px}
+.cs-syngenta-agentcore-registry .pi-nav-cta .pi-btn{padding:11px 18px;font-size:.84rem}
+.cs-syngenta-agentcore-registry .pi-burger{display:none;width:44px;height:44px;border:1.5px solid var(--navy);background:var(--white);cursor:pointer;place-items:center}
+.cs-syngenta-agentcore-registry .pi-burger svg{width:20px;height:20px}
+.cs-syngenta-agentcore-registry .pi-mob{display:none}
+@media (max-width:1100px){.cs-syngenta-agentcore-registry .pi-menu{display:none}.cs-syngenta-agentcore-registry .pi-burger{display:grid}.cs-syngenta-agentcore-registry .pi-mob{display:block;border-top:1px solid var(--line);background:var(--white);max-height:calc(100vh - 72px);overflow:auto}.cs-syngenta-agentcore-registry .pi-mob[hidden]{display:none!important}.cs-syngenta-agentcore-registry .pi-mob .pi-wrap{height:auto;display:grid;gap:4px;padding-block:14px 24px}.cs-syngenta-agentcore-registry .pi-mob h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}.cs-syngenta-agentcore-registry .pi-mob a{display:block;padding:10px 0;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.cs-syngenta-agentcore-registry .pi-nav-cta .pi-btn{display:none}.cs-syngenta-agentcore-registry .pi-brand b{font-size:.92rem}}
+.cs-syngenta-agentcore-registry .mod .pi-ico{width:20px;height:20px;color:var(--on-dark-2);transition:color .45s}
+.cs-syngenta-agentcore-registry .mod.pi-on .pi-ico{color:var(--cyan)}
+.cs-syngenta-agentcore-registry .badges .pi-ico{color:var(--royal);width:28px;height:28px}
+.cs-syngenta-agentcore-registry .acc-item .k .pi-ico{width:18px;height:18px}
+.cs-syngenta-agentcore-registry .gov .pi-ico{width:18px;height:18px;color:var(--green)}
+.cs-syngenta-agentcore-registry .pi-close{position:relative;color:var(--white);background:radial-gradient(800px 420px at 0% 0%,rgba(32,78,207,.55),transparent 60%),linear-gradient(135deg,#1e2f6a 0%,var(--dark) 70%);overflow:hidden}
+.cs-syngenta-agentcore-registry .pi-close .pi-wrap{display:grid;grid-template-columns:1.3fr auto;gap:32px;align-items:center;padding-block:clamp(64px,8vw,104px)}
+.cs-syngenta-agentcore-registry .pi-close .pi-wrap>*{min-width:0}
+.cs-syngenta-agentcore-registry .pi-close .pi-eyebrow{color:var(--cyan)}
+.cs-syngenta-agentcore-registry .pi-close h2{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-top:14px}
+.cs-syngenta-agentcore-registry .pi-close p{color:var(--on-dark);margin-top:18px;max-width:62ch}
+@media (max-width:820px){.cs-syngenta-agentcore-registry .pi-close .pi-wrap{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .pi-foot{background:var(--white);border-top:4px solid var(--navy)}
+.cs-syngenta-agentcore-registry .pi-foot .pi-wrap{display:grid;grid-template-columns:1.3fr 1.15fr .8fr .8fr 1.35fr;gap:32px;padding-block:56px 28px}
+.cs-syngenta-agentcore-registry .pi-foot .pi-wrap>*{min-width:0}
+.cs-syngenta-agentcore-registry .pi-foot .pi-brand{margin-bottom:14px}
+.cs-syngenta-agentcore-registry .pi-foot p{font-size:.88rem;color:var(--muted);max-width:36ch}
+.cs-syngenta-agentcore-registry .pi-foot h4{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.cs-syngenta-agentcore-registry .pi-foot li a{display:block;font-size:.86rem;color:var(--slate);text-decoration:none;padding:4px 0}
+.cs-syngenta-agentcore-registry .pi-foot li a:hover{color:var(--royal)}
+.cs-syngenta-agentcore-registry .pi-mail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cs-syngenta-agentcore-registry .pi-mail code{font-family:var(--mono);font-size:.8rem;color:var(--navy);background:var(--band);padding:6px 8px;user-select:all;overflow-wrap:anywhere}
+.cs-syngenta-agentcore-registry .pi-mail button{border:1.5px solid var(--line);background:var(--white);font-size:.74rem;font-weight:600;padding:5px 10px;cursor:pointer;color:var(--navy)}
+.cs-syngenta-agentcore-registry .pi-mail button:hover{border-color:var(--navy)}
+.cs-syngenta-agentcore-registry .pi-foot .pi-li{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.86rem;font-weight:600;color:var(--royal);text-decoration:none}
+.cs-syngenta-agentcore-registry .pi-foot .pi-li svg{width:18px;height:18px}
+.cs-syngenta-agentcore-registry .pi-legal{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:20px;font-size:.8rem;color:var(--muted)}
+.cs-syngenta-agentcore-registry .pi-legal a{color:var(--muted)}
+@media (max-width:1000px){.cs-syngenta-agentcore-registry .pi-foot .pi-wrap{grid-template-columns:1fr 1fr 1fr}.cs-syngenta-agentcore-registry .pi-foot .pi-wrap>div:first-child{grid-column:1/-1}}
+@media (max-width:560px){.cs-syngenta-agentcore-registry .pi-foot .pi-wrap{grid-template-columns:1fr 1fr}.cs-syngenta-agentcore-registry .pi-foot .pi-wrap>div:last-of-type{grid-column:1/-1}}
+.cs-syngenta-agentcore-registry .pi-menu>li>button.pi-on{color:var(--navy);border-color:var(--cyan)}
+.cs-syngenta-agentcore-registry .vtabs [role="tab"] .pi-ico{width:20px;height:20px;color:var(--muted);transition:color .25s}
+.cs-syngenta-agentcore-registry .vtabs [role="tab"][aria-selected="true"] .pi-ico{color:var(--cyan)}
+.cs-syngenta-agentcore-registry .vpanel .big-ic .pi-ico{width:32px;height:32px}
+.cs-syngenta-agentcore-registry .search .box2 .pi-ico{width:20px;height:20px;color:var(--royal)}
+.cs-syngenta-agentcore-registry .way .ic .pi-ico{width:22px;height:22px}
+.cs-syngenta-agentcore-registry .crit-list .ck .pi-ico{width:20px;height:20px}
+.cs-syngenta-agentcore-registry .form-ok .tick .pi-ico{width:28px;height:28px}
+.cs-syngenta-agentcore-registry .legal-wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+@media (max-width:860px){.cs-syngenta-agentcore-registry .legal-wrap{grid-template-columns:1fr}}
+.cs-syngenta-agentcore-registry .pi-brand b{display:grid;line-height:1.05}
+.cs-syngenta-agentcore-registry .pi-brand .pi-b1{color:#0c4185}
+.cs-syngenta-agentcore-registry .pi-brand .pi-b2{color:#6f7584}
+.cs-syngenta-agentcore-registry .pi-btn .pi-arr{display:inline-grid;place-items:center}
+.cs-syngenta-agentcore-registry .pi-btn .pi-arr .pi-ico{width:16px;height:16px}
+.cs-syngenta-agentcore-registry .pi-btn-cyan{padding:0 0 0 24px;gap:20px;min-height:52px;align-items:center;background:var(--cyan);color:var(--navy);border:0;box-shadow:inset 0 -3px 0 rgba(15,37,110,.18)}
+.cs-syngenta-agentcore-registry .pi-btn-cyan .pi-arr{align-self:stretch;width:52px;background:rgba(15,37,110,.16);color:var(--navy);border-left:1px solid rgba(15,37,110,.18);transition:background .25s,color .25s}
+.cs-syngenta-agentcore-registry .pi-btn-cyan .pi-arr .pi-ico{transition:transform .25s}
+.cs-syngenta-agentcore-registry .pi-btn-cyan:not(:has(.pi-arr)){padding:0 24px}
+.cs-syngenta-agentcore-registry .pi-btn-cyan:hover{background:#3cc8fb;transform:translateY(-2px)}
+.cs-syngenta-agentcore-registry .pi-btn-cyan:hover .pi-arr{background:var(--navy);color:var(--cyan)}
+.cs-syngenta-agentcore-registry .pi-btn-cyan:hover .pi-arr .pi-ico{transform:translateX(3px)}
+.cs-syngenta-agentcore-registry .pi-btn:hover svg{transform:none}
+.cs-syngenta-agentcore-registry .pi-btn-cyan:focus-visible{outline:2px solid var(--white);outline-offset:3px;box-shadow:0 0 0 5px var(--cyan)}
+.cs-syngenta-agentcore-registry .pi-nav-cta .pi-btn-cyan{min-height:44px;padding-left:18px;gap:14px;font-size:.84rem}
+.cs-syngenta-agentcore-registry .pi-nav-cta .pi-btn-cyan .pi-arr{width:44px}
+.cs-syngenta-agentcore-registry .pi-btn-wide{width:100%;justify-content:space-between}
+@media (max-width:520px){.cs-syngenta-agentcore-registry .pi-btn-cyan{min-height:50px}}
+.cs-syngenta-agentcore-registry .pi-close .pi-wrap{display:block;padding-block:clamp(56px,7vw,96px)}
+.cs-syngenta-agentcore-registry .pi-cta-card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);position:relative}
+.cs-syngenta-agentcore-registry .pi-cta-card::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:4px;background:var(--cyan)}
+.cs-syngenta-agentcore-registry .pi-cta-l{padding:clamp(28px,4vw,52px);display:grid;gap:4px;align-content:center}
+.cs-syngenta-agentcore-registry .pi-cta-l h2{margin-top:10px}
+.cs-syngenta-agentcore-registry .pi-cta-r{padding:clamp(24px,3.4vw,40px);border-left:1px solid rgba(160,185,240,.3);background:rgba(255,255,255,.04);display:grid;gap:18px;align-content:center}
+.cs-syngenta-agentcore-registry .pi-cta-k{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-2)}
+.cs-syngenta-agentcore-registry .pi-cta-steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:none}
+.cs-syngenta-agentcore-registry .pi-cta-steps li{display:grid;grid-template-columns:40px 1fr;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(160,185,240,.22);font-weight:600;font-size:.95rem;color:var(--white)}
+.cs-syngenta-agentcore-registry .pi-cta-steps li:last-child{border-bottom:0}
+.cs-syngenta-agentcore-registry .pi-cta-steps b{width:34px;height:34px;display:grid;place-items:center;border:1.5px solid var(--cyan);color:var(--cyan);font-size:.72rem;font-family:var(--mono)}
+@media (max-width:860px){.cs-syngenta-agentcore-registry .pi-cta-card{grid-template-columns:1fr}.cs-syngenta-agentcore-registry .pi-cta-r{border-left:0;border-top:1px solid rgba(160,185,240,.3)}}
+.cs-syngenta-agentcore-registry .rl-ic .pi-ico{width:22px;height:22px}
+.cs-syngenta-agentcore-registry .rl-pkg .pi-ico{width:13px;height:13px}
+.cs-syngenta-agentcore-registry .rl-chips .pi-ico{width:13px;height:13px}
+.cs-syngenta-agentcore-registry .hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}.cs-syngenta-agentcore-registry .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}.cs-syngenta-agentcore-registry .hero>*{position:relative}.cs-syngenta-agentcore-registry .pi-close{font-family:var(--f);--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--dark:#262d3d;--white:#fff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--f:"Montserrat",ui-sans-serif,system-ui,sans-serif;--wrap:1200px;--gut:clamp(16px,4vw,40px);line-height:1.6}.cs-syngenta-agentcore-registry .pi-close h2{margin:0}.cs-syngenta-agentcore-registry .pi-close h2 b{color:var(--cyan)}.cs-syngenta-agentcore-registry .pi-close p{margin:0}.cs-syngenta-agentcore-registry .pi-close *{box-sizing:border-box}.cs-syngenta-agentcore-registry .pi-back{color:var(--on-dark);font-size:.86rem;font-weight:600;text-decoration:none;justify-self:start}.cs-syngenta-agentcore-registry .pi-back:hover{color:#fff}
+.cs-syngenta-agentcore-registry .pi-foot{margin-top:0}
+
+
+.cs-syngenta-agentcore-registry .pi-prog{--pp-navy:#0f256e;--pp-cyan:#09b6f9;--pp-green:#3dbe8b;--pp-line:#d9dbe0;--pp-muted:#646c7e;--pp-h:72px;
+  position:sticky;top:calc(var(--pp-h) + env(safe-area-inset-top,0px));z-index:79;background:rgba(245,247,251,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--pp-line);font-family:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.cs-syngenta-agentcore-registry .pi-prog *{box-sizing:border-box}
+.cs-syngenta-agentcore-registry .pi-prog .pp-in{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);height:50px;display:flex;align-items:center;gap:18px}
+.cs-syngenta-agentcore-registry .pi-prog .pp-live{display:flex;align-items:center;gap:8px;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pp-muted);flex:none}
+.cs-syngenta-agentcore-registry .pi-prog .pp-live i{width:8px;height:8px;border-radius:50%;background:var(--pp-green);box-shadow:0 0 0 3px rgba(61,190,139,.2)}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list{flex:1;min-width:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent);scroll-behavior:smooth;margin:0;padding:0 40px 0 0;list-style:none}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list::-webkit-scrollbar{display:none}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a{flex:none;display:flex;align-items:center;gap:7px;height:50px;padding:0 8px;text-decoration:none;font-size:.8rem;font-weight:500;color:var(--pp-muted);border-bottom:2px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a .n{display:grid;place-items:center;min-width:22px;height:20px;padding:0 3px;border:1px solid var(--pp-line);font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.62rem;color:var(--pp-muted);background:#fff;transition:all .25s}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a:hover{color:var(--pp-navy)}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a.done{color:#1f8a5c}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a.done .n{background:var(--pp-green);border-color:var(--pp-green);color:#fff}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a.on{color:var(--pp-navy);font-weight:600;border-bottom-color:var(--pp-cyan)}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a.on .n{background:var(--pp-navy);border-color:var(--pp-navy);color:#fff}
+.cs-syngenta-agentcore-registry .pi-prog .pp-list a:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:-2px}
+.cs-syngenta-agentcore-registry .pi-prog .pp-count{flex:none;font-size:.76rem;color:var(--pp-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cs-syngenta-agentcore-registry .pi-prog .pp-count b{color:var(--pp-navy)}
+.cs-syngenta-agentcore-registry .pi-prog .pp-bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+.cs-syngenta-agentcore-registry .pi-prog .pp-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pp-cyan),#3dbe8b)}
+@media (max-width:640px){.cs-syngenta-agentcore-registry .pi-prog .pp-live{display:none}.cs-syngenta-agentcore-registry .pi-prog .pp-list a:not(.on) .t{display:none}.cs-syngenta-agentcore-registry .pi-prog .pp-in{gap:10px}}

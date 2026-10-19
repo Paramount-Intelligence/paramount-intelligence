@@ -129,11 +129,22 @@ Check the slugs against `case-cards.json` (`currentRoute`) and the `CaseStudy` t
 **Recommended approach:**
 - Give each page its own static route (`app/case-studies/<slug>/page.tsx`); a static segment takes precedence over `[slug]`.
 - Render the page body, without its `pi-` header and footer, inside the shared Header and Footer.
-- Load its stylesheet scoped to the page and run its script with `next/script` once the markup is mounted.
+- Load its stylesheet scoped to the page and run its script once the markup is mounted.
 - Point its image paths at `public/images/case-studies/`.
 - Rewriting these pages fully in React is possible but slow, and risks changing interactions. Do it only page by page, with Ali's agreement.
 
 All other slugs keep the existing database-driven detail page (`components/casestudies/detail/*`), restyled to the new design system.
+
+**Done in phase 4:**
+- `node docs/website-redesign/tools/generate-case-study-pages.mjs` builds each page from its reference file into `content/case-studies/<key>/` (`body.html`, `style.css`, `script-N.js`, plus `pages.json`) and writes its route, `app/case-studies/<slug>/page.tsx`. Re-run it when a reference page changes; don't edit the generated files.
+  - The page's own header, footer and menu script are dropped; the shared Header and Footer take their place. HTML and CSS comments are dropped.
+  - Links point to app routes and images to `/images/case-studies/`.
+  - Its CSS is scoped to its root, `<main class="cs-page cs-<key>">`: `html`, `body` and `:root` rules apply to the root (with `overflow: hidden` as `clip`, so the reading bar still sticks), and keyframes get a `cs-<key>-` prefix.
+  - The reading bar measures the shared header, so it sits directly under it.
+- `components/casestudies/full/FullCaseStudy.tsx` renders a page; `CaseStudyScripts.tsx` runs its scripts once it is mounted. The scripts see only the page in their document queries, and leaving the page removes every listener, timer, animation frame and observer they added.
+- Isolation from the rest of the site: `postcss/scope-site-css.cjs` keeps `site.css` and Tailwind's `[hidden]` rule out of `.cs-page`; the rest of Tailwind's preflight and utilities are reverted inside it (see the end of `app/site.css`). The pages load Montserrat italic 400 and, on Contract Intelligence, Caveat 600, as the reference does.
+- Card 50 (Flexagon Implementation Execution Portal) uses the slug proposed in section 3, `flexagon-implementation-execution-portal`.
+- The database-driven page (`components/casestudies/detail/CaseStudyDetail.tsx`) shows the CaseStudy fields in the redesign's parts: hero, "Meet our client" and "In a nutshell", numbered chapters for the fields that have content (placeholders such as "N/A" count as empty), and the closing card with "View all case studies". The old detail components are no longer used.
 
 **Checks for each page, at 1440px and 390px:**
 - the reading bar stays under the header and tracks every section;

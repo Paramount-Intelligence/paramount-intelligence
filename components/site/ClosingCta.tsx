@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 import Button from "./Button";
 import { ROUTES } from "@/lib/site-nav";
@@ -8,6 +9,8 @@ type ClosingCtaProps = {
   body?: ReactNode;
   ctaLabel?: string;
   ctaHref?: string;
+  /** "View all case studies" under the button, as on the case study pages. */
+  backToCaseStudies?: boolean;
 };
 
 const STEPS = ["Your business objective", "The technical context", "The right next step"];
@@ -19,6 +22,7 @@ export default function ClosingCta({
   body = "Paramount supports technology decisions, focused engineering assignments, and end-to-end delivery engagements. An initial discussion establishes the business objective, technical context, and appropriate next step.",
   ctaLabel = "Discuss a project",
   ctaHref = ROUTES.contact,
+  backToCaseStudies = false,
 }: ClosingCtaProps) {
   return (
     <section className="close">
@@ -42,6 +46,11 @@ export default function ClosingCta({
             <Button href={ctaHref} wide>
               {ctaLabel}
             </Button>
+            {backToCaseStudies && (
+              <Link className="cta-back" href={ROUTES.caseStudies}>
+                View all case studies &rarr;
+              </Link>
+            )}
           </div>
         </div>
       </div>

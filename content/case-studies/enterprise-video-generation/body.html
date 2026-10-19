@@ -1,0 +1,382 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+
+
+<nav class="pi-prog" id="pi-prog" aria-label="Case study sections" data-sections="top:Overview,problem:Problem,constraints:Constraints,pipeline:How it is made,models:Models,localise:Localisation,trigger:Automation,arch:Architecture,samples:Sample ads,results:Results">
+  <div class="pp-in">
+    <span class="pp-live"><i></i>Reading</span>
+    <ol class="pp-list" id="pp-list"></ol>
+    <span class="pp-count" id="pp-count"></span>
+  </div>
+  <div class="pp-bar" aria-hidden="true"><i id="pp-fill"></i></div>
+</nav>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Global enterprise · Worldwide</span><span class="pill-tag"><span class="pulse"></span>Deployed on Oracle Cloud</span></div>
+      <h1>Video ads in minutes, <b>not weeks.</b></h1>
+      <p class="lede">An AI platform that turns simple business inputs into complete, platform-ready video ads: research, script, visuals, voiceover and render in one automated workflow, in under 5 minutes.</p>
+      <ul class="pts">
+        <li><b>From brief to finished ad:</b> no agency hand-offs between the first input and the final video.</li>
+        <li><b>Many models, one workflow:</b> the best model for each job, coordinated in a single system.</li>
+        <li><b>Enterprise-grade:</b> deployed on Oracle Cloud Infrastructure for security, scale and data governance.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="#pipeline"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>Make an ad</a>
+        <a class="btn btn-line" href="#problem">See the story</a>
+      </div>
+      <div class="meta">
+        <div><span>Client</span><b>Global enterprise</b></div>
+        <div><span>Output</span><b>Platform-ready video ads</b></div>
+        <div><span>Built on</span><b>Oracle Cloud Infrastructure</b></div>
+      </div>
+    </div>
+    <div class="vb vg-hero" id="hx" aria-label="Illustration: a short brief moves through research, script, visuals, voice and render, and comes out as a finished video ad">
+      <div class="top"><small>Campaign brief → finished ad</small><span class="vb-note">Illustration · sample brief</span></div>
+      <div class="vg-brief"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/></svg><span id="hxBrief"></span><span class="caret" aria-hidden="true"></span></div>
+      <ol class="vg-stages" id="hxStages">
+        <li><span class="d">01</span><span>Research &amp; script<span class="bar" style="display:block;margin-top:5px"><i></i></span></span><span class="s">queued</span></li>
+        <li><span class="d">02</span><span>Visual scenes<span class="bar" style="display:block;margin-top:5px"><i></i></span></span><span class="s">queued</span></li>
+        <li><span class="d">03</span><span>Voiceover<span class="bar" style="display:block;margin-top:5px"><i></i></span></span><span class="s">queued</span></li>
+        <li><span class="d">04</span><span>Render &amp; assemble<span class="bar" style="display:block;margin-top:5px"><i></i></span></span><span class="s">queued</span></li>
+      </ol>
+      <div class="vg-screen" id="hxScreen">
+        <video muted loop playsinline preload="none" poster="/images/case-studies/vg-ad-01-city-night.webp" aria-label="Sample ad footage: a city at night"><source src="/images/case-studies/vg-ad-01-city-night.mp4" type="video/mp4"></video>
+        <span class="badge">Ad ready</span>
+        <div class="ph">Your finished ad appears here</div>
+      </div>
+      <div class="vg-clock"><b id="hxClock">Weeks <em>→ under 5 min</em></b><button type="button" class="vb-btn" id="hxGo">▶ Generate again</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client">
+  <div class="client">
+    <div class="who">
+      <h3>Meet our client</h3>
+      <dl><dt>Client</dt><dd>Global enterprise with a diverse portfolio of consumer and B2B brands</dd><dt>Industry</dt><dd>Global marketing, advertising, consumer goods</dd><dt>Market</dt><dd>Worldwide · multi-language, multi-region campaigns</dd></dl>
+    </div>
+    <div class="nut">
+      <h3>In a nutshell</h3>
+      <p>Every new product launch or campaign needed a creative agency, so each video ad took weeks and cost a lot, and teams could only afford a few. We designed and built an autonomous video generation platform on Oracle Cloud Infrastructure. A coordinated network of AI models researches the product, writes the script, produces the visuals, synthesises the voiceover and assembles the final ad. Production went from weeks to under 5 minutes, with over $1M in cost savings.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client data protection">
+  <div class="ag-protect rv">
+    <span class="ag-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5" class="t"/></svg></span>
+    <div><b>Client data protected</b><span>The client is not named. Briefs, scripts, copy and events in the demos are samples; the sample ad clips are shown without brand or partner details. The platform is real.</span></div>
+    <span class="ag-redact" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+</section>
+
+<section class="ch" id="problem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">01 · The problem</span>
+      <h2 class="title">Weeks per ad, and only a few to test</h2>
+      <p class="sub">Video drives digital marketing performance, but every ad went through an agency. Switch between the two ways of making one ad.</p>
+    </div>
+    <div class="vg-two">
+      <div class="vb vg-race rv" id="race">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+          <div class="vg-tabs" role="group" aria-label="Production path"><button type="button" data-r="agency" aria-pressed="true">Agency cycle</button><button type="button" data-r="platform" aria-pressed="false">The platform</button></div>
+          <small>One video ad</small>
+        </div>
+        <div class="row"><small>Agency cycle</small><div class="lane" id="laneA"><span>Brief the agency</span><span>Coordinate</span><span>Produce</span><span>Revise</span><span>Deliver</span></div></div>
+        <div class="row"><small>The platform</small><div class="lane fast" id="laneP"><span>Business inputs</span><span>Research &amp; script</span><span>Visuals &amp; voice</span><span>Render</span><span>Platform-ready ad</span></div></div>
+        <div class="big"><b id="raceBig">Weeks</b><span id="raceCap">of agency collaboration for every new launch or campaign</span></div>
+      </div>
+      <div class="vb vg-var rv" id="vars">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><small>Creative variations a campaign can test</small><span class="vb-note">Illustration</span></div>
+        <div class="vg-grid" id="varGrid" aria-hidden="true"></div>
+        <div class="vg-axes"><span class="vb-note">Products ×</span><span class="vb-note">Audiences ×</span><span class="vb-note">Markets</span></div>
+        <p style="font-size:.84rem;color:var(--vb-mut)" id="varCap">With agency costs per ad, teams could test only a handful of variations.</p>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What was going wrong</span><ul class="pts cols">
+      <li><b>Slow production:</b> every video required weeks of agency collaboration.</li>
+      <li><b>High cost per ad:</b> production costs limited how many creative variations a campaign could have.</li>
+      <li><b>Slow testing:</b> campaign testing and iteration could not keep up.</li>
+      <li><b>No personalisation at scale:</b> ads could not be tailored across regions and audiences.</li>
+      <li><b>AI moving fast:</b> new AI tools kept emerging, but needed a stable enterprise platform to be useful.</li>
+      <li><b>The need:</b> professional, platform-ready video ads from simple business inputs, connected to the existing marketing systems.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="constraints">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">02 · The complication</span>
+      <h2 class="title">Five requirements, held at the same time</h2>
+      <p class="sub">Generating one video with AI is easy. Doing it as an enterprise platform is not. Tap each requirement to lock it in.</p>
+    </div>
+    <div class="vb rv" style="padding:clamp(14px,2.4vw,22px)">
+      <div class="vg-locks" id="locks">
+        <button type="button" aria-pressed="false"><span class="lk">open</span><svg viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></svg><b>Oracle Cloud, end to end</b><span>Enterprise deployment on Oracle Cloud Infrastructure.</span></button>
+        <button type="button" aria-pressed="false"><span class="lk">open</span><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></svg><b>Many AI services</b><span>Video, image and voice generation services in one system.</span></button>
+        <button type="button" aria-pressed="false"><span class="lk">open</span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg><b>Every language and market</b><span>Multi-language, multi-region campaigns.</span></button>
+        <button type="button" aria-pressed="false"><span class="lk">open</span><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg><b>Rendering at scale</b><span>Scalable rendering and media processing.</span></button>
+        <button type="button" aria-pressed="false"><span class="lk">open</span><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></svg><b>Ready for new models</b><span>Adaptable as AI models keep changing.</span></button>
+      </div>
+      <div class="vg-lockbar"><small id="lockTxt">0 / 5 held</small><span class="m"><i id="lockFill"></i></span></div>
+    </div>
+    <div class="note rv"><span class="lbl">Why each one mattered</span><ul class="pts cols">
+      <li><b>Oracle Cloud:</b> the platform had to meet enterprise security, scalability and data governance requirements.</li>
+      <li><b>Many AI services:</b> no single model does script, imagery, video and voice well, so several had to work as one.</li>
+      <li><b>Languages and markets:</b> campaigns run worldwide, so voice and copy had to be produced for each region.</li>
+      <li><b>Rendering at scale:</b> a large portfolio of brands means many ads at once, not one at a time.</li>
+      <li><b>New models:</b> AI tools change fast; the platform had to take in better models without a rebuild.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="pipeline">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">03 · The resolution</span>
+      <h2 class="title">From simple inputs to a finished ad, automatically</h2>
+      <p class="sub">The platform runs the whole creative workflow itself. Press play, or open any stage.</p>
+    </div>
+    <div class="vb vg-pipe rv" id="pipe">
+      <ol class="vg-steps" id="pipeSteps">
+        <li><button type="button" data-s="0" aria-pressed="true"><em>01</em><span>Research</span></button></li>
+        <li><button type="button" data-s="1" aria-pressed="false"><em>02</em><span>Script</span></button></li>
+        <li><button type="button" data-s="2" aria-pressed="false"><em>03</em><span>Visuals</span></button></li>
+        <li><button type="button" data-s="3" aria-pressed="false"><em>04</em><span>Voice</span></button></li>
+        <li><button type="button" data-s="4" aria-pressed="false"><em>05</em><span>Render</span></button></li>
+      </ol>
+      <div class="vg-stage" id="pipeStage" aria-live="polite"></div>
+    </div>
+    <p class="demo-note" style="margin-top:10px">Illustration with a sample brief, script and copy. Scene stills are taken from the sample ad clips further down.</p>
+    <div class="note rv"><span class="lbl">What each stage does</span><ul class="pts cols">
+      <li><b>AI research and content generation:</b> large language models analyse product information and business inputs, then write the script and campaign messaging.</li>
+      <li><b>Multi-model video and image generation:</b> specialised generative models produce the scenes, product imagery and supporting assets, chosen by the type of content needed.</li>
+      <li><b>Voice and audio synthesis:</b> natural voiceovers, including localised audio for different regions (Eleven Labs among the voice tools).</li>
+      <li><b>Programmatic video rendering:</b> visuals, voiceover and text overlays are assembled by server-side rendering pipelines into the finished ad.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="models">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">04 · How it works</span>
+      <h2 class="title">The right model for each job</h2>
+      <p class="sub">Instead of relying on one AI model, the platform coordinates several specialised services and picks the best one for each part of the ad. Pick a request, then add a new model.</p>
+    </div>
+    <div class="vb vg-router rv" id="router">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap"><div class="vg-req" id="req" role="group" aria-label="Request type">
+        <button type="button" data-l="0" aria-pressed="true">Script &amp; messaging</button>
+        <button type="button" data-l="1" aria-pressed="false">Product imagery</button>
+        <button type="button" data-l="2" aria-pressed="false">Scene video</button>
+        <button type="button" data-l="3" aria-pressed="false">Voiceover</button>
+        <button type="button" data-l="4" aria-pressed="false">Final assembly</button>
+      </div><button type="button" class="vb-btn lime" id="newModel">+ A new video model arrives</button></div>
+      <div class="vg-lanes" id="lanes">
+        <div class="vg-lane"><small>Text</small><b>Text generation models</b><div class="slots"><span>Script writing</span><span>Campaign messaging</span></div></div>
+        <div class="vg-lane"><small>Image</small><b>Image generation models</b><div class="slots"><span>Product imagery</span><span>Supporting assets</span></div></div>
+        <div class="vg-lane"><small>Video</small><b>Video generation models</b><div class="slots" id="videoSlots"><span>Visual scenes</span></div></div>
+        <div class="vg-lane"><small>Voice</small><b>Voice synthesis</b><div class="slots"><span>Eleven Labs</span><span>Localised voiceovers</span></div></div>
+        <div class="vg-lane"><small>Render</small><b>Rendering &amp; media processing</b><div class="slots"><span>Programmatic rendering APIs</span><span>Media pipelines</span></div></div>
+      </div>
+      <div class="vg-route" id="route"></div>
+    </div>
+    <div class="note rv"><span class="lbl">Why many models beat one</span><ul class="pts cols">
+      <li><b>Specialists, not a generalist:</b> each stage uses a model built for that kind of content.</li>
+      <li><b>Chosen per request:</b> the system selects models dynamically for video, image, voice and rendering.</li>
+      <li><b>Built to adopt new models:</b> the architecture takes in better models as the technology moves, without changing the workflow.</li>
+      <li><b>One coordinated system:</b> marketers see one workflow, not a stack of separate AI tools.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="localise">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">05 · One campaign, every market</span>
+      <h2 class="title">Localised voice and copy for each region</h2>
+      <p class="sub">The client runs campaigns across many regions and languages. Pick a market to see the same ad prepared for it.</p>
+    </div>
+    <div class="vb vg-loc rv" id="loc">
+      <div style="display:grid;gap:12px">
+        <div class="vg-adframe"><img src="/images/case-studies/vg-ad-02-living-room.webp" alt="Sample ad still: two people watching TV at home"><span class="lang" id="locLang">EN</span><div class="ov"><span id="locTag">On-screen copy</span><b id="locHead"></b></div></div>
+        <div class="vg-vo"><div style="display:flex;justify-content:space-between;align-items:center;gap:10px"><small>Voiceover</small><span class="vb-note" id="locVoice"></span></div><div class="vg-wave" aria-hidden="true" id="locWave"></div><p id="locLine"></p></div>
+      </div>
+      <div style="display:grid;gap:10px;align-content:start">
+        <small>Market</small>
+        <div class="vg-mk" id="markets" role="group" aria-label="Market"></div>
+        <p class="vb-note" style="margin-top:4px">Sample copy and markets, for illustration.</p>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">How localisation works</span><ul class="pts cols">
+      <li><b>One brief, many versions:</b> the same campaign produces versions for different regions, audiences and products.</li>
+      <li><b>Localised audio:</b> voice synthesis produces voiceovers for each region.</li>
+      <li><b>Copy in the ad:</b> text overlays are assembled into the video during rendering.</li>
+      <li><b>Tested, not guessed:</b> because each version takes minutes, teams can test variations instead of choosing one up front.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="trigger">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">06 · Connected to marketing</span>
+      <h2 class="title">A campaign event starts the video</h2>
+      <p class="sub">The platform connects to the client's marketing automation systems, so new products, promotions or events can trigger video generation automatically. Fire an event.</p>
+    </div>
+    <div class="vb vg-trig rv" id="trig">
+      <div class="ctl" style="display:flex;gap:8px;flex-wrap:wrap">
+        <button type="button" class="vb-btn" data-e="product">New product</button>
+        <button type="button" class="vb-btn" data-e="promo">Promotion</button>
+        <button type="button" class="vb-btn" data-e="event">Seasonal event</button>
+      </div>
+      <div class="vg-chain" id="chain">
+        <div><b>Marketing system</b><span>Event recorded</span></div>
+        <div><b>Workflow automation</b><span>Generation triggered</span></div>
+        <div><b>AI video platform</b><span>Research to render</span></div>
+        <div><b>Campaign</b><span>Platform-ready ad</span></div>
+      </div>
+      <div class="vg-log" id="tlog" role="log" aria-live="polite"><span>Waiting for a campaign event…</span></div>
+      <p class="vb-note">Sample events and log, for illustration.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="arch">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">07 · Under the hood</span>
+      <h2 class="title">Built for the enterprise on Oracle Cloud</h2>
+      <p class="sub">The whole platform runs on Oracle Cloud Infrastructure, using its compute, storage and media processing services. Open each layer.</p>
+    </div>
+    <div class="vb vg-arch rv" id="archx">
+      <div class="vg-layers" id="layers">
+        <button type="button" data-k="0" aria-pressed="true"><svg viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></svg><span><b>Marketing systems</b><span>Enterprise marketing automation · workflow tools</span></span></button>
+        <button type="button" data-k="1" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></svg><span><b>Orchestration</b><span>One coordinated workflow across AI services</span></span></button>
+        <button type="button" data-k="2" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/></svg><span><b>Generative AI services</b><span>Text · image · video · voice models</span></span></button>
+        <button type="button" data-k="3" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg><span><b>Rendering &amp; media</b><span>Programmatic rendering · media pipelines</span></span></button>
+        <div class="oci"><b>Oracle Cloud Infrastructure</b> compute · storage · media processing · enterprise security</div>
+      </div>
+      <div class="vg-adet" id="adet" aria-live="polite"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch band" id="samples">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Proof</span>
+      <h2 class="title">Sample ad footage</h2>
+      <p class="sub">Short clips of TV-ready footage from the platform's output. Tap a clip to pause or play.</p>
+    </div>
+    <div class="vb vg-samples-wrap rv">
+      <div class="vg-samples" id="clips">
+        <figure><div class="vg-clip" tabindex="0" role="button" aria-label="Play or pause: city at night"><video muted loop playsinline preload="metadata" poster="/images/case-studies/vg-ad-01-city-night.webp"><source src="/images/case-studies/vg-ad-01-city-night.mp4" type="video/mp4"></video><span class="tag">Sample</span><span class="pp" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></div><figcaption style="color:var(--vb-mut)"><b style="color:#fff">City at night</b>Cinematic establishing shot</figcaption></figure>
+        <figure><div class="vg-clip" tabindex="0" role="button" aria-label="Play or pause: watching TV at home"><video muted loop playsinline preload="metadata" poster="/images/case-studies/vg-ad-02-living-room.webp"><source src="/images/case-studies/vg-ad-02-living-room.mp4" type="video/mp4"></video><span class="tag">Sample</span><span class="pp" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></div><figcaption style="color:var(--vb-mut)"><b style="color:#fff">Watching at home</b>Lifestyle scene for TV audiences</figcaption></figure>
+        <figure><div class="vg-clip" tabindex="0" role="button" aria-label="Play or pause: retail product scene"><video muted loop playsinline preload="metadata" poster="/images/case-studies/vg-ad-03-retail.webp"><source src="/images/case-studies/vg-ad-03-retail.mp4" type="video/mp4"></video><span class="tag">Sample</span><span class="pp" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></span></div><figcaption style="color:var(--vb-mut)"><b style="color:#fff">Retail product</b>Product-led scene</figcaption></figure>
+      </div>
+      <p class="vb-note" style="margin-top:12px">Clips supplied by the client team, trimmed and shown without brand or partner details.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="results">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">08 · The result</span>
+      <h2 class="title">From a slow, manual workflow to a creative system</h2>
+      <p class="sub">After deployment, marketing teams make complete video ads in minutes, test many variations and launch campaigns faster.</p>
+    </div>
+    <div class="se-nums rv">
+      <div class="se-num"><small>Production time</small><b>&lt; 5 min</b><span>to generate a complete video ad, down from weeks</span></div>
+      <div class="se-num"><small>Cost</small><b>$1M+</b><span>in savings from less reliance on external agencies</span></div>
+      <div class="se-num"><small>Testing</small><b>Many</b><span>creative variations per campaign, instead of a handful</span></div>
+      <div class="se-num"><small>Platform</small><b>OCI</b><span>enterprise-grade deployment, secure and scalable</span></div>
+    </div>
+    <div class="vg-ba" id="ba">
+      <span class="lbl">Before and after</span>
+      <div><span class="b">Weeks of agency collaboration per video</span><i>→</i><span class="a">A complete ad in under 5 minutes</span></div>
+      <div><span class="b">A few ads per campaign, because each one was costly</span><i>→</i><span class="a">Many creative variations per campaign</span></div>
+      <div><span class="b">Slow campaign testing and iteration</span><i>→</i><span class="a">Faster launches and more responsive marketing</span></div>
+      <div><span class="b">Little personalisation across regions and audiences</span><i>→</i><span class="a">Localised versions for each market</span></div>
+      <div><span class="b">New AI tools hard to use in production</span><i>→</i><span class="a">One platform that adopts better models as they arrive</span></div>
+    </div>
+    <div class="note rv"><span class="lbl">What made it different</span><ul class="pts cols">
+      <li><b>Complete ads from simple inputs:</b> autonomous generation of the whole video, not one asset.</li>
+      <li><b>Many generative models, one platform:</b> specialised AI services coordinated in a single workflow.</li>
+      <li><b>Programmatic assembly:</b> visuals, voice and text are rendered into the final ad automatically.</li>
+      <li><b>Enterprise scale:</b> deployed on Oracle Cloud Infrastructure for security, scalability and data governance.</li>
+      <li><b>Future-ready:</b> designed to take in new AI models as the technology evolves.</li>
+      <li><b>Connected to marketing:</b> campaigns can trigger generation automatically when products, promotions or events occur.</li>
+    </ul></div>
+    <div class="verdict rv"><b>The result</b><span>Marketing teams create video ads in minutes, experiment with variations and launch faster, on a scalable foundation for future AI-driven marketing.</span></div>
+    <div class="stack rv"><span>Oracle Cloud Infrastructure</span><span>Text generation models</span><span>Image generation models</span><span>Video generation models</span><span>Eleven Labs</span><span>Programmatic video rendering</span><span>Media processing pipelines</span><span>Marketing automation integrations</span><span>Workflow automation</span></div>
+  </div>
+</section>
+
+<section class="pi-close" id="contact">
+  <div class="pi-wrap">
+    <div class="pi-cta-card">
+      <div class="pi-cta-l">
+        <div class="pi-eyebrow">Creative automation, built in</div>
+        <h2>From brief to finished ad in <b>minutes.</b></h2>
+        <p>Research, script, visuals, voice and rendering in one automated workflow, deployed on enterprise cloud.</p>
+      </div>
+      <div class="pi-cta-r">
+        <span class="pi-cta-k">What a first conversation covers</span>
+        <ol class="pi-cta-steps"><li><b>01</b><span>Your business objective</span></li><li><b>02</b><span>The technical context</span></li><li><b>03</b><span>The right next step</span></li></ol>
+        <a class="pi-btn pi-btn-cyan pi-btn-wide" href="/contact-us">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+        <a class="pi-back" href="/case-studies">View all case studies &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>

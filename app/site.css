@@ -1,5 +1,6 @@
 /* Redesign design system. Copied from docs/website-redesign/reference/assets/site.css; keep in sync with the reference.
-   Changes: --f and --mono use the next/font variables set in app/layout.tsx; the element rules are scoped (below). */
+   Changes: --f and --mono use the next/font variables set in app/layout.tsx; the element rules are scoped (below).
+   At build, postcss/scope-site-css.cjs keeps every rule out of full case study pages (.cs-page). */
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:calc(80px + env(safe-area-inset-top,0px))}
 
 /* Layout: the Paramount decks as a website. White pages and #F3F3F3 bands, thin navy outline boxes, light royal-blue titles, cyan "+" accents; the cover gradient opens the page and the charcoal close ends it. One schematic per section; copy reads as captions to it. Single light theme by choice, matching the decks. */
@@ -21,6 +22,9 @@
   :where(.nav,.foot,.pi-page) :not(.\#),:where(.nav,.foot,.pi-page) :not(.\#)::before,:where(.nav,.foot,.pi-page) :not(.\#)::after,
   :where(.nav,.foot,.pi-page) :not(.\#)::placeholder,:where(.nav,.foot,.pi-page) :not(.\#)::file-selector-button,
   :where(.nav,.foot,.pi-page) :not(.\#)::backdrop{all:revert-layer}
+  /* The same for a full case study page (components/casestudies/full/), which brings its own styles. */
+  .cs-page,.cs-page::before,.cs-page::after,.cs-page :not(.\#),.cs-page :not(.\#)::before,.cs-page :not(.\#)::after,
+  .cs-page :not(.\#)::placeholder,.cs-page :not(.\#)::file-selector-button,.cs-page :not(.\#)::backdrop{all:revert-layer}
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -955,3 +959,35 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .pc .art svg .arow{animation:ca-row 6s ease-in-out infinite}
 .pc .art svg .aslide{animation:ca-slide 5s linear infinite}
 @media (prefers-reduced-motion:reduce){.pc .art svg *{animation:none!important}.pc .art svg .mv,.pc .art svg .as,.pc .art svg .aslide,.pc .art svg .astep,.pc .art svg .arow{display:none}}
+
+/* App integration (not in the reference): a full case study page (components/casestudies/full/) is built on browser
+   defaults plus its own styles. Tailwind utilities generated for other pages (.ring, .hidden, ...) must not reach its
+   elements, so in a layer above Tailwind's every element in it reverts to the browser defaults; the page's own
+   (unlayered) rules win over this. SVG is left out: reverting would drop its presentation attributes. */
+@layer cs-isolate{
+  .cs-page :not(svg,svg *),.cs-page :not(svg,svg *)::before,.cs-page :not(svg,svg *)::after{all:revert}
+}
+/* In the reference the page body also holds the footer, so the sticky reading bar stays under the header to the very
+   end; without a box of its own, <main> lets it do the same here. And no site scroll padding: the pages set their own. */
+main.cs-page{display:contents}
+html:has(main.cs-page){scroll-padding-top:auto}
+
+/* App integration (not in the reference): the restyled database-driven case study page
+   (components/casestudies/detail/CaseStudyDetail.tsx), built from the design system's tokens and parts. */
+.cta-back{color:var(--on-dark);font-size:.86rem;font-weight:600;text-decoration:none;justify-self:start}
+.cta-back:hover{color:var(--white)}
+.cd-strip{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,64px);align-items:start}
+.cd-facts{display:grid}
+.cd-facts div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.9rem}
+.cd-facts div:last-child{border-bottom:0}
+.cd-facts dt{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.cd-facts dd{margin:0;color:var(--navy);font-weight:600}
+.cd-text{display:grid;gap:14px;max-width:72ch}
+.cd-text ul{display:grid;gap:10px}
+.cd-text li{display:flex;align-items:baseline}
+.cd-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cd-grid .box h3{font-size:1.02rem;font-weight:700;color:var(--navy)}
+.cd-grid .box p{font-size:.92rem}
+.cd-legend{margin-top:clamp(32px,4vw,48px);grid-template-columns:1fr}
+@media (max-width:960px){.cd-strip{grid-template-columns:1fr}.cd-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.cd-grid{grid-template-columns:1fr}.cd-facts div{grid-template-columns:1fr;gap:4px}}

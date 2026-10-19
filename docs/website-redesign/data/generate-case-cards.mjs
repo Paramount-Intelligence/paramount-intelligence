@@ -23,6 +23,9 @@ const unescape = (s) =>
 const cards = [...listing.matchAll(/(<a class="ccard pc"[\s\S]*?<\/a>)(?=\s*<a class="ccard|\s*<\/div>)/g)].map((m) => m[1]);
 if (cards.length !== 50 || data.length !== 50) throw new Error(`expected 50 cards, got ${cards.length} / ${data.length}`);
 
+// Card 50 has no route on the current site; its page uses the slug PORT-PLAN.md (section 3) proposes.
+const ROUTES = { "50": "/case-studies/flexagon-implementation-execution-portal" };
+
 const str = (s) => JSON.stringify(s);
 const list = (a) => "[" + a.map(str).join(", ") + "]";
 
@@ -38,7 +41,7 @@ const entries = data.map((e, i) => {
   return [
     "  {",
     `    n: ${str(e.n)},`,
-    `    route: ${str(e.currentRoute)},`,
+    `    route: ${str(e.currentRoute ?? ROUTES[e.n] ?? null)},`,
     `    title: ${str(e.title)},`,
     `    summary: ${str(e.summary)},`,
     `    org: ${str(e.org)},`,

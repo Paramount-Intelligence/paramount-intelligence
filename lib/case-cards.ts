@@ -78,7 +78,7 @@ export const CASE_CARDS: CaseCardData[] = [
   },
   {
     n: "50",
-    route: null,
+    route: "/case-studies/flexagon-implementation-execution-portal",
     title: "Flexagon: from signed SOW to delivered documentation",
     summary: "An AI delivery portal turns a signed SOW and readiness checklist into grounded, consultant-approved implementation documents.",
     org: "Flexagon",
