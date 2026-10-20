@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import SitePage from "@/components/site/SitePage";
 import CaseStudyDetail from "@/components/casestudies/detail/CaseStudyDetail";
+import { pageMetadata } from "@/lib/metadata";
 
 // Case studies without a full page come from the CaseStudy table (managed in /admin).
 // The full case study pages have their own routes (app/case-studies/<slug>/page.tsx).
@@ -30,7 +31,11 @@ async function getCaseStudyBySlug(slug: string) {
 export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
   const caseStudy = await getCaseStudyBySlug((await params).slug);
   if (!caseStudy) return {};
-  return { title: `${caseStudy.title} | Paramount Intelligence`, description: caseStudy.subtitle };
+  return pageMetadata({
+    title: `${caseStudy.title} | Paramount Intelligence`,
+    description: caseStudy.subtitle || undefined,
+    path: `/case-studies/${caseStudy.slug}`,
+  });
 }
 
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {

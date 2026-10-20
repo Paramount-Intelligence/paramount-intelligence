@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/lifestyle/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/lifestyle/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Digital Lifestyle & Entertainment | Paramount Intelligence",
+  description:
+    "Digital experiences depend on systems that personalize engagement at scale. We help organizations engineer them to perform reliably under constant demand.",
+  path: "/industries/digital-lifestyle-and-entertainment",
+});
 
 export default function Home() {
   return (

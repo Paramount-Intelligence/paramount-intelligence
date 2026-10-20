@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/energy/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/energy/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Manufacturing, Industrial & Energy | Paramount Intelligence",
+  description:
+    "Industrial operations depend on tightly controlled systems to maintain efficiency, safety, and reliability. We help organizations engineer them to operate intelligently at scale.",
+  path: "/industries/manufacturing-industrial-and-energy",
+});
 
 export default function Home() {
   return (

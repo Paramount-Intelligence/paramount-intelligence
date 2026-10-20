@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/tech/SoftwareProducts";
 import IndustriesServices from "@/components/industries/IndustriesServices";
 import AddAICapabilities from "@/components/industries/tech/AddAICapabilities";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Technology & Enterprise Software | Paramount Intelligence",
+  description:
+    "Technology and enterprise software platforms are evolving into intelligent systems. We help organizations engineer them for scale and reliability.",
+  path: "/industries/technology-and-enterprise-software",
+});
 
 export default function Home() {
   return (

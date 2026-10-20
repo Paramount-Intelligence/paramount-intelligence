@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/telecom/SoftwareProducts";
 import IndustriesServices from "@/components/industries/IndustriesServices";
 import AddAICapabilities from "@/components/industries/telecom/AddAICapabilities";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Telecommunications | Paramount Intelligence",
+  description:
+    "Telecommunication networks are becoming software-defined and data-driven. We help operators engineer them to perform in real time at scale.",
+  path: "/industries/telecommunications",
+});
 
 export default function Home() {
   return (

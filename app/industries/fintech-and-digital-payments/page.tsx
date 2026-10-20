@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/fintech/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/fintech/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Fintech & Digital Payments | Paramount Intelligence",
+  description:
+    "Financial platforms require systems built for speed, accuracy, and trust. We help organizations engineer them to operate securely at scale.",
+  path: "/industries/fintech-and-digital-payments",
+});
 
 export default function Home() {
   return (
