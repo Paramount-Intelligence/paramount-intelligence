@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import { isRemovedCaseStudy } from '@/lib/removed-case-studies';
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,7 +18,8 @@ export default async function handler(
         where: { id },
       });
 
-      if (!caseStudy) {
+      // A case study taken off the website (lib/removed-case-studies.ts) is not found here either.
+      if (!caseStudy || isRemovedCaseStudy(caseStudy.slug)) {
         return res.status(404).json({ error: 'Case study not found' });
       }
 

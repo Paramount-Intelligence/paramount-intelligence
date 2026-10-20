@@ -236,7 +236,6 @@ export default function SoftwareProductEngineering() {
           <div className="cgrid four">
             <CaseCard card={caseCard("01")} />
             <CaseCard card={caseCard("06")} />
-            <CaseCard card={caseCard("27")} />
             <CaseCard card={caseCard("26")} />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>

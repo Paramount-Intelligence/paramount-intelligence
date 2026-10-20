@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import SitePage from "@/components/site/SitePage";
 import CaseStudyDetail from "@/components/casestudies/detail/CaseStudyDetail";
 import { pageMetadata } from "@/lib/metadata";
+import { isRemovedCaseStudy } from "@/lib/removed-case-studies";
 
 // Case studies without a full page come from the CaseStudy table (managed in /admin).
 // The full case study pages have their own routes (app/case-studies/<slug>/page.tsx).
@@ -15,7 +16,9 @@ interface CaseStudyPageProps {
   }>;
 }
 
+// A case study taken off the website (lib/removed-case-studies.ts) is treated as not found.
 async function getCaseStudyBySlug(slug: string) {
+  if (isRemovedCaseStudy(slug)) return null;
   try {
     const { prisma } = await import("@/lib/prisma");
     const caseStudy = await prisma.caseStudy.findUnique({

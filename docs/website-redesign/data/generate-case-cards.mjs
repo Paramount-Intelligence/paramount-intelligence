@@ -26,10 +26,15 @@ if (cards.length !== 50 || data.length !== 50) throw new Error(`expected 50 card
 // Card 50 has no route on the current site; its page uses the slug PORT-PLAN.md (section 3) proposes.
 const ROUTES = { "50": "/case-studies/flexagon-implementation-execution-portal" };
 
+// Cards taken off the website (lib/removed-case-studies.ts) are left out.
+const { REMOVED_CASE_STUDIES } = await import(new URL("lib/removed-case-studies.ts", root));
+const REMOVED = new Set(REMOVED_CASE_STUDIES.map((c) => c.card));
+
 const str = (s) => JSON.stringify(s);
 const list = (a) => "[" + a.map(str).join(", ") + "]";
 
-const entries = data.map((e, i) => {
+const entries = data.flatMap((e, i) => {
+  if (REMOVED.has(e.n)) return [];
   const c = cards[i];
   const title = unescape(c.match(/<h3>(.*?)<\/h3>/)[1]);
   const meta = c.match(/<div class="meta"><b>(.*?)<\/b><span>(.*?)<\/span><\/div>/);
@@ -79,7 +84,7 @@ export type CaseCardData = {
   art: string;
 };
 
-/** All 50 cards in display order. */
+/** The cards on the website, in display order (cards taken off it are in lib/removed-case-studies.ts). */
 export const CASE_CARDS: CaseCardData[] = [
 ${entries.join("\n")}
 ];

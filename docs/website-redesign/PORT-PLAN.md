@@ -100,6 +100,10 @@ Build these first. Every page uses them.
   - **Option B, fully database-driven:** add card fields to `CaseStudy` and edit them in `/admin`: card summary, organisation label, card industry, tags (or `CaseTech`), drawing, featured order, work-in-progress and full-page flag. This needs a Prisma migration and a seed from `case-cards.json`.
   - Recommendation: do A first, then B in its own pull request.
 - **Slugs:** card 50 (Flexagon Implementation Execution Portal) has no slug yet. Propose `flexagon-implementation-execution-portal`.
+- **31 case studies taken off the website (Ali, 20 Oct 2026):** these are the 31 cards without a full case study page. They are listed in `lib/removed-case-studies.ts`, and the site now shows the 19 full case studies.
+  - **Hidden:** their cards (left out of `lib/case-cards.ts` by the generator), their related cards on the service and industry pages, and the homepage's "Explore TrueContext Field Pulse" link. The TrueContext proof box itself stays.
+  - **404:** their `/case-studies/<slug>` pages, and their entries in `GET /api/case-studies`.
+  - **Kept:** their `CaseStudy` rows stay in the database and in `/admin`. Removing an entry from the list brings that case study back.
 - **Related cards:** service and industry pages show 2–4 related case cards. Copy the selection from each reference page. On the service pages:
 
   | Service page | Related cards |
