@@ -1,31 +1,17 @@
-import Header from "@/components/Header";
-import WhoWeServe from "@/components/services/WhoWeServe";
-import ProjectExperience from "@/components/services/langchain/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
-import Footer from "@/components/Footer";
-import LLMHeader from "@/components/services/langchain/Header";
-import LLMHero from "@/components/services/langchain/Hero";
-import WhyGenerativeAI from "@/components/services/langchain/WhyGenerativeAI";
-import LLMServicesSection from "@/components/services/langchain/LLMServicesSection";
-import ScheduleCTA from "@/components/services/langchain/ScheduleCTA";
-import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/services/WhyChooseUs";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import DataAndAnalytics from "@/components/services/pages/DataAndAnalytics";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Data Engineering & Intelligence | Paramount Intelligence",
+  description:
+    "Improve data quality, connect fragmented systems, and build reporting and AI data foundations client teams can use with confidence.",
+};
+
+export default function DataAndAnalyticsPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
-      <Header />
-      {/* <LLMHeader /> */}
-      <LLMHero />
-      <WhyGenerativeAI />
-      <LLMServicesSection />
-      <WhoWeServe />
-      <TrustedBrands />
-      {/* <ScheduleCTA /> */}
-      <WhyChooseUs />
-      <ProjectExperience />
-      {/* <LatestArticles /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <DataAndAnalytics />
+    </SitePage>
   );
 }

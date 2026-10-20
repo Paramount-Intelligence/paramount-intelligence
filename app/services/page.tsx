@@ -1,25 +1,17 @@
-import Header from "@/components/Header";
-import ServicesHeader from "@/components/services/Header";
-import Hero from "@/components/services/Hero";
-import TrustedBrands from "@/components/TrustedBrands";
-import LLMServices from "@/components/AIServices";
-import WhyChooseUs from "@/components/services/WhyChooseUs";
-import CTASection from "@/components/services/CTASection";
-import LatestArticles from "@/components/LatestArticles";
-import Footer from "@/components/Footer";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import ServicesOverview from "@/components/services/pages/ServicesOverview";
 
-export default function Services() {
+export const metadata: Metadata = {
+  title: "AI & Engineering Services | Paramount Intelligence",
+  description:
+    "Explore AI agents, consulting, software, data, cloud, and automation services, delivered through specialist assignments or managed Paramount engagements.",
+};
+
+export default function ServicesOverviewPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      {/* <ServicesHeader /> */}
-      <Hero />
-      <TrustedBrands />
-      <LLMServices />
-      <WhyChooseUs />
-      <CTASection />
-      {/* <LatestArticles /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <ServicesOverview />
+    </SitePage>
   );
 }
