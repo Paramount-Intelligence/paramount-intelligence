@@ -196,8 +196,10 @@ export default function PrivateEquity() {
             <div className="eyebrow">Relevant experience</div>
             <h2 className="title">Selected work</h2>
           </div>
-          <div className="cgrid ">
+          <div className="cgrid related">
             <RelatedCaseCard n="07" summary="Support engineers can use connected enterprise knowledge and review AI-drafted responses within their existing workflow." />
+            <RelatedCaseCard n="49" />
+            <RelatedCaseCard n="47" offSite summary="Field submissions translated into structured records, summaries, and management insights through an engagement spanning discovery, integration, testing, and handover." />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>

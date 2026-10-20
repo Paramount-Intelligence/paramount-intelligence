@@ -241,7 +241,22 @@ const saveApplicationToAirtable = async (
   throw new Error(`Airtable request failed (${airtableResult.response.status}): ${airtableErrorText}`);
 };
 
+// Mail settings the form can't send without (Vercel → Project → Settings → Environment Variables).
+const REQUIRED = ["SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD", "CAREERS_EMAIL"] as const;
+
 export async function POST(request: NextRequest) {
+  // Checked before anything is saved to Airtable, so a retry after this error doesn't create a duplicate record.
+  const missing = REQUIRED.filter((k) => !process.env[k]);
+  if (missing.length) {
+    console.error(`send-application-email: missing settings ${missing.join(", ")}`);
+    return NextResponse.json(
+      { success: false, message: "Failed to submit application. Please try again later." },
+      { status: 500 }
+    );
+  }
+  // Without a sender address, send from the SMTP account itself.
+  const from = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+
   try {
     // Support both JSON and multipart/form-data (for file upload)
     const contentType = request.headers.get("content-type") || "";
@@ -311,7 +326,7 @@ export async function POST(request: NextRequest) {
 
     // Email to company (include resume attachment if present)
     await transporter.sendMail({
-      from: process.env.SMTP_FROM_EMAIL,
+      from,
       to: process.env.CAREERS_EMAIL,
       subject: `New Application: ${formData.firstName} ${formData.lastName} - ${formData.position}`,
       html: emailHTML,
@@ -347,12 +362,18 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    await transporter.sendMail({
-      from: process.env.SMTP_FROM_EMAIL,
-      to: formData.email,
-      subject: "Application Confirmation - Paramount Intelligence",
-      html: confirmationHTML,
-    });
+    // The application has been saved and delivered by now: a confirmation the applicant's address refuses is logged,
+    // not reported to the applicant as a failed application.
+    try {
+      await transporter.sendMail({
+        from,
+        to: formData.email,
+        subject: "Application Confirmation - Paramount Intelligence",
+        html: confirmationHTML,
+      });
+    } catch (error) {
+      console.error("send-application-email: application sent, confirmation to the applicant failed:", error);
+    }
 
     return NextResponse.json(
       {
@@ -363,12 +384,12 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
+    // The underlying error (mail server, Airtable) goes to the server log only.
     console.error("Application submission error:", error);
     return NextResponse.json(
       {
         success: false,
         message: "Failed to submit application. Please try again later.",
-        error: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 }
     );

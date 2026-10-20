@@ -285,7 +285,7 @@ export default function CloudServices() {
             <Link className="btn btn-navy" href="/contact-us">Discuss a production challenge <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
-          <div className="cgrid ">
+          <div className="cgrid related">
             <RelatedCaseCard n="08" />
             <RelatedCaseCard n="23" />
             <RelatedCaseCard n="12" />

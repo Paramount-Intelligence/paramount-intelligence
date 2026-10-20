@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { REMOVED_CASE_STUDIES } from '@/lib/removed-case-studies';
+import { HIDDEN_CASE_STUDY_SLUGS } from '@/lib/removed-case-studies';
 import { prisma } from '@/lib/prisma';
 import { verifyAdminToken } from '@/lib/adminAuth';
 
@@ -33,8 +33,8 @@ export default async function handler(
 
       const caseStudies = await prisma.caseStudy.findMany({
         where: {
-          // Case studies taken off the website aren't listed (lib/removed-case-studies.ts).
-          slug: { notIn: REMOVED_CASE_STUDIES.map((c) => c.slug) },
+          // Case studies taken off the website, and rows under a renamed slug, aren't listed (lib/removed-case-studies.ts).
+          slug: { notIn: HIDDEN_CASE_STUDY_SLUGS },
           ...(titleFilters.length
             ? {
                 OR: titleFilters.map((title) => ({

@@ -1,6 +1,6 @@
 # Paramount Intelligence: case study design guide
 
-Reference build: `case-study-jazz.html` ("In-App AI Assistant for Telco Customer Self-Care", client Jazz).
+Reference build: `case-study-telecom-in-app-assistant.html` ("In-App AI Assistant for Telco Customer Self-Care", for a mobile telecom operator).
 Use it as the model for every future case study on paramountintelligence.co. Open it in a browser before starting, then follow this guide.
 
 ---
@@ -26,7 +26,7 @@ Every case study page has three fixed parts and a variable middle:
 
 **Font:** Montserrat (Google Fonts, weights 300–800); IBM Plex Mono for small technical labels and traces.
 
-**Colour tokens** (Toptal-style palette, same as the corporate and capability decks):
+**Colour tokens** (same palette as the corporate and capability decks):
 
 | Token | Hex | Use |
 |---|---|---|
@@ -65,13 +65,13 @@ background:
 
 ---
 
-## 3. Page anatomy (as in the Jazz case)
+## 3. Page anatomy (as in the telecom case)
 
-1. **Hero**: eyebrow "Client case study · Client · Market" + green pill ("Live in production" or the true status); headline with a cyan keyword; one-sentence lede; three "+" bullets (bold label + short phrase); two CTAs (try/see the demo, see the story); a meta row (Client · Channel · Built on); on the right **one interactive proof visual** (Jazz: an 80-dot matrix, one dot per million people, toggling 80M+ subscribers → 40M app users → 3–4M using SIA).
+1. **Hero**: eyebrow "Client case study · Client type · Market" (describe the client by type, for example "Mobile telecom operator"; never name the client, and blur client names and logos in screenshots) + green pill ("Live in production" or the true status); headline with a cyan keyword; one-sentence lede; three "+" bullets (bold label + short phrase); two CTAs (try/see the demo, see the story); a meta row (Client · Channel · Built on); on the right **one interactive proof visual** (telecom case: an 80-dot matrix, one dot per million people, toggling 80M+ subscribers → 40M app users → 3–4M using SIA).
 2. **Client strip**: grey "Meet our client" panel (Client, Industry, Market) + "In a nutshell" paragraph.
 3. **Numbered chapters** (`01 · The problem`, `02 · The complication`, `03 · The resolution`, `04 · How it works`, `05 · What makes it different`, `06 · The result`, plus unnumbered "What customers ask" and "Proof" chapters). Each chapter has:
    - eyebrow + light royal title + one-line sub;
-   - one visual or interaction (Jazz examples: before/after journey toggle with a big counter; question hub with filters; four-lock ring that fills as each constraint is tapped; auto tap-through phone with a numbered 4-step path and struck-through "not this" chips; screenshot filmstrip; phone simulator synced to a live architecture diagram and a mono "live trace" console; side-by-side chatbot duel; animated result cards);
+   - one visual or interaction (telecom examples: before/after journey toggle with a big counter; question hub with filters; four-lock ring that fills as each constraint is tapped; auto tap-through phone with a numbered 4-step path and struck-through "not this" chips; screenshot filmstrip; phone simulator synced to a live architecture diagram and a mono "live trace" console; side-by-side chatbot duel; animated result cards);
    - a **legend box** of "+" notes underneath (navy outline box with a small label sitting on its top border, two columns of "+ **Bold lead:** explanation").
 4. **Closing card** and **footer** (section 1).
 
@@ -93,7 +93,7 @@ Numbering is only used because the chapters really are a sequence. Keep chapter 
 
 ## 5. Building a new case study
 
-1. Start from `case-study-jazz.html`. Keep the `<style>` block of the story and the scoped site header/footer/closing styles (`pi-` prefixed classes) as they are.
+1. Start from `case-study-telecom-in-app-assistant.html`. Keep the `<style>` block of the story and the scoped site header/footer/closing styles (`pi-` prefixed classes) as they are.
 2. Replace the middle chapters with the new story. Reuse the existing components (outline boxes, legend boxes, phone frame, filmstrip, rings, toggles, diagrams) before inventing new ones.
 3. Change the hero eyebrow, headline, lede, bullets, meta row and proof visual. Keep the hero background CSS above unchanged.
 4. Change only the left side of the closing card (eyebrow, heading with cyan ending, one line). Keep the right side ("What a first conversation covers", "Discuss a project", "View all case studies").
@@ -105,9 +105,8 @@ Numbering is only used because the chapters really are a sequence. Keep chapter 
 
 ## 6. Files in this package
 
-- `case-study-jazz.html`: the live case study page (open it from inside this folder so `images/` and `assets/` load).
-- `case-study-jazz-standalone.html`: the same page in one file with all images built in, for sharing on its own. Links to other website pages only work inside the full website.
-- `images/`: the 13 app screenshots and the Simosa icon.
+- `case-study-telecom-in-app-assistant.html`: the live case study page (open it from inside this folder so `images/` and `assets/` load).
+- `images/`: the 13 app screenshots and the app icon.
 - `assets/logo.png`: the Paramount mark used in the top bar and footer.
 - `CASE-STUDY-DESIGN-GUIDE.md`: this guide.
 
@@ -125,7 +124,7 @@ Case study cards on the website show no attribution tags (no "Leadership experie
 
 Every case card on the website (Case Studies page, and the related-case cards on service and industry pages) uses the homepage "Selected Project Experience" style:
 
-- **Drawing** on a light grey panel: a simple labelled diagram of what was built (white boxes, 1.5px navy outlines, one navy "core" box, cyan and green accents), drawn as inline SVG at 300 × 160. No screenshots and no numbers in the drawing. The drawing moves a little so it feels active: small cyan dots travel along the connectors, status dots pulse, bars rise and fall, documents get a scan line and step rows a moving highlight. All motion stops for `prefers-reduced-motion`. Examples: Freshdesk / Confluence / Jira → Grounded draft → Human review (Flexagon); a registry table with status chips (Syngenta); an orchestrator linked to Discovery, Comparison, Cart and Checkout (Toptal).
+- **Drawing** on a light grey panel: a simple labelled diagram of what was built (white boxes, 1.5px navy outlines, one navy "core" box, cyan and green accents), drawn as inline SVG at 300 × 160. No screenshots and no numbers in the drawing. The drawing moves a little so it feels active: small cyan dots travel along the connectors, status dots pulse, bars rise and fall, documents get a scan line and step rows a moving highlight. All motion stops for `prefers-reduced-motion`. Examples: Freshdesk / Confluence / Jira → Grounded draft → Human review (support copilot); a registry table with status chips (Syngenta); an orchestrator linked to Discovery, Comparison, Cart and Checkout (Toptal).
 - **Text:** organisation (royal, uppercase) and industry, heading, one-line description, 3–4 tech tags in grey mono chips, "Read case study →".
 - **Labels:** cases with a full page get a green "Full case study" tab on the bottom edge of the drawing; work still in progress gets the amber "Work in progress" tab in the same place.
 - When sending a new case study, include the card heading, description, tags and what the drawing should show (inputs → core → outputs, or the main screen to sketch).

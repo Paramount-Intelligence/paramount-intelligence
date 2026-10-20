@@ -1,5 +1,6 @@
 import SitePage from "@/components/site/SitePage";
 import HomePage from "@/components/home/HomePage";
+import RenovationCrane from "@/components/home/RenovationCrane";
 import { pageMetadata } from "@/lib/metadata";
 
 export const metadata = pageMetadata({
@@ -13,6 +14,7 @@ export default function Home() {
   return (
     <SitePage>
       <HomePage />
+      <RenovationCrane />
     </SitePage>
   );
 }
