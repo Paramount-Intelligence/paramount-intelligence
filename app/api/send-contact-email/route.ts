@@ -2,7 +2,18 @@ import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escape-html";
 
+// Settings the form can't send without (Vercel → Project → Settings → Environment Variables).
+const REQUIRED = ["SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD", "CAREERS_EMAIL"] as const;
+
 export async function POST(request: NextRequest) {
+  const missing = REQUIRED.filter((k) => !process.env[k]);
+  if (missing.length) {
+    console.error(`send-contact-email: missing settings ${missing.join(", ")}`);
+    return NextResponse.json({ success: false }, { status: 500 });
+  }
+  // Without a sender address, send from the SMTP account itself.
+  const from = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+
   try {
     const data = await request.json();
     // Form input placed in the email HTML is escaped.
@@ -38,7 +49,7 @@ export async function POST(request: NextRequest) {
     `;
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM_EMAIL,
+      from,
       to: process.env.CAREERS_EMAIL,
       subject: `Contact: ${data.subject} - ${data.name}`,
       html: emailHTML,
@@ -55,17 +66,24 @@ export async function POST(request: NextRequest) {
         </div>
       `;
 
-      await transporter.sendMail({
-        from: process.env.SMTP_FROM_EMAIL,
-        to: data.email,
-        subject: "We received your message - Paramount Intelligence",
-        html: confirmationHTML,
-      });
+      // The inquiry has been delivered by now: a confirmation the visitor's address refuses is logged, not reported
+      // to the visitor as a failed inquiry.
+      try {
+        await transporter.sendMail({
+          from,
+          to: data.email,
+          subject: "We received your message - Paramount Intelligence",
+          html: confirmationHTML,
+        });
+      } catch (err) {
+        console.error("send-contact-email: inquiry sent, confirmation to the visitor failed:", err);
+      }
     }
 
     return NextResponse.json({ success: true });
   } catch (err) {
+    // The mail server's error goes to the server log only.
     console.error("send-contact-email error:", err);
-    return NextResponse.json({ success: false, error: (err as Error).message }, { status: 500 });
+    return NextResponse.json({ success: false }, { status: 500 });
   }
 }
