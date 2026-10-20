@@ -1,5 +1,6 @@
 import { v2 as cloudinary } from "cloudinary";
 import { NextRequest, NextResponse } from "next/server";
+import { verifyAdmin } from "@/lib/adminAuth";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -9,7 +10,13 @@ cloudinary.config({
 
 // app/api/cloudinary-signature/route.ts
 
+// Signs an upload to the case-studies folder: for the case study form in /admin only.
 export async function POST(req: NextRequest) {
+  try {
+    verifyAdmin(req);
+  } catch {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
   try {
     const body = await req.json();
     const timestamp = body.timestamp;
