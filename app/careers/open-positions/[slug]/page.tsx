@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
 import SitePage from "@/components/site/SitePage";
+import { pageMetadata } from "@/lib/metadata";
 import AiEngineer from "@/components/careers/pages/AiEngineer";
 import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
 
@@ -415,8 +416,14 @@ interface PageProps {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const role = ROLES[(await params).slug];
-  return role ? { title: role.title, description: role.description } : {};
+  const { slug } = await params;
+  const path = `/careers/open-positions/${slug}`;
+  const role = ROLES[slug];
+  if (role) return pageMetadata({ title: role.title, description: role.description, path });
+  const job = jobsData[slug];
+  if (!job) return {};
+  // An older posting: its title and the first sentence of its overview.
+  return pageMetadata({ title: `${job.title} | Careers | Paramount Intelligence`, description: job.overview.split(/(?<=\.)\s/)[0], path });
 }
 
 export default async function JobDetailPage({ params }: PageProps) {

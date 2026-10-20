@@ -1,21 +1,7 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import PrivacyHero from "@/components/privacy/Hero";
-import PrivacyContent from "@/components/privacy/Content";
+import { notFound } from "next/navigation";
 
-export const metadata = {
-  title: "Privacy Policy | Paramount Intelligence",
-  description:
-    "Learn how Paramount Intelligence collects, uses, and protects your personal data. Our commitment to your privacy and data protection.",
-};
-
+// Hidden until the reviewed policy is ready (Ali, 20 Oct 2026). The previous page is in the git history
+// (components/privacy/, removed in phase 6 of docs/website-redesign/PORT-PLAN.md).
 export default function PrivacyPolicy() {
-  return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      <PrivacyHero />
-      <PrivacyContent />
-      <Footer />
-    </div>
-  );
+  notFound();
 }

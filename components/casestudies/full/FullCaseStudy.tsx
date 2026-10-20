@@ -4,6 +4,8 @@ import type { Metadata } from "next";
 import { Caveat, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CASE_CARDS } from "@/lib/case-cards";
+import { pageMetadata } from "@/lib/metadata";
 import CaseStudyScripts from "./CaseStudyScripts";
 
 // The case study pages also use Montserrat italic 400 and, on Contract Intelligence, Caveat 600, as the reference
@@ -30,9 +32,11 @@ function page(key: string) {
   return info;
 }
 
+/** The page's own title and description; most reference pages have no description, so their card summary. */
 export function caseStudyMetadata(key: string): Metadata {
-  const { title, description } = page(key);
-  return description ? { title, description } : { title };
+  const { title, description, slug } = page(key);
+  const summary = CASE_CARDS.find((c) => c.route === slug)?.summary;
+  return pageMetadata({ title, description: description ?? summary, path: slug });
 }
 
 /**

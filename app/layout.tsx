@@ -1,8 +1,8 @@
-import type { Viewport } from "next";
+import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
-import AssistantWidget from "@/components/AssistantWidget";
 import LogoTap from "@/components/site/LogoTap";
+import { SITE_URL } from "@/lib/metadata";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
 // import { config } from "@fortawesome/fontawesome-svg-core";
 // config.autoAddCss = false;
@@ -30,10 +30,12 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export const metadata = {
-  title: "Paramount Intelligence - Technology Consulting and Engineering Firm",
+// Defaults; every route sets its own title, description, canonical URL and Open Graph (lib/metadata.ts).
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: "Paramount Intelligence | AI Engineering & Consulting",
   description:
-    "Paramount Intelligence is a technology consulting and engineering firm delivering AI, data, cloud, and automation solutions that drive measurable business impact.",
+    "Build useful AI, improve software, and take stalled projects into production with Paramount Intelligence's consulting and forward-deployed engineering.",
   icons: {
     icon: "/images/logo-icon.png",
   },

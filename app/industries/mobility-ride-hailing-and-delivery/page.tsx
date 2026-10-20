@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/mobility/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/mobility/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "Mobility, Ride-Hailing & Delivery | Paramount Intelligence",
+  description:
+    "Mobility platforms depend on real-time systems to balance demand, supply, and operations. We help organizations engineer them to perform reliably at scale.",
+  path: "/industries/mobility-ride-hailing-and-delivery",
+});
 
 export default function Home() {
   return (

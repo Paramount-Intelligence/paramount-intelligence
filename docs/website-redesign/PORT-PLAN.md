@@ -43,7 +43,7 @@ Don't port two preview workarounds:
 - `/privacy-policy`: Ali asked for it to be blocked until it has been reviewed. The redesign doesn't link to it. Decide between hiding it (404 or `noindex`) and leaving it unlinked.
 - `AssistantWidget` is imported in `app/layout.tsx`. The redesign has no assistant.
 
-Until Ali decides, keep these routes working with the new Header and Footer, and add permanent redirects only when he confirms them.
+Until Ali decides, keep these routes working with the new Header and Footer, and add permanent redirects only when he confirms them. **Decided 20 Oct 2026:** keep them as they are, unlinked and out of the sitemap. Hide `/privacy-policy` (404) and remove the AssistantWidget (section 7).
 
 ---
 
@@ -208,12 +208,38 @@ For every pull request:
 
 ## 7. Open questions for Ali
 
-1. Should the old routes listed in section 1 be removed, redirected or kept?
+1. ~~Should the old routes listed in section 1 be removed, redirected or kept?~~ Kept (answered 20 Oct 2026, see below).
 2. Card data: option A first, then B?
-3. Privacy Policy: hide it or leave it unlinked?
-4. Keep or remove the AssistantWidget?
+3. ~~Privacy Policy: hide it or leave it unlinked?~~ Hidden (answered 20 Oct 2026).
+4. ~~Keep or remove the AssistantWidget?~~ Removed (answered 20 Oct 2026).
 5. The careers register-interest field mapping (section 5).
 6. Card 01 says "Confidential Education Provider", while the page names Ash-Shajrah. Update the card text? (Still open.)
+
+### Answered by Ali on 20 Oct 2026 (done in phase 6)
+
+- **Old routes:**
+  - The old routes in section 1 and the nine older job postings stay, as they are today.
+  - They render inside the new Header and Footer, and nothing links to them.
+  - They are not in the sitemap.
+- **Privacy Policy:** `/privacy-policy` returns a 404 until the reviewed policy is ready. The previous page is in the git history (`components/privacy/`).
+- **AssistantWidget:** removed, together with its token route (`/api/token`) and the LiveKit packages.
+
+**Also done in phase 6:**
+- **Metadata:** every route gets its title, description, canonical URL, and Open Graph and Twitter tags from `pageMetadata` (`lib/metadata.ts`).
+  - `metadataBase` is https://paramountintelligence.co.
+  - The reference has no share image, so link previews use the square logo icon as a "summary" card.
+  - The full case study pages without a meta description in the reference use their card summary.
+  - The old routes take their description from their own hero text.
+  - `/admin` is noindex.
+- **`app/sitemap.ts`:** lists the redesigned pages, the two roles, the 19 full case study pages and the other cards whose slug is in the `CaseStudy` table. It refreshes hourly.
+- **`app/robots.ts`:** disallows `/admin` and `/api/` and points to the sitemap.
+- **Unused code removed:**
+  - every component and lib file that no route reaches;
+  - the old listing (`CaseStudiesClient.tsx`), the unused server actions (`app/actions/`), and the `create-next-app` SVGs;
+  - the packages only that code used (LiveKit, Radix navigation menu, class-variance-authority).
+- **Not removed:**
+  - images in `public/images/` that the code no longer references, because the live `CaseStudy` table or old emails may still point at them;
+  - `pages/api/case-studies` and `db-server.js`.
 
 ### Answered in version 25 (19 Oct 2026)
 
