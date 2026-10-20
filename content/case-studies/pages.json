@@ -1,5 +1,13 @@
 [
   {
+    "key": "ai-agent-registry",
+    "slug": "/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore",
+    "title": "AI Agent Registry | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
     "key": "ai-commerce-advisor",
     "slug": "/case-studies/multi-agent-shopping-intelligence-on-aws-bedrock-agentcore",
     "title": "AI Commerce Advisor | Paramount Intelligence",
@@ -16,17 +24,17 @@
     "caveat": false
   },
   {
-    "key": "ai-talent-matching",
-    "slug": "/case-studies/ai-agents-for-talent-matching-and-automated-talent-project-mapping",
-    "title": "AI Talent Matching | Paramount Intelligence",
+    "key": "ai-idea-governance",
+    "slug": "/case-studies/ai-idea-intake-and-governance",
+    "title": "AI Idea Governance | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
   },
   {
-    "key": "ash-shajrah-lms",
-    "slug": "/case-studies/full-stack-edtech-operating-system",
-    "title": "Ash-Shajrah Learning Hub | Paramount Intelligence",
+    "key": "ai-talent-matching",
+    "slug": "/case-studies/ai-agents-for-talent-matching-and-automated-talent-project-mapping",
+    "title": "AI Talent Matching | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
@@ -48,9 +56,9 @@
     "caveat": false
   },
   {
-    "key": "donaldson-market-intelligence",
-    "slug": "/case-studies/pricing-intelligence-and-recommendation-engine",
-    "title": "Donaldson Market Intelligence Platform | Paramount Intelligence",
+    "key": "engineering-knowledge-copilot",
+    "slug": "/case-studies/multimodal-rag-co-pilot-advisory-for-industrial-automation-engineering",
+    "title": "Engineering Knowledge Co-Pilot | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
@@ -64,26 +72,10 @@
     "caveat": false
   },
   {
-    "key": "flexagon-execution-portal",
-    "slug": "/case-studies/flexagon-implementation-execution-portal",
-    "title": "Flexagon Implementation Execution Portal | Paramount Intelligence",
+    "key": "implementation-execution-portal",
+    "slug": "/case-studies/implementation-execution-portal",
+    "title": "Implementation Execution Portal | Paramount Intelligence",
     "description": null,
-    "scripts": 2,
-    "caveat": false
-  },
-  {
-    "key": "flexagon-sow-generator",
-    "slug": "/case-studies/flexagon-sow-automation",
-    "title": "Flexagon SOW Generator | Paramount Intelligence",
-    "description": null,
-    "scripts": 2,
-    "caveat": false
-  },
-  {
-    "key": "flexagon-support-copilot",
-    "slug": "/case-studies/ai-powered-support-copilot-for-pe-backed-enterprise-devops-platform",
-    "title": "Flexagon Support Copilot | Paramount Intelligence",
-    "description": "How Paramount Intelligence built an AI support copilot inside Freshdesk for Flexagon, a PE-backed enterprise DevOps software company: grounded drafts, confidence-based routing and human review.",
     "scripts": 2,
     "caveat": false
   },
@@ -96,9 +88,9 @@
     "caveat": false
   },
   {
-    "key": "jazz",
-    "slug": "/case-studies/in-app-ai-assistant-for-telco-customer-self-care",
-    "title": "Jazz In-App AI Assistant | Paramount Intelligence",
+    "key": "market-intelligence-platform",
+    "slug": "/case-studies/pricing-intelligence-and-recommendation-engine",
+    "title": "Market Intelligence Platform | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
@@ -112,6 +104,14 @@
     "caveat": false
   },
   {
+    "key": "pe-backed-support-copilot",
+    "slug": "/case-studies/ai-powered-support-copilot-for-pe-backed-enterprise-devops-platform",
+    "title": "PE-Backed Support Copilot | Paramount Intelligence",
+    "description": "How Paramount Intelligence built an AI support copilot inside Freshdesk for a PE-backed DevOps software company: grounded drafts, confidence-based routing and human review.",
+    "scripts": 2,
+    "caveat": false
+  },
+  {
     "key": "real-time-platform-intelligence",
     "slug": "/case-studies/real-time-platform-intelligence-ecosystem-monitoring",
     "title": "Real-Time Platform Intelligence | Paramount Intelligence",
@@ -120,25 +120,25 @@
     "caveat": false
   },
   {
-    "key": "schneider-ai-idea-governance",
-    "slug": "/case-studies/schneider-ai-initiative-tracker",
-    "title": "Schneider Electric AI Idea Governance | Paramount Intelligence",
+    "key": "school-learning-platform",
+    "slug": "/case-studies/full-stack-edtech-operating-system",
+    "title": "School Learning Platform | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
   },
   {
-    "key": "schneider-ecostruxure-copilot",
-    "slug": "/case-studies/multimodal-rag-co-pilot-advisory-for-industrial-automation-engineering",
-    "title": "Schneider Electric EcoStruxure Co-Pilot | Paramount Intelligence",
+    "key": "sow-generator",
+    "slug": "/case-studies/sow-generation-and-update-automation",
+    "title": "SOW Generator | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false
   },
   {
-    "key": "syngenta-agentcore-registry",
-    "slug": "/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore",
-    "title": "Syngenta AgentCore Registry | Paramount Intelligence",
+    "key": "telecom-in-app-assistant",
+    "slug": "/case-studies/in-app-ai-assistant-for-telco-customer-self-care",
+    "title": "Telecom In-App AI Assistant | Paramount Intelligence",
     "description": null,
     "scripts": 2,
     "caveat": false

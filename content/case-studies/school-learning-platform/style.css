@@ -1,0 +1,1015 @@
+.cs-school-learning-platform{
+  --navy:#0f256e;  --royal:#204ecf;  --cyan:#09b6f9;  --green:#3dbe8b;
+  --grey:#f3f3f3;  --line:#d9dbe0;   --pale:#eaf1ff;  --warn:#c2410c;
+  --text:#2b3245;  --muted:#6b7385;  --white:#ffffff;
+  --cover-a:#262d3d; --cover-b:#1a3a9e;
+  --asst-bg:#0e0c22; --asst-card:#1a1838; --asst-line:#3a3470; --asst-user:#3b37c9; --asst-glow:#7b5cff;
+  --f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+.cs-school-learning-platform,.cs-school-learning-platform *{box-sizing:border-box}
+.cs-school-learning-platform{scroll-behavior:smooth}
+.cs-school-learning-platform{margin:0;background:var(--white);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.cs-school-learning-platform img{max-width:100%;display:block}
+.cs-school-learning-platform a{color:inherit}
+.cs-school-learning-platform button{font-family:inherit}
+.cs-school-learning-platform :focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+.cs-school-learning-platform h1,.cs-school-learning-platform h2,.cs-school-learning-platform h3{margin:0;text-wrap:balance}
+.cs-school-learning-platform p{margin:0}
+.cs-school-learning-platform .wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.cs-school-learning-platform .band{background:var(--grey)}
+.cs-school-learning-platform .ch{padding-block:clamp(64px,9vw,112px)}
+.cs-school-learning-platform .eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan)}
+.cs-school-learning-platform .title{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:400;color:var(--royal);line-height:1.12;letter-spacing:-.01em}
+.cs-school-learning-platform .sub{color:var(--text);font-size:1.02rem;max-width:62ch}
+.cs-school-learning-platform .head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,48px)}
+.cs-school-learning-platform .plus{color:var(--cyan);font-weight:700;margin-right:6px}
+.cs-school-learning-platform .rule{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:700;color:var(--navy)}
+.cs-school-learning-platform .rule::before,.cs-school-learning-platform .rule::after{content:"";flex:1;height:2px;background:var(--navy)}
+.cs-school-learning-platform .rule span{white-space:nowrap}
+.cs-school-learning-platform .rule.dots{position:relative}
+.cs-school-learning-platform .box{border:1.5px solid var(--navy);background:var(--white)}
+.cs-school-learning-platform .cap{font-size:.78rem;color:var(--muted)}
+.cs-school-learning-platform .pill-tag{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--green);color:#fff;padding:6px 12px}
+.cs-school-learning-platform .pulse{width:8px;height:8px;border-radius:50%;background:#fff;animation:cs-school-learning-platform-pl 1.8s infinite}
+@keyframes cs-school-learning-platform-pl{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}80%,100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+.cs-school-learning-platform .btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;text-decoration:none;padding:13px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.cs-school-learning-platform .btn:hover{transform:translateY(-2px)}
+.cs-school-learning-platform .btn-cyan{background:var(--cyan);color:var(--navy)}
+.cs-school-learning-platform .btn-line{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.cs-school-learning-platform .btn-line:hover{background:rgba(255,255,255,.1)}
+.cs-school-learning-platform .btn-navy{background:var(--navy);color:#fff}
+.cs-school-learning-platform .seg{display:inline-flex;border:1.5px solid var(--navy)}
+.cs-school-learning-platform .seg button{border:0;background:#fff;color:var(--navy);font-weight:600;font-size:.82rem;padding:9px 16px;cursor:pointer;transition:background .25s,color .25s}
+.cs-school-learning-platform .seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cs-school-learning-platform .rv{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.cs-school-learning-platform.js .rv.pending{transform:translateY(26px);opacity:.3}
+.cs-school-learning-platform .pts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.cs-school-learning-platform .pts li{position:relative;padding-left:20px;font-size:.93rem;line-height:1.55;color:var(--text);min-width:0}
+.cs-school-learning-platform .pts li::before{content:"+";position:absolute;left:0;top:-1px;color:var(--cyan);font-weight:800;font-size:1.05rem}
+.cs-school-learning-platform .pts li b{color:var(--navy);font-weight:700}
+.cs-school-learning-platform .pts.cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px}
+@media (max-width:760px){.cs-school-learning-platform .pts.cols{grid-template-columns:1fr}}
+.cs-school-learning-platform .note{position:relative;border:1.5px solid var(--navy);padding:28px 26px 22px;margin-top:34px;background:#fff}
+.cs-school-learning-platform .note .lbl{position:absolute;top:-11px;left:18px;background:#fff;padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+.cs-school-learning-platform .band .note{background:var(--grey)} .cs-school-learning-platform .band .note .lbl{background:var(--grey)}
+.cs-school-learning-platform .simsec .note{background:#fff} .cs-school-learning-platform .simsec .note .lbl{background:#fff}
+.cs-school-learning-platform .hero .pts{margin-top:22px;gap:8px}
+.cs-school-learning-platform .hero .pts li{color:#c9d4f2;font-size:.95rem}
+.cs-school-learning-platform .hero .pts li b{color:#fff}
+.cs-school-learning-platform .kpis .pts{gap:8px}
+.cs-school-learning-platform .kpis .pts li{font-size:.86rem}
+.cs-school-learning-platform .verdict{margin-top:18px;display:flex;gap:18px;align-items:center;background:var(--navy);color:#fff;padding:18px 24px}
+.cs-school-learning-platform .verdict b{color:var(--cyan);font-weight:700;white-space:nowrap}
+@media (max-width:640px){.cs-school-learning-platform .verdict{flex-direction:column;align-items:flex-start;gap:6px}}
+.cs-school-learning-platform .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.cs-school-learning-platform .nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.cs-school-learning-platform .nav img{height:34px;width:auto}
+.cs-school-learning-platform .nav nav{display:flex;gap:2px}
+.cs-school-learning-platform .nav nav a{font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 12px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.cs-school-learning-platform .nav nav a:hover,.cs-school-learning-platform .nav nav a.on{color:var(--navy);border-color:var(--cyan)}
+.cs-school-learning-platform .nav .btn{padding:9px 16px;font-size:.8rem}
+@media (max-width:960px){.cs-school-learning-platform .nav nav{display:none}}
+.cs-school-learning-platform .hero{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a) 0%,#1e2f6a 55%,var(--cover-b) 100%);overflow:hidden}
+.cs-school-learning-platform .hero .tab{position:absolute;top:0;right:clamp(16px,4vw,40px)}
+.cs-school-learning-platform .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(64px,8vw,104px) clamp(48px,6vw,80px)}
+.cs-school-learning-platform .hero-grid>*{min-width:0}
+.cs-school-learning-platform .hero .eyebrow{color:#9fb3e8}
+.cs-school-learning-platform .hero h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:18px}
+.cs-school-learning-platform .hero h1 b{color:var(--cyan);font-weight:700}
+.cs-school-learning-platform .hero .lede{margin-top:20px;color:#c9d4f2;font-size:1.06rem;max-width:46ch}
+.cs-school-learning-platform .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.cs-school-learning-platform .hero .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:44px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.cs-school-learning-platform .hero .meta div{display:grid;gap:2px}
+.cs-school-learning-platform .hero .meta span{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-school-learning-platform .hero .meta b{font-weight:500;font-size:.92rem}
+.cs-school-learning-platform .matrix-card{border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);padding:clamp(18px,3vw,28px);display:grid;gap:20px}
+.cs-school-learning-platform .mx-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cs-school-learning-platform .mx-legend button{all:unset;cursor:pointer;display:grid;gap:2px;padding:10px 12px;border:1px solid rgba(160,185,240,.3);transition:background .25s,border-color .25s}
+.cs-school-learning-platform .mx-legend button b{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .mx-legend button span{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9fb3e8}
+.cs-school-learning-platform .mx-legend button.on{background:rgba(255,255,255,.1);border-color:#fff}
+.cs-school-learning-platform .mx-legend button:nth-child(3) b{color:var(--cyan)}
+.cs-school-learning-platform .mx-legend button:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .matrix{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(5px,1vw,9px)}
+.cs-school-learning-platform .matrix i{aspect-ratio:1;border-radius:50%;background:rgba(160,185,240,.22);transition:background .5s,transform .5s,box-shadow .5s}
+.cs-school-learning-platform .matrix i.app{background:#fff}
+.cs-school-learning-platform .matrix i.asst{background:var(--cyan);box-shadow:0 0 14px rgba(9,182,249,.8);transform:scale(1.12)}
+.cs-school-learning-platform .matrix i.half{background:linear-gradient(90deg,var(--cyan) 50%,#fff 50%)}
+.cs-school-learning-platform .mx-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.74rem;color:#9fb3e8}
+.cs-school-learning-platform .mx-cap b{color:#fff;font-weight:600}
+@media (max-width:900px){.cs-school-learning-platform .hero-grid{grid-template-columns:1fr}}
+@media (max-width:440px){.cs-school-learning-platform .mx-legend{grid-template-columns:1fr}.cs-school-learning-platform .mx-legend button{grid-template-columns:auto 1fr;align-items:baseline;gap:10px}}
+.cs-school-learning-platform .client{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid var(--line)}
+.cs-school-learning-platform .client .who{background:var(--grey);padding:26px 28px;display:grid;gap:8px;min-width:260px}
+.cs-school-learning-platform .client .who h3{font-size:.95rem;color:var(--navy)}
+.cs-school-learning-platform .client dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:.88rem}
+.cs-school-learning-platform .client dt{font-weight:700;color:var(--navy)}
+.cs-school-learning-platform .client dd{margin:0}
+.cs-school-learning-platform .client .nut{padding:26px 28px;display:grid;gap:8px;align-content:center}
+.cs-school-learning-platform .client .nut h3{font-size:.95rem;color:var(--navy)}
+.cs-school-learning-platform .client .nut p{max-width:70ch}
+@media (max-width:760px){.cs-school-learning-platform .client{grid-template-columns:1fr}.cs-school-learning-platform .client .who{min-width:0}}
+.cs-school-learning-platform .scene-wrap{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:stretch}
+.cs-school-learning-platform .scene-wrap>*{min-width:0}
+@media (max-width:900px){.cs-school-learning-platform .scene-wrap{grid-template-columns:1fr}}
+.cs-school-learning-platform .scene{padding:clamp(12px,2vw,20px)}
+.cs-school-learning-platform .scene svg{width:100%;height:auto;display:block}
+.cs-school-learning-platform .scene .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.cs-school-learning-platform .scene .bar b{color:var(--navy);font-size:.95rem}
+.cs-school-learning-platform .exits{display:grid;align-content:center;gap:10px;padding:28px;background:var(--navy);color:#fff}
+.cs-school-learning-platform .exits .n{font-size:clamp(4rem,9vw,6.5rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;transition:color .4s}
+.cs-school-learning-platform .exits.zero .n{color:var(--green)}
+.cs-school-learning-platform .exits span{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-school-learning-platform .exits p{color:#c9d4f2;font-size:.9rem}
+.cs-school-learning-platform .sv-out{transition:opacity .6s}
+.cs-school-learning-platform .mode-after .sv-out{opacity:.14}
+.cs-school-learning-platform .sv-in{opacity:0;transition:opacity .6s}
+.cs-school-learning-platform .mode-after .sv-in{opacity:1}
+.cs-school-learning-platform .sv-lbl{font-family:var(--f);font-size:13px;font-weight:600;fill:var(--navy)}
+.cs-school-learning-platform .sv-sm{font-family:var(--f);font-size:11px;fill:var(--muted)}
+@media (max-width:640px){.cs-school-learning-platform .sv-lbl{font-size:21px}.cs-school-learning-platform .sv-sm{font-size:17px}}
+.cs-school-learning-platform .hub{position:relative;height:520px}
+.cs-school-learning-platform .hub svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.cs-school-learning-platform .hub .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2f5be0,var(--navy));color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 0 0 10px rgba(32,78,207,.08),0 0 0 22px rgba(32,78,207,.05);z-index:2}
+.cs-school-learning-platform .hub .core b{font-size:1.7rem;font-weight:700;letter-spacing:.02em;display:block}
+.cs-school-learning-platform .hub .core span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#bcd0ff}
+.cs-school-learning-platform .qchip{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-size:.84rem;font-weight:600;padding:9px 14px;background:#fff;border:1.5px solid var(--line);color:var(--navy);transition:opacity .35s,border-color .35s,transform .35s;z-index:3;cursor:default}
+.cs-school-learning-platform .qchip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.cs-school-learning-platform .qchip.dim{opacity:.18}
+.cs-school-learning-platform .qchip.hot{border-color:currentColor;transform:translate(-50%,-50%) scale(1.06)}
+.cs-school-learning-platform .k-account{color:var(--royal)} .cs-school-learning-platform .k-knowledge{color:#0a8fc4} .cs-school-learning-platform .k-action{color:#1f9a68}
+.cs-school-learning-platform .qchip.k-account i{background:var(--royal)} .cs-school-learning-platform .qchip.k-knowledge i{background:var(--cyan)} .cs-school-learning-platform .qchip.k-action i{background:var(--green)}
+.cs-school-learning-platform .qchip span{color:var(--navy)}
+.cs-school-learning-platform .legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.cs-school-learning-platform .legend button{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;padding:9px 14px;font-weight:600;font-size:.82rem;color:var(--navy);cursor:pointer;transition:border-color .25s,background .25s}
+.cs-school-learning-platform .legend button i{width:10px;height:10px;border-radius:50%}
+.cs-school-learning-platform .legend button.on{border-color:var(--navy);background:var(--pale)}
+@media (max-width:820px){
+  .cs-school-learning-platform .hub{height:auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-top:190px}
+  .cs-school-learning-platform .hub svg{display:none}
+  .cs-school-learning-platform .hub .core{top:80px;width:130px;height:130px}
+  .cs-school-learning-platform .qchip{position:static;transform:none}
+  .cs-school-learning-platform .qchip.hot{transform:scale(1.04)}
+}
+.cs-school-learning-platform .locks{display:grid;grid-template-columns:1fr 340px 1fr;gap:clamp(16px,3vw,36px);align-items:center}
+.cs-school-learning-platform .locks>*{min-width:0}
+.cs-school-learning-platform .locks .col{display:grid;gap:16px}
+.cs-school-learning-platform .lock{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:18px;border:1.5px solid var(--line);background:#fff;transition:border-color .35s,box-shadow .35s}
+.cs-school-learning-platform .lock .ic{width:52px;height:52px;display:grid;place-items:center;border:1.5px solid var(--navy);color:var(--navy);transition:background .35s,color .35s}
+.cs-school-learning-platform .lock h3{font-size:1rem;color:var(--navy);font-weight:700}
+.cs-school-learning-platform .lock p{font-size:.84rem;color:var(--muted)}
+.cs-school-learning-platform .lock.on{border-color:var(--navy);box-shadow:0 14px 30px -22px rgba(15,37,110,.6)}
+.cs-school-learning-platform .lock.on .ic{background:var(--royal);border-color:var(--royal);color:#fff}
+.cs-school-learning-platform .lock:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .ring{position:relative;max-width:340px;width:100%;margin-inline:auto}
+.cs-school-learning-platform .ring svg{width:100%;height:auto;display:block}
+.cs-school-learning-platform .ring .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.cs-school-learning-platform .ring .mid b{font-size:2.6rem;font-weight:700;color:var(--navy);line-height:1;display:block;font-variant-numeric:tabular-nums;transition:color .4s}
+.cs-school-learning-platform .ring .mid span{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .ring.all .mid b{color:var(--green)}
+.cs-school-learning-platform .arc{fill:none;stroke:var(--line);stroke-width:18;transition:stroke .5s}
+.cs-school-learning-platform .arc.on{stroke:var(--royal)}
+.cs-school-learning-platform .ring.all .arc{stroke:var(--green)}
+@media (max-width:980px){.cs-school-learning-platform .locks{grid-template-columns:1fr}.cs-school-learning-platform .ring{order:-1;max-width:260px}}
+.cs-school-learning-platform .inapp{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.cs-school-learning-platform .inapp>*{min-width:0}
+@media (max-width:820px){.cs-school-learning-platform .inapp{grid-template-columns:1fr;justify-items:center}}
+.cs-school-learning-platform .phone{position:relative;width:280px;max-width:80vw;aspect-ratio:9/19.2;border-radius:40px;padding:10px;background:#11152b;box-shadow:0 30px 60px -28px rgba(15,37,110,.65),inset 0 0 0 1.5px #2b3150}
+.cs-school-learning-platform .phone .scr{position:relative;width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000}
+.cs-school-learning-platform .phone .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .5s}
+.cs-school-learning-platform .phone .scr img.on{opacity:1}
+.cs-school-learning-platform .phone::after{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:999px;background:#05060f;z-index:5}
+.cs-school-learning-platform .tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid #fff;background:rgba(9,182,249,.45);opacity:0;z-index:4;pointer-events:none}
+.cs-school-learning-platform .tap.go{animation:cs-school-learning-platform-tap .9s ease-out}
+@keyframes cs-school-learning-platform-tap{0%{opacity:0;transform:scale(1.6)}30%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(1.3)}}
+.cs-school-learning-platform .path4{display:grid;gap:0;counter-reset:s}
+.cs-school-learning-platform .path4 li{list-style:none;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);transition:color .3s}
+.cs-school-learning-platform .path4 li b{display:block;color:inherit;font-size:1.02rem}
+.cs-school-learning-platform .path4 li .n{width:40px;height:40px;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;font-size:.85rem;transition:all .3s}
+.cs-school-learning-platform .path4 li.on{color:var(--navy)}
+.cs-school-learning-platform .path4 li.on .n{background:var(--royal);border-color:var(--royal);color:#fff}
+.cs-school-learning-platform .path4 li.done .n{border-color:var(--royal);color:var(--royal)}
+.cs-school-learning-platform .path4{padding:0;margin:0}
+.cs-school-learning-platform .notlist{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.cs-school-learning-platform .notlist span{font-size:.84rem;padding:8px 14px;border:1.5px solid var(--line);color:var(--muted)}
+.cs-school-learning-platform .notlist span s{text-decoration-thickness:1.5px}
+.cs-school-learning-platform .notlist span.yes{border-color:var(--navy);color:var(--navy);font-weight:600;background:var(--pale)}
+.cs-school-learning-platform .strip{overflow-x:auto;scroll-snap-type:x proximity;cursor:grab;padding-block:8px 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.cs-school-learning-platform .strip.drag{cursor:grabbing;scroll-snap-type:none}
+.cs-school-learning-platform .strip-row{display:flex;gap:22px;width:max-content;padding-inline:var(--gut)}
+.cs-school-learning-platform .shot{width:190px;flex:none;scroll-snap-align:center;display:grid;gap:10px;user-select:none}
+.cs-school-learning-platform .shot .phone{width:190px;border-radius:28px;padding:7px}
+.cs-school-learning-platform .shot .phone .scr{border-radius:22px}
+.cs-school-learning-platform .shot .phone .scr img{opacity:1;pointer-events:none}
+.cs-school-learning-platform .shot .phone::after{top:12px;width:48px;height:12px}
+.cs-school-learning-platform .shot b{font-size:.84rem;color:var(--navy)}
+.cs-school-learning-platform .shot span{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--cyan)}
+.cs-school-learning-platform .strip-hint{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.cs-school-learning-platform .arrows{display:flex;gap:8px}
+.cs-school-learning-platform .arrows button{width:42px;height:42px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center}
+.cs-school-learning-platform .arrows button:hover{background:var(--navy);color:#fff}
+.cs-school-learning-platform .simsec{background:linear-gradient(180deg,var(--grey),#fff)}
+.cs-school-learning-platform .simgrid{display:grid;grid-template-columns:330px 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.cs-school-learning-platform .simgrid>*{min-width:0}
+@media (max-width:960px){.cs-school-learning-platform .simgrid{grid-template-columns:1fr;justify-items:center}.cs-school-learning-platform .simgrid>.archcol{width:100%}}
+.cs-school-learning-platform .simcol{display:grid;gap:14px;justify-items:center;position:sticky;top:84px}
+@media (max-width:960px){.cs-school-learning-platform .simcol{position:static}}
+.cs-school-learning-platform .sim{width:310px;max-width:88vw;height:640px;border-radius:44px;padding:11px;background:#11152b;box-shadow:0 40px 70px -30px rgba(15,37,110,.7),inset 0 0 0 1.5px #2b3150;position:relative}
+.cs-school-learning-platform .sim::after{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:74px;height:19px;border-radius:999px;background:#05060f;z-index:9}
+.cs-school-learning-platform .sim .scr{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(400px 260px at 50% -40px,rgba(140,40,90,.55),transparent 70%),var(--asst-bg);color:#ece9ff;display:flex;flex-direction:column}
+.cs-school-learning-platform .sim .status{display:flex;justify-content:space-between;padding:14px 22px 0;font-size:.7rem;font-weight:600;color:#fff}
+.cs-school-learning-platform .sim .top{display:flex;align-items:center;justify-content:center;position:relative;padding:12px 0 10px;font-weight:700;font-size:.95rem;letter-spacing:.06em}
+.cs-school-learning-platform .sim .top small{position:absolute;right:16px;font-size:.55rem;font-weight:700;letter-spacing:.12em;color:var(--green);display:flex;align-items:center;gap:5px;opacity:0;transition:opacity .4s}
+.cs-school-learning-platform .sim .top small i{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.cs-school-learning-platform .sim.authed .top small{opacity:1}
+.cs-school-learning-platform .chat{flex:1;overflow-y:auto;padding:6px 12px 10px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;scrollbar-width:none}
+.cs-school-learning-platform .chat::-webkit-scrollbar{display:none}
+.cs-school-learning-platform .msg{max-width:86%;font-size:.76rem;line-height:1.42;padding:9px 11px;border-radius:14px;animation:cs-school-learning-platform-msg .35s both}
+@keyframes cs-school-learning-platform-msg{from{opacity:0;transform:translateY(8px)}}
+.cs-school-learning-platform .msg.u{align-self:flex-end;background:var(--asst-user);color:#fff;border-bottom-right-radius:4px}
+.cs-school-learning-platform .msg.b{align-self:flex-start;background:var(--asst-card);border:1px solid var(--asst-line);border-bottom-left-radius:4px}
+.cs-school-learning-platform .msg.b.w{max-width:94%;width:94%}
+.cs-school-learning-platform .msg .k{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a99cff;margin-bottom:4px;display:block}
+.cs-school-learning-platform .msg .big{font-size:1.35rem;font-weight:700;color:#fff;line-height:1.1}
+.cs-school-learning-platform .msg .big small{font-size:.7rem;color:#c8c2ff}
+.cs-school-learning-platform .msg .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--asst-line)}
+.cs-school-learning-platform .msg .row:first-of-type{border-top:0}
+.cs-school-learning-platform .msg .row em{font-style:normal;color:#b9b3e6;font-size:.68rem}
+.cs-school-learning-platform .msg .row b{font-size:.74rem}
+.cs-school-learning-platform .msg .price{font-size:.66rem;font-weight:700;color:#ffb27a;border:1px solid #6a3d38;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.cs-school-learning-platform .msg .btns{display:flex;gap:6px;margin-top:8px}
+.cs-school-learning-platform .msg .btns button{flex:1;border:0;border-radius:8px;padding:7px;font-size:.7rem;font-weight:700;cursor:pointer;background:var(--asst-glow);color:#fff}
+.cs-school-learning-platform .msg .btns button.ghost{background:transparent;border:1px solid var(--asst-line);color:#c8c2ff}
+.cs-school-learning-platform .msg .btns button:disabled{opacity:.45;cursor:default}
+.cs-school-learning-platform .msg .ok{color:var(--green);font-weight:700}
+.cs-school-learning-platform .msg .ring2{display:flex;align-items:center;gap:12px}
+.cs-school-learning-platform .msg .ring2 svg{flex:none}
+.cs-school-learning-platform .msg .ref{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:.66rem;border:1px solid var(--green);color:var(--green);padding:3px 7px;border-radius:6px}
+.cs-school-learning-platform .msg .bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.cs-school-learning-platform .msg .bars i{width:6px;background:var(--green);border-radius:2px}
+.cs-school-learning-platform .typing{align-self:flex-start;background:var(--asst-card);border:1px solid var(--asst-line);border-radius:14px;padding:10px 12px;display:flex;gap:4px}
+.cs-school-learning-platform .typing i{width:6px;height:6px;border-radius:50%;background:#a99cff;animation:cs-school-learning-platform-ty 1s infinite}
+.cs-school-learning-platform .typing i:nth-child(2){animation-delay:.15s}.cs-school-learning-platform .typing i:nth-child(3){animation-delay:.3s}
+@keyframes cs-school-learning-platform-ty{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.cs-school-learning-platform .qs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 6px;scrollbar-width:none}
+.cs-school-learning-platform .qs::-webkit-scrollbar{display:none}
+.cs-school-learning-platform .qs button{flex:none;border:1px solid var(--asst-line);background:rgba(123,92,255,.12);color:#e3deff;font-size:.68rem;font-weight:600;padding:7px 10px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
+.cs-school-learning-platform .qs button:hover,.cs-school-learning-platform .qs button.on{background:rgba(123,92,255,.35);border-color:var(--asst-glow)}
+.cs-school-learning-platform .inbar{margin:4px 12px 16px;display:flex;align-items:center;gap:8px;border:1px solid var(--asst-line);border-radius:999px;padding:6px 6px 6px 14px;font-size:.7rem;color:#8d86c4}
+.cs-school-learning-platform .inbar span{flex:1}
+.cs-school-learning-platform .inbar i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#d946ef,#7b5cff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.8rem}
+.cs-school-learning-platform .login{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(300px 300px at 50% 30%,rgba(200,40,80,.45),transparent 70%),#1a0f24;transition:transform .7s cubic-bezier(.6,0,.2,1),opacity .7s}
+.cs-school-learning-platform .login.gone{transform:translateY(-100%);opacity:0;pointer-events:none}
+.cs-school-learning-platform .login .brandmark{position:absolute;top:34%;left:0;right:0;text-align:center;font-weight:800;font-size:1.5rem;letter-spacing:.08em;color:#ff6b6b}
+.cs-school-learning-platform .login .brandmark small{display:block;font-size:.6rem;letter-spacing:.2em;color:#e9b7c4;font-weight:600;margin-top:6px}
+.cs-school-learning-platform .sheet{background:#fff;color:#1d1d2b;border-radius:22px 22px 0 0;padding:20px 20px 26px;display:grid;gap:12px}
+.cs-school-learning-platform .sheet h4{margin:0;text-align:center;font-size:1rem}
+.cs-school-learning-platform .sheet .lbl{text-align:center;font-size:.66rem;color:#777}
+.cs-school-learning-platform .field{display:flex;gap:10px;align-items:center;border-bottom:1.5px solid #e2e2ea;padding:6px 4px;font-size:.95rem;font-weight:600;min-height:36px}
+.cs-school-learning-platform .field em{font-style:normal;color:#999}
+.cs-school-learning-platform .otp{display:flex;gap:10px;justify-content:center}
+.cs-school-learning-platform .otp span{width:38px;height:44px;border:1.5px solid #e2e2ea;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:1.1rem;transition:border-color .2s}
+.cs-school-learning-platform .otp span.f{border-color:#7b5cff}
+.cs-school-learning-platform .sheet .go{border:0;border-radius:999px;padding:11px;font-weight:700;font-size:.78rem;color:#fff;background:linear-gradient(90deg,#c084fc,#f9a8d4);letter-spacing:.06em}
+.cs-school-learning-platform .sheet .safe{display:flex;gap:8px;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#1f9a68;letter-spacing:.06em}
+.cs-school-learning-platform .route{width:310px;max-width:88vw;display:flex;align-items:center;gap:10px;border:1.5px solid var(--navy);background:#fff;padding:10px 14px;font-size:.78rem;font-weight:600;color:var(--navy);min-height:46px}
+.cs-school-learning-platform .route i{width:10px;height:10px;border-radius:50%;flex:none;background:var(--line);transition:background .3s}
+.cs-school-learning-platform .simctl{display:flex;gap:8px;align-items:center;font-size:.76rem;color:var(--muted)}
+.cs-school-learning-platform .simctl button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.76rem;padding:7px 12px;cursor:pointer}
+.cs-school-learning-platform .simctl button:hover{background:var(--navy);color:#fff}
+.cs-school-learning-platform .archcol{display:grid;gap:14px}
+.cs-school-learning-platform .archbox{padding:clamp(10px,2vw,18px);position:relative}
+.cs-school-learning-platform .archbox svg{width:100%;height:auto;display:block;max-height:min(600px,64vh)}
+@media (max-width:640px){.cs-school-learning-platform .archbox svg{max-height:none}}
+.cs-school-learning-platform .archbox .lgd{display:flex;gap:16px;flex-wrap:wrap;font-size:.74rem;font-weight:600;color:var(--navy);margin:2px 4px 10px}
+.cs-school-learning-platform .archbox .lgd span{display:flex;align-items:center;gap:6px}
+.cs-school-learning-platform .archbox .lgd i{width:14px;height:3px}
+.cs-school-learning-platform .anode{cursor:pointer}
+.cs-school-learning-platform .anode .bx{fill:#fff;stroke:var(--navy);stroke-width:1.5;transition:fill .35s,stroke .35s}
+.cs-school-learning-platform .anode .gl{fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s}
+.cs-school-learning-platform .anode text{font-family:var(--f);font-weight:600;fill:var(--navy)}
+.cs-school-learning-platform .anode.lit .bx{fill:var(--lc,#204ecf);stroke:var(--lc,#204ecf)}
+.cs-school-learning-platform .anode.lit .gl{stroke:#fff}
+.cs-school-learning-platform .anode.sel .bx{stroke-width:3}
+.cs-school-learning-platform .anode.dim{opacity:.35}
+.cs-school-learning-platform .anode{transition:opacity .4s}
+.cs-school-learning-platform .wire{fill:none;stroke:#b9c2d6;stroke-width:1.6;stroke-dasharray:4 5;animation:cs-school-learning-platform-fl 1.4s linear infinite}
+.cs-school-learning-platform .wire.wk{stroke:#7fd3f7}.cs-school-learning-platform .wire.wa{stroke:#8ea6ea}
+@keyframes cs-school-learning-platform-fl{to{stroke-dashoffset:-18}}
+.cs-school-learning-platform .gbox{fill:none;stroke-width:1.5}
+.cs-school-learning-platform .glabel{font-family:var(--f);font-size:10.5px;font-weight:700;letter-spacing:.12em}
+.cs-school-learning-platform .trace{background:#0d1a44;color:#cfe0ff;font-family:var(--mono);font-size:.74rem;padding:14px 16px;height:168px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+.cs-school-learning-platform .trace div{display:flex;gap:10px;animation:cs-school-learning-platform-msg .3s both}
+.cs-school-learning-platform .trace div i{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none}
+.cs-school-learning-platform .trace .t-h{color:#7f93c9}
+.cs-school-learning-platform .info{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cs-school-learning-platform .info>div{padding:16px 18px;min-width:0}
+.cs-school-learning-platform .info h3{font-size:.95rem;color:var(--navy);margin:4px 0}
+.cs-school-learning-platform .info p{font-size:.86rem}
+.cs-school-learning-platform .info .sand{background:var(--pale);border:1.5px solid var(--royal)}
+@media (max-width:640px){.cs-school-learning-platform .info{grid-template-columns:1fr}}
+.cs-school-learning-platform .duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--navy);max-width:960px;margin-inline:auto}
+.cs-school-learning-platform .duel>div{min-width:0;display:flex;flex-direction:column}
+.cs-school-learning-platform .duel .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.cs-school-learning-platform .duel .gen{background:#eef0f4}
+.cs-school-learning-platform .duel .gen .hd{color:var(--muted);border-bottom:1px solid var(--line)}
+.cs-school-learning-platform .duel .asst{background:var(--asst-bg);color:#ece9ff}
+.cs-school-learning-platform .duel .asst .hd{color:#a99cff;border-bottom:1px solid var(--asst-line)}
+.cs-school-learning-platform .duel .log{height:330px;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth;scrollbar-width:none}
+.cs-school-learning-platform .duel .log::-webkit-scrollbar{display:none}
+.cs-school-learning-platform .duel .m{max-width:88%;font-size:.84rem;line-height:1.45;padding:10px 12px;animation:cs-school-learning-platform-msg .35s both}
+.cs-school-learning-platform .duel .gen .u{align-self:flex-end;background:#c9ced9;color:#222}
+.cs-school-learning-platform .duel .gen .b{align-self:flex-start;background:#fff;border:1px solid var(--line);color:#4a4f5c}
+.cs-school-learning-platform .duel .gen .b.bad{border-color:#e9b49c}
+.cs-school-learning-platform .duel .gen .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--warn);text-transform:uppercase}
+.cs-school-learning-platform .duel .asst .u{align-self:flex-end;background:var(--asst-user);color:#fff;border-radius:12px 12px 4px 12px}
+.cs-school-learning-platform .duel .asst .b{align-self:flex-start;background:var(--asst-card);border:1px solid var(--asst-line);border-radius:12px 12px 12px 4px}
+.cs-school-learning-platform .duel .asst .b b.big{font-size:1.25rem;color:#fff}
+.cs-school-learning-platform .duel .asst .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--green);text-transform:uppercase}
+.cs-school-learning-platform .duel .typing{margin:0}
+.cs-school-learning-platform .duel .gen .typing{background:#fff;border-color:var(--line)}
+.cs-school-learning-platform .duel .gen .typing i{background:#9aa1b2}
+.cs-school-learning-platform .score{display:flex;gap:6px;align-items:center;font-size:.7rem;letter-spacing:.06em}
+.cs-school-learning-platform .score b{font-size:.9rem;font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .askrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 auto 18px;max-width:960px}
+.cs-school-learning-platform .askrow button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.84rem;padding:10px 16px;cursor:pointer;transition:background .2s,color .2s}
+.cs-school-learning-platform .askrow button:hover,.cs-school-learning-platform .askrow button.on{background:var(--navy);color:#fff}
+.cs-school-learning-platform .askrow button:disabled{opacity:.5;cursor:default}
+.cs-school-learning-platform .diffs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:22px auto 0;border:1.5px solid var(--line);max-width:960px;background:#fff}
+.cs-school-learning-platform .diffs div{padding:16px 18px;display:grid;gap:6px;min-width:0}
+.cs-school-learning-platform .diffs div+div{border-left:1.5px solid var(--line)}
+.cs-school-learning-platform .diffs h3{font-size:.86rem;color:var(--navy)}
+.cs-school-learning-platform .diffs s{color:var(--muted);font-size:.8rem;text-decoration-thickness:1.5px}
+.cs-school-learning-platform .diffs b{font-size:.84rem;color:var(--royal);font-weight:600}
+@media (max-width:820px){.cs-school-learning-platform .diffs{grid-template-columns:repeat(2,minmax(0,1fr))}.cs-school-learning-platform .diffs div:nth-child(3){border-left:0}.cs-school-learning-platform .diffs div:nth-child(n+3){border-top:1.5px solid var(--line)}}
+@media (max-width:640px){.cs-school-learning-platform .duel{grid-template-columns:1fr}.cs-school-learning-platform .duel .log{height:250px}}
+.cs-school-learning-platform .kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.cs-school-learning-platform .kpis>div{padding:22px;display:grid;gap:14px;align-content:start;min-width:0;border-top:4px solid var(--royal);background:#fff}
+@media (max-width:960px){.cs-school-learning-platform .kpis{grid-template-columns:1fr}}
+.cs-school-learning-platform .kpis h3{font-size:1rem;color:var(--navy)}
+.cs-school-learning-platform .kpis .num{font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:700;color:var(--royal);line-height:1;font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .kpis .cap{min-height:2.4em}
+.cs-school-learning-platform .cells{display:grid;grid-template-columns:repeat(20,1fr);gap:3px}
+.cs-school-learning-platform .cells i{aspect-ratio:1;border:1px dashed #9fb0d6;transition:background .4s,border-color .4s}
+.cs-school-learning-platform .cells i.f{background:var(--green);border:1px solid var(--green)}
+.cs-school-learning-platform .cells i.h{background:linear-gradient(90deg,var(--green) 50%,transparent 50%);border:1px solid var(--green)}
+.cs-school-learning-platform .kpis canvas,.cs-school-learning-platform .kpis svg{width:100%;height:150px;display:block}
+.cs-school-learning-platform .store{margin-top:22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:20px 24px}
+.cs-school-learning-platform .store img{width:60px;height:60px;border-radius:14px}
+.cs-school-learning-platform .store .who{flex:1;min-width:200px}
+.cs-school-learning-platform .store .who b{display:block;color:var(--navy)}
+.cs-school-learning-platform .store .who span{font-size:.84rem;color:var(--muted)}
+.cs-school-learning-platform .store .nums{display:flex;gap:30px;flex-wrap:wrap}
+.cs-school-learning-platform .store .nums div{display:grid}
+.cs-school-learning-platform .store .nums b{font-size:1.35rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .store .nums span{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.cs-school-learning-platform .stack span{font-size:.8rem;font-weight:600;color:var(--navy);padding:7px 12px;border:1.5px solid var(--line);background:#fff}
+.cs-school-learning-platform .close{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a),#1e2f6a 55%,var(--cover-b));overflow:hidden}
+.cs-school-learning-platform .close .wrap{padding-block:clamp(72px,10vw,120px);display:grid;gap:22px;position:relative}
+.cs-school-learning-platform .close .eyebrow{color:#9fb3e8}
+.cs-school-learning-platform .close h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.05;max-width:17ch}
+.cs-school-learning-platform .close h2 b{color:var(--cyan);font-weight:700}
+.cs-school-learning-platform .close p{color:#c9d4f2;max-width:56ch}
+.cs-school-learning-platform .close .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.cs-school-learning-platform .close .meta div{display:grid;gap:2px}
+.cs-school-learning-platform .close .meta span{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.cs-school-learning-platform .close .meta b{font-weight:500;font-size:.92rem}
+.cs-school-learning-platform .close .mk{position:absolute;right:-50px;bottom:-60px;width:min(380px,55vw);opacity:.13;pointer-events:none}
+.cs-school-learning-platform footer{border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+.cs-school-learning-platform footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px}
+
+@media (prefers-reduced-motion:reduce){
+  .cs-school-learning-platform,.cs-school-learning-platform *,.cs-school-learning-platform::before,.cs-school-learning-platform *::before,.cs-school-learning-platform::after,.cs-school-learning-platform *::after{animation:none!important;transition:none!important}
+  .cs-school-learning-platform.js .rv.pending{transform:none;opacity:1}
+}
+.cs-school-learning-platform .hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}
+.cs-school-learning-platform .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}
+.cs-school-learning-platform .hero .wrap{position:relative}
+.cs-school-learning-platform .demo-note{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.cs-school-learning-platform .demo-note b{color:var(--navy)}
+.cs-school-learning-platform .tag-wip{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;background:#f5b83d;color:#3a2a00}
+@keyframes cs-school-learning-platform-lmin{from{opacity:0;transform:translateY(8px)}}
+@keyframes cs-school-learning-platform-lmpop{0%{opacity:0;transform:scale(.7)}70%{transform:scale(1.06)}100%{opacity:1;transform:none}}
+.cs-school-learning-platform .lm-btn{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.8rem;padding:8px 13px;cursor:pointer;font-family:inherit}
+.cs-school-learning-platform .lm-btn:hover{background:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-btn.pri{background:var(--cyan);border-color:var(--cyan)}
+.cs-school-learning-platform .lm-btn:disabled{opacity:.4;cursor:not-allowed;background:#fff;color:var(--navy)}
+.cs-school-learning-platform .mono{font-family:var(--mono)}
+.cs-school-learning-platform .lm-rec{border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);padding:clamp(16px,2.6vw,24px);display:grid;gap:14px}
+.cs-school-learning-platform .lm-track{position:relative;display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cs-school-learning-platform .lm-track::before{content:"";position:absolute;left:6%;right:6%;top:9px;height:2px;background:rgba(160,185,240,.3)}
+.cs-school-learning-platform .lm-track .fill{position:absolute;left:6%;top:9px;height:2px;background:var(--cyan);width:0;transition:width .6s ease}
+.cs-school-learning-platform .lm-st{position:relative;display:grid;justify-items:center;gap:6px;text-align:center;font-size:.6rem;font-weight:600;color:#9fb3e8;line-height:1.2}
+.cs-school-learning-platform .lm-st i{width:20px;height:20px;border-radius:50%;border:2px solid rgba(160,185,240,.5);background:#16245a;transition:all .35s;position:relative;z-index:1}
+.cs-school-learning-platform .lm-st.done i{background:var(--cyan);border-color:var(--cyan)}
+.cs-school-learning-platform .lm-st.on i{background:#fff;border-color:var(--cyan);box-shadow:0 0 0 5px rgba(9,182,249,.25)}
+.cs-school-learning-platform .lm-st.on{color:#fff}
+@media (max-width:520px){.cs-school-learning-platform .lm-st span{display:none}.cs-school-learning-platform .lm-st.on span{display:block;position:absolute;top:26px;white-space:nowrap}.cs-school-learning-platform .lm-track{margin-bottom:14px}}
+.cs-school-learning-platform .lm-card{background:#fff;color:var(--text);padding:16px 16px 12px;display:grid;gap:10px;min-height:300px;align-content:start}
+.cs-school-learning-platform .lm-card .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1.5px solid var(--navy);padding-bottom:8px}
+.cs-school-learning-platform .lm-card .hd b{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.cs-school-learning-platform .lm-card .hd span{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+.cs-school-learning-platform .lm-status{font-family:var(--mono);font-size:.68rem;font-weight:500;padding:4px 8px;background:#eef3ff;color:var(--royal);border:1px solid #b9cbf5;transition:all .3s;justify-self:start}
+.cs-school-learning-platform .lm-status.ok{background:#e3f7ee;color:#1f8a5c;border-color:#9fdcc0}
+.cs-school-learning-platform .lm-fields{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cs-school-learning-platform .lm-f{background:var(--grey);padding:6px 8px;font-size:.74rem;display:grid;gap:1px;animation:cs-school-learning-platform-lmin .35s both;min-width:0}
+.cs-school-learning-platform .lm-f span{font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .lm-f b{color:var(--navy);font-weight:600;overflow-wrap:anywhere}
+.cs-school-learning-platform .lm-f.wide{grid-column:1/-1}
+.cs-school-learning-platform .lm-f.g{background:#e3f7ee}
+.cs-school-learning-platform .lm-cap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.72rem;color:#9fb3e8}
+.cs-school-learning-platform .lm-cap b{color:#fff;font-weight:600}
+.cs-school-learning-platform .lm-patch{padding:clamp(14px,2.4vw,24px)}
+.cs-school-learning-platform .lm-patch .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.cs-school-learning-platform .lm-patch .bar b{color:var(--navy)}
+.cs-school-learning-platform .lm-pgrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:18px}
+@media (max-width:860px){.cs-school-learning-platform .lm-pgrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-desk{position:relative;min-height:340px;background:repeating-linear-gradient(0deg,transparent 0 27px,#eef1f6 27px 28px),#fafbfd;border:1px solid var(--line);overflow:hidden}
+.cs-school-learning-platform .lm-tool{position:absolute;width:44%;background:#fff;border:1.5px solid var(--line);padding:10px 12px;display:grid;gap:4px;box-shadow:0 12px 24px -18px rgba(15,37,110,.6);transition:all .8s cubic-bezier(.2,.8,.2,1)}
+.cs-school-learning-platform .lm-tool b{font-size:.82rem;color:var(--navy);display:flex;gap:8px;align-items:center}
+.cs-school-learning-platform .lm-tool b em{font-style:normal;font-size:1rem}
+.cs-school-learning-platform .lm-tool small{font-size:.72rem;color:var(--muted)}
+.cs-school-learning-platform .lm-tool .bits{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+.cs-school-learning-platform .lm-tool .bits i{font-style:normal;font-size:.62rem;font-weight:700;padding:2px 6px;background:var(--grey);color:var(--muted)}
+.cs-school-learning-platform .lm-tool.hit{border-color:var(--royal);background:var(--pale)}
+.cs-school-learning-platform .lm-desk.one .lm-tool{transform:none!important;width:calc(100% - 40px);left:20px!important;border-left:4px solid var(--royal)}
+.cs-school-learning-platform .lm-desk .spine{position:absolute;left:20px;top:16px;bottom:16px;width:4px;background:var(--royal);opacity:0;transition:opacity .6s}
+.cs-school-learning-platform .lm-desk.one .spine{opacity:1}
+.cs-school-learning-platform .lm-desk .brand{position:absolute;right:12px;top:8px;font-size:.62rem;font-weight:800;letter-spacing:.16em;color:var(--royal);opacity:0;transition:opacity .6s}
+.cs-school-learning-platform .lm-desk.one .brand{opacity:1}
+.cs-school-learning-platform .lm-qs{display:grid;gap:8px;align-content:start}
+.cs-school-learning-platform .lm-qs h4{margin:0;font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .lm-q{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px solid var(--line);background:#fff;padding:10px 12px;display:grid;gap:4px;transition:border-color .25s}
+.cs-school-learning-platform .lm-q:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-q b{font-size:.84rem;color:var(--navy)}
+.cs-school-learning-platform .lm-q span{font-size:.74rem;color:var(--muted)}
+.cs-school-learning-platform .lm-q.on{border-color:var(--navy)}
+.cs-school-learning-platform .lm-q .ans{font-size:.7rem;font-weight:700}
+.cs-school-learning-platform .lm-q .ans.no{color:#c2410c}.cs-school-learning-platform .lm-q .ans.yes{color:#1f8a5c}
+.cs-school-learning-platform .lm-roles{display:flex;flex-wrap:wrap;gap:0;border:1.5px solid var(--navy);margin-bottom:16px}
+.cs-school-learning-platform .lm-roles button{flex:1 1 auto;border:0;border-left:1px solid var(--line);background:#fff;color:var(--navy);font-weight:600;font-size:.84rem;padding:12px 14px;cursor:pointer;font-family:inherit;transition:background .25s,color .25s}
+.cs-school-learning-platform .lm-roles button:first-child{border-left:0}
+.cs-school-learning-platform .lm-roles button[aria-pressed="true"]{background:var(--navy);color:#fff}
+@media (max-width:640px){.cs-school-learning-platform .lm-roles button{flex:1 1 33%;border-top:1px solid var(--line);font-size:.78rem;padding:10px 6px}}
+.cs-school-learning-platform .lm-portal{display:grid;grid-template-columns:270px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-portal{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-side{background:#123b2e;color:#e8f2ec;padding:14px;display:grid;gap:3px;align-content:start;min-height:420px}
+.cs-school-learning-platform .lm-side .who{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-bottom:10px;margin-bottom:6px;border-bottom:1px solid rgba(255,255,255,.15)}
+.cs-school-learning-platform .lm-side .who b{font-size:.9rem}
+.cs-school-learning-platform .lm-side .who span{font-size:.66rem;color:#a8d1bd;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.cs-school-learning-platform .lm-side a{display:block;font-size:.76rem;padding:5px 8px;color:#d7e9df;text-decoration:none;animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-side a:first-of-type{background:#c9a227;color:#123b2e;font-weight:700}
+@media (max-width:900px){.cs-school-learning-platform .lm-side{min-height:0;grid-template-columns:1fr 1fr}.cs-school-learning-platform .lm-side .who{grid-column:1/-1}}
+.cs-school-learning-platform .lm-shot{border:1.5px solid var(--navy);background:#eef2f8}
+.cs-school-learning-platform .lm-shot .bar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--navy);color:#fff;font-size:.72rem}
+.cs-school-learning-platform .lm-shot .bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35)}
+.cs-school-learning-platform .lm-shot .bar span{margin-left:8px;font-family:var(--mono);font-size:.68rem;color:#c9d4f2}
+.cs-school-learning-platform .lm-shot img{width:100%;height:auto;display:block;animation:cs-school-learning-platform-lmin .4s both}
+.cs-school-learning-platform .lm-pcap{margin-top:10px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.82rem}
+.cs-school-learning-platform .lm-pcap b{color:var(--navy)}
+.cs-school-learning-platform .lm-adm{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:22px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-adm{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-wiz{border:1.5px solid var(--navy);background:#fff;display:grid;grid-template-columns:190px minmax(0,1fr)}
+@media (max-width:560px){.cs-school-learning-platform .lm-wiz{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-wsteps{background:var(--grey);padding:12px;display:grid;gap:6px;align-content:start}
+@media (max-width:560px){.cs-school-learning-platform .lm-wsteps{grid-template-columns:repeat(6,1fr);gap:4px}}
+.cs-school-learning-platform .lm-ws{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:24px 1fr;gap:8px;align-items:center;padding:7px 8px;background:#fff;border:1.5px solid transparent;font-size:.78rem;color:var(--muted)}
+.cs-school-learning-platform .lm-ws .n{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;border:1.5px solid var(--line);font-size:.7rem;font-weight:700;transition:all .25s}
+.cs-school-learning-platform .lm-ws small{display:block;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase}
+.cs-school-learning-platform .lm-ws.on{border-color:var(--navy);color:var(--navy);font-weight:600}
+.cs-school-learning-platform .lm-ws.on .n{background:var(--navy);border-color:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-ws.done .n{background:var(--green);border-color:var(--green);color:#fff}
+.cs-school-learning-platform .lm-ws:focus-visible{outline:2px solid var(--cyan)}
+@media (max-width:560px){.cs-school-learning-platform .lm-ws{grid-template-columns:1fr;justify-items:center;padding:6px 2px}.cs-school-learning-platform .lm-ws>span:last-child{display:none}}
+.cs-school-learning-platform .lm-wbody{padding:16px;display:grid;gap:10px;align-content:start;min-height:330px}
+.cs-school-learning-platform .lm-wbody h4{margin:0;font-size:1.05rem;color:var(--navy)}
+.cs-school-learning-platform .lm-wbody p{font-size:.8rem;color:var(--muted)}
+.cs-school-learning-platform .lm-inp{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cs-school-learning-platform .lm-inp div{border:1.5px solid var(--line);padding:7px 9px;font-size:.76rem;display:grid;gap:2px;animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-inp div span{font-size:.56rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .lm-inp div.w{grid-column:1/-1}
+.cs-school-learning-platform .lm-inp div.up{border-style:dashed;border-color:#9fb0d6;background:#f7f9fd}
+.cs-school-learning-platform .lm-wnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
+.cs-school-learning-platform .lm-rem{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:12px}
+.cs-school-learning-platform .lm-rem h3{font-size:.98rem;color:var(--navy)}
+.cs-school-learning-platform .lm-cal{display:grid;grid-template-columns:repeat(31,1fr);gap:2px}
+.cs-school-learning-platform .lm-cal i{height:28px;background:#eef1f6;position:relative;transition:background .2s}
+.cs-school-learning-platform .lm-cal i.past{background:#d5ddef}
+.cs-school-learning-platform .lm-cal i.m1,.cs-school-learning-platform .lm-cal i.m2{background:#f5b83d}
+.cs-school-learning-platform .lm-cal i.m3{background:#c2410c}
+.cs-school-learning-platform .lm-cal i.m0{background:var(--royal)}
+.cs-school-learning-platform .lm-calx{display:flex;justify-content:space-between;font-size:.6rem;color:var(--muted);font-family:var(--mono)}
+.cs-school-learning-platform .lm-rng{width:100%;accent-color:var(--royal)}
+.cs-school-learning-platform .lm-remlog{display:grid;gap:6px;min-height:128px}
+.cs-school-learning-platform .lm-remlog div{display:flex;gap:10px;align-items:center;font-size:.78rem;padding:7px 9px;background:var(--grey);animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-remlog div b{font-family:var(--mono);font-size:.7rem;color:var(--royal);min-width:52px}
+.cs-school-learning-platform .lm-remlog div.bad{background:#fde9de;color:#8a2d07}
+.cs-school-learning-platform .lm-remlog div.ok{background:#e3f7ee;color:#1f6a48}
+.cs-school-learning-platform .lm-fin{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:22px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-fin{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-calc{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:12px}
+.cs-school-learning-platform .lm-calc .rolesw{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-calc .rolesw b{color:var(--navy);font-size:.9rem}
+.cs-school-learning-platform .lm-sl{display:grid;gap:4px}
+.cs-school-learning-platform .lm-sl label{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--navy)}
+.cs-school-learning-platform .lm-sl label span{font-family:var(--mono);font-weight:500;color:var(--royal)}
+.cs-school-learning-platform .lm-sl input{width:100%;accent-color:var(--royal)}
+.cs-school-learning-platform .lm-cap20{font-size:.7rem;font-weight:600;color:#c2410c;min-height:1.1em}
+.cs-school-learning-platform .lm-voucher{background:#fffdf6;border:1.5px dashed #c9a227;padding:16px 18px;font-family:var(--mono);font-size:.76rem;position:relative}
+.cs-school-learning-platform .lm-voucher h5{margin:0;font-family:var(--f);font-size:.82rem;letter-spacing:.16em;color:var(--navy)}
+.cs-school-learning-platform .lm-voucher .sub{font-size:.66rem;color:var(--muted);margin:2px 0 10px}
+.cs-school-learning-platform .lm-voucher .ln{display:flex;justify-content:space-between;gap:8px;padding:3px 0}
+.cs-school-learning-platform .lm-voucher .rule{border-top:1px dashed #c9b27a;margin:6px 0}
+.cs-school-learning-platform .lm-voucher .m{color:#1f8a5c}
+.cs-school-learning-platform .lm-voucher .tot{font-weight:700;font-size:.92rem;color:var(--navy)}
+.cs-school-learning-platform .lm-voucher .formula{margin-top:8px;font-size:.66rem;color:var(--muted)}
+.cs-school-learning-platform .lm-voucher .stamp{position:absolute;right:14px;top:12px;font-family:var(--f);font-size:.62rem;font-weight:800;letter-spacing:.14em;padding:4px 8px;border:2px solid var(--royal);color:var(--royal);transform:rotate(6deg)}
+.cs-school-learning-platform .lm-ledger{border:1.5px solid var(--navy);background:#fff;margin-top:22px}
+.cs-school-learning-platform .lm-ledger .lh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:14px 16px;border-bottom:1px solid var(--line)}
+.cs-school-learning-platform .lm-ledger .lh b{color:var(--navy)}
+.cs-school-learning-platform .lm-lgrid{display:grid;grid-template-columns:minmax(0,1fr) 260px}
+@media (max-width:860px){.cs-school-learning-platform .lm-lgrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-tbl{overflow-x:auto}
+.cs-school-learning-platform .lm-tbl table{width:100%;border-collapse:collapse;font-size:.78rem;min-width:520px}
+.cs-school-learning-platform .lm-tbl th,.cs-school-learning-platform .lm-tbl td{padding:9px 10px;border-bottom:1px solid #edf0f5;text-align:right;font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .lm-tbl th{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.cs-school-learning-platform .lm-tbl th:first-child,.cs-school-learning-platform .lm-tbl td:first-child{text-align:left}
+.cs-school-learning-platform .lm-tbl td.carry{color:#c2410c;font-weight:600}
+.cs-school-learning-platform .lm-tbl td.rem{font-weight:700;color:var(--navy)}
+.cs-school-learning-platform .lm-tbl td.rem.z{color:#1f8a5c}
+.cs-school-learning-platform .lm-pay{display:inline-flex;border:1px solid var(--line)}
+.cs-school-learning-platform .lm-pay button{border:0;background:#fff;font-size:.66rem;font-weight:700;padding:4px 7px;cursor:pointer;color:var(--muted);font-family:inherit}
+.cs-school-learning-platform .lm-pay button.on{background:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-access{border-left:1px solid var(--line);padding:16px;display:grid;gap:10px;align-content:start;background:#fafbfd}
+@media (max-width:860px){.cs-school-learning-platform .lm-access{border-left:0;border-top:1px solid var(--line)}}
+.cs-school-learning-platform .lm-mini{border:1.5px solid #123b2e;background:#fff;position:relative;overflow:hidden;min-height:150px}
+.cs-school-learning-platform .lm-mini .t{background:#123b2e;color:#fff;font-size:.68rem;padding:6px 10px;font-weight:600}
+.cs-school-learning-platform .lm-mini .b{padding:10px;display:grid;gap:6px}
+.cs-school-learning-platform .lm-mini .b i{display:block;height:8px;background:#e6ebf2}
+.cs-school-learning-platform .lm-mini .b i:nth-child(2){width:70%}.cs-school-learning-platform .lm-mini .b i:nth-child(3){width:85%}
+.cs-school-learning-platform .lm-lock{position:absolute;inset:26px 0 0 0;background:rgba(15,37,110,.9);color:#fff;display:grid;place-items:center;text-align:center;padding:10px;font-size:.78rem;opacity:0;transition:opacity .4s}
+.cs-school-learning-platform .lm-lock b{display:block;font-size:1.4rem;margin-bottom:4px}
+.cs-school-learning-platform .lm-mini.locked .lm-lock{opacity:1}
+.cs-school-learning-platform .lm-accst{font-weight:700;font-size:.86rem}
+.cs-school-learning-platform .lm-accst.ok{color:#1f8a5c}.cs-school-learning-platform .lm-accst.bad{color:#c2410c}
+.cs-school-learning-platform .lm-eng{border:1.5px solid var(--navy);background:#fff;padding:clamp(14px,2.4vw,24px)}
+.cs-school-learning-platform .lm-egrid{display:grid;grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr);gap:18px;align-items:center}
+@media (max-width:860px){.cs-school-learning-platform .lm-egrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-lanes{display:grid;gap:8px}
+.cs-school-learning-platform .lm-lane{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px solid var(--line);padding:10px 12px;display:grid;gap:2px;background:#fff;position:relative;transition:border-color .25s,background .25s}
+.cs-school-learning-platform .lm-lane b{font-size:.84rem;color:var(--navy)}
+.cs-school-learning-platform .lm-lane span{font-size:.72rem;color:var(--muted)}
+.cs-school-learning-platform .lm-lane.on{border-color:var(--navy);background:var(--pale)}
+.cs-school-learning-platform .lm-lane:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-core{position:relative;display:grid;place-items:center;text-align:center;width:140px;height:140px;border-radius:0;margin-inline:auto;background:var(--navy);color:#fff;padding:12px}
+.cs-school-learning-platform .lm-core b{font-size:.86rem;line-height:1.25}
+.cs-school-learning-platform .lm-core small{display:block;font-family:var(--mono);font-size:.6rem;color:#9fd9ff;margin-top:6px}
+.cs-school-learning-platform .lm-core.pulse{animation:cs-school-learning-platform-corep .8s ease}
+@keyframes cs-school-learning-platform-corep{40%{box-shadow:0 0 0 14px rgba(9,182,249,.25)}100%{box-shadow:0 0 0 0 rgba(9,182,249,0)}}
+.cs-school-learning-platform .lm-outs{display:grid;gap:6px}
+.cs-school-learning-platform .lm-out{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:center;font-size:.8rem;padding:8px 10px;background:var(--grey);color:#9aa3b5;transition:all .3s}
+.cs-school-learning-platform .lm-out i{width:22px;height:22px;display:grid;place-items:center;border:1.5px solid #c9d0de;font-style:normal;font-size:.72rem;font-weight:800;transition:all .3s}
+.cs-school-learning-platform .lm-out.on{background:#e3f7ee;color:var(--navy)}
+.cs-school-learning-platform .lm-out.on i{background:var(--green);border-color:var(--green);color:#fff}
+.cs-school-learning-platform .lm-out.skip{text-decoration:line-through;opacity:.6}
+.cs-school-learning-platform .lm-etop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.cs-school-learning-platform .lm-etop b{color:var(--navy)}
+.cs-school-learning-platform .lm-flowdot{height:6px;background:#eef1f6;position:relative;overflow:hidden;margin-top:14px}
+.cs-school-learning-platform .lm-flowdot i{position:absolute;top:0;bottom:0;width:18%;background:linear-gradient(90deg,transparent,var(--cyan),transparent);left:-20%}
+.cs-school-learning-platform .lm-flowdot.go i{animation:cs-school-learning-platform-sweep 1.1s ease forwards}
+@keyframes cs-school-learning-platform-sweep{to{left:102%}}
+.cs-school-learning-platform .lm-jyi{font-size:.86rem;margin-bottom:14px;max-width:72ch}
+.cs-school-learning-platform .lm-jy{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+@media (max-width:960px){.cs-school-learning-platform .lm-jy{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cs-school-learning-platform .lm-jy{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-jy li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:4px 10px;align-content:start;padding:12px;border:1.5px solid var(--line);background:#fff;font-size:.8rem;line-height:1.45;min-width:0}
+.cs-school-learning-platform .lm-jy li>*{grid-column:2;min-width:0}
+.cs-school-learning-platform .lm-jy li>em{grid-column:1;grid-row:1/span 3;font-style:normal;font-family:var(--mono);font-size:.66rem;width:24px;height:24px;display:grid;place-items:center;background:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-jy b{color:var(--navy);font-size:.86rem}
+.cs-school-learning-platform .lm-jy a{font-size:.7rem;font-weight:600;color:var(--royal);text-decoration:none}
+.cs-school-learning-platform .lm-jy a:hover{text-decoration:underline}
+.cs-school-learning-platform .lm-jy li.loop{border-style:dashed;border-color:var(--royal)}
+.cs-school-learning-platform .lm-jy li.ok{border-color:var(--green);background:#eafaf2}
+.cs-school-learning-platform .lm-jy li.ok>em{background:var(--green)}
+.cs-school-learning-platform .lm-jyn{margin-top:12px;font-size:.8rem;padding:10px 12px;background:var(--pale);color:var(--navy)}
+.cs-school-learning-platform .lm-airef{font-size:.72rem;font-weight:600;color:var(--royal);text-decoration:none}
+.cs-school-learning-platform .lm-airef:hover{text-decoration:underline}
+.cs-school-learning-platform .lm-lec{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+@media (max-width:960px){.cs-school-learning-platform .lm-lec{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-life{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:14px}
+.cs-school-learning-platform .lm-lstate{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+@media (max-width:560px){.cs-school-learning-platform .lm-lstate{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-ls{padding:10px;border:1.5px solid var(--line);font-size:.74rem;display:grid;gap:3px;transition:all .3s;min-width:0}
+.cs-school-learning-platform .lm-ls code{font-family:var(--mono);font-size:.62rem;color:var(--muted);overflow-wrap:anywhere}
+.cs-school-learning-platform .lm-ls b{color:var(--navy);font-size:.82rem}
+.cs-school-learning-platform .lm-ls.on{border-color:var(--royal);background:var(--pale)}
+.cs-school-learning-platform .lm-ls.done{border-color:var(--green);background:#eafaf2}
+.cs-school-learning-platform .lm-ls.bad{border-color:#c2410c;background:#fdeee6}
+.cs-school-learning-platform .lm-lesson{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--grey);padding:10px 12px;font-size:.8rem}
+.cs-school-learning-platform .lm-lesson b{color:var(--navy)}
+.cs-school-learning-platform .lm-lesson .meet{font-family:var(--mono);font-size:.68rem;color:var(--royal)}
+.cs-school-learning-platform .lm-ev{display:grid;gap:10px}
+.cs-school-learning-platform .lm-evr{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);font-size:.8rem}
+.cs-school-learning-platform .lm-evr b{color:var(--navy);display:block}
+.cs-school-learning-platform .lm-evr small{color:var(--muted);font-size:.72rem}
+.cs-school-learning-platform .lm-evr .st{font-size:.66rem;font-weight:800;letter-spacing:.1em;padding:4px 8px}
+.cs-school-learning-platform .st.y{background:#e3f7ee;color:#1f8a5c}.cs-school-learning-platform .st.n{background:#fde6e6;color:#c03030}.cs-school-learning-platform .st.w{background:#fff3d6;color:#8a6200}
+.cs-school-learning-platform .lm-mins{display:grid;gap:4px}
+.cs-school-learning-platform .lm-mins label{display:flex;justify-content:space-between;font-size:.76rem;font-weight:600;color:var(--navy)}
+.cs-school-learning-platform .lm-mins label span{font-family:var(--mono);color:var(--royal)}
+.cs-school-learning-platform .lm-mins input{width:100%;accent-color:var(--royal)}
+.cs-school-learning-platform .lm-mins .thr{position:relative;height:14px}
+.cs-school-learning-platform .lm-mins .thr i{position:absolute;top:0;bottom:0;width:2px;background:#c2410c}
+.cs-school-learning-platform .lm-mins .thr span{position:absolute;top:0;font-size:.58rem;font-family:var(--mono);color:#c2410c;transform:translateX(4px)}
+.cs-school-learning-platform .lm-coord{border:1.5px solid var(--navy);background:var(--navy);color:#fff;padding:16px;display:grid;gap:10px}
+.cs-school-learning-platform .lm-coord h3{font-size:1rem}
+.cs-school-learning-platform .lm-coord p{font-size:.82rem;color:#c9d4f2}
+.cs-school-learning-platform .lm-coord .acts{display:flex;gap:8px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-coord .acts button{border:1.5px solid #fff;background:transparent;color:#fff;font-weight:600;font-size:.78rem;padding:8px 12px;cursor:pointer;font-family:inherit}
+.cs-school-learning-platform .lm-coord .acts button.pri{background:var(--cyan);border-color:var(--cyan);color:var(--navy)}
+.cs-school-learning-platform .lm-coord .acts button:disabled{opacity:.35;cursor:not-allowed}
+.cs-school-learning-platform .lm-coord .msg{font-size:.8rem;min-height:2.6em;padding:8px 10px;background:rgba(255,255,255,.08)}
+.cs-school-learning-platform .lm-roster{display:grid;grid-template-columns:repeat(6,1fr);gap:4px}
+.cs-school-learning-platform .lm-roster i{aspect-ratio:1;display:grid;place-items:center;font-style:normal;font-size:.6rem;font-weight:700;background:rgba(255,255,255,.12);color:#c9d4f2;border:1px dashed rgba(255,255,255,.35);transition:all .3s}
+.cs-school-learning-platform .lm-roster i.p{background:var(--green);color:#fff;border-style:solid;border-color:var(--green)}
+.cs-school-learning-platform .lm-roster i.a{background:#c2410c;color:#fff;border-style:solid;border-color:#c2410c}
+.cs-school-learning-platform .lm-roster i.l{background:#f5b83d;color:#3a2a00;border-style:solid;border-color:#f5b83d}
+.cs-school-learning-platform .lm-ai{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:860px){.cs-school-learning-platform .lm-ai{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-aistages{display:grid;gap:4px}
+@media (max-width:860px){.cs-school-learning-platform .lm-aistages{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-ais{all:unset;box-sizing:border-box;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;border:1.5px solid var(--line);background:#fff;font-size:.82rem;font-weight:600;color:var(--navy)}
+.cs-school-learning-platform .lm-ais i{font-style:normal;font-size:.7rem;color:var(--muted)}
+.cs-school-learning-platform .lm-ais.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cs-school-learning-platform .lm-ais.on i{color:var(--cyan)}
+.cs-school-learning-platform .lm-ais:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-aicard{border:1.5px solid var(--navy);background:#fff;display:grid;grid-template-columns:1fr 60px 1fr;align-items:stretch}
+@media (max-width:640px){.cs-school-learning-platform .lm-aicard{grid-template-columns:1fr}.cs-school-learning-platform .lm-aicard .arr{height:34px;font-size:0}.cs-school-learning-platform .lm-aicard .arr::after{content:"↓";font-size:1.3rem}}
+.cs-school-learning-platform .lm-aicard>div{padding:18px;display:grid;gap:8px;align-content:start;animation:cs-school-learning-platform-lmin .35s both}
+.cs-school-learning-platform .lm-aicard small{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.cs-school-learning-platform .lm-aicard .before small{color:#c2410c}
+.cs-school-learning-platform .lm-aicard .after{background:var(--pale)}
+.cs-school-learning-platform .lm-aicard .after small{color:var(--royal)}
+.cs-school-learning-platform .lm-aicard b{font-size:1.02rem;color:var(--navy);line-height:1.35}
+.cs-school-learning-platform .lm-aicard p{font-size:.84rem}
+.cs-school-learning-platform .lm-aicard .arr{display:grid;place-items:center;font-size:1.4rem;color:var(--cyan);background:#fff;padding:0}
+.cs-school-learning-platform .lm-aistack{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:16px}
+@media (max-width:860px){.cs-school-learning-platform .lm-aistack{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:480px){.cs-school-learning-platform .lm-aistack{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-aistack div{border:1.5px dashed #9fb0d6;padding:10px;display:grid;gap:2px;background:#fff}
+.cs-school-learning-platform .lm-aistack b{font-size:.8rem;color:var(--navy)}
+.cs-school-learning-platform .lm-aistack span{font-size:.7rem;color:var(--muted)}
+.cs-school-learning-platform .lm-proof{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.cs-school-learning-platform .lm-proof{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cs-school-learning-platform .lm-proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-proof button{all:unset;box-sizing:border-box;cursor:zoom-in;display:grid;gap:6px}
+.cs-school-learning-platform .lm-proof button:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-proof img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border:1.5px solid var(--navy);transition:transform .3s,box-shadow .3s;background:#eef2f8}
+.cs-school-learning-platform .lm-proof button:hover img{transform:translateY(-3px);box-shadow:0 16px 28px -22px rgba(15,37,110,.7)}
+.cs-school-learning-platform .lm-proof span{font-size:.76rem}
+.cs-school-learning-platform .lm-proof span b{color:var(--navy);display:block;font-size:.8rem}
+.cs-school-learning-platform .lm-lb{position:fixed;inset:0;background:rgba(10,18,48,.88);z-index:200;display:grid;place-items:center;padding:20px}
+.cs-school-learning-platform .lm-lb[hidden]{display:none!important}
+.cs-school-learning-platform .lm-lb figure{margin:0;max-width:min(1200px,100%);display:grid;gap:10px}
+.cs-school-learning-platform .lm-lb img{width:100%;height:auto;max-height:80vh;object-fit:contain;background:#fff}
+.cs-school-learning-platform .lm-lb figcaption{color:#fff;font-size:.86rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.cs-school-learning-platform .lm-lb button{border:1.5px solid #fff;background:transparent;color:#fff;font-weight:600;padding:7px 12px;cursor:pointer;font-family:var(--f)}
+.cs-school-learning-platform .lm-rgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:22px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-rgrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-report{background:#fff;border:1.5px solid var(--navy);padding:clamp(16px,3vw,28px);position:relative}
+.cs-school-learning-platform .lm-report .rh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap;border-bottom:3px double var(--navy);padding-bottom:12px;margin-bottom:6px}
+.cs-school-learning-platform .lm-report .rh b{font-size:.82rem;letter-spacing:.2em;color:var(--navy)}
+.cs-school-learning-platform .lm-report .rh span{font-size:.72rem;color:var(--muted)}
+.cs-school-learning-platform .lm-rrow{display:grid;grid-template-columns:150px minmax(0,1fr) 110px;gap:14px;align-items:center;padding:12px 0;border-bottom:1px dashed var(--line);animation:cs-school-learning-platform-lmin .4s both}
+@media (max-width:640px){.cs-school-learning-platform .lm-rrow{grid-template-columns:1fr auto}.cs-school-learning-platform .lm-rrow p{grid-column:1/-1;order:3}}
+.cs-school-learning-platform .lm-rrow h4{margin:0;font-size:.86rem;color:var(--navy)}
+.cs-school-learning-platform .lm-rrow p{font-size:.82rem}
+.cs-school-learning-platform .lm-grade{justify-self:end;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border:2px solid var(--green);color:#1f8a5c;transform:rotate(-3deg);opacity:0;transition:opacity .3s,transform .3s}
+.cs-school-learning-platform .lm-grade.on{opacity:1;transform:rotate(-3deg) scale(1)}
+.cs-school-learning-platform .lm-grade.wip{border-color:#d99a12;color:#8a6200}
+.cs-school-learning-platform .lm-report .sig{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:14px;font-size:.72rem;color:var(--muted)}
+.cs-school-learning-platform .lm-nums{display:grid;gap:12px}
+.cs-school-learning-platform .lm-num{border-top:4px solid var(--royal);background:#fff;border-left:1.5px solid var(--navy);border-right:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);padding:14px 16px;display:grid;gap:2px}
+.cs-school-learning-platform .lm-num b{font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:700;color:var(--royal);line-height:1.05;font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .lm-num span{font-size:.8rem}
+.cs-school-learning-platform .lm-num small{font-size:.66rem;color:var(--muted)}
+
+.cs-school-learning-platform .lm-desk.one .lm-tool .bits{display:none}.cs-school-learning-platform .lm-desk.one .lm-tool{padding:8px 12px}
+.cs-school-learning-platform .lm-desk{min-height:360px}
+
+.cs-school-learning-platform .lm-lgrid>*{min-width:0}
+.cs-school-learning-platform .lm-sgrid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:22px;align-items:stretch}
+@media (max-width:960px){.cs-school-learning-platform .lm-sgrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-sgrid>*{min-width:0}
+.cs-school-learning-platform .lm-tz{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:12px;align-content:start}
+.cs-school-learning-platform .lm-tzh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-tzh b{color:var(--navy)}
+.cs-school-learning-platform .lm-tzs{display:grid;gap:4px}
+.cs-school-learning-platform .lm-tzs label{display:flex;justify-content:space-between;font-size:.78rem;font-weight:600;color:var(--navy)}
+.cs-school-learning-platform .lm-tzs label span{font-family:var(--mono);font-weight:500;color:var(--royal)}
+.cs-school-learning-platform .lm-tzl{display:grid;gap:6px}
+.cs-school-learning-platform .lm-tzr{display:grid;grid-template-columns:118px minmax(0,1fr) 96px;gap:12px;align-items:center;padding:7px 10px;background:var(--grey);border-left:4px solid #c9d0de;transition:border-color .35s,background .35s}
+.cs-school-learning-platform .lm-tzr.good{border-left-color:var(--green);background:#eefaf4}
+.cs-school-learning-platform .lm-tzr.bad{border-left-color:#9aa3b5}
+.cs-school-learning-platform .lm-tzr.you{outline:1.5px dashed var(--royal);outline-offset:-1.5px}
+.cs-school-learning-platform .lm-tzr .cty b{display:block;font-size:.84rem;color:var(--navy);line-height:1.2}
+.cs-school-learning-platform .lm-tzr .cty small{font-size:.64rem;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.cs-school-learning-platform .lm-tzr .strip{position:relative;height:16px;background:#1e2f6a;overflow:hidden}
+.cs-school-learning-platform .lm-tzr .strip .win{position:absolute;top:0;bottom:0;left:29.17%;width:54.17%;background:linear-gradient(90deg,#d9ecff,#fff5d6 50%,#d9ecff)}
+.cs-school-learning-platform .lm-tzr .strip .cls{position:absolute;top:-2px;bottom:-2px;width:2.6%;min-width:6px;background:var(--royal);box-shadow:0 0 0 2px #fff;transition:left .7s cubic-bezier(.2,.8,.2,1)}
+.cs-school-learning-platform .lm-tzr.good .strip .cls{background:var(--green)}
+.cs-school-learning-platform .lm-tzr .tm{text-align:right;display:grid}
+.cs-school-learning-platform .lm-tzr .tm b{font-family:var(--mono);font-size:1rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.cs-school-learning-platform .lm-tzr .tm small{font-size:.64rem;color:var(--muted)}
+.cs-school-learning-platform .lm-tzf{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:.8rem;align-items:center}
+.cs-school-learning-platform .lm-tzf b{color:#1f8a5c}
+@media (max-width:520px){.cs-school-learning-platform .lm-tzr{grid-template-columns:86px minmax(0,1fr) 70px;gap:8px;padding:7px 8px}.cs-school-learning-platform .lm-tzr .tm b{font-size:.88rem}.cs-school-learning-platform .lm-tzr .cty small{font-size:.56rem}}
+.cs-school-learning-platform .lm-tree{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:10px;align-content:start}
+.cs-school-learning-platform .lm-treeh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-treeh b{color:var(--navy);font-size:.9rem;letter-spacing:.02em}
+.cs-school-learning-platform .lm-treev{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:10px;align-items:center}
+@media (max-width:420px){.cs-school-learning-platform .lm-treev{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-treev svg{width:100%;height:auto;max-height:300px;display:block}
+.cs-school-learning-platform .lm-treev .roots path,.cs-school-learning-platform .lm-treev .limbs path{fill:none;stroke:#3b4a7a;stroke-width:5;stroke-linecap:round;transition:stroke .35s}
+.cs-school-learning-platform .lm-treev .roots path{stroke-width:3.5}
+.cs-school-learning-platform .lm-treev .trunk{fill:var(--navy);transition:fill .35s}
+.cs-school-learning-platform .lm-treev .ground{stroke:var(--line);stroke-width:2}
+.cs-school-learning-platform .lm-treev .leaf{cursor:pointer;outline:none}
+.cs-school-learning-platform .lm-treev .leaf circle{fill:var(--green);stroke:#fff;stroke-width:2.5;transition:fill .3s,r .3s}
+.cs-school-learning-platform .lm-treev .leaf text{font:700 12px var(--f);fill:#fff;text-anchor:middle;pointer-events:none}
+.cs-school-learning-platform .lm-treev .leaf:hover circle,.cs-school-learning-platform .lm-treev .leaf:focus-visible circle{fill:#2fa577}
+.cs-school-learning-platform .lm-treev .leaf.on circle{fill:var(--cyan);r:21}
+.cs-school-learning-platform .lm-tree[data-z="learn"] .roots path{stroke:var(--cyan)}
+.cs-school-learning-platform .lm-tree[data-z="char"] .trunk{fill:var(--cyan)}
+.cs-school-learning-platform .lm-tree[data-z="lead"] .leaf circle{fill:var(--cyan)}
+.cs-school-learning-platform .lm-tree[data-z="lead"] .limbs path{stroke:var(--cyan)}
+.cs-school-learning-platform .lm-tree.grow .leaf{animation:cs-school-learning-platform-lmpop .5s both}
+.cs-school-learning-platform .lm-tree.grow g:nth-child(2)>.leaf{animation-delay:.06s}.cs-school-learning-platform .lm-tree.grow g:nth-child(3)>.leaf{animation-delay:.12s}.cs-school-learning-platform .lm-tree.grow g:nth-child(4)>.leaf{animation-delay:.18s}.cs-school-learning-platform .lm-tree.grow g:nth-child(5)>.leaf{animation-delay:.24s}.cs-school-learning-platform .lm-tree.grow g:nth-child(6)>.leaf{animation-delay:.3s}.cs-school-learning-platform .lm-tree.grow g:nth-child(7)>.leaf{animation-delay:.36s}.cs-school-learning-platform .lm-tree.grow g:nth-child(8)>.leaf{animation-delay:.42s}.cs-school-learning-platform .lm-tree.grow g:nth-child(9)>.leaf{animation-delay:.48s}.cs-school-learning-platform .lm-tree.grow g:nth-child(10)>.leaf{animation-delay:.54s}
+.cs-school-learning-platform .lm-treev .leaf{transform-box:fill-box;transform-origin:center}
+.cs-school-learning-platform .lm-tlabels{display:grid;gap:6px}
+@media (max-width:420px){.cs-school-learning-platform .lm-tlabels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-tlabels button{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px solid var(--line);padding:8px 10px;font-size:.68rem;color:var(--muted);display:grid;gap:1px;line-height:1.3}
+.cs-school-learning-platform .lm-tlabels button b{font-size:.8rem;color:var(--navy)}
+.cs-school-learning-platform .lm-tlabels button.on{border-color:var(--cyan);background:#e8f8ff}
+.cs-school-learning-platform .lm-tlabels button:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-tcap{min-height:58px;background:var(--navy);color:#fff;padding:10px 12px;display:grid;gap:2px;animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-tcap .n{font-family:var(--mono);font-size:.62rem;color:#9fd9ff}
+.cs-school-learning-platform .lm-tcap b{font-size:.95rem}
+.cs-school-learning-platform .lm-tcap span:last-child{font-size:.78rem;color:#c9d4f2}
+.cs-school-learning-platform .lm-day{display:grid;grid-template-columns:30fr 70fr;font-size:.68rem;line-height:1.3}
+.cs-school-learning-platform .lm-day span{padding:7px 9px;display:grid}
+.cs-school-learning-platform .lm-day b{font-size:.74rem}
+.cs-school-learning-platform .lm-day .live{background:var(--royal);color:#fff}
+.cs-school-learning-platform .lm-day .off{background:#e3f7ee;color:#1f6a48}
+.cs-school-learning-platform .lm-film{border:1.5px solid var(--navy);background:var(--navy);color:#fff;margin-top:22px;padding:clamp(14px,2.4vw,22px);display:grid;gap:14px}
+.cs-school-learning-platform .lm-filmh{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-filmh .eyebrow{color:#9fd9ff}
+.cs-school-learning-platform .lm-filmh h3{font-size:clamp(1.05rem,2vw,1.3rem);color:#fff;margin-top:4px}
+.cs-school-learning-platform .lm-made{font-size:.74rem;color:#c9d4f2;border:1px solid rgba(160,185,240,.45);padding:6px 10px}
+.cs-school-learning-platform .lm-made b{color:#fff}
+.cs-school-learning-platform .lm-fgrid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-fgrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-fgrid>*{min-width:0}
+.cs-school-learning-platform .lm-player video{width:100%;aspect-ratio:16/9;display:block;background:#000;border:1.5px solid rgba(160,185,240,.4)}
+.cs-school-learning-platform .lm-chaps{display:grid;grid-template-columns:repeat(var(--n,8),minmax(0,1fr));gap:5px;margin-top:8px}
+@media (max-width:640px){.cs-school-learning-platform .lm-chaps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-chaps button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;gap:4px;opacity:.6;transition:opacity .25s}
+.cs-school-learning-platform .lm-chaps button i{display:block;aspect-ratio:16/9;background-repeat:no-repeat;border:2px solid rgba(160,185,240,.25);transition:border-color .25s}
+.cs-school-learning-platform .lm-chaps button span{font-size:.6rem;line-height:1.25;color:#c9d4f2}
+.cs-school-learning-platform .lm-chaps button em{display:block;font-style:normal;font-family:var(--mono);color:#9fd9ff;font-size:.58rem}
+.cs-school-learning-platform .lm-chaps button:hover,.cs-school-learning-platform .lm-chaps button.done{opacity:.85}
+.cs-school-learning-platform .lm-chaps button.on{opacity:1}
+.cs-school-learning-platform .lm-chaps button.on i{border-color:var(--cyan)}
+.cs-school-learning-platform .lm-chaps button.on span{color:#fff}
+.cs-school-learning-platform .lm-chaps button:focus-visible{outline:2px solid var(--cyan)}
+.cs-school-learning-platform .lm-fside{display:grid;gap:12px;align-content:start}
+.cs-school-learning-platform .lm-now{background:rgba(255,255,255,.08);border-left:4px solid var(--cyan);padding:12px 14px;display:grid;gap:3px;min-height:96px;animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-now small{font-family:var(--mono);font-size:.62rem;color:#9fd9ff}
+.cs-school-learning-platform .lm-now b{font-size:1.02rem}
+.cs-school-learning-platform .lm-now span{font-size:.8rem;color:#c9d4f2}
+.cs-school-learning-platform .lm-fpts{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.cs-school-learning-platform .lm-fpts li{font-size:.8rem;color:#c9d4f2;padding-left:16px;position:relative}
+.cs-school-learning-platform .lm-fpts li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--cyan)}
+.cs-school-learning-platform .lm-fpts b{color:#fff}
+.cs-school-learning-platform .lm-fside .demo-note{color:#9fb3e8}
+.cs-school-learning-platform .lm-arch{border:1.5px solid var(--navy);background:#fff;padding:clamp(14px,2.4vw,22px);display:grid;gap:16px}
+.cs-school-learning-platform .lm-jrn{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1.5px solid var(--navy)}
+@media (max-width:760px){.cs-school-learning-platform .lm-jrn{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cs-school-learning-platform .lm-jrn button{border:0;border-left:1px solid var(--line);background:#fff;color:var(--navy);font:600 .8rem var(--f);padding:11px 10px;cursor:pointer;transition:background .25s,color .25s}
+.cs-school-learning-platform .lm-jrn button:first-child{border-left:0}
+@media (max-width:760px){.cs-school-learning-platform .lm-jrn button{border-top:1px solid var(--line)}}
+.cs-school-learning-platform .lm-jrn button.on{background:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-agrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:900px){.cs-school-learning-platform .lm-agrid{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-agrid>*{min-width:0}
+.cs-school-learning-platform .lm-layers{display:grid;gap:6px}
+.cs-school-learning-platform .lm-layer{display:grid;grid-template-columns:132px minmax(0,1fr);gap:10px;align-items:stretch;background:var(--grey);padding:8px}
+@media (max-width:560px){.cs-school-learning-platform .lm-layer{grid-template-columns:1fr;gap:6px}}
+.cs-school-learning-platform .lm-layer .ln{display:flex;align-items:center;gap:8px;font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.cs-school-learning-platform .lm-layer .ln em{font-style:normal;font-family:var(--mono);width:22px;height:22px;display:grid;place-items:center;background:var(--navy);color:#fff;font-size:.66rem;letter-spacing:0;flex:none}
+.cs-school-learning-platform .lm-layer .nodes{display:flex;flex-wrap:wrap;gap:6px}
+.cs-school-learning-platform .lm-node{position:relative;flex:1 1 120px;background:#fff;border:1.5px solid var(--line);padding:7px 9px;display:grid;gap:1px;transition:border-color .3s,background .3s,box-shadow .3s}
+.cs-school-learning-platform .lm-node b{font-size:.76rem;color:var(--navy);line-height:1.25}
+.cs-school-learning-platform .lm-node small{font-size:.62rem;color:var(--muted);line-height:1.3}
+.cs-school-learning-platform .lm-node .bd{position:absolute;top:-8px;right:-6px;font-style:normal;font-family:var(--mono);font-size:.58rem;font-weight:600;padding:1px 5px;background:var(--green);color:#fff;display:none}
+.cs-school-learning-platform .lm-node.seen{border-color:var(--green);background:#eefaf4}
+.cs-school-learning-platform .lm-node.seen .bd{display:block}
+.cs-school-learning-platform .lm-node.on{border-color:var(--navy);background:var(--pale);box-shadow:0 0 0 3px rgba(9,182,249,.35)}
+.cs-school-learning-platform .lm-node.on .bd{display:block;background:var(--navy)}
+.cs-school-learning-platform .lm-hops{margin:0;padding:0;list-style:none;display:grid;gap:6px;counter-reset:none}
+.cs-school-learning-platform .lm-hops li{display:grid;grid-template-columns:24px minmax(0,1fr);gap:10px;align-items:start;padding:8px 10px;border:1.5px solid var(--line);font-size:.8rem;color:#9aa3b5;cursor:pointer;transition:all .3s}
+.cs-school-learning-platform .lm-hops li em{font-style:normal;font-family:var(--mono);font-size:.66rem;width:24px;height:24px;display:grid;place-items:center;border:1.5px solid var(--line);transition:all .3s}
+.cs-school-learning-platform .lm-hops li.done{color:var(--text);border-color:#cfe9dd}
+.cs-school-learning-platform .lm-hops li.done em{background:var(--green);border-color:var(--green);color:#fff}
+.cs-school-learning-platform .lm-hops li.on{color:var(--navy);border-color:var(--navy);background:var(--pale);font-weight:600}
+.cs-school-learning-platform .lm-hops li.on em{background:var(--navy);border-color:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-proof{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:1000px){.cs-school-learning-platform .lm-proof{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cs-school-learning-platform .lm-proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.cs-school-learning-platform .lm-play{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+@media (max-width:900px){.cs-school-learning-platform .lm-play{grid-template-columns:1fr}}
+.cs-school-learning-platform .lm-act{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:12px;align-content:start;min-width:0}
+.cs-school-learning-platform .lm-acth{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center}
+.cs-school-learning-platform .lm-acth .no,.cs-school-learning-platform .lm-filmh .no{font-family:var(--mono);font-size:.72rem;font-weight:600;background:var(--navy);color:#fff;padding:5px 7px}
+.cs-school-learning-platform .lm-filmh .no{background:var(--cyan);color:var(--navy);margin-right:6px}
+.cs-school-learning-platform .lm-acth b{display:block;color:var(--navy);font-size:1rem}
+.cs-school-learning-platform .lm-acth small{font-size:.74rem;color:var(--muted)}
+.cs-school-learning-platform .lm-ai-chip{font-size:.6rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 8px;background:#e8f8ff;color:#0a6e96;border:1px solid #9fd9ff;white-space:nowrap}
+.cs-school-learning-platform .lm-tgt{display:flex;border:1.5px solid var(--navy)}
+.cs-school-learning-platform .lm-tgt button{flex:1;border:0;border-left:1px solid var(--line);background:#fff;color:var(--navy);font:600 .8rem var(--f);padding:9px 6px;cursor:pointer}
+.cs-school-learning-platform .lm-tgt button:first-child{border-left:0}
+.cs-school-learning-platform .lm-tgt button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.cs-school-learning-platform .lm-canvas{position:relative;border:1.5px dashed #9fb0d6;background:repeating-linear-gradient(0deg,transparent 0 29px,#eef1f6 29px 30px),#fbfcfe}
+.cs-school-learning-platform .lm-canvas.sky{border-style:solid;border-color:var(--line);background:radial-gradient(circle at 50% 40%,#ffffff,#eaf1ff 70%)}
+.cs-school-learning-platform .lm-canvas canvas{display:block;width:100%;aspect-ratio:4/3;touch-action:none;cursor:crosshair}
+.cs-school-learning-platform .lm-canvas.sky canvas{touch-action:pan-y;cursor:grab}
+.cs-school-learning-platform .lm-hint{position:absolute;right:10px;bottom:8px;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9fb0d6;transition:opacity .3s;pointer-events:none}
+.cs-school-learning-platform .lm-stats{position:absolute;left:8px;top:8px;display:flex;gap:6px;pointer-events:none}
+.cs-school-learning-platform .lm-stats span{background:#fff;border:1px solid var(--line);padding:4px 7px;font-size:.6rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:grid;justify-items:center;min-width:52px}
+.cs-school-learning-platform .lm-stats span b{font-size:1rem;color:#9fb0d6;letter-spacing:0}
+.cs-school-learning-platform .lm-stats span.y{border-color:var(--green)}
+.cs-school-learning-platform .lm-stats span.y b{color:#1f8a5c}
+.cs-school-learning-platform .lm-helper{display:grid;grid-template-columns:34px minmax(0,1fr);gap:10px;align-items:center;background:var(--pale);padding:10px 12px;font-size:.84rem;color:var(--navy);min-height:58px}
+.cs-school-learning-platform .lm-helper.pop{animation:cs-school-learning-platform-lmin .3s both}
+.cs-school-learning-platform .lm-helper .bot{width:34px;height:34px;background:var(--navy);position:relative;display:block}
+.cs-school-learning-platform .lm-helper .bot::before,.cs-school-learning-platform .lm-helper .bot::after{content:"";position:absolute;top:12px;width:7px;height:7px;background:var(--cyan);border-radius:50%;animation:cs-school-learning-platform-blink 3.2s infinite}
+.cs-school-learning-platform .lm-helper .bot::before{left:8px}.cs-school-learning-platform .lm-helper .bot::after{right:8px}
+@keyframes cs-school-learning-platform-blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.cs-school-learning-platform .lm-helper .stars{color:#f5b83d;letter-spacing:2px;margin-right:4px}
+.cs-school-learning-platform .lm-helper .stars i{font-style:normal;color:#cfd6e4}
+.cs-school-learning-platform .lm-acts{display:flex;gap:8px;flex-wrap:wrap}
+.cs-school-learning-platform .lm-acts .lm-btn{flex:1 1 auto;min-width:64px}
+.cs-school-learning-platform .lm-acts .lm-btn.ok{background:var(--green);border-color:var(--green);color:#fff;opacity:1}
+.cs-school-learning-platform .lm-acts .lm-btn.no{background:#fde6e6;border-color:#c03030;color:#c03030}
+.cs-school-learning-platform .lm-quiz{border:1.5px solid rgba(160,185,240,.45);padding:12px 14px;display:grid;gap:8px}
+.cs-school-learning-platform .lm-quiz small{font-family:var(--mono);font-size:.62rem;color:#9fd9ff}
+.cs-school-learning-platform .lm-quiz .eq{display:flex;align-items:center;justify-content:center;gap:12px;background:#fff;color:var(--navy);padding:10px;font-size:1.5rem;min-height:56px}
+.cs-school-learning-platform .lm-quiz .eq b{font-size:1.6rem;color:var(--royal)}
+.cs-school-learning-platform .lm-quiz .yn{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.cs-school-learning-platform .lm-quiz .yn button{border:1.5px solid #fff;background:transparent;color:#fff;font:600 .82rem var(--f);padding:9px;cursor:pointer}
+.cs-school-learning-platform .lm-quiz .yn button.ok{background:var(--green);border-color:var(--green)}
+.cs-school-learning-platform .lm-quiz .yn button.no{background:#c2410c;border-color:#c2410c}
+.cs-school-learning-platform .lm-quiz .fb{font-size:.8rem;color:#c9d4f2;margin:0}
+.cs-school-learning-platform .lm-quiz .fb b{color:#fff}
+.cs-school-learning-platform .lm-quiz .nx{border:0;background:none;color:var(--cyan);font:600 .8rem var(--f);cursor:pointer;padding:0;margin-left:4px}
+.cs-school-learning-platform .pi-nav,.cs-school-learning-platform .pi-foot{--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--green:#3dbe8b;--dark:#262d3d;--slate:#455065;--line:#d9dbe0;--band:#f3f3f3;--pale:#eaf1ff;--text:#2b3245;--muted:#646c7e;--white:#ffffff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;--wrap:1200px;--gut:clamp(16px,4vw,40px);font-family:var(--f);line-height:1.6}.cs-school-learning-platform .pi-nav *,.cs-school-learning-platform .pi-foot *{box-sizing:border-box}.cs-school-learning-platform .pi-nav ul,.cs-school-learning-platform .pi-foot ul{margin:0;padding:0;list-style:none}.cs-school-learning-platform .pi-nav img,.cs-school-learning-platform .pi-foot img{display:block;max-width:none}.cs-school-learning-platform .pi-wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}.cs-school-learning-platform .pi-mob[hidden]{display:none!important}.cs-school-learning-platform .pi-nav h4,.cs-school-learning-platform .pi-foot h4{margin:0}.cs-school-learning-platform .pi-foot p{margin:0}.cs-school-learning-platform .pi-nav button{font-family:inherit}.cs-school-learning-platform .pi-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--royal)}
+.cs-school-learning-platform .pi-btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem;text-decoration:none;padding:14px 24px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s;white-space:nowrap}
+.cs-school-learning-platform .pi-btn:hover{transform:translateY(-2px)}
+@media (max-width:520px){.cs-school-learning-platform .pi-btn{white-space:normal;text-align:left}}
+.cs-school-learning-platform .pi-btn svg{width:16px;height:16px;transition:transform .2s}
+.cs-school-learning-platform .pi-btn:hover svg{transform:translateX(3px)}
+.cs-school-learning-platform .pi-btn-cyan{background:var(--cyan);color:var(--navy)}
+.cs-school-learning-platform .pi-ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.cs-school-learning-platform .pi-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.cs-school-learning-platform .pi-nav .pi-wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.cs-school-learning-platform .pi-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
+.cs-school-learning-platform .pi-brand img{height:38px;width:auto}
+.cs-school-learning-platform .pi-brand b{font-weight:700;font-size:1.02rem;line-height:1.05;letter-spacing:-.01em}
+.cs-school-learning-platform .pi-menu{display:flex;align-items:center;gap:2px;height:100%}
+.cs-school-learning-platform .pi-menu>li{position:relative;height:100%;display:flex;align-items:center}
+.cs-school-learning-platform .pi-menu>li>a,.cs-school-learning-platform .pi-menu>li>button{display:flex;align-items:center;gap:6px;height:100%;padding:0 13px;font-size:.86rem;font-weight:600;color:var(--slate);text-decoration:none;background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;transition:color .2s,border-color .2s}
+.cs-school-learning-platform .pi-menu>li>button svg{width:12px;height:12px;transition:transform .2s}
+.cs-school-learning-platform .pi-menu>li>a:hover,.cs-school-learning-platform .pi-menu>li>button:hover,.cs-school-learning-platform .pi-menu>li.pi-open>button{color:var(--navy)}
+.cs-school-learning-platform .pi-menu>li>a.pi-on{color:var(--navy);border-color:var(--cyan)}
+.cs-school-learning-platform .pi-menu>li.pi-open>button svg{transform:rotate(180deg)}
+.cs-school-learning-platform .pi-drop{position:absolute;top:100%;left:-12px;background:var(--white);border:1.5px solid var(--navy);box-shadow:0 24px 50px -28px rgba(15,37,110,.55);padding:10px;display:none;z-index:90}
+.cs-school-learning-platform .pi-menu>li.pi-open .pi-drop{display:grid}
+.cs-school-learning-platform .pi-drop.pi-svc{width:640px;grid-template-columns:1fr 1fr;gap:2px}
+.cs-school-learning-platform .pi-drop.pi-ind{width:360px;gap:2px}
+.cs-school-learning-platform .pi-drop a{display:grid;gap:3px;padding:12px 14px;text-decoration:none;transition:background .2s}
+.cs-school-learning-platform .pi-drop a:hover{background:var(--pale)}
+.cs-school-learning-platform .pi-drop a b{font-size:.88rem;color:var(--navy);font-weight:700}
+.cs-school-learning-platform .pi-drop a span{font-size:.78rem;color:var(--muted);line-height:1.45}
+.cs-school-learning-platform .pi-drop .pi-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid var(--line);margin-top:6px;padding:12px 14px 4px}
+.cs-school-learning-platform .pi-drop .pi-foot a{display:inline-flex;padding:0;font-size:.82rem;font-weight:700;color:var(--royal)}
+.cs-school-learning-platform .pi-drop .pi-foot a:hover{background:none;text-decoration:underline}
+.cs-school-learning-platform .pi-nav-cta{display:flex;align-items:center;gap:10px}
+.cs-school-learning-platform .pi-nav-cta .pi-btn{padding:11px 18px;font-size:.84rem}
+.cs-school-learning-platform .pi-burger{display:none;width:44px;height:44px;border:1.5px solid var(--navy);background:var(--white);cursor:pointer;place-items:center}
+.cs-school-learning-platform .pi-burger svg{width:20px;height:20px}
+.cs-school-learning-platform .pi-mob{display:none}
+@media (max-width:1100px){.cs-school-learning-platform .pi-menu{display:none}.cs-school-learning-platform .pi-burger{display:grid}.cs-school-learning-platform .pi-mob{display:block;border-top:1px solid var(--line);background:var(--white);max-height:calc(100vh - 72px);overflow:auto}.cs-school-learning-platform .pi-mob[hidden]{display:none!important}.cs-school-learning-platform .pi-mob .pi-wrap{height:auto;display:grid;gap:4px;padding-block:14px 24px}.cs-school-learning-platform .pi-mob h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}.cs-school-learning-platform .pi-mob a{display:block;padding:10px 0;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.cs-school-learning-platform .pi-nav-cta .pi-btn{display:none}.cs-school-learning-platform .pi-brand b{font-size:.92rem}}
+.cs-school-learning-platform .mod .pi-ico{width:20px;height:20px;color:var(--on-dark-2);transition:color .45s}
+.cs-school-learning-platform .mod.pi-on .pi-ico{color:var(--cyan)}
+.cs-school-learning-platform .badges .pi-ico{color:var(--royal);width:28px;height:28px}
+.cs-school-learning-platform .acc-item .k .pi-ico{width:18px;height:18px}
+.cs-school-learning-platform .gov .pi-ico{width:18px;height:18px;color:var(--green)}
+.cs-school-learning-platform .pi-close{position:relative;color:var(--white);background:radial-gradient(800px 420px at 0% 0%,rgba(32,78,207,.55),transparent 60%),linear-gradient(135deg,#1e2f6a 0%,var(--dark) 70%);overflow:hidden}
+.cs-school-learning-platform .pi-close .pi-wrap{display:grid;grid-template-columns:1.3fr auto;gap:32px;align-items:center;padding-block:clamp(64px,8vw,104px)}
+.cs-school-learning-platform .pi-close .pi-wrap>*{min-width:0}
+.cs-school-learning-platform .pi-close .pi-eyebrow{color:var(--cyan)}
+.cs-school-learning-platform .pi-close h2{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-top:14px}
+.cs-school-learning-platform .pi-close p{color:var(--on-dark);margin-top:18px;max-width:62ch}
+@media (max-width:820px){.cs-school-learning-platform .pi-close .pi-wrap{grid-template-columns:1fr}}
+.cs-school-learning-platform .pi-foot{background:var(--white);border-top:4px solid var(--navy)}
+.cs-school-learning-platform .pi-foot .pi-wrap{display:grid;grid-template-columns:1.3fr 1.15fr .8fr .8fr 1.35fr;gap:32px;padding-block:56px 28px}
+.cs-school-learning-platform .pi-foot .pi-wrap>*{min-width:0}
+.cs-school-learning-platform .pi-foot .pi-brand{margin-bottom:14px}
+.cs-school-learning-platform .pi-foot p{font-size:.88rem;color:var(--muted);max-width:36ch}
+.cs-school-learning-platform .pi-foot h4{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.cs-school-learning-platform .pi-foot li a{display:block;font-size:.86rem;color:var(--slate);text-decoration:none;padding:4px 0}
+.cs-school-learning-platform .pi-foot li a:hover{color:var(--royal)}
+.cs-school-learning-platform .pi-mail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cs-school-learning-platform .pi-mail code{font-family:var(--mono);font-size:.8rem;color:var(--navy);background:var(--band);padding:6px 8px;user-select:all;overflow-wrap:anywhere}
+.cs-school-learning-platform .pi-mail button{border:1.5px solid var(--line);background:var(--white);font-size:.74rem;font-weight:600;padding:5px 10px;cursor:pointer;color:var(--navy)}
+.cs-school-learning-platform .pi-mail button:hover{border-color:var(--navy)}
+.cs-school-learning-platform .pi-foot .pi-li{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.86rem;font-weight:600;color:var(--royal);text-decoration:none}
+.cs-school-learning-platform .pi-foot .pi-li svg{width:18px;height:18px}
+.cs-school-learning-platform .pi-legal{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:20px;font-size:.8rem;color:var(--muted)}
+.cs-school-learning-platform .pi-legal a{color:var(--muted)}
+@media (max-width:1000px){.cs-school-learning-platform .pi-foot .pi-wrap{grid-template-columns:1fr 1fr 1fr}.cs-school-learning-platform .pi-foot .pi-wrap>div:first-child{grid-column:1/-1}}
+@media (max-width:560px){.cs-school-learning-platform .pi-foot .pi-wrap{grid-template-columns:1fr 1fr}.cs-school-learning-platform .pi-foot .pi-wrap>div:last-of-type{grid-column:1/-1}}
+.cs-school-learning-platform .pi-menu>li>button.pi-on{color:var(--navy);border-color:var(--cyan)}
+.cs-school-learning-platform .vtabs [role="tab"] .pi-ico{width:20px;height:20px;color:var(--muted);transition:color .25s}
+.cs-school-learning-platform .vtabs [role="tab"][aria-selected="true"] .pi-ico{color:var(--cyan)}
+.cs-school-learning-platform .vpanel .big-ic .pi-ico{width:32px;height:32px}
+.cs-school-learning-platform .search .box2 .pi-ico{width:20px;height:20px;color:var(--royal)}
+.cs-school-learning-platform .way .ic .pi-ico{width:22px;height:22px}
+.cs-school-learning-platform .crit-list .ck .pi-ico{width:20px;height:20px}
+.cs-school-learning-platform .form-ok .tick .pi-ico{width:28px;height:28px}
+.cs-school-learning-platform .legal-wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+@media (max-width:860px){.cs-school-learning-platform .legal-wrap{grid-template-columns:1fr}}
+.cs-school-learning-platform .pi-brand b{display:grid;line-height:1.05}
+.cs-school-learning-platform .pi-brand .pi-b1{color:#0c4185}
+.cs-school-learning-platform .pi-brand .pi-b2{color:#6f7584}
+.cs-school-learning-platform .pi-btn .pi-arr{display:inline-grid;place-items:center}
+.cs-school-learning-platform .pi-btn .pi-arr .pi-ico{width:16px;height:16px}
+.cs-school-learning-platform .pi-btn-cyan{padding:0 0 0 24px;gap:20px;min-height:52px;align-items:center;background:var(--cyan);color:var(--navy);border:0;box-shadow:inset 0 -3px 0 rgba(15,37,110,.18)}
+.cs-school-learning-platform .pi-btn-cyan .pi-arr{align-self:stretch;width:52px;background:rgba(15,37,110,.16);color:var(--navy);border-left:1px solid rgba(15,37,110,.18);transition:background .25s,color .25s}
+.cs-school-learning-platform .pi-btn-cyan .pi-arr .pi-ico{transition:transform .25s}
+.cs-school-learning-platform .pi-btn-cyan:not(:has(.pi-arr)){padding:0 24px}
+.cs-school-learning-platform .pi-btn-cyan:hover{background:#3cc8fb;transform:translateY(-2px)}
+.cs-school-learning-platform .pi-btn-cyan:hover .pi-arr{background:var(--navy);color:var(--cyan)}
+.cs-school-learning-platform .pi-btn-cyan:hover .pi-arr .pi-ico{transform:translateX(3px)}
+.cs-school-learning-platform .pi-btn:hover svg{transform:none}
+.cs-school-learning-platform .pi-btn-cyan:focus-visible{outline:2px solid var(--white);outline-offset:3px;box-shadow:0 0 0 5px var(--cyan)}
+.cs-school-learning-platform .pi-nav-cta .pi-btn-cyan{min-height:44px;padding-left:18px;gap:14px;font-size:.84rem}
+.cs-school-learning-platform .pi-nav-cta .pi-btn-cyan .pi-arr{width:44px}
+.cs-school-learning-platform .pi-btn-wide{width:100%;justify-content:space-between}
+@media (max-width:520px){.cs-school-learning-platform .pi-btn-cyan{min-height:50px}}
+.cs-school-learning-platform .pi-close .pi-wrap{display:block;padding-block:clamp(56px,7vw,96px)}
+.cs-school-learning-platform .pi-cta-card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);position:relative}
+.cs-school-learning-platform .pi-cta-card::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:4px;background:var(--cyan)}
+.cs-school-learning-platform .pi-cta-l{padding:clamp(28px,4vw,52px);display:grid;gap:4px;align-content:center}
+.cs-school-learning-platform .pi-cta-l h2{margin-top:10px}
+.cs-school-learning-platform .pi-cta-r{padding:clamp(24px,3.4vw,40px);border-left:1px solid rgba(160,185,240,.3);background:rgba(255,255,255,.04);display:grid;gap:18px;align-content:center}
+.cs-school-learning-platform .pi-cta-k{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-2)}
+.cs-school-learning-platform .pi-cta-steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:none}
+.cs-school-learning-platform .pi-cta-steps li{display:grid;grid-template-columns:40px 1fr;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(160,185,240,.22);font-weight:600;font-size:.95rem;color:var(--white)}
+.cs-school-learning-platform .pi-cta-steps li:last-child{border-bottom:0}
+.cs-school-learning-platform .pi-cta-steps b{width:34px;height:34px;display:grid;place-items:center;border:1.5px solid var(--cyan);color:var(--cyan);font-size:.72rem;font-family:var(--mono)}
+@media (max-width:860px){.cs-school-learning-platform .pi-cta-card{grid-template-columns:1fr}.cs-school-learning-platform .pi-cta-r{border-left:0;border-top:1px solid rgba(160,185,240,.3)}}
+.cs-school-learning-platform .rl-ic .pi-ico{width:22px;height:22px}
+.cs-school-learning-platform .rl-pkg .pi-ico{width:13px;height:13px}
+.cs-school-learning-platform .rl-chips .pi-ico{width:13px;height:13px}
+.cs-school-learning-platform .hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}.cs-school-learning-platform .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}.cs-school-learning-platform .hero>*{position:relative}.cs-school-learning-platform .pi-close{font-family:var(--f);--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--dark:#262d3d;--white:#fff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--f:"Montserrat",ui-sans-serif,system-ui,sans-serif;--wrap:1200px;--gut:clamp(16px,4vw,40px);line-height:1.6}.cs-school-learning-platform .pi-close h2{margin:0}.cs-school-learning-platform .pi-close h2 b{color:var(--cyan)}.cs-school-learning-platform .pi-close p{margin:0}.cs-school-learning-platform .pi-close *{box-sizing:border-box}.cs-school-learning-platform .pi-back{color:var(--on-dark);font-size:.86rem;font-weight:600;text-decoration:none;justify-self:start}.cs-school-learning-platform .pi-back:hover{color:#fff}
+.cs-school-learning-platform .pi-foot{margin-top:0}
+
+
+.cs-school-learning-platform .pi-prog{--pp-navy:#0f256e;--pp-cyan:#09b6f9;--pp-green:#3dbe8b;--pp-line:#d9dbe0;--pp-muted:#646c7e;--pp-h:72px;
+  position:sticky;top:calc(var(--pp-h) + env(safe-area-inset-top,0px));z-index:79;background:rgba(245,247,251,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--pp-line);font-family:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.cs-school-learning-platform .pi-prog *{box-sizing:border-box}
+.cs-school-learning-platform .pi-prog .pp-in{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);height:50px;display:flex;align-items:center;gap:18px}
+.cs-school-learning-platform .pi-prog .pp-live{display:flex;align-items:center;gap:8px;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pp-muted);flex:none}
+.cs-school-learning-platform .pi-prog .pp-live i{width:8px;height:8px;border-radius:50%;background:var(--pp-green);box-shadow:0 0 0 3px rgba(61,190,139,.2)}
+.cs-school-learning-platform .pi-prog .pp-list{flex:1;min-width:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent);scroll-behavior:smooth;margin:0;padding:0 40px 0 0;list-style:none}
+.cs-school-learning-platform .pi-prog .pp-list::-webkit-scrollbar{display:none}
+.cs-school-learning-platform .pi-prog .pp-list a{flex:none;display:flex;align-items:center;gap:7px;height:50px;padding:0 8px;text-decoration:none;font-size:.8rem;font-weight:500;color:var(--pp-muted);border-bottom:2px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap}
+.cs-school-learning-platform .pi-prog .pp-list a .n{display:grid;place-items:center;min-width:22px;height:20px;padding:0 3px;border:1px solid var(--pp-line);font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.62rem;color:var(--pp-muted);background:#fff;transition:all .25s}
+.cs-school-learning-platform .pi-prog .pp-list a:hover{color:var(--pp-navy)}
+.cs-school-learning-platform .pi-prog .pp-list a.done{color:#1f8a5c}
+.cs-school-learning-platform .pi-prog .pp-list a.done .n{background:var(--pp-green);border-color:var(--pp-green);color:#fff}
+.cs-school-learning-platform .pi-prog .pp-list a.on{color:var(--pp-navy);font-weight:600;border-bottom-color:var(--pp-cyan)}
+.cs-school-learning-platform .pi-prog .pp-list a.on .n{background:var(--pp-navy);border-color:var(--pp-navy);color:#fff}
+.cs-school-learning-platform .pi-prog .pp-list a:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:-2px}
+.cs-school-learning-platform .pi-prog .pp-count{flex:none;font-size:.76rem;color:var(--pp-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.cs-school-learning-platform .pi-prog .pp-count b{color:var(--pp-navy)}
+.cs-school-learning-platform .pi-prog .pp-bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+.cs-school-learning-platform .pi-prog .pp-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pp-cyan),#3dbe8b)}
+@media (max-width:640px){.cs-school-learning-platform .pi-prog .pp-live{display:none}.cs-school-learning-platform .pi-prog .pp-list a:not(.on) .t{display:none}.cs-school-learning-platform .pi-prog .pp-in{gap:10px}}

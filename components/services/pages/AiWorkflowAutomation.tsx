@@ -222,7 +222,7 @@ export default function AiWorkflowAutomation() {
             <Link className="btn btn-navy" href="/contact-us">Discuss a workflow <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
-          <div className="cgrid ">
+          <div className="cgrid related">
             <RelatedCaseCard n="07" />
             <RelatedCaseCard n="28" />
             <RelatedCaseCard n="48" />

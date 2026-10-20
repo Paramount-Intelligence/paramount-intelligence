@@ -849,7 +849,7 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .rcard dd{margin:0;font-weight:600;color:var(--navy);font-size:.92rem}
 @media (max-width:900px){.rdetail{grid-template-columns:1fr}.rcard{position:static}}
 
-/* Jazz card: real app screens */
+/* Telecom card: real app screens */
 .thumb.jz svg{opacity:.35}
 .jz-ph{position:absolute;top:14%;left:50%;width:27%;aspect-ratio:9/19.2;transform:translateX(-80%) rotate(-6deg);border-radius:14px;padding:4px;background:#11152b;box-shadow:0 18px 30px -12px rgba(0,0,0,.6),inset 0 0 0 1px #2b3150;overflow:hidden}
 .jz-ph.b{transform:translateX(10%) rotate(5deg);top:20%;opacity:.92}
@@ -930,6 +930,15 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .ccard.pc .in{padding-top:26px}
 .ccard.pc .meta{line-height:1.5}
 @media (max-width:640px){.ccard.pc .art{height:184px;padding:14px}}
+/* Featured cases on service and industry pages: each card spans six shared rows (drawing, labels, title, summary,
+   tags, link), so these line up across the cards in a row whatever the text lengths */
+@supports (grid-template-rows:subgrid){
+  .cgrid.related>.ccard.pc{grid-row:span 6;grid-template-rows:subgrid;row-gap:0}
+  .cgrid.related>.ccard.pc>.in{grid-row:span 5;grid-template-rows:subgrid;row-gap:12px}
+  .cgrid.related>.ccard.pc>.in>*{align-self:start}
+}
+.ccard.nolink{cursor:default}
+.ccard.nolink:hover{box-shadow:none;transform:none}
 
 /* Card drawings move a little so they feel active (Ali, 14 Oct). Travelling dots (.mv) are SVG animateMotion. */
 @keyframes ca-march{to{stroke-dashoffset:-14}}

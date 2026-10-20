@@ -1,0 +1,363 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+
+
+<nav class="pi-prog" id="pi-prog" aria-label="Case study sections" data-sections="top:Overview,problem:Problem,lifecycle:Approach,engine:Rule engine,reconcile:Reconciliation,copilot:Copilot,render:Documents,checklist:Readiness,arch:Architecture,proof:Proof,results:Result">
+  <div class="pp-in">
+    <span class="pp-live"><i></i>Reading</span>
+    <ol class="pp-list" id="pp-list"></ol>
+    <span class="pp-count" id="pp-count"></span>
+  </div>
+  <div class="pp-bar" aria-hidden="true"><i id="pp-fill"></i></div>
+</nav>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · PE-backed DevOps software company · Enterprise B2B</span><span class="pill-tag"><span class="pulse"></span>In production</span></div>
+      <h1>SOWs that write themselves. Edits that <b>stay.</b></h1>
+      <p class="lede">A production platform that turns structured sales inputs into rule-driven project timelines and polished Word documents, without ever overwriting a reviewer's judgment.</p>
+      <ul class="pts">
+        <li><b>One browser app:</b> company, scope, answers and signers captured once, saved as versioned drafts.</li>
+        <li><b>30+ codified rules:</b> the same scope always produces the same timeline, ready for review.</li>
+        <li><b>Constrained AI:</b> natural-language commands, with every database change made by deterministic logic.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="#engine"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>Build a timeline</a>
+        <a class="btn btn-line" href="#problem">See the story</a>
+      </div>
+      <div class="meta">
+        <div><span>Client</span><b>PE-backed DevOps software company</b></div>
+        <div><span>Engagement</span><b>Paramount engagement</b></div>
+        <div><span>Built on</span><b>n8n · PostgreSQL · Qdrant · Claude</b></div>
+      </div>
+    </div>
+    <div class="fx-hero" id="hx" aria-label="Illustration: selected scope becomes a reviewed timeline and then a Word document">
+      <div class="fx-hs"><small>1 · Scope</small><div id="hscope"></div></div>
+      <div class="fx-ht"><small>2 · Timeline, reviewed</small><div id="hweeks"></div></div>
+      <div class="fx-hd" id="hdoc"><div class="pg"><span class="logo">[CLIENT]</span><b>SOW [Client] 001 – Implementation Services</b><i></i><i></i><i class="s"></i><em>Period of Performance</em><i></i><i class="s"></i><em>Project Timeline</em><div class="tb" id="htb"></div></div><span class="tag">.docx</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client">
+  <div class="client">
+    <div class="who">
+      <h3>Meet our client</h3>
+      <dl><dt>Client</dt><dd>PE-backed DevOps software company</dd><dt>Industry</dt><dd>Enterprise software, DevOps &amp; configuration management</dd><dt>Market</dt><dd>Enterprise B2B</dd></dl>
+    </div>
+    <div class="nut">
+      <h3>In a nutshell</h3>
+      <p>The client's sales and delivery teams assembled every Statement of Work by hand. We built a browser-based SOW authoring and document-generation platform, orchestrated through eight n8n workflows, that saves versioned drafts, builds timelines from reusable content and 30+ business rules, preserves reviewed edits when scope changes, and renders the final Word document from the approved state.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client data protection">
+  <div class="ag-protect rv">
+    <span class="ag-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5" class="t"/></svg></span>
+    <div><b>Client data protected</b><span>Names, scope, hours and screens on this page are sanitised or changed. The workflow is real; the data is not.</span></div>
+    <span class="ag-redact" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+</section>
+
+<section class="ch" id="problem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">01 · The problem</span>
+      <h2 class="title">Same scope. Different SOW. Every time.</h2>
+      <p class="sub">Timelines lived in people's heads. Give the same scope to two estimators and you got two plans. Ask them again and watch it happen.</p>
+    </div>
+    <div class="fx-twin box rv" id="twin">
+      <div class="fx-twh"><div><small>The scope</small><div class="fx-chips sm" id="tscope"></div></div><button type="button" class="se-btn pri" id="tagain">↻ Estimate again</button></div>
+      <div class="fx-twg">
+        <div class="fx-est" id="estA"><div class="h"><b>Estimator A</b><span>manual</span></div><div class="bars"></div><div class="tot"></div></div>
+        <div class="fx-est" id="estB"><div class="h"><b>Estimator B</b><span>manual</span></div><div class="bars"></div><div class="tot"></div></div>
+        <div class="fx-est fx-rl" id="estC"><div class="h"><b>The platform</b><span>30+ rules</span></div><div class="bars"></div><div class="tot"></div></div>
+      </div>
+      <span class="demo-note">Illustrative estimates · manual results vary on purpose to show the problem</span>
+    </div>
+    <div class="note rv"><span class="lbl">What was going wrong</span><ul class="pts cols">
+      <li><b>Copy, paste, re-enter:</b> reusable technical content and engagement details were copied between SOWs by hand.</li>
+      <li><b>Timelines by judgment:</b> two people could produce different delivery plans from the same scope.</li>
+      <li><b>Fragile edits:</b> a late scope change meant regenerating the timeline, and reviewer edits were lost.</li>
+      <li><b>Content tied to formatting:</b> layout and content were coupled, so every change risked the other.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="lifecycle">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">02 · The approach</span>
+      <h2 class="title">Generate, review, then render. In that order.</h2>
+      <p class="sub">Automation should raise consistency without removing judgment. So the platform splits generation from rendering, and the reviewed timeline becomes the source of truth. Step through one SOW.</p>
+    </div>
+    <div class="fx-life rv" id="life">
+      <div class="fx-lrail" id="lrail" role="tablist" aria-label="SOW lifecycle"></div>
+      <div class="fx-lbody box" id="lbody" aria-live="polite"></div>
+    </div>
+    <div class="verdict rv"><b>The principle</b><span>Once a timeline has been reviewed, the approved version is authoritative. The final document is always rendered from it, never silently regenerated. Reopening a saved SOW loads that approved timeline as it was saved, not a fresh one.</span></div>
+    <div class="note rv"><span class="lbl">One engagement, start to finish</span><ul class="pts">
+      <li><b>Enter it once:</b> someone on the sales or delivery team fills in the company, SOW details, scope, technical answers and signers in the Form App, and saves a draft.</li>
+      <li><b>Review the plan:</b> the platform builds the timeline from the rules; a reviewer edits tasks, adds rows and reorders them, then saves it as approved.</li>
+      <li><b>Change the scope:</b> if scope changes after review, the platform removes only the generated rows owned by the dropped scope, adds the new scope before the closing phases, and keeps the reviewer's edits.</li>
+      <li><b>Render the document:</b> the Word file is built from the approved timeline, using the standard or Upgrade &amp; Training template.</li>
+      <li><b>Hand off to readiness:</b> once the SOW is signed, its scope seeds the readiness checklist, one section per technology, to prepare the project for implementation.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="engine">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">03 · The rule engine</span>
+      <h2 class="title">Pick a scope. Watch 30+ rules build the timeline.</h2>
+      <p class="sub">The real scope options from the Form App. Toggle them and the engine assembles delivery weeks, applying the codified rules you can see firing alongside.</p>
+    </div>
+    <div class="fx-eng rv" id="eng">
+      <div class="fx-escope" id="escope"></div>
+      <div class="fx-eout">
+        <div class="fx-esum" id="esum"></div>
+        <div class="fx-weeks" id="eweeks"></div>
+      </div>
+      <div class="fx-rules"><b>Rules fired</b><ol id="erules"></ol></div>
+    </div>
+    <p class="demo-note" style="margin-top:8px">Rule behaviour is real (BR-001 to BR-032). Technology hours are illustrative; in production they come from the Qdrant content catalog and approved overrides.</p>
+    <div class="note rv"><span class="lbl">How a timeline is assembled</span><ul class="pts cols">
+      <li><b>Normalize first:</b> scope is reduced to four canonical groups, aliases are resolved against the catalog, and duplicates removed.</li>
+      <li><b>Content from Qdrant:</b> technology blocks come from the sow_templates collection; rules, fixed blocks and hour overrides from PostgreSQL.</li>
+      <li><b>Capacity-aware:</b> a codified planning rule (BR-025) gives each timeline week a capacity of 40 hours; content that overflows creates continuation weeks.</li>
+      <li><b>Fixed closing phases:</b> Requirements opens when DevOps exists; Cutover, HyperCare and Project Wrap close, sized by DevOps count.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="reconcile">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">04 · Scope reconciliation</span>
+      <h2 class="title">Change the scope. Keep the edits.</h2>
+      <p class="sub">A reviewer has already edited this timeline. Now the customer drops OIC and adds Salesforce and Jira. Compare regenerating from scratch with the platform's ownership-aware reconciliation.</p>
+    </div>
+    <div class="fx-rec box rv" id="rec">
+      <div class="fx-rtop">
+        <div class="fx-delta"><span class="rm">− OIC</span><span class="ad">+ Salesforce</span><span class="ad">+ Issue Tracking (Jira)</span></div>
+        <div class="seg" role="group" aria-label="Approach"><button type="button" data-m="regen" aria-pressed="false">Regenerate from scratch</button><button type="button" data-m="recon" aria-pressed="true">Ownership-aware reconciliation</button></div>
+        <button type="button" class="se-btn pri" id="rplay">▶ Apply the change</button>
+      </div>
+      <div class="fx-rsteps" id="rsteps"></div>
+      <div class="fx-rgrid">
+        <div class="fx-rcol"><small>Approved timeline · before</small><div id="rbefore"></div></div>
+        <div class="fx-rcol"><small id="raftl">After</small><div id="rafter"></div></div>
+      </div>
+      <div class="fx-rverd" id="rverd" aria-live="polite"></div>
+    </div>
+    <div class="verdict rv"><b>Removed vs kept</b><span>Dropping scope is deliberate, so the generated rows it owns go with it. Rows a reviewer added stay, even when they share a week with the removed scope.</span></div>
+    <div class="note rv"><span class="lbl">How reconciliation works</span><ul class="pts cols">
+      <li><b>The backend decides the delta:</b> added, removed and unchanged scope are calculated from previous and current scope, never trusted from the browser.</li>
+      <li><b>Rows know their owner:</b> generated rows carry scope group, key, label and source week, so only removed scope's rows are removed.</li>
+      <li><b>Human edits survive:</b> mixed weeks with reviewer content are preserved; new scope is inserted before the fixed closing phases.</li>
+      <li><b>Tidy finish:</b> aggregates rebuild, zero-hour SCM rows merge into host weeks, and the sequence is renumbered.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="copilot">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">05 · The constrained Copilot</span>
+      <h2 class="title">Conversational, but never in control</h2>
+      <p class="sub">Type a command, or pick one. Known commands skip the model entirely. Free-form ones go to Claude as a parser, and the answer is validated before anything changes. The model never touches the database.</p>
+    </div>
+    <div class="fx-cop box rv" id="cop">
+      <div class="fx-cbar"><span class="bolt" aria-hidden="true">⚡</span><input id="cin" type="text" value="Add Jira and remove OIC" aria-label="Copilot command"><button type="button" class="se-btn pri" id="crun">Send</button></div>
+      <div class="fx-cq" id="cq"></div>
+      <div class="fx-cgrid">
+        <div class="fx-cpipe" id="cpipe"></div>
+        <div class="fx-cout"><b>Validated result</b><pre id="cout">{ }</pre><div class="fx-cnote" id="cnote"></div></div>
+      </div>
+      <span class="demo-note">Command handling is simulated on this page to show the real routing logic</span>
+    </div>
+    <div class="note rv"><span class="lbl">Why the AI stays boxed in</span><ul class="pts cols">
+      <li><b>Deterministic first:</b> create, open and copy lifecycle commands are recognised by code and never sent to a model.</li>
+      <li><b>A parser, not an agent:</b> free-form text goes to an Anthropic model at temperature 0 with an allow-list of operations and a fixed output schema.</li>
+      <li><b>Validated, then routed:</b> unsupported operations are rejected; ordinary edits stay in the browser, lifecycle actions go to the database.</li>
+      <li><b>Parameterized SQL only:</b> every state-changing database action is built by workflow logic, never written by the model.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="render">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">06 · Document generation</span>
+      <h2 class="title">Layout lives in the template. Logic lives in the engine.</h2>
+      <p class="sub">The approved state is rendered into version-controlled Word templates with Docxtemplater. Switch the engagement type and watch the template change while the timeline stays exactly the same.</p>
+    </div>
+    <div class="fx-ren rv" id="ren">
+      <div class="fx-rstate"><div class="h"><b>Approved state</b><span class="mono">approved_sections.timeline_weeks</span></div><pre id="rjson"></pre></div>
+      <div class="fx-rmid"><div class="seg" role="group" aria-label="Engagement type"><button type="button" data-t="std" aria-pressed="true">Standard</button><button type="button" data-t="upg" aria-pressed="false">Upgrade &amp; Training</button></div><span class="arrow" aria-hidden="true">→</span><span class="mono" id="rtpl">master-sow-template.docx</span></div>
+      <div class="fx-rdoc" id="rdoc"></div>
+    </div>
+    <div class="note rv"><span class="lbl">Why the split matters</span><ul class="pts cols">
+      <li><b>Independent failure modes:</b> a formatting defect can't alter a correct timeline, and a timeline fix never needs a template change.</li>
+      <li><b>Two document types:</b> standard engagements and Upgrade &amp; Training SOWs use separate templates; Upgrade is a protected branch, not a ninth workflow.</li>
+      <li><b>Change layout without redeploying:</b> templates are mounted into the n8n container from the host filesystem.</li>
+      <li><b>Checked on every release:</b> both document types are generated, opened and inspected for raw tags, missing tables and clipping.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="checklist">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">07 · Implementation readiness</span>
+      <h2 class="title">From signed SOW to a ready project</h2>
+      <p class="sub">The SOW's scope also seeds a readiness checklist portal. Consultants manage the checklist catalog from inside each technology section, and a tiered match makes sure Okta never resolves to Azure AD.</p>
+    </div>
+    <div class="fx-chk rv" id="chk">
+      <div class="fx-match box">
+        <div class="h"><b>Which catalog section does this checklist section belong to?</b>
+          <div class="seg" role="group" aria-label="Loaded section"><button type="button" data-s="okta" aria-pressed="true">Okta SSO</button><button type="button" data-s="jira" aria-pressed="false">Jira</button><button type="button" data-s="ebs" aria-pressed="false">EBS</button></div></div>
+        <div class="fx-mgrid">
+          <div class="fx-mway bad"><small>Single-pass OR match</small><div class="steps" id="mOne"></div><div class="res" id="mOneR"></div></div>
+          <div class="fx-mway good"><small>Tiered match, strongest signal first</small><div class="steps" id="mTier"></div><div class="res" id="mTierR"></div></div>
+        </div>
+        <div class="fx-cat" id="mcat"></div>
+      </div>
+      <div class="fx-soft box">
+        <b>Remove an item without breaking past SOWs</b>
+        <p>Removing a catalog item is a soft-disable. Future checklists stop seeing it; SOW sessions that already copied it keep their values.</p>
+        <div class="fx-sg"><div><small>Global catalog</small><ul id="sCat"></ul></div><div><small>SOW 001 · already loaded</small><ul id="sSess"></ul></div><div><small>SOW 002 · loads later</small><ul id="sNew"></ul></div></div>
+        <button type="button" class="se-btn" id="sbtn">Remove "Okta API token"</button>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">How the readiness portal works</span><ul class="pts cols">
+      <li><b>Scope in, checklist out:</b> each technology in the SOW loads its own checklist section, with notes and values for up to three environments.</li>
+      <li><b>Global vs per-SOW:</b> catalog tables are shared; each SOW session keeps its own copied state and entered values.</li>
+      <li><b>Strongest match first:</b> section title, then technology label, then tool category, then main category, each tried across the whole catalog.</li>
+      <li><b>Export ready:</b> completed checklists export per technology, and the Services Copilot can update or export them by command.</li>
+    </ul></div>
+    <div class="verdict rv"><b>Next in the chain</b><span>The checklist is the step between the signed SOW and implementation. The <a href="/case-studies/implementation-execution-portal">Implementation Execution Portal</a> case study picks up from there: it turns the SOW and its completed checklist into review-ready implementation documents.</span></div>
+  </div>
+</section>
+
+<section class="ch band" id="arch">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">08 · Architecture and operations</span>
+      <h2 class="title">Eight workflows. Three stores. One rollback away.</h2>
+      <p class="sub">Responsibilities are split across eight n8n workflows instead of one monolith. Tap a workflow to see its job, or switch to the release path every production change follows.</p>
+    </div>
+    <div class="fx-arch box rv" id="archx">
+      <div class="fx-atop"><div class="seg" role="group" aria-label="View"><button type="button" data-v="map" aria-pressed="true">Workflow map</button><button type="button" data-v="rel" aria-pressed="false">Release and rollback</button></div><span class="demo-note" id="alab"></span></div>
+      <div id="aview"></div>
+      <div class="fx-adet" id="adet" aria-live="polite"></div>
+    </div>
+    <div class="note rv"><span class="lbl">Built to be recovered</span><ul class="pts cols">
+      <li><b>One owner per webhook:</b> every production path has exactly one active workflow, so routing never collides.</li>
+      <li><b>Change a copy first:</b> edits happen on inactive workflow copies, tested against representative fixtures before promotion.</li>
+      <li><b>Back up everything:</b> PostgreSQL, Qdrant snapshots, templates and workflow JSON exports before every deployment.</li>
+      <li><b>No secrets in exports:</b> credentials are excluded from workflow exports and from all documentation.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="proof" style="padding-block:clamp(56px,7vw,88px)">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Proof</span><h2 class="title">Inside the platform</h2><p class="sub">Real screens from the Form App, the generated Word document and the readiness portal. Customer and staff names are blurred.</p></div>
+    <div class="se-proof rv" id="proofg"></div>
+  </div>
+</section>
+<div class="se-lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screen preview"><figure><img id="lbimg" alt=""><figcaption><span id="lbcap"></span><button type="button" id="lbx">Close ✕</button></figcaption></figure></div>
+
+<section class="ch band" id="results">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">09 · The result</span>
+      <h2 class="title">Reproducible, reviewable, recoverable</h2>
+      <p class="sub">A slow, judgment-heavy authoring process became a production workflow that standardizes delivery planning while keeping human judgment authoritative.</p>
+    </div>
+    <div class="se-nums">
+      <div class="se-num rv"><b data-to="30" data-suf="+">30+</b><span>codified business rules replacing informal planning knowledge</span></div>
+      <div class="se-num rv"><b data-to="8">8</b><span>n8n workflows with clearly separated responsibilities</span></div>
+      <div class="se-num rv"><b data-to="3">3</b><span>separated stores: PostgreSQL state, Qdrant content, mounted templates</span></div>
+      <div class="se-num rv"><b data-to="1">1</b><span>browser app from first input to final Word document</span></div>
+    </div>
+    <div class="fx-ba rv" id="ba"></div>
+    <div class="verdict rv"><b>The result</b><span>Every SOW now starts from the same rules, every reviewed edit survives a scope change, and every document is rendered from approved state.</span></div>
+    <div class="stack rv">
+      <span>n8n</span><span>JavaScript code nodes</span><span>PostgreSQL</span><span>PL/pgSQL</span><span>JSONB state</span><span>Qdrant</span><span>Anthropic Claude</span><span>LangChain for n8n</span><span>Docxtemplater</span><span>DOCX templates</span><span>HTML/JavaScript Form App</span><span>Webhook APIs</span>
+    </div>
+    <div class="note rv"><span class="lbl">What comes next · designed, not yet built <span class="tag-wip sm">Work in progress</span></span><ul class="pts cols">
+      <li><b>An Admin Portal:</b> an authenticated portal to manage technologies, aliases, hours, questions, fixed blocks and rules.</li>
+      <li><b>Catalog-driven forms:</b> scope options and questions rendered from the catalog instead of hard-coded in the Form App.</li>
+      <li><b>Validate, publish, roll back:</b> every configuration change previewed, regression-checked and reversible.</li>
+      <li><b>Source document management:</b> versioned ingestion and publishing of reusable Qdrant content.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="pi-close" id="contact">
+  <div class="pi-wrap">
+    <div class="pi-cta-card">
+      <div class="pi-cta-l">
+        <div class="pi-eyebrow">Document automation, with judgment</div>
+        <h2>Automate the document. Keep the <b>expertise.</b></h2>
+        <p>Rule-driven generation, human review that sticks, and AI kept inside safe boundaries.</p>
+      </div>
+      <div class="pi-cta-r">
+        <span class="pi-cta-k">What a first conversation covers</span>
+        <ol class="pi-cta-steps"><li><b>01</b><span>Your business objective</span></li><li><b>02</b><span>The technical context</span></li><li><b>03</b><span>The right next step</span></li></ol>
+        <a class="pi-btn pi-btn-cyan pi-btn-wide" href="/contact-us">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+        <a class="pi-back" href="/case-studies">View all case studies &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>

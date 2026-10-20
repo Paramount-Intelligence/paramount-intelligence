@@ -220,8 +220,10 @@ export default function AiStrategyAndConsulting() {
             <Link className="btn btn-navy" href="/contact-us">Discuss a technology decision <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
-          <div className="cgrid two">
+          <div className="cgrid related">
             <RelatedCaseCard n="05" />
+            <RelatedCaseCard n="48" />
+            <RelatedCaseCard n="25" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

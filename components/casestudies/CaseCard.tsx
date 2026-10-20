@@ -9,6 +9,8 @@ type CaseCardProps = {
   summary?: string;
   /** Off the current page of the Case Studies listing. */
   hidden?: boolean;
+  /** No case study page yet: the card doesn't link anywhere. */
+  linkless?: boolean;
 };
 
 function tabs(card: CaseCardData) {
@@ -22,9 +24,9 @@ function tabs(card: CaseCardData) {
 }
 
 /** Reference `.ccard`: the drawing on a grey panel, then organisation, industry, title, summary and tags. */
-export default function CaseCard({ card, summary, hidden }: CaseCardProps) {
-  return (
-    <Link className="ccard pc" href={card.route ?? ROUTES.caseStudies} data-search={card.search} hidden={hidden}>
+export default function CaseCard({ card, summary, hidden, linkless }: CaseCardProps) {
+  const body = (
+    <>
       <div className="art" aria-hidden="true" dangerouslySetInnerHTML={{ __html: card.art + tabs(card) }} />
       <div className="in">
         <div className="meta">
@@ -38,10 +40,18 @@ export default function CaseCard({ card, summary, hidden }: CaseCardProps) {
             <span key={t}>{t}</span>
           ))}
         </div>
-        <span className="link">
-          Read case study <span className="arr"><Icon name="arrow" /></span>
-        </span>
+        {!linkless && (
+          <span className="link">
+            Read case study <span className="arr"><Icon name="arrow" /></span>
+          </span>
+        )}
       </div>
+    </>
+  );
+  if (linkless) return <div className="ccard pc nolink" hidden={hidden}>{body}</div>;
+  return (
+    <Link className="ccard pc" href={card.route ?? ROUTES.caseStudies} data-search={card.search} hidden={hidden}>
+      {body}
     </Link>
   );
 }

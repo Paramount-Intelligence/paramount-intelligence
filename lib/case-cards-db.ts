@@ -1,8 +1,8 @@
 import { cache } from "react";
 import type { CaseCard } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
-import { CASE_CARDS, type CaseCardData } from "@/lib/case-cards";
-import { isRemovedCaseStudy } from "@/lib/removed-case-studies";
+import { CASE_CARDS, OFF_SITE_CASE_CARDS, type CaseCardData } from "@/lib/case-cards";
+import { isRemovedCaseStudy, SHOWN_WITHOUT_LINK } from "@/lib/removed-case-studies";
 
 /** A CaseCard row in the shape the card components use. */
 export const toCardData = (c: CaseCard): CaseCardData => ({
@@ -42,6 +42,21 @@ export const getCaseCards = cache(async (): Promise<CaseCardData[]> => {
 /** One published card by number ("07"), or null. */
 export async function getCaseCard(n: string): Promise<CaseCardData | null> {
   return (await getCaseCards()).find((c) => c.n === n) ?? null;
+}
+
+/**
+ * A card taken off the website that a page still shows without a link (lib/removed-case-studies.ts), from its
+ * CaseCard row whether or not it is published, else the built-in copy. Never has a route.
+ */
+export async function getOffSiteCaseCard(n: string): Promise<CaseCardData | null> {
+  if (!SHOWN_WITHOUT_LINK.includes(n)) return null;
+  try {
+    const row = await prisma.caseCard.findUnique({ where: { number: n } });
+    if (row) return { ...toCardData(row), route: null };
+  } catch (error) {
+    console.error("case cards: could not read the CaseCard table, using the built-in card", error);
+  }
+  return OFF_SITE_CASE_CARDS.find((c) => c.n === n) ?? null;
 }
 
 /** The published card that opens a route ("/case-studies/<slug>"), or null. */

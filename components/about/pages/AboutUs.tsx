@@ -131,7 +131,7 @@ export default function AboutUs() {
             </div>
             <div className="leader">
               <div className="ph">
-                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Founder and Commercial Lead" width="640" height="640" />
+                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Founder and Commercial Lead" width="720" height="812" />
               </div>
               <div className="txt">
                 <span className="role">Founder &amp; Commercial Lead</span>

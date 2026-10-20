@@ -152,9 +152,10 @@ export default function DigitalNatives() {
             <div className="eyebrow">Relevant experience</div>
             <h2 className="title">Selected work</h2>
           </div>
-          <div className="cgrid ">
+          <div className="cgrid related">
             <RelatedCaseCard n="12" summary="Product discovery, comparison, and cart workflows connected in a conversational application." />
             <RelatedCaseCard n="07" summary="Enterprise knowledge and ticket intelligence integrated into support operations." />
+            <RelatedCaseCard n="40" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>
