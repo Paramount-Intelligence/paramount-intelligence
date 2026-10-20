@@ -2,6 +2,7 @@ import { cache } from "react";
 import type { CaseCard } from "@prisma/client";
 import { prisma } from "@/lib/prisma";
 import { CASE_CARDS, type CaseCardData } from "@/lib/case-cards";
+import { isRemovedCaseStudy } from "@/lib/removed-case-studies";
 
 /** A CaseCard row in the shape the card components use. */
 export const toCardData = (c: CaseCard): CaseCardData => ({
@@ -29,7 +30,9 @@ export const getCaseCards = cache(async (): Promise<CaseCardData[]> => {
       where: { published: true },
       orderBy: [{ position: "asc" }, { number: "asc" }],
     });
-    if (rows.length) return rows.map(toCardData);
+    // Case studies taken off the website (lib/removed-case-studies.ts) stay off, even if their card is published.
+    const cards = rows.filter((c) => !isRemovedCaseStudy(c.slug));
+    if (cards.length) return cards.map(toCardData);
   } catch (error) {
     console.error("case cards: could not read the CaseCard table, using the built-in cards", error);
   }

@@ -235,7 +235,6 @@ export default function SoftwareProductEngineering() {
           <div className="cgrid four">
             <RelatedCaseCard n="01" />
             <RelatedCaseCard n="06" />
-            <RelatedCaseCard n="27" />
             <RelatedCaseCard n="26" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>

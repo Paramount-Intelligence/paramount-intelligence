@@ -252,10 +252,7 @@ export default function DataAndAnalytics() {
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
           <div className="cgrid four">
-            <RelatedCaseCard n="03" />
             <RelatedCaseCard n="40" />
-            <RelatedCaseCard n="14" />
-            <RelatedCaseCard n="17" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

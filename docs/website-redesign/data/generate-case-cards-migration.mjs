@@ -1,9 +1,11 @@
 // Writes the migration that creates the CaseCard table and fills it with the 50 cards in lib/case-cards.ts
 // (the data the site used before the cards moved into the database; data option B in PORT-PLAN.md, section 3).
 // Rows that already exist (same card number) are left alone, so the migration never overwrites /admin edits.
-// Run once when the migration is created: node docs/website-redesign/data/generate-case-cards-migration.mjs
+// It was run once, on 20 Oct 2026, when lib/case-cards.ts still held all 50 cards. The 31 cards taken off the website
+// since are hidden by a later migration (…_unpublish_removed_case_cards). The migration may already be applied, so
+// this script refuses to overwrite it.
 
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 
 const NAME = "20261020120000_add_case_cards";
 const root = new URL("../../../", import.meta.url);
@@ -73,6 +75,7 @@ ON CONFLICT ("number") DO NOTHING;
 `;
 
 const dir = new URL(`prisma/migrations/${NAME}/`, root);
+if (existsSync(new URL("migration.sql", dir))) throw new Error(`prisma/migrations/${NAME}/migration.sql exists: an applied migration must not change`);
 mkdirSync(dir, { recursive: true });
 writeFileSync(new URL("migration.sql", dir), sql);
 console.log(`wrote prisma/migrations/${NAME}/migration.sql (${CASE_CARDS.length} cards, ${sql.length} bytes)`);

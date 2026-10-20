@@ -198,8 +198,6 @@ export default function PrivateEquity() {
           </div>
           <div className="cgrid ">
             <RelatedCaseCard n="07" summary="Support engineers can use connected enterprise knowledge and review AI-drafted responses within their existing workflow." />
-            <RelatedCaseCard n="47" summary="Field submissions translated into structured records, summaries, and management insights through an engagement spanning discovery, integration, testing, and handover." />
-            <RelatedCaseCard n="03" summary="A shared analytics architecture with separate company data connections and tenant boundaries." />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>
