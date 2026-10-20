@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @source not "../docs";
+@source not "../content";
 
 /* ============================================================
    PARAMOUNT INTELLIGENCE — DESIGN SYSTEM

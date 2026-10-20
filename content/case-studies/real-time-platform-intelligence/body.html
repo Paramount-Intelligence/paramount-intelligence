@@ -1,0 +1,377 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+
+
+<nav class="pi-prog" id="pi-prog" aria-label="Case study sections" data-sections="top:Overview,problem:Problem,journey:Principle,diagnose:Diagnosis,supply:Supply,marketing:Marketing,support:Support,views:Live views,arch:Architecture,results:Results">
+  <div class="pp-in">
+    <span class="pp-live"><i></i>Reading</span>
+    <ol class="pp-list" id="pp-list"></ol>
+    <span class="pp-count" id="pp-count"></span>
+  </div>
+  <div class="pp-bar" aria-hidden="true"><i id="pp-fill"></i></div>
+</nav>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Ride-hailing &amp; delivery · South Asia</span><span class="pill-tag"><span class="pulse"></span>Real-time</span></div>
+      <h1>Every journey, <b>watched live.</b></h1>
+      <p class="lede">A real-time platform intelligence system for a leading ride-hailing and delivery platform. It tracks millions of user journey events and shows where a journey breaks, and why, before the problem becomes a customer complaint.</p>
+      <ul class="pts">
+        <li><b>The journey is the unit:</b> every team watches the same customer journey, not its own separate dashboard.</li>
+        <li><b>Cause, not symptom:</b> each break is traced to marketing, UX, supply, system or support risk.</li>
+        <li><b>While customers are active:</b> teams act during the journey, not after the complaint.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="#diagnose"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>Break a journey</a>
+        <a class="btn btn-line" href="#problem">See the story</a>
+      </div>
+      <div class="meta">
+        <div><span>Client</span><b>Leading ride-hailing &amp; delivery platform</b></div>
+        <div><span>Scale</span><b>Millions of journey events</b></div>
+        <div><span>Used by</span><b>Product · Ops · Marketing · Leadership</b></div>
+      </div>
+    </div>
+    <div class="bk bk-hero" id="hx" aria-label="Illustration: a live city map and event stream; when a journey breaks, the system names the cause and the team that owns it">
+      <div class="top"><span class="bk-live"><i></i>LIVE · JOURNEY STREAM</span><span class="bk-note">Illustration · sample events</span></div>
+      <div class="bk-hgrid">
+        <div class="bk-map" id="hxMap">
+          <svg viewBox="0 0 320 240" aria-hidden="true">
+            <path class="rd" d="M-10 70 C 80 60, 160 90, 330 58"/><path class="rd" d="M-10 178 C 90 170, 210 196, 330 160"/>
+            <path class="rd" d="M96 -10 C 110 80, 84 160, 104 250"/><path class="rd" d="M226 -10 C 210 90, 240 170, 222 250"/>
+            <path class="rd2" d="M0 124 L 330 116"/><path class="rd2" d="M160 -10 L 168 250"/>
+            <g id="hxZones"></g>
+            <path class="route" d="M40 200 C 70 150, 120 140, 150 118 S 230 70, 280 40"/>
+            <g id="hxDots"></g>
+          </svg>
+        </div>
+        <div class="bk-feed"><div class="fh"><small>Event stream</small></div><ol id="hxFeed" aria-hidden="true"></ol></div>
+      </div>
+      <div class="bk-diag" id="hxDiag" aria-live="polite"><span class="bk-cat c-sup" id="hxCat">Watching</span><p id="hxTxt">Every event is read as part of a journey.</p><span class="ow" id="hxOwn"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client">
+  <div class="client">
+    <div class="who">
+      <h3>Meet our client</h3>
+      <dl><dt>Client</dt><dd>Leading ride-hailing and delivery platform</dd><dt>Industry</dt><dd>Ride-hailing, logistics, on-demand services</dd><dt>Market</dt><dd>South Asia · millions of users across major cities</dd><dt>Technology</dt><dd>Real-time event tracking, streaming analytics, SQL, BI dashboards, AI-assisted querying</dd></dl>
+    </div>
+    <div class="nut">
+      <h3>In a nutshell</h3>
+      <p>The platform had no live, end-to-end view of how its ecosystem was working. Teams relied on delayed reports and separate dashboards that showed outcomes but not causes, so finding the source of a problem meant manual investigation across teams and tools. We built a real-time platform intelligence layer that treats every interaction as a signal in one live journey. It shows where a journey breaks and whether the cause is marketing, UX, supply, the system or support risk, while customers are still active. Product, operations, marketing and leadership now work from a single real-time operational truth.</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client data protection">
+  <div class="ag-protect rv">
+    <span class="ag-shield" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5z"/><path d="m8.5 12 2.5 2.5 4.5-5" class="t"/></svg></span>
+    <div><b>Client data protected</b><span>The client is not named. Event names, zones, campaigns, journeys and questions in the demos are samples; no client data is shown. The system is real.</span></div>
+    <span class="ag-redact" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+</section>
+
+<section class="ch" id="problem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">01 · The problem</span>
+      <h2 class="title">Dashboards showed what happened, not why</h2>
+      <p class="sub">Each team had its own dashboard, and each one looked fine on its own. Pick a symptom, then look at the journey.</p>
+    </div>
+    <div class="bk bk-loop rv" id="loop">
+      <div class="ctl">
+        <div class="bk-seg" role="group" aria-label="Symptom" id="symp">
+          <button type="button" data-s="0" aria-pressed="true">Conversions dropped</button>
+          <button type="button" data-s="1" aria-pressed="false">Cancellations rose</button>
+          <button type="button" data-s="2" aria-pressed="false">Support tickets spiked</button>
+        </div>
+        <button type="button" class="bk-btn" id="loopGo">Look at the journey →</button>
+      </div>
+      <div class="bk-teams" id="teams"></div>
+      <div class="bk-jstrip" id="jstrip" aria-hidden="true"></div>
+      <div class="bk-verdict" id="loopV" aria-live="polite"><span class="ic">?</span><span></span></div>
+      <p class="bk-note">Illustration · sample symptoms and journeys</p>
+    </div>
+    <div class="note rv"><span class="lbl">The blind spots</span><ul class="pts cols">
+      <li><b>Conversion drops:</b> caused by UI/UX friction, supply shortages or technical failures? No one could say.</li>
+      <li><b>Cancellations:</b> behavioural, operational or system-driven?</li>
+      <li><b>Campaigns:</b> bringing quality demand, or low-intent traffic?</li>
+      <li><b>Support issues:</b> could they have been prevented earlier in the journey?</li>
+      <li><b>Found too late:</b> issues surfaced only after complaints or performance had already dropped.</li>
+      <li><b>Blame cycles:</b> without a shared view of where failures started, teams argued instead of acting together.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="journey">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">02 · The principle</span>
+      <h2 class="title">One journey, watched by every team</h2>
+      <p class="sub">Every department touches the same customer journey. So the journey, not the department, became the unit of monitoring. Pick a team to see the part of the journey it watches.</p>
+    </div>
+    <div class="bk bk-jour rv" id="jour">
+      <div style="display:grid;gap:18px;align-content:start">
+        <p class="bk-quote">“Every department interacts with the same user journey, so the journey itself should be the unit of monitoring.”</p>
+        <div class="bk-tsel" id="tsel" role="group" aria-label="Team"></div>
+        <button type="button" class="bk-btn ghost" id="jPlay" style="justify-self:start">▶ Follow one journey</button>
+      </div>
+      <ol class="bk-steps" id="steps"></ol>
+    </div>
+    <div class="note rv"><span class="lbl">Success was defined as</span><ul class="pts cols">
+      <li><b>Diagnosing issues while users were still active,</b> not in the next day’s report.</li>
+      <li><b>Separating UX, operational, supply and technical failures,</b> so the right team acts first.</li>
+      <li><b>One operational view across teams,</b> grounded in the same real-time event stream.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="diagnose">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">03 · The resolution</span>
+      <h2 class="title">Where a journey breaks shows why</h2>
+      <p class="sub">The system reads live sequences of events. When a journey stalls, loops or stops, the pattern points to the cause and to the team that owns it. Pick a journey and watch it break.</p>
+    </div>
+    <div class="bk bk-sim rv" id="sim">
+      <div class="bk-scn" id="scn" role="group" aria-label="Journey"></div>
+      <div class="bk-phone" aria-label="Sample journey events">
+        <div class="sb"><span>12:00</span><span>● ● ●</span></div>
+        <div class="ph"><b id="phT">Journey</b><span class="bk-live"><i></i>LIVE</span></div>
+        <ol id="phList" aria-live="polite"></ol>
+        <div class="pf"><small id="phLbl">Waiting</small><span class="timer" id="phTimer">0:00</span></div>
+      </div>
+      <div class="bk-dx">
+        <div class="bk-cats" id="cats">
+          <span class="bk-cat c-mkt">Marketing</span><span class="bk-cat c-ux">UX</span><span class="bk-cat c-sup">Supply</span><span class="bk-cat c-sys">System</span><span class="bk-cat c-cx">Support risk</span>
+        </div>
+        <div class="bk-dxcard" id="dx" aria-live="polite"><span class="wait">Watching the journey…</span></div>
+        <button type="button" class="bk-btn" id="simAgain" style="justify-self:start">▶ Replay</button>
+      </div>
+    </div>
+    <p class="demo-note" style="margin-top:10px">Illustration with sample event names. The two-minute window is the example rule from the project.</p>
+    <div class="note rv"><span class="lbl">Five ways a journey breaks</span><ul class="pts cols">
+      <li><b>Marketing:</b> users land from a campaign but never move on to pricing or a ride request. That is low-intent traffic or misaligned targeting, not a product failure.</li>
+      <li><b>UI / UX:</b> repeated navigation between screens, returning to the same page without progressing, or journeys that stall point to friction in a specific part of the app.</li>
+      <li><b>Supply:</b> a ride request with no driver assigned inside a set window, for example two minutes, is flagged as a supply imbalance.</li>
+      <li><b>System:</b> an event fires (for example, ride started) but the next expected event never arrives. That points to a backend failure, an API issue or an app crash.</li>
+      <li><b>Support risk:</b> breakpoints that usually end in a complaint are caught before the customer contacts support.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="supply">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">04 · Supply &amp; operations</span>
+      <h2 class="title">Supply gaps, zone by zone, as they open</h2>
+      <p class="sub">Request and assignment patterns show where supply is short, where demand is spiking and where riders should move. Pick a time of day, then act on a flagged zone.</p>
+    </div>
+    <div class="bk bk-zones rv" id="zones">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:10px">
+          <div class="bk-seg" role="group" aria-label="Time of day" id="tod">
+            <button type="button" data-t="0" aria-pressed="false">Morning</button><button type="button" data-t="1" aria-pressed="false">Midday</button><button type="button" data-t="2" aria-pressed="true">Evening peak</button><button type="button" data-t="3" aria-pressed="false">Late night</button>
+          </div>
+          <small id="zCount"></small>
+        </div>
+        <div class="bk-zgrid" id="zgrid" role="group" aria-label="City zones"></div>
+        <div class="bk-zleg"><span><i style="background:var(--bk-pale)"></i>Balanced</span><span><i style="background:#fff;border:1px dashed var(--bk-g)"></i>Spare drivers</span><span><i style="background:#fff3b0"></i>Demand rising</span><span><i style="background:#fbd5d3;border:1px solid var(--bk-red)"></i>No driver within 2 min</span></div>
+      </div>
+      <div class="bk-zpanel" id="zpanel" aria-live="polite"></div>
+    </div>
+    <p class="demo-note" style="margin-top:10px">Illustration · sample city, zones and patterns.</p>
+    <div class="note rv"><span class="lbl">What operations could see</span><ul class="pts cols">
+      <li><b>Supply shortages by city or zone,</b> from requests that wait too long for a driver.</li>
+      <li><b>Demand spikes that need driver incentives,</b> while the spike is still happening.</li>
+      <li><b>Areas that need rider redistribution,</b> by comparing short zones with nearby zones that have spare drivers.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="marketing">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">05 · Marketing performance</span>
+      <h2 class="title">Quality demand, not just traffic</h2>
+      <p class="sub">Campaigns were judged by what users did after they landed, in real time. Switch from counting clicks to following the journey.</p>
+    </div>
+    <div class="bk bk-mkt rv" id="mkt">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
+        <div class="bk-seg" role="group" aria-label="How campaigns are measured" id="mode"><button type="button" data-m="0" aria-pressed="true">Count clicks</button><button type="button" data-m="1" aria-pressed="false">Follow the journey</button></div>
+        <span class="bk-note">Illustration · sample campaigns</span>
+      </div>
+      <div class="bk-fun" id="fun">
+        <div class="a"><h3>Campaign A <span class="bk-cat c-sup" id="tagA">Looks smaller</span></h3></div>
+        <div class="b"><h3>Campaign B <span class="bk-cat c-mkt" id="tagB">Looks bigger</span></h3></div>
+      </div>
+      <p class="bk-flag" id="mflag" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+
+<section class="ch band" id="support">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">06 · Customer support</span>
+      <h2 class="title">Fixing it before the ticket</h2>
+      <p class="sub">Failed journeys were caught before customers contacted support, so the team could step in early. Compare the two.</p>
+    </div>
+    <div class="bk bk-tl rv" id="tl">
+      <div class="bk-clock"><div class="bk-seg" role="group" aria-label="Support model" id="tlMode"><button type="button" data-v="0" aria-pressed="true">Before: reactive</button><button type="button" data-v="1" aria-pressed="false">After: preventive</button></div><span id="tlCap"></span></div>
+      <div class="bk-track" id="track"></div>
+      <p class="bk-note">Illustration · sample journey</p>
+    </div>
+    <div class="note rv"><span class="lbl">What changed for support</span><ul class="pts cols">
+      <li><b>Early CX intervention:</b> failed journeys are visible while the customer is still active.</li>
+      <li><b>Proactive resolution:</b> the team resolves the issue instead of waiting for the complaint.</li>
+      <li><b>Fewer tickets:</b> problems caught early reduce support ticket volume.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="ch" id="views">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">07 · Platform-level visibility</span>
+      <h2 class="title">Minute, hour and day, from one event stream</h2>
+      <p class="sub">Teams could watch live activity minute by minute, hourly operational patterns and daily structural trends. Every layer comes from the same real-time events. Switch the view and the layers.</p>
+    </div>
+    <div class="bk bk-views rv" id="vw">
+      <div class="ctl">
+        <div class="bk-seg" role="group" aria-label="Time view" id="span"><button type="button" data-v="0" aria-pressed="true">Minute · live</button><button type="button" data-v="1" aria-pressed="false">Hourly patterns</button><button type="button" data-v="2" aria-pressed="false">Daily trends</button></div>
+        <span class="bk-note">Illustration · sample shapes, no client data</span>
+      </div>
+      <div class="bk-chart"><svg id="chart" viewBox="0 0 720 240" preserveAspectRatio="none" role="img" aria-label="Illustrative chart of five signal layers over time"></svg></div>
+      <div class="bk-layers" id="lyr" role="group" aria-label="Signal layers"></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch band" id="arch">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">08 · Under the hood</span>
+      <h2 class="title">From app events to answers</h2>
+      <p class="sub">Events stream from the app and backend, are shaped with SQL, stored in a central warehouse, and reach teams through operational dashboards and an AI-assisted query interface. Open a layer, then ask a question.</p>
+    </div>
+    <div class="bk bk-arch rv" id="archx">
+      <div class="bk-flow" id="flow">
+        <span class="pk"></span><span class="pk"></span><span class="pk"></span>
+        <button type="button" aria-pressed="true"><svg viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg><b>App &amp; backend events</b><span>Every tap, request, assignment and status change</span></button>
+        <button type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M3 7h13M3 12h18M3 17h10"/><path d="m18 4 3 3-3 3"/></svg><b>Event streaming</b><span>Real-time application event tracking</span></button>
+        <button type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h10M4 18h6"/><circle cx="18" cy="16" r="3"/></svg><b>SQL transformations</b><span>Events shaped into journeys and signals</span></button>
+        <button type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg><b>Data warehouse</b><span>Centralised analytics store</span></button>
+        <button type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14"/><path d="M7 13v-3M11 13V7M15 13v-5M8 21h8"/></svg><b>Dashboards &amp; AI query</b><span>Operational BI · AI-assisted questions</span></button>
+      </div>
+      <div class="bk-adet" id="adet" aria-live="polite"></div>
+      <div class="bk-ask">
+        <div class="ah"><b>Ask the platform</b><small>AI-assisted query · sample questions</small></div>
+        <div class="qs" id="qs" role="group" aria-label="Sample questions"></div>
+        <div class="bk-chat" id="chat" aria-live="polite"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="results">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">09 · The result</span>
+      <h2 class="title">From reactive reporting to operational intelligence</h2>
+      <p class="sub">Teams could detect problems while users were still active, tell product, supply, marketing and system failures apart, and find root causes across departments.</p>
+    </div>
+    <div class="bk-res rv">
+      <div><small>Detection</small><b>Earlier</b><span>Faster detection of supply, UX and system failures</span></div>
+      <div><small>Response</small><b>Faster</b><span>Reduced time-to-intervention during peak demand</span></div>
+      <div><small>Operations</small><b>Better</b><span>Improved fulfilment, cancellations and refunds downstream</span></div>
+      <div><small>Teams</small><b>One view</b><span>A shared operational truth across departments</span></div>
+    </div>
+    <div class="bk-ba" id="ba">
+      <span class="lbl">Before and after</span>
+      <div><span class="b">Delayed reports and separate dashboards</span><i>→</i><span class="a">One live view of the whole journey</span></div>
+      <div><span class="b">Issues found after complaints</span><i>→</i><span class="a">Issues found while customers are still active</span></div>
+      <div><span class="b">Symptoms without causes</span><i>→</i><span class="a">Each break traced to marketing, UX, supply, system or support</span></div>
+      <div><span class="b">Cross-team blame cycles</span><i>→</i><span class="a">Coordinated responses from a shared operational truth</span></div>
+      <div><span class="b">Limited leadership visibility at critical moments</span><i>→</i><span class="a">Leadership sees the platform live during critical operational windows</span></div>
+    </div>
+    <div class="verdict rv"><b>The result</b><span>Teams reason about causes, not symptoms. The organisation moved from reactive reporting to system-level operational intelligence.</span></div>
+
+    <div class="bk bk-found rv" id="found">
+      <small>What it made possible</small>
+      <div class="tops">
+        <div><b>Dynamic pricing systems</b><span>Built on live demand and supply signals</span></div>
+        <div><b>Fraud detection models</b><span>Built on the same journey events</span></div>
+        <div><b>Driver profiling</b><span>Built on driver activity in the stream</span></div>
+        <div><b>AI-driven operational copilots</b><span>Built on the signals and the query layer</span></div>
+      </div>
+      <div class="base"><b>Real-time platform intelligence layer</b><small>The data foundation for what came next</small></div>
+    </div>
+    <div class="stack rv"><span>Real-time event tracking</span><span>Event streaming</span><span>Streaming analytics</span><span>SQL-based event transformations</span><span>Central data warehouse</span><span>Operational BI dashboards</span><span>AI-assisted querying</span></div>
+  </div>
+</section>
+
+<section class="pi-close" id="contact">
+  <div class="pi-wrap">
+    <div class="pi-cta-card">
+      <div class="pi-cta-l">
+        <div class="pi-eyebrow">Operational intelligence, built in</div>
+        <h2>Know why, <b>while it’s happening.</b></h2>
+        <p>Real-time journey monitoring that shows product, operations, marketing and engineering where a problem started, before customers feel it.</p>
+      </div>
+      <div class="pi-cta-r">
+        <span class="pi-cta-k">What a first conversation covers</span>
+        <ol class="pi-cta-steps"><li><b>01</b><span>Your business objective</span></li><li><b>02</b><span>The technical context</span></li><li><b>03</b><span>The right next step</span></li></ol>
+        <a class="pi-btn pi-btn-cyan pi-btn-wide" href="/contact-us">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+        <a class="pi-back" href="/case-studies">View all case studies &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>

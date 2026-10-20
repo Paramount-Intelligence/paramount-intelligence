@@ -1,0 +1,154 @@
+[
+  {
+    "key": "ai-commerce-advisor",
+    "slug": "/case-studies/multi-agent-shopping-intelligence-on-aws-bedrock-agentcore",
+    "title": "AI Commerce Advisor | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "ai-enablement-staffing",
+    "slug": "/case-studies/ai-enablement-and-workflow-automation-for-staffing-and-consultancy-firm",
+    "title": "AI Enablement for Staffing | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "ai-talent-matching",
+    "slug": "/case-studies/ai-agents-for-talent-matching-and-automated-talent-project-mapping",
+    "title": "AI Talent Matching | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "ash-shajrah-lms",
+    "slug": "/case-studies/full-stack-edtech-operating-system",
+    "title": "Ash-Shajrah Learning Hub | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "contract-intelligence",
+    "slug": "/case-studies/ai-powered-contract-intelligence-platform-for-global-life-sciences-enterprise",
+    "title": "Contract Intelligence Copilot | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": true
+  },
+  {
+    "key": "contract-risk-analysis",
+    "slug": "/case-studies/ai-systems-for-contract-document-ingestion-and-risk-analysis",
+    "title": "Contract Risk Intelligence | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "donaldson-market-intelligence",
+    "slug": "/case-studies/pricing-intelligence-and-recommendation-engine",
+    "title": "Donaldson Market Intelligence Platform | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "enterprise-video-generation",
+    "slug": "/case-studies/ai-powered-enterprise-video-generation-platform-on-oracle-cloud",
+    "title": "Enterprise Video Generation on Oracle Cloud | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "flexagon-execution-portal",
+    "slug": "/case-studies/flexagon-implementation-execution-portal",
+    "title": "Flexagon Implementation Execution Portal | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "flexagon-sow-generator",
+    "slug": "/case-studies/flexagon-sow-automation",
+    "title": "Flexagon SOW Generator | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "flexagon-support-copilot",
+    "slug": "/case-studies/ai-powered-support-copilot-for-pe-backed-enterprise-devops-platform",
+    "title": "Flexagon Support Copilot | Paramount Intelligence",
+    "description": "How Paramount Intelligence built an AI support copilot inside Freshdesk for Flexagon, a PE-backed enterprise DevOps software company: grounded drafts, confidence-based routing and human review.",
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "investor-email-intelligence",
+    "slug": "/case-studies/ai-powered-investor-email-processing-and-crm-data-structuring",
+    "title": "Investor Email Intelligence | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "jazz",
+    "slug": "/case-studies/in-app-ai-assistant-for-telco-customer-self-care",
+    "title": "Jazz In-App AI Assistant | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "multi-model-ai-infrastructure",
+    "slug": "/case-studies/ai-infrastructure-for-a-multi-model-chatbot-platform-serving-80m-telecom-users",
+    "title": "Multi-Model AI Infrastructure | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "real-time-platform-intelligence",
+    "slug": "/case-studies/real-time-platform-intelligence-ecosystem-monitoring",
+    "title": "Real-Time Platform Intelligence | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "schneider-ai-idea-governance",
+    "slug": "/case-studies/schneider-ai-initiative-tracker",
+    "title": "Schneider Electric AI Idea Governance | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "schneider-ecostruxure-copilot",
+    "slug": "/case-studies/multimodal-rag-co-pilot-advisory-for-industrial-automation-engineering",
+    "title": "Schneider Electric EcoStruxure Co-Pilot | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "syngenta-agentcore-registry",
+    "slug": "/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore",
+    "title": "Syngenta AgentCore Registry | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
+    "key": "zero-touch-email-support",
+    "slug": "/case-studies/automated-email-response-and-ticket-handling-system-for-zero-touch-customer-support",
+    "title": "Zero-Touch Email Support | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  }
+]

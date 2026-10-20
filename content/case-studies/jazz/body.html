@@ -1,0 +1,365 @@
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+
+
+<nav class="pi-prog" id="pi-prog" aria-label="Case study sections"><div class="pi-prog-in"><span class="pi-prog-k"><i></i>Reading</span><ol class="pi-prog-list"></ol><span class="pi-prog-n">Section <b id="pi-prog-cur">1</b><span> / <span id="pi-prog-tot">0</span></span></span></div><span class="pi-prog-bar" aria-hidden="true"><i></i></span></nav>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Jazz · Pakistan</span><span class="pill-tag"><span class="pulse"></span>Live in production</span></div>
+      <h1>Support that never asks them to <b>leave the app.</b></h1>
+      <p class="lede">An AI assistant inside Simosa, Jazz's self-care app. OTP-verified, personal, grounded in approved knowledge.</p>
+      <ul class="pts">
+        <li><b>Inside the app:</b> embedded in Simosa, Jazz's all-in-one self-care and lifestyle app.</li>
+        <li><b>Secure by design:</b> OTP verification before any account data is touched.</li>
+        <li><b>Grounded:</b> answers come from the customer's own account and Jazz's approved SOPs.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="#try"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>Try SIA yourself</a>
+        <a class="btn btn-line" href="#problem">See the story</a>
+      </div>
+      <div class="meta">
+        <div><span>Client</span><b>Jazz</b></div>
+        <div><span>Channel</span><b>Simosa mobile app</b></div>
+        <div><span>Built on</span><b>AWS</b></div>
+      </div>
+    </div>
+    <div class="matrix-card">
+      <div class="mx-legend" role="group" aria-label="Scale">
+        <button type="button" data-m="subs" class="on"><b>80M+</b><span>Subscribers</span></button>
+        <button type="button" data-m="app"><b>40M</b><span>Active app users</span></button>
+        <button type="button" data-m="sia"><b>3–4M</b><span>Using SIA</span></button>
+      </div>
+      <div class="matrix" id="matrix" aria-hidden="true"></div>
+      <div class="mx-cap"><span>Each dot = <b>1 million people</b></span><span id="mxcap">80M+ Jazz subscribers</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client">
+  <div class="client">
+    <div class="who">
+      <h3>Meet our client</h3>
+      <dl><dt>Client</dt><dd>Jazz</dd><dt>Industry</dt><dd>Telecom &amp; consumer digital</dd><dt>Market</dt><dd>Pakistan</dd></dl>
+    </div>
+    <div class="nut">
+      <h3>In a nutshell</h3>
+      <p>We built and deployed a production AI assistant embedded in Jazz's live consumer app. Customers verify with OTP, then get answers from their own account and Jazz's approved documents, without leaving the app.</p>
+    </div>
+  </div>
+</section>
+
+<section class="ch" id="problem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">01 · The problem</span>
+      <h2 class="title">The cost of friction</h2>
+      <p class="sub">Customers were already in the app every day, but getting help meant leaving it.</p>
+    </div>
+    <div class="scene-wrap rv">
+      <div class="scene box" id="scene">
+        <div class="bar">
+          <b>Where does a customer go for help?</b>
+          <div class="seg" role="group" aria-label="Journey">
+            <button type="button" data-v="before" aria-pressed="true">Before</button>
+            <button type="button" data-v="after" aria-pressed="false">With SIA</button>
+          </div>
+        </div>
+        <svg viewBox="0 0 680 330" id="scenesvg" role="img" aria-label="Before: the customer leaves the app to call a helpline, waits on hold and tries a web portal. With SIA: the customer stays inside the app and gets an answer.">
+          <rect x="40" y="30" width="140" height="270" rx="22" fill="#fff" stroke="#0f256e" stroke-width="2"/>
+          <rect x="90" y="40" width="40" height="8" rx="4" fill="#0f256e"/>
+          <text x="110" y="78" text-anchor="middle" class="sv-lbl">Jazz app</text>
+          <g class="sv-in">
+            <rect x="58" y="118" width="104" height="34" rx="17" fill="#204ecf"/><text x="110" y="140" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="13" font-weight="700" fill="#fff">SIA</text>
+            <rect x="58" y="214" width="104" height="34" rx="17" fill="#3dbe8b"/><text x="110" y="236" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="12" font-weight="700" fill="#fff">✓ Answered</text>
+          </g>
+          <g class="sv-out">
+            <path id="pBefore" d="M180 110 C 240 70, 270 70, 312 70 L 470 70 C 560 70, 590 160, 520 250 C 500 268, 470 270, 440 270 L 300 270 C 250 270, 220 250, 180 225" fill="none" stroke="#c2410c" stroke-width="2.2" stroke-dasharray="7 7"/>
+            <g transform="translate(330,70)"><circle r="30" fill="#fff" stroke="#c2410c" stroke-width="2"/><path d="M-9-11c2 0 3 2 4 5l-3 3c1.6 3.4 4 5.8 7 7l3-3c3 1 5 2 5 4v4c0 2-1 3-3 3-12 0-19-8-19-19 0-2 1-4 3-4z" fill="none" stroke="#c2410c" stroke-width="2" stroke-linejoin="round"/><text y="52" text-anchor="middle" class="sv-lbl">Helpline</text></g>
+            <g transform="translate(480,70)"><circle r="30" fill="#fff" stroke="#c2410c" stroke-width="2"/><circle r="12" fill="none" stroke="#c2410c" stroke-width="2"/><path d="M0-6v6l4 3" stroke="#c2410c" stroke-width="2" fill="none" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="3s" repeatCount="indefinite"/></path><text y="52" text-anchor="middle" class="sv-lbl">On hold</text></g>
+            <g transform="translate(400,270)"><circle r="30" fill="#fff" stroke="#c2410c" stroke-width="2"/><circle r="12" fill="none" stroke="#c2410c" stroke-width="2"/><path d="M-12 0h24M0-12c-6 6-6 18 0 24M0-12c6 6 6 18 0 24" fill="none" stroke="#c2410c" stroke-width="1.6"/><text y="-40" text-anchor="middle" class="sv-lbl">Web portal</text></g>
+            <text x="560" y="168" class="sv-sm">outside the app</text>
+          </g>
+          <path id="pAfter" d="M110 290 L110 250 L110 231 L110 160 L110 135" fill="none" stroke="none"/>
+          <circle id="walker" r="9" fill="#09b6f9" stroke="#fff" stroke-width="3" cx="180" cy="110"/>
+        </svg>
+      </div>
+      <div class="exits" id="exits">
+        <span>Times the customer leaves the app</span>
+        <div class="n" id="exitn">0</div>
+        <p id="exitp">Helpline, hold queue, web portal. Every question breaks the experience.</p>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What was going wrong</span><ul class="pts cols"><li><b>A huge range of everyday queries:</b> bundles, balance, data usage, recharge and call history, SIM details, coverage and complaints.</li><li><b>Manual, static flows:</b> high query volume strained support operations and left customers waiting for answers.</li><li><b>Support lived outside the app:</b> customers already in Simosa every day had to leave it to call a helpline or visit a web portal.</li><li><b>The need:</b> an assistant inside Jazz's own app that answers account-specific questions securely, without the customer ever leaving.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="queries">
+  <div class="wrap">
+    <div class="head rv" style="text-align:center;justify-items:center">
+      <span class="eyebrow">What customers ask</span>
+      <h2 class="title">One assistant, three kinds of question</h2>
+      <p class="sub">Filter to see how SIA handles each kind.</p>
+    </div>
+    <div class="hub rv" id="hub">
+      <svg id="hubsvg" aria-hidden="true"></svg>
+      <div class="core"><div><b>SIA</b><span>in Simosa</span></div></div>
+    </div>
+    <div class="legend" id="hublegend">
+      <button type="button" data-k="account"><i style="background:var(--royal)"></i>My account data</button>
+      <button type="button" data-k="knowledge"><i style="background:var(--cyan)"></i>Approved knowledge</button>
+      <button type="button" data-k="action"><i style="background:var(--green)"></i>Guided actions</button>
+    </div>
+    <div class="note rv"><span class="lbl">How SIA handles each kind</span><ul class="pts cols"><li><b>My account data:</b> after OTP, SIA reads the verified customer's own balance, usage, bundles, recharges, call history and SIM details.</li><li><b>Approved knowledge:</b> coverage, network policy and SOP questions are answered by Amazon Kendra from Jazz's approved documents, not improvised.</li><li><b>Actions SIA completes:</b> it registers complaints with a reference ID, initiates support requests and escalates what it can't resolve.</li><li><b>Actions SIA guides:</b> bundle subscriptions and usage alerts go step by step, and nothing changes until the customer confirms. SIA never activates a package or changes a plan on its own.</li><li><b>Both kinds of answer, one chat:</b> generic and account-specific questions are handled in the same conversation, inside the app.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch" id="constraints">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">02 · The complication</span>
+      <h2 class="title">Four non-negotiables, held at the same time</h2>
+      <p class="sub">Tap each one to lock it in.</p>
+    </div>
+    <div class="locks">
+      <div class="col">
+        <button type="button" class="lock rv" data-i="0"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg></span><span><h3>In-app, not a portal</h3><p>Inside Jazz's live consumer app</p></span></button>
+        <button type="button" class="lock rv" data-i="1"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><span><h3>Production scale</h3><p>40M-user app, from day one</p></span></button>
+      </div>
+      <div class="ring" id="ring">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <path class="arc" d="M100 18 A82 82 0 0 1 182 100" transform="rotate(-42 100 100)"/>
+          <path class="arc" d="M100 18 A82 82 0 0 1 182 100" transform="rotate(48 100 100)"/>
+          <path class="arc" d="M100 18 A82 82 0 0 1 182 100" transform="rotate(138 100 100)"/>
+          <path class="arc" d="M100 18 A82 82 0 0 1 182 100" transform="rotate(228 100 100)"/>
+        </svg>
+        <div class="mid"><div><b id="ringn">0/4</b><span id="ringt">Held</span></div></div>
+      </div>
+      <div class="col">
+        <button type="button" class="lock rv" data-i="2"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 6v6c0 4.5 3.4 8.3 8 9.5 4.6-1.2 8-5 8-9.5V6z"/><rect x="9" y="10.5" width="6" height="5" rx="1"/><path d="M10.5 10.5V9a1.5 1.5 0 0 1 3 0v1.5"/></svg></span><span><h3>Data stays controlled</h3><p>OTP before any account data</p></span></button>
+        <button type="button" class="lock rv" data-i="3"><span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M5 12H3M21 12h-2"/><circle cx="12" cy="12" r="5"/><path d="m10 12 1.5 1.5L14.5 10"/></svg></span><span><h3>Guides, never overrides</h3><p>Confirms first, never changes plans alone</p></span></button>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">Why each one mattered</span><ul class="pts cols"><li><b>In-app, not a portal:</b> it had to live inside Jazz's live consumer app, not a web tool or third-party helpdesk.</li><li><b>Production scale:</b> high-volume traffic across a 40M-user app from day one, so it had to be multi-tenant, load-balanced and autoscaled.</li><li><b>Data stays controlled:</b> subscriber data sits in a secure layer, and phone number + OTP verification comes before any account data.</li><li><b>Guides, never overrides:</b> it can raise complaints and escalate, but it never activates packages or changes plans on its own.</li></ul></div>
+    <div class="verdict rv"><b>The bottom line</b><span>Security, scale, personalisation and action boundaries all had to hold at the same time. They shaped every architectural decision.</span></div>
+  </div>
+</section>
+
+<section class="ch band" id="resolution">
+  <div class="wrap">
+    <div class="inapp">
+      <div class="phone rv" id="tapphone" aria-label="Simosa app: home, Explore menu, SIA welcome, SIA menu">
+        <div class="scr">
+          <img src="/images/case-studies/03-simosa-home.webp" alt="Simosa home screen" class="on">
+          <img src="/images/case-studies/04-find-sia.webp" alt="Explore menu with SIA under Support and Account Management">
+          <img src="/images/case-studies/05-sia-welcome.webp" alt="SIA welcome screen">
+          <img src="/images/case-studies/13-sia-menu.webp" alt="SIA menu: bundles, balance, data usage, recharge, SIM, coverage, complaints">
+          <span class="tap" id="tapdot"></span>
+        </div>
+      </div>
+      <div class="rv">
+        <div class="head" style="margin-bottom:22px">
+          <span class="eyebrow">03 · The resolution</span>
+          <h2 class="title">Built into Simosa, not bolted on</h2>
+        </div>
+        <ol class="path4" id="path4">
+          <li class="on"><span class="n">1</span><span><b>Open Simosa</b>The app they use every day</span></li>
+          <li><span class="n">2</span><span><b>Go to Lifestyle</b>Support &amp; account management</span></li>
+          <li><span class="n">3</span><span><b>Tap SIA</b>No helpline, no website</span></li>
+          <li><span class="n">4</span><span><b>Ask anything</b>Bundles, balance, SIM, complaints</span></li>
+        </ol>
+        <div class="notlist">
+          <span><s>A generic chatbot</s></span>
+          <span><s>A standalone support tool</s></span>
+          <span class="yes">An AI layer inside a product they trust</span>
+        </div>
+        <ul class="pts" style="margin-top:24px">
+          <li><b>Built directly into Simosa:</b> a production-grade assistant inside Jazz's all-in-one digital self-care and lifestyle app.</li>
+          <li><b>Easy to find:</b> SIA sits under Support &amp; Account Management, next to services customers already use.</li>
+          <li><b>One place for everything:</b> bundles, balance, usage, SIM questions and complaints, all in one chat.</li>
+          <li><b>Live in production today</b> on Google Play and the App Store.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What we delivered</span><ul class="pts cols"><li><b>Built and deployed SIA:</b> a customer-facing AI assistant inside Simosa, live in production.</li><li><b>Connected it to Jazz's systems:</b> internal customer data for account answers, and approved SOPs, policies and documents through Amazon Kendra.</li><li><b>Secured access:</b> phone-number and OTP verification before any account data is accessed.</li><li><b>Built a sandboxed LLM layer:</b> AWS Bedrock with a locally hosted Llama model on EC2, keeping subscriber data in a controlled environment.</li><li><b>Designed it for production scale:</b> multi-tenant, load-balanced and autoscaled on AWS, with DynamoDB for session and memory.</li><li><b>Set the action limits:</b> confirmation before customer-impacting actions, and clean escalation when SIA can't resolve a query.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch" style="padding-bottom:clamp(40px,6vw,72px)">
+  <div class="wrap strip-hint rv" style="margin-bottom:18px">
+    <div class="head" style="margin:0"><span class="eyebrow">Proof</span><h2 class="title">Real screens from the live app</h2></div>
+    <div class="arrows"><button type="button" id="sl" aria-label="Scroll left"><svg width="16" height="16" viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><button type="button" id="sr" aria-label="Scroll right"><svg width="16" height="16" viewBox="0 0 16 16"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+  </div>
+  <div class="strip" id="strip"><div class="strip-row" id="striprow"></div></div>
+  <div class="wrap">
+    <div class="note rv" style="margin-top:14px"><span class="lbl">What the screens show</span><ul class="pts cols"><li><b>01–02 · Sign in:</b> the customer enters their number and verifies with a one-time code.</li><li><b>03–05 · Find SIA:</b> from the Simosa home screen to the assistant, without leaving the app.</li><li><b>06–10 · Account answers:</b> bundles, live balance, usage and reset date, recharge and call history, SIM details.</li><li><b>11–12 · Knowledge and support:</b> coverage from approved documents, and a complaint registered with a reference ID.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch simsec" id="try">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">04 · How it works</span>
+      <h2 class="title">Ask SIA, and watch what happens underneath</h2>
+      <p class="sub">Tap a question in the phone. The architecture on the right lights up the exact path the answer takes. Demo data, recreated from the live app.</p>
+    </div>
+    <div class="simgrid">
+      <div class="simcol">
+        <div class="sim" id="sim">
+          <div class="scr">
+            <div class="status"><span>11:36</span><span>5G ▮▮▮</span></div>
+            <div class="top">SIA<small><i></i>VERIFIED</small></div>
+            <div class="chat" id="chat" aria-live="polite"></div>
+            <div class="qs" id="qs" role="group" aria-label="Questions to ask SIA"></div>
+            <div class="inbar"><span>Ask SIA…</span><i>➤</i></div>
+            <div class="login" id="login">
+              <div class="brandmark">SIMOSA<small>JAZZ WORLD</small></div>
+              <div class="sheet">
+                <h4 id="lgt">Begin your journey</h4>
+                <div class="lbl" id="lgl">Enter your mobile number</div>
+                <div class="field" id="lgf"><span>+92</span><em id="num"></em></div>
+                <div class="otp" id="otp" hidden><span></span><span></span><span></span><span></span></div>
+                <div class="go" id="lgb">CONTINUE</div>
+                <div class="safe" id="lgs">🔒 No account data touched yet</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="route" id="route"><i></i><span>Waiting for sign-in</span></div>
+        <div class="simctl"><button type="button" id="replay">↺ Replay from sign-in</button><span id="mode">Auto tour</span></div>
+      </div>
+      <div class="archcol">
+        <div class="archbox box">
+          <div class="lgd"><span><i style="background:var(--navy)"></i>Entry &amp; control</span><span><i style="background:var(--cyan)"></i>Approved knowledge</span><span><i style="background:var(--royal)"></i>Private inference</span><span><i style="background:var(--green)"></i>Verified / safe</span></div>
+          <svg id="arch" role="img" aria-label="Architecture: mobile app, API layer, OTP auth, SIA, API gateway; then either approved knowledge retrieval (S3, Amazon Kendra, AWS Bedrock) or sandboxed private inference (load balancer, auto scaling, Llama on EC2, AWS Bedrock, with DynamoDB and Teradata); ending in a safe answer."></svg>
+        </div>
+        <div class="trace" id="trace" aria-live="polite"><div class="t-h">// live trace</div></div>
+        <div class="info">
+          <div class="box" id="ninfo"><span class="eyebrow">Component</span><h3>Tap any box</h3><p>See what each part of the system does.</p></div>
+          <div class="sand"><span class="eyebrow" style="color:var(--royal)">Sandboxed by design</span><h3>Subscriber data never leaves a controlled layer</h3><p>Llama runs locally on EC2. Knowledge answers come only from Jazz's approved SOPs.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What's happening underneath</span><ul class="pts cols"><li><b>Verify first:</b> phone number + OTP confirms the customer before any account data is accessed.</li><li><b>Account questions take the private path:</b> load-balanced and autoscaled. Llama, hosted locally on EC2, handles the verified customer's account data inside the sandbox; AWS Bedrock is the reasoning layer that composes the reply.</li><li><b>Knowledge questions take the approved path:</b> Amazon Kendra retrieves from Jazz's SOPs and policies, and Bedrock writes a grounded answer.</li><li><b>Memory across the chat:</b> DynamoDB keeps session context, so follow-up questions just work.</li><li><b>Clear action boundaries:</b> anything customer-impacting needs the customer to confirm; unresolved cases escalate cleanly to a person.</li><li><b>Every reply is a safe answer:</b> grounded in the customer's data or Jazz's approved knowledge, never open-ended model output.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch band" id="different">
+  <div class="wrap">
+    <div class="head rv" style="text-align:center;justify-items:center">
+      <span class="eyebrow">05 · What makes it different</span>
+      <h2 class="title">Not your standard chatbot</h2>
+      <p class="sub">Ask both the same question and compare.</p>
+    </div>
+    <div class="askrow rv" id="askrow" role="group" aria-label="Ask both assistants"></div>
+    <div class="duel rv" id="duel">
+      <div class="gen"><div class="hd"><span>Typical support chatbot</span><span class="score">Sent away <b id="sgen">0</b></span></div><div class="log" id="lgen" aria-live="polite"></div></div>
+      <div class="sia"><div class="hd"><span>SIA in Simosa · verified</span><span class="score">Solved in-app <b id="ssia">0</b></span></div><div class="log" id="lsia" aria-live="polite"></div></div>
+    </div>
+    <div class="note rv" style="max-width:960px;margin-inline:auto;margin-top:34px"><span class="lbl">Four things a standard chatbot can't do</span><ul class="pts cols"><li><b>Inside their own product:</b> embedded in the app 40M customers use daily, not a website widget or third-party tool.</li><li><b>Actually personalised:</b> after OTP, it pulls the customer's real account data, so answers are specific to them, not generic FAQs.</li><li><b>Sandboxed LLM:</b> Bedrock plus a locally hosted Llama on EC2 give AI capability without exposing subscriber data.</li><li><b>Enforced action boundaries:</b> it guides, waits for the customer to confirm, and escalates. It never changes a plan on its own.</li></ul></div>
+  </div>
+</section>
+
+<section class="ch" id="results">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">06 · The result</span>
+      <h2 class="title">Live, and already at scale</h2>
+    </div>
+    <div class="kpis">
+      <div class="rv box" style="border-top:4px solid var(--royal)">
+        <h3>In production now</h3>
+        <div class="num">3–4M</div>
+        <div class="cells" id="cells" aria-label="3 to 4 million of 40 million app users, each square is 1 million"></div>
+        <p class="cap">Each square = 1M app users. Green: using SIA today. Dashed: capacity already built in.</p>
+        <ul class="pts"><li><b>Real usage:</b> customers check balance, bundles, usage and SIM, and raise complaints.</li><li><b>No leaving the app</b> to get any of it done.</li></ul>
+      </div>
+      <div class="rv box" style="border-top:4px solid var(--royal)">
+        <h3>Smarter triage</h3>
+        <svg id="triage" viewBox="0 0 320 150" aria-label="Illustration: most questions are resolved in the app, a few are escalated to a person"></svg>
+        <p class="cap">Illustration, not to scale.</p>
+        <ul class="pts"><li><b>Common queries</b> are resolved in-app.</li><li><b>Only cases that need a person</b> get escalated. Support handles the exceptions, not the volume.</li></ul>
+      </div>
+      <div class="rv box" style="border-top:4px solid var(--royal)">
+        <h3>Built to grow</h3>
+        <svg id="scale" viewBox="0 0 320 150" aria-label="Illustration: instances are added as traffic rises"></svg>
+        <p class="cap">Illustration of autoscaling.</p>
+        <ul class="pts"><li><b>Multi-tenant, load-balanced, autoscaled</b> on AWS.</li><li><b>Ready for all 40M</b> active app users as adoption grows.</li></ul>
+      </div>
+    </div>
+    <div class="verdict rv"><b>The result</b><span>Customers get faster answers to common account and service questions without leaving the app. Jazz's support team receives only the cases that need a person.</span></div>
+    <div class="store box rv">
+      <img src="/images/case-studies/simosa-app-icon.webp" alt="Simosa app icon">
+      <div class="who"><b>SIMOSA – Jazz World</b><span>On Google Play and the App Store · Jazz Digital Pakistan</span></div>
+      <div class="nums"><div><b>4.5★</b><span>Rating</span></div><div><b>942K</b><span>Reviews</span></div><div><b>50M+</b><span>Downloads</span></div></div>
+    </div>
+    <div class="stack rv">
+      <span>AWS Bedrock</span><span>Llama on EC2</span><span>Amazon Kendra</span><span>RAG</span><span>DynamoDB</span><span>OTP authentication</span><span>Multi-tenant</span><span>Load-balanced</span><span>Autoscaled</span><span>Simosa mobile app</span>
+    </div>
+  </div>
+</section>
+
+<section class="pi-close" id="contact">
+  <div class="pi-wrap">
+    <div class="pi-cta-card">
+      <div class="pi-cta-l">
+        <div class="pi-eyebrow">AI-native customer support</div>
+        <h2>Secure. Personal. Grounded. <b>Live at scale.</b></h2>
+        <p>We help organisations build AI capabilities and the software, data and infrastructure that make them work.</p>
+      </div>
+      <div class="pi-cta-r">
+        <span class="pi-cta-k">What a first conversation covers</span>
+        <ol class="pi-cta-steps"><li><b>01</b><span>Your business objective</span></li><li><b>02</b><span>The technical context</span></li><li><b>03</b><span>The right next step</span></li></ol>
+        <a class="pi-btn pi-btn-cyan pi-btn-wide" href="/contact-us">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+        <a class="pi-back" href="/case-studies">View all case studies &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
