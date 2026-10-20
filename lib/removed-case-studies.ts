@@ -37,6 +37,12 @@ export const REMOVED_CASE_STUDIES: { card: string; slug: string }[] = [
   { card: "47", slug: "field-submission-intelligence" }, // Field submissions turned into usable information
 ];
 
+/**
+ * Cards taken off the website that a page still shows, as work in progress with no link (no case study page yet):
+ * card 47 on the Private Equity page (Ali, 20 Oct 2026). The listing still leaves them out.
+ */
+export const SHOWN_WITHOUT_LINK = ["47"];
+
 /** Slugs renamed when client names came off the site (20 Oct 2026): old → new. next.config.ts redirects the old ones. */
 export const RENAMED_CASE_STUDY_SLUGS: [string, string][] = [
   ["truecontext-field-pulse", "field-submission-intelligence"],

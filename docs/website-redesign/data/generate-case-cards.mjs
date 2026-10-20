@@ -27,14 +27,14 @@ if (cards.length !== 50 || data.length !== 50) throw new Error(`expected 50 card
 const ROUTES = { "50": "/case-studies/implementation-execution-portal" };
 
 // Cards taken off the website (lib/removed-case-studies.ts) are left out.
-const { REMOVED_CASE_STUDIES } = await import(new URL("lib/removed-case-studies.ts", root));
+const { REMOVED_CASE_STUDIES, SHOWN_WITHOUT_LINK } = await import(new URL("lib/removed-case-studies.ts", root));
 const REMOVED = new Set(REMOVED_CASE_STUDIES.map((c) => c.card));
+const OFF_SITE = new Set(SHOWN_WITHOUT_LINK);
 
 const str = (s) => JSON.stringify(s);
 const list = (a) => "[" + a.map(str).join(", ") + "]";
 
-const entries = data.flatMap((e, i) => {
-  if (REMOVED.has(e.n)) return [];
+function entry(e, i, route) {
   const c = cards[i];
   const title = unescape(c.match(/<h3>(.*?)<\/h3>/)[1]);
   const meta = c.match(/<div class="meta"><b>(.*?)<\/b><span>(.*?)<\/span><\/div>/);
@@ -46,7 +46,7 @@ const entries = data.flatMap((e, i) => {
   return [
     "  {",
     `    n: ${str(e.n)},`,
-    `    route: ${str(e.currentRoute ?? ROUTES[e.n] ?? null)},`,
+    `    route: ${str(route)},`,
     `    title: ${str(e.title)},`,
     `    summary: ${str(e.summary)},`,
     `    org: ${str(e.org)},`,
@@ -58,7 +58,11 @@ const entries = data.flatMap((e, i) => {
     `    art: ${str(e.cardArtSvg)},`,
     "  },",
   ].join("\n");
-});
+}
+
+const entries = data.flatMap((e, i) => (REMOVED.has(e.n) ? [] : [entry(e, i, e.currentRoute ?? ROUTES[e.n] ?? null)]));
+// Cards off the website that a page still shows without a link (lib/removed-case-studies.ts): no route.
+const offSite = data.flatMap((e, i) => (REMOVED.has(e.n) && OFF_SITE.has(e.n) ? [entry(e, i, null)] : []));
 
 const src = `// Generated from docs/website-redesign/data/case-cards.json (PORT-PLAN.md, section 3).
 // The site reads the cards from the CaseCard table (edited in /admin; lib/case-cards-db.ts). These are the cards on the
@@ -91,6 +95,11 @@ export const CASE_CARDS: CaseCardData[] = [
 ${entries.join("\n")}
 ];
 
+/** Cards off the website that a page still shows, as work in progress with no link (lib/removed-case-studies.ts). */
+export const OFF_SITE_CASE_CARDS: CaseCardData[] = [
+${offSite.join("\n")}
+];
+
 export function caseCard(n: string): CaseCardData {
   const card = CASE_CARDS.find((c) => c.n === n);
   if (!card) throw new Error(\`Unknown case card \${n}\`);
@@ -99,4 +108,4 @@ export function caseCard(n: string): CaseCardData {
 `;
 
 writeFileSync(new URL("lib/case-cards.ts", root), src);
-console.log(`lib/case-cards.ts: ${entries.length} cards`);
+console.log(`lib/case-cards.ts: ${entries.length} cards, ${offSite.length} shown without a link`);

@@ -232,7 +232,7 @@ export default function SoftwareProductEngineering() {
             <Link className="btn btn-navy" href="/contact-us">Discuss an application <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
-          <div className="cgrid four">
+          <div className="cgrid related">
             <RelatedCaseCard n="01" />
             <RelatedCaseCard n="06" />
             <RelatedCaseCard n="26" />

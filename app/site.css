@@ -930,6 +930,15 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .ccard.pc .in{padding-top:26px}
 .ccard.pc .meta{line-height:1.5}
 @media (max-width:640px){.ccard.pc .art{height:184px;padding:14px}}
+/* Featured cases on service and industry pages: each card spans six shared rows (drawing, labels, title, summary,
+   tags, link), so these line up across the cards in a row whatever the text lengths */
+@supports (grid-template-rows:subgrid){
+  .cgrid.related>.ccard.pc{grid-row:span 6;grid-template-rows:subgrid;row-gap:0}
+  .cgrid.related>.ccard.pc>.in{grid-row:span 5;grid-template-rows:subgrid;row-gap:12px}
+  .cgrid.related>.ccard.pc>.in>*{align-self:start}
+}
+.ccard.nolink{cursor:default}
+.ccard.nolink:hover{box-shadow:none;transform:none}
 
 /* Card drawings move a little so they feel active (Ali, 14 Oct). Travelling dots (.mv) are SVG animateMotion. */
 @keyframes ca-march{to{stroke-dashoffset:-14}}
