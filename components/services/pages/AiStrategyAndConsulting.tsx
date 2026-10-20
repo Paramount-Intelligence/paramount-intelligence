@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/services-ai-strategy-and-consulting.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function AiStrategyAndConsulting() {
@@ -222,8 +221,8 @@ export default function AiStrategyAndConsulting() {
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
           <div className="cgrid two">
-            <CaseCard card={caseCard("05")} />
-            <CaseCard card={caseCard("30")} />
+            <RelatedCaseCard n="05" />
+            <RelatedCaseCard n="30" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

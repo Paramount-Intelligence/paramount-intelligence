@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/services-data-and-analytics.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function DataAndAnalytics() {
@@ -253,10 +252,10 @@ export default function DataAndAnalytics() {
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
           <div className="cgrid four">
-            <CaseCard card={caseCard("03")} />
-            <CaseCard card={caseCard("40")} />
-            <CaseCard card={caseCard("14")} />
-            <CaseCard card={caseCard("17")} />
+            <RelatedCaseCard n="03" />
+            <RelatedCaseCard n="40" />
+            <RelatedCaseCard n="14" />
+            <RelatedCaseCard n="17" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/industries-private-equity.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function PrivateEquity() {
@@ -198,9 +197,9 @@ export default function PrivateEquity() {
             <h2 className="title">Selected work</h2>
           </div>
           <div className="cgrid ">
-            <CaseCard card={caseCard("07")} summary="Support engineers can use connected enterprise knowledge and review AI-drafted responses within their existing workflow." />
-            <CaseCard card={caseCard("47")} summary="Field submissions translated into structured records, summaries, and management insights through an engagement spanning discovery, integration, testing, and handover." />
-            <CaseCard card={caseCard("03")} summary="A shared analytics architecture with separate company data connections and tenant boundaries." />
+            <RelatedCaseCard n="07" summary="Support engineers can use connected enterprise knowledge and review AI-drafted responses within their existing workflow." />
+            <RelatedCaseCard n="47" summary="Field submissions translated into structured records, summaries, and management insights through an engagement spanning discovery, integration, testing, and handover." />
+            <RelatedCaseCard n="03" summary="A shared analytics architecture with separate company data connections and tenant boundaries." />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>

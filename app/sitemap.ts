@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
-import { CASE_CARDS } from "@/lib/case-cards";
+import { getCaseCards } from "@/lib/case-cards-db";
 import { SITE_URL } from "@/lib/metadata";
 import { INDUSTRIES, ROUTES, SERVICES } from "@/lib/site-nav";
 
@@ -32,6 +32,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch (error) {
     console.error("sitemap: could not read case study slugs", error);
   }
-  const caseStudies = CASE_CARDS.flatMap((c) => (c.route && (c.fullCaseStudy || inDb.has(c.route)) ? [c.route] : []));
+  const caseStudies = (await getCaseCards()).flatMap((c) => (c.route && (c.fullCaseStudy || inDb.has(c.route)) ? [c.route] : []));
   return [...pages, ...caseStudies].map((p) => ({ url: SITE_URL + (p === "/" ? "" : p) }));
 }

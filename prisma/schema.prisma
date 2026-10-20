@@ -214,3 +214,26 @@ model Admin {
   password  String
   createdAt DateTime @default(now())
 }
+
+// A card on /case-studies and in the related-case lists of the service and industry pages (PORT-PLAN section 3,
+// data option B). Edited in /admin. The first 50 rows come from docs/website-redesign/data/case-cards.json.
+model CaseCard {
+  id             String   @id @default(cuid())
+  number         String   @unique // the card's number, "01" to "50" for the original cards
+  position       Int // display order on /case-studies (ascending)
+  title          String
+  summary        String   @db.Text
+  org            String // organisation label
+  industry       String // industry label as printed on the card
+  tags           String[] @default([])
+  searchText     String   @db.Text // what the Case Studies search matches
+  slug           String?  @unique // opens /case-studies/<slug>; null: the card links to /case-studies
+  fullCaseStudy  Boolean  @default(false) // green "Full case study" tab
+  workInProgress Boolean  @default(false) // amber "Work in progress" tab
+  art            String   @db.Text // the card drawing (inline SVG)
+  published      Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@index([position])
+}

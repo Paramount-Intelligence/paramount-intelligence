@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/industries-digital-natives.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function DigitalNatives() {
@@ -154,9 +153,9 @@ export default function DigitalNatives() {
             <h2 className="title">Selected work</h2>
           </div>
           <div className="cgrid ">
-            <CaseCard card={caseCard("12")} summary="Product discovery, comparison, and cart workflows connected in a conversational application." />
-            <CaseCard card={caseCard("07")} summary="Enterprise knowledge and ticket intelligence integrated into support operations." />
-            <CaseCard card={caseCard("47")} summary="AI transforms field-service submissions into structured records, summaries, and management insights inside a SaaS workflow." />
+            <RelatedCaseCard n="12" summary="Product discovery, comparison, and cart workflows connected in a conversational application." />
+            <RelatedCaseCard n="07" summary="Enterprise knowledge and ticket intelligence integrated into support operations." />
+            <RelatedCaseCard n="47" summary="AI transforms field-service submissions into structured records, summaries, and management insights inside a SaaS workflow." />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>

@@ -3,7 +3,7 @@ import type { CaseStudy } from "@prisma/client";
 import Button from "@/components/site/Button";
 import ClosingCta from "@/components/site/ClosingCta";
 import PageHero from "@/components/site/PageHero";
-import { CASE_CARDS } from "@/lib/case-cards";
+import { getCaseCardByRoute } from "@/lib/case-cards-db";
 import { ROUTES } from "@/lib/site-nav";
 
 type Item = { title: string; description: string };
@@ -48,8 +48,8 @@ const items = (v: unknown): Item[] =>
  * A case study without a full page, from the CaseStudy table (managed in /admin), in the redesign's style:
  * hero, client strip, "In a nutshell", numbered chapters for the fields that have content, closing card.
  */
-export default function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
-  const card = CASE_CARDS.find((c) => c.route === `/case-studies/${cs.slug}`);
+export default async function CaseStudyDetail({ cs }: { cs: CaseStudy }) {
+  const card = await getCaseCardByRoute(`/case-studies/${cs.slug}`);
   const facts = [
     ["Client", cs.clientName],
     ["Industry", cs.clientIndustry || cs.industry],

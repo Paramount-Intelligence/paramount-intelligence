@@ -1,10 +1,11 @@
 import Link from "next/link";
 import CaseArchive from "@/components/casestudies/listing/CaseArchive";
 import Icon from "@/components/site/Icon";
-import { CASE_CARDS } from "@/lib/case-cards";
+import { getCaseCards } from "@/lib/case-cards-db";
 
 // Page content from docs/website-redesign/reference/case-studies.html (the spec). Search and paging: CaseArchive.
-export default function CaseStudiesPage() {
+export default async function CaseStudiesPage() {
+  const cards = await getCaseCards();
   return (
     <>
       <section className="phero">
@@ -29,7 +30,7 @@ export default function CaseStudiesPage() {
       </section>
       <section className="sec band" style={{ paddingTop: "clamp(40px,5vw,64px)" }}>
         <div className="wrap">
-          <CaseArchive cards={CASE_CARDS} />
+          <CaseArchive cards={cards} />
         </div>
       </section>
       <section className="close">

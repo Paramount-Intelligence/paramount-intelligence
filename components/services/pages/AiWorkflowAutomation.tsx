@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/services-ai-workflow-automation.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function AiWorkflowAutomation() {
@@ -224,9 +223,9 @@ export default function AiWorkflowAutomation() {
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
           <div className="cgrid ">
-            <CaseCard card={caseCard("07")} />
-            <CaseCard card={caseCard("28")} />
-            <CaseCard card={caseCard("48")} />
+            <RelatedCaseCard n="07" />
+            <RelatedCaseCard n="28" />
+            <RelatedCaseCard n="48" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

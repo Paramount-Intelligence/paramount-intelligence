@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Caveat, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { CASE_CARDS } from "@/lib/case-cards";
+import { getCaseCardByRoute } from "@/lib/case-cards-db";
 import { pageMetadata } from "@/lib/metadata";
 import CaseStudyScripts from "./CaseStudyScripts";
 
@@ -33,9 +33,9 @@ function page(key: string) {
 }
 
 /** The page's own title and description; most reference pages have no description, so their card summary. */
-export function caseStudyMetadata(key: string): Metadata {
+export async function caseStudyMetadata(key: string): Promise<Metadata> {
   const { title, description, slug } = page(key);
-  const summary = CASE_CARDS.find((c) => c.route === slug)?.summary;
+  const summary = description ? undefined : (await getCaseCardByRoute(slug))?.summary;
   return pageMetadata({ title, description: description ?? summary, path: slug });
 }
 

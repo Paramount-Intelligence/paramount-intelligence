@@ -1,4 +1,6 @@
-// Generated from docs/website-redesign/data/case-cards.json (data option A in PORT-PLAN.md, section 3).
+// Generated from docs/website-redesign/data/case-cards.json (PORT-PLAN.md, section 3).
+// The site reads the cards from the CaseCard table (edited in /admin; lib/case-cards-db.ts). These are the cards that
+// table was first filled with, and what the site shows if the table can't be read.
 // The industry label and the search text are as the reference listing (case-studies.html) shows them.
 // Don't edit by hand: change the JSON and run `node docs/website-redesign/data/generate-case-cards.mjs`.
 
