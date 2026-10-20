@@ -993,3 +993,6 @@ html:has(main.cs-page){scroll-padding-top:auto}
 @media (max-width:640px){.cd-grid{grid-template-columns:1fr}.cd-facts div{grid-template-columns:1fr;gap:4px}}
 /* form send failure (the reference forms send nothing, so it has no such state); colours as .field .err */
 .form .send-err{font-size:.8rem;font-weight:600;color:#b42318}
+/* résumé over the size limit (careers form): the upload box takes the error colour, as other fields' borders do */
+.field.bad .file{border-color:#b42318}
+.field.bad .file input{border:0}

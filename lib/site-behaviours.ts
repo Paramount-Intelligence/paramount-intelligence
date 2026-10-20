@@ -347,15 +347,26 @@ function forms({ root, signal }: Ctx) {
     const ok = f.parentNode!.querySelector<HTMLElement>(".form-ok");
     const fail = $(".send-err", f), btn = $<HTMLButtonElement>("button[type=submit]", f);
     let sending = false;
+    // A required field must be filled in; a file input (optional) must be within its data-max-mb.
+    const check = (el: HTMLInputElement) => {
+      const field = el.closest(".field"), msg = field && field.querySelector<HTMLElement>(".err");
+      const file = el.type === "file" ? el.files?.[0] : undefined;
+      const valid = el.type === "file" ? !file || file.size <= Number(el.dataset.maxMb) * 1024 * 1024 : el.type === "checkbox" ? el.checked : el.type === "email" ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) : el.value.trim() !== "";
+      if (field) field.classList.toggle("bad", !valid);
+      if (msg) {
+        msg.textContent = valid ? "" : el.getAttribute("data-err");
+        // The file field's message isn't in the reference layout, so it takes no space until it's needed.
+        if (el.type === "file") msg.hidden = valid;
+      }
+      return valid;
+    };
+    // A file that is too large is reported as soon as it's chosen.
+    $$<HTMLInputElement>("input[type=file][data-max-mb]", f).forEach((el) => el.addEventListener("change", () => check(el), { signal }));
     f.addEventListener("submit", async (e) => {
       e.preventDefault();
       let bad: HTMLElement | null = null;
       $$<HTMLInputElement>("[data-err]", f).forEach((el) => {
-        const field = el.closest(".field"), msg = field && field.querySelector(".err");
-        const valid = el.type === "checkbox" ? el.checked : el.type === "email" ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) : el.value.trim() !== "";
-        if (field) field.classList.toggle("bad", !valid);
-        if (msg) msg.textContent = valid ? "" : el.getAttribute("data-err");
-        if (!valid && !bad) bad = el;
+        if (!check(el) && !bad) bad = el;
       });
       if (bad) { (bad as HTMLElement).focus(); return; }
       const send = SEND[f.dataset.form!];

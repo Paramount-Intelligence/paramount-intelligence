@@ -189,7 +189,7 @@ All other slugs keep the existing database-driven detail page (`components/cases
   - The success state is the reference's, without its "Design preview: this form is not connected yet" note.
   - When a send fails, a short message under the button asks the person to try again or email marty@paramountintelligence.co. The reference has no failure state.
 - **Escaping:** both email routes now escape form input placed in the email HTML (`lib/escape-html.ts`).
-- **Upload limit:** Vercel caps a request at 4.5 MB. The reference says "up to 10 MB"; Ali changed the hint to "up to 4 MB" (20 Oct 2026). A larger résumé shows the failure message.
+- **Upload limit:** Vercel caps a request at 4.5 MB. The reference says "up to 10 MB"; Ali changed the hint to "up to 4 MB" (20 Oct 2026). A larger résumé is refused as soon as it is chosen, with "This file is larger than 4 MB. Please choose a smaller PDF or DOCX file." under the upload box, and the form isn't sent.
 
 ## 6. Phases (one pull request into `uat` each)
 

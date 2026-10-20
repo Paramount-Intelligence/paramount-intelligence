@@ -220,9 +220,10 @@ export default function Careers() {
                 <span className="lab">Resume upload</span>
                 <div className="file">
                   <Icon name="file" />
-                  <input id="c-cv" type="file" accept=".pdf,.docx" aria-label="Resume upload" />
+                  <input id="c-cv" type="file" accept=".pdf,.docx" aria-label="Resume upload" data-max-mb="4" data-err="This file is larger than 4 MB. Please choose a smaller PDF or DOCX file." aria-describedby="c-cv-err" />
                 </div>
                 <span className="hint">PDF or DOCX, up to 4 MB. Please exclude confidential client information.</span>
+                <span className="err" id="c-cv-err" aria-live="polite" hidden />
               </div>
               <div className="field full">
                 <label className="check">
