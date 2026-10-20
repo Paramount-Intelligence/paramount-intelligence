@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { prisma } from '@/lib/prisma';
 import { REMOVED_CASE_STUDIES } from '@/lib/removed-case-studies';
+import { prisma } from '@/lib/prisma';
 
 const getTitleFilters = (queryValue: string | string[] | undefined) => {
   if (!queryValue) return [];
