@@ -222,7 +222,7 @@ export default function Careers() {
                   <Icon name="file" />
                   <input id="c-cv" type="file" accept=".pdf,.docx" aria-label="Resume upload" />
                 </div>
-                <span className="hint">PDF or DOCX, up to 10 MB. Please exclude confidential client information.</span>
+                <span className="hint">PDF or DOCX, up to 4 MB. Please exclude confidential client information.</span>
               </div>
               <div className="field full">
                 <label className="check">
