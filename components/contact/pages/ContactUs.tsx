@@ -18,7 +18,7 @@ export default function ContactUs() {
               <h1>Connect with Paramount Intelligence</h1>
               <p className="body">Contact Paramount to discuss an AI initiative, software requirement, technology decision, or engineering challenge. Engagements range from focused advisory and specialist support to managed implementation.</p>
               <div className="ctas">
-                <a className="btn btn-cyan" href="https://calendly.com/syedaliazzam/advisory?back=1" target="_blank" rel="noopener">Schedule a conversation <span className="arr"><Icon name="arrow" /></span></a>
+                <a className="btn btn-cyan" href="https://calendly.com/marty-paramountintelligence/30min" target="_blank" rel="noopener">Schedule a conversation <span className="arr"><Icon name="arrow" /></span></a>
               </div>
             </div>
           </div>
@@ -142,7 +142,7 @@ export default function ContactUs() {
               </div>
               <p>An introductory conversation establishes the business objective, current environment, and required support. The discussion helps determine the appropriate scope and next step.</p>
               <div>
-                <a className="btn btn-cyan btn-wide" href="https://calendly.com/syedaliazzam/advisory?back=1" target="_blank" rel="noopener">Schedule a conversation <span className="arr"><Icon name="arrow" /></span></a>
+                <a className="btn btn-cyan btn-wide" href="https://calendly.com/marty-paramountintelligence/30min" target="_blank" rel="noopener">Schedule a conversation <span className="arr"><Icon name="arrow" /></span></a>
               </div>
             </div>
             <div className="sbox">
