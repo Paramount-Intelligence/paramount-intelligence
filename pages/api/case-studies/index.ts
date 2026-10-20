@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { REMOVED_CASE_STUDIES } from '@/lib/removed-case-studies';
 import { prisma } from '@/lib/prisma';
 
 const getTitleFilters = (queryValue: string | string[] | undefined) => {
@@ -21,16 +22,20 @@ export default async function handler(
       const titleFilters = getTitleFilters(req.query.title);
 
       const caseStudies = await prisma.caseStudy.findMany({
-        where: titleFilters.length
-          ? {
-              OR: titleFilters.map((title) => ({
-                title: {
-                  contains: title,
-                  mode: 'insensitive' as const,
-                },
-              })),
-            }
-          : {},
+        where: {
+          // Case studies taken off the website aren't listed (lib/removed-case-studies.ts).
+          slug: { notIn: REMOVED_CASE_STUDIES.map((c) => c.slug) },
+          ...(titleFilters.length
+            ? {
+                OR: titleFilters.map((title) => ({
+                  title: {
+                    contains: title,
+                    mode: 'insensitive' as const,
+                  },
+                })),
+              }
+            : {}),
+        },
         orderBy: {
           createdAt: 'desc',
         },

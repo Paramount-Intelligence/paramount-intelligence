@@ -343,7 +343,6 @@ export default function HomePage() {
             <div className="big"><span className="wip" style={{ justifySelf: "start", marginBottom: "8px" }}>Work in progress</span>8 weeks<small>Discovery to production</small></div>
             <p>TrueContext Field Pulse moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
             <div className="acts">
-              <Link className="link" href="/case-studies/truecontext-field-pulse">Explore TrueContext Field Pulse <span className="arr"><Icon name="arrow" /></span></Link>
               <Link className="btn btn-navy" href="/services#forward-deployed-engineering">Explore forward-deployed engineering <span className="arr"><Icon name="arrow" /></span></Link>
             </div>
           </div>

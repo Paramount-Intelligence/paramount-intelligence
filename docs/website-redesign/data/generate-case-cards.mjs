@@ -26,10 +26,15 @@ if (cards.length !== 50 || data.length !== 50) throw new Error(`expected 50 card
 // Card 50 has no route on the current site; its page uses the slug PORT-PLAN.md (section 3) proposes.
 const ROUTES = { "50": "/case-studies/flexagon-implementation-execution-portal" };
 
+// Cards taken off the website (lib/removed-case-studies.ts) are left out.
+const { REMOVED_CASE_STUDIES } = await import(new URL("lib/removed-case-studies.ts", root));
+const REMOVED = new Set(REMOVED_CASE_STUDIES.map((c) => c.card));
+
 const str = (s) => JSON.stringify(s);
 const list = (a) => "[" + a.map(str).join(", ") + "]";
 
-const entries = data.map((e, i) => {
+const entries = data.flatMap((e, i) => {
+  if (REMOVED.has(e.n)) return [];
   const c = cards[i];
   const title = unescape(c.match(/<h3>(.*?)<\/h3>/)[1]);
   const meta = c.match(/<div class="meta"><b>(.*?)<\/b><span>(.*?)<\/span><\/div>/);
@@ -55,7 +60,9 @@ const entries = data.map((e, i) => {
   ].join("\n");
 });
 
-const src = `// Generated from docs/website-redesign/data/case-cards.json (data option A in PORT-PLAN.md, section 3).
+const src = `// Generated from docs/website-redesign/data/case-cards.json (PORT-PLAN.md, section 3).
+// The site reads the cards from the CaseCard table (edited in /admin; lib/case-cards-db.ts). These are the cards on the
+// website, and what the site shows if the table can't be read.
 // The industry label and the search text are as the reference listing (case-studies.html) shows them.
 // Don't edit by hand: change the JSON and run \`node docs/website-redesign/data/generate-case-cards.mjs\`.
 
@@ -79,7 +86,7 @@ export type CaseCardData = {
   art: string;
 };
 
-/** All 50 cards in display order. */
+/** The cards on the website, in display order (cards taken off it are in lib/removed-case-studies.ts). */
 export const CASE_CARDS: CaseCardData[] = [
 ${entries.join("\n")}
 ];
