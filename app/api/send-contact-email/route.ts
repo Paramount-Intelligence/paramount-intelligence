@@ -1,9 +1,14 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/escape-html";
 
 export async function POST(request: NextRequest) {
   try {
     const data = await request.json();
+    // Form input placed in the email HTML is escaped.
+    const h = Object.fromEntries(
+      ["name", "email", "company", "phone", "subject", "message"].map((k) => [k, escapeHtml(data[k])]),
+    ) as Record<string, string>;
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -21,13 +26,13 @@ export async function POST(request: NextRequest) {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #17599d;">New Contact Form Submission</h2>
         <div style="background:#f7fafc; padding:16px; border-radius:8px;">
-          <p><strong>Name:</strong> ${data.name || "-"}</p>
-          <p><strong>Email:</strong> ${data.email || "-"}</p>
-          <p><strong>Company:</strong> ${data.company || "-"}</p>
-          <p><strong>Phone:</strong> ${data.phone || "-"}</p>
-          <p><strong>Subject:</strong> ${data.subject || "-"}</p>
+          <p><strong>Name:</strong> ${h.name || "-"}</p>
+          <p><strong>Email:</strong> ${h.email || "-"}</p>
+          <p><strong>Company:</strong> ${h.company || "-"}</p>
+          <p><strong>Phone:</strong> ${h.phone || "-"}</p>
+          <p><strong>Subject:</strong> ${h.subject || "-"}</p>
           <h4>Message</h4>
-          <p style="white-space: pre-wrap;">${data.message || "-"}</p>
+          <p style="white-space: pre-wrap;">${h.message || "-"}</p>
         </div>
       </div>
     `;
@@ -44,8 +49,8 @@ export async function POST(request: NextRequest) {
       const confirmationHTML = `
         <div style="font-family: Arial, sans-serif; max-width:600px; margin:0 auto;">
           <h2 style="color:#17599d">Thanks for contacting Paramount Intelligence</h2>
-          <p>Hi ${data.name || ""},</p>
-          <p>Thanks for reaching out regarding <strong>${data.subject}</strong>. We received your message and will get back to you shortly.</p>
+          <p>Hi ${h.name || ""},</p>
+          <p>Thanks for reaching out regarding <strong>${h.subject}</strong>. We received your message and will get back to you shortly.</p>
           <div style="margin-top:16px;color:#999;font-size:12px">If you need immediate assistance, email ${process.env.CAREERS_EMAIL}</div>
         </div>
       `;

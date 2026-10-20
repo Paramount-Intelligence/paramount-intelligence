@@ -1,6 +1,28 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import SitePage from "@/components/site/SitePage";
+import AiEngineer from "@/components/careers/pages/AiEngineer";
+import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
+
+// The two open roles in the redesign (docs/website-redesign/reference/careers-*.html).
+const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; description: string }> = {
+  "ai-engineer": {
+    Page: AiEngineer,
+    title: "AI Engineer | Careers | Paramount Intelligence",
+    description:
+      "AI Engineer at Paramount Intelligence: AI agents, retrieval, evaluation, and enterprise AI applications delivered with client teams.",
+  },
+  "full-stack-engineer": {
+    Page: FullStackEngineer,
+    title: "Full Stack Engineer | Careers | Paramount Intelligence",
+    description:
+      "Full Stack Engineer at Paramount Intelligence: Web applications, APIs, integrations, and AI features inside client products.",
+  },
+};
+
+// The older postings below are no longer listed. They keep their URLs until Ali decides on them (PORT-PLAN section 1).
 
 // Complete job data
 const jobsData: { [key: string]: any } = {
@@ -392,8 +414,21 @@ interface PageProps {
   }>;
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const role = ROLES[(await params).slug];
+  return role ? { title: role.title, description: role.description } : {};
+}
+
 export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const role = ROLES[slug];
+  if (role) {
+    return (
+      <SitePage>
+        <role.Page />
+      </SitePage>
+    );
+  }
   const job = jobsData[slug];
 
   if (!job) {

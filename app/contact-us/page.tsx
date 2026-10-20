@@ -1,19 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ContactHero from "@/components/contact/Hero";
-import ContactForm from "@/components/contact/ContactForm";
-import ContactInfo from "@/components/contact/ContactInfo";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import ContactUs from "@/components/contact/pages/ContactUs";
 
+export const metadata: Metadata = {
+  title: "Contact Paramount Intelligence | Project Enquiries",
+  description:
+    "Discuss an AI, software, data, cloud, or automation requirement with Paramount, from a specialist assignment to a managed engineering engagement.",
+};
 
-export default function ContactUs() {
+export default function ContactUsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      {/* <ContactHeader /> */}
-      <ContactHero />
-      <ContactForm />
-      <ContactInfo />
-      <Footer />
-    </div>
+    <SitePage>
+      <ContactUs />
+    </SitePage>
   );
 }

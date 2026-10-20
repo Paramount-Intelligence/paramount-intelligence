@@ -991,3 +991,5 @@ html:has(main.cs-page){scroll-padding-top:auto}
 .cd-legend{margin-top:clamp(32px,4vw,48px);grid-template-columns:1fr}
 @media (max-width:960px){.cd-strip{grid-template-columns:1fr}.cd-grid{grid-template-columns:1fr 1fr}}
 @media (max-width:640px){.cd-grid{grid-template-columns:1fr}.cd-facts div{grid-template-columns:1fr;gap:4px}}
+/* form send failure (the reference forms send nothing, so it has no such state); colours as .field .err */
+.form .send-err{font-size:.8rem;font-weight:600;color:#b42318}

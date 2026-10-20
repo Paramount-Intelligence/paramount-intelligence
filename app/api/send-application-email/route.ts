@@ -1,5 +1,6 @@
 import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
+import { escapeHtml } from "@/lib/escape-html";
 
 export const runtime = "nodejs";
 
@@ -285,17 +286,17 @@ export async function POST(request: NextRequest) {
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Applicant Information</h3>
           
-          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          <p><strong>Position Applied For:</strong> ${formData.position}</p>
-          <p><strong>Years of Experience:</strong> ${formData.experience}</p>
+          <p><strong>Name:</strong> ${escapeHtml(formData.firstName)} ${escapeHtml(formData.lastName)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(formData.email)}</p>
+          <p><strong>Phone:</strong> ${escapeHtml(formData.phone)}</p>
+          <p><strong>Position Applied For:</strong> ${escapeHtml(formData.position)}</p>
+          <p><strong>Years of Experience:</strong> ${escapeHtml(formData.experience)}</p>
           
-          ${formData.linkedIn ? `<p><strong>LinkedIn Profile:</strong> <a href="${formData.linkedIn}">${formData.linkedIn}</a></p>` : ""}
-          ${formData.portfolio ? `<p><strong>Portfolio/GitHub:</strong> <a href="${formData.portfolio}">${formData.portfolio}</a></p>` : ""}
+          ${formData.linkedIn ? `<p><strong>LinkedIn Profile:</strong> <a href="${escapeHtml(formData.linkedIn)}">${escapeHtml(formData.linkedIn)}</a></p>` : ""}
+          ${formData.portfolio ? `<p><strong>Portfolio/GitHub:</strong> <a href="${escapeHtml(formData.portfolio)}">${escapeHtml(formData.portfolio)}</a></p>` : ""}
           
           <h3 style="margin-top: 20px; color: #333;">Cover Letter</h3>
-          <p style="white-space: pre-wrap; color: #555;">${formData.coverLetter}</p>
+          <p style="white-space: pre-wrap; color: #555;">${escapeHtml(formData.coverLetter)}</p>
           
           <p style="margin-top: 20px; font-size: 12px; color: #999;">
             <em>Resume/CV was attached to this application.</em>
@@ -322,16 +323,16 @@ export async function POST(request: NextRequest) {
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
         <h2 style="color: #17599d;">Application Received</h2>
         
-        <p>Dear ${formData.firstName},</p>
+        <p>Dear ${escapeHtml(formData.firstName)},</p>
         
-        <p>Thank you for your interest in Paramount Intelligence and for submitting your application for the <strong>${formData.position}</strong> position.</p>
+        <p>Thank you for your interest in Paramount Intelligence and for submitting your application for the <strong>${escapeHtml(formData.position)}</strong> position.</p>
         
         <p>We have successfully received your application and resume. Our hiring team will review your qualifications and get back to you within 3-5 business days.</p>
         
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
           <h3 style="margin-top: 0; color: #333;">Your Application Details</h3>
-          <p><strong>Position:</strong> ${formData.position}</p>
-          <p><strong>Experience Level:</strong> ${formData.experience}</p>
+          <p><strong>Position:</strong> ${escapeHtml(formData.position)}</p>
+          <p><strong>Experience Level:</strong> ${escapeHtml(formData.experience)}</p>
           <p><strong>Submission Date:</strong> ${new Date().toLocaleDateString()}</p>
         </div>
         

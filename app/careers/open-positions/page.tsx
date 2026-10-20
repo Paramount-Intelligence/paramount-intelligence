@@ -1,19 +1,17 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import OpenPositionsHeader from "@/components/careers/open-positions/Header";
-import OpenPositionsHero from "@/components/careers/open-positions/Hero";
-import JobListings from "@/components/careers/open-positions/JobListings";
-import Benefits from "@/components/careers/open-positions/Benefits";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import Careers from "@/components/careers/pages/Careers";
+
+export const metadata: Metadata = {
+  title: "Careers & Engineering Opportunities | Paramount Intelligence",
+  description:
+    "Explore opportunities to work on AI, software, data, and cloud engagements with Paramount Intelligence and register interest in future roles.",
+};
 
 export default function OpenPositionsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      <OpenPositionsHeader />
-      <OpenPositionsHero />
-      <JobListings />
-      {/* <Benefits /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <Careers />
+    </SitePage>
   );
 }
