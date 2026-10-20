@@ -2,12 +2,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import FAQHero from "@/components/faq/Hero";
 import FAQContent from "@/components/faq/Content";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "FAQ | Paramount Intelligence",
   description:
     "Find answers to frequently asked questions about joining Paramount Intelligence, our culture, projects, and career opportunities.",
-};
+  path: "/faq",
+});
 
 export default function FAQ() {
   return (

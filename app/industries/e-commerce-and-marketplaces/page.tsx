@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/commerce/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/commerce/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "E-commerce & Marketplaces | Paramount Intelligence",
+  description:
+    "Marketplaces depend on systems that optimize discovery, pricing, and operations in real time. We help organizations engineer them to scale reliably.",
+  path: "/industries/e-commerce-and-marketplaces",
+});
 
 export default function Home() {
   return (

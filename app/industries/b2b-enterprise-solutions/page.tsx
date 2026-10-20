@@ -9,6 +9,14 @@ import WhyChooseUs from "@/components/industries/WhyChooseUs";
 import SoftwareProducts from "@/components/industries/b2b/SoftwareProducts";
 import AddAICapabilities from "@/components/industries/b2b/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "B2B Enterprise Solutions | Paramount Intelligence",
+  description:
+    "B2B enterprise solutions are becoming more interconnected and workflow-driven. We help organizations engineer systems that operate reliably across the enterprise.",
+  path: "/industries/b2b-enterprise-solutions",
+});
 
 export default function Home() {
   return (

@@ -1,6 +1,29 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import SitePage from "@/components/site/SitePage";
+import { pageMetadata } from "@/lib/metadata";
+import AiEngineer from "@/components/careers/pages/AiEngineer";
+import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
+
+// The two open roles in the redesign (docs/website-redesign/reference/careers-*.html).
+const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; description: string }> = {
+  "ai-engineer": {
+    Page: AiEngineer,
+    title: "AI Engineer | Careers | Paramount Intelligence",
+    description:
+      "AI Engineer at Paramount Intelligence: AI agents, retrieval, evaluation, and enterprise AI applications delivered with client teams.",
+  },
+  "full-stack-engineer": {
+    Page: FullStackEngineer,
+    title: "Full Stack Engineer | Careers | Paramount Intelligence",
+    description:
+      "Full Stack Engineer at Paramount Intelligence: Web applications, APIs, integrations, and AI features inside client products.",
+  },
+};
+
+// The older postings below are no longer listed. They keep their URLs until Ali decides on them (PORT-PLAN section 1).
 
 // Complete job data
 const jobsData: { [key: string]: any } = {
@@ -392,8 +415,27 @@ interface PageProps {
   }>;
 }
 
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const path = `/careers/open-positions/${slug}`;
+  const role = ROLES[slug];
+  if (role) return pageMetadata({ title: role.title, description: role.description, path });
+  const job = jobsData[slug];
+  if (!job) return {};
+  // An older posting: its title and the first sentence of its overview.
+  return pageMetadata({ title: `${job.title} | Careers | Paramount Intelligence`, description: job.overview.split(/(?<=\.)\s/)[0], path });
+}
+
 export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
+  const role = ROLES[slug];
+  if (role) {
+    return (
+      <SitePage>
+        <role.Page />
+      </SitePage>
+    );
+  }
   const job = jobsData[slug];
 
   if (!job) {

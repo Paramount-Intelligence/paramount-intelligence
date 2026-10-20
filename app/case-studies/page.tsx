@@ -1,13 +1,18 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import CaseStudiesClient from "./CaseStudiesClient";
+import SitePage from "@/components/site/SitePage";
+import CaseStudiesPage from "@/components/casestudies/listing/CaseStudiesPage";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "AI & Engineering Case Studies | Paramount Intelligence",
+  description:
+    "Explore AI, software, data, and automation work, including the business challenge, delivered capability, and evidence behind each result.",
+  path: "/case-studies",
+});
 
 export default function CaseStudies() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-      <CaseStudiesClient />
-      <Footer />
-    </div>
+    <SitePage>
+      <CaseStudiesPage />
+    </SitePage>
   );
 }

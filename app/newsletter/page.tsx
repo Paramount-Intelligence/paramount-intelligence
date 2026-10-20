@@ -6,6 +6,14 @@ import NewsletterBenefits from "@/components/newsletter/Benefits";
 import SubscriptionForm from "@/components/newsletter/SubscriptionForm";
 import PastIssues from "@/components/newsletter/PastIssues";
 import Testimonials from "@/components/newsletter/Testimonials";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "The AI Intelligence Newsletter | Paramount Intelligence",
+  description:
+    "Get the latest AI trends, case studies, and actionable insights delivered to your inbox every week.",
+  path: "/newsletter",
+});
 
 export default function NewsletterPage() {
   return (

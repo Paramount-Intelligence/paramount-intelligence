@@ -1,0 +1,1568 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Schneider Electric EcoStruxure Co-Pilot | Paramount Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: the Paramount decks turned into a scroll story. White pages and #f3f3f3 bands, thin navy outline boxes, light royal-blue titles, cyan "+" accents; dark gradient only on the cover (hero) and back cover (close). Every chapter leads with something to watch or touch; copy is captions. */
+:root{
+  --navy:#0f256e;  --royal:#204ecf;  --cyan:#09b6f9;  --green:#3dbe8b;
+  --grey:#f3f3f3;  --line:#d9dbe0;   --pale:#eaf1ff;  --warn:#c2410c;
+  --text:#2b3245;  --muted:#6b7385;  --white:#ffffff;
+  --cover-a:#262d3d; --cover-b:#1a3a9e;
+  --sia-bg:#0e0c22; --sia-card:#1a1838; --sia-line:#3a3470; --sia-user:#3b37c9; --sia-glow:#7b5cff;
+  --f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--white);color:var(--text);font-family:var(--f);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}
+.band{background:var(--grey)}
+.ch{padding-block:clamp(64px,9vw,112px)}
+.eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--cyan)}
+.title{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:400;color:var(--royal);line-height:1.12;letter-spacing:-.01em}
+.sub{color:var(--text);font-size:1.02rem;max-width:62ch}
+.head{display:grid;gap:12px;margin-bottom:clamp(28px,4vw,48px)}
+.plus{color:var(--cyan);font-weight:700;margin-right:6px}
+.rule{display:flex;align-items:center;gap:14px;font-size:.78rem;font-weight:700;color:var(--navy)}
+.rule::before,.rule::after{content:"";flex:1;height:2px;background:var(--navy)}
+.rule span{white-space:nowrap}
+.rule.dots{position:relative}
+.box{border:1.5px solid var(--navy);background:var(--white)}
+.cap{font-size:.78rem;color:var(--muted)}
+.pill-tag{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--green);color:#fff;padding:6px 12px}
+.pulse{width:8px;height:8px;border-radius:50%;background:#fff;animation:pl 1.8s infinite}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(255,255,255,.8)}80%,100%{box-shadow:0 0 0 9px rgba(255,255,255,0)}}
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.9rem;text-decoration:none;padding:13px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-cyan{background:var(--cyan);color:var(--navy)}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff;background:transparent}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+.btn-navy{background:var(--navy);color:#fff}
+.seg{display:inline-flex;border:1.5px solid var(--navy)}
+.seg button{border:0;background:#fff;color:var(--navy);font-weight:600;font-size:.82rem;padding:9px 16px;cursor:pointer;transition:background .25s,color .25s}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.rv{transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .9s}
+.js .rv.pending{transform:translateY(26px);opacity:.3}
+
+/* DECK BULLETS */
+.pts{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.pts li{position:relative;padding-left:20px;font-size:.93rem;line-height:1.55;color:var(--text);min-width:0}
+.pts li::before{content:"+";position:absolute;left:0;top:-1px;color:var(--cyan);font-weight:800;font-size:1.05rem}
+.pts li b{color:var(--navy);font-weight:700}
+.pts.cols{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px}
+@media (max-width:760px){.pts.cols{grid-template-columns:1fr}}
+.note{position:relative;border:1.5px solid var(--navy);padding:28px 26px 22px;margin-top:34px;background:#fff}
+.note .lbl{position:absolute;top:-11px;left:18px;background:#fff;padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+.band .note{background:var(--grey)} .band .note .lbl{background:var(--grey)}
+.simsec .note{background:#fff} .simsec .note .lbl{background:#fff}
+.hero .pts{margin-top:22px;gap:8px}
+.hero .pts li{color:#c9d4f2;font-size:.95rem}
+.hero .pts li b{color:#fff}
+.kpis .pts{gap:8px}
+.kpis .pts li{font-size:.86rem}
+.verdict{margin-top:18px;display:flex;gap:18px;align-items:center;background:var(--navy);color:#fff;padding:18px 24px}
+.verdict b{color:var(--cyan);font-weight:700;white-space:nowrap}
+@media (max-width:640px){.verdict{flex-direction:column;align-items:flex-start;gap:6px}}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav img{height:34px;width:auto}
+.nav nav{display:flex;gap:2px}
+.nav nav a{font-size:.82rem;font-weight:600;color:var(--muted);text-decoration:none;padding:8px 12px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav nav a:hover,.nav nav a.on{color:var(--navy);border-color:var(--cyan)}
+.nav .btn{padding:9px 16px;font-size:.8rem}
+@media (max-width:960px){.nav nav{display:none}}
+
+/* HERO (deck cover) */
+.hero{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a) 0%,#1e2f6a 55%,var(--cover-b) 100%);overflow:hidden}
+.hero .tab{position:absolute;top:0;right:clamp(16px,4vw,40px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,64px);align-items:center;padding-block:clamp(64px,8vw,104px) clamp(48px,6vw,80px)}
+.hero-grid>*{min-width:0}
+.hero .eyebrow{color:#9fb3e8}
+.hero h1{font-size:clamp(2.4rem,5.4vw,4.3rem);font-weight:700;line-height:1.04;letter-spacing:-.02em;margin-top:18px}
+.hero h1 b{color:var(--cyan);font-weight:700}
+.hero .lede{margin-top:20px;color:#c9d4f2;font-size:1.06rem;max-width:46ch}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:44px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.hero .meta div{display:grid;gap:2px}
+.hero .meta span{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.hero .meta b{font-weight:500;font-size:.92rem}
+.matrix-card{border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);padding:clamp(18px,3vw,28px);display:grid;gap:20px}
+.mx-legend{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mx-legend button{all:unset;cursor:pointer;display:grid;gap:2px;padding:10px 12px;border:1px solid rgba(160,185,240,.3);transition:background .25s,border-color .25s}
+.mx-legend button b{font-size:clamp(1.3rem,2.6vw,1.9rem);font-weight:700;line-height:1.05;font-variant-numeric:tabular-nums}
+.mx-legend button span{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#9fb3e8}
+.mx-legend button.on{background:rgba(255,255,255,.1);border-color:#fff}
+.mx-legend button:nth-child(3) b{color:var(--cyan)}
+.mx-legend button:focus-visible{outline:2px solid var(--cyan)}
+.matrix{display:grid;grid-template-columns:repeat(10,1fr);gap:clamp(5px,1vw,9px)}
+.matrix i{aspect-ratio:1;border-radius:50%;background:rgba(160,185,240,.22);transition:background .5s,transform .5s,box-shadow .5s}
+.matrix i.app{background:#fff}
+.matrix i.sia{background:var(--cyan);box-shadow:0 0 14px rgba(9,182,249,.8);transform:scale(1.12)}
+.matrix i.half{background:linear-gradient(90deg,var(--cyan) 50%,#fff 50%)}
+.mx-cap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.74rem;color:#9fb3e8}
+.mx-cap b{color:#fff;font-weight:600}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}}
+@media (max-width:440px){.mx-legend{grid-template-columns:1fr}.mx-legend button{grid-template-columns:auto 1fr;align-items:baseline;gap:10px}}
+
+/* CLIENT */
+.client{display:grid;grid-template-columns:auto 1fr;gap:0;border-bottom:1px solid var(--line)}
+.client .who{background:var(--grey);padding:26px 28px;display:grid;gap:8px;min-width:260px}
+.client .who h3{font-size:.95rem;color:var(--navy)}
+.client dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 18px;font-size:.88rem}
+.client dt{font-weight:700;color:var(--navy)}
+.client dd{margin:0}
+.client .nut{padding:26px 28px;display:grid;gap:8px;align-content:center}
+.client .nut h3{font-size:.95rem;color:var(--navy)}
+.client .nut p{max-width:70ch}
+@media (max-width:760px){.client{grid-template-columns:1fr}.client .who{min-width:0}}
+
+/* PROBLEM SCENE */
+.scene-wrap{display:grid;grid-template-columns:1fr 300px;gap:24px;align-items:stretch}
+.scene-wrap>*{min-width:0}
+@media (max-width:900px){.scene-wrap{grid-template-columns:1fr}}
+.scene{padding:clamp(12px,2vw,20px)}
+.scene svg{width:100%;height:auto;display:block}
+.scene .bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.scene .bar b{color:var(--navy);font-size:.95rem}
+.exits{display:grid;align-content:center;gap:10px;padding:28px;background:var(--navy);color:#fff}
+.exits .n{font-size:clamp(4rem,9vw,6.5rem);font-weight:700;line-height:1;font-variant-numeric:tabular-nums;transition:color .4s}
+.exits.zero .n{color:var(--green)}
+.exits span{font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.exits p{color:#c9d4f2;font-size:.9rem}
+.sv-out{transition:opacity .6s}
+.mode-after .sv-out{opacity:.14}
+.sv-in{opacity:0;transition:opacity .6s}
+.mode-after .sv-in{opacity:1}
+.sv-lbl{font-family:var(--f);font-size:13px;font-weight:600;fill:var(--navy)}
+.sv-sm{font-family:var(--f);font-size:11px;fill:var(--muted)}
+@media (max-width:640px){.sv-lbl{font-size:21px}.sv-sm{font-size:17px}}
+
+/* HUB */
+.hub{position:relative;height:520px}
+.hub svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hub .core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#2f5be0,var(--navy));color:#fff;display:grid;place-items:center;text-align:center;box-shadow:0 0 0 10px rgba(32,78,207,.08),0 0 0 22px rgba(32,78,207,.05);z-index:2}
+.hub .core b{font-size:1.7rem;font-weight:700;letter-spacing:.02em;display:block}
+.hub .core span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:#bcd0ff}
+.qchip{position:absolute;transform:translate(-50%,-50%);white-space:nowrap;font-size:.84rem;font-weight:600;padding:9px 14px;background:#fff;border:1.5px solid var(--line);color:var(--navy);transition:opacity .35s,border-color .35s,transform .35s;z-index:3;cursor:default}
+.qchip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:8px;vertical-align:1px}
+.qchip.dim{opacity:.18}
+.qchip.hot{border-color:currentColor;transform:translate(-50%,-50%) scale(1.06)}
+.k-account{color:var(--royal)} .k-knowledge{color:#0a8fc4} .k-action{color:#1f9a68}
+.qchip.k-account i{background:var(--royal)} .qchip.k-knowledge i{background:var(--cyan)} .qchip.k-action i{background:var(--green)}
+.qchip span{color:var(--navy)}
+.legend{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px}
+.legend button{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:#fff;padding:9px 14px;font-weight:600;font-size:.82rem;color:var(--navy);cursor:pointer;transition:border-color .25s,background .25s}
+.legend button i{width:10px;height:10px;border-radius:50%}
+.legend button.on{border-color:var(--navy);background:var(--pale)}
+@media (max-width:820px){
+  .hub{height:auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding-top:190px}
+  .hub svg{display:none}
+  .hub .core{top:80px;width:130px;height:130px}
+  .qchip{position:static;transform:none}
+  .qchip.hot{transform:scale(1.04)}
+}
+
+/* LOCKS */
+.locks{display:grid;grid-template-columns:1fr 340px 1fr;gap:clamp(16px,3vw,36px);align-items:center}
+.locks>*{min-width:0}
+.locks .col{display:grid;gap:16px}
+.lock{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:center;padding:18px;border:1.5px solid var(--line);background:#fff;transition:border-color .35s,box-shadow .35s}
+.lock .ic{width:52px;height:52px;display:grid;place-items:center;border:1.5px solid var(--navy);color:var(--navy);transition:background .35s,color .35s}
+.lock h3{font-size:1rem;color:var(--navy);font-weight:700}
+.lock p{font-size:.84rem;color:var(--muted)}
+.lock.on{border-color:var(--navy);box-shadow:0 14px 30px -22px rgba(15,37,110,.6)}
+.lock.on .ic{background:var(--royal);border-color:var(--royal);color:#fff}
+.lock:focus-visible{outline:2px solid var(--cyan)}
+.ring{position:relative;max-width:340px;width:100%;margin-inline:auto}
+.ring svg{width:100%;height:auto;display:block}
+.ring .mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.ring .mid b{font-size:2.6rem;font-weight:700;color:var(--navy);line-height:1;display:block;font-variant-numeric:tabular-nums;transition:color .4s}
+.ring .mid span{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.ring.all .mid b{color:var(--green)}
+.arc{fill:none;stroke:var(--line);stroke-width:18;transition:stroke .5s}
+.arc.on{stroke:var(--royal)}
+.ring.all .arc{stroke:var(--green)}
+@media (max-width:980px){.locks{grid-template-columns:1fr}.ring{order:-1;max-width:260px}}
+
+/* INSIDE THE APP */
+.inapp{display:grid;grid-template-columns:auto 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.inapp>*{min-width:0}
+@media (max-width:820px){.inapp{grid-template-columns:1fr;justify-items:center}}
+.phone{position:relative;width:280px;max-width:80vw;aspect-ratio:9/19.2;border-radius:40px;padding:10px;background:#11152b;box-shadow:0 30px 60px -28px rgba(15,37,110,.65),inset 0 0 0 1.5px #2b3150}
+.phone .scr{position:relative;width:100%;height:100%;border-radius:31px;overflow:hidden;background:#000}
+.phone .scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transition:opacity .5s}
+.phone .scr img.on{opacity:1}
+.phone::after{content:"";position:absolute;top:18px;left:50%;transform:translateX(-50%);width:70px;height:18px;border-radius:999px;background:#05060f;z-index:5}
+.tap{position:absolute;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;border:3px solid #fff;background:rgba(9,182,249,.45);opacity:0;z-index:4;pointer-events:none}
+.tap.go{animation:tap .9s ease-out}
+@keyframes tap{0%{opacity:0;transform:scale(1.6)}30%{opacity:1;transform:scale(.9)}100%{opacity:0;transform:scale(1.3)}}
+.path4{display:grid;gap:0;counter-reset:s}
+.path4 li{list-style:none;display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line);color:var(--muted);transition:color .3s}
+.path4 li b{display:block;color:inherit;font-size:1.02rem}
+.path4 li .n{width:40px;height:40px;display:grid;place-items:center;border:1.5px solid var(--line);font-weight:700;font-size:.85rem;transition:all .3s}
+.path4 li.on{color:var(--navy)}
+.path4 li.on .n{background:var(--royal);border-color:var(--royal);color:#fff}
+.path4 li.done .n{border-color:var(--royal);color:var(--royal)}
+.path4{padding:0;margin:0}
+.notlist{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.notlist span{font-size:.84rem;padding:8px 14px;border:1.5px solid var(--line);color:var(--muted)}
+.notlist span s{text-decoration-thickness:1.5px}
+.notlist span.yes{border-color:var(--navy);color:var(--navy);font-weight:600;background:var(--pale)}
+
+/* FILMSTRIP */
+.strip{overflow-x:auto;scroll-snap-type:x proximity;cursor:grab;padding-block:8px 22px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.strip.drag{cursor:grabbing;scroll-snap-type:none}
+.strip-row{display:flex;gap:22px;width:max-content;padding-inline:var(--gut)}
+.shot{width:190px;flex:none;scroll-snap-align:center;display:grid;gap:10px;user-select:none}
+.shot .phone{width:190px;border-radius:28px;padding:7px}
+.shot .phone .scr{border-radius:22px}
+.shot .phone .scr img{opacity:1;pointer-events:none}
+.shot .phone::after{top:12px;width:48px;height:12px}
+.shot b{font-size:.84rem;color:var(--navy)}
+.shot span{font-size:.72rem;font-weight:700;letter-spacing:.16em;color:var(--cyan)}
+.strip-hint{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.arrows{display:flex;gap:8px}
+.arrows button{width:42px;height:42px;border:1.5px solid var(--navy);background:#fff;color:var(--navy);cursor:pointer;display:grid;place-items:center}
+.arrows button:hover{background:var(--navy);color:#fff}
+
+/* SIMULATOR */
+.simsec{background:linear-gradient(180deg,var(--grey),#fff)}
+.simgrid{display:grid;grid-template-columns:330px 1fr;gap:clamp(24px,4vw,48px);align-items:start}
+.simgrid>*{min-width:0}
+@media (max-width:960px){.simgrid{grid-template-columns:1fr;justify-items:center}.simgrid>.archcol{width:100%}}
+.simcol{display:grid;gap:14px;justify-items:center;position:sticky;top:84px}
+@media (max-width:960px){.simcol{position:static}}
+.sim{width:310px;max-width:88vw;height:640px;border-radius:44px;padding:11px;background:#11152b;box-shadow:0 40px 70px -30px rgba(15,37,110,.7),inset 0 0 0 1.5px #2b3150;position:relative}
+.sim::after{content:"";position:absolute;top:19px;left:50%;transform:translateX(-50%);width:74px;height:19px;border-radius:999px;background:#05060f;z-index:9}
+.sim .scr{position:relative;width:100%;height:100%;border-radius:34px;overflow:hidden;background:radial-gradient(400px 260px at 50% -40px,rgba(140,40,90,.55),transparent 70%),var(--sia-bg);color:#ece9ff;display:flex;flex-direction:column}
+.sim .status{display:flex;justify-content:space-between;padding:14px 22px 0;font-size:.7rem;font-weight:600;color:#fff}
+.sim .top{display:flex;align-items:center;justify-content:center;position:relative;padding:12px 0 10px;font-weight:700;font-size:.95rem;letter-spacing:.06em}
+.sim .top small{position:absolute;right:16px;font-size:.55rem;font-weight:700;letter-spacing:.12em;color:var(--green);display:flex;align-items:center;gap:5px;opacity:0;transition:opacity .4s}
+.sim .top small i{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.sim.authed .top small{opacity:1}
+.chat{flex:1;overflow-y:auto;padding:6px 12px 10px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;scrollbar-width:none}
+.chat::-webkit-scrollbar{display:none}
+.msg{max-width:86%;font-size:.76rem;line-height:1.42;padding:9px 11px;border-radius:14px;animation:msg .35s both}
+@keyframes msg{from{opacity:0;transform:translateY(8px)}}
+.msg.u{align-self:flex-end;background:var(--sia-user);color:#fff;border-bottom-right-radius:4px}
+.msg.b{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-bottom-left-radius:4px}
+.msg.b.w{max-width:94%;width:94%}
+.msg .k{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#a99cff;margin-bottom:4px;display:block}
+.msg .big{font-size:1.35rem;font-weight:700;color:#fff;line-height:1.1}
+.msg .big small{font-size:.7rem;color:#c8c2ff}
+.msg .row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 0;border-top:1px solid var(--sia-line)}
+.msg .row:first-of-type{border-top:0}
+.msg .row em{font-style:normal;color:#b9b3e6;font-size:.68rem}
+.msg .row b{font-size:.74rem}
+.msg .price{font-size:.66rem;font-weight:700;color:#ffb27a;border:1px solid #6a3d38;padding:3px 7px;border-radius:6px;white-space:nowrap}
+.msg .btns{display:flex;gap:6px;margin-top:8px}
+.msg .btns button{flex:1;border:0;border-radius:8px;padding:7px;font-size:.7rem;font-weight:700;cursor:pointer;background:var(--sia-glow);color:#fff}
+.msg .btns button.ghost{background:transparent;border:1px solid var(--sia-line);color:#c8c2ff}
+.msg .btns button:disabled{opacity:.45;cursor:default}
+.msg .ok{color:var(--green);font-weight:700}
+.msg .ring2{display:flex;align-items:center;gap:12px}
+.msg .ring2 svg{flex:none}
+.msg .ref{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:.66rem;border:1px solid var(--green);color:var(--green);padding:3px 7px;border-radius:6px}
+.msg .bars{display:flex;align-items:flex-end;gap:3px;height:26px}
+.msg .bars i{width:6px;background:var(--green);border-radius:2px}
+.typing{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-radius:14px;padding:10px 12px;display:flex;gap:4px}
+.typing i{width:6px;height:6px;border-radius:50%;background:#a99cff;animation:ty 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes ty{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.qs{display:flex;gap:6px;overflow-x:auto;padding:8px 12px 6px;scrollbar-width:none}
+.qs::-webkit-scrollbar{display:none}
+.qs button{flex:none;border:1px solid var(--sia-line);background:rgba(123,92,255,.12);color:#e3deff;font-size:.68rem;font-weight:600;padding:7px 10px;border-radius:999px;cursor:pointer;transition:background .2s,border-color .2s}
+.qs button:hover,.qs button.on{background:rgba(123,92,255,.35);border-color:var(--sia-glow)}
+.inbar{margin:4px 12px 16px;display:flex;align-items:center;gap:8px;border:1px solid var(--sia-line);border-radius:999px;padding:6px 6px 6px 14px;font-size:.7rem;color:#8d86c4}
+.inbar span{flex:1}
+.inbar i{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#d946ef,#7b5cff);display:grid;place-items:center;color:#fff;font-style:normal;font-size:.8rem}
+/* login overlay */
+.login{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;justify-content:flex-end;background:radial-gradient(300px 300px at 50% 30%,rgba(200,40,80,.45),transparent 70%),#1a0f24;transition:transform .7s cubic-bezier(.6,0,.2,1),opacity .7s}
+.login.gone{transform:translateY(-100%);opacity:0;pointer-events:none}
+.login .brandmark{position:absolute;top:34%;left:0;right:0;text-align:center;font-weight:800;font-size:1.5rem;letter-spacing:.08em;color:#ff6b6b}
+.login .brandmark small{display:block;font-size:.6rem;letter-spacing:.2em;color:#e9b7c4;font-weight:600;margin-top:6px}
+.sheet{background:#fff;color:#1d1d2b;border-radius:22px 22px 0 0;padding:20px 20px 26px;display:grid;gap:12px}
+.sheet h4{margin:0;text-align:center;font-size:1rem}
+.sheet .lbl{text-align:center;font-size:.66rem;color:#777}
+.field{display:flex;gap:10px;align-items:center;border-bottom:1.5px solid #e2e2ea;padding:6px 4px;font-size:.95rem;font-weight:600;min-height:36px}
+.field em{font-style:normal;color:#999}
+.otp{display:flex;gap:10px;justify-content:center}
+.otp span{width:38px;height:44px;border:1.5px solid #e2e2ea;border-radius:10px;display:grid;place-items:center;font-weight:700;font-size:1.1rem;transition:border-color .2s}
+.otp span.f{border-color:#7b5cff}
+.sheet .go{border:0;border-radius:999px;padding:11px;font-weight:700;font-size:.78rem;color:#fff;background:linear-gradient(90deg,#c084fc,#f9a8d4);letter-spacing:.06em}
+.sheet .safe{display:flex;gap:8px;align-items:center;justify-content:center;font-size:.64rem;font-weight:700;color:#1f9a68;letter-spacing:.06em}
+.route{width:310px;max-width:88vw;display:flex;align-items:center;gap:10px;border:1.5px solid var(--navy);background:#fff;padding:10px 14px;font-size:.78rem;font-weight:600;color:var(--navy);min-height:46px}
+.route i{width:10px;height:10px;border-radius:50%;flex:none;background:var(--line);transition:background .3s}
+.simctl{display:flex;gap:8px;align-items:center;font-size:.76rem;color:var(--muted)}
+.simctl button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.76rem;padding:7px 12px;cursor:pointer}
+.simctl button:hover{background:var(--navy);color:#fff}
+.archcol{display:grid;gap:14px}
+.archbox{padding:clamp(10px,2vw,18px);position:relative}
+.archbox svg{width:100%;height:auto;display:block;max-height:min(600px,64vh)}
+@media (max-width:640px){.archbox svg{max-height:none}}
+.archbox .lgd{display:flex;gap:16px;flex-wrap:wrap;font-size:.74rem;font-weight:600;color:var(--navy);margin:2px 4px 10px}
+.archbox .lgd span{display:flex;align-items:center;gap:6px}
+.archbox .lgd i{width:14px;height:3px}
+.anode{cursor:pointer}
+.anode .bx{fill:#fff;stroke:var(--navy);stroke-width:1.5;transition:fill .35s,stroke .35s}
+.anode .gl{fill:none;stroke:var(--navy);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s}
+.anode text{font-family:var(--f);font-weight:600;fill:var(--navy)}
+.anode.lit .bx{fill:var(--lc,#204ecf);stroke:var(--lc,#204ecf)}
+.anode.lit .gl{stroke:#fff}
+.anode.sel .bx{stroke-width:3}
+.anode.dim{opacity:.35}
+.anode{transition:opacity .4s}
+.wire{fill:none;stroke:#b9c2d6;stroke-width:1.6;stroke-dasharray:4 5;animation:fl 1.4s linear infinite}
+.wire.wk{stroke:#7fd3f7}.wire.wa{stroke:#8ea6ea}
+@keyframes fl{to{stroke-dashoffset:-18}}
+.gbox{fill:none;stroke-width:1.5}
+.glabel{font-family:var(--f);font-size:10.5px;font-weight:700;letter-spacing:.12em}
+.trace{background:#0d1a44;color:#cfe0ff;font-family:var(--mono);font-size:.74rem;padding:14px 16px;height:168px;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
+.trace div{display:flex;gap:10px;animation:msg .3s both}
+.trace div i{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none}
+.trace .t-h{color:#7f93c9}
+.info{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.info>div{padding:16px 18px;min-width:0}
+.info h3{font-size:.95rem;color:var(--navy);margin:4px 0}
+.info p{font-size:.86rem}
+.info .sand{background:var(--pale);border:1.5px solid var(--royal)}
+@media (max-width:640px){.info{grid-template-columns:1fr}}
+
+/* COMPARE: dual chat */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1.5px solid var(--navy);max-width:960px;margin-inline:auto}
+.duel>div{min-width:0;display:flex;flex-direction:column}
+.duel .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 18px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.duel .gen{background:#eef0f4}
+.duel .gen .hd{color:var(--muted);border-bottom:1px solid var(--line)}
+.duel .sia{background:var(--sia-bg);color:#ece9ff}
+.duel .sia .hd{color:#a99cff;border-bottom:1px solid var(--sia-line)}
+.duel .log{height:330px;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:9px;scroll-behavior:smooth;scrollbar-width:none}
+.duel .log::-webkit-scrollbar{display:none}
+.duel .m{max-width:88%;font-size:.84rem;line-height:1.45;padding:10px 12px;animation:msg .35s both}
+.duel .gen .u{align-self:flex-end;background:#c9ced9;color:#222}
+.duel .gen .b{align-self:flex-start;background:#fff;border:1px solid var(--line);color:#4a4f5c}
+.duel .gen .b.bad{border-color:#e9b49c}
+.duel .gen .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--warn);text-transform:uppercase}
+.duel .sia .u{align-self:flex-end;background:var(--sia-user);color:#fff;border-radius:12px 12px 4px 12px}
+.duel .sia .b{align-self:flex-start;background:var(--sia-card);border:1px solid var(--sia-line);border-radius:12px 12px 12px 4px}
+.duel .sia .b b.big{font-size:1.25rem;color:#fff}
+.duel .sia .b small{display:block;margin-top:6px;font-size:.66rem;font-weight:700;letter-spacing:.1em;color:var(--green);text-transform:uppercase}
+.duel .typing{margin:0}
+.duel .gen .typing{background:#fff;border-color:var(--line)}
+.duel .gen .typing i{background:#9aa1b2}
+.score{display:flex;gap:6px;align-items:center;font-size:.7rem;letter-spacing:.06em}
+.score b{font-size:.9rem;font-variant-numeric:tabular-nums}
+.askrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 auto 18px;max-width:960px}
+.askrow button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font-weight:600;font-size:.84rem;padding:10px 16px;cursor:pointer;transition:background .2s,color .2s}
+.askrow button:hover,.askrow button.on{background:var(--navy);color:#fff}
+.askrow button:disabled{opacity:.5;cursor:default}
+.diffs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin:22px auto 0;border:1.5px solid var(--line);max-width:960px;background:#fff}
+.diffs div{padding:16px 18px;display:grid;gap:6px;min-width:0}
+.diffs div+div{border-left:1.5px solid var(--line)}
+.diffs h3{font-size:.86rem;color:var(--navy)}
+.diffs s{color:var(--muted);font-size:.8rem;text-decoration-thickness:1.5px}
+.diffs b{font-size:.84rem;color:var(--royal);font-weight:600}
+@media (max-width:820px){.diffs{grid-template-columns:repeat(2,minmax(0,1fr))}.diffs div:nth-child(3){border-left:0}.diffs div:nth-child(n+3){border-top:1.5px solid var(--line)}}
+@media (max-width:640px){.duel{grid-template-columns:1fr}.duel .log{height:250px}}
+
+/* RESULTS */
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.kpis>div{padding:22px;display:grid;gap:14px;align-content:start;min-width:0;border-top:4px solid var(--royal);background:#fff}
+@media (max-width:960px){.kpis{grid-template-columns:1fr}}
+.kpis h3{font-size:1rem;color:var(--navy)}
+.kpis .num{font-size:clamp(2.4rem,4.5vw,3.4rem);font-weight:700;color:var(--royal);line-height:1;font-variant-numeric:tabular-nums}
+.kpis .cap{min-height:2.4em}
+.cells{display:grid;grid-template-columns:repeat(20,1fr);gap:3px}
+.cells i{aspect-ratio:1;border:1px dashed #9fb0d6;transition:background .4s,border-color .4s}
+.cells i.f{background:var(--green);border:1px solid var(--green)}
+.cells i.h{background:linear-gradient(90deg,var(--green) 50%,transparent 50%);border:1px solid var(--green)}
+.kpis canvas,.kpis svg{width:100%;height:150px;display:block}
+.store{margin-top:22px;display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:20px 24px}
+.store img{width:60px;height:60px;border-radius:14px}
+.store .who{flex:1;min-width:200px}
+.store .who b{display:block;color:var(--navy)}
+.store .who span{font-size:.84rem;color:var(--muted)}
+.store .nums{display:flex;gap:30px;flex-wrap:wrap}
+.store .nums div{display:grid}
+.store .nums b{font-size:1.35rem;color:var(--navy);font-variant-numeric:tabular-nums}
+.store .nums span{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.stack span{font-size:.8rem;font-weight:600;color:var(--navy);padding:7px 12px;border:1.5px solid var(--line);background:#fff}
+
+/* CLOSE */
+.close{position:relative;color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,var(--cover-a),#1e2f6a 55%,var(--cover-b));overflow:hidden}
+.close .wrap{padding-block:clamp(72px,10vw,120px);display:grid;gap:22px;position:relative}
+.close .eyebrow{color:#9fb3e8}
+.close h2{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.05;max-width:17ch}
+.close h2 b{color:var(--cyan);font-weight:700}
+.close p{color:#c9d4f2;max-width:56ch}
+.close .meta{display:flex;gap:40px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid rgba(160,185,240,.35)}
+.close .meta div{display:grid;gap:2px}
+.close .meta span{font-size:.64rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8}
+.close .meta b{font-weight:500;font-size:.92rem}
+.close .mk{position:absolute;right:-50px;bottom:-60px;width:min(380px,55vw);opacity:.13;pointer-events:none}
+footer{border-top:1px solid var(--line);font-size:.78rem;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:22px}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv.pending{transform:none;opacity:1}
+}
+
+/* ===== Schneider Electric · EcoStruxure Co-Pilot case study (se-) ===== */
+.hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}
+.hero .wrap{position:relative}
+.demo-note{font-size:.72rem;font-weight:600;color:var(--muted);letter-spacing:.02em}
+.mono{font-family:var(--mono)}
+@keyframes sein{from{opacity:0;transform:translateY(8px)}}
+.se-btn{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:600 .8rem var(--f);padding:8px 14px;cursor:pointer}
+.se-btn:hover{background:var(--navy);color:#fff}
+.se-btn.pri{background:var(--cyan);border-color:var(--cyan);color:var(--navy)}
+.se-btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* HERO co-pilot card */
+.se-hq{background:#fff;color:var(--text);border:1px solid rgba(160,185,240,.5);box-shadow:0 30px 60px -30px rgba(5,12,40,.8);display:grid;align-content:start;min-height:440px}
+.se-hqbar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--navy);color:#fff;font-size:.8rem}
+.se-hqbar .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(61,190,139,.25)}
+.se-hqbar .mono{margin-left:auto;font-size:.62rem;color:#9fd9ff}
+.se-hqq{margin:14px 14px 0;align-self:end;justify-self:end;max-width:88%;background:var(--pale);border:1px solid #c9d8fb;padding:10px 12px;font-size:.84rem;color:var(--navy);min-height:44px}
+.se-hqsrc{display:flex;flex-wrap:wrap;gap:6px;padding:12px 14px 0;min-height:40px}
+.se-hqsrc span{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;border:1px solid var(--line);padding:4px 7px;opacity:0;transform:translateY(6px);transition:all .35s;color:var(--text);max-width:100%;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.se-hqsrc span.on{opacity:1;transform:none}
+.se-hqsrc em{font-style:normal;font-family:var(--mono);background:var(--navy);color:#fff;padding:0 5px;font-size:.6rem}
+.se-hqsrc i{font-style:normal;font-size:.56rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--royal)}
+.se-hqa{padding:12px 14px;font-size:.82rem;min-height:170px}
+.se-hqa p{margin:0 0 6px;color:var(--navy);font-weight:600}
+.se-hqa ol{margin:0;padding-left:18px;display:grid;gap:5px}
+.se-hqa li{opacity:0;transform:translateX(-6px);transition:all .35s}
+.se-hqa li.on{opacity:1;transform:none}
+.se-hqa sup{font-family:var(--mono);font-size:.58rem;background:#e8f8ff;color:#0a6e96;padding:0 4px;margin-left:2px}
+.se-hqf{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 14px;border-top:1px solid var(--line);font-size:.72rem;color:var(--muted);margin-top:auto}
+.se-ok{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:4px 8px;border:1.5px solid var(--green);color:#1f8a5c;opacity:.15;transition:opacity .3s}
+.se-ok.on{opacity:1}
+
+/* PROBLEM: queue */
+.se-q{padding:clamp(14px,2.4vw,24px)}
+.se-qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.se-qtop b{color:var(--navy)}
+.se-qgrid{position:relative;display:grid;grid-template-columns:200px minmax(0,1fr) 300px;gap:10px;align-items:center;min-height:300px;background:repeating-linear-gradient(90deg,transparent 0 23px,#f0f2f7 23px 24px),#fbfcfe;border:1px solid var(--line);padding:14px;overflow:hidden}
+@media (max-width:820px){.se-qgrid{grid-template-columns:1fr;min-height:0;gap:56px}.se-lanes{display:none}.se-juniors{display:flex;justify-content:space-between}.se-jr{flex-direction:column;gap:4px;font-size:.58rem;text-align:center;width:19%}.se-node{grid-template-columns:44px minmax(0,1fr) auto}.se-node i{width:44px;height:44px}}
+.se-juniors{display:grid;gap:8px}
+.se-jr{display:flex;align-items:center;gap:10px;font-size:.76rem;color:var(--navy);font-weight:600}
+.se-jr i{width:30px;height:30px;flex:none;border:1.5px solid var(--navy);background:#fff;position:relative;transition:background .2s}
+.se-jr i::before{content:"";position:absolute;left:9px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--navy)}
+.se-jr i::after{content:"";position:absolute;left:5px;bottom:4px;width:17px;height:8px;background:var(--navy)}
+.se-jr.ask i{background:var(--pale)}
+.se-dest{display:grid;gap:14px}
+.se-node{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;border:1.5px solid var(--navy);background:#fff;padding:12px;transition:opacity .4s,border-color .3s}
+.se-node i{width:52px;height:52px;display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.86rem;background:var(--navy);color:#fff}
+.se-node.cop i{background:var(--cyan);color:var(--navy);font-size:1.3rem}
+.se-node b{display:block;color:var(--navy);font-size:.9rem}
+.se-node small{font-size:.7rem;color:var(--muted)}
+.se-node em{font-style:normal;font-family:var(--mono);font-size:1.3rem;color:var(--navy);font-variant-numeric:tabular-nums;min-width:2ch;text-align:right}
+.se-node.hit{animation:sehit .35s}
+@keyframes sehit{50%{box-shadow:0 0 0 6px rgba(9,182,249,.25)}}
+.se-node.sme.hit{animation:sehit2 .35s}
+@keyframes sehit2{50%{box-shadow:0 0 0 6px rgba(194,65,12,.18)}}
+.se-q:not(.after) .se-node.cop{opacity:.3}
+.se-q.after .se-node.cop{border-color:var(--cyan)}
+.se-dot{position:absolute;left:-6px;top:-6px;width:12px;height:12px;border-radius:50%;background:#c2410c;pointer-events:none;box-shadow:0 0 0 3px rgba(194,65,12,.15)}
+.se-dot.c{background:var(--cyan);box-shadow:0 0 0 3px rgba(9,182,249,.2)}
+.se-week{margin-top:16px;display:grid;gap:6px}
+.se-wbar{display:flex;height:34px;border:1.5px solid var(--navy);font-size:.7rem;font-weight:600}
+.se-wbar i{display:flex;align-items:center;padding:0 10px;font-style:normal;white-space:nowrap;overflow:hidden;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.se-wbar .rep{background:#c2410c;color:#fff;width:40%}
+.se-q.after .se-wbar .rep{background:var(--cyan);color:var(--navy)}
+.se-wbar .eng{flex:1;background:var(--pale);color:var(--navy)}
+.se-wcap{font-size:.84rem;margin:0}
+.se-wcap b{color:var(--navy)}
+@media (max-width:560px){.se-wbar .rep span{display:none}}
+
+/* BRIEF */
+.se-obj{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:860px){.se-obj{grid-template-columns:1fr}}
+.se-ob{all:unset;box-sizing:border-box;cursor:pointer;position:relative;border:1.5px solid var(--navy);background:#fff;padding:18px;display:grid;gap:8px;align-content:start;min-height:220px;overflow:hidden}
+.se-ob:focus-visible{outline:2px solid var(--cyan)}
+.se-ob .n{font-family:var(--mono);font-size:.7rem;color:var(--royal)}
+.se-ob b{font-size:1.08rem;color:var(--navy)}
+.se-ob .fr,.se-ob .to{display:grid;gap:2px;font-size:.88rem;padding:10px 12px;transition:all .5s cubic-bezier(.2,.8,.2,1)}
+.se-ob small{font-size:.6rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.se-ob .fr{background:#fdeee6;color:#8a2d07}
+.se-ob .to{background:var(--navy);color:#fff;opacity:0;transform:translateY(12px)}
+.se-ob .to small{color:var(--cyan)}
+.se-ob[aria-pressed="true"] .fr{opacity:.45;text-decoration:line-through;text-decoration-color:rgba(138,45,7,.5)}
+.se-ob[aria-pressed="true"] .to{opacity:1;transform:none}
+.se-ob .tap{font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:auto}
+.se-princ{position:relative;margin-top:26px;border:1.5px solid var(--navy);background:var(--grey);padding:26px 18px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.se-princ .lbl{position:absolute;top:-11px;left:18px;background:var(--grey);padding:0 10px;font-size:.8rem;font-weight:600;color:var(--royal)}
+@media (max-width:860px){.se-princ{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.se-princ{grid-template-columns:1fr}}
+.se-princ div{background:#fff;border-left:4px solid var(--cyan);padding:10px 12px;display:grid;gap:3px;opacity:0;transform:translateY(8px);transition:all .5s var(--d)}
+.se-princ.in div{opacity:1;transform:none}
+.se-princ em{font-style:normal;font-family:var(--mono);font-size:.64rem;color:var(--royal)}
+.se-princ b{color:var(--navy);font-size:.9rem}
+.se-princ span{font-size:.78rem}
+
+/* ARCHITECTURE */
+.se-arch{padding:clamp(14px,2.4vw,24px);display:grid;gap:14px}
+.se-atop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.se-adiag{display:grid;gap:0}
+.se-zone{position:relative;border:1px solid var(--line);padding:30px 14px 14px;background:#f6f8fc}
+.se-zone.ms{background:#f1f4fb}
+.se-zone .zl{position:absolute;top:8px;left:14px;font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.se-row{display:grid;grid-template-columns:minmax(0,1fr) 46px minmax(0,1fr) 46px minmax(0,1fr);align-items:center}
+.se-an{all:unset;box-sizing:border-box;cursor:pointer;background:#fff;border:1.5px solid var(--line);padding:12px 14px;display:grid;gap:3px;text-align:center;min-height:86px;align-content:center;transition:all .35s}
+.se-an b{color:var(--navy);font-size:.9rem}
+.se-an small{font-size:.72rem;color:var(--muted)}
+.se-an.hub{border-color:var(--royal);background:#eef3ff}
+.se-an.seen{border-color:var(--green);background:#eefaf4}
+.se-an.on{border-color:var(--navy);background:var(--navy);box-shadow:0 0 0 4px rgba(9,182,249,.35)}
+.se-an.on b{color:#fff}.se-an.on small{color:#c9d4f2}
+.se-an:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+.se-arr{position:relative;height:2px;background:#c4cbd9;margin:0 6px}
+.se-arr::after{content:"";position:absolute;right:-1px;top:-4px;border:5px solid transparent;border-left:7px solid #c4cbd9;border-right:0}
+.se-arr.two::before{content:"";position:absolute;left:-1px;top:-4px;border:5px solid transparent;border-right:7px solid #c4cbd9;border-left:0}
+.se-arr.go,.se-varr.go{background:linear-gradient(90deg,var(--cyan) 0 40%,#c4cbd9 40%) 0 0/200% 100%;animation:seflow .9s linear infinite}
+@keyframes seflow{to{background-position:-200% 0}}
+.se-api{display:grid;justify-items:center;gap:4px;padding:6px 0;position:relative}
+.se-varr{display:block;width:2px;height:40px;background:#c4cbd9}
+.se-varr.go{background:linear-gradient(180deg,var(--cyan) 0 40%,#c4cbd9 40%) 0 0/100% 200%;animation:seflowv .9s linear infinite}
+@keyframes seflowv{to{background-position:0 -200%}}
+.se-api em{position:absolute;left:calc(50% + 12px);top:50%;transform:translateY(-50%);font-style:normal;font-family:var(--mono);font-size:.66rem;color:var(--muted);white-space:nowrap}
+.se-adet{background:var(--navy);color:#c9d4f2;padding:14px 16px;font-size:.86rem;min-height:66px;animation:sein .3s both}
+.se-adet b{color:#fff}
+@media (max-width:760px){.se-row{grid-template-columns:1fr;gap:0}.se-arr{width:2px;height:18px;margin:4px auto}.se-arr::after,.se-arr.two::before{display:none}.se-arr.go{background:linear-gradient(180deg,var(--cyan) 0 40%,#c4cbd9 40%) 0 0/100% 200%;animation:seflowv .9s linear infinite}.se-api em{left:auto;position:static;transform:none;white-space:normal;text-align:center}}
+
+/* BUILD */
+.se-build{display:grid;grid-template-columns:270px minmax(0,1fr);gap:18px;align-items:start}
+@media (max-width:900px){.se-build{grid-template-columns:1fr}}
+.se-bsteps{display:grid;gap:6px}
+@media (max-width:900px){.se-bsteps{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.se-bs{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:30px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1.5px solid var(--line);background:#fff}
+.se-bs .n{width:30px;height:30px;display:grid;place-items:center;border:1.5px solid var(--line);font-family:var(--mono);font-size:.78rem;font-weight:600;color:var(--muted);transition:all .3s}
+.se-bs b{display:block;font-size:.86rem;color:var(--navy)}
+.se-bs small{font-size:.7rem;color:var(--muted)}
+.se-bs.on{border-color:var(--navy)}
+.se-bs.on .n{background:var(--navy);border-color:var(--navy);color:#fff}
+.se-bs.done .n{background:var(--green);border-color:var(--green);color:#fff}
+.se-bs:focus-visible{outline:2px solid var(--cyan)}
+@media (max-width:900px){.se-bs{grid-template-columns:1fr;justify-items:center;text-align:center;padding:8px 4px}.se-bs small{display:none}.se-bs b{font-size:.68rem}}
+.se-bstage{padding:clamp(14px,2.2vw,22px);min-height:400px;display:grid;gap:14px;align-content:start;animation:sein .35s both}
+.se-sh{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.se-sh h4{margin:0;font-size:1rem;color:var(--navy)}
+.se-shotlink{border:0;background:none;color:var(--royal);font:600 .76rem var(--f);cursor:pointer;padding:0;text-decoration:underline;text-underline-offset:3px}
+.se-sync{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.76rem;font-weight:600;color:var(--navy)}
+.se-sync span{display:flex;align-items:center;gap:6px;border:1.5px solid var(--line);padding:6px 10px;background:#fff}
+.se-sync span i{width:10px;height:10px;display:block}
+.se-sync .gd{background:var(--green)}.se-sync .gcs{background:#f5b83d}.se-sync .vx{background:var(--royal)}
+.se-sync em{flex:1;min-width:24px;height:2px;background:linear-gradient(90deg,var(--cyan) 0 40%,#c4cbd9 40%) 0 0/200% 100%;animation:seflow 1s linear infinite}
+.se-cats{display:grid;gap:8px}
+.se-cats div{display:grid;grid-template-columns:200px minmax(0,1fr) 64px;gap:10px;align-items:center;font-size:.8rem}
+@media (max-width:560px){.se-cats div{grid-template-columns:1fr 60px}.se-cats i{grid-column:1/-1;order:3}}
+.se-cats i{height:14px;background:#eef1f6;display:block}
+.se-cats i b{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--royal),var(--cyan));transition:width 1s cubic-bezier(.2,.8,.2,1)}
+.se-bstage.go .se-cats i b{width:var(--w)}
+.se-cats em{font-style:normal;font-family:var(--mono);text-align:right;color:var(--navy);font-variant-numeric:tabular-nums}
+.se-total{font-size:.8rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.se-total b{font-family:var(--mono);font-size:1.3rem;color:var(--royal);margin-right:4px}
+.se-pk{align-self:start;justify-self:start;flex-wrap:wrap}
+.se-parse{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);gap:10px;align-items:stretch}
+@media (max-width:700px){.se-parse{grid-template-columns:1fr}.se-parr{transform:rotate(90deg);justify-self:center}}
+.se-pin{position:relative;border:1.5px solid var(--line);background:#fff;padding:12px;overflow:hidden;min-height:190px;display:grid;align-content:start;gap:8px}
+.se-pin .fn{font-family:var(--mono);font-size:.64rem;color:var(--muted)}
+.se-pin .scan{position:absolute;left:0;right:0;top:0;height:3px;background:var(--cyan);box-shadow:0 0 18px 6px rgba(9,182,249,.35);opacity:0}
+.se-pin.go .scan{animation:sescan 1.1s ease-in-out both}
+@keyframes sescan{0%{top:0;opacity:1}90%{opacity:1}100%{top:100%;opacity:0}}
+.se-parr{display:grid;place-items:center;font-size:1.3rem;color:var(--cyan);font-weight:700}
+.se-pout{border:1.5px solid var(--navy);background:var(--pale);padding:12px;display:grid;gap:8px;align-content:start;min-height:190px}
+.se-pout small{font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--royal)}
+.se-pout p{margin:0;font-size:.84rem;color:var(--navy);min-height:5em}
+.se-chips{display:flex;gap:6px;flex-wrap:wrap}
+.se-chips span{font-size:.66rem;font-weight:600;padding:3px 8px;border:1px solid var(--line);background:#fff;animation:sein .3s both}
+.se-chips .p{border-color:#b9a7f0;color:#5b3fc4;background:#f3efff}
+.se-chips .c{border-color:var(--green);color:#1f8a5c}
+.se-sld{width:100%;height:auto;display:block}
+.se-sld line,.se-sld rect{stroke:var(--navy);stroke-width:2;fill:#fff}
+.se-sld rect.hi{stroke:#7b5cf0;stroke-width:3;fill:#f3efff}
+.se-sld text{font:600 11px var(--mono);fill:var(--navy);text-anchor:middle}
+.se-page{display:grid;gap:6px;padding:6px 4px}
+.se-page i{display:block;height:7px;background:#e3e8f2}
+.se-page i.h{height:10px;width:55%;background:var(--navy)}
+.se-page i.s{width:70%}
+.se-tx{font-size:.82rem;line-height:1.6}
+.se-emb{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.6fr) minmax(0,1fr);gap:12px;align-items:start}
+@media (max-width:760px){.se-emb{grid-template-columns:1fr}}
+.se-chunks,.se-vecs{display:grid;gap:6px}
+.se-chunks .k{font-size:.72rem;padding:8px 10px;border-left:4px solid;background:#fff;opacity:.25;transition:opacity .4s}
+.se-chunks .k small{display:block;font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+.se-chunks .k.on{opacity:1}
+.k0{border-color:var(--royal)!important;--k:var(--royal)}.k1{border-color:var(--cyan)!important;--k:var(--cyan)}.k2{border-color:var(--green)!important;--k:var(--green)}.k3{border-color:#7b5cf0!important;--k:#7b5cf0}
+.se-vecs .v{height:52px;display:flex;align-items:flex-end;gap:2px;padding:4px;background:#fff;border:1px solid var(--line);opacity:.2;transition:opacity .4s}
+.se-vecs .v i{flex:1;background:var(--k);transform-origin:bottom;transform:scaleY(.1);transition:transform .5s}
+.se-vecs .v.on{opacity:1}.se-vecs .v.on i{transform:none}
+.se-spanner{border:1.5px solid var(--navy);background:#fff;padding:10px;display:grid;gap:8px}
+.se-spanner>b{font-size:.78rem;color:var(--navy)}
+.se-spanner .sh{display:grid;gap:6px}
+.se-spanner .sh small{font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+.se-spanner .sh span{display:grid;grid-template-columns:repeat(12,1fr);gap:2px}
+.se-spanner .sh i{aspect-ratio:1;background:#eef1f6}
+.se-spanner .sh i.f{background:#c9d4ee}
+.se-spanner .sh i.new{background:var(--k);animation:lmpopse .5s both}
+@keyframes lmpopse{0%{transform:scale(.3)}70%{transform:scale(1.25)}100%{transform:none}}
+.se-pg{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:12px}
+@media (max-width:760px){.se-pg{grid-template-columns:1fr}}
+.se-sys{border:1.5px solid var(--navy);background:#fff;display:grid}
+.se-sys .hd{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--navy)}
+.se-sys .v{font-family:var(--mono);font-size:.64rem;padding:2px 6px;background:#e3f7ee;color:#1f8a5c}
+.se-sys .v.new{animation:sein .4s both;background:var(--green);color:#fff}
+.se-sys pre{margin:0;padding:12px;font-family:var(--mono);font-size:.7rem;line-height:1.6;white-space:pre-wrap;color:var(--text);background:#fafbfd}
+.se-sys .ft{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:10px 12px;border-top:1px solid var(--line);font-size:.76rem;color:var(--muted)}
+.se-sys .ft b{color:#1f8a5c}
+.se-guards{border:1.5px solid var(--line);background:#fff;padding:12px;display:grid;gap:8px;align-content:start}
+.se-guards>b{font-size:.8rem;color:var(--navy)}
+.se-guards label{display:flex;gap:8px;align-items:flex-start;font-size:.78rem;cursor:pointer}
+.se-guards input{accent-color:var(--green);margin-top:2px}
+
+/* ANSWER */
+.se-ask{border:1.5px solid var(--navy);background:#fff}
+.se-askh{display:flex;justify-content:space-between;align-items:stretch;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding:10px}
+.se-tabs{display:flex;flex-wrap:wrap;border:1.5px solid var(--navy)}
+.se-tabs button{border:0;border-left:1px solid var(--line);background:#fff;color:var(--navy);font:600 .8rem var(--f);padding:9px 14px;cursor:pointer}
+.se-tabs button:first-child{border-left:0}
+.se-tabs button.on{background:var(--navy);color:#fff}
+@media (max-width:560px){.se-tabs{width:100%}.se-tabs button{flex:1 1 100%;border-left:0;border-top:1px solid var(--line)}.se-tabs button:first-child{border-top:0}}
+.se-agrid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+@media (max-width:900px){.se-agrid{grid-template-columns:1fr}}
+.se-agrid>*{min-width:0}
+.se-chat{padding:16px;display:grid;gap:12px;align-content:start;background:#fafbfd;min-height:460px}
+.se-me{justify-self:end;max-width:88%;background:var(--pale);border:1px solid #c9d8fb;padding:10px 12px;font-size:.84rem;color:var(--navy);animation:sein .3s both}
+.se-bot{border:1.5px solid var(--line);background:#fff;animation:sein .3s both}
+.se-bot .hd{display:flex;gap:8px;align-items:center;padding:8px 12px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--navy)}
+.se-bot .hd i{font-style:normal;width:22px;height:22px;display:grid;place-items:center;background:var(--cyan);color:var(--navy);font-size:.8rem}
+.se-bot .body{padding:12px;font-size:.84rem;display:grid;gap:8px}
+.se-bot .body.in>*{animation:sein .35s both}
+.se-bot .body p{margin:0}
+.se-bot ol{margin:0;padding-left:18px;display:grid;gap:4px}
+.se-bot sup{font-family:var(--mono);font-size:.6rem;background:#e8f8ff;color:#0a6e96;padding:0 4px}
+.se-badges{display:flex;gap:6px;flex-wrap:wrap}
+.se-badges span{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px}
+.se-badges .g{background:#eef3ff;color:var(--royal)}.se-badges .ok{background:#e3f7ee;color:#1f8a5c}.se-badges .b{background:#fde6e6;color:#c03030}
+.se-fig{border:1px solid var(--line);padding:8px 10px;background:#fff}
+.se-fig small{font-family:var(--mono);font-size:.6rem;color:var(--muted)}
+.se-srcs{display:grid;gap:4px}
+.se-srcs span{display:grid;grid-template-columns:20px minmax(0,1fr);column-gap:8px;font-size:.74rem;align-items:start}
+.se-srcs em{grid-row:span 2;font-style:normal;font-family:var(--mono);font-size:.62rem;background:var(--navy);color:#fff;display:grid;place-items:center;height:20px}
+.se-srcs b{color:var(--navy);overflow-wrap:anywhere}
+.se-srcs small{color:var(--muted);font-size:.68rem}
+.se-code{margin:0;background:#0d1a44;color:#cfe0ff;font-family:var(--mono);font-size:.7rem;line-height:1.6;padding:12px;overflow-x:auto;white-space:pre}
+.se-sug{font-size:.8rem}
+.se-esc{justify-self:start;border:1.5px solid #c9a227;background:#fff8e6;color:#8a6200;font:600 .76rem var(--f);padding:6px 10px;cursor:default}
+.se-typing{display:flex;gap:4px;padding:4px 0}
+.se-typing i{width:7px;height:7px;border-radius:50%;background:#9fb0d6;animation:setype 1s infinite}
+.se-typing i:nth-child(2){animation-delay:.15s}.se-typing i:nth-child(3){animation-delay:.3s}
+@keyframes setype{50%{transform:translateY(-4px);background:var(--royal)}}
+.se-trace{border-left:1px solid var(--line);padding:16px;display:grid;gap:10px;align-content:start}
+@media (max-width:900px){.se-trace{border-left:0;border-top:1px solid var(--line)}}
+.se-tr-h{display:flex;justify-content:space-between;align-items:center}
+.se-tr-h b{color:var(--navy)}
+.se-tr-h .mono{font-size:.9rem;color:var(--royal);font-variant-numeric:tabular-nums}
+.se-tr{margin:0;padding:0;list-style:none;display:grid;gap:5px}
+.se-tr li{display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 9px;border:1px solid var(--line);font-size:.78rem;opacity:.4;transition:all .3s}
+.se-tr li em{font-style:normal;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;padding:3px 6px;text-align:center}
+.se-tr li b{display:block;color:var(--navy);font-size:.8rem}
+.se-tr li small{font-size:.68rem;color:var(--muted)}
+.se-tr li code{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.se-tr li.on{opacity:1;border-color:var(--navy);background:var(--pale)}
+.se-tr li.done{opacity:1}
+.se-tr li.blk.done,.se-tr li.blk.on{border-color:#c03030;background:#fdf0f0}
+.se-tr li.blk b{color:#c03030}
+@media (max-width:420px){.se-tr li{grid-template-columns:72px minmax(0,1fr)}.se-tr li code{grid-column:2}}
+.se-tbar{display:flex;height:10px;gap:2px}
+.se-tbar i{display:block;opacity:.15;transition:opacity .3s}
+.se-tbar i.on{opacity:1}
+
+/* SPLIT */
+.se-own{display:grid;gap:16px}
+.se-jobs{display:flex;flex-wrap:wrap;gap:6px}
+.se-jobs button{border:1.5px solid var(--navy);background:#fff;color:var(--navy);font:600 .78rem var(--f);padding:7px 12px;cursor:pointer;transition:all .25s}
+.se-jobs button[aria-pressed="true"]{background:var(--navy);color:#fff}
+.se-cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:860px){.se-cols{grid-template-columns:1fr}}
+.se-col{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:4px;align-content:start;transition:all .35s;border-top-width:6px}
+.se-col[data-o="gc"]{border-top-color:var(--cyan)}.se-col[data-o="af"]{border-top-color:var(--royal)}.se-col[data-o="ex"]{border-top-color:var(--green)}
+.se-col .t{font-size:1.05rem;font-weight:700;color:var(--navy)}
+.se-col>b{font-size:.72rem;font-weight:600;color:var(--muted)}
+.se-col ul{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:4px}
+.se-col li{font-size:.82rem;padding:6px 9px;background:var(--grey);transition:all .3s}
+.se-col li.on{background:var(--navy);color:#fff;font-weight:600}
+.se-col.dim{opacity:.45}
+.se-col.on{box-shadow:0 18px 30px -24px rgba(15,37,110,.8);transform:translateY(-3px)}
+
+/* PROOF */
+.se-proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.se-proof{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.se-proof{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.se-proof button{all:unset;box-sizing:border-box;cursor:zoom-in;display:grid;gap:6px}
+.se-proof button:first-child{grid-column:span 2;grid-row:span 2}
+@media (max-width:560px){.se-proof button:first-child{grid-row:auto}}
+.se-proof button:focus-visible{outline:2px solid var(--cyan)}
+.se-proof img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border:1.5px solid var(--navy);transition:transform .3s,box-shadow .3s;background:#eef2f8}
+.se-proof button:first-child img{aspect-ratio:auto;height:auto}
+.se-proof button:hover img{transform:translateY(-3px);box-shadow:0 16px 28px -22px rgba(15,37,110,.7)}
+.se-proof span{font-size:.76rem}
+.se-proof span b{color:var(--navy);display:block;font-size:.8rem}
+.se-lb{position:fixed;inset:0;background:rgba(10,18,48,.88);z-index:200;display:grid;place-items:center;padding:20px}
+.se-lb[hidden]{display:none!important}
+.se-lb figure{margin:0;max-width:min(1300px,100%);display:grid;gap:10px}
+.se-lb img{width:100%;height:auto;max-height:82vh;object-fit:contain;background:#fff}
+.se-lb figcaption{color:#fff;font-size:.86rem;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.se-lb button{border:1.5px solid #fff;background:transparent;color:#fff;font-weight:600;padding:7px 12px;cursor:pointer;font-family:var(--f)}
+
+/* RESULTS */
+.se-res{display:grid;gap:12px}
+.se-rr{--v:0;border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;grid-template-columns:200px minmax(0,1fr) 230px;gap:16px;align-items:center}
+@media (max-width:900px){.se-rr{grid-template-columns:1fr;gap:10px}}
+.se-rr h4{margin:0;font-size:.95rem;color:var(--navy)}
+.se-rr .ba{position:relative;display:grid}
+.se-rr .ba p{grid-area:1/1;margin:0;font-size:.86rem;padding:10px 12px;display:grid;gap:2px;transition:opacity .35s}
+.se-rr .ba small{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.se-rr .b{background:#fdeee6;color:#8a2d07;opacity:calc(1 - var(--v))}
+.se-rr .a{background:var(--pale);color:var(--navy);opacity:var(--v)}
+.se-rr .a small{color:var(--royal)}
+.se-rr input{grid-column:2;width:100%;accent-color:var(--royal)}
+@media (max-width:900px){.se-rr input{grid-column:1}}
+.se-rr .st{grid-column:3;grid-row:1/span 2;justify-self:end;text-align:center;font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:10px 12px;border:2px solid var(--green);color:#1f8a5c;transform:rotate(-2deg) scale(.9);opacity:.12;transition:all .35s;max-width:230px}
+.se-rr.after .st{opacity:1;transform:rotate(-2deg) scale(1)}
+@media (max-width:900px){.se-rr .st{grid-column:1;grid-row:auto;justify-self:start}}
+.se-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
+@media (max-width:900px){.se-nums{grid-template-columns:1fr 1fr}}
+.se-num{border-top:4px solid var(--royal);background:#fff;border-left:1.5px solid var(--navy);border-right:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);padding:14px 16px;display:grid;gap:2px;align-content:start}
+.se-num b{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;color:var(--royal);line-height:1.05;font-variant-numeric:tabular-nums}
+.se-num span{font-size:.8rem}
+.se-num small{font-size:.66rem;color:var(--muted)}
+@media (max-width:820px){.se-juniors{display:flex;justify-content:space-between;gap:4px}.se-jr{flex-direction:column;gap:4px;font-size:.56rem;text-align:center;width:19%;line-height:1.2}.se-node{grid-template-columns:44px minmax(0,1fr) auto}.se-node i{width:44px;height:44px}}
+
+</style>
+<style>/* site top bar, closing card and footer (scoped) */
+.pi-nav,.pi-foot{--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--green:#3dbe8b;--dark:#262d3d;--slate:#455065;--line:#d9dbe0;--band:#f3f3f3;--pale:#eaf1ff;--text:#2b3245;--muted:#646c7e;--white:#ffffff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--f:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;--wrap:1200px;--gut:clamp(16px,4vw,40px);font-family:var(--f);line-height:1.6}.pi-nav *,.pi-foot *{box-sizing:border-box}.pi-nav ul,.pi-foot ul{margin:0;padding:0;list-style:none}.pi-nav img,.pi-foot img{display:block;max-width:none}.pi-wrap{max-width:var(--wrap);margin:0 auto;padding-inline:var(--gut)}.pi-mob[hidden]{display:none!important}.pi-nav h4,.pi-foot h4{margin:0}.pi-foot p{margin:0}.pi-nav button{font-family:inherit}.pi-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--royal)}
+.pi-btn{display:inline-flex;align-items:center;gap:10px;font-weight:600;font-size:.92rem;text-decoration:none;padding:14px 24px;border:1.5px solid transparent;cursor:pointer;transition:transform .2s,background .2s,color .2s,border-color .2s;white-space:nowrap}
+.pi-btn:hover{transform:translateY(-2px)}
+@media (max-width:520px){.pi-btn{white-space:normal;text-align:left}}
+.pi-btn svg{width:16px;height:16px;transition:transform .2s}
+.pi-btn:hover svg{transform:translateX(3px)}
+.pi-btn-cyan{background:var(--cyan);color:var(--navy)}
+.pi-ico{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.pi-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:80;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.pi-nav .pi-wrap{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.pi-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy)}
+.pi-brand img{height:38px;width:auto}
+.pi-brand b{font-weight:700;font-size:1.02rem;line-height:1.05;letter-spacing:-.01em}
+.pi-menu{display:flex;align-items:center;gap:2px;height:100%}
+.pi-menu>li{position:relative;height:100%;display:flex;align-items:center}
+.pi-menu>li>a,.pi-menu>li>button{display:flex;align-items:center;gap:6px;height:100%;padding:0 13px;font-size:.86rem;font-weight:600;color:var(--slate);text-decoration:none;background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;transition:color .2s,border-color .2s}
+.pi-menu>li>button svg{width:12px;height:12px;transition:transform .2s}
+.pi-menu>li>a:hover,.pi-menu>li>button:hover,.pi-menu>li.pi-open>button{color:var(--navy)}
+.pi-menu>li>a.pi-on{color:var(--navy);border-color:var(--cyan)}
+.pi-menu>li.pi-open>button svg{transform:rotate(180deg)}
+.pi-drop{position:absolute;top:100%;left:-12px;background:var(--white);border:1.5px solid var(--navy);box-shadow:0 24px 50px -28px rgba(15,37,110,.55);padding:10px;display:none;z-index:90}
+.pi-menu>li.pi-open .pi-drop{display:grid}
+.pi-drop.pi-svc{width:640px;grid-template-columns:1fr 1fr;gap:2px}
+.pi-drop.pi-ind{width:360px;gap:2px}
+.pi-drop a{display:grid;gap:3px;padding:12px 14px;text-decoration:none;transition:background .2s}
+.pi-drop a:hover{background:var(--pale)}
+.pi-drop a b{font-size:.88rem;color:var(--navy);font-weight:700}
+.pi-drop a span{font-size:.78rem;color:var(--muted);line-height:1.45}
+.pi-drop .pi-foot{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:6px 22px;border-top:1px solid var(--line);margin-top:6px;padding:12px 14px 4px}
+.pi-drop .pi-foot a{display:inline-flex;padding:0;font-size:.82rem;font-weight:700;color:var(--royal)}
+.pi-drop .pi-foot a:hover{background:none;text-decoration:underline}
+.pi-nav-cta{display:flex;align-items:center;gap:10px}
+.pi-nav-cta .pi-btn{padding:11px 18px;font-size:.84rem}
+.pi-burger{display:none;width:44px;height:44px;border:1.5px solid var(--navy);background:var(--white);cursor:pointer;place-items:center}
+.pi-burger svg{width:20px;height:20px}
+.pi-mob{display:none}
+@media (max-width:1100px){.pi-menu{display:none}.pi-burger{display:grid}.pi-mob{display:block;border-top:1px solid var(--line);background:var(--white);max-height:calc(100vh - 72px);overflow:auto}.pi-mob[hidden]{display:none!important}.pi-mob .pi-wrap{height:auto;display:grid;gap:4px;padding-block:14px 24px}.pi-mob h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}.pi-mob a{display:block;padding:10px 0;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line)}}
+@media (max-width:520px){.pi-nav-cta .pi-btn{display:none}.pi-brand b{font-size:.92rem}}
+.mod .pi-ico{width:20px;height:20px;color:var(--on-dark-2);transition:color .45s}
+.mod.pi-on .pi-ico{color:var(--cyan)}
+.badges .pi-ico{color:var(--royal);width:28px;height:28px}
+.acc-item .k .pi-ico{width:18px;height:18px}
+.gov .pi-ico{width:18px;height:18px;color:var(--green)}
+.pi-close{position:relative;color:var(--white);background:radial-gradient(800px 420px at 0% 0%,rgba(32,78,207,.55),transparent 60%),linear-gradient(135deg,#1e2f6a 0%,var(--dark) 70%);overflow:hidden}
+.pi-close .pi-wrap{display:grid;grid-template-columns:1.3fr auto;gap:32px;align-items:center;padding-block:clamp(64px,8vw,104px)}
+.pi-close .pi-wrap>*{min-width:0}
+.pi-close .pi-eyebrow{color:var(--cyan)}
+.pi-close h2{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:700;line-height:1.1;letter-spacing:-.02em;margin-top:14px}
+.pi-close p{color:var(--on-dark);margin-top:18px;max-width:62ch}
+@media (max-width:820px){.pi-close .pi-wrap{grid-template-columns:1fr}}
+.pi-foot{background:var(--white);border-top:4px solid var(--navy)}
+.pi-foot .pi-wrap{display:grid;grid-template-columns:1.3fr 1.15fr .8fr .8fr 1.35fr;gap:32px;padding-block:56px 28px}
+.pi-foot .pi-wrap>*{min-width:0}
+.pi-foot .pi-brand{margin-bottom:14px}
+.pi-foot p{font-size:.88rem;color:var(--muted);max-width:36ch}
+.pi-foot h4{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);margin-bottom:14px}
+.pi-foot li a{display:block;font-size:.86rem;color:var(--slate);text-decoration:none;padding:4px 0}
+.pi-foot li a:hover{color:var(--royal)}
+.pi-mail{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pi-mail code{font-family:var(--mono);font-size:.8rem;color:var(--navy);background:var(--band);padding:6px 8px;user-select:all;overflow-wrap:anywhere}
+.pi-mail button{border:1.5px solid var(--line);background:var(--white);font-size:.74rem;font-weight:600;padding:5px 10px;cursor:pointer;color:var(--navy)}
+.pi-mail button:hover{border-color:var(--navy)}
+.pi-foot .pi-li{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-size:.86rem;font-weight:600;color:var(--royal);text-decoration:none}
+.pi-foot .pi-li svg{width:18px;height:18px}
+.pi-legal{grid-column:1/-1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--line);padding-top:20px;font-size:.8rem;color:var(--muted)}
+.pi-legal a{color:var(--muted)}
+@media (max-width:1000px){.pi-foot .pi-wrap{grid-template-columns:1fr 1fr 1fr}.pi-foot .pi-wrap>div:first-child{grid-column:1/-1}}
+@media (max-width:560px){.pi-foot .pi-wrap{grid-template-columns:1fr 1fr}.pi-foot .pi-wrap>div:last-of-type{grid-column:1/-1}}
+.pi-menu>li>button.pi-on{color:var(--navy);border-color:var(--cyan)}
+.vtabs [role="tab"] .pi-ico{width:20px;height:20px;color:var(--muted);transition:color .25s}
+.vtabs [role="tab"][aria-selected="true"] .pi-ico{color:var(--cyan)}
+.vpanel .big-ic .pi-ico{width:32px;height:32px}
+.search .box2 .pi-ico{width:20px;height:20px;color:var(--royal)}
+.way .ic .pi-ico{width:22px;height:22px}
+.crit-list .ck .pi-ico{width:20px;height:20px}
+.form-ok .tick .pi-ico{width:28px;height:28px}
+.legal-wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:start}
+@media (max-width:860px){.legal-wrap{grid-template-columns:1fr}}
+.pi-brand b{display:grid;line-height:1.05}
+.pi-brand .pi-b1{color:#0c4185}
+.pi-brand .pi-b2{color:#6f7584}
+.pi-btn .pi-arr{display:inline-grid;place-items:center}
+.pi-btn .pi-arr .pi-ico{width:16px;height:16px}
+.pi-btn-cyan{padding:0 0 0 24px;gap:20px;min-height:52px;align-items:center;background:var(--cyan);color:var(--navy);border:0;box-shadow:inset 0 -3px 0 rgba(15,37,110,.18)}
+.pi-btn-cyan .pi-arr{align-self:stretch;width:52px;background:rgba(15,37,110,.16);color:var(--navy);border-left:1px solid rgba(15,37,110,.18);transition:background .25s,color .25s}
+.pi-btn-cyan .pi-arr .pi-ico{transition:transform .25s}
+.pi-btn-cyan:not(:has(.pi-arr)){padding:0 24px}
+.pi-btn-cyan:hover{background:#3cc8fb;transform:translateY(-2px)}
+.pi-btn-cyan:hover .pi-arr{background:var(--navy);color:var(--cyan)}
+.pi-btn-cyan:hover .pi-arr .pi-ico{transform:translateX(3px)}
+.pi-btn:hover svg{transform:none}
+.pi-btn-cyan:focus-visible{outline:2px solid var(--white);outline-offset:3px;box-shadow:0 0 0 5px var(--cyan)}
+.pi-nav-cta .pi-btn-cyan{min-height:44px;padding-left:18px;gap:14px;font-size:.84rem}
+.pi-nav-cta .pi-btn-cyan .pi-arr{width:44px}
+.pi-btn-wide{width:100%;justify-content:space-between}
+@media (max-width:520px){.pi-btn-cyan{min-height:50px}}
+.pi-close .pi-wrap{display:block;padding-block:clamp(56px,7vw,96px)}
+.pi-cta-card{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);border:1px solid rgba(160,185,240,.35);background:rgba(10,20,60,.35);position:relative}
+.pi-cta-card::before{content:"";position:absolute;left:-1px;top:-1px;width:64px;height:4px;background:var(--cyan)}
+.pi-cta-l{padding:clamp(28px,4vw,52px);display:grid;gap:4px;align-content:center}
+.pi-cta-l h2{margin-top:10px}
+.pi-cta-r{padding:clamp(24px,3.4vw,40px);border-left:1px solid rgba(160,185,240,.3);background:rgba(255,255,255,.04);display:grid;gap:18px;align-content:center}
+.pi-cta-k{font-size:.66rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--on-dark-2)}
+.pi-cta-steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:none}
+.pi-cta-steps li{display:grid;grid-template-columns:40px 1fr;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(160,185,240,.22);font-weight:600;font-size:.95rem;color:var(--white)}
+.pi-cta-steps li:last-child{border-bottom:0}
+.pi-cta-steps b{width:34px;height:34px;display:grid;place-items:center;border:1.5px solid var(--cyan);color:var(--cyan);font-size:.72rem;font-family:var(--mono)}
+@media (max-width:860px){.pi-cta-card{grid-template-columns:1fr}.pi-cta-r{border-left:0;border-top:1px solid rgba(160,185,240,.3)}}
+.rl-ic .pi-ico{width:22px;height:22px}
+.rl-pkg .pi-ico{width:13px;height:13px}
+.rl-chips .pi-ico{width:13px;height:13px}
+.hero{background:radial-gradient(1000px 560px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d 0%,#1e2f6a 55%,#1a3a9e 100%)}.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(160,185,240,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(160,185,240,.07) 1px,transparent 1px);background-size:56px 56px;mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);-webkit-mask-image:linear-gradient(180deg,transparent,#000 30%,#000 70%,transparent);pointer-events:none}.hero>*{position:relative}.pi-close{font-family:var(--f);--navy:#0f256e;--royal:#204ecf;--cyan:#09b6f9;--dark:#262d3d;--white:#fff;--on-dark:#c9d4f2;--on-dark-2:#9fb3e8;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;--f:"Montserrat",ui-sans-serif,system-ui,sans-serif;--wrap:1200px;--gut:clamp(16px,4vw,40px);line-height:1.6}.pi-close h2{margin:0}.pi-close h2 b{color:var(--cyan)}.pi-close p{margin:0}.pi-close *{box-sizing:border-box}.pi-back{color:var(--on-dark);font-size:.86rem;font-weight:600;text-decoration:none;justify-self:start}.pi-back:hover{color:#fff}
+.pi-foot{margin-top:0}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+
+
+<header class="pi-nav">
+  <div class="pi-wrap">
+    <a class="pi-brand" href="index.html" aria-label="Paramount Intelligence home">
+      <img src="assets/logo.png" alt="" width="28" height="38">
+      <b><span class="pi-b1">Paramount</span><span class="pi-b2">Intelligence</span></b>
+    </a>
+    <ul class="pi-menu" id="pi-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="pi-has">
+        <button type="button" aria-expanded="false" aria-controls="pi-dd-svc">Services <svg class="pi-ico"><use href="#i-chev"/></svg></button>
+        <div class="pi-drop pi-svc" id="pi-dd-svc">
+          <a href="services-ai-strategy-and-consulting.html"><b>AI &amp; Technology Consulting</b><span>Clear decisions on what to build, adopt, or improve.</span></a><a href="services-ai-solutions-and-engineering.html"><b>AI &amp; Agentic Engineering</b><span>AI capabilities connected to client products and operations.</span></a><a href="services-software-product-engineering.html"><b>Software &amp; Product Engineering</b><span>Applications customers and business teams can use.</span></a><a href="services-data-and-analytics.html"><b>Data Engineering &amp; Intelligence</b><span>Reliable data for decisions and AI.</span></a><a href="services-cloud-services.html"><b>Cloud &amp; Production Engineering</b><span>Systems client teams can deploy, operate, and extend.</span></a><a href="services-ai-workflow-automation.html"><b>Workflow Automation</b><span>Less repetitive work across connected systems.</span></a>
+          <div class="pi-foot"><a href="services.html">View all services →</a><a href="services.html#forward-deployed-engineering">Forward-deployed AI engineering →</a></div>
+        </div>
+      </li>
+      <li class="pi-has">
+        <button type="button" aria-expanded="false" aria-controls="pi-dd-ind">Industries <svg class="pi-ico"><use href="#i-chev"/></svg></button>
+        <div class="pi-drop pi-ind" id="pi-dd-ind">
+          <a href="industries-private-equity.html"><b>Private Equity</b><span>AI and engineering delivery for sponsors and portfolio companies.</span></a>
+          <a href="industries-digital-natives.html"><b>Digital Natives</b><span>AI features and engineering support for software and digital businesses.</span></a>
+          <div class="pi-foot"><a href="industries.html">View industries →</a></div>
+        </div>
+      </li>
+      <li><a class="pi-on" href="case-studies.html">Case Studies</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <div class="pi-nav-cta">
+      <a class="pi-btn pi-btn-cyan" href="contact-us.html">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+      <button class="pi-burger" type="button" id="pi-burger" aria-expanded="false" aria-controls="pi-mob" aria-label="Open menu"><svg class="pi-ico"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <nav class="pi-mob" id="pi-mob" hidden aria-label="Mobile">
+    <div class="pi-wrap">
+      <a href="index.html">Home</a>
+      <h4>Services</h4>
+      <a href="services-ai-strategy-and-consulting.html">AI &amp; Technology Consulting</a><a href="services-ai-solutions-and-engineering.html">AI &amp; Agentic Engineering</a><a href="services-software-product-engineering.html">Software &amp; Product Engineering</a><a href="services-data-and-analytics.html">Data Engineering &amp; Intelligence</a><a href="services-cloud-services.html">Cloud &amp; Production Engineering</a><a href="services-ai-workflow-automation.html">Workflow Automation</a>
+      <a href="services.html">View all services</a>
+      <h4>Industries</h4>
+      <a href="industries-private-equity.html">Private Equity</a>
+      <a href="industries-digital-natives.html">Digital Natives</a>
+      <a href="industries.html">View industries</a>
+      <h4>Company</h4>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about-us.html">About Us</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+<!-- PI READING PROGRESS ("Where am I" bar). Reusable on every case study.
+     Edit only data-sections: "sectionId:Label" pairs, in page order. -->
+<style>
+.pi-prog{--pp-navy:#0f256e;--pp-cyan:#09b6f9;--pp-green:#3dbe8b;--pp-line:#d9dbe0;--pp-muted:#646c7e;--pp-h:72px;
+  position:sticky;top:calc(var(--pp-h) + env(safe-area-inset-top,0px));z-index:79;background:rgba(245,247,251,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--pp-line);font-family:"Montserrat",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.pi-prog *{box-sizing:border-box}
+.pi-prog .pp-in{max-width:1200px;margin:0 auto;padding-inline:clamp(16px,4vw,40px);height:50px;display:flex;align-items:center;gap:18px}
+.pi-prog .pp-live{display:flex;align-items:center;gap:8px;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pp-muted);flex:none}
+.pi-prog .pp-live i{width:8px;height:8px;border-radius:50%;background:var(--pp-green);box-shadow:0 0 0 3px rgba(61,190,139,.2)}
+.pi-prog .pp-list{flex:1;min-width:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 92%,transparent);mask-image:linear-gradient(90deg,#000 92%,transparent);scroll-behavior:smooth;margin:0;padding:0 40px 0 0;list-style:none}
+.pi-prog .pp-list::-webkit-scrollbar{display:none}
+.pi-prog .pp-list a{flex:none;display:flex;align-items:center;gap:7px;height:50px;padding:0 8px;text-decoration:none;font-size:.8rem;font-weight:500;color:var(--pp-muted);border-bottom:2px solid transparent;transition:color .25s,border-color .25s;white-space:nowrap}
+.pi-prog .pp-list a .n{display:grid;place-items:center;min-width:22px;height:20px;padding:0 3px;border:1px solid var(--pp-line);font-family:"IBM Plex Mono",ui-monospace,Menlo,monospace;font-size:.62rem;color:var(--pp-muted);background:#fff;transition:all .25s}
+.pi-prog .pp-list a:hover{color:var(--pp-navy)}
+.pi-prog .pp-list a.done{color:#1f8a5c}
+.pi-prog .pp-list a.done .n{background:var(--pp-green);border-color:var(--pp-green);color:#fff}
+.pi-prog .pp-list a.on{color:var(--pp-navy);font-weight:600;border-bottom-color:var(--pp-cyan)}
+.pi-prog .pp-list a.on .n{background:var(--pp-navy);border-color:var(--pp-navy);color:#fff}
+.pi-prog .pp-list a:focus-visible{outline:2px solid var(--pp-cyan);outline-offset:-2px}
+.pi-prog .pp-count{flex:none;font-size:.76rem;color:var(--pp-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pi-prog .pp-count b{color:var(--pp-navy)}
+.pi-prog .pp-bar{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+.pi-prog .pp-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pp-cyan),#3dbe8b)}
+@media (max-width:640px){.pi-prog .pp-live{display:none}.pi-prog .pp-list a:not(.on) .t{display:none}.pi-prog .pp-in{gap:10px}}
+</style>
+<nav class="pi-prog" id="pi-prog" aria-label="Case study sections" data-sections="top:Overview,problem:Problem,brief:The brief,arch:Architecture,build:Knowledge base,answer:Answer path,split:Why it works,proof:Proof,results:Result">
+  <div class="pp-in">
+    <span class="pp-live"><i></i>Reading</span>
+    <ol class="pp-list" id="pp-list"></ol>
+    <span class="pp-count" id="pp-count"></span>
+  </div>
+  <div class="pp-bar" aria-hidden="true"><i id="pp-fill"></i></div>
+</nav>
+<script>
+(function(){ function init(){
+  var nav=document.getElementById('pi-prog'); if(!nav) return;
+  var items=nav.getAttribute('data-sections').split(',').map(function(s){var p=s.split(':');return {id:p[0].trim(),label:p.slice(1).join(':').trim()};});
+  var list=document.getElementById('pp-list'),count=document.getElementById('pp-count'),fill=document.getElementById('pp-fill');
+  var head=document.querySelector('.pi-nav');
+  items=items.filter(function(it){return document.getElementById(it.id);});
+  list.innerHTML=items.map(function(it,i){return '<li style="display:contents"><a href="#'+it.id+'" data-i="'+i+'"><span class="n">'+String(i+1).padStart(2,'0')+'</span><span class="t">'+it.label+'</span></a></li>';}).join('');
+  var links=[].slice.call(list.querySelectorAll('a')),secs=items.map(function(it){return document.getElementById(it.id);});
+  function offs(){nav.style.setProperty('--pp-h',(head?head.querySelector('.pi-wrap').offsetHeight:72)+'px'); return (head?head.querySelector('.pi-wrap').offsetHeight:72)+nav.offsetHeight;}
+  function setPad(){document.documentElement.style.scrollPaddingTop=(offs()+8)+'px';}
+  var last=-1;
+  function upd(){var o=offs(),line=o+window.innerHeight*0.25,cur=0;
+    secs.forEach(function(s,i){if(s.getBoundingClientRect().top<=line) cur=i;});
+    var end=document.documentElement.scrollHeight-window.innerHeight; if(window.scrollY>=end-4) cur=secs.length-1;
+    links.forEach(function(a,i){a.classList.toggle('on',i===cur);a.classList.toggle('done',i<cur);if(i===cur)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});
+    count.innerHTML='Section <b>'+(cur+1)+'</b> / '+secs.length;
+    var start=secs[0].getBoundingClientRect().top+window.scrollY, stop=Math.max(start+1,end);
+    fill.style.width=Math.min(100,Math.max(0,(window.scrollY-start)/(stop-start)*100))+'%';
+    if(cur!==last){last=cur;var a=links[cur];if(a){var l=a.offsetLeft-list.offsetLeft,w=a.offsetWidth;if(l<list.scrollLeft||l+w>list.scrollLeft+list.clientWidth)list.scrollLeft=l-list.clientWidth/3;}}
+  }
+  links.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();var y=secs[i].getBoundingClientRect().top+window.scrollY-offs()+1;window.scrollTo({top:i===0?0:y,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});history.replaceState(null,'','#'+items[i].id);});});
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',function(){setPad();upd();});
+  setPad(); upd();
+ } if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
+})();
+</script>
+
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Schneider Electric · Fortune 500</span><span class="pill-tag"><span class="pulse"></span>Live in production</span></div>
+      <h1>A senior engineer's knowledge, on call for <b>everyone.</b></h1>
+      <p class="lede">A multimodal co-pilot inside EcoStruxure Automation Expert that answers engineers from more than 10,000 verified documents, diagrams included.</p>
+      <ul class="pts">
+        <li><b>Grounded:</b> every answer comes from Schneider Electric's own manuals, schematics and SOPs, with sources.</li>
+        <li><b>Multimodal:</b> it reads circuit diagrams and drawings, not only the words around them.</li>
+        <li><b>Governed:</b> identity, safety and the agent lifecycle run in Microsoft AI Foundry.</li>
+      </ul>
+      <div class="ctas">
+        <a class="btn btn-cyan" href="#answer"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>Ask the co-pilot</a>
+        <a class="btn btn-line" href="#problem">See the story</a>
+      </div>
+      <div class="meta">
+        <div><span>Client</span><b>Schneider Electric</b></div>
+        <div><span>Engagement</span><b>Paramount engagement</b></div>
+        <div><span>Built on</span><b>Vertex AI · Cloud Spanner · Microsoft AI Foundry</b></div>
+      </div>
+    </div>
+    <div class="se-hq" id="hq" aria-label="Sample: an engineer's question answered from cited documents">
+      <div class="se-hqbar"><span class="dot"></span><b>EcoStruxure Co-Pilot</b><span class="mono">sample conversation</span></div>
+      <div class="se-hqq" id="hqq"></div>
+      <div class="se-hqsrc" id="hqsrc"></div>
+      <div class="se-hqa" id="hqa"></div>
+      <div class="se-hqf"><span id="hqst">Searching 10,000+ documents</span><span class="se-ok" id="hqok">Guardrails passed</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Client">
+  <div class="client">
+    <div class="who">
+      <h3>Meet our client</h3>
+      <dl><dt>Client</dt><dd>Schneider Electric</dd><dt>Industry</dt><dd>Industrial automation &amp; engineering technology</dd><dt>Market</dt><dd>Fortune 500 enterprise</dd></dl>
+    </div>
+    <div class="nut">
+      <h3>In a nutshell</h3>
+      <p>We built a multimodal retrieval-augmented generation (RAG) co-pilot for Schneider Electric's EcoStruxure Automation Expert platform. It answers automation engineers' technical questions from a verified knowledge base of more than 10,000 specifications, compliance guidelines, manuals, CAD schematics and SOPs, using Google Cloud for retrieval and Microsoft AI Foundry to govern every answer.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="ch" id="problem">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">01 · The problem</span>
+      <h2 class="title">All roads led to the same few engineers</h2>
+      <p class="sub">Knowledge sat in a handful of senior heads. Every question queued at their desks. Switch on the co-pilot and watch the queue change.</p>
+    </div>
+    <div class="se-q box rv" id="queue">
+      <div class="se-qtop"><b>A week of engineering questions</b>
+        <div class="seg" role="group" aria-label="Way of working"><button type="button" data-m="before" aria-pressed="true">Before the co-pilot</button><button type="button" data-m="after" aria-pressed="false">With the co-pilot</button></div>
+      </div>
+      <div class="se-qgrid">
+        <div class="se-juniors" id="jrs" aria-hidden="true"></div>
+        <div class="se-lanes" aria-hidden="true"></div>
+        <div class="se-dest">
+          <div class="se-node cop" id="ncop"><i>✦</i><div><b>Co-pilot</b><small>First-line answers from 10,000+ documents</small></div><em id="ccop">0</em></div>
+          <div class="se-node sme" id="nsme"><i>SME</i><div><b>Senior engineers</b><small>Few, busy, hard to reach</small></div><em id="csme">0</em></div>
+        </div>
+      </div>
+      <div class="se-week">
+        <span class="demo-note">A senior engineer's week</span>
+        <div class="se-wbar"><i class="rep" id="wrep"><span id="wrepl">Repeat questions and logic checks · up to 40%</span></i><i class="eng"><span>Engineering work</span></i></div>
+        <p class="se-wcap" id="wcap">Up to 40% of senior time went on repetitive questions and checking other people's configuration logic.</p>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What was going wrong</span><ul class="pts cols">
+      <li><b>A knowledge bottleneck:</b> when senior engineers were busy, away or left, their knowledge became hard to reach and work slowed.</li>
+      <li><b>Repeat questions:</b> up to 40% of senior engineers' time went on repetitive questions and logic checks.</li>
+      <li><b>A steep learning curve:</b> junior engineers needed close oversight to avoid configuration errors.</li>
+      <li><b>Slow change:</b> modifying a control topology or adding a production line meant weeks of manual code checks, with configuration logic reviewed by hand for errors.</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- BRIEF -->
+<section class="ch band" id="brief">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">02 · The brief</span>
+      <h2 class="title">Not a chatbot. A first-line engineer.</h2>
+      <p class="sub">Three objectives shaped the build, and six design principles kept it industrial-grade. Tap an objective to see what had to change.</p>
+    </div>
+    <div class="se-obj rv" id="obj"></div>
+    <div class="se-princ rv" id="princ"></div>
+    <div class="verdict rv"><b>The need</b><span>An always-available expert grounded in Schneider Electric's own verified documentation, diagrams included, governed like any other enterprise system.</span></div>
+  </div>
+</section>
+
+<!-- ARCHITECTURE -->
+<section class="ch" id="arch">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">03 · The resolution</span>
+      <h2 class="title">Google Cloud retrieves. Microsoft AI Foundry governs.</h2>
+      <p class="sub">Two paths. The build path turns documents into a searchable index once. The answer path runs every question through governance. Pick a path to trace it.</p>
+    </div>
+    <div class="se-arch box rv" id="archx">
+      <div class="se-atop"><div class="seg" role="group" aria-label="Path"><button type="button" data-p="build" aria-pressed="true">Build path · once</button><button type="button" data-p="answer" aria-pressed="false">Answer path · every question</button></div><span class="demo-note" id="apath"></span></div>
+      <div class="se-adiag" id="adiag">
+        <div class="se-zone gc"><span class="zl">Google Cloud · knowledge base, built once and kept in sync</span>
+          <div class="se-row">
+            <button type="button" class="se-an" data-n="kb"><b>Knowledge base</b><small>10,000+ files in Cloud Storage, synced with Google Drive</small></button>
+            <span class="se-arr" data-e="kb-rag"></span>
+            <button type="button" class="se-an" data-n="rag"><b>Vertex AI RAG Engine</b><small>Layout + Gemini parsers · chunking and embedding</small></button>
+            <span class="se-arr" data-e="rag-db"></span>
+            <button type="button" class="se-an" data-n="db"><b>RagManaged DB</b><small>Cloud Spanner vector index, sharded</small></button>
+          </div>
+        </div>
+        <div class="se-api"><span class="se-varr" data-e="api"></span><em>secure API gateway · query and context</em></div>
+        <div class="se-zone ms"><span class="zl">Every question · the answer path</span>
+          <div class="se-row">
+            <button type="button" class="se-an" data-n="ui"><b>EcoStruxure UI</b><small>Engineer asks, governed answer arrives</small></button>
+            <span class="se-arr two" data-e="ui-af"></span>
+            <button type="button" class="se-an hub" data-n="af"><b>Microsoft AI Foundry</b><small>Entra ID identity · safety guardrails</small></button>
+            <span class="se-arr two" data-e="af-fm"></span>
+            <button type="button" class="se-an" data-n="fm"><b>Foundation model</b><small>Gemini or GPT writes the grounded answer</small></button>
+          </div>
+        </div>
+      </div>
+      <div class="se-adet" id="adet" aria-live="polite"></div>
+    </div>
+    <div class="note rv"><span class="lbl">How the two paths work</span><ul class="pts cols">
+      <li><b>The build path:</b> Cloud Storage to Vertex AI RAG Engine to RagManaged DB through native connectors, built once and kept in sync.</li>
+      <li><b>The answer path:</b> EcoStruxure to AI Foundry to a foundation model, with retrieval over a secure API gateway.</li>
+      <li><b>Foundry at the centre:</b> every request runs under the engineer's Entra ID identity and passes guardrails on the way in and out.</li>
+      <li><b>Open on models:</b> Gemini or GPT can write the answer; the governance around it stays the same.</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- BUILD -->
+<section class="ch band" id="build">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">04 · Building the knowledge base</span>
+      <h2 class="title">From 10,000 files to a searchable index</h2>
+      <p class="sub">Steps 1 to 4 happen once and stay in sync. Step through them to see a schematic become something the co-pilot can reason over.</p>
+    </div>
+    <div class="se-build rv" id="bld">
+      <div class="se-bsteps" id="bsteps" role="tablist" aria-label="Build steps"></div>
+      <div class="se-bstage box" id="bstage" aria-live="polite"></div>
+    </div>
+    <div class="note rv"><span class="lbl">What each step does</span><ul class="pts cols">
+      <li><b>One verified source:</b> manuals, CAD schematics, SOPs, specifications and compliance guidelines in Cloud Storage, synced from Google Drive.</li>
+      <li><b>Pictures carry answers:</b> the Gemini multimodal parser turns charts, circuit topologies and drawings into descriptive text and vectors.</li>
+      <li><b>Configured, not coded:</b> Vertex AI Studio handles chunking and embeddings; Cloud Spanner scales with built-in sharding and strict isolation.</li>
+      <li><b>Behaviour outside the code:</b> prompts, guardrails and output rules are versioned in the console and change without redeploying.</li>
+    </ul></div>
+    <div class="verdict rv"><b>Where expertise comes from</b><span>Documents. The co-pilot answers only from the knowledge base, which holds historical technical documentation alongside manuals, schematics and SOPs. What one expert knows reaches every engineer once it is written down and added.</span></div>
+  </div>
+</section>
+
+<!-- ANSWER -->
+<section class="ch" id="answer">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">05 · The answer path</span>
+      <h2 class="title">From question to governed answer in seconds</h2>
+      <p class="sub">Steps 5 to 7 run every time an engineer asks. Pick a request and replay it through every service it touches.</p>
+    </div>
+    <div class="se-ask rv" id="ask">
+      <div class="se-askh">
+        <div class="se-tabs" role="tablist" aria-label="Sample request" id="atabs"></div>
+        <button type="button" class="se-btn pri" id="areplay">▶ Replay</button>
+      </div>
+      <div class="se-agrid">
+        <div class="se-chat" id="achat" aria-live="polite"></div>
+        <div class="se-trace">
+          <div class="se-tr-h"><b>Request trace</b><span class="mono" id="atime">0 ms</span></div>
+          <ol class="se-tr" id="atrace"></ol>
+          <div class="se-tbar" id="atbar" aria-hidden="true"></div>
+          <span class="demo-note">Sample request · timings are illustrative</span>
+        </div>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">What happens on every question</span><ul class="pts cols">
+      <li><b>Step 5, the engineer asks:</b> inside EcoStruxure; Foundry checks identity through Entra ID and applies safety controls first.</li>
+      <li><b>Step 6, retrieval:</b> Foundry calls the Vertex AI RAG Engine through a secure API gateway; Spanner returns the best passages and diagram descriptions.</li>
+      <li><b>Step 7, the governed answer:</b> a foundation model such as Gemini or GPT writes from that context; Foundry checks it before it is shown.</li>
+      <li><b>Beyond troubleshooting:</b> for configuration tasks it pre-generates automation code blocks, checks each block for errors before the engineer sees it and suggests reusable libraries.</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- SPLIT -->
+<section class="ch band" id="split">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">06 · What makes it different</span>
+      <h2 class="title">Each platform does the job it does best</h2>
+      <p class="sub">Tap a job to see who owns it. Google Cloud does the data-heavy work, Microsoft AI Foundry runs the governed agent, and EcoStruxure is where engineers work.</p>
+    </div>
+    <div class="se-own rv" id="own">
+      <div class="se-jobs" id="jobs" role="group" aria-label="Jobs"></div>
+      <div class="se-cols" id="cols">
+        <div class="se-col" data-o="gc"><span class="t">Google Cloud</span><b>Vertex AI · Cloud Spanner</b><ul></ul></div>
+        <div class="se-col" data-o="af"><span class="t">Microsoft AI Foundry</span><b>Formerly Azure AI Foundry</b><ul></ul></div>
+        <div class="se-col" data-o="ex"><span class="t">Schneider EcoStruxure</span><b>Automation Expert</b><ul></ul></div>
+      </div>
+    </div>
+    <div class="note rv"><span class="lbl">Why two platforms</span><ul class="pts cols">
+      <li><b>Set by the brief:</b> the design had to span Google Cloud and Microsoft environments and meet enterprise-grade identity governance and security requirements.</li>
+      <li><b>Google Cloud for retrieval:</b> native ingestion, Gemini parsing for diagrams and Cloud Spanner vector storage that scales to large engineering datasets, on managed services rather than custom vector database infrastructure.</li>
+      <li><b>Microsoft AI Foundry for governance:</b> identity through Entra ID, safety enforcement, agent lifecycle management and orchestration of the retrieval call, in one runtime.</li>
+    </ul></div>
+    <div class="verdict rv"><b>The split</b><span>Google Cloud's retrieval at scale, under Microsoft's enterprise governance, with nothing new for engineers to learn.</span></div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="ch" id="proof" style="padding-block:clamp(56px,7vw,88px)">
+  <div class="wrap">
+    <div class="head rv"><span class="eyebrow">Proof</span><h2 class="title">Inside the co-pilot</h2><p class="sub">Product screens with sample data. Tap any screen to see it full size.</p></div>
+    <div class="se-proof rv" id="proofg"></div>
+  </div>
+</section>
+<div class="se-lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Screen preview"><figure><img id="lbimg" alt=""><figcaption><span id="lbcap"></span><button type="button" id="lbx">Close ✕</button></figcaption></figure></div>
+
+<!-- RESULTS -->
+<section class="ch band" id="results">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">07 · The result</span>
+      <h2 class="title">Experts back on engineering</h2>
+      <p class="sub">Measured after rollout. Drag each slider from before to after.</p>
+    </div>
+    <div class="se-res rv" id="res"></div>
+    <div class="se-nums">
+      <div class="se-num rv"><b data-to="80" data-pre="−" data-suf="%">−80%</b><span>senior engineer distraction</span><small>Measured after rollout</small></div>
+      <div class="se-num rv"><b data-to="50" data-pre="−" data-suf="%">−50%</b><span>design-to-build configuration time</span><small>Measured after rollout</small></div>
+      <div class="se-num rv"><b data-to="10000" data-suf="+">10,000+</b><span>verified documents and schematics grounding every answer</span></div>
+      <div class="se-num rv"><b>40%</b><span>of senior engineers' time once went on repeat questions and logic checks</span><small>Before the co-pilot</small></div>
+    </div>
+    <div class="verdict rv"><b>The result</b><span>Institutional knowledge now sits in a searchable knowledge base instead of only in people's heads. Senior engineers do engineering, and junior engineers answer their own questions.</span></div>
+    <div class="stack rv">
+      <span>Vertex AI RAG Engine</span><span>Gemini multimodal parser</span><span>Vertex AI Studio</span><span>Cloud Spanner (RagManaged DB)</span><span>Google Cloud Storage</span><span>Google Drive sync</span><span>Microsoft AI Foundry</span><span>Microsoft Entra ID</span><span>Gemini or GPT foundation models</span><span>EcoStruxure Automation Expert</span>
+    </div>
+    <div class="note rv"><span class="lbl">What it makes possible</span><ul class="pts cols">
+      <li><b>Expertise that stays:</b> as experienced engineers retire or move on, what they knew stays searchable.</li>
+      <li><b>Every document, everyone:</b> each file added to the knowledge base is instantly available to every engineer.</li>
+      <li><b>Central control:</b> behaviour and safety rules change in one place, without redeploying.</li>
+      <li><b>Repeatable:</b> the same grounded co-pilot can be built on any organisation's own documentation and platforms.</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="pi-close" id="contact">
+  <div class="pi-wrap">
+    <div class="pi-cta-card">
+      <div class="pi-cta-l">
+        <div class="pi-eyebrow">Engineering knowledge, on call</div>
+        <h2>Expert knowledge, available to every <b>engineer.</b></h2>
+        <p>A governed co-pilot grounded in your own documentation, diagrams included.</p>
+      </div>
+      <div class="pi-cta-r">
+        <span class="pi-cta-k">What a first conversation covers</span>
+        <ol class="pi-cta-steps"><li><b>01</b><span>Your business objective</span></li><li><b>02</b><span>The technical context</span></li><li><b>03</b><span>The right next step</span></li></ol>
+        <a class="pi-btn pi-btn-cyan pi-btn-wide" href="contact-us.html">Discuss a project <span class="pi-arr"><svg class="pi-ico"><use href="#i-arrow"/></svg></span></a>
+        <a class="pi-back" href="case-studies.html">View all case studies &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="pi-foot">
+  <div class="pi-wrap">
+    <div>
+      <a class="pi-brand" href="index.html"><img src="assets/logo.png" alt="" width="28" height="38"><b><span class="pi-b1">Paramount</span><span class="pi-b2">Intelligence</span></b></a>
+      <p>AI engineering &amp; consulting for better products, less manual work, and systems organizations can rely on.</p>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="services-ai-strategy-and-consulting.html">AI &amp; Technology Consulting</a></li><li><a href="services-ai-solutions-and-engineering.html">AI &amp; Agentic Engineering</a></li><li><a href="services-software-product-engineering.html">Software &amp; Product Engineering</a></li><li><a href="services-data-and-analytics.html">Data Engineering &amp; Intelligence</a></li><li><a href="services-cloud-services.html">Cloud &amp; Production Engineering</a></li><li><a href="services-ai-workflow-automation.html">Workflow Automation</a></li></ul></div>
+    <div><h4>Industries</h4><ul><li><a href="industries-private-equity.html">Private Equity</a></li><li><a href="industries-digital-natives.html">Digital Natives</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <div class="pi-mail"><code id="pi-mailTxt">marty@paramountintelligence.co</code><button type="button" data-copy="pi-mailTxt">Copy</button></div>
+      <a class="pi-li" href="https://www.linkedin.com/company/paramount-intelligence-co/" target="_blank" rel="noopener"><svg class="pi-ico"><use href="#i-in"/></svg>LinkedIn</a>
+    </div>
+    <div class="pi-legal">
+      <span>© 2026 Paramount Intelligence. All rights reserved.</span>
+      <span>AI moves fast. We make it work.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const onView=(el,fn,th=.35)=>{ const o=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ o.disconnect(); fn(); } },{threshold:th}); o.observe(el); };
+const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{threshold:.15}).observe(el); };
+const IMG={"ov": "images/se-01-overview.webp", "kb": "images/se-02-knowledge-base.webp", "parse": "images/se-03-ingestion-parsing.webp", "guard": "images/se-04-prompts-guardrails.webp", "ask": "images/se-05-ask-copilot.webp", "trace": "images/se-06-request-trace.webp", "impact": "images/se-07-usage-impact.webp"};
+const SRC=[['SOP-412 MV feeder breaker operation.pdf','Section 6.3 · Close permissives','Text','0.91'],['LINE3-MV-PANEL-SCH-02.pdf','Page 4 · Panel schematic','Diagram','0.87'],['Bus VT monitoring block spec.docx','Section 2 · Undervoltage permissive','Text','0.82']];
+const SLD=(hi)=>`<svg viewBox="0 0 360 120" class="se-sld" aria-hidden="true"><line x1="10" y1="48" x2="350" y2="48"/><rect x="58" y="34" width="34" height="28"/><rect x="164" y="34" width="34" height="28" class="${hi?'hi':''}"/><line x1="181" y1="62" x2="181" y2="92"/><rect x="262" y="34" width="34" height="28"/><text x="75" y="24">52-L3</text><text x="181" y="24">ES-L3</text><text x="279" y="24">VT-BUS</text><text x="181" y="110">DI-07 position</text></svg>`;
+
+/* reveal */
+(()=>{ const els=$$('.rv'); els.forEach(e=>{ if(e.getBoundingClientRect().top>innerHeight*.92) e.classList.add('pending'); });
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('pending'); io.unobserve(e.target);} }),{threshold:.12});
+  els.forEach(e=>io.observe(e));
+  addEventListener('scroll',()=>{ $$('.rv.pending').forEach(e=>{ if(e.getBoundingClientRect().top<innerHeight) e.classList.remove('pending'); }); },{passive:true}); })();
+
+/* lightbox (shared) */
+const LB=(()=>{ const lb=$('#lb'),li=$('#lbimg'),lc=$('#lbcap'); let last=null;
+  const close=()=>{ lb.hidden=true; last&&last.focus(); }; $('#lbx').onclick=close; lb.addEventListener('click',e=>{ if(e.target===lb) close(); }); addEventListener('keydown',e=>{ if(e.key==='Escape'&&!lb.hidden) close(); });
+  return (k,cap,from)=>{ last=from||document.activeElement; li.src=IMG[k]; li.alt=cap; lc.textContent=cap+' · sample data'; lb.hidden=false; $('#lbx').focus(); }; })();
+
+/* HERO: a question answered */
+(()=>{ const Q='The MV feeder breaker won’t close after a trip in line 3. What does the interlock need?';
+  const A=[['Trip reset','protection relay latch reset locally',1],['Earthing switch open','ES-L3 reads OPEN on input DI-07',2],['Spring charged','closing spring contact made',1],['No undervoltage','bus VT permissive healthy',3]];
+  const q=$('#hqq'),src=$('#hqsrc'),a=$('#hqa'),st=$('#hqst'),ok=$('#hqok');
+  function full(){ q.textContent=Q; src.innerHTML=SRC.map((s,i)=>`<span class="on"><em>${i+1}</em>${s[0].replace(/\.(pdf|docx)$/,'')}<i>${s[2]}</i></span>`).join('');
+    a.innerHTML='<p>Close is blocked until all four permissives in SOP-412 §6.3 are true:</p><ol>'+A.map(x=>`<li class="on"><b>${x[0]}.</b> ${x[1]} <sup>${x[2]}</sup></li>`).join('')+'</ol>'; st.textContent='Grounded in 3 sources'; ok.classList.add('on'); }
+  if(RM){ full(); return; }
+  let vis=true; visible($('#hq'),v=>vis=v);
+  (async()=>{ while(true){ while(!vis) await sleep(400);
+    q.textContent=''; src.innerHTML=''; a.innerHTML=''; ok.classList.remove('on'); st.textContent='Engineer is typing…';
+    for(let i=1;i<=Q.length;i++){ q.textContent=Q.slice(0,i); await sleep(22); }
+    st.textContent='Searching 10,000+ documents'; await sleep(700);
+    for(let i=0;i<SRC.length;i++){ const s=SRC[i]; src.insertAdjacentHTML('beforeend',`<span><em>${i+1}</em>${s[0].replace(/\.(pdf|docx)$/,'')}<i>${s[2]}</i></span>`); await sleep(60); src.lastChild.classList.add('on'); await sleep(420); }
+    st.textContent='Writing a grounded answer'; a.innerHTML='<p>Close is blocked until all four permissives in SOP-412 §6.3 are true:</p><ol></ol>'; const ol=a.querySelector('ol');
+    for(const x of A){ ol.insertAdjacentHTML('beforeend',`<li><b>${x[0]}.</b> ${x[1]} <sup>${x[2]}</sup></li>`); await sleep(40); ol.lastChild.classList.add('on'); await sleep(520); }
+    st.textContent='Grounded in 3 sources'; ok.classList.add('on'); await sleep(5200); } })();
+})();
+
+/* PROBLEM: the queue */
+(()=>{ const box=$('#queue'),jr=$('#jrs'),grid=$('#queue .se-qgrid'),nc=$('#ncop'),ns=$('#nsme'),cc=$('#ccop'),cs=$('#csme'),B=$$('#queue .seg button');
+  const wrep=$('#wrep'),wl=$('#wrepl'),wcap=$('#wcap');
+  const J=['Junior engineer','Controls engineer','Commissioning','Maintenance','New hire'];
+  jr.innerHTML=J.map(j=>`<div class="se-jr"><i></i><span>${j}</span></div>`).join(''); const JR=$$('#jrs .se-jr');
+  let mode='before',nC=0,nS=0,user=false,vis=false,tick=0;
+  function setMode(m){ mode=m; B.forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===m)); box.classList.toggle('after',m==='after'); nC=0; nS=0; cc.textContent=0; cs.textContent=0;
+    wrep.style.width=m==='after'?'8%':'40%'; wl.textContent=m==='after'?'Repeat questions · about 80% less':'Repeat questions and logic checks · up to 40%';
+    wcap.innerHTML=m==='after'?'The co-pilot answers first-line questions from historical documentation and code. <b>Senior engineer distraction fell by about 80%.</b>':'Up to 40% of senior time went on repetitive questions and checking other people’s configuration logic.'; }
+  function shoot(){ const j=JR[Math.floor(Math.random()*JR.length)],gr=grid.getBoundingClientRect(),a=j.querySelector('i').getBoundingClientRect();
+    const toCop=mode==='after'&&Math.random()<.8, t=(toCop?nc:ns).querySelector('i').getBoundingClientRect();
+    const d=document.createElement('span'); d.className='se-dot'+(toCop?' c':''); grid.appendChild(d);
+    const x0=a.left+a.width/2-gr.left,y0=a.top+a.height/2-gr.top,x1=t.left+t.width/2-gr.left,y1=t.top+t.height/2-gr.top;
+    const an=d.animate([{transform:`translate(${x0}px,${y0}px)`},{transform:`translate(${(x0+x1)/2}px,${(y0+y1)/2+(toCop?-14:14)}px)`},{transform:`translate(${x1}px,${y1}px)`}],{duration:1100,easing:'ease-in-out'});
+    j.classList.add('ask'); setTimeout(()=>j.classList.remove('ask'),400);
+    an.onfinish=()=>{ d.remove(); if(toCop){ nC++; cc.textContent=nC; nc.classList.remove('hit'); void nc.offsetWidth; nc.classList.add('hit'); } else { nS++; cs.textContent=nS; ns.classList.remove('hit'); void ns.offsetWidth; ns.classList.add('hit'); } }; }
+  B.forEach(b=>b.addEventListener('click',()=>{ user=true; setMode(b.dataset.m); }));
+  setMode('before'); visible(box,v=>vis=v);
+  if(RM){ return; }
+  setInterval(()=>{ if(!vis) return; shoot(); tick++; if(!user&&tick%22===0) setMode(mode==='before'?'after':'before'); },420);
+})();
+
+/* BRIEF: objectives + principles */
+(()=>{ const O=[['Replace SME dependency','Scarce senior experts answer everything','An always-available first-line expert'],['Augment junior staff','Close oversight to avoid configuration errors','Context-based, step-by-step guidance'],['Speed up configuration','Weeks of manual code checks per change','Hours, with error-checked configuration reaching the machine edge']];
+  const P=[['Grounded','Every answer comes from verified documentation, not general model knowledge.'],['Diagrams count','Schematics, topologies and charts are read like a senior engineer would.'],['Configured, not coded','Managed services and native connectors; no custom ingestion scripts.'],['Behaviour outside code','Prompts, guardrails and output rules change without redeploying.'],['Governed runtime','Identity, safety and the agent lifecycle in Microsoft AI Foundry.'],['Their own tool','Questions start and answers arrive inside EcoStruxure.']];
+  const ob=$('#obj'); ob.innerHTML=O.map((o,i)=>`<button type="button" class="se-ob" aria-pressed="false"><span class="n">0${i+1}</span><b>${o[0]}</b><span class="fr"><small>From</small>${o[1]}</span><span class="to"><small>To</small>${o[2]}</span><span class="tap">Tap to flip</span></button>`).join('');
+  $('#princ').innerHTML='<span class="lbl">Six design principles</span>'+P.map((p,i)=>`<div style="--d:${i*80}ms"><em>${i+1}</em><b>${p[0]}</b><span>${p[1]}</span></div>`).join('');
+  const OB=$$('#obj .se-ob'); let user=false;
+  OB.forEach(b=>b.addEventListener('click',()=>{ user=true; b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true'); }));
+  onView(ob,async()=>{ $('#princ').classList.add('in'); if(RM){ OB.forEach(b=>b.setAttribute('aria-pressed','true')); return; } for(const b of OB){ await sleep(700); if(user) return; b.setAttribute('aria-pressed','true'); } },.4);
+})();
+
+/* ARCHITECTURE: trace the two paths */
+(()=>{ const D={kb:'<b>Step 1 · Knowledge base.</b> More than 10,000 manuals, CAD schematics, SOPs, specifications and compliance guidelines in Google Cloud Storage, synced with Google Drive.',
+   rag:'<b>Steps 2–3 · Vertex AI RAG Engine.</b> A layout parser for text and a Gemini multimodal parser for diagrams; chunking and embeddings configured in Vertex AI Studio.',
+   db:'<b>Step 3 · RagManaged DB.</b> A Cloud Spanner instance managed by the RAG Engine: horizontal scale, strict data isolation and built-in sharding.',
+   ui:'<b>Step 5 · EcoStruxure UI.</b> The engineer asks inside EcoStruxure Automation Expert, and the governed answer arrives in the same panel.',
+   af:'<b>Steps 5–7 · Microsoft AI Foundry.</b> Checks identity through Entra ID, applies safety controls, orchestrates retrieval and guards the response.',
+   fm:'<b>Step 7 · Foundation model.</b> Gemini or GPT writes the answer from the retrieved context.'};
+  const PATH={build:[['kb',null,'Files land in Cloud Storage, synced from Google Drive'],['rag','kb-rag','Native connector feeds the Vertex AI RAG Engine'],['rag',null,'Text and diagrams are parsed, chunked and embedded'],['db','rag-db','Vectors are stored in the Spanner index']],
+    answer:[['ui',null,'An engineer asks a question in EcoStruxure'],['af','ui-af','AI Foundry checks identity and input guardrails'],['rag','api','Secure API call to the Vertex AI RAG Engine'],['db',null,'Spanner returns the best passages and diagram descriptions'],['af','api','Context comes back to AI Foundry'],['fm','af-fm','A foundation model drafts a grounded answer'],['af','af-fm','Foundry applies output guardrails'],['ui','ui-af','The governed answer lands in EcoStruxure']]};
+  const N={}; $$('#adiag .se-an').forEach(n=>N[n.dataset.n]=n); const E={}; $$('#adiag [data-e]').forEach(e=>E[e.dataset.e]=e);
+  const det=$('#adet'),lbl=$('#apath'),B=$$('#archx .seg button'); let tok=0,user=false;
+  function clear(){ Object.values(N).forEach(n=>n.classList.remove('on','seen')); Object.values(E).forEach(e=>e.classList.remove('go')); }
+  async function run(p){ const my=++tok;
+    while(my===tok){ B.forEach(b=>b.setAttribute('aria-pressed',b.dataset.p===p)); $('#adiag').dataset.p=p; const S=PATH[p]; clear();
+      for(let i=0;i<S.length;i++){ if(my!==tok) return; const [n,e,t]=S[i];
+        Object.values(N).forEach(x=>{ if(x.classList.contains('on')){ x.classList.remove('on'); x.classList.add('seen'); } }); N[n].classList.remove('seen'); N[n].classList.add('on'); if(e) E[e].classList.add('go');
+        lbl.textContent=`Step ${i+1} of ${S.length}: ${t}`; det.innerHTML=D[n]; if(!RM) await sleep(1500); }
+      if(RM) return; await sleep(1800); if(my!==tok) return; if(!user) p=p==='build'?'answer':'build'; } }
+  B.forEach(b=>b.addEventListener('click',()=>{ user=true; run(b.dataset.p); }));
+  Object.entries(N).forEach(([k,n])=>n.addEventListener('click',()=>{ user=true; tok++; clear(); n.classList.add('on'); det.innerHTML=D[k]; lbl.textContent='Showing one component · pick a path to trace it'; }));
+  det.innerHTML=D.kb; clear(); N.kb.classList.add('on'); lbl.textContent='Pick a path to trace it';
+  onView($('#archx'),()=>{ if(!user) run('build'); },.35);
+})();
+
+/* BUILD: four steps */
+(()=>{ const S=[['Knowledge base','10,000+ verified files'],['Multimodal parsing','Text and diagrams'],['Chunk, embed, store','Vertex AI + Spanner'],['Prompts and guardrails','Versioned, no redeploy']];
+  const st=$('#bsteps'),stage=$('#bstage'); st.innerHTML=S.map((s,i)=>`<button type="button" role="tab" class="se-bs" data-i="${i}"><span class="n">${i+1}</span><span><b>${s[0]}</b><small>${s[1]}</small></span></button>`).join(''); const B=$$('#bsteps .se-bs');
+  let cur=0,user=false,tok=0;
+  const shot=(k,c)=>`<button type="button" class="se-shotlink" data-k="${k}" data-c="${c}">See the real screen ↗</button>`;
+  const CAT=[['Engineering manuals',3412],['CAD schematics',2280],['Standard operating procedures',1906],['Specifications',1574],['Compliance guidelines',968]];
+  const PARSED='Single-line diagram, line 3 MV feeder. Breaker 52-L3 in series with earthing switch ES-L3. ES-L3 position wired to digital input DI-07. Bus voltage transformer VT feeds the undervoltage permissive. Close circuit passes through the 86 lockout contact.';
+  const R=[
+   async my=>{ const max=Math.max(...CAT.map(c=>c[1]));
+     stage.innerHTML=`<div class="se-sh"><h4>Step 1 · One source of verified material</h4>${shot('kb','Knowledge base')}</div>
+      <div class="se-sync"><span><i class="gd"></i>Google Drive</span><em></em><span><i class="gcs"></i>Cloud Storage</span><em></em><span><i class="vx"></i>Vertex AI RAG Engine</span></div>
+      <div class="se-cats">${CAT.map(c=>`<div><span>${c[0]}</span><i><b style="--w:${c[1]/max*100}%"></b></i><em data-n="${c[1]}">0</em></div>`).join('')}</div>
+      <div class="se-total"><b id="btot">0</b> files · sample counts · native connector, no custom ingestion scripts</div>`;
+     const em=$$('#bstage .se-cats em'),tot=$('#btot'); await sleep(60); stage.classList.add('go');
+     const T=CAT.reduce((a,c)=>a+c[1],0); for(let f=0;f<=30;f++){ if(my!==tok) return; em.forEach((e,i)=>e.textContent=Math.round(CAT[i][1]*f/30).toLocaleString('en-US')); tot.textContent=Math.round(T*f/30).toLocaleString('en-US'); await sleep(RM?0:30); } },
+   async my=>{ stage.innerHTML=`<div class="se-sh"><h4>Step 2 · Each kind of content gets its own parser</h4>${shot('parse','Ingestion and parsing')}</div>
+      <div class="seg se-pk" role="group" aria-label="Input"><button type="button" data-k="d" aria-pressed="true">Schematic · Gemini parser</button><button type="button" data-k="t" aria-pressed="false">Manual · layout parser</button></div>
+      <div class="se-parse"><div class="se-pin" id="pin"></div><div class="se-parr">→</div><div class="se-pout"><small id="plab"></small><p id="pout"></p><div class="se-chips" id="pchips"></div></div></div>`;
+     const pk=$$('#bstage .se-pk button');
+     async function show(k){ const m=tok; pk.forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));
+       const pin=$('#pin'),out=$('#pout'),lab=$('#plab'),ch=$('#pchips');
+       if(k==='d'){ pin.innerHTML=`<span class="fn">LINE3-MV-PANEL-SCH-02.pdf · p.4</span>${SLD(0)}<i class="scan"></i>`; lab.textContent='Gemini multimodal parser · diagram to description'; ch.innerHTML='';
+         pin.classList.remove('go'); void pin.offsetWidth; pin.classList.add('go'); out.textContent='';
+         await sleep(RM?0:1200); for(let i=0;i<=PARSED.length;i+=3){ if(m!==tok) return; out.textContent=PARSED.slice(0,i); await sleep(RM?0:14); } out.textContent=PARSED;
+         ch.innerHTML='<span class="p">Gemini multimodal parser</span><span>4 chunks</span><span class="c">embedded</span>'; }
+       else { pin.innerHTML=`<span class="fn">EAE function block library guide.pdf</span><div class="se-page"><i class="h"></i><i></i><i></i><i class="s"></i><i class="h"></i><i></i><i class="s"></i><i></i></div><i class="scan"></i>`; lab.textContent='Layout parser · structured text, layout kept'; ch.innerHTML='';
+         pin.classList.remove('go'); void pin.offsetWidth; pin.classList.add('go'); out.innerHTML='';
+         await sleep(RM?0:1100); if(m!==tok) return; out.innerHTML='<span class="se-tx"><b># 4 Function block library</b><br>## 4.2 Reusable start/stop blocks<br>Text, headings and tables extracted in reading order…</span>';
+         ch.innerHTML='<span class="p">Layout parser</span><span>Text + 41 diagrams</span><span class="c">indexed</span>'; } }
+     pk.forEach(b=>b.addEventListener('click',()=>{ user=true; tok++; show(b.dataset.k); })); await show('d'); },
+   async my=>{ const parts=PARSED.split(/(?<=\.)\s/).reduce((a,s,i)=>{ const k=Math.min(3,Math.floor(i/1.3)); (a[k]=a[k]||[]).push(s); return a; },[]).map(x=>x.join(' '));
+     stage.innerHTML=`<div class="se-sh"><h4>Step 3 · Chunked, embedded and stored at scale</h4><span class="demo-note">Configured in Vertex AI Studio, not coded</span></div>
+      <div class="se-emb"><div class="se-chunks">${parts.map((p,i)=>`<div class="k k${i}"><small>Chunk ${i+1}</small>${p}</div>`).join('')}</div>
+      <div class="se-vecs">${parts.map((p,i)=>`<div class="v k${i}">${Array.from({length:16},()=>`<i style="height:${15+Math.random()*85}%"></i>`).join('')}</div>`).join('')}</div>
+      <div class="se-spanner"><b>RagManaged DB · Cloud Spanner</b><div class="sh">${[0,1,2].map(s=>`<div><small>Shard ${s+1}</small><span>${Array.from({length:12},(x,j)=>`<i data-s="${s}" data-j="${j}"></i>`).join('')}</span></div>`).join('')}</div><span class="demo-note">Horizontal scale · strict isolation · built-in sharding</span></div></div>`;
+     const K=$$('#bstage .se-chunks .k'),V=$$('#bstage .se-vecs .v'),C=$$('#bstage .se-spanner i');
+     C.forEach((c,i)=>{ if(Math.random()<.55) c.classList.add('f'); });
+     for(let i=0;i<K.length;i++){ if(my!==tok) return; K[i].classList.add('on'); await sleep(RM?0:450); V[i].classList.add('on'); await sleep(RM?0:350);
+       const e=C.filter(c=>!c.classList.contains('f')); const c=e[Math.floor(Math.random()*e.length)]; if(c){ c.classList.add('f','new','k'+i); } } },
+   async my=>{ const G=[['Answer only from retrieved context',1],['Block requests to bypass safety functions',1],['Content safety filters',1],['Require source citations',1],['Mask personal data in responses',1],['Allow answers without sources',0]];
+     stage.innerHTML=`<div class="se-sh"><h4>Step 4 · Behaviour managed outside the code</h4>${shot('guard','Prompts and guardrails')}</div>
+      <div class="se-pg"><div class="se-sys"><div class="hd"><b>Agent persona · EcoStruxure Co-Pilot</b><span class="v" id="pver">v14 live</span></div>
+        <pre>You are an automation engineering assistant for EcoStruxure Automation Expert.
+Answer only from the retrieved documents. If they do not contain the answer, say so and suggest escalating to a subject matter expert.
+Cite every source as [n] with document name and section.
+For troubleshooting, give numbered steps in the order an engineer should check them.
+When a schematic was retrieved, refer to its component tags exactly as drawn.
+Never suggest bypassing an interlock, a protection function or a safety circuit.</pre>
+        <div class="ft"><button type="button" class="se-btn pri" id="ppub">Publish v15</button><span id="pmsg">No backend redeploy needed</span></div></div>
+      <div class="se-guards"><b>Guardrails · Microsoft AI Foundry</b>${G.map((g,i)=>`<label><input type="checkbox" ${g[1]?'checked':''}><span>${g[0]}</span></label>`).join('')}<span class="demo-note">Sample configuration</span></div></div>`;
+     $('#ppub').onclick=async()=>{ user=true; const m=$('#pmsg'),v=$('#pver'),b=$('#ppub'); b.disabled=true; m.textContent='Publishing…'; await sleep(RM?0:700); v.textContent='v15 live'; v.classList.add('new'); m.innerHTML='<b>Live.</b> Behaviour updated, nothing rebuilt or redeployed.'; };
+     $$('#bstage .se-guards input').forEach(c=>c.addEventListener('change',()=>{ user=true; $('#pmsg').textContent='Unpublished changes · publish to apply'; $('#ppub').disabled=false; })); }];
+  async function go(i){ cur=i; const my=++tok; B.forEach((b,k)=>{ b.classList.toggle('on',k===i); b.classList.toggle('done',k<i); b.setAttribute('aria-selected',k===i); }); stage.classList.remove('go'); await R[i](my); }
+  B.forEach(b=>b.addEventListener('click',()=>{ user=true; go(+b.dataset.i); }));
+  stage.addEventListener('click',e=>{ const s=e.target.closest('.se-shotlink'); if(s) LB(s.dataset.k,s.dataset.c,s); });
+  go(0); onView($('#bld'),async()=>{ if(RM) return; await sleep(400); go(0); const dur=[4200,7600,5200,6000]; while(!user){ await sleep(dur[cur]); if(user) return; go((cur+1)%4); } },.35);
+})();
+
+/* ANSWER: replay a request */
+(()=>{ const SV={es:['EcoStruxure','#3dbe8b'],en:['Entra ID','#0f256e'],af:['AI Foundry','#204ecf'],vx:['Vertex AI','#09b6f9'],gm:['Gemini','#262d3d']};
+  const RQ=[{n:'Troubleshoot a breaker',q:'The MV feeder breaker won’t close after a trip in line 3. What does the interlock sequence require before close is permitted? I’m looking at SOP-412.',
+     t:[['es','Question received','Line 3 workspace',0],['en','Identity verified','Automation engineer role',42],['af','Input guardrails','Content safety, policy rules passed',118],['af','Retrieval call','Secure API gateway to Vertex AI',131],['vx','Vector search','Cloud Spanner index · top 5 chunks, 1 diagram',612],['gm','Answer synthesis','Grounded in 3 cited sources',2410],['af','Output guardrails','Citation check, safety filters passed',2530],['es','Answer delivered','Shown in the co-pilot panel',2580]],
+     a:()=>`<div class="se-badges"><span class="g">Grounded in 3 sources</span><span class="ok">Guardrails passed</span></div><p>Close is blocked until all four permissives in SOP-412 section 6.3 are true. Check them in this order:</p><ol><li><b>Trip reset.</b> The protection relay trip latch must be reset locally. A remote reset is not accepted after an overcurrent trip. <sup>1</sup></li><li><b>Earthing switch open.</b> On the line 3 panel schematic this is input DI-07. <sup>2</sup></li><li><b>Spring charged.</b> The closing spring charged contact must be made for at least 2 seconds. <sup>1</sup></li><li><b>No undervoltage on the bus.</b> The permissive comes from the bus VT monitoring block. <sup>3</sup></li></ol><div class="se-fig"><small>From LINE3-MV-PANEL-SCH-02.pdf, page 4 · parsed diagram</small>${SLD(1)}</div><div class="se-srcs">${SRC.map((s,i)=>`<span><em>${i+1}</em><b>${s[0]}</b><small>${s[1]} · ${s[2]} · relevance ${s[3]}</small></span>`).join('')}</div>`},
+   {n:'Ask to bypass an interlock',q:'Can I jumper out the ES-L3 interlock so we can close the line 3 breaker faster?',
+     t:[['es','Question received','Line 3 workspace',0],['en','Identity verified','Automation engineer role',42],['af','Input guardrails','Blocked: request to bypass a safety function',118,1],['es','Answer delivered','Safe refusal with an escalation path',160]],
+     a:()=>`<div class="se-badges"><span class="b">Blocked by guardrail</span></div><p>I can’t help bypass an interlock, a protection function or a safety circuit.</p><p>If close is still blocked once the permissives are true, the lockout relay is the usual cause. For anything beyond that, please escalate to a subject matter expert.</p><button type="button" class="se-esc">Escalate to SME</button>`},
+   {n:'Generate a function block',q:'Generate a reusable block for conveyor start-stop with fault reset.',
+     t:[['es','Question received','Conveyor workspace',0],['en','Identity verified','Controls engineer role',40],['af','Input guardrails','Content safety, policy rules passed',112],['af','Retrieval call','Secure API gateway to Vertex AI',126],['vx','Vector search','Library guide and coding standard · top 4 chunks',540],['gm','Code generation','Grounded in 2 cited sources',2650],['af','Output guardrails','Error check and safety filters passed',2790],['es','Answer delivered','Code block in the co-pilot panel',2840]],
+     a:()=>`<div class="se-badges"><span class="g">Grounded in 2 sources</span><span class="ok">Error check passed</span></div><p>Here is a start-stop block with a latched fault and reset, following the coding standard. <sup>2</sup></p><pre class="se-code">FUNCTION_BLOCK ConveyorStartStop
+VAR_INPUT  Start, Stop, Fault, FaultReset : BOOL; END_VAR
+VAR_OUTPUT Run, FaultLatched : BOOL; END_VAR
+IF Fault THEN FaultLatched := TRUE; END_IF;
+IF FaultReset AND NOT Fault THEN FaultLatched := FALSE; END_IF;
+Run := (Start OR Run) AND NOT Stop AND NOT FaultLatched;
+END_FUNCTION_BLOCK</pre><p class="se-sug"><b>Reusable library:</b> a matching start/stop block already exists in the function block library. Reuse it to keep line code consistent. <sup>1</sup></p><div class="se-srcs"><span><em>1</em><b>EAE function block library guide.pdf</b><small>Manual · Text</small></span><span><em>2</em><b>IEC 61499 coding standard v3.docx</b><small>Specification · Text</small></span></div>`}];
+  const tabs=$('#atabs'),chat=$('#achat'),tr=$('#atrace'),bar=$('#atbar'),tm=$('#atime');
+  tabs.innerHTML=RQ.map((r,i)=>`<button type="button" role="tab" data-i="${i}">${r.n}</button>`).join(''); const TB=$$('#atabs button');
+  let tok=0,cur=0,user=false;
+  async function play(i){ const my=++tok,r=RQ[i]; cur=i; TB.forEach((b,k)=>{ b.classList.toggle('on',k===i); b.setAttribute('aria-selected',k===i); });
+    const T=r.t[r.t.length-1][3];
+    tr.innerHTML=r.t.map((s,k)=>`<li class="${s[4]?'blk':''}"><em style="background:${SV[s[0]][1]}">${SV[s[0]][0]}</em><span><b>${s[1]}</b><small>${s[2]}</small></span><code>${s[3]<1000?s[3]+' ms':(s[3]/1000).toFixed(2)+' s'}</code></li>`).join('');
+    bar.innerHTML=r.t.slice(1).map((s,k)=>`<i style="background:${SV[s[0]][1]};flex:${Math.max(s[3]-r.t[k][3],T*.012)}"></i>`).join('');
+    const L=$$('#atrace li'),BI=$$('#atbar i');
+    chat.innerHTML=`<div class="se-me">${r.q}</div><div class="se-bot"><div class="hd"><i>✦</i><b>EcoStruxure Co-Pilot</b></div><div class="body" id="abody"><span class="se-typing"><i></i><i></i><i></i></span></div></div>`;
+    for(let k=0;k<r.t.length;k++){ if(my!==tok) return; L.forEach((l,j)=>{ l.classList.toggle('on',j===k); l.classList.toggle('done',j<k); }); if(k>0) BI[k-1].classList.add('on'); tm.textContent=L[k].querySelector('code').textContent;
+      const gap=k<r.t.length-1?r.t[k+1][3]-r.t[k][3]:0; await sleep(RM?0:Math.min(1400,Math.max(380,gap*.45))); }
+    if(my!==tok) return; L.forEach(l=>{ l.classList.remove('on'); l.classList.add('done'); }); $('#abody').innerHTML=r.a(); $('#abody').classList.add('in'); }
+  TB.forEach(b=>b.addEventListener('click',()=>{ user=true; play(+b.dataset.i); })); $('#areplay').onclick=()=>{ user=true; play(cur); };
+  play(0);
+  onView($('#ask'),async()=>{ if(RM) return; await play(0); let i=0; while(!user){ await sleep(6500); if(user) return; i=(i+1)%RQ.length; await play(i); } },.3);
+})();
+
+/* SPLIT: who owns the job */
+(()=>{ const J=[['Ingestion','gc'],['Multimodal parsing','gc'],['Vector storage','gc'],['Retrieval over 10,000+ documents','gc'],['Agent lifecycle','af'],['Identity through Entra ID','af'],['Safety guardrails','af'],['Response generation','af'],['Orchestrating the call to Google Cloud','af'],['Where questions start','ex'],['Where answers land','ex']];
+  const jb=$('#jobs'); jb.innerHTML=J.map((j,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${j[0]}</button>`).join(''); const B=$$('#jobs button');
+  const UL={}; $$('#cols .se-col').forEach(c=>UL[c.dataset.o]=c); J.forEach((j,i)=>UL[j[1]].querySelector('ul').insertAdjacentHTML('beforeend',`<li data-i="${i}">${j[0]}</li>`));
+  let user=false,cur=-1;
+  function pick(i){ cur=i; B.forEach((b,k)=>b.setAttribute('aria-pressed',k===i)); const o=J[i][1];
+    Object.entries(UL).forEach(([k,c])=>{ c.classList.toggle('on',k===o); c.classList.toggle('dim',k!==o); c.querySelectorAll('li').forEach(l=>l.classList.toggle('on',+l.dataset.i===i)); }); }
+  B.forEach(b=>b.addEventListener('click',()=>{ user=true; pick(+b.dataset.i); }));
+  onView($('#own'),()=>{ if(RM) return; const t=setInterval(()=>{ if(user) return clearInterval(t); pick((cur+1)%J.length); },1700); },.4);
+})();
+
+/* PROOF gallery */
+(()=>{ const P=[['ov','Co-pilot overview','Knowledge base size, measured impact and recent questions.'],['ask','Ask the Co-Pilot','A cited, step-by-step answer with a parsed schematic.'],['kb','Knowledge base','Document categories and sync status.'],['parse','Ingestion and parsing','The pipeline and a parsed schematic.'],['guard','Prompts and guardrails','Versioned system instructions and guardrails.'],['trace','Request trace','Every service one question passes through.'],['impact','Usage and impact','Measured outcomes with sample usage trends.']];
+  const g=$('#proofg'); g.innerHTML=P.map((p,i)=>`<button type="button" data-i="${i}"><img src="${IMG[p[0]]}" alt="${p[1]}: ${p[2]}" loading="lazy"><span><b>${p[1]}</b>${p[2]}</span></button>`).join('');
+  $$('#proofg button').forEach(b=>b.addEventListener('click',()=>{ const p=P[+b.dataset.i]; LB(p[0],p[1],b); }));
+})();
+
+/* RESULTS: before / after sliders + counters */
+(()=>{ const R=[['Subject matter expert dependency','Senior engineers spent up to 40% of their time on repetitive questions and logic checks','The co-pilot answers first-line questions from historical documentation and code','Senior engineer distraction down by about 80%'],
+   ['Junior staff onboarding','Steep learning curve and close oversight to avoid errors','Immediate, context-aware, step-by-step troubleshooting','Faster time to autonomy for new hires'],
+   ['Engineering velocity','Weeks of manual code checks to change a control topology or add a line','Pre-generated code blocks, error checks and reusable library suggestions','Design-to-build configuration time cut by 50%']];
+  const box=$('#res'); box.innerHTML=R.map((r,i)=>`<div class="se-rr"><h4>${r[0]}</h4><div class="ba"><p class="b"><small>Before</small>${r[1]}</p><p class="a"><small>With the co-pilot</small>${r[2]}</p></div><input type="range" min="0" max="100" value="0" aria-label="${r[0]}: before to after"><span class="st">${r[3]}</span></div>`).join('');
+  const RR=$$('#res .se-rr'); let user=false;
+  RR.forEach(r=>{ const s=r.querySelector('input'); const f=()=>{ const v=+s.value; r.style.setProperty('--v',v/100); r.classList.toggle('after',v>=50); }; s.addEventListener('input',()=>{ user=true; f(); }); f(); });
+  if(RM){ RR.forEach(r=>{ const s=r.querySelector('input'); s.value=100; r.style.setProperty('--v',1); r.classList.add('after'); }); }
+  else onView(box,async()=>{ for(let k=0;k<RR.length;k++){ const r=RR[k],s=r.querySelector('input'); for(let v=0;v<=100;v+=4){ if(user) return; s.value=v; r.style.setProperty('--v',v/100); r.classList.toggle('after',v>=50); await sleep(18); } await sleep(250); } },.35);
+  $$('.se-num b[data-to]').forEach(b=>{ const to=+b.dataset.to,pre=b.dataset.pre||'',suf=b.dataset.suf||''; if(RM) return;
+    onView(b,async()=>{ for(let f=0;f<=40;f++){ b.textContent=pre+Math.round(to*f/40).toLocaleString('en-US')+suf; await sleep(22); } },.6); });
+})();
+</script>
+
+<script>
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.pi-menu > li.pi-has'));
+  function closeAll(ex){items.forEach(function(li){if(li!==ex){li.classList.remove('pi-open');li.querySelector('button').setAttribute('aria-expanded','false');}});}
+  items.forEach(function(li){var b=li.querySelector('button');
+    b.addEventListener('click',function(e){e.stopPropagation();var o=!li.classList.contains('pi-open');closeAll(li);li.classList.toggle('pi-open',o);b.setAttribute('aria-expanded',o);});
+    li.addEventListener('mouseenter',function(){if(matchMedia('(hover:hover)').matches){closeAll(li);li.classList.add('pi-open');}});
+    li.addEventListener('mouseleave',function(){if(matchMedia('(hover:hover)').matches){li.classList.remove('pi-open');}});});
+  document.addEventListener('click',function(e){if(!e.target.closest('.pi-menu'))closeAll();});
+  var bg=document.getElementById('pi-burger'),mb=document.getElementById('pi-mob');
+  if(bg&&mb)bg.addEventListener('click',function(){var o=mb.hidden;mb.hidden=!o;bg.setAttribute('aria-expanded',o);});
+  [].forEach.call(document.querySelectorAll('[data-copy]'),function(b){b.addEventListener('click',function(){var el=document.getElementById(b.getAttribute('data-copy'));if(!el)return;var t=el.textContent.trim(),l=b.textContent;try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied';setTimeout(function(){b.textContent=l;},1800);});}catch(e){}});});
+})();
+</script>
+</body>
+</html>

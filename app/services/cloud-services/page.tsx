@@ -1,31 +1,18 @@
-import Header from "@/components/Header";
-import WhoWeServe from "@/components/services/WhoWeServe";
-import ProjectExperience from "@/components/services/ai/ProjectExperience";
-import LatestArticles from "@/components/LatestArticles";
-import Footer from "@/components/Footer";
-import LLMHeader from "@/components/services/ai/Header";
-import LLMHero from "@/components/services/ai/Hero";
-import WhyGenerativeAI from "@/components/services/ai/WhyGenerativeAI";
-import LLMServicesSection from "@/components/services/ai/LLMServicesSection";
-import ScheduleCTA from "@/components/services/ai/ScheduleCTA";
-import TrustedBrands from "@/components/TrustedBrands";
-import WhyChooseUs from "@/components/services/WhyChooseUs";
+import SitePage from "@/components/site/SitePage";
+import CloudServices from "@/components/services/pages/CloudServices";
+import { pageMetadata } from "@/lib/metadata";
 
-export default function Home() {
+export const metadata = pageMetadata({
+  title: "Cloud & Production Engineering | Paramount Intelligence",
+  description:
+    "Resolve deployment blockers and establish cloud infrastructure, access controls, monitoring, and release processes for AI and software applications.",
+  path: "/services/cloud-services",
+});
+
+export default function CloudServicesPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
-      <Header />
-      {/* <LLMHeader /> */}
-      <LLMHero />
-      <WhyGenerativeAI />
-      <LLMServicesSection />
-      <WhoWeServe />
-      <TrustedBrands />
-      {/* <ScheduleCTA /> */}
-      <WhyChooseUs />
-      <ProjectExperience />
-      {/* <LatestArticles /> */}
-      <Footer />
-    </div>
+    <SitePage>
+      <CloudServices />
+    </SitePage>
   );
 }

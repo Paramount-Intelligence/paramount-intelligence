@@ -7,6 +7,14 @@ import WhyGenerativeAI from "@/components/services/studio/WhyGenerativeAI";
 import LLMServicesSection from "@/components/services/studio/LLMServicesSection";
 import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/services/WhyChooseUs";
+import { pageMetadata } from "@/lib/metadata";
+
+export const metadata = pageMetadata({
+  title: "AI Studio & Platform Engineering | Paramount Intelligence",
+  description:
+    "We design and build AI studios and cloud-native platform foundations that enable multimodal content generation, agent-driven workflows, and production-scale AI systems operating securely on Oracle Cloud Infrastructure.",
+  path: "/services/ai-studio-and-platform-engineering",
+});
 
 export default function Home() {
   return (

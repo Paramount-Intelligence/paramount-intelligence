@@ -1,19 +1,11 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Header from "@/components/Header";
-import CaseStudiesHeader from "@/components/casestudies/Header";
-import Footer from "@/components/Footer";
-import CaseStudyHero from "@/components/casestudies/detail/CaseStudyHero";
-import ProjectDescription from "@/components/casestudies/detail/ProjectDescription";
-import MeetOurClient from "@/components/casestudies/detail/MeetOurClient";
-import InANutshell from "@/components/casestudies/detail/InANutshell";
-import DeepDive from "@/components/casestudies/detail/DeepDive";
-import SolutionAgents from "@/components/casestudies/detail/SolutionAgents";
-import TechStack from "@/components/casestudies/detail/TechStack";
-import UniqueSolution from "@/components/casestudies/detail/UniqueSolution";
-import Results from "@/components/casestudies/detail/Results";
-import Summary from "@/components/casestudies/detail/Summary";
+import SitePage from "@/components/site/SitePage";
+import CaseStudyDetail from "@/components/casestudies/detail/CaseStudyDetail";
+import { pageMetadata } from "@/lib/metadata";
 
-// Enable dynamic rendering for this route
+// Case studies without a full page come from the CaseStudy table (managed in /admin).
+// The full case study pages have their own routes (app/case-studies/<slug>/page.tsx).
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
@@ -36,6 +28,16 @@ async function getCaseStudyBySlug(slug: string) {
   }
 }
 
+export async function generateMetadata({ params }: CaseStudyPageProps): Promise<Metadata> {
+  const caseStudy = await getCaseStudyBySlug((await params).slug);
+  if (!caseStudy) return {};
+  return pageMetadata({
+    title: `${caseStudy.title} | Paramount Intelligence`,
+    description: caseStudy.subtitle || undefined,
+    path: `/case-studies/${caseStudy.slug}`,
+  });
+}
+
 export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const { slug } = await params;
   const caseStudy = await getCaseStudyBySlug(slug);
@@ -44,69 +46,9 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
     notFound();
   }
 
-  // Transform database format to component format
-  const clientInfo = {
-    name: caseStudy.clientName,
-    industry: caseStudy.clientIndustry,
-    market: caseStudy.clientMarket,
-    technology: caseStudy.clientTechnology,
-  };
-
-  const nutshell = {
-    challenge: caseStudy.challenges,
-    solution: caseStudy.solution,
-    benefits: caseStudy.benefits,
-  };
-
-  const deepDive = {
-    overview: caseStudy.overview,
-    client: caseStudy.client,
-    challenge: caseStudy.challenge,
-    keyConstraints: caseStudy.keyConstraints,
-  };
-
-  const solutionAgents = (caseStudy.solutionAgents || []) as Array<{
-    title: string;
-    description: string;
-  }>;
-  const techStack = (caseStudy.tech || []) as Array<{
-    title: string;
-    description: string;
-  }>;
-  const uniqueSolution = caseStudy.uniqueSolution || "";
-  const results = caseStudy.results || "";
-  const summary = caseStudy.summary || "";
-
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white">
-      <Header />
-      <CaseStudiesHeader title={caseStudy.title} />
-
-      <CaseStudyHero
-        title={caseStudy.title}
-        subtitle={caseStudy.subtitle}
-        heroImage={caseStudy.heroImage ?? ""}
-      />
-
-      <ProjectDescription description={caseStudy.description} />
-
-      <MeetOurClient clientInfo={clientInfo} />
-
-      <InANutshell content={nutshell} />
-
-      <DeepDive content={deepDive} />
-
-      <SolutionAgents agents={solutionAgents} />
-
-      <TechStack techStack={techStack} />
-
-      <UniqueSolution content={uniqueSolution} />
-
-      <Results content={results} />
-
-      <Summary content={summary} />
-
-      <Footer />
-    </div>
+    <SitePage>
+      <CaseStudyDetail cs={caseStudy} />
+    </SitePage>
   );
 }

@@ -1,23 +1,18 @@
-import Header from "@/components/Header";
-import IndustriesHeader from "@/components/industries/Header";
-import IndustriesHero from "@/components/industries/Hero";
-import TrustedBrands from "@/components/TrustedBrands";
-import IndustriesServices from "@/components/industries/IndustriesServices";
-import WhyChooseUs from "@/components/industries/WhyChooseUs";
-import CTASection from "@/components/industries/CTASection";
-import Footer from "@/components/Footer";
+import SitePage from "@/components/site/SitePage";
+import IndustriesOverview from "@/components/industries/pages/IndustriesOverview";
+import { pageMetadata } from "@/lib/metadata";
 
-export default function Services() {
+export const metadata = pageMetadata({
+  title: "Private Equity & Digital Natives | Paramount Intelligence",
+  description:
+    "AI and engineering support for private equity portfolios and digital businesses, from priority decisions to integrated production delivery.",
+  path: "/industries",
+});
+
+export default function IndustriesOverviewPage() {
   return (
-    <div className="min-h-screen text-white overflow-x-hidden bg-white">
-      <Header />
-      {/* <IndustriesHeader /> */}
-      <IndustriesHero />
-      <TrustedBrands />
-      <IndustriesServices />
-      <WhyChooseUs />
-      <CTASection />
-      <Footer />
-    </div>
+    <SitePage>
+      <IndustriesOverview />
+    </SitePage>
   );
 }
