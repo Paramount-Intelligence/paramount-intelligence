@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '@/lib/prisma';
+import { verifyAdminToken } from '@/lib/adminAuth';
 
 const getTitleFilters = (queryValue: string | string[] | undefined) => {
   if (!queryValue) return [];
@@ -16,6 +17,15 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // Reading is public (the older industry pages list case studies); changing them needs the admin login.
+  if (req.method !== 'GET') {
+    try {
+      verifyAdminToken(req.cookies.adminToken);
+    } catch {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
+
   if (req.method === 'GET') {
     try {
       const titleFilters = getTitleFilters(req.query.title);
