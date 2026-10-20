@@ -27,8 +27,6 @@ const readme = read("docs/website-redesign/README-site.md");
 const routeOf = Object.fromEntries(
   [...readme.matchAll(/\| `(case-study-[^`]+)` \| [^|]+\| `(\/case-studies\/[^`]+)` \|/g)].map((m) => [m[1], m[2]]),
 );
-// Card 50 has no route on the current site; PORT-PLAN.md section 3 proposes this slug.
-routeOf["case-study-flexagon-execution-portal.html"] = "/case-studies/flexagon-implementation-execution-portal";
 
 const PAGE_ROUTES = {
   "index.html": "/",

@@ -34,10 +34,22 @@ export const REMOVED_CASE_STUDIES: { card: string; slug: string }[] = [
   { card: "44", slug: "rfm-based-voucher-marketing-optimization" }, // Marketing incentives matched to customer behavior
   { card: "45", slug: "location-based-fraud-detection-system-for-mobility-operations" }, // Location anomalies surfaced before payouts
   { card: "46", slug: "dynamic-pricing-engine-for-personalized-fare-optimization" }, // Pricing decisions informed by marketplace conditions
-  { card: "47", slug: "truecontext-field-pulse" }, // TrueContext: field submissions turned into usable information
+  { card: "47", slug: "field-submission-intelligence" }, // Field submissions turned into usable information
 ];
 
-const SLUGS = new Set(REMOVED_CASE_STUDIES.map((c) => c.slug));
+/** Slugs renamed when client names came off the site (20 Oct 2026): old → new. next.config.ts redirects the old ones. */
+export const RENAMED_CASE_STUDY_SLUGS: [string, string][] = [
+  ["truecontext-field-pulse", "field-submission-intelligence"],
+  ["schneider-ai-initiative-tracker", "ai-idea-intake-and-governance"],
+  ["flexagon-sow-automation", "sow-generation-and-update-automation"],
+  ["flexagon-implementation-execution-portal", "implementation-execution-portal"],
+];
 
-/** True for a case study taken off the website. */
+/** Slugs the site and the public API never show: the removed case studies, and CaseStudy rows still stored under an
+ * old slug (they name the client). */
+export const HIDDEN_CASE_STUDY_SLUGS = [...REMOVED_CASE_STUDIES.map((c) => c.slug), ...RENAMED_CASE_STUDY_SLUGS.map(([from]) => from)];
+
+const SLUGS = new Set(HIDDEN_CASE_STUDY_SLUGS);
+
+/** True for a case study taken off the website, or a row still stored under a renamed slug. */
 export const isRemovedCaseStudy = (slug: string | null | undefined) => !!slug && SLUGS.has(slug);

@@ -24,7 +24,7 @@ const cards = [...listing.matchAll(/(<a class="ccard pc"[\s\S]*?<\/a>)(?=\s*<a c
 if (cards.length !== 50 || data.length !== 50) throw new Error(`expected 50 cards, got ${cards.length} / ${data.length}`);
 
 // Card 50 has no route on the current site; its page uses the slug PORT-PLAN.md (section 3) proposes.
-const ROUTES = { "50": "/case-studies/flexagon-implementation-execution-portal" };
+const ROUTES = { "50": "/case-studies/implementation-execution-portal" };
 
 // Cards taken off the website (lib/removed-case-studies.ts) are left out.
 const { REMOVED_CASE_STUDIES } = await import(new URL("lib/removed-case-studies.ts", root));

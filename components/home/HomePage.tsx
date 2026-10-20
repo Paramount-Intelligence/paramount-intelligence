@@ -341,7 +341,7 @@ export default function HomePage() {
           <div className="legend-box" style={{ background: "var(--white)" }}>
             <em>Proof from the work</em>
             <div className="big"><span className="wip" style={{ justifySelf: "start", marginBottom: "8px" }}>Work in progress</span>8 weeks<small>Discovery to production</small></div>
-            <p>TrueContext Field Pulse moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
+            <p>A PE-backed field-service software company moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
             <div className="acts">
               <Link className="btn btn-navy" href="/services#forward-deployed-engineering">Explore forward-deployed engineering <span className="arr"><Icon name="arrow" /></span></Link>
             </div>
@@ -502,17 +502,17 @@ export default function HomePage() {
           </div>
           <div className="ev">
             <Link href="/case-studies/ai-powered-support-copilot-for-pe-backed-enterprise-devops-platform">
-              <span className="org">Flexagon</span>
+              <span className="org">PE-backed DevOps software</span>
               <span className="tag">Support workflow</span>
               <p>Enterprise knowledge and response drafting inside the support workflow.</p>
             </Link>
-            <Link href="/case-studies/schneider-ai-initiative-tracker">
-              <span className="org">Schneider Electric</span>
+            <Link href="/case-studies/ai-idea-intake-and-governance">
+              <span className="org">Fortune 500 industrial automation</span>
               <span className="tag">Microsoft 365</span>
               <p>An AI initiative tracker deployed using existing Microsoft 365 tools.</p>
             </Link>
             <Link href="/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore">
-              <span className="org">Syngenta</span>
+              <span className="org">Global agriculture science</span>
               <span className="tag">AI governance</span>
               <p>A central registry for AI assets, ownership, and governance.</p>
             </Link>
@@ -532,7 +532,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="proj">
-            {/* Flexagon */}
+            {/* Support copilot */}
             <Link className="pc" href="/case-studies/ai-powered-support-copilot-for-pe-backed-enterprise-devops-platform">
               <div className="art" aria-hidden="true">
                 <svg viewBox="0 0 300 160">
@@ -577,10 +577,10 @@ export default function HomePage() {
               </div>
               <div className="in">
                 <div className="meta">
-                  <b>Flexagon</b>
+                  <b>PE-backed DevOps software company</b>
                   <span>PE-backed · Enterprise Software, DevOps &amp; Configuration Management</span>
                 </div>
-                <h3>Flexagon: support knowledge in one workflow</h3>
+                <h3>Support knowledge in one workflow</h3>
                 <p>A support copilot brings ticket context, enterprise knowledge, and reviewable response drafts into the support process.</p>
                 <div className="tech">
                   <span>Anthropic Claude</span>
@@ -591,7 +591,7 @@ export default function HomePage() {
                 <span className="link">Read case study <span className="arr"><Icon name="arrow" /></span></span>
               </div>
             </Link>
-            {/* Syngenta */}
+            {/* Agent registry */}
             <Link className="pc" href="/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore">
               <div className="art" aria-hidden="true">
                 <svg viewBox="0 0 300 160">
@@ -622,10 +622,10 @@ export default function HomePage() {
               </div>
               <div className="in">
                 <div className="meta">
-                  <b>Syngenta</b>
+                  <b>Global agriculture science company</b>
                   <span>Agriculture Technology &amp; Enterprise AI</span>
                 </div>
-                <h3>Syngenta: a governed view of enterprise AI</h3>
+                <h3>A governed view of enterprise AI</h3>
                 <p>A central registry gives teams visibility into AI agents, gateways, ownership, and lifecycle status.</p>
                 <div className="tech">
                   <span>AWS AgentCore</span>
@@ -666,7 +666,7 @@ export default function HomePage() {
               </div>
               <div className="in">
                 <div className="meta">
-                  <b>Toptal</b>
+                  <b>E-commerce and retail technology platform</b>
                   <span>Ecommerce &amp; Retail Technology</span>
                 </div>
                 <h3>A shopping assistant connected from discovery to checkout</h3>
