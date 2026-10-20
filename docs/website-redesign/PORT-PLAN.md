@@ -238,7 +238,8 @@ For every pull request:
   - the old listing (`CaseStudiesClient.tsx`), the unused server actions (`app/actions/`), and the `create-next-app` SVGs;
   - the packages only that code used (LiveKit, Radix navigation menu, class-variance-authority).
 - **Not removed:**
-  - images in `public/images/` that the code no longer references, because the live `CaseStudy` table or old emails may still point at them;
+  - **Images (20 Oct 2026):** the 24 images in `public/images/` that only removed code used are deleted. The 22 images no code has ever referenced are kept, because they were probably uploaded for case studies entered in `/admin`. The live `CaseStudy` table may point at them in `image`/`heroImage`, and the older industry pages still show `heroImage`. Delete them once the live table is checked:
+    `Gratia-logo.png`, `Gratia-logo2.png`, `Mapline-cover-2.jpg`, `Schneider-electric2.png`, `Swap-Icon-cover.png`, `aliazzam.png`, `alibaba-logo2.png`, `aramco-logo2.png`, `case-studies/22.png`, `case-studies/23.png`, `case-studies/24.png`, `case-studies/25.png`, `case-studies/26.png`, `davidson-logo2.png`, `deloitte2.png`, `donaldson-logo2.png`, `download.png`, `engineering.png`, `health.png`, `multiAgent.jpeg`, `techcrunch-vector-logo.svg`, `veon_logo.png`;
   - `pages/api/case-studies` and `db-server.js`.
 
 ### Answered in version 25 (19 Oct 2026)
