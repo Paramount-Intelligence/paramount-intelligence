@@ -996,3 +996,29 @@ html:has(main.cs-page){scroll-padding-top:auto}
 /* résumé over the size limit (careers form): the upload box takes the error colour, as other fields' borders do */
 .field.bad .file{border-color:#b42318}
 .field.bad .file input{border:0}
+
+/* ===== Renovation crane card on the homepage (components/home/RenovationCrane.tsx; approved by Ali, 21 Oct 2026).
+   As in the reference index.html. z-index 70 keeps it above the page and below the header (80), so the header menus
+   and the mobile menu open over it. Fonts come from next/font through --f and --mono, the SVG labels included. ===== */
+.pm-crane{position:fixed;right:24px;bottom:24px;z-index:70;width:320px;background:#fff;border:1.5px solid #0f256e;box-shadow:0 24px 48px -20px rgba(15,37,110,.5);font-family:var(--f);animation:pmup .6s cubic-bezier(.2,.8,.2,1) .3s both}
+@keyframes pmup{from{transform:translateY(30px);opacity:0}}
+.pm-crane .sc{height:190px;background:linear-gradient(180deg,#eaf1ff,#fff);position:relative;overflow:hidden;border-bottom:1px solid #d9dbe0}
+.pm-crane svg{position:absolute;inset:0;width:100%;height:100%}
+.pm-crane svg text{font-family:var(--f)}
+.pm-crane .jib{transform-origin:118px 34px;animation:pmjib 6s ease-in-out infinite}
+@keyframes pmjib{0%,100%{transform:rotate(0)}45%,55%{transform:rotate(-7deg)}}
+.pm-crane .hook{animation:pmhook 6s ease-in-out infinite}
+@keyframes pmhook{0%,15%{transform:translate(0,-40px)}45%,60%{transform:translate(0,0)}85%,100%{transform:translate(0,-40px)}}
+.pm-crane .load{animation:pmload 6s ease-in-out infinite}
+@keyframes pmload{0%,15%{opacity:1}55%{opacity:1}60%,100%{opacity:0}}
+.pm-crane .placed{animation:pmplaced 6s ease-in-out infinite;opacity:0}
+@keyframes pmplaced{0%,57%{opacity:0}60%,95%{opacity:1}100%{opacity:0}}
+.pm-crane .blink{animation:pmbl 1s steps(1) infinite}@keyframes pmbl{50%{opacity:.2}}
+.pm-crane .bd{padding:14px 16px;display:grid;gap:8px}
+.pm-crane b{color:#0f256e;font-size:.98rem}
+.pm-crane p{margin:0;font-size:.8rem;line-height:1.5;color:#2b3245}
+.pm-crane .ft{display:flex;justify-content:space-between;align-items:center;font:500 .64rem var(--mono);color:#646c7e}
+.pm-crane .ft a{background:#09b6f9;color:#0f256e;font:700 .74rem var(--f);padding:7px 10px;text-decoration:none}
+.pm-crane .x{position:absolute;right:6px;top:4px;background:none;border:0;font-size:1.1rem;color:#646c7e;cursor:pointer;z-index:2}
+@media (prefers-reduced-motion:reduce){.pm-crane,.pm-crane *{animation:none!important;transition:none!important}}
+@media (max-width:560px){.pm-crane{right:16px;left:16px;bottom:16px;width:auto}.pm-crane .sc{height:150px}.pm-crane .bd p{font-size:.76rem}}
