@@ -68,6 +68,8 @@ Build these first. Every page uses them.
   - Leadership photos `ali.jpg` and `marty.jpg` → `public/images/team/`.
   - Paramount mark `assets/logo.png`: the refreshed 3D mark in the new theme colours (chosen by Ali, 16 Oct 2026). Use it in the Header and Footer. The name "Paramount Intelligence" beside it keeps its current colours (#0C4185 and #6F7584, both weight 700).
   - Case study screens `reference/images/*` → `public/images/case-studies/` (keep the file names). This includes `alh-ai-lesson.mp4` (about 14 MB) and the Enterprise Video Generation clips `vg-ad-*.mp4` with their poster stills.
+- **Scoping (done in phase 1):** the reference is built on browser defaults, while the old pages rely on Tailwind's preflight. So `site.css`'s element rules (`a`, `img`, `button`, headings, `p`, `ul`, the body font and colour) apply only inside the header (`.nav`), the footer (`.foot`) and a redesigned page's root (`.pi-page`), and preflight is undone inside them (see the top of `app/site.css`). Render every redesigned page with `components/site/SitePage.tsx` (Header, `<main id="top" className="pi-page">`, Footer). Anything a page renders outside `<main>` (a toast, a lightbox) needs `pi-page` too.
+- **Scroll position:** `<html data-scroll-behavior="smooth">` makes Next.js switch smooth scrolling off during route changes, so every page opens at the top.
 - **Note:** the phase 1 commit on `website-redesign` was built from version 16. `site.css` and `site.js` are unchanged in version 25; the logo and the nine new pages' images (`sy-*`, `vg-ad-*`) are new.
 
 ## 3. Case study cards and the listing (phase 3)
