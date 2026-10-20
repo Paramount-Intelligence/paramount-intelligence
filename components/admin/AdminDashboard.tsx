@@ -17,6 +17,7 @@ import {
   XCircle,
 } from "lucide-react";
 import CaseStudyForm from "./CaseStudyForm";
+import CaseCardsAdmin from "./CaseCardsAdmin";
 import { getApiUrl } from "@/lib/api";
 import { PimsEmployee } from "@/lib/pims";
 import {
@@ -72,7 +73,7 @@ type PimsSummary = {
   };
 };
 
-type Tab = "overview" | "case-studies" | "employees" | "inactive-users";
+type Tab = "overview" | "case-studies" | "case-cards" | "employees" | "inactive-users";
 
 const pageSize = 10;
 const caseStudyPageSize = 5;
@@ -80,6 +81,7 @@ const caseStudyPageSize = 5;
 const tabs: Array<{ id: Tab; label: string }> = [
   { id: "overview", label: "Overview" },
   { id: "case-studies", label: "Case Studies" },
+  { id: "case-cards", label: "Case Cards" },
   { id: "employees", label: "PIMS Employees" },
   { id: "inactive-users", label: "Inactive (3+ Days)" },
 ];
@@ -661,6 +663,8 @@ export default function AdminDashboard() {
               )}
             </DataPanel>
           )}
+
+          {activeTab === "case-cards" && <CaseCardsAdmin />}
 
           {activeTab === "employees" && (
             <RecordsSection

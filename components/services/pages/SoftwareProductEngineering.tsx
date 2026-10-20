@@ -1,7 +1,6 @@
 import Link from "next/link";
-import CaseCard from "@/components/casestudies/CaseCard";
+import RelatedCaseCard from "@/components/casestudies/RelatedCaseCard";
 import Icon from "@/components/site/Icon";
-import { caseCard } from "@/lib/case-cards";
 
 // Page content from docs/website-redesign/reference/services-software-product-engineering.html (the spec). Behaviour: lib/site-behaviours.ts.
 export default function SoftwareProductEngineering() {
@@ -234,10 +233,9 @@ export default function SoftwareProductEngineering() {
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
           <div className="cgrid four">
-            <CaseCard card={caseCard("01")} />
-            <CaseCard card={caseCard("06")} />
-            <CaseCard card={caseCard("27")} />
-            <CaseCard card={caseCard("26")} />
+            <RelatedCaseCard n="01" />
+            <RelatedCaseCard n="06" />
+            <RelatedCaseCard n="26" />
           </div>
           <div className="ev-foot" style={{ marginTop: "24px" }}>
             <Link className="link" href="/case-studies">View all case studies <span className="arr"><Icon name="arrow" /></span></Link>

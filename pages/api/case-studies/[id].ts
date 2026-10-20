@@ -1,10 +1,21 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { isRemovedCaseStudy } from '@/lib/removed-case-studies';
 import { prisma } from '@/lib/prisma';
+import { verifyAdminToken } from '@/lib/adminAuth';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  // Reading is public (the older industry pages list case studies); changing them needs the admin login.
+  if (req.method !== 'GET') {
+    try {
+      verifyAdminToken(req.cookies.adminToken);
+    } catch {
+      return res.status(401).json({ error: 'Unauthorized' });
+    }
+  }
+
   const { id } = req.query;
 
   if (typeof id !== 'string') {
@@ -17,7 +28,8 @@ export default async function handler(
         where: { id },
       });
 
-      if (!caseStudy) {
+      // A case study taken off the website (lib/removed-case-studies.ts) is not found here either.
+      if (!caseStudy || isRemovedCaseStudy(caseStudy.slug)) {
         return res.status(404).json({ error: 'Case study not found' });
       }
 
