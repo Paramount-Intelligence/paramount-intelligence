@@ -1,24 +1,17 @@
-import Header from "@/components/Header";
-import AboutHero from "@/components/about/Hero";
-import Footer from "@/components/Footer";
-import CompanyIntro from "@/components/about/CompanyIntro";
-import Mission from "@/components/about/Mission";
-import Approach from "@/components/about/Approach";
-import Values from "@/components/about/Values";
-import ClientSuccess from "@/components/about/ClientSuccess";
+import type { Metadata } from "next";
+import SitePage from "@/components/site/SitePage";
+import AboutUs from "@/components/about/pages/AboutUs";
 
-export default function Services() {
+export const metadata: Metadata = {
+  title: "About Paramount Intelligence | AI Engineering & Consulting",
+  description:
+    "Meet Paramount Intelligence, a US-registered AI engineering and consulting firm focused on useful capabilities, direct collaboration, and delivery ownership.",
+};
+
+export default function AboutUsPage() {
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Header />
-
-      <AboutHero />
-      <CompanyIntro />
-      <Values />
-      <Mission />
-      {/* <Approach /> */}
-      <ClientSuccess />
-      <Footer />
-    </div>
+    <SitePage>
+      <AboutUs />
+    </SitePage>
   );
 }

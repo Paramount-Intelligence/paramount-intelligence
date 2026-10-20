@@ -176,6 +176,21 @@ All other slugs keep the existing database-driven detail page (`components/cases
   Confirm the mapping with Ali.
 - **Roles:** both roles say "Location: Remote, US only". Role content comes from the reference role pages. Jobs are currently hard-coded in `components/careers/open-positions/JobListings.tsx`.
 
+**Done in phase 5:**
+- **Pages:** `/about-us`, `/contact-us`, `/careers/open-positions` and the two roles (`components/about/pages/`, `components/contact/pages/`, `components/careers/pages/`).
+  - The roles render through `app/careers/open-positions/[slug]/page.tsx`. The nine older postings there are no longer linked but keep their URLs until Ali decides on them.
+  - The old About, Contact and open-positions components are no longer used (phase 6 cleanup).
+- **Behaviour:** `lib/site-behaviours.ts` adds the reference's copy buttons, filter chips (the role filter) and form validation.
+- **Sending:** after validation, the form sends its data as in the tables above. The careers form maps the fields like this:
+  - the URL goes in `linkedIn` when it is a LinkedIn address, otherwise in `portfolio`;
+  - the location and time zone go at the top of `coverLetter`, because the API has no field for them;
+  - the résumé is attached as `resume` when one is chosen.
+- **Success and failure:**
+  - The success state is the reference's, without its "Design preview: this form is not connected yet" note.
+  - When a send fails, a short message under the button asks the person to try again or email marty@paramountintelligence.co. The reference has no failure state.
+- **Escaping:** both email routes now escape form input placed in the email HTML (`lib/escape-html.ts`).
+- **Upload limit:** Vercel caps a request at 4.5 MB, but the careers form says "up to 10 MB". A larger résumé shows the failure message.
+
 ## 6. Phases (one pull request into `uat` each)
 
 1. Shared pieces: styles, Header, Footer, closing CTA, hero, buttons, assets.

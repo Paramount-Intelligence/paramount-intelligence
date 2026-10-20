@@ -1,6 +1,6 @@
 // Page behaviours from docs/website-redesign/reference/assets/site.js, run on a redesigned page's <main>
 // once it is mounted (components/site/PageBehaviours.tsx). Same logic and timings as the reference.
-// The header menus, mobile menu and copy button are React components; logo tap-to-colour is LogoTap.
+// The header menus, mobile menu and the footer's copy button are React components; logo tap-to-colour is LogoTap.
 // Every listener, timer and added node is removed by the returned cleanup.
 
 type Ctx = { root: HTMLElement; reduce: boolean; signal: AbortSignal; later: (fn: () => void) => void };
@@ -273,7 +273,111 @@ function releasePipeline({ root, reduce, later }: Ctx) {
   }
 }
 
-const BEHAVIOURS = [fdePanel, lifecycle, stages, tabs, funnel, isoLayers, releasePipeline];
+/* --- copy buttons inside the page (the footer's is CopyEmail) --- */
+function copyButtons({ root, signal }: Ctx) {
+  $$("[data-copy]", root).forEach((b) => {
+    b.addEventListener("click", () => {
+      const el = document.getElementById(b.getAttribute("data-copy")!);
+      if (!el) return;
+      const txt = el.textContent!.trim(), label = b.textContent;
+      const sel = () => { const r = document.createRange(); r.selectNodeContents(el); const s = window.getSelection()!; s.removeAllRanges(); s.addRange(r); };
+      try { navigator.clipboard.writeText(txt).then(() => { b.textContent = "Copied"; setTimeout(() => { b.textContent = label; }, 1800); }, sel); } catch { sel(); }
+    }, { signal });
+  });
+}
+
+/* --- filter chips + careers role filter --- */
+function chips({ root, signal }: Ctx) {
+  $$("[data-chips]", root).forEach((group) => {
+    const cs = $$("button", group);
+    cs.forEach((c) => c.addEventListener("click", () => {
+      cs.forEach((x) => x.setAttribute("aria-pressed", String(x === c)));
+      const lbl = $("#chipLabel", root);
+      if (lbl) lbl.textContent = c.textContent;
+    }, { signal }));
+  });
+  const roleWrap = $("#roles", root);
+  if (!roleWrap) return;
+  const roles = $$(".job", roleWrap), eoi = $("#eoi", root);
+  $$("[data-chips] button", root).forEach((c) => c.addEventListener("click", () => {
+    const cat = c.getAttribute("data-cat");
+    let shown = 0;
+    roles.forEach((r) => { const on = cat === "all" || r.getAttribute("data-cat") === cat; r.hidden = !on; if (on) shown++; });
+    roleWrap.hidden = shown === 0;
+    if (eoi) eoi.hidden = shown !== 0;
+  }, { signal }));
+}
+
+/* --- forms: the reference's validation and success state; the data goes to the email APIs --- */
+const val = (f: HTMLFormElement, id: string) => ($<HTMLInputElement>("#" + id, f)?.value ?? "").trim();
+const SEND: Record<string, (f: HTMLFormElement) => Promise<Response>> = {
+  // Contact (/contact-us) -> POST /api/send-contact-email (PORT-PLAN section 5)
+  contact: (f) =>
+    fetch("/api/send-contact-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: val(f, "f-name"),
+        email: val(f, "f-email"),
+        company: val(f, "f-co"),
+        phone: val(f, "f-phone"),
+        subject: val(f, "f-topic"),
+        message: val(f, "f-msg"),
+      }),
+    }),
+  // Careers register-interest (/careers/open-positions) -> POST /api/send-application-email, multipart
+  careers: (f) => {
+    const [first, ...rest] = val(f, "c-name").split(/\s+/);
+    const url = val(f, "c-url");
+    const body = new FormData();
+    body.append("firstName", first);
+    body.append("lastName", rest.join(" "));
+    body.append("email", val(f, "c-email"));
+    body.append("position", val(f, "c-area"));
+    body.append(/linkedin\./i.test(url) ? "linkedIn" : "portfolio", url);
+    body.append("coverLetter", `Location and time zone: ${val(f, "c-loc")}\n\n${val(f, "c-work")}`);
+    const cv = $<HTMLInputElement>("#c-cv", f)?.files?.[0];
+    if (cv) body.append("resume", cv);
+    return fetch("/api/send-application-email", { method: "POST", body });
+  },
+};
+
+function forms({ root, signal }: Ctx) {
+  $$<HTMLFormElement>("form[data-form]", root).forEach((f) => {
+    const ok = f.parentNode!.querySelector<HTMLElement>(".form-ok");
+    const fail = $(".send-err", f), btn = $<HTMLButtonElement>("button[type=submit]", f);
+    let sending = false;
+    f.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      let bad: HTMLElement | null = null;
+      $$<HTMLInputElement>("[data-err]", f).forEach((el) => {
+        const field = el.closest(".field"), msg = field && field.querySelector(".err");
+        const valid = el.type === "checkbox" ? el.checked : el.type === "email" ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim()) : el.value.trim() !== "";
+        if (field) field.classList.toggle("bad", !valid);
+        if (msg) msg.textContent = valid ? "" : el.getAttribute("data-err");
+        if (!valid && !bad) bad = el;
+      });
+      if (bad) { (bad as HTMLElement).focus(); return; }
+      const send = SEND[f.dataset.form!];
+      if (!send || sending) return;
+      sending = true;
+      btn?.setAttribute("aria-busy", "true");
+      if (fail) fail.hidden = true;
+      let sent = false;
+      try { sent = (await send(f)).ok; } catch {}
+      sending = false;
+      btn?.removeAttribute("aria-busy");
+      if (signal.aborted) return;
+      if (!sent) { if (fail) fail.hidden = false; return; }
+      f.hidden = true;
+      if (ok) { ok.hidden = false; ok.focus(); }
+    }, { signal });
+    const reset = ok && ok.querySelector("[data-reset]");
+    if (reset) reset.addEventListener("click", () => { f.reset(); ok!.hidden = true; f.hidden = false; }, { signal });
+  });
+}
+
+const BEHAVIOURS = [fdePanel, lifecycle, stages, tabs, funnel, isoLayers, releasePipeline, copyButtons, chips, forms];
 
 /** Start the page's behaviours inside `root`; returns the cleanup. */
 export function initSiteBehaviours(root: HTMLElement): () => void {
