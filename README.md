@@ -92,7 +92,8 @@ Ensure you have the following installed:
 *   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
 ### 🔧 Environment Setup
-Create a `.env.local` file in the root directory and configure the environment variables:
+Copy `.env.example` to `.env.local` and fill in the values (never commit real values). On Vercel, set the same names under Project → Settings → Environment Variables for each environment that needs them (Production, and Preview for UAT deployments), then redeploy. `.env.example` lists every variable the app reads; the main ones:
+
 ```env
 # Database Connection String for Local / Core website database
 DATABASE_URL="postgresql://user:password@host:port/database?schema=public"
@@ -101,6 +102,28 @@ DIRECT_URL="postgresql://user:password@host:port/database?schema=public"
 # Database Connection String for PIMS (Paramount Intelligence Monitoring System)
 PIMS_DATABASE_URL="postgresql://user:password@host:port/pims_database"
 ```
+
+#### ✉️ Mail for the contact and careers forms
+Both forms send through one SMTP account (`lib/mailer.ts`):
+
+| Variable | Used for |
+|---|---|
+| `SMTP_HOST` | Mail server, for example `smtp.gmail.com`. Required. |
+| `SMTP_PORT` | `465` (TLS) or `587` (STARTTLS). Default `587`. |
+| `SMTP_SECURE` | `true` for port 465, `false` for 587. If unset, `true` only on port 465. |
+| `SMTP_USER` | Login, usually the full email address. Required. |
+| `SMTP_PASSWORD` | Password. For Gmail, an app password (Google Account → Security → App passwords), not the account password. Required. |
+| `SMTP_FROM_EMAIL` | Sender address. If unset, `SMTP_USER`. With Gmail it must be `SMTP_USER` or one of its "Send mail as" aliases. |
+| `CONTACT_EMAIL` | Inbox for Contact Us enquiries. If unset, `CAREERS_EMAIL`. |
+| `CAREERS_EMAIL` | Inbox for careers submissions, and for contact enquiries when `CONTACT_EMAIL` is unset. Required. |
+
+The careers form also uploads the résumé to Cloudinary (`CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`) and saves the applicant in Airtable (`AIRTABLE_PERSONAL_ACCESS_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_TABLE_NAME`).
+
+To test the mail login without sending anything:
+```bash
+npm run smtp:check
+```
+It reads the settings from the environment (or `.env.local` / `.env`) and prints `SMTP login OK`, or `SMTP login failed:` with the error code and message. It never prints the password. If a form fails on Vercel, search the Vercel logs for `send-contact-email` or `send-application-email`: a missing setting is named there.
 
 ### 💻 Development Server
 First, run the development server:
