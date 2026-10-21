@@ -675,7 +675,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 <section class="hero" id="top">
   <div class="wrap hero-grid">
     <div>
-      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Mobile telecom operator · Pakistan</span><span class="pill-tag"><span class="pulse"></span>Live in production</span></div>
+      <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap"><span class="eyebrow">Client case study · Mobile telecom operator · South Asia</span><span class="pill-tag"><span class="pulse"></span>Live in production</span></div>
       <h1>Support that never asks them to <b>leave the app.</b></h1>
       <p class="lede">An AI assistant inside a mobile telecom operator's self-care app. OTP-verified, personal, grounded in approved knowledge.</p>
       <ul class="pts">
@@ -695,12 +695,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
     </div>
     <div class="matrix-card">
       <div class="mx-legend" role="group" aria-label="Scale">
-        <button type="button" data-m="subs" class="on"><b>80M+</b><span>Subscribers</span></button>
-        <button type="button" data-m="app"><b>40M</b><span>Active app users</span></button>
+        <button type="button" data-m="app" class="on"><b>40M</b><span>Active app users</span></button>
         <button type="button" data-m="asst"><b>3–4M</b><span>Using the assistant</span></button>
       </div>
       <div class="matrix" id="matrix" aria-hidden="true"></div>
-      <div class="mx-cap"><span>Each dot = <b>1 million people</b></span><span id="mxcap">80M+ subscribers</span></div>
+      <div class="mx-cap"><span>Each dot = <b>1 million people</b></span><span id="mxcap">40M use the app</span></div>
     </div>
   </div>
 </section>
@@ -709,7 +708,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   <div class="client">
     <div class="who">
       <h3>Meet our client</h3>
-      <dl><dt>Client</dt><dd>Mobile telecom operator</dd><dt>Industry</dt><dd>Telecom &amp; consumer digital</dd><dt>Market</dt><dd>Pakistan</dd></dl>
+      <dl><dt>Client</dt><dd>Mobile telecom operator</dd><dt>Industry</dt><dd>Telecom &amp; consumer digital</dd><dt>Market</dt><dd>South Asia</dd></dl>
     </div>
     <div class="nut">
       <h3>In a nutshell</h3>
@@ -866,7 +865,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
   </div>
   <div class="strip" id="strip"><div class="strip-row" id="striprow"></div></div>
   <div class="wrap">
-    <div class="note rv" style="margin-top:14px"><span class="lbl">What the screens show</span><ul class="pts cols"><li><b>01–02 · Sign in:</b> the customer enters their number and verifies with a one-time code.</li><li><b>03–05 · Find the assistant:</b> from the app's home screen to the assistant, without leaving the app.</li><li><b>06–10 · Account answers:</b> bundles, live balance, usage and reset date, recharge and call history, SIM details.</li><li><b>11–12 · Knowledge and support:</b> coverage from approved documents, and a complaint registered with a reference ID.</li></ul></div>
+    <div class="note rv" style="margin-top:14px"><span class="lbl">What the screens show</span><ul class="pts cols"><li><b>01–03 · Find the assistant:</b> from the app's home screen to the assistant, without leaving the app.</li><li><b>04–08 · Account answers:</b> bundles, live balance, usage and reset date, recharge and call history, SIM details.</li><li><b>09–10 · Knowledge and support:</b> coverage from approved documents, and a complaint registered with a reference ID.</li></ul></div>
   </div>
 </section>
 
@@ -1016,8 +1015,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
 
 <script>
 const IMG={
- "phone": "images/01-sign-in.webp",
- "otp": "images/02-otp.webp",
  "home": "images/03-app-home.webp",
  "explore": "images/04-find-assistant.webp",
  "welcome": "images/05-assistant-welcome.webp",
@@ -1047,15 +1044,15 @@ const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{
   addEventListener('scroll',()=>{ let k=-1; ss.forEach((s,i)=>{ if(s.getBoundingClientRect().top<innerHeight*.4) k=i; }); ls.forEach((a,i)=>a.classList.toggle('on',i===k)); },{passive:true}); })();
 
 /* HERO matrix */
-(()=>{ const m=$('#matrix'); m.innerHTML='<i></i>'.repeat(80); const d=[...m.children];
-  const cap={subs:'80M+ subscribers',app:'40M use the app',asst:'3–4M already use the assistant'};
-  const btns=$$('.mx-legend button'); let cur='subs',auto=!RM,timer;
+(()=>{ const m=$('#matrix'); m.innerHTML='<i></i>'.repeat(40); const d=[...m.children];
+  const cap={app:'40M use the app',asst:'3–4M already use the assistant'};
+  const btns=$$('.mx-legend button'); let cur='app',auto=!RM,timer;
   function set(k){ cur=k; btns.forEach(b=>b.classList.toggle('on',b.dataset.m===k)); $('#mxcap').textContent=cap[k];
-    d.forEach((e,i)=>{ const dl=RM?0:(i%10+Math.floor(i/10))*28; setTimeout(()=>{ e.className=''; if(k!=='subs'&&i<40) e.className='app'; if(k==='asst'){ if(i<3) e.className='asst'; else if(i===3) e.className='asst half'; } },dl); }); }
+    d.forEach((e,i)=>{ const dl=RM?0:(i%10+Math.floor(i/10))*28; setTimeout(()=>{ e.className='app'; if(k==='asst'){ if(i<3) e.className='asst'; else if(i===3) e.className='asst half'; } },dl); }); }
   btns.forEach(b=>{ b.addEventListener('click',()=>{ auto=false; set(b.dataset.m); }); b.addEventListener('mouseenter',()=>{ auto=false; set(b.dataset.m); }); });
   set('asst');
-  const order=['subs','app','asst']; let i=2;
-  if(auto) timer=setInterval(()=>{ if(!auto) return clearInterval(timer); i=(i+1)%3; set(order[i]); },2600);
+  const order=['app','asst']; let i=1;
+  if(auto) timer=setInterval(()=>{ if(!auto) return clearInterval(timer); i=(i+1)%2; set(order[i]); },2600);
 })();
 
 /* PROBLEM scene */
@@ -1116,7 +1113,7 @@ const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{
 })();
 
 /* FILMSTRIP */
-(()=>{ const S=[['01','Sign in','phone'],['02','Verify with OTP','otp'],['03','App home','home'],['04','Find the assistant','explore'],['05','Welcome','welcome'],['06','Bundles + subscribe','bundles'],['07','Live balance','balance'],['08','Usage & reset date','usage'],['09','Recharge & calls','recharge'],['10','SIM details','sim'],['11','Coverage (Kendra)','coverage'],['12','Complaint + reference','complaint']];
+(()=>{ const S=[['01','App home','home'],['02','Find the assistant','explore'],['03','Welcome','welcome'],['04','Bundles + subscribe','bundles'],['05','Live balance','balance'],['06','Usage & reset date','usage'],['07','Recharge & calls','recharge'],['08','SIM details','sim'],['09','Coverage (Kendra)','coverage'],['10','Complaint + reference','complaint']];
   $('#striprow').innerHTML=S.map(s=>`<figure class="shot" style="margin:0"><div class="phone"><div class="scr"><img src="${IMG[s[2]]}" alt="${s[1]} screen in the live app" loading="lazy" draggable="false"></div></div><span>${s[0]}</span><b>${s[1]}</b></figure>`).join('');
   const st=$('#strip'); let down=false,sx=0,sl=0,touched=false;
   st.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse') {touched=true;return;} down=true; touched=true; sx=e.clientX; sl=st.scrollLeft; st.classList.add('drag'); });

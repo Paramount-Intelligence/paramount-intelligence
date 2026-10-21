@@ -106,7 +106,7 @@ Numbering is only used because the chapters really are a sequence. Keep chapter 
 ## 6. Files in this package
 
 - `case-study-telecom-in-app-assistant.html`: the live case study page (open it from inside this folder so `images/` and `assets/` load).
-- `images/`: the 13 app screenshots and the app icon.
+- `images/`: the 11 app screenshots (`03–13`) and the app icon.
 - `assets/logo.png`: the Paramount mark used in the top bar and footer.
 - `CASE-STUDY-DESIGN-GUIDE.md`: this guide.
 
