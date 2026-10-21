@@ -25,44 +25,6 @@ type ResumeAttachment = {
   content: Buffer;
 };
 
-type AirtableCreateResponse = {
-  records?: Array<{
-    id?: string;
-    createdTime?: string;
-  }>;
-};
-
-const uploadResumeToCloudinary = async (resume: ResumeAttachment): Promise<string> => {
-  const timestamp = Math.floor(Date.now() / 1000);
-  const folder = "resumes";
-  
-  // Create signature
-  const crypto = await import("crypto");
-  const signatureString = `access_mode=public&folder=${folder}&timestamp=${timestamp}${process.env.CLOUDINARY_API_SECRET}`;
-  const signature = crypto.createHash("sha1").update(signatureString).digest("hex");
-
-  const formData = new FormData();
-  const blob = new Blob([new Uint8Array(resume.content)], {
-    type: "application/octet-stream",
-  });
-  formData.append("file", blob, resume.filename);
-  formData.append("timestamp", String(timestamp));
-  formData.append("api_key", process.env.CLOUDINARY_API_KEY!);
-  formData.append("signature", signature);
-  formData.append("folder", folder);
-  formData.append("access_mode", "public");
-
-  const res = await fetch(
-    `https://api.cloudinary.com/v1_1/${process.env.CLOUDINARY_CLOUD_NAME}/auto/upload`,
-    { method: "POST", body: formData }
-  );
-
-  const data = await res.json();
-  if (!data.secure_url) throw new Error(`Cloudinary upload failed: ${JSON.stringify(data)}`);
-  return data.secure_url;
-};
-
-
 const getStringValue = (value: unknown): string => {
   if (typeof value === "string") {
     return value.trim();
@@ -122,125 +84,6 @@ const parseJsonFormData = async (request: NextRequest): Promise<ApplicationFormD
   };
 };
 
-const saveApplicationToAirtable = async (
-  formData: ApplicationFormData,
-  resumeAttachment?: ResumeAttachment,
-): Promise<{ recordId: string }> => {
-  const personalAccessToken = process.env.AIRTABLE_PERSONAL_ACCESS_TOKEN;
-  const baseId = process.env.AIRTABLE_BASE_ID;
-  const tableName = process.env.AIRTABLE_TABLE_NAME;
-
-  if (!personalAccessToken || !baseId || !tableName) {
-    throw new Error(
-      "Airtable is not configured. Set AIRTABLE_PERSONAL_ACCESS_TOKEN, AIRTABLE_BASE_ID, and AIRTABLE_TABLE_NAME.",
-    );
-  }
-
-  const fullName = `${formData.firstName} ${formData.lastName}`.trim();
-  const fields: Record<string, any> = {
-    "Full Name": fullName,
-    Email: formData.email,
-    "Phone Number": formData.phone,
-    "Position Applied for": formData.position,
-    "Cover Letter": formData.coverLetter,
-    
-  };
-
-  if (formData.university) {
-    fields.University = formData.university;
-  }
-
-  if (formData.degree) {
-    fields.Degree = formData.degree;
-  }
-
-  if (formData.education) {
-    fields.Education = formData.education;
-  }
-
-  if (formData.semester) {
-    const parsedSemester = Number(formData.semester);
-    fields.Semester = Number.isNaN(parsedSemester) ? formData.semester : parsedSemester;
-  }
-
-  // Resume is handled via email attachment. Airtable Attachment fields require objects
-  // with publicly accessible URLs, so we do not send Resume here.
-  if (resumeAttachment) {
-  const resumeUrl = await uploadResumeToCloudinary(resumeAttachment);
-  console.log("✅ Resume uploaded to Cloudinary:", resumeUrl);
-  const resumeField = [{ url: resumeUrl, filename: resumeAttachment.filename }];
-  console.log("✅ Sending to Airtable:", JSON.stringify(resumeField));
-  fields["Resume"] = resumeField;
-}
-
-  const airtableEndpoint = `https://api.airtable.com/v0/${baseId}/${encodeURIComponent(tableName)}`;
-
-  const postRecord = async (recordFields: Record<string, string | number>) => {
-    const response = await fetch(airtableEndpoint, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${personalAccessToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        records: [{ fields: recordFields }],
-      }),
-    });
-
-    const responseText = await response.text();
-    let responseJson: AirtableCreateResponse | null = null;
-    try {
-      responseJson = responseText ? (JSON.parse(responseText) as AirtableCreateResponse) : null;
-    } catch {
-      responseJson = null;
-    }
-
-    return { response, responseText, responseJson };
-  };
-
-  
-
-  let airtableResult = await postRecord(fields);
-  console.log("Airtable response:", airtableResult.responseText);
-  if (airtableResult.response.ok) {
-    const recordId = airtableResult.responseJson?.records?.[0]?.id;
-    if (!recordId) {
-      throw new Error("Airtable request succeeded but no record ID was returned.");
-    }
-
-    return { recordId };
-  }
-
-  const airtableErrorText = airtableResult.responseText;
-
-  // Some Airtable select fields reject unknown options when token lacks schema-write permissions.
-  // Retry once without select-like fields to keep submission flow working.
-  if (
-    airtableResult.response.status === 422 &&
-    airtableErrorText.includes("INVALID_MULTIPLE_CHOICE_OPTIONS")
-  ) {
-    const fallbackFields = { ...fields };
-    delete fallbackFields["Position Applied for"];
-    delete fallbackFields.Education;
-
-    airtableResult = await postRecord(fallbackFields);
-    if (airtableResult.response.ok) {
-      const recordId = airtableResult.responseJson?.records?.[0]?.id;
-      if (!recordId) {
-        throw new Error("Airtable fallback request succeeded but no record ID was returned.");
-      }
-
-      return { recordId };
-    }
-
-    throw new Error(
-      `Airtable request failed (${airtableResult.response.status}): ${airtableResult.responseText}`,
-    );
-  }
-
-  throw new Error(`Airtable request failed (${airtableResult.response.status}): ${airtableErrorText}`);
-};
-
 // An applicant's link in the email: clickable only when it is an http(s) address, otherwise shown as text.
 const link = (url: string) => {
   const href = safeHref(url);
@@ -249,7 +92,6 @@ const link = (url: string) => {
 
 // Mail settings are listed in lib/mailer.ts; applications go to CAREERS_EMAIL.
 export async function POST(request: NextRequest) {
-  // Checked before anything is saved to Airtable, so a retry after this error doesn't create a duplicate record.
   const missing = missingMailSettings(["CAREERS_EMAIL"]);
   if (missing.length) {
     console.error(`send-application-email: missing settings ${missing.join(", ")}`);
@@ -273,14 +115,6 @@ export async function POST(request: NextRequest) {
     } else {
       formData = await parseJsonFormData(request);
     }
-
-    const airtableResult = await saveApplicationToAirtable(formData, resumeAttachment);
-    console.info("Airtable record created", {
-      baseId: process.env.AIRTABLE_BASE_ID,
-      tableName: process.env.AIRTABLE_TABLE_NAME,
-      recordId: airtableResult.recordId,
-      applicantEmail: formData.email,
-    });
 
     const transporter = mailTransport();
 
@@ -356,7 +190,7 @@ export async function POST(request: NextRequest) {
       </div>
     `;
 
-    // The application has been saved and delivered by now: a confirmation the applicant's address refuses is logged,
+    // The application has been delivered by now: a confirmation the applicant's address refuses is logged,
     // not reported to the applicant as a failed application.
     try {
       await transporter.sendMail({
@@ -373,12 +207,11 @@ export async function POST(request: NextRequest) {
       {
         success: true,
         message: "Application submitted and email sent successfully",
-        airtableRecordId: airtableResult.recordId,
       },
       { status: 200 }
     );
   } catch (error) {
-    // The underlying error (mail server, Airtable) goes to the server log only.
+    // The underlying error (mail server) goes to the server log only.
     console.error("Application submission error:", error);
     return NextResponse.json(
       {

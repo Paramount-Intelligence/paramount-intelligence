@@ -117,7 +117,7 @@ Both forms send through one SMTP account (`lib/mailer.ts`):
 | `CONTACT_EMAIL` | Inbox for Contact Us enquiries. If unset, `CAREERS_EMAIL`. |
 | `CAREERS_EMAIL` | Inbox for careers submissions, and for contact enquiries when `CONTACT_EMAIL` is unset. Required. |
 
-The careers form also uploads the résumé to Cloudinary (`CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`) and saves the applicant in Airtable (`AIRTABLE_PERSONAL_ACCESS_TOKEN`, `AIRTABLE_BASE_ID`, `AIRTABLE_TABLE_NAME`).
+The careers form sends the application, with the résumé attached, to `CAREERS_EMAIL`. It needs no other service.
 
 To test the mail login without sending anything:
 ```bash
