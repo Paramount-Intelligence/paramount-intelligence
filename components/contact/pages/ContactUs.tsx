@@ -80,7 +80,7 @@ export default function ContactUs() {
               <div className="actions full">
                 <button className="btn btn-cyan" type="submit">Send inquiry <span className="arr"><Icon name="arrow" /></span></button>
               </div>
-              <p className="send-err full" role="alert" hidden>The inquiry was not sent. Please try again or email marty@paramountintelligence.co. Your message has not been received.</p>
+              <p className="send-err full" role="alert" hidden>The inquiry was not sent. Please try again or email ahmed@paramountintelligence.co. Your message has not been received.</p>
             </form>
             <div className="form-ok" tabIndex={-1} hidden>
               <span className="tick">
