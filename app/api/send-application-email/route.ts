@@ -1,6 +1,6 @@
-import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escape-html";
+import { mailFrom, mailTransport, missingMailSettings, safeHref } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 
@@ -241,12 +241,16 @@ const saveApplicationToAirtable = async (
   throw new Error(`Airtable request failed (${airtableResult.response.status}): ${airtableErrorText}`);
 };
 
-// Mail settings the form can't send without (Vercel → Project → Settings → Environment Variables).
-const REQUIRED = ["SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD", "CAREERS_EMAIL"] as const;
+// An applicant's link in the email: clickable only when it is an http(s) address, otherwise shown as text.
+const link = (url: string) => {
+  const href = safeHref(url);
+  return href ? `<a href="${escapeHtml(href)}">${escapeHtml(url)}</a>` : escapeHtml(url);
+};
 
+// Mail settings are listed in lib/mailer.ts; applications go to CAREERS_EMAIL.
 export async function POST(request: NextRequest) {
   // Checked before anything is saved to Airtable, so a retry after this error doesn't create a duplicate record.
-  const missing = REQUIRED.filter((k) => !process.env[k]);
+  const missing = missingMailSettings(["CAREERS_EMAIL"]);
   if (missing.length) {
     console.error(`send-application-email: missing settings ${missing.join(", ")}`);
     return NextResponse.json(
@@ -254,8 +258,7 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-  // Without a sender address, send from the SMTP account itself.
-  const from = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+  const from = mailFrom();
 
   try {
     // Support both JSON and multipart/form-data (for file upload)
@@ -279,16 +282,7 @@ export async function POST(request: NextRequest) {
       applicantEmail: formData.email,
     });
 
-    // Configure your SMTP settings here
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_SECURE === "true", // true for 465, false for other ports
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    });
+    const transporter = mailTransport();
 
     // Verify connection
     await transporter.verify();
@@ -307,8 +301,8 @@ export async function POST(request: NextRequest) {
           <p><strong>Position Applied For:</strong> ${escapeHtml(formData.position)}</p>
           <p><strong>Years of Experience:</strong> ${escapeHtml(formData.experience)}</p>
           
-          ${formData.linkedIn ? `<p><strong>LinkedIn Profile:</strong> <a href="${escapeHtml(formData.linkedIn)}">${escapeHtml(formData.linkedIn)}</a></p>` : ""}
-          ${formData.portfolio ? `<p><strong>Portfolio/GitHub:</strong> <a href="${escapeHtml(formData.portfolio)}">${escapeHtml(formData.portfolio)}</a></p>` : ""}
+          ${formData.linkedIn ? `<p><strong>LinkedIn Profile:</strong> ${link(formData.linkedIn)}</p>` : ""}
+          ${formData.portfolio ? `<p><strong>Portfolio/GitHub:</strong> ${link(formData.portfolio)}</p>` : ""}
           
           <h3 style="margin-top: 20px; color: #333;">Cover Letter</h3>
           <p style="white-space: pre-wrap; color: #555;">${escapeHtml(formData.coverLetter)}</p>
