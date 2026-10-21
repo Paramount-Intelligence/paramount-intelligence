@@ -228,14 +228,14 @@ export default function Careers() {
               <div className="field full">
                 <label className="check">
                   <input type="checkbox" id="c-ok" data-err="Please confirm to continue." />
-                  <span>I have read the Privacy Policy and agree to be contacted about relevant opportunities.</span>
+                  <span>I agree to be contacted about relevant opportunities.</span>
                 </label>
                 <span className="err" aria-live="polite" />
               </div>
               <div className="actions full">
                 <button className="btn btn-cyan" type="submit">Send my profile <span className="arr"><Icon name="arrow" /></span></button>
               </div>
-              <p className="send-err full" role="alert" hidden>The profile could not be sent. Please try again, or email marty@paramountintelligence.co.</p>
+              <p className="send-err full" role="alert" hidden>The submission could not be sent. Please try again. Your profile has not been received.</p>
             </form>
             <div className="form-ok" tabIndex={-1} hidden>
               <span className="tick">

@@ -1,18 +1,16 @@
-import nodemailer from "nodemailer";
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escape-html";
+import { contactInbox, mailFrom, mailTransport, missingMailSettings } from "@/lib/mailer";
 
-// Settings the form can't send without (Vercel → Project → Settings → Environment Variables).
-const REQUIRED = ["SMTP_HOST", "SMTP_USER", "SMTP_PASSWORD", "CAREERS_EMAIL"] as const;
-
+// Settings are listed in lib/mailer.ts. Enquiries go to CONTACT_EMAIL, or CAREERS_EMAIL when it isn't set.
 export async function POST(request: NextRequest) {
-  const missing = REQUIRED.filter((k) => !process.env[k]);
+  const missing = missingMailSettings(["CONTACT_EMAIL", "CAREERS_EMAIL"]);
   if (missing.length) {
     console.error(`send-contact-email: missing settings ${missing.join(", ")}`);
     return NextResponse.json({ success: false }, { status: 500 });
   }
-  // Without a sender address, send from the SMTP account itself.
-  const from = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
+  const from = mailFrom();
+  const inbox = contactInbox();
 
   try {
     const data = await request.json();
@@ -21,15 +19,7 @@ export async function POST(request: NextRequest) {
       ["name", "email", "company", "phone", "subject", "message"].map((k) => [k, escapeHtml(data[k])]),
     ) as Record<string, string>;
 
-    const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || "587"),
-      secure: process.env.SMTP_SECURE === "true",
-      auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASSWORD,
-      },
-    });
+    const transporter = mailTransport();
 
     await transporter.verify();
 
@@ -50,7 +40,7 @@ export async function POST(request: NextRequest) {
 
     await transporter.sendMail({
       from,
-      to: process.env.CAREERS_EMAIL,
+      to: inbox,
       subject: `Contact: ${data.subject} - ${data.name}`,
       html: emailHTML,
     });
@@ -62,7 +52,7 @@ export async function POST(request: NextRequest) {
           <h2 style="color:#17599d">Thanks for contacting Paramount Intelligence</h2>
           <p>Hi ${h.name || ""},</p>
           <p>Thanks for reaching out regarding <strong>${h.subject}</strong>. We received your message and will get back to you shortly.</p>
-          <div style="margin-top:16px;color:#999;font-size:12px">If you need immediate assistance, email ${process.env.CAREERS_EMAIL}</div>
+          <div style="margin-top:16px;color:#999;font-size:12px">If you need immediate assistance, email ${inbox}</div>
         </div>
       `;
 

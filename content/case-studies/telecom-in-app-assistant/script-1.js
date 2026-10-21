@@ -1,6 +1,4 @@
 const IMG={
- "phone": "/images/case-studies/01-sign-in.webp",
- "otp": "/images/case-studies/02-otp.webp",
  "home": "/images/case-studies/03-app-home.webp",
  "explore": "/images/case-studies/04-find-assistant.webp",
  "welcome": "/images/case-studies/05-assistant-welcome.webp",
@@ -30,15 +28,15 @@ const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{
   addEventListener('scroll',()=>{ let k=-1; ss.forEach((s,i)=>{ if(s.getBoundingClientRect().top<innerHeight*.4) k=i; }); ls.forEach((a,i)=>a.classList.toggle('on',i===k)); },{passive:true}); })();
 
 /* HERO matrix */
-(()=>{ const m=$('#matrix'); m.innerHTML='<i></i>'.repeat(80); const d=[...m.children];
-  const cap={subs:'80M+ subscribers',app:'40M use the app',asst:'3–4M already use the assistant'};
-  const btns=$$('.mx-legend button'); let cur='subs',auto=!RM,timer;
+(()=>{ const m=$('#matrix'); m.innerHTML='<i></i>'.repeat(40); const d=[...m.children];
+  const cap={app:'40M use the app',asst:'3–4M already use the assistant'};
+  const btns=$$('.mx-legend button'); let cur='app',auto=!RM,timer;
   function set(k){ cur=k; btns.forEach(b=>b.classList.toggle('on',b.dataset.m===k)); $('#mxcap').textContent=cap[k];
-    d.forEach((e,i)=>{ const dl=RM?0:(i%10+Math.floor(i/10))*28; setTimeout(()=>{ e.className=''; if(k!=='subs'&&i<40) e.className='app'; if(k==='asst'){ if(i<3) e.className='asst'; else if(i===3) e.className='asst half'; } },dl); }); }
+    d.forEach((e,i)=>{ const dl=RM?0:(i%10+Math.floor(i/10))*28; setTimeout(()=>{ e.className='app'; if(k==='asst'){ if(i<3) e.className='asst'; else if(i===3) e.className='asst half'; } },dl); }); }
   btns.forEach(b=>{ b.addEventListener('click',()=>{ auto=false; set(b.dataset.m); }); b.addEventListener('mouseenter',()=>{ auto=false; set(b.dataset.m); }); });
   set('asst');
-  const order=['subs','app','asst']; let i=2;
-  if(auto) timer=setInterval(()=>{ if(!auto) return clearInterval(timer); i=(i+1)%3; set(order[i]); },2600);
+  const order=['app','asst']; let i=1;
+  if(auto) timer=setInterval(()=>{ if(!auto) return clearInterval(timer); i=(i+1)%2; set(order[i]); },2600);
 })();
 
 /* PROBLEM scene */
@@ -99,7 +97,7 @@ const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{
 })();
 
 /* FILMSTRIP */
-(()=>{ const S=[['01','Sign in','phone'],['02','Verify with OTP','otp'],['03','App home','home'],['04','Find the assistant','explore'],['05','Welcome','welcome'],['06','Bundles + subscribe','bundles'],['07','Live balance','balance'],['08','Usage & reset date','usage'],['09','Recharge & calls','recharge'],['10','SIM details','sim'],['11','Coverage (Kendra)','coverage'],['12','Complaint + reference','complaint']];
+(()=>{ const S=[['01','App home','home'],['02','Find the assistant','explore'],['03','Welcome','welcome'],['04','Bundles + subscribe','bundles'],['05','Live balance','balance'],['06','Usage & reset date','usage'],['07','Recharge & calls','recharge'],['08','SIM details','sim'],['09','Coverage (Kendra)','coverage'],['10','Complaint + reference','complaint']];
   $('#striprow').innerHTML=S.map(s=>`<figure class="shot" style="margin:0"><div class="phone"><div class="scr"><img src="${IMG[s[2]]}" alt="${s[1]} screen in the live app" loading="lazy" draggable="false"></div></div><span>${s[0]}</span><b>${s[1]}</b></figure>`).join('');
   const st=$('#strip'); let down=false,sx=0,sl=0,touched=false;
   st.addEventListener('pointerdown',e=>{ if(e.pointerType!=='mouse') {touched=true;return;} down=true; touched=true; sx=e.clientX; sl=st.scrollLeft; st.classList.add('drag'); });

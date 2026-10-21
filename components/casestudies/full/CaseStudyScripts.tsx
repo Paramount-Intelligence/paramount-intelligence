@@ -109,6 +109,10 @@ export default function CaseStudyScripts({ scripts }: { scripts: string[] }) {
     if (!root) return;
     const markup = root.innerHTML;
     const cleanup = run(root, scripts);
+    // A link to a section (#hash): Next.js scrolled to it before the scripts built the content above it, which moved
+    // it. Align it again now the page is built (the reference did the same in its pi-top script).
+    const target = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (target && root.contains(target)) target.scrollIntoView({ behavior: "instant" });
     return () => {
       cleanup();
       // React's development double mount: run the scripts again on the page as it was rendered.

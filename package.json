@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --webpack",
     "build": "prisma migrate deploy && prisma generate && next build --webpack",
-    "start": "next start"
+    "start": "next start",
+    "smtp:check": "tsx tools/smtp-check.ts"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"

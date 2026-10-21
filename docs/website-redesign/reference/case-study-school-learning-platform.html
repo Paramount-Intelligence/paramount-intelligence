@@ -1571,7 +1571,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
         <div class="lm-fside">
           <div class="lm-now" id="fnow" aria-live="polite"></div>
           <div class="lm-quiz" id="quiz" aria-live="polite"></div>
-          <span class="demo-note">Lesson excerpt · 1 min 58 s · HD</span>
+          <span class="demo-note">Lesson excerpt · 1 min 48 s · HD</span>
         </div>
       </div>
     </div>
@@ -1727,7 +1727,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 const onView=(el,fn,th=.35)=>{ const o=new IntersectionObserver(es=>{ if(es[0].isIntersecting){ o.disconnect(); fn(); } },{threshold:th}); o.observe(el); };
 const visible=(el,cb)=>{ new IntersectionObserver(es=>cb(es[0].isIntersecting),{threshold:.15}).observe(el); };
 const pkr=v=>{ v=Math.round(v*100)/100; return '$'+v.toLocaleString('en-US',{minimumFractionDigits:v%1?2:0,maximumFractionDigits:2}); };
-const IMG={"web": "images/lms-01-website.webp", "form": "images/lms-02-admission-form.webp", "login": "images/lms-03-login.webp", "super": "images/lms-04-superadmin-fees.webp", "admin": "images/lms-05-admin-classes.webp", "coord": "images/lms-06-coordinator-dashboard.webp", "teacher": "images/lms-07-teacher-assessments.webp", "parent": "images/lms-08-parent-calendar.webp", "student": "images/lms-09-student-dashboard.webp", "verify": "images/lms-10-lecture-verifications.webp", "res": "images/lms-11-learning-resources.webp", "lib": "images/lms-12-parent-library.webp", "vposter": "images/lms-v-poster.webp", "vchap": "images/lms-v-chapters.webp", "video": "images/lms-ai-lesson.mp4"};
+const IMG={"form": "images/lms-02-admission-form.webp", "login": "images/lms-03-login.webp", "super": "images/lms-04-superadmin-fees.webp", "admin": "images/lms-05-admin-classes.webp", "coord": "images/lms-06-coordinator-dashboard.webp", "teacher": "images/lms-07-teacher-assessments.webp", "parent": "images/lms-08-parent-calendar.webp", "student": "images/lms-09-student-dashboard.webp", "verify": "images/lms-10-lecture-verifications.webp", "res": "images/lms-11-learning-resources.webp", "lib": "images/lms-12-parent-library.webp", "vposter": "images/lms-v-poster.webp", "vchap": "images/lms-v-chapters.webp", "video": "images/lms-ai-lesson.mp4"};
 
 /* reveal */
 (()=>{ const els=$$('.rv'); els.forEach(e=>{ if(e.getBoundingClientRect().top>innerHeight*.92) e.classList.add('pending'); });
@@ -1923,7 +1923,7 @@ const IMG={"web": "images/lms-01-website.webp", "form": "images/lms-02-admission
 })();
 
 /* PROOF gallery */
-(()=>{ const P=[['web','Public website','The school’s front door and enquiry entry point.'],['form','Admission form','Six-step wizard parents complete on a phone.'],['login','Secure sign-in','Email, phone or username, one portal per role.'],['coord','Coordinator dashboard','Registrations, interviews, vouchers, active students.'],['verify','Lecture verifications','Pending, verified and rejected or missed lectures.'],['super','Fee management','Class fees, payment methods and voucher settings.'],['admin','Class management','Class levels, subjects and lecture activity.'],['teacher','Teacher assessments','Section-by-section early-years assessment form.'],['parent','Parent calendar','School events alongside the child’s classes.'],['student','Student dashboard','Illustrated monthly plan and academic calendar.'],['res','Learning resources','Parent guides and the student’s learning command center.'],['lib','Parent library','Class resources, videos and documents by subject.']];
+(()=>{ const P=[['form','Admission form','Six-step wizard parents complete on a phone.'],['login','Secure sign-in','Email, phone or username, one portal per role.'],['coord','Coordinator dashboard','Registrations, interviews, vouchers, active students.'],['verify','Lecture verifications','Pending, verified and rejected or missed lectures.'],['super','Fee management','Class fees, payment methods and voucher settings.'],['admin','Class management','Class levels, subjects and lecture activity.'],['teacher','Teacher assessments','Section-by-section early-years assessment form.'],['parent','Parent calendar','School events alongside the child’s classes.'],['student','Student dashboard','Illustrated monthly plan and academic calendar.'],['res','Learning resources','Parent guides and the student’s learning command center.'],['lib','Parent library','Class resources, videos and documents by subject.']];
   const g=$('#proofg'); g.innerHTML=P.map((p,i)=>`<button type="button" data-i="${i}"><img src="${IMG[p[0]]}" alt="${p[1]}: ${p[2]}" loading="lazy"><span><b>${p[1]}</b>${p[2]}</span></button>`).join('');
   const lb=$('#lb'),li=$('#lbimg'),lc=$('#lbcap'); let last=null;
   $$('#proofg button').forEach(b=>b.addEventListener('click',()=>{ last=b; const p=P[+b.dataset.i]; li.src=IMG[p[0]]; li.alt=p[1]; lc.textContent=p[1]+' · '+p[2]; lb.hidden=false; $('#lbx').focus(); }));
@@ -1945,7 +1945,7 @@ const IMG={"web": "images/lms-01-website.webp", "form": "images/lms-02-admission
 })();
 
 /* SCHOOL: one class, many time zones */
-(()=>{ const C=[['USA','New York','America/New_York'],['UK','London','Europe/London'],['Saudi Arabia','Riyadh','Asia/Riyadh'],['Qatar','Doha','Asia/Qatar'],['UAE','Dubai','Asia/Dubai'],['Pakistan','Karachi','Asia/Karachi']];
+(()=>{ const C=[['USA','New York','America/New_York'],['UK','London','Europe/London'],['Saudi Arabia','Riyadh','Asia/Riyadh'],['Qatar','Doha','Asia/Qatar'],['UAE','Dubai','Asia/Dubai'],['South Asia','Karachi','Asia/Karachi']];
   let mine=''; try{ mine=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
   const rows=C.slice(); if(mine&&!C.some(c=>c[2]===mine)) rows.push(['You','Your time zone',mine,1]);
   const L=$('#tzl'),r=$('#tzr'),o=$('#tzo'),cnt=$('#tzc'),B=$$('#tz .seg button');
