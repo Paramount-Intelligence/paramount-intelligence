@@ -977,7 +977,8 @@ body{margin:0;background:var(--white);overflow-x:hidden}
   .cs-page :not(svg,svg *),.cs-page :not(svg,svg *)::before,.cs-page :not(svg,svg *)::after{all:revert}
 }
 /* In the reference the page body also holds the footer, so the sticky reading bar stays under the header to the very
-   end; without a box of its own, <main> lets it do the same here. And no site scroll padding: the pages set their own. */
+   end; without a box of its own, <main> lets it do the same here, inside .cs-frame (main and footer). The frame is the
+   box Next.js scrolls to the top when the page opens (FullCaseStudy.tsx). No site scroll padding: the pages set their own. */
 main.cs-page{display:contents}
 html:has(main.cs-page){scroll-padding-top:auto}
 
