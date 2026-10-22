@@ -244,7 +244,7 @@ ul{margin:0;padding:0;list-style:none}
 .legend-box .big{font-size:clamp(2.2rem,4vw,3rem);font-weight:700;color:var(--navy);line-height:1;display:grid;gap:4px}
 .legend-box .big small{font-size:.66rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
 .legend-box p{max-width:64ch}
-.legend-box .acts{display:grid;gap:10px;justify-items:start}
+.legend-box .acts{display:grid;gap:10px;justify-items:stretch}
 .wip{display:inline-flex;align-items:center;gap:7px;font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);background:var(--amber);padding:5px 10px;line-height:1;white-space:nowrap;vertical-align:middle}
 .wip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--navy);animation:wp 1.6s ease-in-out infinite}
 @keyframes wp{50%{opacity:.25}}
@@ -758,7 +758,6 @@ ul{margin:0;padding:0;list-style:none}
 @keyframes own-r4{0%,63.21%{border-left-color:transparent;background:transparent}64.29%,81.07%{border-left-color:#09b6f9;background:#eaf1ff}82.14%,100%{border-left-color:transparent;background:transparent}}
 }
 @media (prefers-reduced-motion:reduce){.own-steps .n{background:var(--green);color:#fff;border-color:var(--green)}}
-.ceo-sign{font-size:1.15rem;font-weight:600;font-style:italic;color:var(--navy);margin-top:-4px}
 
 /* values v2 (About + Careers) */
 .values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--navy);background:var(--white)}
