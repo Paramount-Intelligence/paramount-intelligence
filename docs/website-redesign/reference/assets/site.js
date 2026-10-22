@@ -286,3 +286,18 @@
   for (var i = 0; i < tiles.length; i++) tiles[i].addEventListener('touchstart', function(){ var was = this.classList.contains('on'); clear(); if (!was) this.classList.add('on'); }, {passive:true});
   document.addEventListener('touchstart', function(e){ if (!e.target.closest || !e.target.closest('.lw, .xlogos img')) clear(); }, {passive:true});
 })();
+
+/* One visit = from the first tab of the site until the last one closes. The homepage crane shows once per visit:
+   every page answers the other tabs on a BroadcastChannel; a new tab that hears no "seen" starts a new visit. */
+function piVisitSeen(v){try{if(v)sessionStorage.setItem('pi-crane-seen','1');return sessionStorage.getItem('pi-crane-seen')==='1'}catch(e){return false}}
+(function(){
+  if (typeof BroadcastChannel === 'undefined') return;
+  var ch = new BroadcastChannel('pi-visit');
+  ch.onmessage = function(e){ var d = e.data || {}; if (d.type === 'ask') ch.postMessage({type:'here', seen: piVisitSeen()}); else if (d.type === 'seen') piVisitSeen(true); };
+})();
+function piVisitClaimCrane(done){
+  if (piVisitSeen()) return done(false);
+  var seen = false, ch = typeof BroadcastChannel === 'undefined' ? null : new BroadcastChannel('pi-visit');
+  if (ch) { ch.onmessage = function(e){ if (e.data && e.data.type === 'here' && e.data.seen) seen = true; }; ch.postMessage({type:'ask'}); }
+  setTimeout(function(){ piVisitSeen(true); if (ch) { if (!seen) ch.postMessage({type:'seen'}); ch.close(); } done(!seen); }, ch ? 300 : 0);
+}

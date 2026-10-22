@@ -492,8 +492,8 @@
   </defs>
 </svg>
 <script src="assets/site.js"></script>
-<!-- Renovation crane card (homepage only). Closing it is remembered in localStorage (pi-renovation-crane-dismissed). -->
-<div class="pm pm-crane" id="pmCrane" role="complementary" aria-label="Site under renovation"><button class="x" type="button" aria-label="Dismiss">&times;</button><div class="sc" aria-hidden="true">
+<!-- Renovation crane card (homepage only). Shown once per visit: not again in other tabs, on a reload or after "×" while any tab of the site is open; again after they are all closed (assets/site.js answers from the other tabs). -->
+<div class="pm pm-crane" id="pmCrane" role="complementary" aria-label="Site under renovation" hidden><button class="x" type="button" aria-label="Dismiss">&times;</button><div class="sc" aria-hidden="true">
 <svg viewBox="0 0 320 190">
  <line x1="0" y1="182" x2="320" y2="182" stroke="#0f256e" stroke-width="2"/>
  <g stroke="#0f256e" stroke-width="2" fill="none"><path d="M112 182 V34 M124 182 V34"/><path d="M112 60 L124 74 M124 60 L112 74 M112 88 L124 102 M124 88 L112 102 M112 116 L124 130 M124 116 L112 130 M112 144 L124 158 M124 144 L112 158"/></g>
@@ -511,6 +511,9 @@
 </svg></div>
 <div class="bd"><b>Pardon the cranes.</b><p>We're rebuilding this site in between client work, with Claude at the controls. A few links still lead nowhere. The case studies are the good part, and we're still adding to them.</p><div class="ft"><span>Site crew: Ali &amp; Marty</span><a href="case-studies.html">See what we have built &rarr;</a></div></div></div>
 <script>
-function ls(k,v){try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}}
-(function(){var c=document.getElementById('pmCrane');if(ls('pi-renovation-crane-dismissed'))return c.remove();c.querySelector('.x').addEventListener('click',function(){c.remove();ls('pi-renovation-crane-dismissed','1')})})();
+(function(){
+  var c=document.getElementById('pmCrane');
+  c.querySelector('.x').addEventListener('click',function(){c.remove()});
+  piVisitClaimCrane(function(show){ if(show) c.hidden=false; else c.remove(); });
+})();
 </script>
