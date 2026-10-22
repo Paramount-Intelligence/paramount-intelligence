@@ -139,9 +139,11 @@ export default function HomePage() {
         <div className="wrap ceo2">
           <div className="copy">
             <div className="eyebrow">Message from our CEO</div>
-            <h2 className="title">Connecting Technology Investment with Operational Value</h2>
-            <blockquote className="ceo-q">Successful AI implementation requires a clear understanding of the business, the people using the system, and the environment in which it operates. We connect the application, data, and engineering foundations required to make intelligent capabilities useful in everyday operations.</blockquote>
-            <p>We collaborate directly with client stakeholders throughout discovery, development, integration, and release. Working increments, transparent technical decisions, and defined responsibilities keep delivery aligned with business priorities. Our engagements cover new initiatives, existing systems, and projects requiring technical recovery.</p>
+            <h2 className="title">Building Systems Your Business Can Own</h2>
+            <blockquote className="ceo-q">Technology creates lasting value when it improves how a business works. That means better products, less repetitive work, and reliable systems that people can use every day. Achieving those improvements takes practical engineering, clear ownership, and close collaboration. That is the work we do.</blockquote>
+            <p>We build inside your environment, integrate with the systems you already run, and work directly with your executives, business users, and engineers. Whether developing a new capability or recovering a stalled initiative, we document key technical decisions and operating procedures throughout delivery. At handover, your team has the knowledge and tools to run, change, and improve what we have built.</p>
+            <p>Our standard is simple: deliver systems that work, strengthen your team&rsquo;s capabilities, and leave your business in control of its technology.</p>
+            <p className="ceo-sign">Ali</p>
             <div className="sig2">
               <div className="who2">
                 <img src="/images/logo-mark.png" alt="" width="26" height="36" />
@@ -153,30 +155,26 @@ export default function HomePage() {
               <Link className="btn btn-line" href="/about-us">About Paramount <span className="arr"><Icon name="arrow" /></span></Link>
             </div>
           </div>
-          <div className="venn">
-            <svg viewBox="0 0 400 290" role="img" aria-label="Useful AI sits where the business, the people using the system, and the environment it operates in overlap">
-              <circle cx="150" cy="118" r="78" fill="rgba(32,78,207,.16)" stroke="#204ecf" strokeWidth="1.6" />
-              <circle cx="250" cy="118" r="78" fill="rgba(9,182,249,.16)" stroke="#09b6f9" strokeWidth="1.6" />
-              <circle cx="200" cy="200" r="78" fill="rgba(61,190,139,.16)" stroke="#3dbe8b" strokeWidth="1.6" />
-              <circle cx="200" cy="146" r="9" fill="#0f256e">
-                <animate attributeName="r" values="8;11;8" dur="2.6s" repeatCount="indefinite" />
-              </circle>
-              <circle cx="200" cy="146" r="18" fill="none" stroke="#0f256e" strokeWidth="1">
-                <animate attributeName="r" values="12;26;12" dur="2.6s" repeatCount="indefinite" />
-                <animate attributeName="opacity" values="1;0;1" dur="2.6s" repeatCount="indefinite" />
-              </circle>
-              <text className="vn-t" x="112" y="104" textAnchor="middle">The</text>
-              <text className="vn-t" x="112" y="120" textAnchor="middle">business</text>
-              <text className="vn-t" x="290" y="104" textAnchor="middle">The people</text>
-              <text className="vn-t" x="290" y="120" textAnchor="middle">using it</text>
-              <text className="vn-t" x="200" y="236" textAnchor="middle">The environment</text>
-              <text className="vn-t" x="200" y="252" textAnchor="middle">it runs in</text>
-              <path d="M209 146H330" stroke="#0f256e" strokeWidth="1.2" strokeDasharray="3 3" />
-              <rect x="330" y="132" width="64" height="28" fill="#0f256e" />
-              <text x="362" y="150" textAnchor="middle" fontFamily="Montserrat,sans-serif" fontSize="10.5" fontWeight="700" fill="#fff">Useful AI</text>
-            </svg>
-            <p className="cap2">Successful AI implementation starts where all three meet.</p>
-          </div>
+          <figure className="own" aria-label="From build to ownership: we build inside your environment, integrate with the systems you already run, document decisions and operating procedures, and hand over, so your team runs the system.">
+            <div className="eyebrow">From build to ownership</div>
+            <ol className="own-steps">
+              <li><span className="n">01</span><div><b>Build</b><span>Inside your environment</span></div></li>
+              <li><span className="n">02</span><div><b>Integrate</b><span>With the systems you already run</span></div></li>
+              <li><span className="n">03</span><div><b>Document</b><span>Decisions and operating procedures</span></div></li>
+              <li><span className="n">04</span><div><b>Hand over</b><span>Your team runs, changes and improves it</span></div></li>
+            </ol>
+            <div className="own-meter" aria-hidden="true">
+              <div className="own-lbl"><span>Paramount</span><span className="y">Your team</span></div>
+              <div className="own-bar"><i /></div>
+            </div>
+            <div className="own-end">
+              <figcaption className="cap2">Who runs it, stage by stage.</figcaption>
+              <span className="own-badge">
+                <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="#fff" strokeWidth="2" /></svg>
+                Yours to run
+              </span>
+            </div>
+          </figure>
         </div>
       </section>
       {/* WHO WE WORK WITH */}
