@@ -32,30 +32,6 @@
   var burger = $('#burger'), mob = $('#mob');
   if(burger && mob){ burger.addEventListener('click', function(){ var o = mob.hidden; mob.hidden = !o; burger.setAttribute('aria-expanded', o); }); }
 
-  /* --- homepage hero FDE panel --- */
-  var fp = $('#fp');
-  if(fp && fp.querySelector('.fp-mods')){
-    var mods = $$('.mod', fp), bar = $('#fpBar'), dots = $$('.fp-bar i', fp), steps = $$('.fp-steps span', fp), msg = $('#fpMsg'), tag = $('#fpTag');
-    var frames = [
-      {w:0,  s:0, m:-1, t:'Defining the workflow and first release', live:false},
-      {w:18, s:0, m:0,  t:'AI agents built against real requirements', live:false},
-      {w:50, s:1, m:1,  t:'Custom software around the AI behavior', live:false},
-      {w:72, s:1, m:2,  t:'Connected to existing enterprise systems', live:false},
-      {w:100,s:2, m:3,  t:'Released, monitored, and handed over', live:true}
-    ];
-    var fi = 0;
-    var frame = function(f){
-      bar.style.width = f.w + '%';
-      mods.forEach(function(m,i){ m.classList.toggle('on', i <= f.m); });
-      dots.forEach(function(d,i){ d.classList.toggle('on', i <= f.s); });
-      steps.forEach(function(s,i){ s.classList.toggle('on', i === f.s); });
-      msg.textContent = f.t; tag.textContent = f.live ? 'In production' : 'In progress';
-      fp.classList.toggle('live', f.live);
-    };
-    if(reduce){ frame(frames[4]); }
-    else { frame(frames[0]); setInterval(function(){ fi = (fi + 1) % (frames.length + 1); frame(frames[Math.min(fi, frames.length - 1)]); }, 1900); }
-  }
-
   /* --- lifecycle + accordion (homepage) --- */
   var acc = $('#acc');
   if(acc){
