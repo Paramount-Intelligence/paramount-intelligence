@@ -223,7 +223,7 @@ const IMG={"form": "/images/case-studies/lms-02-admission-form.webp", "login": "
 })();
 
 /* SCHOOL: one class, many time zones */
-(()=>{ const C=[['USA','New York','America/New_York'],['UK','London','Europe/London'],['Saudi Arabia','Riyadh','Asia/Riyadh'],['Qatar','Doha','Asia/Qatar'],['UAE','Dubai','Asia/Dubai'],['South Asia','Karachi','Asia/Karachi']];
+(()=>{ const C=[['USA','New York','America/New_York'],['UK','London','Europe/London'],['Saudi Arabia','Riyadh','Asia/Riyadh'],['Qatar','Doha','Asia/Qatar'],['UAE','Dubai','Asia/Dubai'],['South Asia','GMT+5','Asia/Karachi']];
   let mine=''; try{ mine=Intl.DateTimeFormat().resolvedOptions().timeZone||''; }catch(e){}
   const rows=C.slice(); if(mine&&!C.some(c=>c[2]===mine)) rows.push(['You','Your time zone',mine,1]);
   const L=$('#tzl'),r=$('#tzr'),o=$('#tzo'),cnt=$('#tzc'),B=$$('#tz .seg button');
