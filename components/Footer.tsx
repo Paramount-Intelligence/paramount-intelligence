@@ -2,7 +2,7 @@ import Link from "next/link";
 import Brand from "@/components/site/Brand";
 import CopyEmail from "@/components/site/CopyEmail";
 import Icon from "@/components/site/Icon";
-import { CONTACT_EMAIL, INDUSTRIES, LINKEDIN_URL, ROUTES, SERVICES } from "@/lib/site-nav";
+import { CONTACT_EMAIL, FOOTER_TAGLINE, INDUSTRIES, LINKEDIN_URL, ROUTES, SERVICES } from "@/lib/site-nav";
 
 const COMPANY = [
   { label: "About Us", href: ROUTES.about },
@@ -17,7 +17,7 @@ export default function Footer() {
       <div className="wrap">
         <div>
           <Brand />
-          <p>AI engineering &amp; consulting for better products, less manual work, and systems organizations can rely on.</p>
+          <p>{FOOTER_TAGLINE}</p>
         </div>
         {[
           { title: "Services", links: SERVICES },
