@@ -3,36 +3,41 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ROUTES } from "@/lib/site-nav";
+import { claimCraneForThisVisit } from "@/lib/visit";
 
 /** On/off switch for the card. Set to false to take it off the homepage when the rebuild is finished. */
 export const SHOW_RENOVATION_CRANE = true;
 
-const DISMISSED = "pi-renovation-crane-dismissed";
+/** Where "×" used to be remembered for good, before the card became once per visit. Cleared on the next visit. */
+const OLD_DISMISSED = "pi-renovation-crane-dismissed";
 
 /**
  * "Pardon the cranes": a small card fixed to the bottom-right of the homepage saying the site is being rebuilt
- * (approved by Ali, 21 Oct 2026, reworded with "Operator: Claude" on 22 Oct; styles `.pm-crane` in site.css). Closing it is remembered in localStorage. It isn't
- * rendered on the server: the flag is read after mount, so a visitor who closed it never sees it flash in.
+ * (approved by Ali, 21 Oct 2026, reworded with "Operator: Claude" on 22 Oct; styles `.pm-crane` in site.css).
+ * It shows once per visit (lib/visit.ts): not again in other tabs, on a reload or after "×" while any tab of the
+ * site is open, and again when the visitor comes back after closing them all. It isn't rendered on the server,
+ * so it never flashes in for a visitor who has already seen it.
  */
 export default function RenovationCrane() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    let dismissed = false;
+    if (!SHOW_RENOVATION_CRANE) return;
+    let live = true;
     try {
-      dismissed = localStorage.getItem(DISMISSED) !== null;
+      localStorage.removeItem(OLD_DISMISSED);
     } catch {}
-    if (SHOW_RENOVATION_CRANE && !dismissed) setOpen(true);
+    claimCraneForThisVisit().then((show) => {
+      if (live && show) setOpen(true);
+    });
+    return () => {
+      live = false;
+    };
   }, []);
 
   if (!open) return null;
 
-  const dismiss = () => {
-    setOpen(false);
-    try {
-      localStorage.setItem(DISMISSED, "1");
-    } catch {}
-  };
+  const dismiss = () => setOpen(false);
 
   return (
     <div className="pm pm-crane" role="complementary" aria-label="Site under renovation">
