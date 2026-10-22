@@ -35,8 +35,8 @@ export default function HomePage() {
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                   <line x1="50" y1="56" x2="14" y2="22" style={{ animationDelay: "0.30s" }} />
                   <line x1="50" y1="56" x2="86" y2="22" style={{ animationDelay: "0.55s" }} />
-                  <line x1="50" y1="56" x2="8" y2="58" style={{ animationDelay: "0.80s" }} />
-                  <line x1="50" y1="56" x2="92" y2="58" style={{ animationDelay: "1.05s" }} />
+                  <line x1="50" y1="56" x2="16" y2="58" style={{ animationDelay: "0.80s" }} />
+                  <line x1="50" y1="56" x2="84" y2="58" style={{ animationDelay: "1.05s" }} />
                   <line x1="50" y1="56" x2="22" y2="92" style={{ animationDelay: "1.30s" }} />
                   <line x1="50" y1="56" x2="78" y2="92" style={{ animationDelay: "1.55s" }} />
                 </svg>
@@ -48,8 +48,8 @@ export default function HomePage() {
                 <i className="h1-p p5" />
                 <span className="h1-s" style={{ "--x": "14%", "--xm": "26.2%", "--y": "22%", "--ym": "10%", animationDelay: "0.30s" } as CSSProperties}>ERP</span>
                 <span className="h1-s" style={{ "--x": "86%", "--xm": "73.8%", "--y": "22%", "--ym": "10%", animationDelay: "0.55s" } as CSSProperties}>CRM</span>
-                <span className="h1-s" style={{ "--x": "8%", "--xm": "22.3%", "--y": "58%", "--ym": "31%", animationDelay: "0.80s" } as CSSProperties}>Data warehouse</span>
-                <span className="h1-s" style={{ "--x": "92%", "--xm": "77.7%", "--y": "58%", "--ym": "31%", animationDelay: "1.05s" } as CSSProperties}>Support desk</span>
+                <span className="h1-s" style={{ "--x": "16%", "--xm": "22.3%", "--y": "58%", "--ym": "31%", animationDelay: "0.80s" } as CSSProperties}>Data warehouse</span>
+                <span className="h1-s" style={{ "--x": "84%", "--xm": "77.7%", "--y": "58%", "--ym": "31%", animationDelay: "1.05s" } as CSSProperties}>Support desk</span>
                 <span className="h1-s" style={{ "--x": "22%", "--xm": "31.5%", "--y": "92%", "--ym": "91%", animationDelay: "1.30s" } as CSSProperties}>Documents</span>
                 <span className="h1-s" style={{ "--x": "78%", "--xm": "68.5%", "--y": "92%", "--ym": "91%", animationDelay: "1.55s" } as CSSProperties}>Your team</span>
                 <div className="h1-core">
