@@ -114,8 +114,8 @@ Build these first. Every page uses them.
     - The drawing may contain only SVG shapes, text and animation: no scripts, event handlers, links or external references.
     - The search text keeps the reference's text; for a new card it defaults to the card's own text.
 - **Slugs:** card 50 (Implementation Execution Portal) uses `implementation-execution-portal`.
-- **31 case studies taken off the website (Ali, 20 Oct 2026):** these are the 31 cards without a full case study page. They are listed in `lib/removed-case-studies.ts`, and the site now shows the 19 full case studies.
-  - **Hidden:** their cards (left out of `lib/case-cards.ts` by the generator), their related cards on the service and industry pages, and the homepage's "Explore the field-service case study" link. The field-service proof box itself stays.
+- **31 case studies taken off the website (Ali, 20 Oct 2026):** these are the 31 cards without a full case study page. They are listed in `lib/removed-case-studies.ts`, and the site now shows the 19 full case studies. Card 47 came back with its full page on 22 Oct 2026 (section 9), so 30 remain off.
+  - **Hidden:** their cards (left out of `lib/case-cards.ts` by the generator), their related cards on the service and industry pages, and the homepage's "Explore the field-service case study" link. The field-service proof box itself stays. Since 22 Oct 2026 the proof box links to the AI Field Intelligence page again, as a navy "Explore the field-service case study" button above "Explore forward-deployed engineering" (Ali).
   - **404:** their `/case-studies/<slug>` pages, and their entries in `GET /api/case-studies`.
   - **Kept:** their `CaseStudy` rows stay in the database and in `/admin`. Removing an entry from the list brings that case study back.
 - **Related cards:** service and industry pages show 2–4 related case cards. Copy the selection from each reference page. On the service pages:
@@ -131,7 +131,7 @@ Build these first. Every page uses them.
 
 - **Links into case study pages from other pages:** the homepage "Evidence from the work" Fortune 500 industrial automation tile opens the AI Idea Governance page. The homepage Global agriculture science tile and project card, and card 08 on Cloud & Production Engineering, open the AI Agent Registry page.
 
-## 4. The nineteen full case study pages (phase 4)
+## 4. The full case study pages (phase 4; twenty since 22 Oct 2026)
 
 These pages were supplied as finished, self-contained HTML. Each has its own `<style>` and `<script>`, a "Where am I" reading bar (`#pi-prog`), and interactive demos; most have a Proof gallery with a full-size preview. **Content, numbers, colours, masking ("[PRICE]", blurred names, fictional demo names), "Client data protected" strips, "Work in progress" tags and interactions must not change.**
 
@@ -139,6 +139,7 @@ The table of reference files, pages and slugs is in `README-site.md` ("Pages"). 
 
 - **The ten earlier pages:** 04 Telecom In-App Assistant, 06 Contract Intelligence, 12 AI Commerce Advisor, 07 PE-backed Support Copilot, 50 Implementation Execution Portal (new slug, see section 3), 01 School Learning Platform, 05 Engineering Knowledge Co-Pilot, 48 AI Idea Governance (Work in progress), 49 SOW Generator, 19 Market Intelligence Platform. All ten were edited after review in version 25; use the files in `reference/`, not older copies.
 - **Nine new pages:** 08 AI Agent Registry (images `sy-*`), 26 Enterprise Video Generation (clips `vg-ad-*`), 40 Real-Time Platform Intelligence, 33 Zero-Touch Email Support, 32 AI Talent Matching, 25 AI Enablement for Staffing, 23 Multi-Model AI Infrastructure, 22 Contract Risk Intelligence, 28 Investor Email Intelligence. The PE-backed Support Copilot page and the seven newest pages draw their visuals in the page and need no image files.
+- **Added 22 Oct 2026:** 47 AI Field Intelligence (`case-study-ai-field-intelligence.html`, `/case-studies/field-submission-intelligence`; engagement in progress). Its visuals are drawn in the page too. See section 9.
 
 Zero-Touch, Talent Matching, Contract Risk and Investor Email show no "Engagement: Paramount engagement" line, because attribution is unconfirmed. Don't add it back unless Ali confirms.
 
@@ -228,7 +229,7 @@ For every pull request:
 
 1. ~~Should the old routes listed in section 1 be removed, redirected or kept?~~ Kept (answered 20 Oct 2026, see below).
 2. ~~Card data: option A first, then B?~~ A in phases 2–6, then B in phase 7 (a `CaseCard` table, filled by its migration).
-3. ~~Privacy Policy: hide it or leave it unlinked?~~ Hidden (answered 20 Oct 2026).
+3. ~~Privacy Policy: hide it or leave it unlinked?~~ Hidden (answered 20 Oct 2026); published with the approved text on 22 Oct 2026 (section 9).
 4. ~~Keep or remove the AssistantWidget?~~ Removed (answered 20 Oct 2026).
 5. The careers register-interest field mapping (section 5).
 6. ~~Card 01 says "Confidential Education Provider", while the page names the school. Update the card text?~~ Resolved: client names came off the whole site (20 Oct 2026), so the page no longer names the school.
@@ -239,7 +240,7 @@ For every pull request:
   - The old routes in section 1 and the nine older job postings stay, as they are today.
   - They render inside the new Header and Footer, and nothing links to them.
   - They are not in the sitemap.
-- **Privacy Policy:** `/privacy-policy` returns a 404 until the reviewed policy is ready. The previous page is in the git history (`components/privacy/`).
+- **Privacy Policy:** `/privacy-policy` returned a 404 until the reviewed policy was ready; it is published since 22 Oct 2026 (section 9).
 - **AssistantWidget:** removed, together with its token route (`/api/token`) and the LiveKit packages.
 
 **Also done in phase 6:**
@@ -249,7 +250,7 @@ For every pull request:
   - The full case study pages without a meta description in the reference use their card summary.
   - The old routes take their description from their own hero text.
   - `/admin` is noindex.
-- **`app/sitemap.ts`:** lists the redesigned pages, the two roles, the 19 full case study pages and the other cards whose slug is in the `CaseStudy` table. It refreshes hourly.
+- **`app/sitemap.ts`:** lists the redesigned pages, the two roles, the full case study pages (20) and the other cards whose slug is in the `CaseStudy` table. It refreshes hourly.
 - **`app/robots.ts`:** disallows `/admin` and `/api/` and points to the sitemap.
 - **Unused code removed:**
   - every component and lib file that no route reaches;
@@ -275,4 +276,21 @@ Ali approved three changes (CLAUDE-CODE-3-CHANGES-20OCT.md): Marty's Calendly li
 - **Reference files renamed:** `case-study-telecom-in-app-assistant.html`, `case-study-pe-backed-support-copilot.html`, `case-study-sow-generator.html`, `case-study-implementation-execution-portal.html`, `case-study-engineering-knowledge-copilot.html`, `case-study-ai-idea-governance.html`, `case-study-market-intelligence-platform.html`, `case-study-ai-agent-registry.html`, `case-study-school-learning-platform.html`; images `app-icon.webp`, `lms-*` (the school's screens) and the four telecom screens named after the app.
 - **Slugs renamed** (the old ones answer 308 to the new; the pairs are in `lib/removed-case-studies.ts` and `next.config.ts` reads them): `field-submission-intelligence`, `ai-idea-intake-and-governance`, `sow-generation-and-update-automation`, `implementation-execution-portal`. A `CaseStudy` row still stored under an old slug names the client, so the public case study API leaves it out.
 - **Database:** `prisma/migrations/20261020200000_remove_client_names_from_case_cards` updates the twelve CaseCard rows that named a client (only the fields that changed). The `CaseStudy` seed holds no client names.
-- **Featured cases on service and industry pages (Ali, 20 Oct 2026):** every page shows three cards, chosen from the cards still on the site because many of the reference's picks were taken off. AI & Technology Consulting 05, 48, 25; AI & Agentic Engineering 07, 12, 04; Software & Product Engineering 01, 06, 26; Data Engineering & Intelligence 40, 19, 28; Cloud & Production Engineering 08, 23, 12; Workflow Automation 07, 28, 48; Private Equity 07, 49, 47; Digital Natives 12, 07, 40. Card 47 (field-service) has no case study page, so on Private Equity it shows as Work in progress with no link (`SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`); it stays off the listing. The grids (`.cgrid.related`) use CSS subgrid, so each card's labels, title, summary, tags and link line up with the cards beside it.
+- **Featured cases on service and industry pages (Ali, 20 Oct 2026):** every page shows three cards, chosen from the cards still on the site because many of the reference's picks were taken off. AI & Technology Consulting 05, 48, 25; AI & Agentic Engineering 07, 12, 04; Software & Product Engineering 01, 06, 26; Data Engineering & Intelligence 40, 19, 28; Cloud & Production Engineering 08, 23, 12; Workflow Automation 07, 28, 48; Private Equity 07, 49, 47; Digital Natives 12, 07, 40. Card 47 (field-service) had no case study page, so on Private Equity it showed as Work in progress with no link (`SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`); since 22 Oct 2026 it opens its full page (section 9). The grids (`.cgrid.related`) use CSS subgrid, so each card's labels, title, summary, tags and link line up with the cards beside it.
+
+## 9. Website update (22 Oct 2026)
+
+Ali approved three changes in the preview (`website-update-22oct`).
+
+- **AI Field Intelligence, the 20th full case study:**
+  - `reference/case-study-ai-field-intelligence.html`, generated into `content/case-studies/ai-field-intelligence/` and `app/case-studies/field-submission-intelligence/` like the others. `/case-studies/truecontext-field-pulse` still redirects to it.
+  - Its reading bar shows all 12 section names on desktop and scrolls to keep the current one in view, as on the School and Implementation Portal pages; phones show only the current name.
+  - **Card 47** is back on the website, linked to the page, with its Work in progress tag: off `REMOVED_CASE_STUDIES` and `SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`, new text in `data/case-cards.json` and `lib/case-cards.ts`. `prisma/migrations/20261022120000_field_intelligence_case_card` updates card 47 only (title, summary, organisation, search text, slug, Full case study, published).
+  - The Case Studies page shows 20 case studies; card 47 keeps its place (20th). On Private Equity, card 47 now links to the page.
+  - The homepage renovation crane read "20 CASE STUDIES" until its rewording the same day (below).
+- **Homepage "Message from our CEO":** the approved text ("Building Systems Your Business Can Own", the quote, two paragraphs; the "Ali" sign-off was taken off again at Ali's request, with its `.ceo-sign` CSS) and the "From build to ownership" figure (`<figure class="own">`) in place of the Venn diagram. The figure is pure CSS on a 14-second loop: Build, Integrate, Document and Hand over light up in turn, the bar moves from Paramount (navy) to Your team (green), and "Yours to run" shows at the end. With reduced motion it shows that end state, unanimated. The Venn markup and its CSS (`.venn`, `.vn-t`, `.vn-s`) are gone from `HomePage.tsx`, `app/site.css` and the reference.
+- **About Us bios and Marty's title:** Ali's and Marty's new bios (three paragraphs each, word for word from Ali, with curly apostrophes); Ali's old "80M+ subscribers" line is gone. Marty is "Co-founder & Chief Commercial Officer" on the About leadership card (role and photo alt text) and in the Contact page's "Direct contact" box. "Commercial Lead" no longer appears anywhere.
+- **Renovation crane card, reworded:** the blue block reads "CASE STUDIES" (no number, no tick); a fixed "Operator: Claude" label sits under the counterweight with a dashed line from the cab; the paragraph says the site is rebuilt "with Claude at the controls" and that the case studies are still being added to; the button reads "See what we have built →" and sits under the "Site crew: Ali & Marty" credit. Animation, dismissal, reduced motion, phone layout and the on/off switch are unchanged.
+- **Privacy Policy published:** Ali approved the new policy. `/privacy-policy` renders `components/privacy/PrivacyPolicy.tsx` inside the shared header and footer: the About-style hero (breadcrumb, "Legal", a "Contact us" button), then `.legal-wrap` with the sticky "On this page" menu and the 12 sections (anchors `#glossary` … `#contact`), built from one list so the menu always matches. The text is word for word from Ali; bullets are cyan "+" marks (`.lul`) and "We do not sell or share your personal information." is `.lnote`. The page is linked from the footer's bottom bar ("© 2026 Paramount Intelligence. All rights reserved. · Privacy Policy"), the Contact form note and the Apply Now note, and is in the sitemap (`ROUTES.privacyPolicy`). The reference has no privacy page.
+- **Renovation crane, once per visit (Ali):** a visit runs from the first tab of the site a visitor opens until they close the last one. The crane shows once per visit: not again in another tab, on a reload, or after "×" while any tab of the site is open; and again when the visitor comes back after closing them all. `lib/visit.ts`: every page answers the other tabs on a BroadcastChannel (`components/site/VisitPresence.tsx`, in the root layout); a new tab that hears no "seen" starts a new visit. The per-tab flag is in sessionStorage (`pi-crane-seen`), so nothing is kept after the last tab closes. The old permanent "×" flag in localStorage is removed when a visitor next comes. The reference does the same (`assets/site.js`).
+- **Homepage "Proof from the work" box, redesigned (Ali, from his video mock-up):** "8 weeks" with the Work in progress tag; an 8-week timeline that fills week by week (Discovery 2 weeks in royal, Build and integrate 4 in cyan, Production 2 in green; pure CSS, 6.4-second loop, full and still with reduced motion); the same paragraph; then a cyan "Explore the field-service case study" button and an outline "Explore forward-deployed engineering" button with its arrow in its own cell. The box label is set in IBM Plex Mono capitals. Phones stack the buttons under the timeline. Same in the reference.

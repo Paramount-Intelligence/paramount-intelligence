@@ -1,4 +1,4 @@
-// Case studies taken off the website at Ali's request (20 Oct 2026): the 31 cards without a full case study page.
+// Case studies taken off the website at Ali's request (20 Oct 2026): the 30 cards without a full case study page.
 // Their cards are left out of lib/case-cards.ts (docs/website-redesign/data/generate-case-cards.mjs), their
 // /case-studies/<slug> pages return 404, and the public case study API leaves them out. Their CaseStudy rows stay
 // in the database and in /admin, so taking one off this list brings it back.
@@ -34,14 +34,13 @@ export const REMOVED_CASE_STUDIES: { card: string; slug: string }[] = [
   { card: "44", slug: "rfm-based-voucher-marketing-optimization" }, // Marketing incentives matched to customer behavior
   { card: "45", slug: "location-based-fraud-detection-system-for-mobility-operations" }, // Location anomalies surfaced before payouts
   { card: "46", slug: "dynamic-pricing-engine-for-personalized-fare-optimization" }, // Pricing decisions informed by marketplace conditions
-  { card: "47", slug: "field-submission-intelligence" }, // Field submissions turned into usable information
 ];
 
 /**
- * Cards taken off the website that a page still shows, as work in progress with no link (no case study page yet):
- * card 47 on the Private Equity page (Ali, 20 Oct 2026). The listing still leaves them out.
+ * Cards taken off the website that a page still shows, as work in progress with no link (no case study page yet).
+ * None at present: card 47 had been one until its page was added (22 Oct 2026).
  */
-export const SHOWN_WITHOUT_LINK = ["47"];
+export const SHOWN_WITHOUT_LINK: string[] = [];
 
 /** Slugs renamed when client names came off the site (20 Oct 2026): old → new. next.config.ts redirects the old ones. */
 export const RENAMED_CASE_STUDY_SLUGS: [string, string][] = [

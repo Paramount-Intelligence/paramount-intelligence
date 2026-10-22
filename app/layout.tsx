@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import LogoTap from "@/components/site/LogoTap";
+import VisitPresence from "@/components/site/VisitPresence";
 import { SITE_URL } from "@/lib/metadata";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
 // import { config } from "@fortawesome/fontawesome-svg-core";
@@ -52,6 +53,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         {children}
         <LogoTap />
+        <VisitPresence />
         <Analytics />
       </body>
     </html>

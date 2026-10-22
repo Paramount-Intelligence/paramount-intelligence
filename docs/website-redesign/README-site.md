@@ -37,6 +37,7 @@ Open `index.html` in a browser. All pages link to each other with relative links
 | `case-study-multi-model-ai-infrastructure.html` | Multi-Model AI Infrastructure | `/case-studies/ai-infrastructure-for-a-multi-model-chatbot-platform-serving-80m-telecom-users` |
 | `case-study-contract-risk-analysis.html` | Contract Risk Intelligence | `/case-studies/ai-systems-for-contract-document-ingestion-and-risk-analysis` |
 | `case-study-investor-email-intelligence.html` | Investor Email Intelligence | `/case-studies/ai-powered-investor-email-processing-and-crm-data-structuring` |
+| `case-study-ai-field-intelligence.html` | AI Field Intelligence (PE-backed field service platform; engagement in progress; replaces the old `/case-studies/truecontext-field-pulse` link) | `/case-studies/field-submission-intelligence` |
 | `about-us.html` | About Us | `/about-us` |
 | `careers.html` | Careers (2 open roles + register-interest form) | `/careers/open-positions` |
 | `careers-ai-engineer.html` | AI Engineer role | new |
@@ -45,16 +46,16 @@ Open `index.html` in a browser. All pages link to each other with relative links
 
 ## Folders
 
-- `assets/site.css`, `assets/site.js`: shared styles and behaviour for every page except the nineteen case study pages (`case-study-*.html`), which carry their own styles.
+- `assets/site.css`, `assets/site.js`: shared styles and behaviour for every page except the twenty case study pages (`case-study-*.html`), which carry their own styles.
 - `assets/logo.png`, `assets/ali.jpg`, `assets/marty.jpg`, `assets/logos/`: brand mark, leadership photos, client/experience logos. `logo.png` is the refreshed 3D mark in the new theme colours (chosen by Ali, 16 Oct 2026); the name beside it keeps its colours (#0C4185 and #6F7584).
-- `images/`: screenshots used by the case study pages (Telecom In-App Assistant `03–13` and `app-icon`, Contract Intelligence `ci-*`, AI Commerce Advisor `ac-*`, School Learning Platform `lms-*`, Market Intelligence Platform `dn-*`, Engineering Knowledge Co-Pilot `se-*`, AI Idea Governance `ag-*`, SOW Generator `fx-*`, Execution Portal `ep-*`, AI Agent Registry `sy-*`, Enterprise Video Generation `vg-ad-*` (three short silent MP4 clips plus poster stills)). The PE-backed Support Copilot page and the seven newest case study pages need no image files: their visuals are drawn in the page.
+- `images/`: screenshots used by the case study pages (Telecom In-App Assistant `03–13` and `app-icon`, Contract Intelligence `ci-*`, AI Commerce Advisor `ac-*`, School Learning Platform `lms-*`, Market Intelligence Platform `dn-*`, Engineering Knowledge Co-Pilot `se-*`, AI Idea Governance `ag-*`, SOW Generator `fx-*`, Execution Portal `ep-*`, AI Agent Registry `sy-*`, Enterprise Video Generation `vg-ad-*` (three short silent MP4 clips plus poster stills)). The PE-backed Support Copilot page and the eight newest case study pages need no image files: their visuals are drawn in the page.
 - `images/lms-ai-lesson.mp4`: the School Learning Platform lesson video (about 14 MB, 720p, H.264 with sound). Keep it in `images/` under this exact name.
 
 ## Notes for the developer
 
 - Forms (Contact, Careers) validate and show their success state but do not send anything yet. Connect them to the real form handler.
-- The Privacy Policy page is intentionally not included and not linked. Restore the existing policy and footer link when it is reviewed.
-- Nineteen case study cards open a redesigned page (see the table). They come first on the Case Studies page, in the order in `data/case-cards.json`. The other 31 cards show a "redesigned separately" notice instead of opening; point them to their detail pages as each one is rebuilt.
+- The Privacy Policy page is not included in this reference. The app publishes the policy Ali approved on 22 Oct 2026 at `/privacy-policy`, linked from the footer's bottom bar (see PORT-PLAN.md, section 9).
+- Twenty case study cards open a redesigned page (see the table). Nineteen come first on the Case Studies page, in the order in `data/case-cards.json`; card 47 (AI Field Intelligence, added 22 Oct 2026) keeps its place after them. The other 30 cards show a "redesigned separately" notice instead of opening; point them to their detail pages as each one is rebuilt.
 - The homepage "Evidence from the work" Fortune 500 industrial automation tile opens the AI Idea Governance page. The homepage Global agriculture science tile and project card, and the matching card on the Cloud & Production Engineering page, open the AI Agent Registry page.
 - Both open roles (AI Engineer, Full Stack Engineer) are "Remote, US only" (confirmed by Ali, 14 Oct 2026).
 - Case study cards (Case Studies page and the related-case cards on service and industry pages) use the homepage "Selected Project Experience" style: a labelled diagram on a grey panel, organisation and industry, heading, short description, 3–4 tags and "Read case study". The diagrams are inline SVG inside each card, so there are no thumbnail image files. They move gently (travelling dots on connectors, pulsing status dots, rising and falling bars, a scan line over documents) and hold still for visitors whose device is set to reduce motion.

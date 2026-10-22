@@ -1,7 +1,18 @@
-import { notFound } from "next/navigation";
+import SitePage from "@/components/site/SitePage";
+import PrivacyPolicy from "@/components/privacy/PrivacyPolicy";
+import { pageMetadata } from "@/lib/metadata";
+import { ROUTES } from "@/lib/site-nav";
 
-// Hidden until the reviewed policy is ready (Ali, 20 Oct 2026). The previous page is in the git history
-// (components/privacy/, removed in phase 6 of docs/website-redesign/PORT-PLAN.md).
-export default function PrivacyPolicy() {
-  notFound();
+export const metadata = pageMetadata({
+  title: "Privacy Policy | Paramount Intelligence",
+  description: "How Paramount Intelligence collects, uses, and protects personal data.",
+  path: ROUTES.privacyPolicy,
+});
+
+export default function PrivacyPolicyPage() {
+  return (
+    <SitePage>
+      <PrivacyPolicy />
+    </SitePage>
+  );
 }

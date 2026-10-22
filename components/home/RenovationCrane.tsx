@@ -3,36 +3,41 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ROUTES } from "@/lib/site-nav";
+import { claimCraneForThisVisit } from "@/lib/visit";
 
 /** On/off switch for the card. Set to false to take it off the homepage when the rebuild is finished. */
 export const SHOW_RENOVATION_CRANE = true;
 
-const DISMISSED = "pi-renovation-crane-dismissed";
+/** Where "×" used to be remembered for good, before the card became once per visit. Cleared on the next visit. */
+const OLD_DISMISSED = "pi-renovation-crane-dismissed";
 
 /**
  * "Pardon the cranes": a small card fixed to the bottom-right of the homepage saying the site is being rebuilt
- * (approved by Ali, 21 Oct 2026; styles `.pm-crane` in site.css). Closing it is remembered in localStorage. It isn't
- * rendered on the server: the flag is read after mount, so a visitor who closed it never sees it flash in.
+ * (approved by Ali, 21 Oct 2026, reworded with "Operator: Claude" on 22 Oct; styles `.pm-crane` in site.css).
+ * It shows once per visit (lib/visit.ts): not again in other tabs, on a reload or after "×" while any tab of the
+ * site is open, and again when the visitor comes back after closing them all. It isn't rendered on the server,
+ * so it never flashes in for a visitor who has already seen it.
  */
 export default function RenovationCrane() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    let dismissed = false;
+    if (!SHOW_RENOVATION_CRANE) return;
+    let live = true;
     try {
-      dismissed = localStorage.getItem(DISMISSED) !== null;
+      localStorage.removeItem(OLD_DISMISSED);
     } catch {}
-    if (SHOW_RENOVATION_CRANE && !dismissed) setOpen(true);
+    claimCraneForThisVisit().then((show) => {
+      if (live && show) setOpen(true);
+    });
+    return () => {
+      live = false;
+    };
   }, []);
 
   if (!open) return null;
 
-  const dismiss = () => {
-    setOpen(false);
-    try {
-      localStorage.setItem(DISMISSED, "1");
-    } catch {}
-  };
+  const dismiss = () => setOpen(false);
 
   return (
     <div className="pm pm-crane" role="complementary" aria-label="Site under renovation">
@@ -67,7 +72,7 @@ export default function RenovationCrane() {
             <rect x="181" y="156" width="110" height="26" fill="#3dbe8b" />
             <text x="236" y="173" fill="#fff">DESIGN &#10003;</text>
             <rect x="181" y="130" width="110" height="26" fill="#204ecf" />
-            <text x="236" y="147" fill="#fff">19 CASE STUDIES &#10003;</text>
+            <text x="236" y="147" fill="#fff">CASE STUDIES</text>
             <g className="placed">
               <rect x="181" y="104" width="110" height="26" fill="#f5b83d" />
               <text x="236" y="121" fill="#262d3d">COPY REWRITE</text>
@@ -76,17 +81,27 @@ export default function RenovationCrane() {
             <text x="54" y="173" fill="#9aa3b8" fontSize="9">OLD LINKS?</text>
           </g>
           <circle className="blink" cx="150" cy="12" r="3" fill="#ff5f57" />
+          <g className="op">
+            <path d="M106 32 L74 88" stroke="#204ecf" strokeWidth="1" strokeDasharray="3 2" />
+            <rect x="10" y="88" width="86" height="34" fill="#fff" stroke="#204ecf" strokeWidth="1.2" />
+            <text x="53" y="101" textAnchor="middle" fontFamily="IBM Plex Mono,monospace" fontSize="7.5" fill="#646c7e" letterSpacing=".8">
+              OPERATOR
+            </text>
+            <text x="53" y="115" textAnchor="middle" fontFamily="Montserrat" fontWeight="700" fontSize="11" fill="#204ecf">
+              Claude
+            </text>
+          </g>
         </svg>
       </div>
       <div className="bd">
         <b>Pardon the cranes.</b>
         <p>
-          We&apos;re rebuilding this site in between client work, so a few links still lead nowhere. The case studies are
-          finished, and they&apos;re the good part.
+          We&apos;re rebuilding this site in between client work, with Claude at the controls. A few links still lead
+          nowhere. The case studies are the good part, and we&apos;re still adding to them.
         </p>
         <div className="ft">
           <span>Site crew: Ali &amp; Marty</span>
-          <Link href={ROUTES.caseStudies}>See them &rarr;</Link>
+          <Link href={ROUTES.caseStudies}>See what we have built &rarr;</Link>
         </div>
       </div>
     </div>

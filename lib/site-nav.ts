@@ -58,7 +58,12 @@ export const ROUTES = {
   about: "/about-us",
   careers: "/careers/open-positions",
   contact: "/contact-us",
+  privacyPolicy: "/privacy-policy",
 } as const;
+
+/** The line under the logo in the footer (Ali, 22 Oct 2026). */
+export const FOOTER_TAGLINE =
+  "AI engineering and consulting for better products, less repetitive work, and reliable systems. Built to keep your organization in control of its technology.";
 
 export const CONTACT_EMAIL = "marty@paramountintelligence.co";
 export const LINKEDIN_URL = "https://www.linkedin.com/company/paramount-intelligence-co/";

@@ -68,6 +68,7 @@ The Paramount Intelligence database tracks high-impact client engagements across
 | **Short Term Rental Investment Engine** | Real Estate Analytics | Listing Optimization, Short Term Booking Strategy |
 | **Multimodal RAG Co-Pilot for Automation** | Industrial Manufacturing | Knowledge Base Indexing, Industrial Engineering |
 | **Enterprise Support Copilot** | DevOps & Productivity Software | DevOps Support, Automated Ticket Triage |
+| **AI Field Intelligence** (full case study, `/case-studies/field-submission-intelligence`) | Field-service software | Grounded AI summaries of field-service form submissions (engagement in progress) |
 
 ---
 

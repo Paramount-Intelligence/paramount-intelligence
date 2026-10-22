@@ -125,19 +125,21 @@ export default function AboutUs() {
               <div className="txt">
                 <span className="role">Founder &amp; CEO</span>
                 <h3>Ali Azzam</h3>
-                <p>Ali leads technical direction, architecture, and delivery quality at Paramount. He has designed and shipped production AI systems for Fortune 500, PE-backed, and high-growth companies as well as funded startups, working directly with founders, executives, and engineering teams.</p>
-                <p>His experience spans AI agents and multi-agent platforms, enterprise copilots and retrieval, customer-facing AI for a telecom operator with 80M+ subscribers, data engineering and analytics, AWS cloud infrastructure, and workflow automation. He stays hands-on in technical decisions on every engagement.</p>
+                <p>Ali is the Founder and CEO of Paramount Intelligence, an AI engineering and consulting firm. He advises and leads technology delivery for Fortune 500 companies, private equity-backed businesses, and high-growth startups, connecting business priorities with execution.</p>
+                <p>His background includes VEON and Alibaba Group, alongside advisory and engineering engagements with Schneider Electric, Syngenta, Donaldson, and Flexagon, spanning enterprise knowledge systems, AI infrastructure, and data automation.</p>
+                <p>At Paramount, Ali leads technical direction and delivery quality. He works directly with executive and engineering teams to build systems inside the client&rsquo;s own environment, documented and handed over, so the client&rsquo;s team can run, change, and own what decides how their business works.</p>
               </div>
             </div>
             <div className="leader">
               <div className="ph">
-                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Founder and Commercial Lead" width="720" height="812" />
+                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Co-founder and Chief Commercial Officer" width="720" height="812" />
               </div>
               <div className="txt">
-                <span className="role">Founder &amp; Commercial Lead</span>
+                <span className="role">Co-founder &amp; Chief Commercial Officer</span>
                 <h3>Marty Kaufman</h3>
-                <p>Marty leads client relationships and commercial alignment at Paramount. He brings commercial and executive leadership experience across technology services and is based in the United States, working with client executives to clarify priorities and shape each engagement.</p>
-                <p>He coordinates commercial decisions with Paramount's technical leadership, giving clients a clear point of contact for engagement structure, priorities, and ongoing collaboration. His focus is keeping delivery connected to the business result the client set out to achieve.</p>
+                <p>Marty is the Co-founder and Chief Commercial Officer of Paramount Intelligence, bringing more than 25 years of experience leading commercial growth, customer operations, and consulting businesses. He works with executive teams to connect business priorities with the expertise and delivery approach needed to address them.</p>
+                <p>His background includes leadership roles at The Knot Worldwide and Catalant, alongside consulting and enterprise technology experience at PwC and Siebel Systems, now part of Oracle. At The Knot Worldwide, he led a team of approximately 90 with responsibility for more than $60 million in annual retained revenue.</p>
+                <p>At Paramount, Marty leads commercial strategy and client relationships. He works with clients to define priorities, shape engagements, and establish clear expectations, ensuring the firm&rsquo;s technical capabilities address meaningful business needs and create a foundation for lasting partnerships.</p>
               </div>
             </div>
           </div>
