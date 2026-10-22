@@ -44,7 +44,9 @@ export default function Footer() {
           </a>
         </div>
         <div className="legal">
-          <span>© 2026 Paramount Intelligence. All rights reserved.</span>
+          <span>
+            © 2026 Paramount Intelligence. All rights reserved. · <Link href={ROUTES.privacyPolicy}>Privacy Policy</Link>
+          </span>
           <span>AI moves fast. We make it work.</span>
         </div>
       </div>

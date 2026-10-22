@@ -76,7 +76,7 @@ export default function ContactUs() {
                 <span className="err" aria-live="polite" />
               </div>
               <p className="note full">Please do not include passwords, confidential documents, or customer data in this form. We can arrange an appropriate way to share sensitive information.</p>
-              <p className="hint full" style={{ fontSize: ".78rem", color: "var(--muted)" }}>Submission authorizes Paramount to respond to the inquiry using the contact details provided. Information about personal-data handling is available in the Privacy Policy.</p>
+              <p className="hint full" style={{ fontSize: ".78rem", color: "var(--muted)" }}>Submission authorizes Paramount to respond to the inquiry using the contact details provided. Information about personal-data handling is available in the <Link href="/privacy-policy">Privacy Policy</Link>.</p>
               <div className="actions full">
                 <button className="btn btn-cyan" type="submit">Send inquiry <span className="arr"><Icon name="arrow" /></span></button>
               </div>

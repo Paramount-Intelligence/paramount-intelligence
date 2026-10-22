@@ -54,7 +54,7 @@ Open `index.html` in a browser. All pages link to each other with relative links
 ## Notes for the developer
 
 - Forms (Contact, Careers) validate and show their success state but do not send anything yet. Connect them to the real form handler.
-- The Privacy Policy page is intentionally not included and not linked. Restore the existing policy and footer link when it is reviewed.
+- The Privacy Policy page is not included in this reference. The app publishes the policy Ali approved on 22 Oct 2026 at `/privacy-policy`, linked from the footer's bottom bar (see PORT-PLAN.md, section 9).
 - Twenty case study cards open a redesigned page (see the table). Nineteen come first on the Case Studies page, in the order in `data/case-cards.json`; card 47 (AI Field Intelligence, added 22 Oct 2026) keeps its place after them. The other 30 cards show a "redesigned separately" notice instead of opening; point them to their detail pages as each one is rebuilt.
 - The homepage "Evidence from the work" Fortune 500 industrial automation tile opens the AI Idea Governance page. The homepage Global agriculture science tile and project card, and the matching card on the Cloud & Production Engineering page, open the AI Agent Registry page.
 - Both open roles (AI Engineer, Full Stack Engineer) are "Remote, US only" (confirmed by Ali, 14 Oct 2026).
