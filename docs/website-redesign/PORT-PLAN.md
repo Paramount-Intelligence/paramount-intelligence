@@ -229,7 +229,7 @@ For every pull request:
 
 1. ~~Should the old routes listed in section 1 be removed, redirected or kept?~~ Kept (answered 20 Oct 2026, see below).
 2. ~~Card data: option A first, then B?~~ A in phases 2–6, then B in phase 7 (a `CaseCard` table, filled by its migration).
-3. ~~Privacy Policy: hide it or leave it unlinked?~~ Hidden (answered 20 Oct 2026).
+3. ~~Privacy Policy: hide it or leave it unlinked?~~ Hidden (answered 20 Oct 2026); published with the approved text on 22 Oct 2026 (section 9).
 4. ~~Keep or remove the AssistantWidget?~~ Removed (answered 20 Oct 2026).
 5. The careers register-interest field mapping (section 5).
 6. ~~Card 01 says "Confidential Education Provider", while the page names the school. Update the card text?~~ Resolved: client names came off the whole site (20 Oct 2026), so the page no longer names the school.
@@ -240,7 +240,7 @@ For every pull request:
   - The old routes in section 1 and the nine older job postings stay, as they are today.
   - They render inside the new Header and Footer, and nothing links to them.
   - They are not in the sitemap.
-- **Privacy Policy:** `/privacy-policy` returns a 404 until the reviewed policy is ready. The previous page is in the git history (`components/privacy/`).
+- **Privacy Policy:** `/privacy-policy` returned a 404 until the reviewed policy was ready; it is published since 22 Oct 2026 (section 9).
 - **AssistantWidget:** removed, together with its token route (`/api/token`) and the LiveKit packages.
 
 **Also done in phase 6:**
@@ -291,3 +291,4 @@ Ali approved three changes in the preview (`website-update-22oct`).
 - **Homepage "Message from our CEO":** the approved text ("Building Systems Your Business Can Own", the quote, two paragraphs; the "Ali" sign-off was taken off again at Ali's request, with its `.ceo-sign` CSS) and the "From build to ownership" figure (`<figure class="own">`) in place of the Venn diagram. The figure is pure CSS on a 14-second loop: Build, Integrate, Document and Hand over light up in turn, the bar moves from Paramount (navy) to Your team (green), and "Yours to run" shows at the end. With reduced motion it shows that end state, unanimated. The Venn markup and its CSS (`.venn`, `.vn-t`, `.vn-s`) are gone from `HomePage.tsx`, `app/site.css` and the reference.
 - **About Us bios and Marty's title:** Ali's and Marty's new bios (three paragraphs each, word for word from Ali, with curly apostrophes); Ali's old "80M+ subscribers" line is gone. Marty is "Co-founder & Chief Commercial Officer" on the About leadership card (role and photo alt text) and in the Contact page's "Direct contact" box. "Commercial Lead" no longer appears anywhere.
 - **Renovation crane card, reworded:** the blue block reads "CASE STUDIES" (no number, no tick); a fixed "Operator: Claude" label sits under the counterweight with a dashed line from the cab; the paragraph says the site is rebuilt "with Claude at the controls" and that the case studies are still being added to; the button reads "See what we have built →" and sits under the "Site crew: Ali & Marty" credit. Animation, dismissal, reduced motion, phone layout and the on/off switch are unchanged.
+- **Privacy Policy published:** Ali approved the new policy. `/privacy-policy` renders `components/privacy/PrivacyPolicy.tsx` inside the shared header and footer: the About-style hero (breadcrumb, "Legal", a "Contact us" button), then `.legal-wrap` with the sticky "On this page" menu and the 12 sections (anchors `#glossary` … `#contact`), built from one list so the menu always matches. The text is word for word from Ali; bullets are cyan "+" marks (`.lul`) and "We do not sell or share your personal information." is `.lnote`. The page is linked from the footer's bottom bar ("© 2026 Paramount Intelligence. All rights reserved. · Privacy Policy"), the Contact form note and the Apply Now note, and is in the sitemap (`ROUTES.privacyPolicy`). The reference has no privacy page.

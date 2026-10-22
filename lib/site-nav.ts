@@ -58,6 +58,7 @@ export const ROUTES = {
   about: "/about-us",
   careers: "/careers/open-positions",
   contact: "/contact-us",
+  privacyPolicy: "/privacy-policy",
 } as const;
 
 export const CONTACT_EMAIL = "marty@paramountintelligence.co";

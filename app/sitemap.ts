@@ -24,6 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     `${ROUTES.careers}/ai-engineer`,
     `${ROUTES.careers}/full-stack-engineer`,
     ROUTES.contact,
+    ROUTES.privacyPolicy,
   ];
   let inDb = new Set<string>();
   try {

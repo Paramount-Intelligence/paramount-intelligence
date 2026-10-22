@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 
 export default function ApplicationForm() {
@@ -356,8 +357,9 @@ export default function ApplicationForm() {
             )}
 
             <p className="text-xs text-gray-500 text-center">
-              By submitting this form, you agree to our privacy policy and
-              consent to be contacted regarding your application.
+              By submitting this form, you agree to our{" "}
+              <Link href="/privacy-policy" className="underline">privacy policy</Link> and consent to be contacted
+              regarding your application.
             </p>
           </form>
         </div>
