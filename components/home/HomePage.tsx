@@ -335,13 +335,24 @@ export default function HomePage() {
               </span>
             </button>
           </div>
-          <div className="legend-box" style={{ background: "var(--white)" }}>
+          <div className="legend-box proof" style={{ background: "var(--white)" }}>
             <em>Proof from the work</em>
-            <div className="big"><span className="wip" style={{ justifySelf: "start", marginBottom: "8px" }}>Work in progress</span>8 weeks<small>Discovery to production</small></div>
-            <p>A PE-backed field-service software company moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
+            <div className="proof-l">
+              <div className="proof-h">
+                <span className="n"><b>8</b><span>weeks</span></span>
+                <span className="wip">Work in progress</span>
+              </div>
+              <div className="proof-tl" aria-hidden="true">
+                <i /><i /><i /><i /><i /><i /><i /><i />
+                <span className="ph d">Discovery</span>
+                <span className="ph b">Build and integrate</span>
+                <span className="ph p">Production</span>
+              </div>
+              <p>A PE-backed field-service software company moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
+            </div>
             <div className="acts">
-              <Link className="btn btn-navy" href="/case-studies/field-submission-intelligence">Explore the field-service case study <span className="arr"><Icon name="arrow" /></span></Link>
-              <Link className="btn btn-navy" href="/services#forward-deployed-engineering">Explore forward-deployed engineering <span className="arr"><Icon name="arrow" /></span></Link>
+              <Link className="btn btn-cyan" href="/case-studies/field-submission-intelligence">Explore the field-service case study <span className="arr"><Icon name="arrow" /></span></Link>
+              <Link className="btn btn-line" href="/services#forward-deployed-engineering">Explore forward-deployed engineering <span className="arr"><Icon name="arrow" /></span></Link>
             </div>
           </div>
         </div>
