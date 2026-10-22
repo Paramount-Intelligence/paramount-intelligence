@@ -21,7 +21,7 @@ export default function HomePage() {
                 <span><b className="plus">+</b>Better products.</span>
                 <span><b className="plus">+</b>Reliable systems.</span>
               </div>
-              <p className="body">Paramount Intelligence helps organizations develop AI capabilities, improve business software, and move complex initiatives into production. We combine consulting, applied R&amp;D, and hands-on engineering across AI, software, data, cloud, and automation to improve operations and support product development.</p>
+              <p className="body">Paramount Intelligence helps organizations develop AI capabilities, improve business software, and move complex initiatives into production. We build inside your environment, integrate with existing systems, and provide the documentation and handover your team needs to operate and improve what we deliver.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a project <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/case-studies">See our work</Link>
