@@ -143,7 +143,6 @@ export default function HomePage() {
             <blockquote className="ceo-q">Technology creates lasting value when it improves how a business works. That means better products, less repetitive work, and reliable systems that people can use every day. Achieving those improvements takes practical engineering, clear ownership, and close collaboration. That is the work we do.</blockquote>
             <p>We build inside your environment, integrate with the systems you already run, and work directly with your executives, business users, and engineers. Whether developing a new capability or recovering a stalled initiative, we document key technical decisions and operating procedures throughout delivery. At handover, your team has the knowledge and tools to run, change, and improve what we have built.</p>
             <p>Our standard is simple: deliver systems that work, strengthen your team&rsquo;s capabilities, and leave your business in control of its technology.</p>
-            <p className="ceo-sign">Ali</p>
             <div className="sig2">
               <div className="who2">
                 <img src="/images/logo-mark.png" alt="" width="26" height="36" />
@@ -341,6 +340,7 @@ export default function HomePage() {
             <div className="big"><span className="wip" style={{ justifySelf: "start", marginBottom: "8px" }}>Work in progress</span>8 weeks<small>Discovery to production</small></div>
             <p>A PE-backed field-service software company moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
             <div className="acts">
+              <Link className="btn btn-navy" href="/case-studies/field-submission-intelligence">Explore the field-service case study <span className="arr"><Icon name="arrow" /></span></Link>
               <Link className="btn btn-navy" href="/services#forward-deployed-engineering">Explore forward-deployed engineering <span className="arr"><Icon name="arrow" /></span></Link>
             </div>
           </div>
