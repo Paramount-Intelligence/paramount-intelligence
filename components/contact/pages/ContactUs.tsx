@@ -95,7 +95,7 @@ export default function ContactUs() {
             <div className="sbox">
               <h3>Direct contact</h3>
               <div className="person person-ph">
-                <img src="/images/team/marty.jpg" alt="Marty Kaufman" width="72" height="72" />
+                <img src="/images/team/marty-card-176.jpg" srcSet="/images/team/marty-card-88.jpg 1x, /images/team/marty-card-176.jpg 2x, /images/team/marty-card-264.jpg 3x" alt="Marty Kaufman" width="88" height="88" />
                 <div style={{ display: "grid", gap: "4px" }}>
                   <span className="k3">Engagement enquiries</span>
                   <b>Marty Kaufman</b>
