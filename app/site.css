@@ -1054,6 +1054,7 @@ html:has(main.cs-page){scroll-padding-top:auto}
 .pm-crane .sc{height:190px;background:linear-gradient(180deg,#eaf1ff,#fff);position:relative;overflow:hidden;border-bottom:1px solid #d9dbe0}
 .pm-crane svg{position:absolute;inset:0;width:100%;height:100%}
 .pm-crane svg text{font-family:var(--f)}
+.pm-crane svg .op text:first-of-type{font-family:var(--mono)}
 .pm-crane .jib{transform-origin:118px 34px;animation:pmjib 6s ease-in-out infinite}
 @keyframes pmjib{0%,100%{transform:rotate(0)}45%,55%{transform:rotate(-7deg)}}
 .pm-crane .hook{animation:pmhook 6s ease-in-out infinite}
@@ -1066,7 +1067,7 @@ html:has(main.cs-page){scroll-padding-top:auto}
 .pm-crane .bd{padding:14px 16px;display:grid;gap:8px}
 .pm-crane b{color:#0f256e;font-size:.98rem}
 .pm-crane p{margin:0;font-size:.8rem;line-height:1.5;color:#2b3245}
-.pm-crane .ft{display:flex;justify-content:space-between;align-items:center;font:500 .64rem var(--mono);color:#646c7e}
+.pm-crane .ft{display:flex;flex-direction:column;align-items:flex-start;gap:10px;font:500 .64rem var(--mono);color:#646c7e}
 .pm-crane .ft a{background:#09b6f9;color:#0f256e;font:700 .74rem var(--f);padding:7px 10px;text-decoration:none}
 .pm-crane .x{position:absolute;right:6px;top:4px;background:none;border:0;font-size:1.1rem;color:#646c7e;cursor:pointer;z-index:2}
 @media (prefers-reduced-motion:reduce){.pm-crane,.pm-crane *{animation:none!important;transition:none!important}}
