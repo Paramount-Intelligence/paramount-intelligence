@@ -114,7 +114,7 @@ Build these first. Every page uses them.
     - The drawing may contain only SVG shapes, text and animation: no scripts, event handlers, links or external references.
     - The search text keeps the reference's text; for a new card it defaults to the card's own text.
 - **Slugs:** card 50 (Implementation Execution Portal) uses `implementation-execution-portal`.
-- **31 case studies taken off the website (Ali, 20 Oct 2026):** these are the 31 cards without a full case study page. They are listed in `lib/removed-case-studies.ts`, and the site now shows the 19 full case studies.
+- **31 case studies taken off the website (Ali, 20 Oct 2026):** these are the 31 cards without a full case study page. They are listed in `lib/removed-case-studies.ts`, and the site now shows the 19 full case studies. Card 47 came back with its full page on 22 Oct 2026 (section 9), so 30 remain off.
   - **Hidden:** their cards (left out of `lib/case-cards.ts` by the generator), their related cards on the service and industry pages, and the homepage's "Explore the field-service case study" link. The field-service proof box itself stays.
   - **404:** their `/case-studies/<slug>` pages, and their entries in `GET /api/case-studies`.
   - **Kept:** their `CaseStudy` rows stay in the database and in `/admin`. Removing an entry from the list brings that case study back.
@@ -131,7 +131,7 @@ Build these first. Every page uses them.
 
 - **Links into case study pages from other pages:** the homepage "Evidence from the work" Fortune 500 industrial automation tile opens the AI Idea Governance page. The homepage Global agriculture science tile and project card, and card 08 on Cloud & Production Engineering, open the AI Agent Registry page.
 
-## 4. The nineteen full case study pages (phase 4)
+## 4. The full case study pages (phase 4; twenty since 22 Oct 2026)
 
 These pages were supplied as finished, self-contained HTML. Each has its own `<style>` and `<script>`, a "Where am I" reading bar (`#pi-prog`), and interactive demos; most have a Proof gallery with a full-size preview. **Content, numbers, colours, masking ("[PRICE]", blurred names, fictional demo names), "Client data protected" strips, "Work in progress" tags and interactions must not change.**
 
@@ -139,6 +139,7 @@ The table of reference files, pages and slugs is in `README-site.md` ("Pages"). 
 
 - **The ten earlier pages:** 04 Telecom In-App Assistant, 06 Contract Intelligence, 12 AI Commerce Advisor, 07 PE-backed Support Copilot, 50 Implementation Execution Portal (new slug, see section 3), 01 School Learning Platform, 05 Engineering Knowledge Co-Pilot, 48 AI Idea Governance (Work in progress), 49 SOW Generator, 19 Market Intelligence Platform. All ten were edited after review in version 25; use the files in `reference/`, not older copies.
 - **Nine new pages:** 08 AI Agent Registry (images `sy-*`), 26 Enterprise Video Generation (clips `vg-ad-*`), 40 Real-Time Platform Intelligence, 33 Zero-Touch Email Support, 32 AI Talent Matching, 25 AI Enablement for Staffing, 23 Multi-Model AI Infrastructure, 22 Contract Risk Intelligence, 28 Investor Email Intelligence. The PE-backed Support Copilot page and the seven newest pages draw their visuals in the page and need no image files.
+- **Added 22 Oct 2026:** 47 AI Field Intelligence (`case-study-ai-field-intelligence.html`, `/case-studies/field-submission-intelligence`; engagement in progress). Its visuals are drawn in the page too. See section 9.
 
 Zero-Touch, Talent Matching, Contract Risk and Investor Email show no "Engagement: Paramount engagement" line, because attribution is unconfirmed. Don't add it back unless Ali confirms.
 
@@ -249,7 +250,7 @@ For every pull request:
   - The full case study pages without a meta description in the reference use their card summary.
   - The old routes take their description from their own hero text.
   - `/admin` is noindex.
-- **`app/sitemap.ts`:** lists the redesigned pages, the two roles, the 19 full case study pages and the other cards whose slug is in the `CaseStudy` table. It refreshes hourly.
+- **`app/sitemap.ts`:** lists the redesigned pages, the two roles, the full case study pages (20) and the other cards whose slug is in the `CaseStudy` table. It refreshes hourly.
 - **`app/robots.ts`:** disallows `/admin` and `/api/` and points to the sitemap.
 - **Unused code removed:**
   - every component and lib file that no route reaches;
@@ -275,4 +276,15 @@ Ali approved three changes (CLAUDE-CODE-3-CHANGES-20OCT.md): Marty's Calendly li
 - **Reference files renamed:** `case-study-telecom-in-app-assistant.html`, `case-study-pe-backed-support-copilot.html`, `case-study-sow-generator.html`, `case-study-implementation-execution-portal.html`, `case-study-engineering-knowledge-copilot.html`, `case-study-ai-idea-governance.html`, `case-study-market-intelligence-platform.html`, `case-study-ai-agent-registry.html`, `case-study-school-learning-platform.html`; images `app-icon.webp`, `lms-*` (the school's screens) and the four telecom screens named after the app.
 - **Slugs renamed** (the old ones answer 308 to the new; the pairs are in `lib/removed-case-studies.ts` and `next.config.ts` reads them): `field-submission-intelligence`, `ai-idea-intake-and-governance`, `sow-generation-and-update-automation`, `implementation-execution-portal`. A `CaseStudy` row still stored under an old slug names the client, so the public case study API leaves it out.
 - **Database:** `prisma/migrations/20261020200000_remove_client_names_from_case_cards` updates the twelve CaseCard rows that named a client (only the fields that changed). The `CaseStudy` seed holds no client names.
-- **Featured cases on service and industry pages (Ali, 20 Oct 2026):** every page shows three cards, chosen from the cards still on the site because many of the reference's picks were taken off. AI & Technology Consulting 05, 48, 25; AI & Agentic Engineering 07, 12, 04; Software & Product Engineering 01, 06, 26; Data Engineering & Intelligence 40, 19, 28; Cloud & Production Engineering 08, 23, 12; Workflow Automation 07, 28, 48; Private Equity 07, 49, 47; Digital Natives 12, 07, 40. Card 47 (field-service) has no case study page, so on Private Equity it shows as Work in progress with no link (`SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`); it stays off the listing. The grids (`.cgrid.related`) use CSS subgrid, so each card's labels, title, summary, tags and link line up with the cards beside it.
+- **Featured cases on service and industry pages (Ali, 20 Oct 2026):** every page shows three cards, chosen from the cards still on the site because many of the reference's picks were taken off. AI & Technology Consulting 05, 48, 25; AI & Agentic Engineering 07, 12, 04; Software & Product Engineering 01, 06, 26; Data Engineering & Intelligence 40, 19, 28; Cloud & Production Engineering 08, 23, 12; Workflow Automation 07, 28, 48; Private Equity 07, 49, 47; Digital Natives 12, 07, 40. Card 47 (field-service) had no case study page, so on Private Equity it showed as Work in progress with no link (`SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`); since 22 Oct 2026 it opens its full page (section 9). The grids (`.cgrid.related`) use CSS subgrid, so each card's labels, title, summary, tags and link line up with the cards beside it.
+
+## 9. Website update (22 Oct 2026)
+
+Ali approved three changes in the preview (`website-update-22oct`).
+
+- **AI Field Intelligence, the 20th full case study:**
+  - `reference/case-study-ai-field-intelligence.html`, generated into `content/case-studies/ai-field-intelligence/` and `app/case-studies/field-submission-intelligence/` like the others. `/case-studies/truecontext-field-pulse` still redirects to it.
+  - Its reading bar shows all 12 section names on desktop and scrolls to keep the current one in view, as on the School and Implementation Portal pages; phones show only the current name.
+  - **Card 47** is back on the website, linked to the page, with its Work in progress tag: off `REMOVED_CASE_STUDIES` and `SHOWN_WITHOUT_LINK` in `lib/removed-case-studies.ts`, new text in `data/case-cards.json` and `lib/case-cards.ts`. `prisma/migrations/20261022120000_field_intelligence_case_card` updates card 47 only (title, summary, organisation, search text, slug, Full case study, published).
+  - The Case Studies page shows 20 case studies; card 47 keeps its place (20th). On Private Equity, card 47 now links to the page.
+  - The homepage renovation crane reads "20 CASE STUDIES".

@@ -24,6 +24,14 @@
     "caveat": false
   },
   {
+    "key": "ai-field-intelligence",
+    "slug": "/case-studies/field-submission-intelligence",
+    "title": "AI Field Intelligence | Paramount Intelligence",
+    "description": null,
+    "scripts": 2,
+    "caveat": false
+  },
+  {
     "key": "ai-idea-governance",
     "slug": "/case-studies/ai-idea-intake-and-governance",
     "title": "AI Idea Governance | Paramount Intelligence",
