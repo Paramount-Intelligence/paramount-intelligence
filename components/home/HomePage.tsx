@@ -348,7 +348,7 @@ export default function HomePage() {
                 <span className="ph b">Build and integrate</span>
                 <span className="ph p">Production</span>
               </div>
-              <p>A PE-backed field-service software company moved from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
+              <p>A PE-backed field-service software company is on track to move from discovery to production in eight weeks, converting field submissions into structured records, summaries, and management insights.</p>
             </div>
             <div className="acts">
               <Link className="btn btn-cyan" href="/case-studies/field-submission-intelligence">Explore the field-service case study <span className="arr"><Icon name="arrow" /></span></Link>
