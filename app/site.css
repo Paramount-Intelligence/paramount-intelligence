@@ -731,12 +731,51 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .sig2 .who2 img{height:36px;width:auto}
 .sig2 .who2 b{display:block;color:var(--navy);font-size:.98rem}
 .sig2 .who2 span{font-size:.8rem;color:var(--muted)}
-.venn{border:1.5px solid var(--navy);background:var(--white);padding:clamp(18px,3vw,30px);display:grid;gap:10px}
-.venn svg{width:100%;height:auto;display:block}
-.venn .cap2{font-size:.76rem;color:var(--muted);text-align:center}
-.vn-t{font-family:var(--f);font-size:13px;font-weight:700;fill:var(--navy)}
-.vn-s{font-family:var(--f);font-size:11px;font-weight:600;fill:var(--slate)}
 @media (max-width:900px){.ceo2{grid-template-columns:1fr}}
+/* homepage CEO message: "From build to ownership" (replaces the Venn, 22 Oct 2026). Pure CSS, 14s loop; reduced motion shows the end state. */
+.own{margin:0;border:1.5px solid var(--navy);background:var(--white);padding:clamp(18px,3vw,30px);display:grid;gap:18px}
+.own .eyebrow{color:var(--royal)}
+.own-steps{list-style:none;margin:0;padding:0;display:grid}
+.own-steps li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:center;padding:12px 0 12px 12px;border-bottom:1px solid var(--line);border-left:3px solid transparent}
+.own-steps li:last-child{border-bottom:0}
+.own-steps .n{width:32px;height:32px;display:grid;place-items:center;border:1.5px solid var(--line);background:var(--white);color:var(--muted);font-family:var(--mono);font-size:.72rem;font-weight:500}
+.own-steps b{display:block;color:var(--navy);font-size:.98rem;font-weight:700}
+.own-steps li span:not(.n){display:block;font-size:.8rem;color:var(--muted);line-height:1.4;margin-top:2px}
+.own-meter{display:grid;gap:8px}
+.own-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.own-lbl .y{color:#1f8a5c;font-weight:500}
+.own-bar{position:relative;height:12px;background:var(--navy);overflow:hidden}
+.own-bar i{position:absolute;top:0;right:0;bottom:0;width:100%;background:var(--green)}
+.own-end{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:28px}
+.own-end .cap2{font-size:.76rem;color:var(--muted);min-width:0}
+.own-badge{flex:none}
+.own-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:var(--green);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.own-badge svg{width:12px;height:12px}
+@media (prefers-reduced-motion:no-preference){
+.own-bar i{animation:own-bar 14s ease-in-out infinite}
+.own-badge{animation:own-badge 14s ease-in-out infinite}
+
+@keyframes own-bar{0%{width:0%}21.43%{width:20%}25.71%{width:45%}42.86%{width:45%}47.14%{width:70%}64.29%{width:70%}68.57%{width:85%}82.14%{width:85%}86.43%{width:100%}100.00%{width:100%}100%{width:100%}}
+@keyframes own-badge{0%,81.43%{opacity:0;transform:translateY(4px)}85.00%,97.14%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+.own-steps li:nth-child(1) .n{animation:own-n1 14s infinite}
+@keyframes own-n1{0.00%,20.36%{background:#0f256e;color:#fff;border-color:#0f256e}21.43%,97.14%{background:#3dbe8b;color:#fff;border-color:#3dbe8b}100%{background:#0f256e;color:#fff;border-color:#0f256e}}
+.own-steps li:nth-child(1){animation:own-r1 14s infinite}
+@keyframes own-r1{0.00%,20.36%{border-left-color:#09b6f9;background:#eaf1ff}21.43%,100%{border-left-color:transparent;background:transparent}}
+.own-steps li:nth-child(2) .n{animation:own-n2 14s infinite}
+@keyframes own-n2{0%,20.36%{background:#fff;color:#646c7e;border-color:#d9dbe0}21.43%,41.79%{background:#0f256e;color:#fff;border-color:#0f256e}42.86%,97.14%{background:#3dbe8b;color:#fff;border-color:#3dbe8b}100%{background:#fff;color:#646c7e;border-color:#d9dbe0}}
+.own-steps li:nth-child(2){animation:own-r2 14s infinite}
+@keyframes own-r2{0%,20.36%{border-left-color:transparent;background:transparent}21.43%,41.79%{border-left-color:#09b6f9;background:#eaf1ff}42.86%,100%{border-left-color:transparent;background:transparent}}
+.own-steps li:nth-child(3) .n{animation:own-n3 14s infinite}
+@keyframes own-n3{0%,41.79%{background:#fff;color:#646c7e;border-color:#d9dbe0}42.86%,63.21%{background:#0f256e;color:#fff;border-color:#0f256e}64.29%,97.14%{background:#3dbe8b;color:#fff;border-color:#3dbe8b}100%{background:#fff;color:#646c7e;border-color:#d9dbe0}}
+.own-steps li:nth-child(3){animation:own-r3 14s infinite}
+@keyframes own-r3{0%,41.79%{border-left-color:transparent;background:transparent}42.86%,63.21%{border-left-color:#09b6f9;background:#eaf1ff}64.29%,100%{border-left-color:transparent;background:transparent}}
+.own-steps li:nth-child(4) .n{animation:own-n4 14s infinite}
+@keyframes own-n4{0%,63.21%{background:#fff;color:#646c7e;border-color:#d9dbe0}64.29%,81.07%{background:#0f256e;color:#fff;border-color:#0f256e}82.14%,97.14%{background:#3dbe8b;color:#fff;border-color:#3dbe8b}100%{background:#fff;color:#646c7e;border-color:#d9dbe0}}
+.own-steps li:nth-child(4){animation:own-r4 14s infinite}
+@keyframes own-r4{0%,63.21%{border-left-color:transparent;background:transparent}64.29%,81.07%{border-left-color:#09b6f9;background:#eaf1ff}82.14%,100%{border-left-color:transparent;background:transparent}}
+}
+@media (prefers-reduced-motion:reduce){.own-steps .n{background:var(--green);color:#fff;border-color:var(--green)}}
+.ceo-sign{font-size:1.15rem;font-weight:600;font-style:italic;color:var(--navy);margin-top:-4px}
 
 /* values v2 (About + Careers) */
 .values{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1.5px solid var(--navy);background:var(--white)}

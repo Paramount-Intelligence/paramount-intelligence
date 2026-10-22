@@ -67,7 +67,7 @@ export default function RenovationCrane() {
             <rect x="181" y="156" width="110" height="26" fill="#3dbe8b" />
             <text x="236" y="173" fill="#fff">DESIGN &#10003;</text>
             <rect x="181" y="130" width="110" height="26" fill="#204ecf" />
-            <text x="236" y="147" fill="#fff">19 CASE STUDIES &#10003;</text>
+            <text x="236" y="147" fill="#fff">20 CASE STUDIES &#10003;</text>
             <g className="placed">
               <rect x="181" y="104" width="110" height="26" fill="#f5b83d" />
               <text x="236" y="121" fill="#262d3d">COPY REWRITE</text>

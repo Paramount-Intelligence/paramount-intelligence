@@ -67,7 +67,7 @@ background:
 
 ## 3. Page anatomy (as in the telecom case)
 
-1. **Hero**: eyebrow "Client case study · Client type · Market" (describe the client by type, for example "Mobile telecom operator"; never name the client, and blur client names and logos in screenshots) + green pill ("Live in production" or the true status); headline with a cyan keyword; one-sentence lede; three "+" bullets (bold label + short phrase); two CTAs (try/see the demo, see the story); a meta row (Client · Channel · Built on); on the right **one interactive proof visual** (telecom case: an 80-dot matrix, one dot per million people, toggling 80M+ subscribers → 40M app users → 3–4M using SIA).
+1. **Hero**: eyebrow "Client case study · Client type · Market" (describe the client by type, for example "Mobile telecom operator"; never name the client, and blur client names and logos in screenshots) + green pill ("Live in production" or the true status); headline with a cyan keyword; one-sentence lede; three "+" bullets (bold label + short phrase); two CTAs (try/see the demo, see the story); a meta row (Client · Channel · Built on); on the right **one interactive proof visual** (telecom case: a 40-dot matrix, one dot per million people, toggling 40M app users → 3–4M using SIA).
 2. **Client strip**: grey "Meet our client" panel (Client, Industry, Market) + "In a nutshell" paragraph.
 3. **Numbered chapters** (`01 · The problem`, `02 · The complication`, `03 · The resolution`, `04 · How it works`, `05 · What makes it different`, `06 · The result`, plus unnumbered "What customers ask" and "Proof" chapters). Each chapter has:
    - eyebrow + light royal title + one-line sub;
