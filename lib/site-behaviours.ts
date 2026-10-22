@@ -8,41 +8,6 @@ type Ctx = { root: HTMLElement; reduce: boolean; signal: AbortSignal; later: (fn
 const $ = <T extends Element = HTMLElement>(s: string, r: ParentNode) => r.querySelector<T>(s);
 const $$ = <T extends Element = HTMLElement>(s: string, r: ParentNode) => Array.from(r.querySelectorAll<T>(s));
 
-/* --- homepage hero FDE panel --- */
-function fdePanel({ root, reduce, later }: Ctx) {
-  const fp = $("#fp", root);
-  if (!fp || !fp.querySelector(".fp-mods")) return;
-  const mods = $$(".mod", fp), bar = $("#fpBar", fp)!, dots = $$(".fp-bar i", fp), steps = $$(".fp-steps span", fp);
-  const msg = $("#fpMsg", fp)!, tag = $("#fpTag", fp)!;
-  const frames = [
-    { w: 0, s: 0, m: -1, t: "Defining the workflow and first release", live: false },
-    { w: 18, s: 0, m: 0, t: "AI agents built against real requirements", live: false },
-    { w: 50, s: 1, m: 1, t: "Custom software around the AI behavior", live: false },
-    { w: 72, s: 1, m: 2, t: "Connected to existing enterprise systems", live: false },
-    { w: 100, s: 2, m: 3, t: "Released, monitored, and handed over", live: true },
-  ];
-  let fi = 0;
-  const frame = (f: (typeof frames)[number]) => {
-    bar.style.width = f.w + "%";
-    mods.forEach((m, i) => m.classList.toggle("on", i <= f.m));
-    dots.forEach((d, i) => d.classList.toggle("on", i <= f.s));
-    steps.forEach((s, i) => s.classList.toggle("on", i === f.s));
-    msg.textContent = f.t;
-    tag.textContent = f.live ? "In production" : "In progress";
-    fp.classList.toggle("live", f.live);
-  };
-  if (reduce) {
-    frame(frames[4]);
-  } else {
-    frame(frames[0]);
-    const id = setInterval(() => {
-      fi = (fi + 1) % (frames.length + 1);
-      frame(frames[Math.min(fi, frames.length - 1)]);
-    }, 1900);
-    later(() => clearInterval(id));
-  }
-}
-
 /* --- lifecycle + accordion (homepage) --- */
 function lifecycle({ root, signal }: Ctx) {
   const acc = $("#acc", root);
@@ -388,7 +353,7 @@ function forms({ root, signal }: Ctx) {
   });
 }
 
-const BEHAVIOURS = [fdePanel, lifecycle, stages, tabs, funnel, isoLayers, releasePipeline, copyButtons, chips, forms];
+const BEHAVIOURS = [lifecycle, stages, tabs, funnel, isoLayers, releasePipeline, copyButtons, chips, forms];
 
 /** Start the page's behaviours inside `root`; returns the cleanup. */
 export function initSiteBehaviours(root: HTMLElement): () => void {
