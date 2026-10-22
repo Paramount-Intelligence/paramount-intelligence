@@ -99,7 +99,7 @@ export default function ContactUs() {
                 <div style={{ display: "grid", gap: "4px" }}>
                   <span className="k3">Engagement enquiries</span>
                   <b>Marty Kaufman</b>
-                  <span style={{ fontSize: ".8rem", color: "var(--muted)" }}>Founder &amp; Commercial Lead</span>
+                  <span style={{ fontSize: ".8rem", color: "var(--muted)" }}>Co-founder &amp; Chief Commercial Officer</span>
                 </div>
               </div>
               <div className="mail">
