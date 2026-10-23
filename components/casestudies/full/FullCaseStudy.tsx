@@ -1,25 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
-import { Caveat, Montserrat } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getCaseCardByRoute } from "@/lib/case-cards-db";
 import { pageMetadata } from "@/lib/metadata";
+import { caveat, montserratItalic } from "@/app/fonts/case-study-fonts";
 import CaseStudyScripts from "./CaseStudyScripts";
 
 // The case study pages also use Montserrat italic 400 and, on Contract Intelligence, Caveat 600, as the reference
-// loads them. Same family names as the layout's fonts, so the pages' own font-family rules find them.
-// Their classes only define a custom property, so they style nothing; they make Next include the @font-face rules.
-const montserratItalic = Montserrat({
-  subsets: ["latin"],
-  weight: "400",
-  style: "italic",
-  display: "swap",
-  preload: false,
-  variable: "--font-montserrat-italic",
-});
-const caveat = Caveat({ subsets: ["latin"], weight: "600", display: "swap", preload: false, variable: "--font-caveat" });
+// loads them (self-hosted in app/fonts). Same family names as the layout's fonts, so the pages' own font-family rules
+// find them. Their classes only define a custom property, so they style nothing; they make Next include the @font-face rules.
 
 type PageInfo = { key: string; slug: string; title: string; description: string | null; scripts: number; caveat: boolean };
 
