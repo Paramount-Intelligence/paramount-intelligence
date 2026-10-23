@@ -1,29 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Montserrat } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import LogoTap from "@/components/site/LogoTap";
 import VisitPresence from "@/components/site/VisitPresence";
 import { SITE_URL } from "@/lib/metadata";
+import { montserrat, plexMono } from "./fonts/fonts";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
 // import { config } from "@fortawesome/fontawesome-svg-core";
 // config.autoAddCss = false;
 import "./globals.css";
 import "./site.css";
-
-// 300–800, as the reference loads it: text set heavier (a <b> inside bold text) renders at 800.
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  display: "swap",
-  variable: "--font-montserrat",
-});
-
-const plexMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-  variable: "--font-plex-mono",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
