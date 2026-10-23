@@ -339,11 +339,24 @@ function forms({ root, signal }: Ctx) {
       sending = true;
       btn?.setAttribute("aria-busy", "true");
       if (fail) fail.hidden = true;
-      let sent = false;
-      try { sent = (await send(f)).ok; } catch {}
+      let sent = false, emailError = "";
+      try {
+        const res = await send(f);
+        sent = res.ok;
+        // The server refuses an email that isn't one plain address (400, field "email"): shown under the email field.
+        if (res.status === 400) { const body = await res.json().catch(() => null); if (body?.field === "email") emailError = String(body.error || ""); }
+      } catch {}
       sending = false;
       btn?.removeAttribute("aria-busy");
       if (signal.aborted) return;
+      const emailEl = emailError ? $<HTMLInputElement>("input[type=email]", f) : null;
+      if (emailEl) {
+        const field = emailEl.closest(".field"), msg = field && field.querySelector<HTMLElement>(".err");
+        if (field) field.classList.add("bad");
+        if (msg) msg.textContent = emailError;
+        emailEl.focus();
+        return;
+      }
       if (!sent) { if (fail) fail.hidden = false; return; }
       f.hidden = true;
       if (ok) { ok.hidden = false; ok.focus(); }

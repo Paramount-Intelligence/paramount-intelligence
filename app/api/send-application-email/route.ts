@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escape-html";
+import { emailRejected, oneEmailAddress, subjectPart } from "@/lib/form-security";
 import { mailFrom, mailTransport, missingMailSettings, safeHref } from "@/lib/mailer";
 
 export const runtime = "nodejs";
@@ -90,6 +91,11 @@ const link = (url: string) => {
   return href ? `<a href="${escapeHtml(href)}">${escapeHtml(url)}</a>` : escapeHtml(url);
 };
 
+// The applicant's confirmation is fixed text: nothing the applicant typed goes into it.
+const CONFIRMATION_SUBJECT = "We received your application - Paramount Intelligence";
+const CONFIRMATION_TEXT =
+  "Thank you for applying to Paramount Intelligence. We have received your application and will be in touch if there is a suitable role.";
+
 // Mail settings are listed in lib/mailer.ts; applications go to CAREERS_EMAIL.
 export async function POST(request: NextRequest) {
   const missing = missingMailSettings(["CAREERS_EMAIL"]);
@@ -116,6 +122,10 @@ export async function POST(request: NextRequest) {
       formData = await parseJsonFormData(request);
     }
 
+    // One plain address, checked before anything is sent.
+    const email = oneEmailAddress(formData.email);
+    if (!email) return emailRejected();
+
     const transporter = mailTransport();
 
     // Verify connection
@@ -130,7 +140,7 @@ export async function POST(request: NextRequest) {
           <h3 style="margin-top: 0; color: #333;">Applicant Information</h3>
           
           <p><strong>Name:</strong> ${escapeHtml(formData.firstName)} ${escapeHtml(formData.lastName)}</p>
-          <p><strong>Email:</strong> ${escapeHtml(formData.email)}</p>
+          <p><strong>Email:</strong> ${escapeHtml(email)}</p>
           <p><strong>Phone:</strong> ${escapeHtml(formData.phone)}</p>
           <p><strong>Position Applied For:</strong> ${escapeHtml(formData.position)}</p>
           <p><strong>Years of Experience:</strong> ${escapeHtml(formData.experience)}</p>
@@ -156,48 +166,20 @@ export async function POST(request: NextRequest) {
     await transporter.sendMail({
       from,
       to: process.env.CAREERS_EMAIL,
-      subject: `New Application: ${formData.firstName} ${formData.lastName} - ${formData.position}`,
+      subject: `New Application: ${subjectPart(formData.firstName)} ${subjectPart(formData.lastName)} - ${subjectPart(formData.position)}`,
       html: emailHTML,
       attachments: resumeAttachment ? [resumeAttachment] : undefined,
     });
-
-    // Confirmation email to applicant
-    const confirmationHTML = `
-      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #17599d;">Application Received</h2>
-        
-        <p>Dear ${escapeHtml(formData.firstName)},</p>
-        
-        <p>Thank you for your interest in Paramount Intelligence and for submitting your application for the <strong>${escapeHtml(formData.position)}</strong> position.</p>
-        
-        <p>We have successfully received your application and resume. Our hiring team will review your qualifications and get back to you within 3-5 business days.</p>
-        
-        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
-          <h3 style="margin-top: 0; color: #333;">Your Application Details</h3>
-          <p><strong>Position:</strong> ${escapeHtml(formData.position)}</p>
-          <p><strong>Experience Level:</strong> ${escapeHtml(formData.experience)}</p>
-          <p><strong>Submission Date:</strong> ${new Date().toLocaleDateString()}</p>
-        </div>
-        
-        <p>In the meantime, feel free to explore more about Paramount Intelligence on our <a href="https://paramountintelligence.co/">website</a>.</p>
-        
-        <p>Best regards,<br/>
-        <strong>Paramount Intelligence Recruitment Team</strong></p>
-        
-        <p style="color: #999; font-size: 12px; text-align: center; margin-top: 30px;">
-          If you have any questions, please contact us at ${process.env.CAREERS_EMAIL}
-        </p>
-      </div>
-    `;
 
     // The application has been delivered by now: a confirmation the applicant's address refuses is logged,
     // not reported to the applicant as a failed application.
     try {
       await transporter.sendMail({
         from,
-        to: formData.email,
-        subject: "Application Confirmation - Paramount Intelligence",
-        html: confirmationHTML,
+        to: { name: "", address: email },
+        subject: CONFIRMATION_SUBJECT,
+        text: CONFIRMATION_TEXT,
+        html: `<p style="font-family: Arial, sans-serif;">${CONFIRMATION_TEXT}</p>`,
       });
     } catch (error) {
       console.error("send-application-email: application sent, confirmation to the applicant failed:", error);
