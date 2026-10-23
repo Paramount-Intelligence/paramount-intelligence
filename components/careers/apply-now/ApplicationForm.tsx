@@ -80,7 +80,7 @@ export default function ApplicationForm() {
         });
       } else {
         setMessage(
-          `❌ Error submitting application: ${data.message || "Please try again later."}`
+          `❌ Error submitting application: ${data.error || data.message || "Please try again later."}`
         );
       }
     } catch (error) {
