@@ -86,7 +86,7 @@ export default function ProjectExperience() {
                   )}
                   <Link
                     href={project.link}
-                    className="inline-flex items-center text-[#17599d] font-medium hover:text-[#144a75] transition-colors"
+                    className="pi-tap inline-flex items-center text-[#17599d] font-medium hover:text-[#144a75] transition-colors"
                   >
                     <span className="mr-2">/</span>
                     Read more

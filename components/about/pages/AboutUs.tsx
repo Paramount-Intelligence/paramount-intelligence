@@ -41,7 +41,7 @@ export default function AboutUs() {
           <div className="stack-txt">
             <p>Our work spans AI agents and applications, custom software, data engineering, cloud infrastructure, and workflow automation.</p>
             <p>Clients come to us with different starting points: a product to build, a process to improve, a missing specialist capability, or an application that is not working as intended. We shape the scope around the requirement and define who owns delivery.</p>
-            <div className="badges" style={{ gridTemplateColumns: "1fr 1fr", margin: "0" }}>
+            <div className="badges pair" style={{ margin: "0" }}>
               <div><Icon name="blocks" />A product to build</div>
               <div><Icon name="flow" />A process to improve</div>
               <div style={{ borderLeft: "0", borderTop: "1px solid var(--line)" }}><Icon name="person" />A missing specialist capability</div>

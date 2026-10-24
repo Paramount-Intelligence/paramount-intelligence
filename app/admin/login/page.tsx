@@ -54,7 +54,7 @@ export default function AdminLogin() {
           <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
           <input
             type="text"
-            className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-black text-black"
+            className="border border-gray-300 rounded p-2 w-full pi-tall focus:outline-none focus:ring-2 focus:ring-black text-black"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -66,7 +66,7 @@ export default function AdminLogin() {
           <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
           <input
             type="password"
-            className="border border-gray-300 rounded p-2 w-full focus:outline-none focus:ring-2 focus:ring-black text-black"
+            className="border border-gray-300 rounded p-2 w-full pi-tall focus:outline-none focus:ring-2 focus:ring-black text-black"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -82,7 +82,7 @@ export default function AdminLogin() {
 
         <button
           type="submit"
-          className={`w-full p-2 text-white font-semibold rounded transition-all ${
+          className={`w-full p-2 pi-tall text-white font-semibold rounded transition-all ${
             loading ? "bg-gray-400 cursor-not-allowed" : "bg-black hover:bg-gray-800 active:scale-95"
           }`}
           disabled={loading}

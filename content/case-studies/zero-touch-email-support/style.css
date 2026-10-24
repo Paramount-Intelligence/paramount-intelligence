@@ -417,6 +417,7 @@
 
 .cs-zero-touch-email-support .se-nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px}
 @media (max-width:900px){.cs-zero-touch-email-support .se-nums{grid-template-columns:1fr 1fr}}
+@media (max-width:340px){.cs-zero-touch-email-support .se-nums{grid-template-columns:1fr}}
 .cs-zero-touch-email-support .se-num{border-top:4px solid var(--royal);background:#fff;border-left:1.5px solid var(--navy);border-right:1.5px solid var(--navy);border-bottom:1.5px solid var(--navy);padding:14px 16px;display:grid;gap:2px;align-content:start}
 .cs-zero-touch-email-support .se-num b{font-size:clamp(1.8rem,3.4vw,2.5rem);font-weight:700;color:var(--royal);line-height:1.05;font-variant-numeric:tabular-nums}
 .cs-zero-touch-email-support .se-num span{font-size:.8rem}

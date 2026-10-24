@@ -47,7 +47,7 @@ export default function WhoWeServe() {
               <div key={index} className="pb-2">
                 <button
                   onClick={() => toggleAccordion(index)}
-                  className="w-full flex items-start border-gray-200 border p-2 justify-between gap-4 text-left group"
+                  className="pi-tall w-full flex items-start border-gray-200 border p-2 justify-between gap-4 text-left group"
                 >
                   <h3
                     className={`text-lg font-bold leading-tight transition-colors ${
