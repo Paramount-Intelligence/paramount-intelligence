@@ -16,10 +16,10 @@ export default function ServicesSection() {
         </h2>
 
         {/* Tabs */}
-        <div className="flex items-center justify-center gap-8 mb-12">
+        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 mb-12">
           <button
             onClick={() => setActiveTab("automation")}
-            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
+            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors pi-tall ${
               activeTab === "automation"
                 ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
@@ -29,7 +29,7 @@ export default function ServicesSection() {
           </button>
           <button
             onClick={() => setActiveTab("personalization")}
-            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
+            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors pi-tall ${
               activeTab === "personalization"
                 ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"
@@ -39,7 +39,7 @@ export default function ServicesSection() {
           </button>
           <button
             onClick={() => setActiveTab("decision-making")}
-            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors ${
+            className={`text-sm md:text-sm font-semibold pb-2 border-b-2 transition-colors pi-tall ${
               activeTab === "decision-making"
                 ? "text-[#17599d] border-[#17599d]"
                 : "text-gray-900 border-transparent hover:text-gray-600"

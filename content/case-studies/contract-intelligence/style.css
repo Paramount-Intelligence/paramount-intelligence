@@ -428,6 +428,7 @@
 .cs-contract-intelligence .ci-app .chrome span{margin-left:8px}
 .cs-contract-intelligence .ci-app .chrome em{margin-left:auto;font-style:normal;font-size:.64rem;font-weight:700;letter-spacing:.14em;color:#9fd9ff}
 .cs-contract-intelligence .ci-app .body{padding:16px;display:grid;gap:12px;min-height:520px;align-content:start}
+@media (max-width:340px){.cs-contract-intelligence .ci-app .body{grid-template-columns:minmax(0,1fr)}.cs-contract-intelligence .ci-cl .h{flex-wrap:wrap}}
 .cs-contract-intelligence .ci-card{background:#fff;border:1px solid #dfe5f0;padding:14px}
 .cs-contract-intelligence .ci-meta{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 @media (max-width:560px){.cs-contract-intelligence .ci-meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -611,6 +612,7 @@
 .cs-contract-intelligence .ci-grid10 i{aspect-ratio:1;border:1px solid var(--line);background:#fff;transition:background .3s,border-color .3s}
 .cs-contract-intelligence .ci-grid10 i.g{background:#3dbe8b;border-color:#3dbe8b}.cs-contract-intelligence .ci-grid10 i.a{background:#f5b83d;border-color:#f5b83d}.cs-contract-intelligence .ci-grid10 i.r{background:#ef5a5a;border-color:#ef5a5a}
 .cs-contract-intelligence .ci-grid10 span{white-space:nowrap;padding-right:6px;font-weight:600}
+@media (max-width:340px){.cs-contract-intelligence .ci-grid10{grid-template-columns:auto repeat(10,minmax(0,1fr))}}
 .cs-contract-intelligence .ci-models{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px}
 @media (max-width:760px){.cs-contract-intelligence .ci-models{grid-template-columns:1fr}}
 .cs-contract-intelligence .ci-models div{border:1.5px solid var(--navy);background:#fff;padding:16px;display:grid;gap:4px}

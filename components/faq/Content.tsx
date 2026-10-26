@@ -112,7 +112,7 @@ export default function FAQContent() {
                   {faq.link && (
                     <Link
                       href={faq.link}
-                      className="inline-flex items-center gap-1 text-sm font-semibold text-[#1e6fd9] hover:underline"
+                      className="pi-tap inline-flex items-center gap-1 text-sm font-semibold text-[#1e6fd9] hover:underline"
                     >
                       {faq.linkText} →
                     </Link>
