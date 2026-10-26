@@ -96,7 +96,7 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 @media (max-width:1100px){
   .menu{display:none}
   .burger{display:grid}
-  .mob{display:block;border-top:1px solid var(--line);background:var(--white);max-height:calc(100vh - 72px);overflow:auto}
+  .mob{display:block;border-top:1px solid var(--line);background:var(--white);max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow:auto;overscroll-behavior:contain}
   .mob[hidden]{display:none!important}
   .mob .wrap{height:auto;display:grid;gap:4px;padding-block:14px 24px}
   .mob h4{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:14px 0 4px}
@@ -1118,3 +1118,41 @@ html:has(main.cs-page){scroll-padding-top:auto}
 .pm-crane .x{position:absolute;right:6px;top:4px;background:none;border:0;font-size:1.1rem;color:#646c7e;cursor:pointer;z-index:2}
 @media (prefers-reduced-motion:reduce){.pm-crane,.pm-crane *{animation:none!important;transition:none!important}}
 @media (max-width:560px){.pm-crane{right:16px;left:16px;bottom:16px;width:auto}.pm-crane .sc{height:150px}.pm-crane .bd p{font-size:.76rem}}
+
+/* ================= RESPONSIVE (app additions, not in the reference) =================
+   Fixes from the responsive audit (24 Oct 2026) for phones (under 648px, portrait and landscape) and the tablet sizes
+   where content was cut off. Desktop layouts are unchanged. */
+
+/* About: the two badge columns of the reference, in one column once they no longer fit. */
+.badges.pair{grid-template-columns:1fr 1fr}
+@media (max-width:359px){.badges.pair{grid-template-columns:1fr}}
+
+/* Homepage hero visual, 340px and narrower: the three status chips fit side by side. */
+@media (max-width:340px){.h1-st{gap:5px}.h1-st span{padding:9px 3px;gap:4px;letter-spacing:.02em}}
+
+/* Closing card. Tablets: the button label wraps (with room above and below) instead of pushing the right column past the card.
+   340px and narrower: the title's longest word fits inside the card's padding. */
+@media (max-width:1024px){.cta-r .btn{white-space:normal}.cta-r .btn-cyan{padding-block:10px}}
+@media (max-width:340px){.close h2{font-size:1.7rem}}
+
+/* Renovation pop-up on a landscape phone: it stays inside the screen (scrolling if needed) with a shorter scene. */
+@media (max-height:500px){.pm-crane{bottom:16px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow-y:auto;overscroll-behavior:contain}.pm-crane .sc{height:110px}}
+
+/* Touch targets: at least 44×44px on phones. Text links keep their look and get an invisible hit area
+   (.pi-tap marks the same on pages not yet redesigned); stacked links and buttons get the height itself (.pi-tall).
+   Scoped to the site's own header, footer and pages, so the full case study pages are unchanged. */
+@media (max-width:647px),(hover:none) and (pointer:coarse) and (max-height:500px){
+  :where(.nav,.foot,.pi-page) :is(.brand,.link,.crumb a),.pi-tap,.pm-crane .ft a{position:relative}
+  .pi-page .crumb a{display:inline-block}
+  :where(.nav,.foot,.pi-page) :is(.brand,.link,.crumb a)::after,.pi-tap::after,.pm-crane .ft a::after{content:"";position:absolute;left:50%;top:50%;width:max(100%,44px);height:max(100%,44px);transform:translate(-50%,-50%)}
+  .pm-crane .x::after{content:"";position:absolute;inset:-11px}
+  .foot li a{padding:11px 0}
+  .foot .li{min-height:44px;margin-top:6px}
+  :where(.foot,.pi-page) .mail button{min-width:44px;min-height:44px}
+  .pi-tall{min-height:44px}
+  .pi-page .toc a{padding:11px 0}
+  .pi-page .chipbar button{min-height:44px}
+  .pi-page .pager button{min-width:44px;height:44px}
+  .pi-page .seg button{padding-block:14px}
+  .pi-page .check{min-height:44px}
+}

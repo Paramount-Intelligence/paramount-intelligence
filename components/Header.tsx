@@ -31,6 +31,7 @@ export default function Header({ showAdminLogout = false }: HeaderProps) {
   const [open, setOpen] = useState<Drop>(null);
   const [mobOpen, setMobOpen] = useState(false);
   const menuRef = useRef<HTMLUListElement>(null);
+  const burgerRef = useRef<HTMLButtonElement>(null);
 
   // Close everything on navigation.
   useEffect(() => {
@@ -53,6 +54,18 @@ export default function Header({ showAdminLogout = false }: HeaderProps) {
       document.removeEventListener("keydown", onKey);
     };
   }, []);
+
+  // Escape also closes the mobile menu and returns focus to the menu button.
+  useEffect(() => {
+    if (!mobOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setMobOpen(false);
+      burgerRef.current?.focus();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [mobOpen]);
 
   const handleAdminLogout = async () => {
     try {
@@ -135,11 +148,12 @@ export default function Header({ showAdminLogout = false }: HeaderProps) {
             <Button href={ROUTES.contact}>Discuss a project</Button>
           )}
           <button
+            ref={burgerRef}
             className="burger"
             type="button"
             aria-expanded={mobOpen}
             aria-controls="mob"
-            aria-label="Open menu"
+            aria-label={mobOpen ? "Close menu" : "Open menu"}
             onClick={() => setMobOpen((o) => !o)}
           >
             {/* No viewBox, as in the reference: the lines draw at their full 18px. */}

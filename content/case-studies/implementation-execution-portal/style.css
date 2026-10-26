@@ -595,6 +595,7 @@
 .cs-implementation-execution-portal .ep-ggrid>*{min-width:0}
 .cs-implementation-execution-portal .ep-docs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 @media (max-width:760px){.cs-implementation-execution-portal .ep-docs{grid-template-columns:1fr 1fr}}
+@media (max-width:389px){.cs-implementation-execution-portal .ep-docs{grid-template-columns:1fr}}
 .cs-implementation-execution-portal .ep-doc{border:1.5px solid var(--line);background:#fff;padding:10px;display:grid;gap:8px;align-content:start;transition:border-color .3s}
 .cs-implementation-execution-portal .ep-doc.act{border-color:var(--navy)}
 .cs-implementation-execution-portal .ep-doc.ok{border-color:var(--green)}
