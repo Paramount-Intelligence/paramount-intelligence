@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { prisma } from "@/lib/prisma";
 import { getCaseCards } from "@/lib/case-cards-db";
 import { SITE_URL } from "@/lib/metadata";
+import { isCaseStudyOnHold } from "@/lib/case-studies-on-hold";
 import { INDUSTRIES, ROUTES, SERVICES } from "@/lib/site-nav";
 
 // Refreshed hourly, so case studies added in /admin appear without a deploy.
@@ -9,7 +10,8 @@ export const revalidate = 3600;
 
 /**
  * The redesigned site: its pages, the two open roles, the full case study pages, and the other case study cards
- * whose slug is in the CaseStudy table. The older routes that are kept but no longer linked are left out.
+ * whose slug is in the CaseStudy table. The older routes that are kept but no longer linked are left out, and so are
+ * the case studies held back while in progress (lib/case-studies-on-hold.ts).
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const pages = [
@@ -33,6 +35,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   } catch (error) {
     console.error("sitemap: could not read case study slugs", error);
   }
-  const caseStudies = (await getCaseCards()).flatMap((c) => (c.route && (c.fullCaseStudy || inDb.has(c.route)) ? [c.route] : []));
+  const caseStudies = (await getCaseCards()).flatMap((c) => (c.route && (c.fullCaseStudy || inDb.has(c.route)) && !isCaseStudyOnHold(c.route) ? [c.route] : []));
   return [...pages, ...caseStudies].map((p) => ({ url: SITE_URL + (p === "/" ? "" : p) }));
 }
