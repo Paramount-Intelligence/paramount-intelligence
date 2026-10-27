@@ -5,8 +5,10 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { getCaseCardByRoute } from "@/lib/case-cards-db";
 import { pageMetadata } from "@/lib/metadata";
+import { isCaseStudyOnHold } from "@/lib/case-studies-on-hold";
 import { caveat, montserratItalic } from "@/app/fonts/case-study-fonts";
 import CaseStudyScripts from "./CaseStudyScripts";
+import CaseStudyOnHold from "./CaseStudyOnHold";
 
 // The case study pages also use Montserrat italic 400 and, on Contract Intelligence, Caveat 600, as the reference
 // loads them (self-hosted in app/fonts). Same family names as the layout's fonts, so the pages' own font-family rules
@@ -27,7 +29,9 @@ function page(key: string) {
 export async function caseStudyMetadata(key: string): Promise<Metadata> {
   const { title, description, slug } = page(key);
   const summary = description ? undefined : (await getCaseCardByRoute(slug))?.summary;
-  return pageMetadata({ title, description: description ?? summary, path: slug });
+  const metadata = pageMetadata({ title, description: description ?? summary, path: slug });
+  // Held back while in progress (lib/case-studies-on-hold.ts): kept out of search results until it is published.
+  return isCaseStudyOnHold(slug) ? { ...metadata, robots: { index: false, follow: true } } : metadata;
 }
 
 /**
@@ -37,6 +41,8 @@ export async function caseStudyMetadata(key: string): Promise<Metadata> {
  */
 export default function FullCaseStudy({ pageKey }: { pageKey: string }) {
   const info = page(pageKey);
+  // Content held back while in progress (lib/case-studies-on-hold.ts): neither its body nor its scripts are sent.
+  if (isCaseStudyOnHold(info.slug)) return <CaseStudyOnHold route={info.slug} />;
   const read = (file: string) => fs.readFileSync(path.join(DIR, pageKey, file), "utf8");
   const scripts = Array.from({ length: info.scripts }, (_, i) => read(`script-${i + 1}.js`));
   const fonts = [montserratItalic.variable, info.caveat ? caveat.variable : ""].filter(Boolean).join(" ");
