@@ -1,0 +1,47 @@
+/* Private Equity hero visual (Ali, 29 Oct 2026): docs/website-redesign/reference/pe-hero-visual/pe-hero-visual.css,
+   imported only by components/industries/pages/PrivateEquity.tsx. Every rule is scoped to .pe-vis (the visual's root) and
+   the keyframes carry a pe- prefix, so nothing here can reach other pages or the site's own .eb and .cap rules.
+   The reference's unused .tag and .ic rules are left out. Pure CSS: a 9s loop; reduced motion shows the end state. */
+.pe-vis{position:relative;border:1px solid rgba(160,185,240,.38);background:rgba(10,20,60,.42);padding:clamp(16px,2.4vw,26px);display:grid;gap:14px;color:#fff;font-family:Montserrat,sans-serif;min-width:0}
+.pe-vis *{box-sizing:border-box}
+.pe-vis .eb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 12px;font:700 .68rem/1.2 Montserrat;letter-spacing:.2em;text-transform:uppercase;color:#09b6f9}
+.pe-vis .cap{margin:0;font-size:.84rem;color:#dfe7ff;line-height:1.5}
+.pe-vis .q-sp{border:1.5px solid #09b6f9;background:#0f256e;padding:11px 14px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+.pe-vis .q-sp b{font-size:.92rem}
+.pe-vis .q-sp span{font-size:.8rem;color:#b7c6ee}
+.pe-vis .q-band{border:1px solid rgba(9,182,249,.7);background:rgba(9,182,249,.1);padding:10px 14px;display:grid;gap:4px;text-align:center}
+.pe-vis .q-band b{font-size:.88rem}
+.pe-vis .q-band span{font-size:.78rem;color:#bfe9ff}
+.pe-vis .q-stem{height:28px;width:0;margin:-14px auto;border-left:1.5px solid rgba(160,185,240,.6)}
+.pe-vis .q-pill{display:inline-block;background:#13235f;border:1px solid rgba(9,182,249,.7);color:#bfe9ff;font-size:.72rem;font-weight:600;padding:5px 10px;white-space:nowrap}
+@media (max-width:560px){.pe-vis .cap{font-size:.8rem}
+.pe-vis .q-sp{display:grid}
+.pe-vis .q-band b{font-size:.82rem}
+.pe-vis .q-pill{font-size:.66rem;padding:4px 8px}
+}
+.pe-vis .q5-st{position:relative;aspect-ratio:540/288;margin-top:-14px}
+.pe-vis .q5-st svg{position:absolute;inset:0;width:100%;height:100%}
+.pe-vis .q5-st path{fill:none;stroke:rgba(160,185,240,.5);stroke-width:1.6;stroke-dasharray:4 4}
+.pe-vis .q5-st .q-pill{position:absolute;left:67.04%;top:7.64%;transform:translate(-50%,-50%)}
+.pe-vis .q5-ll{position:absolute;right:70.00%;transform:translateY(-50%);font-size:.74rem;font-weight:600;color:#dfe7ff;text-align:right;line-height:1.2;max-width:29.3%}
+.pe-vis .q5-env{position:absolute;top:84.03%;transform:translateX(-50%);width:22.2%;text-align:center;font-size:.74rem;font-weight:700;line-height:1.25}
+@media (max-width:560px){.pe-vis .q5-ll{font-size:.6rem}
+.pe-vis .q5-env{font-size:.6rem}
+}
+
+.pe-vis .b0{animation:pe-q5b0 9s ease infinite}
+@keyframes pe-q5b0{0%,7.78%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}11.67%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}
+.pe-vis .a0 .tp{animation:pe-q5a0 9s ease infinite}
+@keyframes pe-q5a0{0%,13.33%{fill:#22346f}17.22%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}
+.pe-vis .b1{animation:pe-q5b1 9s ease infinite}
+@keyframes pe-q5b1{0%,23.33%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}27.22%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}
+.pe-vis .a1 .tp{animation:pe-q5a1 9s ease infinite}
+@keyframes pe-q5a1{0%,28.89%{fill:#22346f}32.78%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}
+.pe-vis .b2{animation:pe-q5b2 9s ease infinite}
+@keyframes pe-q5b2{0%,38.89%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}42.78%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}
+.pe-vis .a2 .tp{animation:pe-q5a2 9s ease infinite}
+@keyframes pe-q5a2{0%,44.44%{fill:#22346f}48.33%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}
+/* reduced motion: the end state (every branch solid cyan, every top layer cyan), no animation */
+@media (prefers-reduced-motion:reduce){.pe-vis .q5-st path{animation:none;stroke:#09b6f9;stroke-dasharray:none}
+.pe-vis .ai .tp{animation:none;fill:#09b6f9}
+}

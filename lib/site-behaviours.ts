@@ -300,7 +300,9 @@ const SEND: Record<string, (f: HTMLFormElement) => Promise<Response>> = {
     body.append("email", val(f, "c-email"));
     body.append("position", val(f, "c-area"));
     body.append(/linkedin\./i.test(url) ? "linkedIn" : "portfolio", url);
-    body.append("coverLetter", `Location and time zone: ${val(f, "c-loc")}\n\n${val(f, "c-work")}`);
+    // A job page's form names its role (data-role) at the top of the cover letter.
+    const role = f.dataset.role ? `Applying for: ${f.dataset.role}\n\n` : "";
+    body.append("coverLetter", `${role}Location and time zone: ${val(f, "c-loc")}\n\n${val(f, "c-work")}`);
     const cv = $<HTMLInputElement>("#c-cv", f)?.files?.[0];
     if (cv) body.append("resume", cv);
     return fetch("/api/send-application-email", { method: "POST", body });
