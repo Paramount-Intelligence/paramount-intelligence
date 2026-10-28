@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import SitePage from "@/components/site/SitePage";
 import { pageMetadata } from "@/lib/metadata";
 import AiEngineer from "@/components/careers/pages/AiEngineer";
 import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
+import ExpressionOfInterest from "@/components/careers/ExpressionOfInterest";
 
-// The two open roles in the redesign (docs/website-redesign/reference/careers-*.html).
+// The open roles and the Expressions of Interest page (docs/website-redesign/reference/careers-revamp/): standalone
+// job pages, without the site header and footer.
 const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; description: string }> = {
   "ai-engineer": {
     Page: AiEngineer,
@@ -20,6 +21,12 @@ const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; desc
     title: "Full Stack Engineer | Careers | Paramount Intelligence",
     description:
       "Full Stack Engineer at Paramount Intelligence: Web applications, APIs, integrations, and AI features inside client products.",
+  },
+  "expression-of-interest": {
+    Page: ExpressionOfInterest,
+    title: "Expressions of Interest | Careers | Paramount Intelligence",
+    description:
+      "Expressions of interest are welcome from professionals with relevant delivery experience. Submissions should include technical expertise and examples of systems developed or improved.",
   },
 };
 
@@ -429,13 +436,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
   const role = ROLES[slug];
-  if (role) {
-    return (
-      <SitePage>
-        <role.Page />
-      </SitePage>
-    );
-  }
+  if (role) return <role.Page />;
   const job = jobsData[slug];
 
   if (!job) {
