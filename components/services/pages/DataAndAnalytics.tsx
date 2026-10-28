@@ -31,7 +31,7 @@ export default function DataAndAnalytics() {
                 <svg viewBox="0 0 400 260" role="img" aria-label="Data sources validated into shared measures for reporting and AI">
                   <rect x="10" y="22" width="96" height="34" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
                   <text className="vt" x="58.0" y="43.0" textAnchor="middle">Applications</text>
-                  <path id="dp0" d="M106 39C130 39 130 130 150 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="dp0" d="M106 39C130 39 128 130 140 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                   <circle r="3" fill="#09b6f9">
                     <animateMotion dur="2.6s" begin="-0.0s" repeatCount="indefinite">
                       <mpath href="#dp0" />
@@ -39,7 +39,7 @@ export default function DataAndAnalytics() {
                   </circle>
                   <rect x="10" y="78" width="96" height="34" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
                   <text className="vt" x="58.0" y="99.0" textAnchor="middle">Databases</text>
-                  <path id="dp1" d="M106 95C130 95 130 130 150 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="dp1" d="M106 95C130 95 128 130 140 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                   <circle r="3" fill="#09b6f9">
                     <animateMotion dur="2.6s" begin="-0.4s" repeatCount="indefinite">
                       <mpath href="#dp1" />
@@ -47,7 +47,7 @@ export default function DataAndAnalytics() {
                   </circle>
                   <rect x="10" y="134" width="96" height="34" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
                   <text className="vt" x="58.0" y="155.0" textAnchor="middle">Documents</text>
-                  <path id="dp2" d="M106 151C130 151 130 130 150 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="dp2" d="M106 151C130 151 128 130 140 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                   <circle r="3" fill="#09b6f9">
                     <animateMotion dur="2.6s" begin="-0.8s" repeatCount="indefinite">
                       <mpath href="#dp2" />
@@ -55,27 +55,27 @@ export default function DataAndAnalytics() {
                   </circle>
                   <rect x="10" y="190" width="96" height="34" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
                   <text className="vt" x="58.0" y="211.0" textAnchor="middle">External</text>
-                  <path id="dp3" d="M106 207C130 207 130 130 150 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path id="dp3" d="M106 207C130 207 128 130 140 130" fill="none" stroke="rgba(160,185,240,.55)" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
                   <circle r="3" fill="#09b6f9">
                     <animateMotion dur="2.6s" begin="-1.2000000000000002s" repeatCount="indefinite">
                       <mpath href="#dp3" />
                     </animateMotion>
                   </circle>
-                  <rect x="150" y="104" width="90" height="52" fill="#0f256e" stroke="#09b6f9" strokeWidth="1.6" />
+                  <rect x="140" y="104" width="110" height="52" fill="#0f256e" stroke="#09b6f9" strokeWidth="1.6" />
                   <text className="vt" x="195" y="127" textAnchor="middle">Validate</text>
                   <text className="vs" x="195" y="142" textAnchor="middle">shared measures</text>
-                  <path d="M240 116C262 116 262 70 282 70" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M240 144C262 144 262 190 282 190" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                  <rect x="282" y="44" width="108" height="54" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
-                  <text className="vt" x="336" y="64" textAnchor="middle">Reporting</text>
-                  <rect x="298" y="82" width="9" height="8" fill="rgba(160,185,240,.5)" />
-                  <rect x="314" y="77" width="9" height="13" fill="rgba(160,185,240,.5)" />
-                  <rect x="330" y="72" width="9" height="18" fill="rgba(160,185,240,.5)" />
-                  <rect x="346" y="67" width="9" height="23" fill="#09b6f9" />
-                  <rect x="362" y="62" width="9" height="28" fill="rgba(160,185,240,.5)" />
-                  <rect x="282" y="164" width="108" height="54" fill="rgba(61,190,139,.14)" stroke="#3dbe8b" strokeWidth="1.4" />
-                  <text className="vt" x="336" y="188" textAnchor="middle">AI context</text>
-                  <text className="vs" x="336" y="204" textAnchor="middle">right user, right data</text>
+                  <path d="M250 116C262 116 260 70 272 70" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M250 144C262 144 260 190 272 190" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <rect x="272" y="34" width="120" height="72" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
+                  <text className="vt" x="332" y="54" textAnchor="middle">Reporting</text>
+                  <rect x="296" y="90" width="9" height="8" fill="rgba(160,185,240,.5)" />
+                  <rect x="312" y="85" width="9" height="13" fill="rgba(160,185,240,.5)" />
+                  <rect x="328" y="80" width="9" height="18" fill="rgba(160,185,240,.5)" />
+                  <rect x="344" y="75" width="9" height="23" fill="#09b6f9" />
+                  <rect x="360" y="70" width="9" height="28" fill="rgba(160,185,240,.5)" />
+                  <rect x="272" y="164" width="120" height="54" fill="rgba(61,190,139,.14)" stroke="#3dbe8b" strokeWidth="1.4" />
+                  <text className="vt" x="332" y="186" textAnchor="middle">AI context</text>
+                  <text className="vs" x="332" y="203" textAnchor="middle">right user, right data</text>
                 </svg>
               </div>
             </div>
