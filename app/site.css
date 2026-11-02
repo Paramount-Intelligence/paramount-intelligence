@@ -121,35 +121,35 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
 
 /* Hero visual: "Built inside your environment" (approved 23 Oct 2026; pure CSS) */
-.hv{position:relative;border:1px solid rgba(160,185,240,.38);background:rgba(10,20,60,.42);padding:clamp(18px,2.4vw,26px);display:grid;gap:16px;color:#fff;font-family:var(--f);min-width:0}
-.hv .eb{font:600 .7rem/1 var(--f);letter-spacing:.24em;text-transform:uppercase;color:#09b6f9}
-.hv .sub{margin:-6px 0 0;font-size:.9rem;color:#c9d4f2;line-height:1.5}
+.hv{position:relative;color:#fff;font-family:var(--f);min-width:0}
+/* Sizing (2 Nov 2026): the standard .vis card, like the other hero visuals; below the eyebrow the drawing sits in a box of
+   fixed proportion and every size inside is in cqw (1% of that box's width), so the whole card scales and always fits. */
+.hv .hv-body{container-type:inline-size;aspect-ratio:400/260;display:flex;flex-direction:column;gap:2.4cqw;min-width:0}
+/* Beside the copy (over 960px) the homepage column is narrower than the other pages' visual column, so a slightly taller
+   box gives the card the same height as theirs. */
+@media (min-width:961px){.hv .hv-body{aspect-ratio:1.353}}
+.hv .sub{margin:0;font-size:2.9cqw;color:#c9d4f2;line-height:1.45;flex:none}
 .hv .mono{font-family:var(--mono)}
 .hv .ill{position:absolute;right:12px;bottom:8px;font:400 .58rem/1 var(--mono);color:#7f93c8;letter-spacing:.06em}
 @media (prefers-reduced-motion:reduce){.hv,.hv *{animation:none!important;transition:none!important}}
 
-.h1-map{position:relative;height:320px;border:1px dashed rgba(160,185,240,.45);margin-top:8px}
-.h1-map>em{position:absolute;top:-8px;left:14px;background:#17275e;padding:0 8px;font:600 .62rem/1.2 var(--f);letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8;font-style:normal}
-.h1-map svg{position:absolute;inset:0;width:100%;height:100%}
+.h1-map{position:relative;flex:1 1 0;min-height:0;border:1px dashed rgba(160,185,240,.45);margin-top:1.2cqw}
+.h1-map>em{position:absolute;top:-.62em;left:3.5cqw;background:#17275e;padding:0 2cqw;font:600 2.1cqw/1.2 var(--f);letter-spacing:.2em;text-transform:uppercase;color:#9fb3e8;font-style:normal}
+.hv .h1-map svg{position:absolute;inset:0;width:100%;height:100%}
 .h1-map line{stroke:rgba(9,182,249,.55);stroke-width:1.4;vector-effect:non-scaling-stroke;stroke-dasharray:4 4;opacity:0;animation:h1l .5s ease forwards}
 @keyframes h1l{to{opacity:1}}
-.h1-core{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:118px;height:84px;display:grid;place-items:center;align-content:center;gap:4px;background:#09b6f9;color:#0f256e;text-align:center;box-shadow:0 0 0 0 rgba(9,182,249,.6);animation:h1g 2.4s ease-out infinite}
-.h1-core b{font-size:.92rem}.h1-core span{font:500 .58rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.h1-core{position:absolute;left:50%;top:56%;transform:translate(-50%,-50%);width:30cqw;height:21cqw;display:grid;place-items:center;align-content:center;gap:1cqw;background:#09b6f9;color:#0f256e;text-align:center;box-shadow:0 0 0 0 rgba(9,182,249,.6);animation:h1g 2.4s ease-out infinite}
+.h1-core b{font-size:3.4cqw}.h1-core span{font:500 2cqw/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 @keyframes h1g{0%{box-shadow:0 0 0 0 rgba(9,182,249,.55)}70%{box-shadow:0 0 0 18px rgba(9,182,249,0)}100%{box-shadow:0 0 0 0 rgba(9,182,249,0)}}
-.h1-s{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%) scale(.6);opacity:0;border:1px solid rgba(160,185,240,.6);background:#132360;padding:8px 10px;font-size:.76rem;font-weight:600;white-space:nowrap;animation:h1in .45s cubic-bezier(.3,1.4,.5,1) forwards}
+.h1-s{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%) scale(.6);opacity:0;border:1px solid rgba(160,185,240,.6);background:#132360;padding:1.2cqw 1.8cqw;font-size:2.8cqw;line-height:1.2;font-weight:600;white-space:nowrap;animation:h1in .45s cubic-bezier(.3,1.4,.5,1) forwards}
 @keyframes h1in{to{opacity:1;transform:translate(-50%,-50%)}}
-.h1-p{position:absolute;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#3dbe8b;box-shadow:0 0 8px #3dbe8b;opacity:0}
-.h1-st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.h1-st span{display:flex;align-items:center;gap:8px;justify-content:center;padding:9px 6px;border:1px solid rgba(160,185,240,.35);font:600 .66rem/1 var(--f);letter-spacing:.12em;text-transform:uppercase;color:#7f93c8;animation:h1ok .5s ease forwards}
+.h1-p{position:absolute;width:2cqw;height:2cqw;margin:-1cqw 0 0 -1cqw;border-radius:50%;background:#3dbe8b;box-shadow:0 0 8px #3dbe8b;opacity:0}
+.h1-st{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6cqw;flex:none}
+.h1-st span{display:flex;align-items:center;gap:1.4cqw;justify-content:center;padding:2cqw 1cqw;border:1px solid rgba(160,185,240,.35);font:600 2.3cqw/1 var(--f);letter-spacing:.1em;white-space:nowrap;text-transform:uppercase;color:#7f93c8;animation:h1ok .5s ease forwards}
 .h1-st span:nth-child(1){animation-delay:2.4s}.h1-st span:nth-child(2){animation-delay:3s}.h1-st span:nth-child(3){animation-delay:3.6s}
 @keyframes h1ok{to{color:#fff;border-color:#3dbe8b;background:rgba(61,190,139,.15)}}
 .h1-st span::before{content:"\2713";color:#3dbe8b}
-@media (max-width:560px){.h1-map{height:280px}.h1-map svg,.h1-p{display:none!important}.h1-s{left:var(--xm);top:var(--ym);font-size:.62rem;padding:6px 7px}.h1-core{width:116px;height:70px}.h1-core b{font-size:.8rem}.h1-st span{font-size:.56rem;letter-spacing:.06em}}
 .h1-p.p0{animation:h1p0 2.4s ease-in-out 2.0s infinite}@keyframes h1p0{0%{left:50%;top:56%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:14%;top:22%;opacity:0}}.h1-p.p1{animation:h1p1 2.4s ease-in-out 2.4s infinite}@keyframes h1p1{0%{left:86%;top:22%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:50%;top:56%;opacity:0}}.h1-p.p2{animation:h1p2 2.4s ease-in-out 2.8s infinite}@keyframes h1p2{0%{left:50%;top:56%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:16%;top:58%;opacity:0}}.h1-p.p3{animation:h1p3 2.4s ease-in-out 3.2s infinite}@keyframes h1p3{0%{left:84%;top:58%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:50%;top:56%;opacity:0}}.h1-p.p4{animation:h1p4 2.4s ease-in-out 3.6s infinite}@keyframes h1p4{0%{left:50%;top:56%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:22%;top:92%;opacity:0}}.h1-p.p5{animation:h1p5 2.4s ease-in-out 4.0s infinite}@keyframes h1p5{0%{left:78%;top:92%;opacity:0}15%{opacity:1}85%{opacity:1}100%{left:50%;top:56%;opacity:0}}
-/* 561-1200px: the panel is too narrow for the side positions, so the chips take the phone positions and the lines and dots are hidden */
-@media (min-width:561px) and (max-width:1200px){.h1-map svg,.h1-p{display:none!important}.h1-s{left:var(--xm);top:var(--ym)}}
-/* 1201px and up: slightly smaller chips so Data warehouse and Support desk fit inside the dashed border */
-@media (min-width:1201px){.h1-s{font-size:.7rem;padding:7px 8px}}
 /* reduced motion: show the finished state (systems, lines, green chips) */
 @media (prefers-reduced-motion:reduce){.h1-map line{opacity:1}.h1-s{opacity:1;transform:translate(-50%,-50%)}.h1-p{display:none}.h1-st span{color:#fff;border-color:#3dbe8b;background:rgba(61,190,139,.15)}}
 @media (max-width:960px){.hero-grid{grid-template-columns:1fr}}
@@ -1127,8 +1127,6 @@ html:has(main.cs-page){scroll-padding-top:auto}
 .badges.pair{grid-template-columns:1fr 1fr}
 @media (max-width:359px){.badges.pair{grid-template-columns:1fr}}
 
-/* Homepage hero visual, 340px and narrower: the three status chips fit side by side. */
-@media (max-width:340px){.h1-st{gap:5px}.h1-st span{padding:9px 3px;gap:4px;letter-spacing:.02em}}
 
 /* Closing card. Tablets: the button label wraps (with room above and below) instead of pushing the right column past the card.
    340px and narrower: the title's longest word fits inside the card's padding. */
