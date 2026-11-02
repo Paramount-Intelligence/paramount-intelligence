@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script id="pi-top">(function(){var nav=(performance.getEntriesByType&&performance.getEntriesByType("navigation")[0])||{};if(nav.type==="back_forward")return;var moved=false;function mark(){moved=true}["wheel","touchstart","keydown","mousedown"].forEach(function(t){addEventListener(t,mark,{passive:true,once:true})});function go(){if(moved)return;var r=document.documentElement,el=null,h=location.hash;if(h.length>1){try{el=document.getElementById(decodeURIComponent(h.slice(1)))}catch(e){}}var sb=r.style.scrollBehavior;r.style.scrollBehavior="auto";if(el)el.scrollIntoView();else{window.scrollTo(0,0);if(document.scrollingElement)document.scrollingElement.scrollTop=0;if(document.body)document.body.scrollTop=0}r.style.scrollBehavior=sb}go();document.addEventListener("DOMContentLoaded",go);addEventListener("load",go)})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI Engineering for Private Equity | Paramount Intelligence</title>
+<meta name="description" content="Turn portfolio priorities into working AI and engineering capabilities with discovery, implementation, integration, and accountable delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.pv{position:relative;border:1px solid rgba(160,185,240,.38);background:rgba(10,20,60,.42);padding:clamp(16px,2.4vw,26px);display:grid;gap:14px;color:#fff;font-family:Montserrat,sans-serif;min-width:0}
+.pv *{box-sizing:border-box}
+.pv .eb{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px 12px;font:700 .68rem/1.2 Montserrat;letter-spacing:.2em;text-transform:uppercase;color:#09b6f9}
+.pv .tag{font:600 .66rem/1 Montserrat;letter-spacing:.06em;text-transform:none;color:#c9d4f2;border:1px solid rgba(160,185,240,.5);padding:5px 8px}
+.pv .cap{margin:0;font-size:.84rem;color:#dfe7ff;line-height:1.5}
+.pv .ic{width:13px;height:15px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.q-sp{border:1.5px solid #09b6f9;background:#0f256e;padding:11px 14px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:4px 14px}
+.q-sp b{font-size:.92rem}.q-sp span{font-size:.8rem;color:#b7c6ee}
+.q-band{border:1px solid rgba(9,182,249,.7);background:rgba(9,182,249,.1);padding:10px 14px;display:grid;gap:4px;text-align:center}
+.q-band b{font-size:.88rem}.q-band span{font-size:.78rem;color:#bfe9ff}
+.q-stem{height:28px;width:0;margin:-14px auto;border-left:1.5px solid rgba(160,185,240,.6)}
+.q-pill{display:inline-block;background:#13235f;border:1px solid rgba(9,182,249,.7);color:#bfe9ff;font-size:.72rem;font-weight:600;padding:5px 10px;white-space:nowrap}
+@media (max-width:560px){.pv .cap{font-size:.8rem}.q-sp{display:grid}.q-band b{font-size:.82rem}.q-pill{font-size:.66rem;padding:4px 8px}}
+
+.q5-st{position:relative;aspect-ratio:540/288;margin-top:-14px}
+.q5-st svg{position:absolute;inset:0;width:100%;height:100%}
+.q5-st path{fill:none;stroke:rgba(160,185,240,.5);stroke-width:1.6;stroke-dasharray:4 4}
+.q5-st .q-pill{position:absolute;left:67.04%;top:7.64%;transform:translate(-50%,-50%)}
+.q5-ll{position:absolute;right:70.00%;transform:translateY(-50%);font-size:.74rem;font-weight:600;color:#dfe7ff;text-align:right;line-height:1.2;max-width:29.3%}
+.q5-env{position:absolute;top:84.03%;transform:translateX(-50%);width:22.2%;text-align:center;font-size:.74rem;font-weight:700;line-height:1.25}
+@media (max-width:560px){.q5-ll{font-size:.6rem}.q5-env{font-size:.6rem}}
+@media (prefers-reduced-motion:reduce){.q5 .q5-st path{stroke:#09b6f9;stroke-dasharray:none}.q5 .ai .tp{fill:#09b6f9}}
+.q5 .b0{animation:q5b0 9s ease infinite}@keyframes q5b0{0%,7.78%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}11.67%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}.q5 .a0 .tp{animation:q5a0 9s ease infinite}@keyframes q5a0{0%,13.33%{fill:#22346f}17.22%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}.q5 .b1{animation:q5b1 9s ease infinite}@keyframes q5b1{0%,23.33%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}27.22%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}.q5 .a1 .tp{animation:q5a1 9s ease infinite}@keyframes q5a1{0%,28.89%{fill:#22346f}32.78%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}.q5 .b2{animation:q5b2 9s ease infinite}@keyframes q5b2{0%,38.89%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}42.78%,91.11%{stroke:#09b6f9;stroke-dasharray:4 0}95.00%,100%{stroke:rgba(160,185,240,.5);stroke-dasharray:4 4}}.q5 .a2 .tp{animation:q5a2 9s ease infinite}@keyframes q5a2{0%,44.44%{fill:#22346f}48.33%,91.11%{fill:#09b6f9}95.00%,100%{fill:#22346f}}</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Paramount Intelligence home">
+      <img src="assets/logo.png" alt="" width="28" height="38">
+      <b><span class="b1">Paramount</span><span class="b2">Intelligence</span></b>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="has">
+        <button type="button" aria-expanded="false" aria-controls="dd-svc">Services <svg class="ico"><use href="#i-chev"/></svg></button>
+        <div class="drop svc" id="dd-svc">
+          <a href="services-ai-strategy-and-consulting.html"><b>AI &amp; Technology Consulting</b><span>Clear decisions on what to build, adopt, or improve.</span></a><a href="services-ai-solutions-and-engineering.html"><b>AI &amp; Agentic Engineering</b><span>AI capabilities connected to client products and operations.</span></a><a href="services-software-product-engineering.html"><b>Software &amp; Product Engineering</b><span>Applications customers and business teams can use.</span></a><a href="services-data-and-analytics.html"><b>Data Engineering &amp; Intelligence</b><span>Reliable data for decisions and AI.</span></a><a href="services-cloud-services.html"><b>Cloud &amp; Production Engineering</b><span>Systems client teams can deploy, operate, and extend.</span></a><a href="services-ai-workflow-automation.html"><b>Workflow Automation</b><span>Less repetitive work across connected systems.</span></a>
+          <div class="foot"><a href="services.html">View all services →</a><a href="services.html#forward-deployed-engineering">Forward-deployed AI engineering →</a></div>
+        </div>
+      </li>
+      <li class="has">
+        <button type="button" class="on" aria-expanded="false" aria-controls="dd-ind">Industries <svg class="ico"><use href="#i-chev"/></svg></button>
+        <div class="drop ind" id="dd-ind">
+          <a href="industries-private-equity.html"><b>Private Equity</b><span>AI and engineering delivery for sponsors and portfolio companies.</span></a>
+          <a href="industries-digital-natives.html"><b>Digital Natives</b><span>AI features and engineering support for software and digital businesses.</span></a>
+          <div class="foot"><a href="industries.html">View industries →</a></div>
+        </div>
+      </li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="contact-us.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a class="btn btn-cyan" href="contact-us.html">Discuss a project <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+      <button class="burger" type="button" id="burger" aria-expanded="false" aria-controls="mob" aria-label="Open menu"><svg class="ico"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
+  </div>
+  <nav class="mob" id="mob" hidden aria-label="Mobile">
+    <div class="wrap">
+      <a href="index.html">Home</a>
+      <h4>Services</h4>
+      <a href="services-ai-strategy-and-consulting.html">AI &amp; Technology Consulting</a><a href="services-ai-solutions-and-engineering.html">AI &amp; Agentic Engineering</a><a href="services-software-product-engineering.html">Software &amp; Product Engineering</a><a href="services-data-and-analytics.html">Data Engineering &amp; Intelligence</a><a href="services-cloud-services.html">Cloud &amp; Production Engineering</a><a href="services-ai-workflow-automation.html">Workflow Automation</a>
+      <a href="services.html">View all services</a>
+      <h4>Industries</h4>
+      <a href="industries-private-equity.html">Private Equity</a>
+      <a href="industries-digital-natives.html">Digital Natives</a>
+      <a href="industries.html">View industries</a>
+      <h4>Company</h4>
+      <a href="case-studies.html">Case Studies</a>
+      <a href="about-us.html">About Us</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact-us.html">Contact Us</a>
+    </div>
+  </nav>
+</header>
+<main id="top">
+<section class="phero">
+  <div class="wrap">
+    <div class="phero-grid">
+      <div class="pcopy">
+        <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="industries.html">Industries</a><span aria-hidden="true">/</span><span aria-current="page">Private Equity</span></nav>
+        <div class="eyebrow">Private Equity</div>
+        <h1>Turn portfolio priorities into working AI</h1>
+        <p class="body">We help portfolio companies improve customer service, operational efficiency, and product development. Paramount works with sponsors, operating partners, and company leaders to identify useful initiatives and carry the agreed work into production.</p>
+        <div class="ctas"><a class="btn btn-cyan" href="contact-us.html">Discuss a portfolio priority <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></a><a class="btn btn-ghost" href="case-studies.html">See relevant work </a></div>
+      </div>
+      <div><div class="pv q5" aria-label="Reusable engineering approaches adapted to three separate company environments">
+<div class="eb">Sponsor and portfolio</div>
+<div class="q-sp"><b>PE sponsor &amp; operating partners</b><span>Portfolio priorities</span></div>
+<div class="q-stem"></div>
+<div class="q-band"><b>Reusable engineering approaches</b><span>Integration &middot; Evaluation &middot; Delivery</span></div>
+<div class="q5-st"><svg viewBox="0 0 540 288" aria-hidden="true"><path class="b0" d="M362 0V52H238V82"/><g class=""><polygon points="184,192 238,219 238,232 184,205" fill="#0b2a3a"/><polygon points="292,192 238,219 238,232 292,205" fill="#103a4c"/><polygon class="tp" points="238,165 292,192 238,219 184,192" fill="#1d5466" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class=""><polygon points="184,152 238,179 238,192 184,165" fill="#0e2160"/><polygon points="292,152 238,179 238,192 292,165" fill="#173280"/><polygon class="tp" points="238,125 292,152 238,179 184,152" fill="#2350b8" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class="ai a0"><polygon points="184,112 238,139 238,152 184,125" fill="#0e1c52"/><polygon points="292,112 238,139 238,152 292,125" fill="#15296a"/><polygon class="tp" points="238,85 292,112 238,139 184,112" fill="#22346f" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><path class="b1" d="M362 0V52H362V82"/><g class=""><polygon points="308,192 362,219 362,232 308,205" fill="#0b2a3a"/><polygon points="416,192 362,219 362,232 416,205" fill="#103a4c"/><polygon class="tp" points="362,165 416,192 362,219 308,192" fill="#1d5466" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class=""><polygon points="308,152 362,179 362,192 308,165" fill="#0e2160"/><polygon points="416,152 362,179 362,192 416,165" fill="#173280"/><polygon class="tp" points="362,125 416,152 362,179 308,152" fill="#2350b8" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class="ai a1"><polygon points="308,112 362,139 362,152 308,125" fill="#0e1c52"/><polygon points="416,112 362,139 362,152 416,125" fill="#15296a"/><polygon class="tp" points="362,85 416,112 362,139 308,112" fill="#22346f" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><path class="b2" d="M362 0V52H486V82"/><g class=""><polygon points="432,192 486,219 486,232 432,205" fill="#0b2a3a"/><polygon points="540,192 486,219 486,232 540,205" fill="#103a4c"/><polygon class="tp" points="486,165 540,192 486,219 432,192" fill="#1d5466" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class=""><polygon points="432,152 486,179 486,192 432,165" fill="#0e2160"/><polygon points="540,152 486,179 486,192 540,165" fill="#173280"/><polygon class="tp" points="486,125 540,152 486,179 432,152" fill="#2350b8" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><g class="ai a2"><polygon points="432,112 486,139 486,152 432,125" fill="#0e1c52"/><polygon points="540,112 486,139 486,152 540,125" fill="#15296a"/><polygon class="tp" points="486,85 540,112 486,139 432,112" fill="#22346f" stroke="rgba(255,255,255,.3)" stroke-width="1"/></g><line x1="166" y1="112" x2="180" y2="112" stroke="rgba(160,185,240,.6)" stroke-width="1" stroke-dasharray="2 3"/><line x1="166" y1="152" x2="180" y2="152" stroke="rgba(160,185,240,.6)" stroke-width="1" stroke-dasharray="2 3"/><line x1="166" y1="192" x2="180" y2="192" stroke="rgba(160,185,240,.6)" stroke-width="1" stroke-dasharray="2 3"/></svg><span class="q-pill">Adapted to each company&rsquo;s needs</span><span class="q5-ll" style="top:38.89%">AI &amp; automation</span><span class="q5-ll" style="top:52.78%">Existing systems</span><span class="q5-ll" style="top:66.67%">Company data &amp; access</span><span class="q5-env" style="left:44.07%">Company A environment</span><span class="q5-env" style="left:67.04%">Company B environment</span><span class="q5-env" style="left:90.00%">Company C environment</span></div>
+<p class="cap">Built within each company&rsquo;s environment, with documentation and handover for its team.</p></div></div>
+    </div>
+  </div>
+</section><section class="sec">
+  <div class="wrap cols2">
+    <div class="head" style="margin:0"><div class="eyebrow">The operating challenge</div><h2 class="title">An AI priority needs an implementation owner</h2></div>
+    <div class="stack-txt">
+      <p class="statement">An operating team may know where manual work, fragmented information, or a product gap is limiting progress. The next step requires someone to translate that priority into a workable system, resolve dependencies, and stay accountable through delivery.</p>
+      <p>We work with business owners and technical teams to define the use case, assess readiness, and build the capability in the company's environment. Engagements can support the sponsor's own operations or portfolio companies across sectors.</p>
+    </div>
+  </div>
+</section><section class="sec band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Capabilities</div><h2 class="title">Where Paramount helps</h2></div>
+    <div class="blocks"><div class="blk"><span class="ic"><svg class="ico"><use href="#i-gauge"/></svg></span><h3>Operating improvement</h3><p>Reduce repeated handling in support, reporting, document workflows, and internal operations. Connect AI to the systems people already use and define where review or approval remains necessary.</p></div><div class="blk"><span class="ic"><svg class="ico"><use href="#i-code"/></svg></span><h3>Product and engineering execution</h3><p>Add AI to existing products, develop custom applications, and recover stalled initiatives. Forward-deployed engineers work directly with users and technical owners to resolve the gap between prototype and production.</p></div><div class="blk"><span class="ic"><svg class="ico"><use href="#i-repeat"/></svg></span><h3>Reusable delivery across the portfolio</h3><p>Where requirements overlap, reuse suitable integration patterns, evaluation methods, and delivery practices. Keep each company&#x27;s access, data, scope, and operating responsibilities separate.</p></div></div>
+  </div>
+</section><section class="sec">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Delivery approach</div><h2 class="title">Measurable Implementation &amp; Portfolio Expansion</h2></div>
+    <div class="stages"><span class="run" aria-hidden="true"></span><button type="button" class="st"><span class="dot"><svg class="ico"><use href="#i-chart"/></svg></span><span class="box"><span class="lbl">Step 1</span><h3>Establish the baseline</h3><p>Understand the current process, volume, effort, cost, and business owner.</p></span></button><button type="button" class="st"><span class="dot"><svg class="ico"><use href="#i-scale"/></svg></span><span class="box"><span class="lbl">Step 2</span><h3>Prioritize the work</h3><p>Compare expected benefit with readiness, dependencies, and delivery effort.</p></span></button><button type="button" class="st"><span class="dot"><svg class="ico"><use href="#i-blocks"/></svg></span><span class="box"><span class="lbl">Step 3</span><h3>Build inside the environment</h3><p>Integrate with the company&#x27;s tools and test with the people doing the work.</p></span></button><button type="button" class="st"><span class="dot"><svg class="ico"><use href="#i-eye"/></svg></span><span class="box"><span class="lbl">Step 4</span><h3>Review the result</h3><p>Assess the agreed measures and decide whether to improve, expand, or stop.</p></span></button></div>
+    <div class="legend-box" style="background:var(--white)">
+      <em>Measures</em>
+      <div class="chips pale" style="max-width:420px"><span>Handling time</span><span>Throughput</span><span>Adoption</span><span>Rework</span><span>Service quality</span><span>Operating cost</span></div>
+      <p>Measures can include handling time, throughput, adoption, rework, service quality, and operating cost. Savings and financial impact are established from the engagement's own baseline and evidence.</p>
+    </div>
+  </div>
+</section><section class="sec band">
+  <div class="wrap">
+    <div class="head"><div class="eyebrow">Relevant experience</div><h2 class="title">Selected work</h2></div>
+    <div class="cgrid "><a class="ccard pc" href="case-study-flexagon-support-copilot.html" data-search="PE-backed private equity Flexagon: support knowledge in one workflow A support copilot brings ticket context, enterprise knowledge, and reviewable response drafts into the support process. Flexagon Enterprise Software, DevOps &amp; Configuration Management n8n, Anthropic Claude, OpenAI Embeddings, Qdrant, PostgreSQL, Freshdesk, Confluence, Jira, RAG Architecture Copilot  Anthropic Claude Qdrant n8n RAG">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 300 160"><g font-family="Montserrat"><rect x="6" y="14" width="78" height="26" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="45.0" y="31.0" text-anchor="middle" style="font-size:11px">Freshdesk</text><rect x="6" y="66" width="78" height="26" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="45.0" y="83.0" text-anchor="middle" style="font-size:11px">Confluence</text><rect x="6" y="118" width="78" height="26" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="45.0" y="135.0" text-anchor="middle" style="font-size:11px">Jira</text><path d="M84 27C110 27 108 79 124 79M84 79H124M84 131C110 131 108 79 124 79" fill="none" stroke="#204ecf" stroke-width="1.5"/><circle class="mv" r="3" fill="#09b6f9" opacity="0"><animateMotion dur="2.4s" begin="0s" repeatCount="indefinite" path="M84 27C110 27 108 79 124 79"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="2.4s" begin="0s" repeatCount="indefinite"/></circle><circle class="mv" r="3" fill="#09b6f9" opacity="0"><animateMotion dur="2.4s" begin="-0.80s" repeatCount="indefinite" path="M84 79H124"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="2.4s" begin="-0.80s" repeatCount="indefinite"/></circle><circle class="mv" r="3" fill="#09b6f9" opacity="0"><animateMotion dur="2.4s" begin="-1.60s" repeatCount="indefinite" path="M84 131C110 131 108 79 124 79"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="2.4s" begin="-1.60s" repeatCount="indefinite"/></circle><rect x="124" y="58" width="74" height="42" fill="#0f256e" stroke="#0f256e" stroke-width="1.5"/><text class="sv-w" x="161.0" y="76.0" text-anchor="middle">Grounded</text><text class="sv-w" x="161.0" y="90.0" text-anchor="middle">draft</text><path d="M198 79H214" fill="none" stroke="#204ecf" stroke-width="1.5"/><circle class="mv" r="2.5" fill="#09b6f9" opacity="0"><animateMotion dur="1.2s" begin="-0.40s" repeatCount="indefinite" path="M198 79H214"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="1.2s" begin="-0.40s" repeatCount="indefinite"/></circle><rect x="214" y="40" width="80" height="78" fill="#fff" stroke="#0f256e" stroke-width="1.5"/><text class="sv-s" x="221" y="56" style="font-size:7.8px">HUMAN REVIEW</text><circle cx="228" cy="72" r="4" fill="#3dbe8b" class="ap" style="animation-delay:-2.40s"/><text class="sv-t" x="238" y="76" style="font-size:11px">Approve</text><circle cx="228" cy="89" r="4" fill="#09b6f9" class="ap" style="animation-delay:-1.60s"/><text class="sv-t" x="238" y="93" style="font-size:11px">Edit</text><circle cx="228" cy="106" r="4" fill="#455065" class="ap" style="animation-delay:-0.80s"/><text class="sv-t" x="238" y="110" style="font-size:11px">Escalate</text></g></svg><span class="tabs"><span class="live">Full case study</span></span></div>
+  <div class="in">
+    <div class="meta"><b>Flexagon</b><span>PE-backed · Enterprise Software, DevOps &amp; Configuration Management</span></div>
+    <h3>Flexagon: support knowledge in one workflow</h3>
+    <p>Support engineers can use connected enterprise knowledge and review AI-drafted responses within their existing workflow.</p>
+    <div class="tech"><span>Anthropic Claude</span><span>Qdrant</span><span>n8n</span><span>RAG</span></div>
+    <span class="link">Read case study <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></span>
+  </div>
+</a><a class="ccard pc" href="/case-studies/truecontext-field-pulse" data-page="Case study pages are being redesigned separately." data-search="TrueContext: field submissions turned into usable information AI processing turns technician submissions into structured records, summaries, and insights connected to field-service workflows. TrueContext Field-service software  Field AI  Document AI Structured records Summaries">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 300 160"><g font-family="Montserrat"><rect x="6" y="8" width="110" height="144" fill="#fff" stroke="#0f256e" stroke-width="1.5"/><text class="sv-t" x="14" y="26" style="font-size:10.5px">Field form</text><rect x="14" y="38" width="9" height="9" fill="#fff" stroke="#0f256e" stroke-width="1"/><path d="M16 42l2 2 4-5" fill="none" stroke="#3dbe8b" stroke-width="1.5"/><rect x="28" y="40" width="62" height="5" fill="#d9dbe0"/><rect x="14" y="56" width="9" height="9" fill="#fff" stroke="#0f256e" stroke-width="1"/><path d="M16 60l2 2 4-5" fill="none" stroke="#3dbe8b" stroke-width="1.5"/><rect x="28" y="58" width="50" height="5" fill="#d9dbe0"/><rect x="14" y="74" width="9" height="9" fill="#fff" stroke="#0f256e" stroke-width="1"/><rect x="28" y="76" width="70" height="5" fill="#d9dbe0"/><rect x="14" y="96" width="94" height="46" fill="#f3f3f3" stroke="#d9dbe0" stroke-width="1"/><path d="M20 136l16-18 12 10 10-8 18 16" fill="none" stroke="#455065" stroke-width="1.2"/><circle cx="92" cy="108" r="4" fill="#09b6f9"/><rect x="10" y="36" width="100" height="2.5" fill="#09b6f9" class="as" style="--d:52px"/><path d="M122 80H148" fill="none" stroke="#204ecf" stroke-width="1.5"/><path d="M143 76L148 80L143 84" fill="none" stroke="#204ecf" stroke-width="1.5"/><circle class="mv" r="2.5" fill="#09b6f9" opacity="0"><animateMotion dur="1.6s" begin="0s" repeatCount="indefinite" path="M122 80H146"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="1.6s" begin="0s" repeatCount="indefinite"/></circle><circle cx="135" cy="66" r="9" fill="#0f256e"/><text class="sv-w" x="135" y="69.5" text-anchor="middle" style="font-size:7.5px">AI</text><rect x="156" y="14" width="138" height="116" fill="#fff" stroke="#0f256e" stroke-width="1.5"/><text class="sv-s" x="166" y="32" style="font-size:8.6px">STRUCTURED RECORD</text><path d="M166 39H284" fill="none" stroke="#d9dbe0" stroke-width="1"/><text class="sv-t" x="166" y="58" style="font-size:10.5px">Asset</text><rect x="166" y="64" width="96" height="5" fill="#d9dbe0"/><circle cx="281" cy="54" r="5" fill="#3dbe8b" class="ap" style="animation-delay:-2.40s"/><path d="M278.5 54l2 2 3-4" fill="none" stroke="#fff" stroke-width="1.3"/><text class="sv-t" x="166" y="83" style="font-size:10.5px">Findings</text><rect x="166" y="89" width="78" height="5" fill="#d9dbe0"/><circle cx="281" cy="79" r="5" fill="#3dbe8b" class="ap" style="animation-delay:-1.60s"/><path d="M278.5 79l2 2 3-4" fill="none" stroke="#fff" stroke-width="1.3"/><text class="sv-t" x="166" y="108" style="font-size:10.5px">Summary</text><rect x="166" y="114" width="88" height="5" fill="#d9dbe0"/><circle cx="281" cy="104" r="5" fill="#3dbe8b" class="ap" style="animation-delay:-0.80s"/><path d="M278.5 104l2 2 3-4" fill="none" stroke="#fff" stroke-width="1.3"/><rect x="156" y="136" width="138" height="18" fill="#3dbe8b"/><text class="sv-w" x="225" y="148.5" text-anchor="middle" style="font-size:9.5px">Insights for managers</text></g></svg><span class="tabs"><span class="wip">Work in progress</span></span></div>
+  <div class="in">
+    <div class="meta"><b>TrueContext</b><span>Field-service software</span></div>
+    <h3>TrueContext: field submissions turned into usable information</h3>
+    <p>Field submissions translated into structured records, summaries, and management insights through an engagement spanning discovery, integration, testing, and handover.</p>
+    <div class="tech"><span>Document AI</span><span>Structured records</span><span>Summaries</span></div>
+    <span class="link">Read case study <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></span>
+  </div>
+</a><a class="ccard pc" href="/case-studies/multi-agent-ai-analytics-platform-for-enterprise-decision-intelligence" data-page="Case study pages are being redesigned separately." data-search="Business questions answered across company data An AI analytics application lets business users explore connected data through natural-language questions, with separate access boundaries for each organization. B2B Enterprise Analytics Platform Enterprise Analytics, Business Intelligence, Data Platforms LangGraph, BigQuery, Teradata, Snowflake, MySQL, PostgreSQL, MongoDB, CSV/Excel, Dash, Plotly, SQL Generation, Multi-Agent Architecture, Self-Hosted Models, Human-in-the-Loop Workflows AI analytics  LangGraph BigQuery Snowflake Plotly">
+  <div class="art" aria-hidden="true"><svg viewBox="0 0 300 160"><g font-family="Montserrat"><rect x="6" y="6" width="288" height="28" fill="#fff" stroke="#0f256e" stroke-width="1.5"/><circle cx="20" cy="19" r="5" fill="none" stroke="#204ecf" stroke-width="1.5"/><path d="M24 23l4 4" fill="none" stroke="#204ecf" stroke-width="1.5"/><text class="sv-t" x="34" y="24" style="font-size:10.5px">Which region grew fastest?</text><rect x="254" y="11" width="34" height="18" fill="#09b6f9"/><text class="sv-t" x="271" y="23.5" text-anchor="middle" style="font-size:9.5px">Ask</text><rect x="187" y="13" width="1.5" height="13" fill="#0f256e" class="ak"/><rect x="6" y="46" width="82" height="24" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="47.0" y="62.0" text-anchor="middle" style="font-size:10px">BigQuery</text><rect x="6" y="82" width="82" height="24" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="47.0" y="98.0" text-anchor="middle" style="font-size:10px">Snowflake</text><rect x="6" y="118" width="82" height="24" fill="#fff" stroke="#d9dbe0" stroke-width="1.5"/><text class="sv-t" x="47.0" y="134.0" text-anchor="middle" style="font-size:10px">Teradata</text><path d="M88 58C104 58 104 98 118 98M88 94H118M88 130C104 130 104 98 118 98" fill="none" stroke="#204ecf" stroke-width="1.5"/><circle class="mv" r="2.5" fill="#09b6f9" opacity="0"><animateMotion dur="1.8s" begin="0s" repeatCount="indefinite" path="M88 58C104 58 104 98 118 98"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="1.8s" begin="0s" repeatCount="indefinite"/></circle><circle class="mv" r="2.5" fill="#09b6f9" opacity="0"><animateMotion dur="1.8s" begin="-0.60s" repeatCount="indefinite" path="M88 94H118"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="1.8s" begin="-0.60s" repeatCount="indefinite"/></circle><circle class="mv" r="2.5" fill="#09b6f9" opacity="0"><animateMotion dur="1.8s" begin="-1.20s" repeatCount="indefinite" path="M88 130C104 130 104 98 118 98"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.12;.82;1" dur="1.8s" begin="-1.20s" repeatCount="indefinite"/></circle><rect x="122" y="44" width="172" height="110" fill="#fff" stroke="#0f256e" stroke-width="1.5"/><text class="sv-s" x="132" y="60" style="font-size:8.6px">ANSWER · OWN DATA ONLY</text><rect x="138" y="112" width="18" height="30" fill="#204ecf" class="ab"/><rect x="168" y="96" width="18" height="46" fill="#204ecf" class="ab" style="animation-delay:-0.45s"/><rect x="198" y="104" width="18" height="38" fill="#204ecf" class="ab" style="animation-delay:-0.90s"/><rect x="228" y="80" width="18" height="62" fill="#09b6f9" class="ab" style="animation-delay:-1.35s"/><rect x="258" y="90" width="18" height="52" fill="#204ecf" class="ab" style="animation-delay:-1.80s"/><path d="M132 142H284" fill="none" stroke="#d9dbe0" stroke-width="1"/></g></svg></div>
+  <div class="in">
+    <div class="meta"><b>B2B Enterprise Analytics Platform</b><span>Enterprise Analytics, Business Intelligence</span></div>
+    <h3>Business questions answered across company data</h3>
+    <p>A shared analytics architecture with separate company data connections and tenant boundaries.</p>
+    <div class="tech"><span>LangGraph</span><span>BigQuery</span><span>Snowflake</span><span>Plotly</span></div>
+    <span class="link">Read case study <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></span>
+  </div>
+</a></div>
+    <div class="ev-foot" style="margin-top:24px"><a class="link" href="case-studies.html">Explore case studies <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></a></div>
+  </div>
+</section><section class="sec">
+  <div class="wrap">
+    <div class="legend-box appr" style="background:var(--white);margin-top:0">
+      <em>Working with Paramount</em>
+      <p>Engagement options include managed implementation, forward-deployed engineering within portfolio-company workstreams, and focused assessments. Paramount establishes clear delivery responsibilities and remains the contracting partner.</p>
+      <div class="chips"><span>Managed implementation</span><span>Forward-deployed engineering</span><span>Focused assessments</span></div>
+    </div>
+  </div>
+</section><section class="close">
+  <div class="wrap">
+    <div class="cta-card">
+      <div class="cta-l">
+        <div class="eyebrow">Start a conversation</div>
+        <h2>Portfolio Engineering &amp; Implementation Support</h2>
+        <p>Engagements can address a company-specific challenge or shared requirements across a portfolio. Initial discussions establish an appropriate delivery scope.</p>
+      </div>
+      <div class="cta-r">
+        <span class="cta-k">What a first conversation covers</span>
+        <ol class="cta-steps">
+          <li><b>01</b><span>Your business objective</span></li>
+          <li><b>02</b><span>The technical context</span></li>
+          <li><b>03</b><span>The right next step</span></li>
+        </ol>
+        <a class="btn btn-cyan btn-wide" href="contact-us.html">Discuss the opportunity <span class="arr"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div>
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="" width="28" height="38"><b><span class="b1">Paramount</span><span class="b2">Intelligence</span></b></a>
+      <p>AI engineering &amp; consulting for better products, less manual work, and systems organizations can rely on.</p>
+    </div>
+    <div><h4>Services</h4><ul><li><a href="services-ai-strategy-and-consulting.html">AI &amp; Technology Consulting</a></li><li><a href="services-ai-solutions-and-engineering.html">AI &amp; Agentic Engineering</a></li><li><a href="services-software-product-engineering.html">Software &amp; Product Engineering</a></li><li><a href="services-data-and-analytics.html">Data Engineering &amp; Intelligence</a></li><li><a href="services-cloud-services.html">Cloud &amp; Production Engineering</a></li><li><a href="services-ai-workflow-automation.html">Workflow Automation</a></li></ul></div>
+    <div><h4>Industries</h4><ul><li><a href="industries-private-equity.html">Private Equity</a></li><li><a href="industries-digital-natives.html">Digital Natives</a></li></ul></div>
+    <div><h4>Company</h4><ul><li><a href="about-us.html">About Us</a></li><li><a href="case-studies.html">Case Studies</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div>
+    <div>
+      <h4>Contact</h4>
+      <div class="mail"><code id="mailTxt">marty@paramountintelligence.co</code><button type="button" data-copy="mailTxt">Copy</button></div>
+      <a class="li" href="https://www.linkedin.com/company/paramount-intelligence-co/" target="_blank" rel="noopener"><svg class="ico"><use href="#i-in"/></svg>LinkedIn</a>
+    </div>
+    <div class="legal">
+      <span>© 2026 Paramount Intelligence. All rights reserved.</span>
+      <span>AI moves fast. We make it work.</span>
+    </div>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-agent" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4M9 4h6M9 13h.01M15 13h.01M9.5 17h5"/></symbol>
+    <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 01-12 0V7zM12 17v5"/></symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2.1-.1-2.9a2.2 2.2 0 00-2.9-.1zM12 15l-3-3a22 22 0 012-4A12.9 12.9 0 0122 2c0 2.7-.8 7.5-6 11a22.4 22.4 0 01-4 2zM9 12H4s.6-3 2-4c1.6-1.1 5 0 5 0M12 15v5s3-.6 4-2c1.1-1.6 0-5 0-5"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM22 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></symbol>
+    <symbol id="i-owner" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M12 14l4-4M3.3 19a10 10 0 1117.4 0"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.8L20 10.7l-5.6 2.4L12 19l-2.4-5.9L4 10.7l6.1-1.9z"/><path d="M19 3v4M21 5h-4"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.8-3.8a6 6 0 01-7.9 7.9l-6.9 6.9a2.1 2.1 0 01-3-3l6.9-6.9a6 6 0 017.9-7.9l-3.8 3.8z"/></symbol>
+    <symbol id="i-team" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2.2"/><circle cx="19" cy="10" r="2.2"/><path d="M7 20v-1.5a5 5 0 0110 0V20M1.5 19v-.8A3.4 3.4 0 015 15M22.5 19v-.8A3.4 3.4 0 0019 15"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></symbol>
+    <symbol id="i-blocks" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17.5h7M17.5 14v7"/></symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="1"/><path d="M8 21h8M12 17v4M6 12l3-3 3 3 5-5"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M16.2 7.8l-2.1 6.3-6.3 2.1 2.1-6.3z"/></symbol>
+    <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></symbol>
+    <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H8a6 6 0 115.7-8h1.8a4 4 0 012 8z"/></symbol>
+    <symbol id="i-flow" viewBox="0 0 24 24"><rect x="3" y="3" width="6" height="6"/><rect x="15" y="15" width="6" height="6"/><path d="M6 9v4a2 2 0 002 2h7"/><path d="M12 12l3 3-3 3"/></symbol>
+    <symbol id="i-eval" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 10v7"/></symbol>
+  
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="1"/><path d="M8 11V7a4 4 0 018 0v4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a1 1 0 00-1 1v16a1 1 0 001 1h12a1 1 0 001-1V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></symbol>
+    <symbol id="i-brief" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 13h18"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 00-14.9-3M4 4v4h4M4 13a8 8 0 0014.9 3M20 20v-4h-4"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="M2 12l4-4 4 2 4-3 4 3 4 4M6 8v6l4 4 2-2 2 2 4-4v-6"/></symbol>
+    <symbol id="i-msg" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 000-6H9a3 3 0 010-6h7"/></symbol>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3"/></symbol>
+  </defs>
+</svg>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -62,20 +62,20 @@ export default function DataAndAnalytics() {
                     </animateMotion>
                   </circle>
                   <rect x="150" y="104" width="90" height="52" fill="#0f256e" stroke="#09b6f9" strokeWidth="1.6" />
-                  <text className="vt" x="195" y="127" textAnchor="middle">Validate</text>
-                  <text className="vs" x="195" y="142" textAnchor="middle">shared measures</text>
+                  <text className="vt" x="195" y="127" style={{ fontSize: 11 }} textAnchor="middle">Validate</text>
+                  <text className="vs" x="195" y="142" style={{ fontSize: 8 }} textAnchor="middle">shared measures</text>
                   <path d="M240 116C262 116 262 70 282 70" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M240 144C262 144 262 190 282 190" fill="none" stroke="#09b6f9" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   <rect x="282" y="44" width="108" height="54" fill="rgba(160,185,240,.10)" stroke="rgba(160,185,240,.55)" strokeWidth="1.4" />
-                  <text className="vt" x="336" y="64" textAnchor="middle">Reporting</text>
-                  <rect x="298" y="82" width="9" height="8" fill="rgba(160,185,240,.5)" />
-                  <rect x="314" y="77" width="9" height="13" fill="rgba(160,185,240,.5)" />
-                  <rect x="330" y="72" width="9" height="18" fill="rgba(160,185,240,.5)" />
-                  <rect x="346" y="67" width="9" height="23" fill="#09b6f9" />
-                  <rect x="362" y="62" width="9" height="28" fill="rgba(160,185,240,.5)" />
+                  <text className="vt" x="336" y="61" style={{ fontSize: 11 }} textAnchor="middle">Reporting</text>
+                  <rect x="298" y="85" width="9" height="6" fill="rgba(160,185,240,.5)" />
+                  <rect x="314" y="82" width="9" height="9" fill="rgba(160,185,240,.5)" />
+                  <rect x="330" y="78" width="9" height="13" fill="rgba(160,185,240,.5)" />
+                  <rect x="346" y="75" width="9" height="16" fill="#09b6f9" />
+                  <rect x="362" y="71" width="9" height="20" fill="rgba(160,185,240,.5)" />
                   <rect x="282" y="164" width="108" height="54" fill="rgba(61,190,139,.14)" stroke="#3dbe8b" strokeWidth="1.4" />
-                  <text className="vt" x="336" y="188" textAnchor="middle">AI context</text>
-                  <text className="vs" x="336" y="204" textAnchor="middle">right user, right data</text>
+                  <text className="vt" x="336" y="187" style={{ fontSize: 11 }} textAnchor="middle">AI context</text>
+                  <text className="vs" x="336" y="203" style={{ fontSize: 8 }} textAnchor="middle">right user, right data</text>
                 </svg>
               </div>
             </div>

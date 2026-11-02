@@ -1,7 +1,67 @@
 import Link from "next/link";
-import Icon from "@/components/site/Icon";
+import Icon, { type IconName } from "@/components/site/Icon";
+import CareersFaq, { type FaqItem } from "@/components/careers/CareersFaq";
+import CareersScrollIn from "@/components/careers/CareersScrollIn";
+import "@/components/careers/careers.css";
 
-// Page content from docs/website-redesign/reference/careers.html (the spec). Behaviour: lib/site-behaviours.ts.
+// Page content from docs/website-redesign/reference/careers-revamp/ (reference/content.md, the copy, and
+// reference/careers-redesign.html, the layout). The role pages are components/careers/JobPage.tsx.
+
+const LOGOS: { src: string; alt: string; cls?: string }[] = [
+  { src: "aramco", alt: "Saudi Aramco", cls: "tall" },
+  { src: "donaldson", alt: "Donaldson" },
+  { src: "alibaba", alt: "Alibaba.com" },
+  { src: "veon", alt: "VEON", cls: "small" },
+  { src: "schneider", alt: "Schneider Electric", cls: "tall" },
+  { src: "toptal", alt: "Toptal", cls: "small" },
+  { src: "davidson", alt: "Davidson" },
+  { src: "truecontext", alt: "TrueContext" },
+  { src: "flexagon", alt: "Flexagon" },
+  { src: "syngenta", alt: "Syngenta" },
+];
+
+const AREAS: { icon: IconName; title: string; body: string }[] = [
+  { icon: "agent", title: "Forward-deployed AI engineering", body: "Work with client stakeholders on discovery, prototyping, integration, evaluation, and deployment." },
+  { icon: "code", title: "Software and platform engineering", body: "Build applications, APIs, internal tools, and the systems that support them." },
+  { icon: "db", title: "Data and analytics", body: "Improve data flows, reporting, and the foundations for AI applications." },
+  { icon: "check", title: "Quality and production delivery", body: "Test behavior, investigate failures, and improve release and operating practices." },
+];
+
+const STEPS: { title: string; body: string }[] = [
+  { title: "Application review", body: "We review your background, experience, and problem-solving exposure, then hold a focused conversation about your goals and expectations, and give you clarity on our work, standards, and environment." },
+  { title: "Practical or technical assessment", body: "Depending on the role, you complete a structured assessment based on real-world scenarios across AI, data, cloud, automation, or platform engineering. We look for ownership, judgment, and clear communication." },
+  { title: "Technical or strategy interview", body: "A deep discussion with senior engineers or consultants on structured thinking, technical depth, and problem-solving approach. You also meet potential team members and discuss how you collaborate." },
+  { title: "Final decision", body: "We provide clear feedback at the end of the process and extend an offer if there is strong mutual alignment. We then agree the role, team, and start details with you." },
+];
+
+const ROLES: { href: string; title: string; meta: [string, string] }[] = [
+  { href: "/careers/open-positions/ai-engineer", title: "AI Engineer", meta: ["Remote, US only", "Applied AI"] },
+  { href: "/careers/open-positions/full-stack-engineer", title: "Full Stack Engineer", meta: ["Remote, US only", "Software & Product Engineering"] },
+  { href: "/careers/open-positions/expression-of-interest", title: "Expressions of Interest", meta: ["Open to profiles", "Forward-deployed and applied AI engineering"] },
+];
+
+const FAQ: FaqItem[] = [
+  { q: "What roles are available at Paramount Intelligence?", a: "Current openings are listed on this page with the team and location for each role. Our priority areas are forward-deployed AI engineering and applied AI engineering." },
+  { q: "Do I need prior experience in AI, data, or automation to apply?", a: "Experience in AI or data is valuable, and each listing describes what the role requires. We also welcome candidates from other technical backgrounds who can show relevant delivered work." },
+  { q: "What is the company culture like?", a: "We value ownership, engineering judgment, clear communication, and evidence. Engineers work close to client users, product leaders, and the systems where the work needs to run." },
+  { q: "What kind of projects will I work on?", a: "Client and internal engineering work across AI agents and retrieval, software and platform engineering, data and analytics, and quality and production delivery, from requirements through release and handover." },
+  { q: "How can I grow my career at Paramount Intelligence?", a: "You take responsibility for business-critical work from requirements through delivery and handover, working alongside experienced engineers and the founders, who stay hands-on in architecture and quality." },
+  { q: "How do I apply?", a: "Open a role below and use its Application tab. If no current role fits, submit an expression of interest. Include examples of systems you have built or improved, and exclude confidential client information." },
+  { q: "What is the interview process like?", a: "Our process typically includes a screening call, followed by interviews with team members or hiring managers. Depending on the role, there may be a technical assessment or case study." },
+  { q: "Can I work across multiple industries?", a: "Yes. Our client work spans sectors such as enterprise software, telecom, industrial automation, and life sciences, depending on current engagements." },
+  { q: "Do you offer training and development opportunities?", a: "Most learning happens through delivery: real client systems, code and architecture reviews, and evaluation work with experienced colleagues." },
+  { q: "How long does the hiring process take?", a: "It depends on the role and the number of candidates. We keep you informed throughout the process." },
+];
+
+const explore = (
+  <a className="btn btn-cyan" href="#open-roles">
+    Explore opportunities{" "}
+    <span className="arr">
+      <Icon name="arrow" />
+    </span>
+  </a>
+);
+
 export default function Careers() {
   return (
     <>
@@ -17,237 +77,93 @@ export default function Careers() {
               <div className="eyebrow">Careers</div>
               <h1>Careers in AI &amp; Engineering</h1>
               <p className="body">Paramount offers opportunities to contribute to business-critical work requiring technical judgment and hands-on engineering. Our engagements bring engineers close to client users, product leaders, and the systems where the work needs to run.</p>
-              <div className="ctas">
-                <a className="btn btn-cyan" href="#opportunities">Explore opportunities <span className="arr"><Icon name="arrow" /></span></a>
-              </div>
+              <div className="ctas">{explore}</div>
             </div>
           </div>
         </div>
       </section>
-      <section className="sec" id="opportunities">
+      <section className="g-sec g-logos">
         <div className="wrap">
-          <div className="why">
-            <div className="head" style={{ margin: "0" }}>
-              <div className="eyebrow">Opportunities</div>
-              <h2 className="title">Opportunities at Paramount</h2>
-            </div>
-            <p className="lead">We look for people who can understand a problem, build the solution, and take responsibility for the work. Our priority areas are forward-deployed AI engineering and applied AI engineering. Current openings are listed only when the role and hiring requirements are confirmed.</p>
-          </div>
-          <div className="chipbar" data-chips aria-label="Filter opportunities">
-            <button type="button" data-cat="all" aria-pressed="true">All opportunities</button>
-            <button type="button" data-cat="Engineering" aria-pressed="false">Engineering</button>
-            <button type="button" data-cat="Data" aria-pressed="false">Data</button>
-            <button type="button" data-cat="Product &amp; Delivery" aria-pressed="false">Product &amp; Delivery</button>
-            <button type="button" data-cat="Consulting" aria-pressed="false">Consulting</button>
-          </div>
-          <div className="roles" id="roles">
-            <Link className="job" href="/careers/open-positions/ai-engineer" data-cat="Engineering">
-              <div className="rt">
-                <h3>AI Engineer</h3>
-                <span className="open">Open role</span>
-              </div>
-              <dl>
-                <dt>Location</dt>
-                <dd>Remote, US only</dd>
-                <dt>Team</dt>
-                <dd>Applied AI</dd>
-                <dt>Work</dt>
-                <dd>AI agents, retrieval, evaluation, and enterprise AI applications delivered with client teams.</dd>
-              </dl>
-              <span className="link">View role <span className="arr"><Icon name="arrow" /></span></span>
-            </Link>
-            <Link className="job" href="/careers/open-positions/full-stack-engineer" data-cat="Engineering">
-              <div className="rt">
-                <h3>Full Stack Engineer</h3>
-                <span className="open">Open role</span>
-              </div>
-              <dl>
-                <dt>Location</dt>
-                <dd>Remote, US only</dd>
-                <dt>Team</dt>
-                <dd>Software &amp; Product Engineering</dd>
-                <dt>Work</dt>
-                <dd>Web applications, APIs, integrations, and AI features inside client products.</dd>
-              </dl>
-              <span className="link">View role <span className="arr"><Icon name="arrow" /></span></span>
-            </Link>
-          </div>
-          <div className="empty" id="eoi" hidden>
-            <span className="k-badge">Open to profiles</span>
-            <h3>Expressions of Interest</h3>
-            <p style={{ maxWidth: "66ch" }}>Expressions of interest are welcome from professionals with relevant delivery experience. Submissions should include technical expertise and examples of systems developed or improved.</p>
-            <a className="btn btn-navy" href="#register-interest">Submit a profile <span className="arr"><Icon name="arrow" /></span></a>
-          </div>
+          <h2 className="g-h2">Experience across enterprise and digital businesses</h2>
+          <p className="g-lead">Selected Paramount engagements and the prior professional experience of our leadership. Individual case studies describe the relationship and scope.</p>
         </div>
-      </section>
-      <section className="sec band">
         <div className="wrap">
-          <div className="head">
-            <div className="eyebrow">Areas of practice</div>
-            <h2 className="title">Where you could contribute</h2>
-          </div>
-          <div className="areas">
-            <div className="blk">
-              <span className="ic">
-                <Icon name="agent" />
-              </span>
-              <h3>Forward-deployed AI engineering</h3>
-              <p>Work with client stakeholders on discovery, prototyping, integration, evaluation, and deployment.</p>
-            </div>
-            <div className="blk">
-              <span className="ic">
-                <Icon name="code" />
-              </span>
-              <h3>Software and platform engineering</h3>
-              <p>Build applications, APIs, internal tools, and the systems that support them.</p>
-            </div>
-            <div className="blk">
-              <span className="ic">
-                <Icon name="db" />
-              </span>
-              <h3>Data and analytics</h3>
-              <p>Improve data flows, reporting, and the foundations for AI applications.</p>
-            </div>
-            <div className="blk">
-              <span className="ic">
-                <Icon name="check" />
-              </span>
-              <h3>Quality and production delivery</h3>
-              <p>Test behavior, investigate failures, and improve release and operating practices.</p>
-            </div>
+          <div className="lwall" aria-label="Organizations">
+            {LOGOS.map((l) => (
+              <div className="lw" key={l.src}>
+                <img className={l.cls} src={`/images/logos/${l.src}.png`} alt={l.alt} />
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      <section className="sec">
+      <section className="g-sec g-band">
         <div className="wrap">
-          <div className="head">
-            <div className="eyebrow">What we value</div>
-            <h2 className="title">What we look for</h2>
-          </div>
-          <div className="values">
-            <div className="val">
-              <span className="n">01</span>
-              <span className="vic">
-                <Icon name="owner" />
-              </span>
-              <h3>Ownership</h3>
-              <p>Responsibility for agreed work from requirements through delivery and handover.</p>
-              <span className="bar2" />
-            </div>
-            <div className="val">
-              <span className="n">02</span>
-              <span className="vic">
-                <Icon name="scale" />
-              </span>
-              <h3>Engineering judgment</h3>
-              <p>Make trade-offs visible and choose an approach that fits the requirement.</p>
-              <span className="bar2" />
-            </div>
-            <div className="val">
-              <span className="n">03</span>
-              <span className="vic">
-                <Icon name="msg" />
-              </span>
-              <h3>Clear communication</h3>
-              <p>Work constructively with technical colleagues and business users.</p>
-              <span className="bar2" />
-            </div>
-            <div className="val">
-              <span className="n">04</span>
-              <span className="vic">
-                <Icon name="check" />
-              </span>
-              <h3>Evidence</h3>
-              <p>Relevant examples of delivered work, architecture decisions, and results that can be shared appropriately.</p>
-              <span className="bar2" />
-            </div>
+          <header className="g-head">
+            <h2 className="g-h2">Where you could contribute</h2>
+            <p className="g-lead">We look for people who can understand a problem, build the solution, and take responsibility for the work.</p>
+          </header>
+          <div className="g-cards">
+            {AREAS.map((c) => (
+              <article className="g-card" key={c.title}>
+                <span className="g-ic">
+                  <Icon name={c.icon} />
+                </span>
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
-      <section className="sec band" id="register-interest">
-        <div className="wrap cols2">
-          <div className="stack-txt">
-            <div className="eyebrow">Register interest</div>
-            <h2 className="title">Share your profile</h2>
-            <p>Expressions of interest are welcome from professionals with relevant delivery experience. Submissions should include technical expertise and examples of systems developed or improved.</p>
-            <div className="chips pale">
-              <span>Forward-deployed AI engineering</span>
-              <span>Applied AI engineering</span>
-            </div>
-          </div>
-          <div className="form-wrap">
-            <form className="form" data-form="careers" noValidate>
-              <div className="field">
-                <label htmlFor="c-name">Full name <span className="req">*</span></label>
-                <input id="c-name" name="c-name" type="text" autoComplete="name" data-err="Full name is required." />
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field">
-                <label htmlFor="c-email">Email <span className="req">*</span></label>
-                <input id="c-email" name="c-email" type="email" autoComplete="email" data-err="Enter a valid email address." />
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field">
-                <label htmlFor="c-loc">Location and time zone <span className="req">*</span></label>
-                <input id="c-loc" name="c-loc" type="text" data-err="Location and time zone are required." />
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field">
-                <label htmlFor="c-area">Area of expertise <span className="req">*</span></label>
-                <select id="c-area" name="c-area" data-err="Select an area of expertise.">
-                  <option value="">Select…</option>
-                  <option>Forward-deployed AI engineering</option>
-                  <option>Software engineering</option>
-                  <option>Data and analytics</option>
-                  <option>Cloud and platform engineering</option>
-                  <option>Quality and evaluation</option>
-                  <option>Product and consulting</option>
-                  <option>Other</option>
-                </select>
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field full">
-                <label htmlFor="c-url">LinkedIn or portfolio URL</label>
-                <input id="c-url" name="c-url" type="url" />
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field full">
-                <label htmlFor="c-work">Brief description of relevant work <span className="req">*</span></label>
-                <textarea id="c-work" name="c-work" data-err="Describe your relevant work." />
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="field full">
-                <span className="lab">Resume upload</span>
-                <div className="file">
-                  <Icon name="file" />
-                  <input id="c-cv" type="file" accept=".pdf,.docx" aria-label="Resume upload" data-max-mb="4" data-err="This file is larger than 4 MB. Please choose a smaller PDF or DOCX file." aria-describedby="c-cv-err" />
-                </div>
-                <span className="hint">PDF or DOCX, up to 4 MB. Please exclude confidential client information.</span>
-                <span className="err" id="c-cv-err" aria-live="polite" hidden />
-              </div>
-              <div className="field full">
-                <label className="check">
-                  <input type="checkbox" id="c-ok" data-err="Please confirm to continue." />
-                  <span>I agree to be contacted about relevant opportunities.</span>
-                </label>
-                <span className="err" aria-live="polite" />
-              </div>
-              <div className="actions full">
-                <button className="btn btn-cyan" type="submit">Send my profile <span className="arr"><Icon name="arrow" /></span></button>
-              </div>
-              <p className="send-err full" role="alert" hidden>The submission could not be sent. Please try again. Your profile has not been received.</p>
-            </form>
-            <div className="form-ok" tabIndex={-1} hidden>
-              <span className="tick">
-                <Icon name="check" />
-              </span>
-              <h3>Profile received</h3>
-              <p>The team will review the submission and follow up if a relevant opportunity becomes available.</p>
-              <button className="btn btn-line" type="button" data-reset>Submit another profile</button>
-            </div>
+      <section className="g-sec" id="process">
+        <div className="wrap">
+          <header className="g-head">
+            <h2 className="g-h2">Our hiring process</h2>
+            <p className="g-lead">A structured, transparent process designed to assess capability, alignment, and long-term potential.</p>
+          </header>
+          <ol className="g-steps">
+            {STEPS.map((s, i) => (
+              <li className="g-step" key={s.title}>
+                <span className="g-num">{i + 1}</span>
+                <h3>{s.title}</h3>
+                <p>{s.body}</p>
+              </li>
+            ))}
+          </ol>
+          <div className="g-center">{explore}</div>
+        </div>
+      </section>
+      <section className="g-sec g-band g-open" id="open-roles">
+        {/* Earlier links (/careers/open-positions#opportunities and #register-interest) land here too. */}
+        <span className="g-anchor" id="opportunities" />
+        <span className="g-anchor" id="register-interest" />
+        <div className="wrap">
+          <header className="g-head">
+            <h2 className="g-h2">Open positions</h2>
+            <p className="g-lead">Our priority areas are forward-deployed AI engineering and applied AI engineering. Current openings are listed only when the role and hiring requirements are confirmed.</p>
+          </header>
+          <div className="g-roles">
+            {ROLES.map((r) => (
+              <Link className="g-role" href={r.href} key={r.href}>
+                <h3>{r.title}</h3>
+                <p>
+                  {r.meta[0]} <span aria-hidden="true">&bull;</span> {r.meta[1]}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
+      <section className="g-sec" id="faq">
+        <div className="wrap">
+          <header className="g-head">
+            <h2 className="g-h2">Frequently asked questions</h2>
+          </header>
+          <CareersFaq items={FAQ} />
+        </div>
+      </section>
+      <CareersScrollIn />
     </>
   );
 }
