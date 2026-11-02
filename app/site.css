@@ -857,7 +857,7 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 /* software hero: isometric layers */
 .iso{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:8px;align-items:center;width:100%;min-width:0;aspect-ratio:400/260}
 .iso-scene{position:relative;align-self:stretch;min-height:240px;perspective:1200px}
-.iso-stage{position:absolute;left:50%;top:52%;width:210px;height:150px;margin:-75px 0 0 -105px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-40deg) scale(.86)}
+.iso-stage{position:absolute;left:50%;top:68%;width:210px;height:150px;margin:-75px 0 0 -105px;transform-style:preserve-3d;transform:rotateX(58deg) rotateZ(-40deg) scale(.86)}
 .pl{position:absolute;inset:0;border:1.5px solid rgba(160,185,240,.75);background:rgba(16,34,96,.88);transition:transform .6s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s;display:grid;padding:12px;gap:8px}
 .pl1{transform:translateZ(118px);grid-template-columns:38px 1fr;grid-template-rows:auto 1fr 1fr}
 .pl2{transform:translateZ(58px);grid-template-columns:1fr 1fr 1fr;align-content:center}
@@ -881,9 +881,10 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .iso-labels small{grid-column:2;font-size:.7rem;color:var(--on-dark-2);line-height:1.4}
 .iso-labels em{grid-row:span 2;font-style:normal;font-family:var(--mono);font-size:.7rem;color:var(--cyan);padding-top:2px}
 /* Software visual (2 Nov 2026): the panel keeps the standard card proportion, the three cards are equal and centred,
-   with padding from the heading and the panel edge; between 961 and 1100px the column is too narrow for one-line titles. */
+   with padding from the heading and the panel edge; the layers sit low enough (top 68%) to stay clear of the heading even
+   when hover lifts the top layer; between 961 and 1100px the column is too narrow for one-line titles. */
 @media (min-width:961px) and (max-width:1100px){.iso{grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr)}.iso-stage{left:47%;transform:rotateX(58deg) rotateZ(-40deg) scale(.64)}.iso-labels li{padding:9px 10px;gap:3px 10px}.iso-labels b{white-space:normal}.iso-labels small{font-size:.68rem}}
-@media (max-width:520px){.iso{grid-template-columns:1fr;aspect-ratio:auto}.iso-scene{height:250px}.iso-stage{transform:rotateX(58deg) rotateZ(-40deg) scale(.85)}}
+@media (max-width:520px){.iso{grid-template-columns:1fr;aspect-ratio:auto}.iso-scene{height:300px}.iso-stage{top:66%;transform:rotateX(58deg) rotateZ(-40deg) scale(.85)}}
 
 /* about hero: founders */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:end}
