@@ -9,6 +9,9 @@ import TrustedBrands from "@/components/TrustedBrands";
 import WhyChooseUs from "@/components/services/WhyChooseUs";
 import { pageMetadata } from "@/lib/metadata";
 
+// "Some of our project experience" reads the CaseStudy table (edited in /admin) on every request, as the browser fetch did.
+export const dynamic = "force-dynamic";
+
 export const metadata = pageMetadata({
   title: "AI Studio & Platform Engineering | Paramount Intelligence",
   description:
