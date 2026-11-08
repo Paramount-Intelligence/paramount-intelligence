@@ -21,7 +21,7 @@ export default function HomePage() {
                 <span><b className="plus">+</b>Better products.</span>
                 <span><b className="plus">+</b>Reliable systems.</span>
               </div>
-              <p className="body">Paramount Intelligence helps organizations develop AI capabilities, improve business software, and move complex initiatives into production. We build inside your environment, integrate with existing systems, and provide the documentation and handover your team needs to operate and improve what we deliver.</p>
+              <p className="body">We build, improve, and operate production-grade AI systems inside your products, data, and workflows, including taking stalled initiatives into production. Work with a Paramount-led team, or embed our forward-deployed engineers alongside yours.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a project <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/case-studies">See our work</Link>
@@ -76,7 +76,7 @@ export default function HomePage() {
           <div className="logos-head">
             <div>
               <h2>Experience across enterprise and digital businesses</h2>
-              <p>Selected Paramount engagements and the prior professional experience of our leadership. Individual case studies describe the relationship and scope.</p>
+              <p>Selected Paramount engagements and the prior professional experience of our leadership. Individual case studies describe the relationship and scope. Organization logos do not imply endorsement.</p>
             </div>
             <Link className="link" href="/case-studies">Explore case studies <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
@@ -156,107 +156,350 @@ export default function HomePage() {
           </figure>
         </div>
       </section>
-      {/* WHO WE WORK WITH */}
+      {/* OUTCOMES */}
       <section className="sec" id="who">
         <div className="wrap">
           <div className="head">
-            <div className="eyebrow">Who we work with</div>
-            <h2 className="title">Supporting Organizations Across the Technology Lifecycle</h2>
-            <p className="lead">We work with private equity firms and their portfolio companies, Fortune 500 organizations, mid-market businesses, consulting firms, and funded startups. Engagements begin with a business objective, a technical requirement, or an existing application that needs improvement.</p>
+            <div className="eyebrow">Where we help</div>
+            <h2 className="title">The improvements you need next</h2>
+            <p className="lead">We work with Fortune 500 companies, private equity-backed businesses, and high-growth startups. Each engagement starts from the result the business needs, with the scope, delivery approach, and success measures shaped around it.</p>
             <div className="aud" aria-hidden="true">
-              <span>Private equity &amp; portfolio companies</span>
-              <span>Fortune 500</span>
-              <span>Mid-market</span>
-              <span>Consulting firms</span>
-              <span>Funded startups</span>
+              <span>Fortune 500 companies</span>
+              <span>PE-backed businesses</span>
+              <span>High-growth startups</span>
             </div>
           </div>
-          <div className="badges">
-            <div><Icon name="users" />Direct collaboration</div>
-            <div><Icon name="owner" />Clear delivery ownership</div>
-            <div><Icon name="check" />Tested releases</div>
-            <div><Icon name="gauge" />Operating cost awareness</div>
-          </div>
-          <div className="life">
-            <div className="lc" aria-label="Where each engagement type sits in the technology lifecycle">
-              <div className="lc-cap">Where we join the lifecycle</div>
-              <div className="lc-grid">
-                <div className="lc-ms">
-                  <i />
-                  <span>Business objective</span>
-                </div>
-                <div className="lc-ms">
-                  <i />
-                  <span>Prototype</span>
-                </div>
-                <div className="lc-ms">
-                  <i />
-                  <span>Production release</span>
-                </div>
-                <div className="lc-ms">
-                  <i />
-                  <span>Ongoing roadmap</span>
-                </div>
-                <button type="button" className="lane" data-i="0" style={{ "--s": "1", "--e": "4" } as CSSProperties}><small>01</small>New capability</button>
-                <button type="button" className="lane" data-i="1" style={{ "--s": "2", "--e": "4" } as CSSProperties}><small>02</small>Recovery &amp; readiness</button>
-                <button type="button" className="lane dash" data-i="2" style={{ "--s": "1", "--e": "5" } as CSSProperties}><small>03</small>Specialist engineering alongside your team</button>
-              </div>
-              <p className="lc-note" id="lcNote" />
+          <div className="pi-ox">
+            <div className="pi-ox-list" role="tablist" aria-orientation="vertical" aria-label="Business objectives">
+              <button type="button" role="tab" id="ox-t0" aria-controls="ox-p0" aria-selected="true">
+                <small>01</small>
+                <span>A new capability your users can use</span>
+              </button>
+              <button type="button" role="tab" id="ox-t1" aria-controls="ox-p1" aria-selected="false" tabIndex={-1}>
+                <small>02</small>
+                <span>Less manual work in existing systems</span>
+              </button>
+              <button type="button" role="tab" id="ox-t2" aria-controls="ox-p2" aria-selected="false" tabIndex={-1}>
+                <small>03</small>
+                <span>A reliable application in production</span>
+              </button>
+              <button type="button" role="tab" id="ox-t3" aria-controls="ox-p3" aria-selected="false" tabIndex={-1}>
+                <small>04</small>
+                <span>An initiative moving past its blockers</span>
+              </button>
+              <button type="button" role="tab" id="ox-t4" aria-controls="ox-p4" aria-selected="false" tabIndex={-1}>
+                <small>05</small>
+                <span>AI delivery alongside your team</span>
+              </button>
             </div>
-            <div className="acc" id="acc">
-              <div className="acc-item">
-                <button type="button" aria-expanded="false" id="ab0" aria-controls="ap0">
-                  <span className="k">
+            <div>
+              <div className="pi-ox-p" role="tabpanel" id="ox-p0" aria-labelledby="ox-t0">
+                <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                  <span className="mi" style={{ width: "44px", height: "44px", display: "grid", placeItems: "center", border: "1.5px solid var(--navy)", color: "var(--royal)", flex: "none" }}>
                     <Icon name="spark" />
                   </span>
-                  <h3>New Capability Development</h3>
-                  <span className="pm" />
-                </button>
-                <div className="acc-body" id="ap0" role="region" aria-labelledby="ab0" hidden>
-                  <p>We support product development, AI integration within existing software, and automation of manual workflows. We help define the first useful release and build the application, integrations, and data foundations it needs.</p>
-                  <ul>
-                    <li>Identify the users, workflow, and result that matter.</li>
-                    <li>Choose suitable AI and conventional software components.</li>
-                    <li>Build and test against agreed acceptance criteria.</li>
-                    <li>Connect the release to existing client systems and ownership model.</li>
-                  </ul>
+                  <h3>A new capability your users can use</h3>
                 </div>
+                <div className="pi-flow">
+                  <div className="pi-f blk">
+                    <span className="pi-k">What is holding it back</span>
+                    <p>A business opportunity without the engineering needed to deliver it.</p>
+                  </div>
+                  <span className="pi-arr" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f how">
+                    <span className="pi-k">How we help</span>
+                    <p>Design, build, and integrate a custom AI capability or application.</p>
+                  </div>
+                  <span className="pi-arr b" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f res">
+                    <span className="tick">
+                      <svg viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <span className="pi-k">The result</span>
+                    <p>A new capability your users can use</p>
+                  </div>
+                </div>
+                <ul className="pi-ox-pts">
+                  <li>Identify the users, workflow, and result that matter.</li>
+                  <li>Choose suitable AI and conventional software components.</li>
+                  <li>Build and test against agreed acceptance criteria, connected to existing systems.</li>
+                </ul>
               </div>
-              <div className="acc-item">
-                <button type="button" aria-expanded="false" id="ab1" aria-controls="ap1">
-                  <span className="k">
+              <div className="pi-ox-p" role="tabpanel" id="ox-p1" aria-labelledby="ox-t1" hidden>
+                <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                  <span className="mi" style={{ width: "44px", height: "44px", display: "grid", placeItems: "center", border: "1.5px solid var(--navy)", color: "var(--royal)", flex: "none" }}>
+                    <Icon name="flow" />
+                  </span>
+                  <h3>Less manual work in existing systems</h3>
+                </div>
+                <div className="pi-flow">
+                  <div className="pi-f blk">
+                    <span className="pi-k">What is holding it back</span>
+                    <p>Useful AI ideas that do not connect to the product or the day-to-day workflow.</p>
+                  </div>
+                  <span className="pi-arr" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f how">
+                    <span className="pi-k">How we help</span>
+                    <p>Embed AI in software, data, and processes, with appropriate controls.</p>
+                  </div>
+                  <span className="pi-arr b" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f res">
+                    <span className="tick">
+                      <svg viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <span className="pi-k">The result</span>
+                    <p>Less manual work in existing systems</p>
+                  </div>
+                </div>
+                <ul className="pi-ox-pts">
+                  <li>Retrieve knowledge from approved sources, within existing permissions.</li>
+                  <li>Classify, extract, and draft work, with defined checks.</li>
+                  <li>Route exceptions to a named reviewer, with every action recorded.</li>
+                </ul>
+              </div>
+              <div className="pi-ox-p" role="tabpanel" id="ox-p2" aria-labelledby="ox-t2" hidden>
+                <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                  <span className="mi" style={{ width: "44px", height: "44px", display: "grid", placeItems: "center", border: "1.5px solid var(--navy)", color: "var(--royal)", flex: "none" }}>
                     <Icon name="wrench" />
                   </span>
-                  <h3>Technical Recovery &amp; Production Readiness</h3>
-                  <span className="pm" />
-                </button>
-                <div className="acc-body" id="ap1" role="region" aria-labelledby="ab1" hidden>
-                  <p>A prototype may work in a sandbox and still fail when it meets real data, permissions, or traffic. We assess what is blocking release, repair the foundations, and work through integration, evaluation, deployment, and handover.</p>
-                  <ul>
-                    <li>Review inherited code and AI-generated applications.</li>
-                    <li>Resolve unreliable outputs, broken integrations, and data issues.</li>
-                    <li>Consolidate overlapping tools where that makes maintenance simpler.</li>
-                    <li>Establish release checks, monitoring, and an operating owner.</li>
-                  </ul>
+                  <h3>A reliable application in production</h3>
                 </div>
+                <div className="pi-flow">
+                  <div className="pi-f blk">
+                    <span className="pi-k">What is holding it back</span>
+                    <p>A promising prototype or AI-built app that breaks outside its sandbox.</p>
+                  </div>
+                  <span className="pi-arr" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f how">
+                    <span className="pi-k">How we help</span>
+                    <p>Assess, repair, integrate, and deploy it with an agreed operating model.</p>
+                  </div>
+                  <span className="pi-arr b" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f res">
+                    <span className="tick">
+                      <svg viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <span className="pi-k">The result</span>
+                    <p>A reliable application in production</p>
+                  </div>
+                </div>
+                <ul className="pi-ox-pts">
+                  <li>Review inherited code and AI-generated applications.</li>
+                  <li>Resolve unreliable outputs, broken integrations, and data issues.</li>
+                  <li>Establish release checks, monitoring, and an operating owner.</li>
+                </ul>
               </div>
-              <div className="acc-item">
-                <button type="button" aria-expanded="false" id="ab2" aria-controls="ap2">
-                  <span className="k">
+              <div className="pi-ox-p" role="tabpanel" id="ox-p3" aria-labelledby="ox-t3" hidden>
+                <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                  <span className="mi" style={{ width: "44px", height: "44px", display: "grid", placeItems: "center", border: "1.5px solid var(--navy)", color: "var(--royal)", flex: "none" }}>
+                    <Icon name="blocks" />
+                  </span>
+                  <h3>An initiative moving past its blockers</h3>
+                </div>
+                <div className="pi-flow">
+                  <div className="pi-f blk">
+                    <span className="pi-k">What is holding it back</span>
+                    <p>Messy data, disconnected APIs, or infrastructure that slows delivery.</p>
+                  </div>
+                  <span className="pi-arr" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f how">
+                    <span className="pi-k">How we help</span>
+                    <p>Build or repair the foundations so the initiative can move forward.</p>
+                  </div>
+                  <span className="pi-arr b" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f res">
+                    <span className="tick">
+                      <svg viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <span className="pi-k">The result</span>
+                    <p>An initiative moving past its blockers</p>
+                  </div>
+                </div>
+                <ul className="pi-ox-pts">
+                  <li>Data that arrives through repeatable pipelines, with quality checks.</li>
+                  <li>Tested APIs and integrations with the systems already in place.</li>
+                  <li>Infrastructure, access controls, and releases that can be repeated.</li>
+                </ul>
+              </div>
+              <div className="pi-ox-p" role="tabpanel" id="ox-p4" aria-labelledby="ox-t4" hidden>
+                <div style={{ display: "flex", gap: "14px", alignItems: "center" }}>
+                  <span className="mi" style={{ width: "44px", height: "44px", display: "grid", placeItems: "center", border: "1.5px solid var(--navy)", color: "var(--royal)", flex: "none" }}>
                     <Icon name="team" />
                   </span>
-                  <h3>Specialist Engineering &amp; Delivery Support</h3>
-                  <span className="pm" />
-                </button>
-                <div className="acc-body" id="ap2" role="region" aria-labelledby="ab2" hidden>
-                  <p>Paramount provides forward-deployed AI engineering, specialist expertise, and managed workstreams for defined delivery priorities. We work directly with client stakeholders and engineers, using the agreed delivery process and keeping responsibilities clear.</p>
-                  <ul>
-                    <li>Own a specific workstream or contribute within the product roadmap.</li>
-                    <li>Add AI engineering, application development, data, or cloud expertise.</li>
-                    <li>Demonstrate working progress and resolve decisions with client teams.</li>
-                    <li>Document the work so the organization can continue to build on it.</li>
-                  </ul>
+                  <h3>AI delivery alongside your team</h3>
                 </div>
+                <div className="pi-flow">
+                  <div className="pi-f blk">
+                    <span className="pi-k">What is holding it back</span>
+                    <p>A priority that needs hands-on engineering across users, systems, and production constraints.</p>
+                  </div>
+                  <span className="pi-arr" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f how">
+                    <span className="pi-k">How we help</span>
+                    <p>A Paramount forward-deployed engineer or team carries the agreed work from requirements to release.</p>
+                  </div>
+                  <span className="pi-arr b" aria-hidden="true">
+                    <i />
+                  </span>
+                  <div className="pi-f res">
+                    <span className="tick">
+                      <svg viewBox="0 0 12 12" aria-hidden="true">
+                        <path d="M2 6.5l2.5 2.5L10 3.5" fill="none" stroke="currentColor" strokeWidth="2" />
+                      </svg>
+                    </span>
+                    <span className="pi-k">The result</span>
+                    <p>AI delivery alongside your team</p>
+                  </div>
+                </div>
+                <ul className="pi-ox-pts">
+                  <li>Engineers from the Paramount FDE Network, with a named Paramount lead.</li>
+                  <li>Work within your delivery process, with you directing priorities.</li>
+                  <li>Working increments reviewed with your team on a short cadence.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p className="pi-note">A custom requirement is welcome, including conventional software, data, and cloud work without an AI component.</p>
+          <div className="pi-commit-cap">What you can count on</div>
+          <div className="pi-commit">
+            <div className="c1">
+              <div className="ct">
+                <Icon name="owner" />
+                <span>01</span>
+              </div>
+              <b>Named responsibility</b>
+              <p>A named Paramount lead on every engagement, accountable for the agreed work.</p>
+            </div>
+            <div className="c2">
+              <div className="ct">
+                <Icon name="layers" />
+                <span>02</span>
+              </div>
+              <b>Technology matched to the requirement</b>
+              <p>We select technology to fit the client's environment, operating requirements, and constraints.</p>
+            </div>
+            <div className="c3">
+              <div className="ct">
+                <Icon name="monitor" />
+                <span>03</span>
+              </div>
+              <b>Visible progress</b>
+              <p>Working increments demonstrated early and often, so decisions rest on evidence.</p>
+            </div>
+            <div className="c4">
+              <div className="ct">
+                <Icon name="check" />
+                <span>04</span>
+              </div>
+              <b>A release you can operate</b>
+              <p>Agreed release checks, documentation, and handover, with work done inside your environment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* TWO WAYS TO ENGAGE */}
+      <section className="sec pi-char" id="engage">
+        <div className="wrap">
+          <div className="head">
+            <div className="eyebrow">Two ways to engage</div>
+            <h2 className="title">Lead the work with Paramount, or embed our engineers</h2>
+            <p className="lead">Engage Paramount to lead a defined initiative, or bring specialist engineers into your team. Either way, Paramount remains your accountable contracting partner.</p>
+          </div>
+          <div className="pi-models">
+            <div className="pi-model m1">
+              <div className="mh">
+                <Icon name="spark" />
+                <div>
+                  <span>Model 01</span>
+                  <h3>Paramount-led delivery</h3>
+                </div>
+              </div>
+              <div className="mb">
+                <p>A defined system or workstream led by Paramount, from assessment and architecture through implementation, release, and handover. An assessment can be a complete engagement on its own.</p>
+                <dl>
+                  <div>
+                    <dt>Paramount leads</dt>
+                    <dd>The agreed scope, technical quality, and contracted deliverables</dd>
+                  </div>
+                  <div>
+                    <dt>You provide</dt>
+                    <dd>Business decisions, access, and acceptance</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+            <div className="pi-hub" aria-hidden="true">
+              <span>Named Paramount lead</span>
+            </div>
+            <div className="pi-model m2">
+              <div className="mh">
+                <Icon name="team" />
+                <div>
+                  <span>Model 02</span>
+                  <h3>Embedded specialist engineers</h3>
+                </div>
+              </div>
+              <div className="mb">
+                <p>Contract engineers from the Paramount FDE Network work within your project and delivery process, contributing the expertise needed to build, integrate, or improve the system.</p>
+                <dl>
+                  <div>
+                    <dt>You direct</dt>
+                    <dd>Project priorities</dd>
+                  </div>
+                  <div>
+                    <dt>Paramount</dt>
+                    <dd>Selects, contracts, and manages the engineer, and stays accountable for the agreed contribution</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <p className="pi-shared">Both models include a named Paramount lead. Ongoing support and improvement are available under either model, within agreed coverage.</p>
+          <div className="pi-net">
+            <div>
+              <span className="pi-k" style={{ color: "var(--cyan)" }}>Paramount FDE Network</span>
+              <h3>Our network of vetted contract engineers</h3>
+              <p>Paramount's own network of vetted contract engineers: 50+ forward-deployed engineers, plus AI engineers and other engineering and project specialists. Every engineer is contracted by Paramount and works under NDA, and every engagement has a named Paramount lead.</p>
+              <Link className="link" href="/services#fde-network">How the network works <span className="arr"><Icon name="arrow" /></span></Link>
+            </div>
+            <div className="pi-stats">
+              <div className="pi-stat">
+                <b>50<small>+</small></b>
+                <span>Vetted forward-deployed engineers under contract with Paramount, plus AI engineers and other specialists</span>
+              </div>
+              <div className="pi-stat">
+                <b>48<small>h</small></b>
+                <span>To start, once the engineer is selected and access and assignment terms are in place</span>
+              </div>
+              <div className="pi-stat">
+                <b>1</b>
+                <span>Named Paramount lead on every engagement, managing the engineers and the quality of the work</span>
               </div>
             </div>
           </div>
@@ -272,46 +515,62 @@ export default function HomePage() {
             </div>
             <p className="lead">Paramount engineers work directly with business users, product leaders, and technical teams to turn defined requirements into integrated applications. Discovery, hands-on development, and production delivery remain connected throughout the engagement.</p>
           </div>
-          <div className="stages" id="stages">
-            <span className="run" id="run" aria-hidden="true" />
-            <button type="button" className="st">
+          <div className="stages five" id="stages">
+            <span className="run" aria-hidden="true" style={{ width: "28px" }} />
+            <button type="button" className="st on" aria-pressed="true">
+              <span className="dot">
+                <Icon name="search" />
+              </span>
+              <span className="box">
+                <span className="lbl">Step 1</span>
+                <h3>Understand</h3>
+                <p>Establish the use case, current workflow, baseline, data, and constraints.</p>
+                <span className="pi-out"><em>What you receive</em>A defined use case, baseline, and first delivery priority</span>
+              </span>
+            </button>
+            <button type="button" className="st" aria-pressed="false">
               <span className="dot">
                 <Icon name="target" />
               </span>
               <span className="box">
-                <span className="lbl">Stage 1</span>
-                <h3>Understand and define</h3>
-                <p>Establish the workflow, business objective, data requirements, and first release.</p>
+                <span className="lbl">Step 2</span>
+                <h3>Define</h3>
+                <p>Agree the first release, architecture, dependencies, and acceptance measures.</p>
+                <span className="pi-out"><em>What you receive</em>A prioritized backlog and scoped release plan</span>
               </span>
             </button>
-            <button type="button" className="st">
-              <span className="dot">
-                <Icon name="flask" />
-              </span>
-              <span className="box">
-                <span className="lbl">Stage 2</span>
-                <h3>Prototype and validate</h3>
-                <p>Test the approach with real users and representative information.</p>
-              </span>
-            </button>
-            <button type="button" className="st">
+            <button type="button" className="st" aria-pressed="false">
               <span className="dot">
                 <Icon name="blocks" />
               </span>
               <span className="box">
-                <span className="lbl">Stage 3</span>
-                <h3>Build and integrate</h3>
-                <p>Connect AI, application logic, permissions, and existing enterprise systems.</p>
+                <span className="lbl">Step 3</span>
+                <h3>Engineer</h3>
+                <p>Build working increments and refine them with users.</p>
+                <span className="pi-out"><em>What you receive</em>Working increments, integration tests, and evaluation results</span>
               </span>
             </button>
-            <button type="button" className="st">
+            <button type="button" className="st" aria-pressed="false">
               <span className="dot">
-                <Icon name="monitor" />
+                <Icon name="rocket" />
               </span>
               <span className="box">
-                <span className="lbl">Stage 4</span>
-                <h3>Deploy and transfer</h3>
-                <p>Complete agreed evaluations, release the application, and provide monitoring, documentation, and handover.</p>
+                <span className="lbl">Step 4</span>
+                <h3>Release and transfer</h3>
+                <p>Complete the agreed checks, deploy, document, and establish ownership.</p>
+                <span className="pi-out"><em>What you receive</em>A tested release, documentation, and an operating owner</span>
+              </span>
+            </button>
+            <button type="button" className="st opt" aria-pressed="false">
+              <span className="dot">
+                <Icon name="refresh" />
+              </span>
+              <span className="box">
+                <span className="lbl">Step 5</span>
+                <h3>Improve</h3>
+                <p>Use operating feedback to guide further work where support is included.</p>
+                <span className="pi-out"><em>What you receive</em>Prioritized improvements against agreed measures</span>
+                <span className="opt-tag">Where support is included</span>
               </span>
             </button>
           </div>
@@ -319,11 +578,21 @@ export default function HomePage() {
             <em>Proof from the work</em>
             <div className="proof-l">
               <div className="proof-h">
-                <span className="n"><b>8</b><span>weeks</span></span>
+                <span className="n">
+                  <b>8</b>
+                  <span>weeks</span>
+                </span>
                 <span className="wip">Work in progress</span>
               </div>
               <div className="proof-tl" aria-hidden="true">
-                <i /><i /><i /><i /><i /><i /><i /><i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
+                <i />
                 <span className="ph d">Discovery</span>
                 <span className="ph b">Build and integrate</span>
                 <span className="ph p">Production</span>
@@ -501,7 +770,7 @@ export default function HomePage() {
               <p>An AI initiative tracker deployed using existing Microsoft 365 tools.</p>
             </Link>
             <Link href="/case-studies/ai-agent-governance-discovery-platform-on-aws-agentcore">
-              <span className="org">Global agriculture science</span>
+              <span className="org">Global agriculture company</span>
               <span className="tag">AI governance</span>
               <p>A central registry for AI assets, ownership, and governance.</p>
             </Link>
@@ -512,7 +781,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* PROJECTS */}
-      <section className="sec band" id="projects">
+      <section className="sec band pi-char" id="projects">
         <div className="wrap">
           <div className="head" style={{ gridTemplateColumns: "1fr auto", alignItems: "end" }}>
             <div style={{ display: "grid", gap: "14px" }}>
@@ -680,8 +949,8 @@ export default function HomePage() {
           <div className="cta-card">
             <div className="cta-l">
               <div className="eyebrow">Start a conversation</div>
-              <h2>Discuss an AI or Engineering Initiative</h2>
-              <p>Paramount supports technology decisions, focused engineering assignments, and end-to-end delivery engagements. An initial discussion establishes the business objective, technical context, and appropriate next step.</p>
+              <h2>Start with the priority that needs to move</h2>
+              <p>Tell us what you need to build, improve, or operate. We will propose a clear next step and the expertise to deliver it, from a focused assessment or one embedded engineer to a managed engagement.</p>
             </div>
             <div className="cta-r">
               <span className="cta-k">What a first conversation covers</span>
