@@ -85,7 +85,7 @@ export default function Careers() {
       <section className="g-sec g-logos">
         <div className="wrap">
           <h2 className="g-h2">Experience across enterprise and digital businesses</h2>
-          <p className="g-lead">Selected Paramount engagements and the prior professional experience of our leadership. Individual case studies describe the relationship and scope.</p>
+          <p className="g-lead">Selected Paramount engagements and the prior professional experience of our leadership. Individual case studies describe the relationship and scope. Organization logos do not imply endorsement.</p>
         </div>
         <div className="wrap">
           <div className="lwall" aria-label="Organizations">
