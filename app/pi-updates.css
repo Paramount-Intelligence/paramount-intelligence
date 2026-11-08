@@ -12,8 +12,8 @@
   --sh:0 14px 34px -16px rgba(15,37,110,.28),0 2px 6px rgba(15,37,110,.06);
   --q1:var(--navy);--q2:var(--royal);--q3:#1689e6;--q4:var(--cyan);--q5:var(--green)}
 
-:where(.pi-updates) /* ---------- deck-style refinements to existing components ---------- */
-.pi-page .card{border-color:transparent;box-shadow:var(--sh)}
+/* ---------- deck-style refinements to existing components ---------- */
+:where(.pi-updates) .pi-page .card{border-color:transparent;box-shadow:var(--sh)}
 :where(.pi-updates) .pi-page .card:hover{border-color:var(--royal)}
 :where(.pi-updates) .pi-page .pc{border-color:transparent;box-shadow:var(--sh)}
 :where(.pi-updates) .pi-page .st .box{border-color:transparent;box-shadow:var(--sh)}
@@ -23,8 +23,8 @@
 :where(.pi-updates) .pi-page .stages .st.on .dot{box-shadow:0 0 0 6px rgba(32,78,207,.16)}
 :where(.pi-updates) .pi-page .stages .st.on .box{box-shadow:0 22px 40px -20px rgba(15,37,110,.45)}
 
-:where(.pi-updates) /* ---------- charcoal sections ---------- */
-.pi-char{background:var(--char)!important;color:var(--pale2)}
+/* ---------- charcoal sections ---------- */
+:where(.pi-updates) .pi-char{background:var(--char)!important;color:var(--pale2)}
 :where(.pi-updates) .pi-char .eyebrow{color:var(--cyan)}
 :where(.pi-updates) .pi-char .title,:where(.pi-updates) .pi-char .head h2{color:var(--white)}
 :where(.pi-updates) .pi-char .lead,:where(.pi-updates) .pi-char .head p{color:var(--pale2)}
@@ -47,8 +47,8 @@
 :where(.pi-updates) .pi-page .pi-note{margin-top:22px;font-size:.9rem;color:var(--muted);display:flex;gap:10px;align-items:baseline}
 :where(.pi-updates) .pi-page .pi-note:before{content:"+";color:var(--cyan);font-weight:800}
 
-:where(.pi-updates) /* ---------- Home: outcome explorer ---------- */
-.pi-ox{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.45fr);gap:clamp(20px,3vw,36px);align-items:stretch}
+/* ---------- Home: outcome explorer ---------- */
+:where(.pi-updates) .pi-ox{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.45fr);gap:clamp(20px,3vw,36px);align-items:stretch}
 :where(.pi-updates) .pi-ox-list{display:grid;gap:10px;align-content:start}
 :where(.pi-updates) .pi-ox-list button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:40px 1fr 14px;gap:14px;align-items:center;padding:14px 16px;background:var(--white);border:1px solid #e3e7f0;border-left:4px solid transparent;color:var(--navy);font-weight:700;font-size:.95rem;line-height:1.3;transition:box-shadow .25s,border-color .25s}
 :where(.pi-updates) .pi-ox-list button small{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--q);color:var(--white);font-size:.72rem;font-weight:700}
@@ -82,8 +82,8 @@
 :where(.pi-updates) .pi-ox-pts li{display:flex;gap:10px;font-size:.92rem;color:var(--text)}
 :where(.pi-updates) .pi-ox-pts li:before{content:"+";color:var(--cyan);font-weight:800;flex:none}
 
-:where(.pi-updates) /* ---------- Home: delivery commitments (deck slide 10) ---------- */
-.pi-commit-cap{display:flex;align-items:center;gap:16px;margin-top:clamp(40px,5vw,60px);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+/* ---------- Home: delivery commitments (deck slide 10) ---------- */
+:where(.pi-updates) .pi-commit-cap{display:flex;align-items:center;gap:16px;margin-top:clamp(40px,5vw,60px);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
 :where(.pi-updates) .pi-commit-cap:after{content:"";flex:1;height:1px;background:var(--line)}
 :where(.pi-updates) .pi-commit{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:20px}
 :where(.pi-updates) .pi-commit>div{display:grid;gap:10px;align-content:start;padding:20px 20px 22px;background:var(--white);box-shadow:var(--sh);border-top:6px solid var(--q)}
@@ -94,8 +94,8 @@
 :where(.pi-updates) .pi-commit b{font-size:1rem;color:var(--navy);line-height:1.3}
 :where(.pi-updates) .pi-commit p{font-size:.86rem;color:var(--text)}
 
-:where(.pi-updates) /* ---------- two engagement models (deck slide 4) ---------- */
-.pi-models{display:grid;grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);align-items:stretch}
+/* ---------- two engagement models (deck slide 4) ---------- */
+:where(.pi-updates) .pi-models{display:grid;grid-template-columns:minmax(0,1fr) 112px minmax(0,1fr);align-items:stretch}
 :where(.pi-updates) .pi-model{display:grid;grid-template-rows:auto 1fr;background:var(--char2);border:1px solid var(--char3)}
 :where(.pi-updates) .pi-model .mh{display:flex;align-items:center;gap:14px;padding:18px 22px;background:var(--navy);color:var(--white)}
 :where(.pi-updates) .pi-model.m2 .mh{background:var(--royal)}
@@ -124,8 +124,8 @@
 :where(.pi-updates) .pi-models.light .pi-hub span{background:var(--white);color:var(--navy);border-color:var(--royal);box-shadow:0 0 0 8px var(--tint)}
 :where(.pi-updates) .pi-models.light+.pi-shared{color:var(--text)}
 
-:where(.pi-updates) /* network strip on charcoal */
-.pi-net{margin-top:clamp(36px,5vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(20px,3vw,40px);align-items:center;padding:clamp(22px,2.8vw,32px);background:var(--char2);border:1px solid var(--char3);border-top:4px solid var(--cyan)}
+/* network strip on charcoal */
+:where(.pi-updates) .pi-net{margin-top:clamp(36px,5vw,52px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:clamp(20px,3vw,40px);align-items:center;padding:clamp(22px,2.8vw,32px);background:var(--char2);border:1px solid var(--char3);border-top:4px solid var(--cyan)}
 :where(.pi-updates) .pi-net h3{font-size:1.25rem;font-weight:700;color:var(--white);margin-top:8px}
 :where(.pi-updates) .pi-net p{font-size:.9rem;color:var(--pale2);margin-top:10px}
 :where(.pi-updates) .pi-net .link{color:var(--cyan);margin-top:14px}
@@ -135,8 +135,8 @@
 :where(.pi-updates) .pi-stat b{font-size:clamp(2.2rem,3.6vw,2.9rem);font-weight:800;line-height:1;color:var(--white);letter-spacing:-.02em}
 :where(.pi-updates) .pi-stat b small{font-size:.5em;font-weight:700;margin-left:2px;color:var(--cyan)}
 :where(.pi-updates) .pi-stat span{font-size:.8rem;color:var(--pale2);line-height:1.45}
-:where(.pi-updates) /* light stat cards (Services network) */
-.pi-stats.light{gap:14px;grid-template-columns:1fr}
+/* light stat cards (Services network) */
+:where(.pi-updates) .pi-stats.light{gap:14px;grid-template-columns:1fr}
 :where(.pi-updates) .pi-stats.light .pi-stat{grid-template-columns:132px 1fr;align-items:center;padding:20px 22px;background:var(--white);box-shadow:var(--sh);border:0;border-top:4px solid var(--q)}
 :where(.pi-updates) .pi-stats.light .pi-stat:nth-child(1){--q:var(--q1)}:where(.pi-updates) .pi-stats.light .pi-stat:nth-child(2){--q:var(--q2)}:where(.pi-updates) .pi-stats.light .pi-stat:nth-child(3){--q:var(--q4)}
 :where(.pi-updates) .pi-stats.light .pi-stat b{color:var(--q)}
@@ -144,20 +144,20 @@
 :where(.pi-updates) .pi-stats.light .pi-stat b small{color:var(--royal)}
 :where(.pi-updates) .pi-stats.light .pi-stat span{color:var(--text);font-size:.84rem}
 
-:where(.pi-updates) /* ---------- delivery steps: what you receive ---------- */
-.st .pi-out{display:grid;gap:4px;margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);font-size:.8rem;color:var(--navy);font-weight:600;line-height:1.4}
+/* ---------- delivery steps: what you receive ---------- */
+:where(.pi-updates) .st .pi-out{display:grid;gap:4px;margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);font-size:.8rem;color:var(--navy);font-weight:600;line-height:1.4}
 :where(.pi-updates) .st .pi-out em{font-style:normal;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f9a6a}
 
-:where(.pi-updates) /* ---------- Services: quality bar under the capabilities ---------- */
-.pi-capbase{display:grid;gap:8px;margin-top:20px}
+/* ---------- Services: quality bar under the capabilities ---------- */
+:where(.pi-updates) .pi-capbase{display:grid;gap:8px;margin-top:20px}
 :where(.pi-updates) .pi-capbase div{display:flex;align-items:center;gap:14px;padding:16px 20px;font-size:.92rem;color:var(--navy);font-weight:600;background:var(--white);box-shadow:var(--sh);border-left:4px solid var(--green)}
 :where(.pi-updates) .pi-capbase div .ico{width:22px;height:22px;flex:none;color:var(--green)}
 :where(.pi-updates) .pi-capbase span{font-weight:500;color:var(--text)}
 :where(.pi-updates) .pi-char .pi-capbase div{background:var(--char2);box-shadow:none;border:1px solid var(--char3);border-left:4px solid var(--green);color:var(--white)}
 :where(.pi-updates) .pi-char .pi-capbase span{color:var(--pale2)}
 
-:where(.pi-updates) /* ---------- Services: commercial forms (deck slide 14) ---------- */
-.pi-forms-h{display:flex;align-items:center;gap:16px;margin-top:clamp(40px,5vw,60px);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+/* ---------- Services: commercial forms (deck slide 14) ---------- */
+:where(.pi-updates) .pi-forms-h{display:flex;align-items:center;gap:16px;margin-top:clamp(40px,5vw,60px);font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
 :where(.pi-updates) .pi-forms-h:after{content:"";flex:1;height:1px;background:var(--line)}
 :where(.pi-updates) .pi-spec{margin-top:18px}
 :where(.pi-updates) .pi-spec-axis{display:flex;justify-content:space-between;gap:16px;padding:12px 18px;background:var(--navy);font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
@@ -177,8 +177,8 @@
 :where(.pi-updates) .pi-form .tag{justify-self:start;font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;background:var(--tint);color:var(--royal)}
 :where(.pi-updates) .pi-form.own .tag{background:var(--navy);color:var(--white)}
 
-:where(.pi-updates) /* ---------- Services: network section ---------- */
-.pi-netgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,3vw,40px);align-items:stretch}
+/* ---------- Services: network section ---------- */
+:where(.pi-updates) .pi-netgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(20px,3vw,40px);align-items:stretch}
 :where(.pi-updates) .pi-map{position:relative;background:var(--white);box-shadow:var(--sh);padding:clamp(16px,2vw,24px);display:grid;align-content:center}
 :where(.pi-updates) .pi-map .pi-k{display:block;margin-bottom:10px}
 :where(.pi-updates) .pi-map-in{position:relative;aspect-ratio:1364/713}
@@ -216,8 +216,8 @@
 :where(.pi-updates) .pi-box li:before{content:"+";color:var(--cyan);font-weight:800;flex:none}
 :where(.pi-updates) .pi-box li b{color:var(--navy)}
 
-:where(.pi-updates) /* ---------- Services: success measures (deck capability slide 3) ---------- */
-.pi-meas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+/* ---------- Services: success measures (deck capability slide 3) ---------- */
+:where(.pi-updates) .pi-meas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 :where(.pi-updates) .pi-m{display:grid;gap:12px;align-content:start;padding:20px;background:var(--white);box-shadow:var(--sh);border-top:4px solid var(--q)}
 :where(.pi-updates) .pi-m:nth-child(1){--q:var(--q1)}:where(.pi-updates) .pi-m:nth-child(2){--q:var(--q2)}:where(.pi-updates) .pi-m:nth-child(3){--q:var(--q3)}:where(.pi-updates) .pi-m:nth-child(4){--q:var(--q4)}:where(.pi-updates) .pi-m:nth-child(5){--q:var(--q5)}
 :where(.pi-updates) .pi-m .g{display:grid;gap:5px}
@@ -232,8 +232,8 @@
 :where(.pi-updates) .pi-agree em{font-style:normal;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-right:6px}
 :where(.pi-updates) .pi-agree span:before{content:"+";color:var(--cyan);font-weight:800;margin-right:8px}
 
-:where(.pi-updates) /* production assurance */
-.pi-assure{margin-top:clamp(44px,6vw,72px)}
+/* production assurance */
+:where(.pi-updates) .pi-assure{margin-top:clamp(44px,6vw,72px)}
 :where(.pi-updates) .pi-as-row{display:grid;grid-template-columns:150px minmax(0,1fr) 150px;gap:14px;align-items:stretch;margin-top:20px}
 :where(.pi-updates) .pi-as-end{display:grid;place-items:center;text-align:center;padding:16px;font-size:.88rem;font-weight:700;line-height:1.35}
 :where(.pi-updates) .pi-as-end.a{background:var(--tint);color:var(--muted)}
@@ -246,8 +246,8 @@
 :where(.pi-updates) .pi-as-steps b{font-size:.92rem;color:var(--navy)}
 :where(.pi-updates) .pi-as-steps p{font-size:.8rem;color:var(--text)}
 
-:where(.pi-updates) /* ---------- AI & Agentic page: control model ---------- */
-.pi-ctrl{margin-top:20px;background:var(--white);box-shadow:var(--sh)}
+/* ---------- AI & Agentic page: control model ---------- */
+:where(.pi-updates) .pi-ctrl{margin-top:20px;background:var(--white);box-shadow:var(--sh)}
 :where(.pi-updates) .pi-ctrl-cols{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 :where(.pi-updates) .pi-ctrl-cols>div{display:grid;gap:10px;align-content:start;padding:22px;border-left:1px solid var(--line);border-top:4px solid var(--q)}
 :where(.pi-updates) .pi-ctrl-cols>div:nth-child(1){--q:var(--q1);border-left:0}:where(.pi-updates) .pi-ctrl-cols>div:nth-child(2){--q:var(--q2)}:where(.pi-updates) .pi-ctrl-cols>div:nth-child(3){--q:var(--q4)}:where(.pi-updates) .pi-ctrl-cols>div:nth-child(4){--q:var(--q5)}
@@ -260,8 +260,8 @@
 :where(.pi-updates) .pi-ctrl-layer>div:first-child{border-left:0}
 :where(.pi-updates) .pi-ctrl-layer em{display:block;font-style:normal;font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:6px}
 
-:where(.pi-updates) /* ---------- Cloud page: barriers vs controls ---------- */
-.pi-bvc{margin-top:20px;display:grid;background:var(--white);box-shadow:var(--sh)}
+/* ---------- Cloud page: barriers vs controls ---------- */
+:where(.pi-updates) .pi-bvc{margin-top:20px;display:grid;background:var(--white);box-shadow:var(--sh)}
 :where(.pi-updates) .pi-bvc-h{display:grid;grid-template-columns:minmax(0,1fr) 48px minmax(0,1fr)}
 :where(.pi-updates) .pi-bvc-h span{padding:14px 20px;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;background:var(--tint);color:var(--muted)}
 :where(.pi-updates) .pi-bvc-h span:nth-child(2){background:linear-gradient(90deg,var(--tint),var(--navy))}
@@ -275,8 +275,8 @@
 :where(.pi-updates) .pi-bvc-r i{justify-self:center;width:22px;height:2px;background:var(--royal);position:relative}
 :where(.pi-updates) .pi-bvc-r i:after{content:"";position:absolute;right:-1px;top:-4px;border-left:7px solid var(--royal);border-top:5px solid transparent;border-bottom:5px solid transparent}
 
-:where(.pi-updates) /* ---------- About: how an engagement is led ---------- */
-.pi-led{margin-top:clamp(40px,5vw,60px);background:var(--white);box-shadow:var(--sh);border-top:4px solid var(--royal);padding:clamp(20px,2.6vw,32px)}
+/* ---------- About: how an engagement is led ---------- */
+:where(.pi-updates) .pi-led{margin-top:clamp(40px,5vw,60px);background:var(--white);box-shadow:var(--sh);border-top:4px solid var(--royal);padding:clamp(20px,2.6vw,32px)}
 :where(.pi-updates) .pi-led>p{font-size:.95rem;color:var(--text);max-width:72ch}
 :where(.pi-updates) .pi-led-grid{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,.95fr) 40px minmax(0,.8fr);align-items:center;margin-top:22px}
 :where(.pi-updates) .pi-led-col{display:grid;gap:12px}
@@ -297,8 +297,8 @@
 :where(.pi-updates) .pi-led-arr{height:2px;background:var(--royal);position:relative;margin:0 6px}
 :where(.pi-updates) .pi-led-arr:after{content:"";position:absolute;right:-1px;top:-4px;border-left:7px solid var(--royal);border-top:5px solid transparent;border-bottom:5px solid transparent}
 
-:where(.pi-updates) /* ---------- Private Equity: portfolio model ---------- */
-.pi-pe{margin-top:clamp(28px,4vw,40px);background:var(--white);box-shadow:var(--sh);padding:clamp(20px,2.6vw,32px);display:grid;gap:18px}
+/* ---------- Private Equity: portfolio model ---------- */
+:where(.pi-updates) .pi-pe{margin-top:clamp(28px,4vw,40px);background:var(--white);box-shadow:var(--sh);padding:clamp(20px,2.6vw,32px);display:grid;gap:18px}
 :where(.pi-updates) .pi-pe-top{display:grid;justify-items:center}
 :where(.pi-updates) .pi-pe-top div{padding:14px 26px;background:var(--char);color:var(--white);font-weight:700;font-size:.95rem;text-align:center}
 :where(.pi-updates) .pi-pe-top div small{display:block;font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);margin-bottom:4px}
@@ -317,15 +317,15 @@
 :where(.pi-updates) .pi-pe-base small{display:block;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
 :where(.pi-updates) .pi-pe-base div.n small{color:var(--cyan)}
 
-:where(.pi-updates) /* ---------- responsive ---------- */
+/* ---------- responsive ---------- */
 @media (max-width:1080px){
-  .pi-spec-cards,.pi-meas{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .pi-spec-bar,.pi-form:before{display:none}
-  .pi-as-row{grid-template-columns:1fr}
-  .pi-as-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .pi-led-grid{grid-template-columns:1fr;gap:10px}
-  .pi-led-arr{width:2px;height:22px;justify-self:center;margin:0}
-  .pi-led-arr:after{right:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid var(--royal);border-bottom:0}
+  :where(.pi-updates) .pi-spec-cards,:where(.pi-updates) .pi-meas{grid-template-columns:repeat(3,minmax(0,1fr))}
+  :where(.pi-updates) .pi-spec-bar,:where(.pi-updates) .pi-form:before{display:none}
+  :where(.pi-updates) .pi-as-row{grid-template-columns:1fr}
+  :where(.pi-updates) .pi-as-steps{grid-template-columns:repeat(3,minmax(0,1fr))}
+  :where(.pi-updates) .pi-led-grid{grid-template-columns:1fr;gap:10px}
+  :where(.pi-updates) .pi-led-arr{width:2px;height:22px;justify-self:center;margin:0}
+  :where(.pi-updates) .pi-led-arr:after{right:-4px;top:auto;bottom:-1px;border-left:5px solid transparent;border-right:5px solid transparent;border-top:7px solid var(--royal);border-bottom:0}
 }
 @media (max-width:960px){
   :where(.pi-updates) .pi-ox{grid-template-columns:1fr}
@@ -366,8 +366,8 @@
 @media (prefers-reduced-motion:reduce){
   :where(.pi-updates) .pi-arr i,:where(.pi-updates) .pi-hub span:after,:where(.pi-updates) .pi-pin:after,:where(.pi-updates) .pi-m .g .t i{animation:none}
 }
-:where(.pi-updates) /* ---------- case cards on charcoal: tonal cards,:where(.pi-updates) illustration recoloured for dark ---------- */
-.pi-char .pc{background:var(--char2);border:1px solid var(--char3);box-shadow:none}
+/* ---------- case cards on charcoal: tonal cards, illustration recoloured for dark ---------- */
+:where(.pi-updates) .pi-char .pc{background:var(--char2);border:1px solid var(--char3);box-shadow:none}
 :where(.pi-updates) .pi-char .pc:hover{border-color:var(--cyan);box-shadow:0 26px 46px -28px rgba(0,0,0,.85)}
 :where(.pi-updates) .pi-char .pc .art{background:#2b3346;border-bottom:1px solid var(--char3)}
 :where(.pi-updates) .pi-char .pc .art svg [fill="#fff"]{fill:#262d3d}
@@ -389,8 +389,8 @@
 :where(.pi-updates) .pi-char .pc p{color:var(--pale2)}
 :where(.pi-updates) .pi-char .pc .tech span{background:var(--char);color:var(--pale2)}
 :where(.pi-updates) .pi-char .pc .link{color:var(--cyan)}
-:where(.pi-updates) /* approach box on charcoal */
-.pi-char .legend-box{background:var(--char2)!important;border:1px solid var(--char3);border-top:4px solid var(--cyan);color:var(--pale2)}
+/* approach box on charcoal */
+:where(.pi-updates) .pi-char .legend-box{background:var(--char2)!important;border:1px solid var(--char3);border-top:4px solid var(--cyan);color:var(--pale2)}
 :where(.pi-updates) .pi-char .legend-box p{color:var(--pale2)}
 :where(.pi-updates) .pi-char .legend-box p a{color:var(--cyan)!important}
 :where(.pi-updates) .pi-char .legend-box>em{background:var(--cyan);color:var(--navy);top:-14px;padding:2px 10px;font-weight:700}
@@ -399,35 +399,35 @@
 :where(.pi-updates) .pi-char .btn-line{background:transparent;border-color:var(--cyan);color:var(--white)}
 :where(.pi-updates) .pi-char .btn-line:hover{background:var(--cyan);color:var(--navy)}
 
-:where(.pi-updates) /* ---------- 7 Nov fixes ---------- */
-/* outcome explorer: no connector lines,:where(.pi-updates) chevron badges instead */
-.pi-flow{gap:0}
+/* ---------- 7 Nov fixes ---------- */
+/* outcome explorer: no connector lines, chevron badges instead */
+:where(.pi-updates) .pi-flow{gap:0}
 :where(.pi-updates) .pi-arr{height:auto;background:none;margin:0;display:grid;place-items:center}
 :where(.pi-updates) .pi-arr:after{content:"";position:static;width:26px;height:26px;border:0;border-radius:50%;background:var(--royal) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 7l5 5-5 5'/%3E%3C/svg%3E") center/16px no-repeat}
 :where(.pi-updates) .pi-arr i{display:none}
 :where(.pi-updates) .pi-f.how{border:0;background:#dce6fb}
 :where(.pi-updates) .pi-ox-pts{border-top:0;padding-top:4px}
 :where(.pi-updates) .pi-ox-p{border-top:0}
-:where(.pi-updates) /* delivery steps: equal boxes,:where(.pi-updates) aligned rows */
-.pi-page .stages .st{grid-template-rows:auto 1fr}
+/* delivery steps: equal boxes, aligned rows */
+:where(.pi-updates) .pi-page .stages .st{grid-template-rows:auto 1fr}
 :where(.pi-updates) .pi-page .st .box{display:flex;flex-direction:column;gap:8px;transform:none!important}
 :where(.pi-updates) .pi-page .st .box h3{min-height:2.6em;display:flex;align-items:flex-start}
 :where(.pi-updates) .pi-page .st .box>p{flex:1}
 :where(.pi-updates) .pi-page .st .pi-out{margin-top:auto}
 :where(.pi-updates) .pi-page .st .opt-tag{display:none}
-:where(.pi-updates) /* named-lead hub: more room */
-.pi-models{grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr)}
+/* named-lead hub: more room */
+:where(.pi-updates) .pi-models{grid-template-columns:minmax(0,1fr) 150px minmax(0,1fr)}
 :where(.pi-updates) .pi-hub span{width:124px;height:124px;font-size:.6rem;letter-spacing:.08em;line-height:1.45;padding:16px}
-:where(.pi-updates) /* "Why this work matters": heading and intro aligned */
-.pi-page .why{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end}
+/* "Why this work matters": heading and intro aligned */
+:where(.pi-updates) .pi-page .why{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);align-items:end}
 :where(.pi-updates) .pi-page .why .lead{padding-bottom:8px}
-:where(.pi-updates) /* outcome cards: numbered instead of repeating "Outcome" */
-.pi-page .out{border-color:transparent;box-shadow:var(--sh);border-top:4px solid var(--q)}
+/* outcome cards: numbered instead of repeating "Outcome" */
+:where(.pi-updates) .pi-page .out{border-color:transparent;box-shadow:var(--sh);border-top:4px solid var(--q)}
 :where(.pi-updates) .pi-page .out:nth-child(1){--q:var(--q1)}:where(.pi-updates) .pi-page .out:nth-child(2){--q:var(--q2)}:where(.pi-updates) .pi-page .out:nth-child(3){--q:var(--q4)}
 :where(.pi-updates) .pi-page .out .k{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--q);color:var(--white);font-size:.74rem;letter-spacing:0}
 :where(.pi-updates) .pi-page .out .k:before{display:none}
-:where(.pi-updates) /* portfolio diagram connectors */
-.pi-pe{gap:0}
+/* portfolio diagram connectors */
+:where(.pi-updates) .pi-pe{gap:0}
 :where(.pi-updates) .pi-pe-top{position:relative;padding-bottom:22px}
 :where(.pi-updates) .pi-pe-top:after{content:"";position:absolute;left:50%;bottom:0;width:2px;height:22px;margin-left:-1px;background:var(--royal)}
 :where(.pi-updates) .pi-pe-co{padding-top:22px}
