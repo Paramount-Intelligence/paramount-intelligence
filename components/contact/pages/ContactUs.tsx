@@ -16,7 +16,7 @@ export default function ContactUs() {
               </nav>
               <div className="eyebrow">Contact us</div>
               <h1>Connect with Paramount Intelligence</h1>
-              <p className="body">Contact Paramount to discuss an AI initiative, software requirement, technology decision, or engineering challenge. Engagements range from focused advisory and specialist support to managed implementation.</p>
+              <p className="body">Tell us what you need to build, improve, or operate. We will propose a clear next step and the expertise to deliver it, from a focused assessment or one embedded engineer to a managed engagement.</p>
               <div className="ctas">
                 <a className="btn btn-cyan" href="https://calendly.com/marty-paramountintelligence/30min" target="_blank" rel="noopener">Schedule a conversation <span className="arr"><Icon name="arrow" /></span></a>
               </div>
@@ -64,7 +64,8 @@ export default function ContactUs() {
                   <option>Cloud or infrastructure</option>
                   <option>Workflow automation</option>
                   <option>Consulting or technology evaluation</option>
-                  <option>Forward-deployed engineer or specialist</option>
+                  <option>Embedded engineer / FDE Network</option>
+                  <option>Ongoing support for an existing system</option>
                   <option>Partnership or consulting collaboration</option>
                   <option>Other requirement</option>
                 </select>
@@ -99,7 +100,7 @@ export default function ContactUs() {
                 <div style={{ display: "grid", gap: "4px" }}>
                   <span className="k3">Engagement enquiries</span>
                   <b>Marty Kaufman</b>
-                  <span style={{ fontSize: ".8rem", color: "var(--muted)" }}>Co-founder &amp; Chief Commercial Officer</span>
+                  <span style={{ fontSize: ".8rem", color: "var(--muted)" }}>Founder &amp; Commercial Lead</span>
                 </div>
               </div>
               <div className="mail">

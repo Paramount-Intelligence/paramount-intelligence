@@ -16,7 +16,7 @@ export default function AboutUs() {
               </nav>
               <div className="eyebrow">About us</div>
               <h1>AI Engineering &amp; Consulting with Clear Delivery Accountability</h1>
-              <p className="body">Paramount Intelligence is a US-registered AI engineering and consulting firm. We help organizations make technology decisions, build useful capabilities, and resolve the engineering problems that stand between an idea and everyday use.</p>
+              <p className="body">Paramount Intelligence is a US-registered AI engineering and consulting firm. We build, improve, and operate production-grade AI systems, through Paramount-led delivery or embedded specialist engineers, always with a named Paramount lead.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Work with Paramount <span className="arr"><Icon name="arrow" /></span></Link>
               </div>
@@ -127,19 +127,56 @@ export default function AboutUs() {
                 <h3>Ali Azzam</h3>
                 <p>Ali is the Founder and CEO of Paramount Intelligence, an AI engineering and consulting firm. He advises and leads technology delivery for Fortune 500 companies, private equity-backed businesses, and high-growth startups, connecting business priorities with execution.</p>
                 <p>His background includes VEON and Alibaba Group, alongside advisory and engineering engagements with Schneider Electric, Syngenta, Donaldson, and Flexagon, spanning enterprise knowledge systems, AI infrastructure, and data automation.</p>
-                <p>At Paramount, Ali leads technical direction and delivery quality. He works directly with executive and engineering teams to build systems inside the client&rsquo;s own environment, documented and handed over, so the client&rsquo;s team can run, change, and own what decides how their business works.</p>
+                <p>At Paramount, Ali leads technical direction and delivery quality. He works directly with executive and engineering teams to build systems inside the client&rsquo;s own environment, documented and handed over, so the client’s team can run, change, and own what decides how their business works.</p>
               </div>
             </div>
             <div className="leader">
               <div className="ph">
-                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Co-founder and Chief Commercial Officer" width="720" height="812" />
+                <img src="/images/team/marty.jpg" alt="Marty Kaufman, Founder and Commercial Lead" width="720" height="812" />
               </div>
               <div className="txt">
-                <span className="role">Co-founder &amp; Chief Commercial Officer</span>
+                <span className="role">Founder &amp; Commercial Lead</span>
                 <h3>Marty Kaufman</h3>
-                <p>Marty is the Co-founder and Chief Commercial Officer of Paramount Intelligence, bringing more than 25 years of experience leading commercial growth, customer operations, and consulting businesses. He works with executive teams to connect business priorities with the expertise and delivery approach needed to address them.</p>
+                <p>Marty is Founder &amp; Commercial Lead at Paramount Intelligence, bringing more than 25 years of experience leading commercial growth, customer operations, and consulting businesses. He works with executive teams to connect business priorities with the expertise and delivery approach needed to address them.</p>
                 <p>His background includes leadership roles at The Knot Worldwide and Catalant, alongside consulting and enterprise technology experience at PwC and Siebel Systems, now part of Oracle. At The Knot Worldwide, he led a team of approximately 90 with responsibility for more than $60 million in annual retained revenue.</p>
                 <p>At Paramount, Marty leads commercial strategy and client relationships. He works with clients to define priorities, shape engagements, and establish clear expectations, ensuring the firm&rsquo;s technical capabilities address meaningful business needs and create a foundation for lasting partnerships.</p>
+              </div>
+            </div>
+          </div>
+          <div className="pi-led">
+            <span className="pi-k">How every engagement is led</span>
+            <p style={{ marginTop: "10px" }}>Commercial and technical leadership work together on every engagement. Each engagement has a named Paramount lead, who manages the contract engineers placed from the Paramount FDE Network.</p>
+            <div className="pi-led-grid">
+              <div className="pi-led-col">
+                <div className="pi-node">
+                  <span className="pi-k">Commercial leadership</span>
+                  <b>Client relationships</b>
+                  <p>Engagement priorities, scope, and clear expectations</p>
+                </div>
+                <div className="pi-node">
+                  <span className="pi-k">Technical leadership</span>
+                  <b>Technical direction</b>
+                  <p>Architecture, engineering standards, and delivery quality</p>
+                </div>
+              </div>
+              <span className="pi-led-arr" aria-hidden="true" />
+              <div className="pi-led-col">
+                <div className="pi-node lead">
+                  <span className="pi-k">Every engagement</span>
+                  <b>A named Paramount lead</b>
+                  <p>Accountable for the agreed work, progress, and quality</p>
+                </div>
+                <div className="pi-node net">
+                  <span className="pi-k">Paramount FDE Network</span>
+                  <b>Vetted contract engineers</b>
+                  <p>50+ forward-deployed engineers, plus AI engineers and other specialists, contracted and managed by Paramount</p>
+                </div>
+              </div>
+              <span className="pi-led-arr" aria-hidden="true" />
+              <div className="pi-node you">
+                <span className="pi-k">Delivered to</span>
+                <b>Your engagement</b>
+                <p>Inside your environment, documented and handed over</p>
               </div>
             </div>
           </div>
@@ -151,7 +188,7 @@ export default function AboutUs() {
             <div>
               <div className="eyebrow">Track record</div>
               <h2 className="title" style={{ marginTop: "12px" }}>Selected Engagement &amp; Leadership Experience</h2>
-              <p>Our case studies show the context, delivered capability, and outcomes behind the work. They include Paramount engagements and relevant prior experience of our leadership across enterprise, PE-backed, and digital businesses.</p>
+              <p>Our case studies show the context, delivered capability, and outcomes behind the work. They include Paramount engagements and relevant prior experience of our leadership across enterprise, PE-backed, and digital businesses. Organization logos do not imply endorsement.</p>
             </div>
             <Link className="link" href="/case-studies">Explore our case studies <span className="arr"><Icon name="arrow" /></span></Link>
           </div>

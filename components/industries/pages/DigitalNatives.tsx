@@ -146,7 +146,7 @@ export default function DigitalNatives() {
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Relevant experience</div>
@@ -179,10 +179,10 @@ export default function DigitalNatives() {
           </div>
           <div className="legend-box" style={{ background: "var(--white)", marginTop: "0", gridTemplateColumns: "1fr" }}>
             <em>Ways to engage</em>
-            <p>Engagements can involve a single forward-deployed engineer, a managed workstream, or an ongoing engineering partnership. We coordinate with internal client teams and document the work for continued ownership.</p>
+            <p>Bring vetted contract engineers from the Paramount FDE Network into the product team, or have Paramount lead a defined workstream or ongoing partnership. Network engineers can start within 48 hours of selection, once access and assignment terms are in place, with a named Paramount lead. We coordinate with internal client teams and document the work for continued ownership.</p>
             <div className="chips">
-              <span>Forward-deployed engineer</span>
-              <span>Managed workstream</span>
+              <span>Embedded FDE Network engineers</span>
+              <span>Paramount-led workstream</span>
               <span>Ongoing partnership</span>
             </div>
           </div>

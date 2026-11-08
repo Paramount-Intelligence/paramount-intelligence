@@ -146,7 +146,7 @@ export default function PrivateEquity() {
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Relevant experience</div>
@@ -164,13 +164,46 @@ export default function PrivateEquity() {
       </section>
       <section className="sec">
         <div className="wrap">
-          <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0" }}>
+          <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", gridTemplateColumns: "1fr" }}>
             <em>Working with Paramount</em>
-            <p>Engagement options include managed implementation, forward-deployed engineering within portfolio-company workstreams, and focused assessments. Paramount establishes clear delivery responsibilities and remains the contracting partner.</p>
+            <p>For private equity sponsors: support can span portfolio companies across sectors. We agree outcomes and accountability per company, while reusing relevant patterns where appropriate. Each company can engage Paramount-led delivery, embedded contract engineers from the Paramount FDE Network, or a focused assessment, with a named Paramount lead and its own data, access, and scope kept separate.</p>
             <div className="chips">
-              <span>Managed implementation</span>
-              <span>Forward-deployed engineering</span>
+              <span>Paramount-led delivery</span>
+              <span>Embedded FDE Network engineers</span>
               <span>Focused assessments</span>
+              <span>Ongoing support</span>
+            </div>
+          </div>
+          <div className="pi-pe" aria-label="How support spans a portfolio">
+            <div className="pi-pe-top">
+              <div><small>Sponsor and operating partners</small>Portfolio priorities</div>
+            </div>
+            <div className="pi-pe-co">
+              <div>
+                <span className="pi-k">Portfolio company A</span>
+                <b>Support workflow AI</b>
+                <span>Own scope, data, and access</span>
+                <span>A named Paramount lead</span>
+                <span>Paramount-led delivery</span>
+              </div>
+              <div>
+                <span className="pi-k">Portfolio company B</span>
+                <b>Product AI feature</b>
+                <span>Own scope, data, and access</span>
+                <span>A named Paramount lead</span>
+                <span>Embedded FDE engineers</span>
+              </div>
+              <div>
+                <span className="pi-k">Portfolio company C</span>
+                <b>Reporting and data</b>
+                <span>Own scope, data, and access</span>
+                <span>A named Paramount lead</span>
+                <span>Focused assessment first</span>
+              </div>
+            </div>
+            <div className="pi-pe-base">
+              <div><small>Reused where appropriate</small>Proven integration patterns, evaluation methods, and delivery practices</div>
+              <div className="n"><small>Paramount FDE Network</small>Vetted contract engineers matched to each company</div>
             </div>
           </div>
         </div>
