@@ -1,0 +1,430 @@
+/* Charcoal case study theme (approved on the telecom case study, 7 Nov 2026) */
+main.cs-contract-intelligence{--grey:#f4f7fd}
+main.cs-contract-intelligence .hero{background:radial-gradient(760px 460px at 100% 100%,rgba(9,182,249,.16),transparent 62%),radial-gradient(520px 320px at 0 0,rgba(32,78,207,.18),transparent 60%),#262d3d!important}
+main.cs-contract-intelligence .hero .eyebrow{color:#09b6f9}
+main.cs-contract-intelligence .pi-close{background:radial-gradient(700px 400px at 0 0,rgba(9,182,249,.14),transparent 60%),#262d3d!important}
+main.cs-contract-intelligence .client .who{background:#f4f7fd!important}
+main.cs-contract-intelligence section.band.pi-light{background:#f4f7fd!important}
+main.cs-contract-intelligence section.band:not(.pi-light){--white:#313b50;--text:#dce4f7;--muted:#9aa3b5;--line:#414c64;--pale:#33406a;--grey:#262d3d;--navy:#e6ebf7;background:#262d3d!important;color:#dce4f7}
+main.cs-contract-intelligence section.band:not(.pi-light) .title{color:#fff} main.cs-contract-intelligence section.band:not(.pi-light) .eyebrow{color:var(--cyan)}
+main.cs-contract-intelligence section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="#fff"],main.cs-contract-intelligence section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="#ffffff"],main.cs-contract-intelligence section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="white"]{fill:#313b50}
+main.cs-contract-intelligence section.band:not(.pi-light) svg [stroke="#0f256e"]{stroke:#9fb3e8} main.cs-contract-intelligence section.band:not(.pi-light) svg :not(text):not(tspan)[fill="#0f256e"]{fill:#204ecf} main.cs-contract-intelligence section.band:not(.pi-light) svg :is(text,tspan)[fill="#0f256e"]{fill:#e6ebf7}
+main.cs-contract-intelligence section.band:not(.pi-light) svg [stroke="#d9dbe0"],main.cs-contract-intelligence section.band:not(.pi-light) svg [stroke="#c8d0e2"]{stroke:#4a5672} main.cs-contract-intelligence section.band:not(.pi-light) svg [fill="#d9dbe0"]{fill:#4a5672} main.cs-contract-intelligence section.band:not(.pi-light) svg [fill="#eaf1ff"]{fill:#33406a} main.cs-contract-intelligence section.band:not(.pi-light) svg [fill="#f3f3f3"]{fill:#262d3d}
+
+.cs-contract-intelligence section.band:not(.pi-light) :focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light){background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .eyebrow{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .title{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .sub{color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .plus{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .rule{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .rule::before,.cs-contract-intelligence section.band:not(.pi-light) .rule::after{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .box{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .cap{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pill-tag{background:#3dbe8b;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .pulse{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .btn-navy{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .seg{border:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .seg button{background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .seg button[aria-pressed="true"]{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .pts li{color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .pts li::before{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .pts li b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .note{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .note .lbl{background:#313b50;color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .note{background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .note .lbl{background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .simsec .note{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .simsec .note .lbl{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .verdict{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .verdict b{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .nav{background:rgba(255,255,255,0.06);border-bottom:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .nav nav a{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .nav nav a:hover,.cs-contract-intelligence section.band:not(.pi-light) .nav nav a.on{color:#e6ebf7;border-color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .mx-legend button.on{background:rgba(255,255,255,.1);border-color:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .mx-legend button:nth-child(3) b{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .mx-legend button:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .matrix i.app{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .matrix i.asst{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .matrix i.half{background:linear-gradient(90deg,#09b6f9 50%,#313b50 50%)}
+.cs-contract-intelligence section.band:not(.pi-light) .client{border-bottom:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .client .who{background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .client .who h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .client dt{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .client .nut h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .scene .bar b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .exits{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .exits.zero .n{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .sv-lbl{fill:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .sv-sm{fill:#6b7385}
+.cs-contract-intelligence section.band:not(.pi-light) .hub .core{background:radial-gradient(circle at 35% 30%,#2f5be0,#204ecf);color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .qchip{background:#313b50;border:1.5px solid #414c64;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .k-account{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .qchip.k-account i{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .qchip.k-knowledge i{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .qchip.k-action i{background:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .qchip span{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .legend button{border:1.5px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .legend button.on{border-color:#6f86c9;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .lock{border:1.5px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .lock .ic{border:1.5px solid #6f86c9;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .lock h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .lock p{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .lock.on{border-color:#6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .lock.on .ic{background:#204ecf;border-color:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .lock:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ring .mid b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ring .mid span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ring.all .mid b{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .arc{fill:none;stroke:#4a5672}
+.cs-contract-intelligence section.band:not(.pi-light) .arc.on{stroke:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ring.all .arc{stroke:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .tap{border:3px solid #313b50;background:rgba(9,182,249,.45)}
+.cs-contract-intelligence section.band:not(.pi-light) .path4 li{border-bottom:1px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .path4 li .n{border:1.5px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .path4 li.on{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .path4 li.on .n{background:#204ecf;border-color:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .path4 li.done .n{border-color:#204ecf;color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .notlist span{border:1.5px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .notlist span.yes{border-color:#6f86c9;color:#e6ebf7;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .shot b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .shot span{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .arrows button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .arrows button:hover{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .simsec{background:linear-gradient(180deg,#262d3d,#313b50)}
+.cs-contract-intelligence section.band:not(.pi-light) .sim .scr{background:radial-gradient(400px 260px at 50% -40px,rgba(140,40,90,.55),transparent 70%),#0e0c22;color:#ece9ff}
+.cs-contract-intelligence section.band:not(.pi-light) .sim .top small{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .sim .top small i{background:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .msg.u{background:#3b37c9;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .msg.b{background:#1a1838;border:1px solid #3a3470}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .row{border-top:1px solid #3a3470}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .btns button{background:#7b5cff;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .btns button.ghost{background:transparent;border:1px solid #3a3470;color:#c8c2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .ok{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .ref{border:1px solid #3dbe8b;color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .msg .bars i{background:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .typing{background:#1a1838;border:1px solid #3a3470}
+.cs-contract-intelligence section.band:not(.pi-light) .qs button{border:1px solid #3a3470;background:rgba(123,92,255,.12);color:#e3deff}
+.cs-contract-intelligence section.band:not(.pi-light) .qs button:hover,.cs-contract-intelligence section.band:not(.pi-light) .qs button.on{background:rgba(123,92,255,.35);border-color:#7b5cff}
+.cs-contract-intelligence section.band:not(.pi-light) .inbar{border:1px solid #3a3470;color:#8d86c4}
+.cs-contract-intelligence section.band:not(.pi-light) .sheet{background:#313b50;color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .sheet .lbl{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .field{border-bottom:1.5px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .otp span{border:1.5px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .route{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .route i{background:#414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .simctl{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .simctl button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .simctl button:hover{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .archbox .lgd{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .anode .bx{fill:#313b50;stroke:#9fb3e8}
+.cs-contract-intelligence section.band:not(.pi-light) .anode .gl{fill:none;stroke:#9fb3e8}
+.cs-contract-intelligence section.band:not(.pi-light) .anode text{fill:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .info h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .info .sand{background:#33406a;border:1.5px solid #204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .duel{border:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen{background:#2b3346}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen .hd{color:#9aa3b5;border-bottom:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .asst{background:#0e0c22;color:#ece9ff}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .asst .hd{color:#a99cff;border-bottom:1px solid #3a3470}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen .u{background:#c9ced9;color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen .b{background:#313b50;border:1px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen .b small{color:#f39a6b}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .asst .u{background:#3b37c9;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .asst .b{background:#1a1838;border:1px solid #3a3470}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .asst .b small{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .duel .gen .typing{background:#313b50;border-color:#414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .askrow button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .askrow button:hover,.cs-contract-intelligence section.band:not(.pi-light) .askrow button.on{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .diffs{border:1.5px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .diffs div+div{border-left:1.5px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .diffs h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .diffs s{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .diffs b{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .kpis>div{border-top:4px solid #204ecf;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .kpis h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .kpis .num{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .cells i.f{background:#3dbe8b;border:1px solid #3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .cells i.h{background:linear-gradient(90deg,#3dbe8b 50%,transparent 50%);border:1px solid #3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .store .who b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .store .who span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .store .nums b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .store .nums span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .stack span{color:#e6ebf7;border:1.5px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .close{color:#fff;background:radial-gradient(900px 520px at 100% 100%,rgba(32,78,207,.95),transparent 62%),linear-gradient(135deg,#262d3d,#1e2f6a 55%,#1a3a9e)}
+.cs-contract-intelligence section.band:not(.pi-light) .close h2 b{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) footer{border-top:1px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .tag-plan{border:1.5px solid #6f86c9;color:#e6ebf7;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .tag-built{background:#3dbe8b;color:#fff;border:1.5px solid #3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .demo-note{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .demo-note b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-drop{border:2px dashed #9fb0d6;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-file{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-file small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-file .ext{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-modes button{border:1.5px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-modes button b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-modes button span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-modes button.on{border-color:#6f86c9;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-modes button:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prev{border:1.5px solid #414c64;background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prev .row{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prev .row b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pill.g{background:#2a513f;color:#1f8a5c}
+.cs-contract-intelligence section.band:not(.pi-light) .pill.a{background:#51452a;color:#9a6a00}
+.cs-contract-intelligence section.band:not(.pi-light) .pill.r{background:#512a2a;color:#e08585}
+.cs-contract-intelligence section.band:not(.pi-light) .pill.n{background:#33406a;color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-svc div{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-svc svg{stroke:#9fb3e8;fill:none}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-svc b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-svc span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-svc div.hot{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-app{border:1.5px solid #6f86c9;background:#2a3951}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-app .chrome{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-app .chrome i{background:rgba(255,255,255,0.06)}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-card{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-meta div{background:#2a3951}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-meta span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-meta b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sum div{border:1px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sum .o{background:#313b50;color:#c26a00}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sum .g{background:#2a513d;color:#1f8a5c}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sum .a{background:#313b50;color:#c26a00}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sum .r{background:#512a2a;color:#e08585}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-filt button{border:1px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-filt button.on{background:#204ecf;color:#fff;border-color:#6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl{border:1px solid #414c64;border-left:4px solid #ccc;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl .h b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl .d span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-fq div{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-fq div::before{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-idle{border:2px dashed #b9c4dc;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-idle b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog .pg{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog .pg small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog .track{background:#2a3751}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog .track i{background:linear-gradient(90deg,#204ecf,#09b6f9)}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-prog .stage{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe div{border-left:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe svg{stroke:#9fb3e8;fill:none}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe div.on{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pipe div.done{background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps li{border-bottom:1px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps li .n{border:1.5px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps li.on{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps li.on .n{background:#204ecf;border-color:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps li.done .n{border-color:#204ecf;color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-journey li{color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-journey li b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-run button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-run button.pri{background:#09b6f9;border-color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-run button:hover{background:#204ecf;color:#fff;border-color:#6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-vs{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-vs small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cards4 div{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cards4 div.rec{background:#33406a;border-color:#b9cbf5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cards4 span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cards4 b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cards4 small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-row{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-row .h b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .tug{background:#2a3851}
+.cs-contract-intelligence section.band:not(.pi-light) .tug em{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .win.A{background:#342a51;color:#9b8adb}
+.cs-contract-intelligence section.band:not(.pi-light) .win.B{background:#2a513f;color:#1f8a5c}
+.cs-contract-intelligence section.band:not(.pi-light) .win.E{background:#2b3346;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-row .d span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-row .d .tip{background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-ab{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pri div{background:#313b50;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .hd{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .m.u{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .m.b{background:#262d3d;color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .cite{color:#7da2ff;background:#33406a;border:1px solid #b9cbf5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .qs{border-top:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .qs button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .qs button:hover,.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .qs button.on{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-chat .typing{background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs{border:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button{border-left:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button.on{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-layers{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-layer{border-top:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-layer>b{color:#e6ebf7;background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .chipx{border:1.5px solid #414c64;color:#e6ebf7;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .chipx.add{border-color:#09b6f9;background:#2a4551}
+.cs-contract-intelligence section.band:not(.pi-light) .chipx.up{border-color:#204ecf;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .chipx.up::after{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .chipx.none{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-carry{background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-carry b{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pick h4{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pick button{border:1.5px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pick button small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pick button.on{border-color:#6f86c9;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pick button:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-flow{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node .ic{border:1.5px solid #6f86c9;color:#e6ebf7;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node.yes .ic{background:#204ecf;border-color:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node.yes .ans{background:#2a513f;color:#1f8a5c}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node.no .ic{background:#313b50;border-color:#c03030;color:#e08585}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node.no .ans{background:#512a2a;color:#e08585}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-node:not(:last-child)::after{background:#414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-out{background:#262d3d;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-out.ok{background:#3dbe8b;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-track{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-track .t b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-track .t span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps2 i{border:1.5px solid #414c64;color:#9aa3b5;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps2 i.on{border-color:#6f86c9;color:#e6ebf7;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps2 i.done{border-color:#204ecf;background:#204ecf;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-steps2 i.fin{border-color:#3dbe8b;background:#3dbe8b;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-kpi>div{border-top:4px solid #204ecf;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-kpi h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-kpi .num{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-kpi .num small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-grid10{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-grid10 i{border:1px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-models div{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-models b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-models span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-shots .fr{border:1.5px solid #6f86c9;background:#2a3951}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-shots figcaption{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-shots figcaption b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-desk .back{background:#2a3651}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-desk .back.b2{background:#2a3751}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-paper{background:#313b50;color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-paper .ph{border-bottom:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-paper .ph b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-paper .ph span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-c h5{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-c h5 i{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-c .ln{background:#2b3346}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-scanline{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-timer{background:#204ecf;color:#fff;border:1px solid rgba(160,185,240,.35)}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-timer b{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-life .bar b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-now{background:#262d3d}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-now .when{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-now h3{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-now p{color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pagebar i{background:#2b3346}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pagebar i.on{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-pagebar.fast i.on{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-revs div{background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-revs div b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2 .big{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2 .lbl2{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-stamp{border:3px solid #6f86c9;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-stamp.red{border-color:#c93636;color:#df8686}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2.alarm{background:#512a2a;border-color:#c93636}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2.alarm .big{color:#df8686}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-side2.safe{background:#2a513d;border-color:#1f9a68}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tl .rail{background:#414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tl .rail i{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tl .knob{background:#313b50;border:3px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-marks{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-marks span b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tl .hint{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sched{background:#313b50;border:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sched .sh{border-bottom:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sched .sh b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sched .sh span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2{border-bottom:1px dashed #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2:focus-visible{outline:2px solid #09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2 .no{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2 b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2 p{color:#dce4f7}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-init{border:1.5px solid #414c64;color:transparent}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-init::after{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cl2.on .ci-init{border-color:#204ecf;color:#7da2ff;background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sign .line{border-bottom:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sign svg path{fill:none;stroke:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-sign small{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-held{border:2.5px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-held.on{border-color:#1f9a68;color:#1f9a68;background:#2a513d}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-cal .rowl{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-week .d>span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-week .d i{background:#2a3850}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-week .d i.f{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-week.cp .d i.first::after{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-callout{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-reads .rowl{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-ticks i{background:#204ecf}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-flagged .r{background:#512a2a;color:#e08585}
+.cs-contract-intelligence section.band:not(.pi-light) .ci-flagged .a{background:#51452a;color:#9a6a00}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-eyebrow{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-nav{background:rgba(255,255,255,0.06);border-bottom:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-brand{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-menu>li>a:hover,.cs-contract-intelligence section.band:not(.pi-light) .pi-menu>li>button:hover,.cs-contract-intelligence section.band:not(.pi-light) .pi-menu>li.pi-open>button{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-menu>li>a.pi-on{color:#e6ebf7;border-color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop{background:#313b50;border:1.5px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop a:hover{background:#33406a}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop a b{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop a span{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop .pi-foot{border-top:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-drop .pi-foot a{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-burger{border:1.5px solid #6f86c9;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .mod.pi-on .pi-ico{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .badges .pi-ico{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .gov .pi-ico{color:#3dbe8b}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-foot{background:#313b50;border-top:4px solid #6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-foot p{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-foot h4{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-foot li a:hover{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mail code{color:#e6ebf7;background:var(--band)}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mail button{border:1.5px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mail button:hover{border-color:#6f86c9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-foot .pi-li{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-legal{border-top:1px solid #414c64;color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-legal a{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-menu>li>button.pi-on{color:#e6ebf7;border-color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .vtabs [role="tab"] .pi-ico{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .vtabs [role="tab"][aria-selected="true"] .pi-ico{color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .search .box2 .pi-ico{color:#7da2ff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-brand .pi-b1{color:#73abf2}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-brand .pi-b2{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-btn-cyan .pi-arr{background:rgba(15,37,110,.16);color:#e6ebf7;border-left:1px solid rgba(15,37,110,.18)}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-btn-cyan:hover .pi-arr{background:#204ecf;color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-btn-cyan:focus-visible{outline:2px solid #313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-cta-card::before{background:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-cta-steps li{border-bottom:1px solid rgba(160,185,240,.22);color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-cta-steps b{border:1.5px solid #09b6f9;color:#09b6f9}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog{background:rgba(255,255,255,0.06);border-bottom:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-k{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a b{color:#9aa3b5;border:1px solid #414c64}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a:hover{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a.done{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a.on{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-list a.on b{background:#204ecf;border-color:#6f86c9;color:#fff}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-n{color:#e6ebf7}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-prog-n span{color:#9aa3b5}
+@media (max-width:820px){
+.cs-contract-intelligence section.band:not(.pi-light) .diffs div:nth-child(n+3){border-top:1.5px solid #414c64}
+}
+@media (max-width:640px){
+.cs-contract-intelligence section.band:not(.pi-light) .ci-tabs button{border-top:1.5px solid #6f86c9}
+}
+@media (max-width:1100px){
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mob{border-top:1px solid #414c64;background:#313b50}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mob h4{color:#9aa3b5}
+.cs-contract-intelligence section.band:not(.pi-light) .pi-mob a{color:#e6ebf7;border-bottom:1px solid #414c64}
+}
+main.cs-contract-intelligence section.band:not(.pi-light) input,main.cs-contract-intelligence section.band:not(.pi-light) textarea,main.cs-contract-intelligence section.band:not(.pi-light) select{background:#2b3346;color:#dce4f7;border-color:#414c64}
+main.cs-contract-intelligence section.band:not(.pi-light) input::placeholder,main.cs-contract-intelligence section.band:not(.pi-light) textarea::placeholder{color:#9aa3b5}
