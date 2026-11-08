@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function ContactUsPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <ContactUs />
     </SitePage>
   );

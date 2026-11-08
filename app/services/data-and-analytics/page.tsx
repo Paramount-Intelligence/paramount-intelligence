@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function DataAndAnalyticsPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <DataAndAnalytics />
     </SitePage>
   );

@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function AiStrategyAndConsultingPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <AiStrategyAndConsulting />
     </SitePage>
   );
