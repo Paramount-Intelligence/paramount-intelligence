@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import LogoTap from "@/components/site/LogoTap";
 import VisitPresence from "@/components/site/VisitPresence";
+import AmbientForms from "@/components/site/AmbientForms";
 import { SITE_URL } from "@/lib/metadata";
 import { montserrat, plexMono } from "./fonts/fonts";
 // import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -40,6 +41,7 @@ export default function RootLayout({
         {children}
         <LogoTap />
         <VisitPresence />
+        <AmbientForms />
         <Analytics />
       </body>
     </html>
