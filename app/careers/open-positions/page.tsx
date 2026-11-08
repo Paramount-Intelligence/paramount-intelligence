@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function OpenPositionsPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <Careers />
     </SitePage>
   );

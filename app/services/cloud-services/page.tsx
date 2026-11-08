@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function CloudServicesPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <CloudServices />
     </SitePage>
   );

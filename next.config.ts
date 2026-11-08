@@ -14,7 +14,11 @@ const nextConfig: NextConfig = {
   },
   // Case study slugs renamed when client names came off the site (20 Oct 2026). permanent: true answers 308.
   async redirects() {
-    return RENAMED_CASE_STUDY_SLUGS.map(([from, to]) => ({ source: `/case-studies/${from}`, destination: `/case-studies/${to}`, permanent: true }));
+    return [
+      ...RENAMED_CASE_STUDY_SLUGS.map(([from, to]) => ({ source: `/case-studies/${from}`, destination: `/case-studies/${to}`, permanent: true })),
+      // The newsletter page is not part of the approved site (v37); old links land on the homepage.
+      { source: "/newsletter", destination: "/", permanent: true },
+    ];
   },
 };
 

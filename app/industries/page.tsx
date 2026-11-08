@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function IndustriesOverviewPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <IndustriesOverview />
     </SitePage>
   );

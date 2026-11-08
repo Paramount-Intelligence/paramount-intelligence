@@ -9,6 +9,7 @@ import { montserrat, plexMono } from "./fonts/fonts";
 // config.autoAddCss = false;
 import "./globals.css";
 import "./site.css";
+import "./pi-updates.css";
 
 export const viewport: Viewport = {
   width: "device-width",
