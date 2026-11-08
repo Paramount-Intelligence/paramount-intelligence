@@ -49,7 +49,12 @@ export default function FullCaseStudy({ pageKey }: { pageKey: string }) {
   return (
     <>
       <Header />
-      <style dangerouslySetInnerHTML={{ __html: read("style.css") }} />
+      {/* The page's own stylesheet, then its charcoal theme (v37) when it has one. */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: read("style.css") + (fs.existsSync(path.join(DIR, pageKey, "theme.css")) ? "\n" + read("theme.css") : ""),
+        }}
+      />
       {/* .cs-frame is the page's first box: Next.js scrolls a newly opened page to its first element with a box, and
           <main> has none (display: contents, site.css), so without the frame it scrolled to the footer. */}
       <div className="cs-frame">
