@@ -19,7 +19,7 @@ export default function DataAndAnalytics() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>Data Engineering &amp; Intelligence</h1>
-              <p className="body">Paramount connects fragmented sources and resolves data and reporting inconsistencies to support reliable business information. We build the pipelines, models, and analytics that help people answer questions and give AI applications the context they need.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>Information people and AI can use with confidence, built on the platforms already in place.</b> Paramount connects fragmented sources and resolves data and reporting inconsistencies to support reliable business information. We build the pipelines, models, and analytics that help people answer questions and give AI applications the context they need.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a data challenge <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -222,24 +222,24 @@ export default function DataAndAnalytics() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>Less reconciliation</h3>
               <p>Teams spend less effort resolving conflicting reports and disconnected records.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>Better visibility</h3>
               <p>Leaders can trace performance through shared measures and relevant detail.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>More useful AI context</h3>
               <p>Applications retrieve the information appropriate to the user, task, and organization.</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -247,7 +247,7 @@ export default function DataAndAnalytics() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>We start with the question the business needs to answer and work back through the source systems. Deliverables include agreed data workflows, validation checks, reporting or application outputs, and documentation for ongoing ownership.</p>
+            <p>We start with the question the business needs to answer and work back through the source systems. Deliverables include agreed data workflows, validation checks, reporting or application outputs, and documentation for ongoing ownership. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss a data challenge <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>

@@ -19,7 +19,7 @@ export default function AiWorkflowAutomation() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>Workflow Automation &amp; Systems Integration</h1>
-              <p className="body">We integrate business systems and automate recurring tasks to reduce manual handoffs. We combine rules, integrations, and AI where useful, with people responsible for the decisions that need judgment.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>Less repetitive handling and fewer manual handoffs, with exceptions routed to the people who can resolve them.</b> We integrate business systems and automate recurring tasks to reduce manual handoffs. We combine rules, integrations, and AI where useful, with people responsible for the decisions that need judgment.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a workflow <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -193,24 +193,24 @@ export default function AiWorkflowAutomation() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>Less repetition</h3>
               <p>Routine records, notifications, and document steps move automatically.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>Fewer lost handoffs</h3>
               <p>Work reaches the next system or a named reviewer with its context intact.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>More operational visibility</h3>
               <p>Activity and exceptions can be reviewed rather than reconstructed from separate inboxes.</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -218,7 +218,7 @@ export default function AiWorkflowAutomation() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>We agree the workflow boundary and expected improvement, build and test the integration, and demonstrate normal and exception paths. The handover includes business rules and maintenance responsibilities.</p>
+            <p>We agree the workflow boundary and expected improvement, build and test the integration, and demonstrate normal and exception paths. The handover includes business rules and maintenance responsibilities. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss a workflow <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>

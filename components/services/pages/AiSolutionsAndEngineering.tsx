@@ -19,7 +19,7 @@ export default function AiSolutionsAndEngineering() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>AI &amp; Agentic Engineering</h1>
-              <p className="body">We develop agents, copilots, and AI features around defined business workflows. We connect models to the right information and tools, define where people stay in control, and integrate the capability into the application or operating workflow.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>Less time searching, preparing, and processing work, with human oversight where it matters.</b> We develop agents, copilots, and AI features around defined business workflows. We connect models to the right information and tools, define where people stay in control, and integrate the capability into the application or operating workflow.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss an AI requirement <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -202,24 +202,59 @@ export default function AiSolutionsAndEngineering() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>Less searching</h3>
               <p>Client teams can retrieve relevant context and prepare work within existing workflows.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>More useful products</h3>
-              <p>Customers can complete tasks through AI features connected to the application&#x27;s data and services.</p>
+              <p>Customers can complete tasks through AI features connected to the application's data and services.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>Clearer control</h3>
               <p>Reviewers can inspect outputs, approve actions, and handle exceptions before they affect customers or records.</p>
             </div>
           </div>
+          <div className="pi-forms-h">How control is built in</div>
+          <div className="pi-ctrl" aria-label="How AI operates with control">
+            <div className="pi-ctrl-cols">
+              <div>
+                <Icon name="search" />
+                <span className="s">Grounded in your information</span>
+                <b>Find answers</b>
+                <p>Retrieve relevant knowledge from approved documents and records, within access permissions.</p>
+              </div>
+              <div>
+                <Icon name="file" />
+                <span className="s">With defined checks</span>
+                <b>Prepare work</b>
+                <p>Classify requests, extract information, draft responses, and recommend the next step.</p>
+              </div>
+              <div>
+                <Icon name="plug" />
+                <span className="s">Inside your systems</span>
+                <b>Complete steps</b>
+                <p>Use APIs and business tools to carry out approved workflow steps and record the action.</p>
+              </div>
+              <div>
+                <Icon name="eye" />
+                <span className="s">At important decisions</span>
+                <b>Keep control</b>
+                <p>Review uncertain outputs, approve consequential actions, and handle exceptions through a defined process.</p>
+              </div>
+            </div>
+            <div className="pi-ctrl-layer">
+              <div><em>How we control it</em>Source boundaries, tenant and role scoping, citations back to source</div>
+              <div><em>How we control it</em>Evaluation sets, confidence thresholds, deterministic rules where outcomes must be exact</div>
+              <div><em>How we control it</em>Explicit confirmation before customer- or money-impacting actions; audit trail</div>
+              <div><em>How we control it</em>Confidence-based routing, escalation paths, and defined handling when a tool fails</div>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -227,7 +262,7 @@ export default function AiSolutionsAndEngineering() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>A named engineer or team works with client users and technical owners from problem framing through release. Deliverables include working software, agreed evaluation evidence, integration documentation, and an appropriate operational handover.</p>
+            <p>A named engineer or team works with client users and technical owners from problem framing through release. Deliverables include working software, agreed evaluation evidence, integration documentation, and an appropriate operational handover. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss an AI requirement <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
