@@ -45,6 +45,7 @@ const ICONS = {
   "play": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"1\"/><path d=\"M10 9l5 3-5 3z\"/>",
   "scale": "<path d=\"M12 3v18M5 21h14M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z\"/>",
   "repeat": "<path d=\"M17 2l4 4-4 4M3 11V9a3 3 0 013-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 01-3 3H3\"/>",
+  "clock": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>",
 } as const;
 
 export type IconName = keyof typeof ICONS;

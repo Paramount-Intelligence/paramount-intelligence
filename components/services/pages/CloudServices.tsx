@@ -19,7 +19,7 @@ export default function CloudServices() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>Cloud &amp; Production Engineering</h1>
-              <p className="body">Paramount establishes the engineering foundations required to move prototypes into supportable production systems. We resolve deployment blockers and establish the cloud foundations, integrations, and release controls required for the intended use.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>A working application the organization can release, monitor, and support as real users rely on it.</b> Paramount establishes the engineering foundations required to move prototypes into supportable production systems. We resolve deployment blockers and establish the cloud foundations, integrations, and release controls required for the intended use.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a production challenge <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -256,24 +256,62 @@ export default function CloudServices() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>A repeatable release</h3>
               <p>Client teams can deploy changes through a documented process.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>A diagnosable service</h3>
               <p>Owners can see failures and understand how to respond.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>An informed operating plan</h3>
               <p>Capacity, dependencies, and recurring costs are visible enough to guide decisions.</p>
             </div>
           </div>
+          <div className="pi-forms-h">From a fragile prototype to a supportable application</div>
+          <div className="pi-bvc" aria-label="Typical barriers and the controls that replace them">
+            <div className="pi-bvc-h">
+              <span>Typical barriers to wider use</span>
+              <span />
+              <span>Controls matched to your scope</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">One user, one account, no roles</span>
+              <i aria-hidden="true" />
+              <span className="c">Identity, roles, and access controls</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">Secrets and keys hard-coded</span>
+              <i aria-hidden="true" />
+              <span className="c">Secrets management</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">Manual deployment from a laptop</span>
+              <i aria-hidden="true" />
+              <span className="c">Infrastructure as code and CI/CD pipelines</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">No monitoring, no failure handling</span>
+              <i aria-hidden="true" />
+              <span className="c">Monitoring, logging, and failure handling</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">No rollback, no release history</span>
+              <i aria-hidden="true" />
+              <span className="c">Repeatable releases with rollback</span>
+            </div>
+            <div className="pi-bvc-r">
+              <span className="b">Data access outside tenant boundaries</span>
+              <i aria-hidden="true" />
+              <span className="c">Tenant boundaries and data controls</span>
+            </div>
+          </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -281,7 +319,7 @@ export default function CloudServices() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>We assess the existing environment, agree readiness criteria, implement the required changes, and transfer operating knowledge. Continuing support is available within an agreed scope.</p>
+            <p>We assess the existing environment, agree readiness criteria, implement the required changes, and transfer operating knowledge. Continuing support is available within an agreed scope. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss a production challenge <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>

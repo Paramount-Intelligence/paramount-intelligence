@@ -19,7 +19,7 @@ export default function SoftwareProductEngineering() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>Software &amp; Product Engineering</h1>
-              <p className="body">Paramount develops custom products, extends existing applications, and prepares prototypes for operational use. We cover the application, backend, integrations, and engineering foundations needed to support it.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>Useful software in the hands of customers and employees, connected to the products and systems already in place.</b> Paramount develops custom products, extends existing applications, and prepares prototypes for operational use. We cover the application, backend, integrations, and engineering foundations needed to support it.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss an application <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -203,24 +203,24 @@ export default function SoftwareProductEngineering() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>A usable release</h3>
               <p>Customers and colleagues can complete the intended tasks in a connected application.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>A clearer roadmap</h3>
               <p>Client teams can see what has shipped, what remains, and which dependencies matter.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>A supportable codebase</h3>
               <p>Tests, deployment guidance, and technical documentation help the next team operate and extend the software.</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -228,7 +228,7 @@ export default function SoftwareProductEngineering() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>We define a useful release, demonstrate working increments, and resolve feedback with client product and engineering owners. AI is included where it helps the requirement; conventional software engineering remains part of the service.</p>
+            <p>We define a useful release, demonstrate working increments, and resolve feedback with client product and engineering owners. AI is included where it helps the requirement; conventional software engineering remains part of the service. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss an application <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>

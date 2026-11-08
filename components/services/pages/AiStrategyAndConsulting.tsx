@@ -19,7 +19,7 @@ export default function AiStrategyAndConsulting() {
               </nav>
               <div className="eyebrow">Services</div>
               <h1>AI &amp; Technology Consulting</h1>
-              <p className="body">We help organizations identify valuable AI opportunities, evaluate implementation options, and define the architecture and delivery plan. Recommendations draw on hands-on engineering experience and applied technical evaluation.</p>
+              <p className="body"><b style={{ color: "var(--white)", fontWeight: "700" }}>A clearer decision on what to fund, how to deliver it, and what must be true for it to work.</b> We help organizations identify valuable AI opportunities, evaluate implementation options, and define the architecture and delivery plan. Recommendations draw on hands-on engineering experience and applied technical evaluation.</p>
               <div className="ctas">
                 <Link className="btn btn-cyan" href="/contact-us">Discuss a technology decision <span className="arr"><Icon name="arrow" /></span></Link>
                 <Link className="btn btn-ghost" href="/services">All services </Link>
@@ -191,24 +191,24 @@ export default function AiStrategyAndConsulting() {
           </div>
           <div className="outs">
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">01</span>
               <h3>Investment clarity</h3>
               <p>Evidence-based recommendations with explicit assumptions, limitations, and trade-offs.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">02</span>
               <h3>Delivery clarity</h3>
               <p>A prioritized scope, architecture outline, dependencies, and acceptance measures.</p>
             </div>
             <div className="out">
-              <span className="k">Outcome</span>
+              <span className="k">03</span>
               <h3>Ownership clarity</h3>
               <p>Named decisions and responsibilities for implementation, review, and operation.</p>
             </div>
           </div>
         </div>
       </section>
-      <section className="sec band">
+      <section className="sec band pi-char">
         <div className="wrap">
           <div className="head">
             <div className="eyebrow">Approach and project experience</div>
@@ -216,7 +216,7 @@ export default function AiStrategyAndConsulting() {
           </div>
           <div className="legend-box appr" style={{ background: "var(--white)", marginTop: "0", marginBottom: "clamp(36px,5vw,52px)" }}>
             <em>Approach</em>
-            <p>The engagement can end with the decision and plan, or continue into engineering delivery. Deliverables include written findings and a clear explanation of the assumptions behind the recommendation.</p>
+            <p>The engagement can end with the decision and plan, or continue into engineering delivery. Deliverables include written findings and a clear explanation of the assumptions behind the recommendation. Work can be delivered as a Paramount-led project or by embedded contract engineers from the <Link href="/services#fde-network" style={{ color: "var(--royal)", fontWeight: "700" }}>Paramount FDE Network</Link>, always with a named Paramount lead.</p>
             <Link className="btn btn-navy" href="/contact-us">Discuss a technology decision <span className="arr"><Icon name="arrow" /></span></Link>
           </div>
           <div className="feat-label"><Icon name="brief" />Featured cases</div>
