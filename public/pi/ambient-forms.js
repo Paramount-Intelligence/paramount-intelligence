@@ -24,13 +24,14 @@
   var GLOPT = { premultipliedAlpha: true, alpha: true, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' };
   var gl = gc.getContext('webgl', GLOPT) || gc.getContext('experimental-webgl', GLOPT);
   if (!gl) return noop;
-  var NT = 28;   // cursor trail samples
+  // cursor trail samples: two uniform arrays of NT entries, kept well inside the WebGL minimum of 128 vertex uniform vectors
+  var NT = Math.max(8, Math.min(40, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
 
   var VS = [
     'precision highp float;',
     'attribute vec4 a;',
     'uniform float uT,uMix,uShA,uShB,uScale,uStar,uAlpha,uSize,uDPR,uSeed,uSpin,uTilt,uDR;',
-    'uniform vec2 uRes,uCenter;uniform vec4 uSec;uniform vec3 uTr[' + NT + '];',
+    'uniform vec2 uRes,uCenter;uniform vec4 uSec;uniform vec3 uTr[' + NT + '];uniform vec2 uTv[' + NT + '];',
     'uniform vec3 uColF,uColB;',
     'varying vec4 vC;',
     'const float PI=3.14159265,TAU=6.2831853;',
@@ -97,11 +98,12 @@
     '  float cx=cos(uTilt),sx=sin(uTilt);p=vec3(p.x,cx*p.y-sx*p.z,sx*p.y+cx*p.z);',
     '  float persp=3.4/(3.4-p.z);',
     '  vec2 s=uCenter+vec2(p.x,-p.y)*uScale*persp;',
-    /* cursor: dots it touches get nudged and scatter a little, then drift back as the trail fades */
-    '  float inf=0.0;for(int i=0;i<' + NT + ';i++){vec3 q=uTr[i];if(q.z<=0.0)continue;float L=length(s-q.xy);if(L<uDR){inf+=smoothstep(0.0,1.0,1.0-L/uDR)*q.z;}}',
-    '  inf=min(inf,1.3);',
+    /* cursor: dots it touches get nudged and scatter a little, then drift back as the trail fades.
+       uTv carries each trail point's swipe direction scaled by its speed: a fast swipe also sweeps the dots along with it (a wake). */
+    '  float inf=0.0;vec2 pv=vec2(0.0);for(int i=0;i<' + NT + ';i++){vec3 q=uTr[i];if(q.z<=0.0)continue;float L=length(s-q.xy);if(L<uDR){float f=smoothstep(0.0,1.0,1.0-L/uDR)*q.z;inf+=f;pv+=f*uTv[i];}}',
+    '  inf=min(inf,1.3);float pl=length(pv);if(pl>1.0)pv/=pl;',
     '  vec3 hh=vec3(sin(r*91.7+uT*1.9+u*13.0),cos(r*53.3+uT*1.6+v*11.0),sin(r*37.1-uT*2.1));',
-    '  s+=hh.xy*inf*(4.0+17.0*fract(r*7.13))*(uScale/100.0);',
+    '  s+=hh.xy*inf*(4.0+17.0*fract(r*7.13))*(uScale/100.0)+pv*uDR*(0.2+0.4*fract(r*3.71));',
     '  gl_Position=vec4(s/uRes*2.0-1.0,0.0,1.0);gl_Position.y=-gl_Position.y;',
     '  float dep=clamp((p.z+1.3)/2.6,0.0,1.0);',
     '  gl_PointSize=uDPR*uSize*(0.7+0.7*dep)*(1.0+0.15*inf);',
@@ -116,7 +118,7 @@
     prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog);
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { console.error(gl.getProgramInfoLog(prog)); return false; }
     gl.useProgram(prog);
-    U = {}; ['uT', 'uMix', 'uShA', 'uShB', 'uScale', 'uStar', 'uAlpha', 'uSize', 'uDPR', 'uSeed', 'uSpin', 'uTilt', 'uDR', 'uRes', 'uCenter', 'uSec', 'uTr', 'uColF', 'uColB']
+    U = {}; ['uT', 'uMix', 'uShA', 'uShB', 'uScale', 'uStar', 'uAlpha', 'uSize', 'uDPR', 'uSeed', 'uSpin', 'uTilt', 'uDR', 'uRes', 'uCenter', 'uSec', 'uTr', 'uTv', 'uColF', 'uColB']
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
     aLoc = gl.getAttribLocation(prog, 'a');
     pbuf = buf(N); sbuf = buf(NS);
@@ -130,8 +132,10 @@
   function hexv(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16) / 255, parseInt(h.substr(2, 2), 16) / 255, parseInt(h.substr(4, 2), 16) / 255]; }
   var COL = { d: [hexv('#ffffff'), hexv('#7da2ff')], l: [hexv('#204ecf'), hexv('#0f256e')] };
 
-  /* cursor trail (viewport px) */
-  var trail = [], live = 0, lastS = 0, px = -9999, py = -9999, pon = false;
+  /* cursor trail (viewport px). Points are laid along the cursor's path every STEP px whatever the speed, so a fast
+     swipe disturbs the dots as much as a slow hover; faster movement also adds a push in the swipe direction. */
+  var trail = [], live = 0, px = -9999, py = -9999, pon = false;
+  var STEP = 30, ax = 0, ay = 0, aon = false, lx = 0, ly = 0, vx = 0, vy = 0;
   on(window, 'pointermove', function (e) { px = e.clientX; py = e.clientY; pon = true; }, { passive: true });
   on(document, 'mouseout', function (e) { if (!e.relatedTarget) pon = false; });
   on(window, 'blur', function () { pon = false; });
@@ -228,7 +232,7 @@
   var last = performance.now(), off = false;
   window.PI_BG = { L: layers, toggle: function () { off = !off; document.documentElement.classList.toggle('pi-bg-off', off); return !off; } };
   on(window, 'resize', function () { VW = innerWidth; VH = innerHeight; layers.forEach(function (L) { L.w = 0; L.dark = isDark(L.el); }); placeAll(); });
-  var trArr = new Float32Array(NT * 3);
+  var trArr = new Float32Array(NT * 3), tvArr = new Float32Array(NT * 2);
   function frame(now) {
     if (dead) return;
     rafId = requestAnimationFrame(frame);
@@ -237,18 +241,33 @@
     if (reduce) dt = 0; T += dt;
     // cursor: slot 0 is the live cursor (keeps the cloud stirred while you hover); the rest is a fading trail
     live += ((pon && !reduce ? 1 : 0) - live) * Math.min(1, dt * (pon ? 4 : 1.1));
-    if (pon && !reduce && now - lastS > 60) {
-      var lt = trail[trail.length - 1];
-      if (!lt || Math.hypot(px - lt.x, py - lt.y) > 8) { trail.push({ x: px, y: py, s: 1 }); if (trail.length > NT - 1) trail.shift(); lastS = now; }
-    }
+    var sk = 0, sdx = 0, sdy = 0;   // smoothed cursor speed (0..1) and direction
+    if (pon && !reduce && dt > 0) {
+      if (!aon) { ax = lx = px; ay = ly = py; vx = vy = 0; aon = true; }   // (re)entering: start the path here
+      var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 12); lx = px; ly = py;
+      vx += (ivx - vx) * kk; vy += (ivy - vy) * kk;
+      var sv = Math.hypot(vx, vy); sk = Math.max(0, Math.min(1, (sv - 250) / 2250));
+      if (sv > 1) { sdx = vx / sv; sdy = vy / sv; }
+      var dx = px - ax, dy = py - ay, d = Math.hypot(dx, dy);
+      if (d > STEP * (NT - 1)) { ax = px - dx / d * STEP * (NT - 1); ay = py - dy / d * STEP * (NT - 1); dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy); }
+      while (d >= STEP) {
+        ax += dx / d * STEP; ay += dy / d * STEP;
+        trail.push({ x: ax, y: ay, s: 1, w: 1 + 0.5 * sk, vx: sdx * sk, vy: sdy * sk }); if (trail.length > NT - 1) trail.shift();
+        dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy);
+      }
+    } else if (!pon) aon = false;
     for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 2.6;
     while (trail.length && trail[0].s <= 0) trail.shift();
-    trArr[0] = px; trArr[1] = py; trArr[2] = live;
-    for (i = 1; i < NT; i++) { var q = trail[i - 1]; trArr[i * 3] = q ? q.x : -9999; trArr[i * 3 + 1] = q ? q.y : -9999; trArr[i * 3 + 2] = q ? Math.pow(Math.max(0, q.s), 1.5) * 0.9 : 0; }
+    trArr[0] = px; trArr[1] = py; trArr[2] = live; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
+    for (i = 1; i < NT; i++) {
+      var q = trail[i - 1];
+      trArr[i * 3] = q ? q.x : -9999; trArr[i * 3 + 1] = q ? q.y : -9999; trArr[i * 3 + 2] = q ? Math.pow(Math.max(0, q.s), 1.5) * 0.9 * q.w : 0;
+      tvArr[i * 2] = q ? q.vx : 0; tvArr[i * 2 + 1] = q ? q.vy : 0;
+    }
     var W = Math.round(VW * DPR), H = Math.round(VH * DPR);
     if (gc.width !== W || gc.height !== H) { gc.width = W; gc.height = H; }
     gl.viewport(0, 0, W, H);
-    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); gl.uniform3fv(U.uTr, trArr);
+    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); gl.uniform3fv(U.uTr, trArr); gl.uniform2fv(U.uTv, tvArr);
     gl.uniform1f(U.uSize, V.size || 1.7); gl.uniform1f(U.uTilt, V.tilt != null ? V.tilt : 0.32);
     gl.enable(gl.BLEND);
     for (var n = 0; n < layers.length; n++) {
