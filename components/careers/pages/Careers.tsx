@@ -41,16 +41,16 @@ const ROLES: { href: string; title: string; meta: [string, string] }[] = [
 ];
 
 const FAQ: FaqItem[] = [
-  { q: "What roles are available at Paramount Intelligence?", a: "Current openings are listed on this page with the team and location for each role. Our priority areas are forward-deployed AI engineering and applied AI engineering." },
-  { q: "Do I need prior experience in AI, data, or automation to apply?", a: "Experience in AI or data is valuable, and each listing describes what the role requires. We also welcome candidates from other technical backgrounds who can show relevant delivered work." },
-  { q: "What is the company culture like?", a: "We value ownership, engineering judgment, clear communication, and evidence. Engineers work close to client users, product leaders, and the systems where the work needs to run." },
-  { q: "What kind of projects will I work on?", a: "Client and internal engineering work across AI agents and retrieval, software and platform engineering, data and analytics, and quality and production delivery, from requirements through release and handover." },
-  { q: "How can I grow my career at Paramount Intelligence?", a: "You take responsibility for business-critical work from requirements through delivery and handover, working alongside experienced engineers and the founders, who stay hands-on in architecture and quality." },
-  { q: "How do I apply?", a: "Open a role below and use its Application tab. If no current role fits, submit an expression of interest. Include examples of systems you have built or improved, and exclude confidential client information." },
-  { q: "What is the interview process like?", a: "Our process typically includes a screening call, followed by interviews with team members or hiring managers. Depending on the role, there may be a technical assessment or case study." },
-  { q: "Can I work across multiple industries?", a: "Yes. Our client work spans sectors such as enterprise software, telecom, industrial automation, and life sciences, depending on current engagements." },
-  { q: "Do you offer training and development opportunities?", a: "Most learning happens through delivery: real client systems, code and architecture reviews, and evaluation work with experienced colleagues." },
-  { q: "How long does the hiring process take?", a: "It depends on the role and the number of candidates. We keep you informed throughout the process." },
+  { q: "What roles are available at Paramount Intelligence?", a: "We hire professionals across AI engineering, full-stack development, data engineering, and cloud technologies. Current opportunities and their requirements are listed on our Careers page." },
+  { q: "Do I need prior experience in AI, data, or automation to apply?", a: "Requirements vary by role. We value strong technical fundamentals, practical experience, and problem-solving ability over familiarity with every tool or framework." },
+  { q: "What is the company culture like?", a: "We value accountability, technical excellence, and open communication. Our teams focus on solving real business problems, taking ownership of their work, and delivering reliable solutions." },
+  { q: "What kind of projects will I work on?", a: "You'll work on projects involving AI applications, intelligent agents, data platforms, and cloud solutions for startups, established enterprises, and Fortune 500 organizations." },
+  { q: "How can I grow my career at Paramount Intelligence?", a: "Growth comes through hands-on experience, exposure to complex projects, and increasing technical responsibility. Opportunities to take greater ownership depend on your skills, performance, and business needs." },
+  { q: "How do I apply?", a: "Apply through the relevant opening on our Careers page. Submit your resume and highlight your technical experience, relevant projects, and key skills." },
+  { q: "What is the interview process like?", a: "Our process typically includes an application review, an initial discussion, and a technical interview or practical assessment. We focus on technical skills, problem-solving, and communication." },
+  { q: "Can I work across multiple industries?", a: "Yes. Our projects span telecommunications, manufacturing, enterprise software, and other sectors. Assignments depend on your expertise and project requirements." },
+  { q: "Do you offer training and development opportunities?", a: "We encourage continuous learning through hands-on projects, technical collaboration, code reviews, and exposure to emerging technologies." },
+  { q: "How long does the hiring process take?", a: "Timelines vary by position and interview requirements. We aim to keep the process efficient and communicate next steps clearly throughout." },
 ];
 
 const explore = (
