@@ -14,13 +14,13 @@ const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; desc
     Page: AiEngineer,
     title: "AI Engineer | Careers | Paramount Intelligence",
     description:
-      "AI Engineer at Paramount Intelligence: AI agents, retrieval, evaluation, and enterprise AI applications delivered with client teams.",
+      "AI Engineer at Paramount Intelligence (full-time, 3+ years): design, develop, and deploy production-grade AI applications with LLMs, RAG, AI agents, and cloud-based AI solutions.",
   },
   "full-stack-engineer": {
     Page: FullStackEngineer,
     title: "Full Stack Engineer | Careers | Paramount Intelligence",
     description:
-      "Full Stack Engineer at Paramount Intelligence: Web applications, APIs, integrations, and AI features inside client products.",
+      "Full Stack Engineer at Paramount Intelligence (full-time, 3+ years): develop and maintain scalable, high-performance web applications with React, Next.js, TypeScript, and Node.js or Python APIs.",
   },
   "expression-of-interest": {
     Page: ExpressionOfInterest,

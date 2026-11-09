@@ -368,8 +368,8 @@ body{margin:0;background:var(--white);overflow-x:hidden}
 .ev{display:grid;grid-template-columns:repeat(3,1fr);margin-top:28px}
 .ev a{display:grid;gap:12px;align-content:start;padding:26px clamp(18px,2.6vw,30px);text-decoration:none;border-left:1px solid var(--line);transition:background .25s}
 .ev a:first-child{border-left:0;padding-left:0}
-.ev a:hover{background:var(--white)}
-.ev .org{font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:-.01em}
+.ev a:hover .org{color:var(--royal)}   /* no fill: the cards stay transparent so the background form is never covered */
+.ev .org{font-size:1.3rem;font-weight:700;color:var(--navy);letter-spacing:-.01em;transition:color .25s}
 .ev .tag{justify-self:start;font-size:.64rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--white);background:var(--green);padding:4px 9px}
 .ev p{font-size:.94rem;color:var(--text)}
 .ev-foot{display:flex;justify-content:flex-end;margin-top:12px}
