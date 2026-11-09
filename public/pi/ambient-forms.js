@@ -102,7 +102,7 @@
        uTv carries each trail point's swipe direction scaled by its speed: a fast swipe also sweeps the dots along with it (a wake). */
     '  float inf=0.0;vec2 pv=vec2(0.0);for(int i=0;i<' + NT + ';i++){vec3 q=uTr[i];if(q.z<=0.0)continue;float L=length(s-q.xy);if(L<uDR){float f=smoothstep(0.0,1.0,1.0-L/uDR)*q.z;inf+=f;pv+=f*uTv[i];}}',
     '  inf=min(inf,1.3);float pl=length(pv);if(pl>1.0)pv/=pl;',
-    '  vec3 hh=vec3(sin(r*91.7+uT*1.9+u*13.0),cos(r*53.3+uT*1.6+v*11.0),sin(r*37.1-uT*2.1));',
+    '  vec3 hh=vec3(sin(r*91.7+uT*3.0+u*13.0),cos(r*53.3+uT*2.6+v*11.0),sin(r*37.1-uT*3.4));',
     '  s+=hh.xy*inf*(4.0+17.0*fract(r*7.13))*(uScale/100.0)+pv*uDR*(0.2+0.4*fract(r*3.71));',
     '  gl_Position=vec4(s/uRes*2.0-1.0,0.0,1.0);gl_Position.y=-gl_Position.y;',
     '  float dep=clamp((p.z+1.3)/2.6,0.0,1.0);',
@@ -240,11 +240,11 @@
     if (document.hidden || off || lost || gl.isContextLost()) return;
     if (reduce) dt = 0; T += dt;
     // cursor: slot 0 is the live cursor (keeps the cloud stirred while you hover); the rest is a fading trail
-    live += ((pon && !reduce ? 1 : 0) - live) * Math.min(1, dt * (pon ? 4 : 1.1));
+    live += ((pon && !reduce ? 1 : 0) - live) * Math.min(1, dt * (pon ? 16 : 3));   // reacts within a few frames
     var sk = 0, sdx = 0, sdy = 0;   // smoothed cursor speed (0..1) and direction
     if (pon && !reduce && dt > 0) {
       if (!aon) { ax = lx = px; ay = ly = py; vx = vy = 0; aon = true; }   // (re)entering: start the path here
-      var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 12); lx = px; ly = py;
+      var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 20); lx = px; ly = py;
       vx += (ivx - vx) * kk; vy += (ivy - vy) * kk;
       var sv = Math.hypot(vx, vy); sk = Math.max(0, Math.min(1, (sv - 250) / 2250));
       if (sv > 1) { sdx = vx / sv; sdy = vy / sv; }
@@ -256,7 +256,7 @@
         dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy);
       }
     } else if (!pon) aon = false;
-    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 2.6;
+    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 1.1;   // the dots settle back in about a second
     while (trail.length && trail[0].s <= 0) trail.shift();
     trArr[0] = px; trArr[1] = py; trArr[2] = live; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
     for (i = 1; i < NT; i++) {
