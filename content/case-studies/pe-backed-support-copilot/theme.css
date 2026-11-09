@@ -1,0 +1,313 @@
+/* Charcoal case study theme (approved on the telecom case study, 7 Nov 2026) */
+main.cs-pe-backed-support-copilot{--grey:#f4f7fd}
+main.cs-pe-backed-support-copilot .hero{background:radial-gradient(760px 460px at 100% 100%,rgba(9,182,249,.16),transparent 62%),radial-gradient(520px 320px at 0 0,rgba(32,78,207,.18),transparent 60%),#262d3d!important}
+main.cs-pe-backed-support-copilot .hero .eyebrow{color:#09b6f9}
+main.cs-pe-backed-support-copilot .pi-close{background:radial-gradient(700px 400px at 0 0,rgba(9,182,249,.14),transparent 60%),#262d3d!important}
+main.cs-pe-backed-support-copilot .client .who{background:#f4f7fd!important}
+main.cs-pe-backed-support-copilot section.band.pi-light{background:#f4f7fd!important}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light){--white:#313b50;--text:#dce4f7;--muted:#9aa3b5;--line:#414c64;--pale:#33406a;--grey:#262d3d;--navy:#e6ebf7;background:#262d3d!important;color:#dce4f7}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) .title{color:#fff} main.cs-pe-backed-support-copilot section.band:not(.pi-light) .eyebrow{color:var(--cyan)}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="#fff"],main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="#ffffff"],main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg :is(rect,path,polygon,ellipse)[fill="white"]{fill:#313b50}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [stroke="#0f256e"]{stroke:#9fb3e8} main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg :not(text):not(tspan)[fill="#0f256e"]{fill:#204ecf} main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg :is(text,tspan)[fill="#0f256e"]{fill:#e6ebf7}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [stroke="#d9dbe0"],main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [stroke="#c8d0e2"]{stroke:#4a5672} main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [fill="#d9dbe0"]{fill:#4a5672} main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [fill="#eaf1ff"]{fill:#33406a} main.cs-pe-backed-support-copilot section.band:not(.pi-light) svg [fill="#f3f3f3"]{fill:#262d3d}
+
+.cs-pe-backed-support-copilot section.band:not(.pi-light) :focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light){background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .eyebrow{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .title{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sub{color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .plus{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rule{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rule::before,.cs-pe-backed-support-copilot section.band:not(.pi-light) .rule::after{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .box{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cap{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pill-tag{background:#3dbe8b;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pulse{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .btn-navy{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .seg{border:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .seg button{background:#313b50;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .seg button[aria-pressed="true"]{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pts li{color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pts li::before{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pts li b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .note{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .note .lbl{background:#313b50;color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .note{background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .note .lbl{background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .simsec .note{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .simsec .note .lbl{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .verdict{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .verdict b{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client{border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client .who{background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client .who h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client dt{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client .nut h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .demo-note{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .btn-navy:hover{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .kicker{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-led{background:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-st{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-tk{background:#313b50;color:#dce4f7;border-left:4px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-tkh{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-q{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-src span.on{border-color:#09b6f9;color:#fff;background:rgba(9,182,249,.14)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-src span.on i{background:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-draft s{background:linear-gradient(90deg,#313b50,#2a3451)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-trk span{background:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-trk span.ok{background:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-trk em{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-gates i.ok::before{background:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-out .o.rev.on{border-color:#09b6f9;background:rgba(9,182,249,.16)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hc-out .o.dir.on{border-color:#3dbe8b;background:rgba(61,190,139,.2)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .desk .bar b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stage{border:1px solid #414c64;background-color:#313b50;background-image:linear-gradient(rgba(15,37,110,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(15,37,110,.05) 1px,transparent 1px)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win{background:#313b50;border:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win .tb{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win .q{color:#9aa3b5;border:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win .r{background:#2a3751}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win.reply{border-color:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win.reply .tb{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .win.reply .bd p{color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .caret{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote{background:#313b50;border:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .ph{background:#313b50;border-bottom:1px solid #414c64;color:#e7cb7e}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .pbd b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .ln2{background:#2a3751}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .used span{color:#7da2ff;border:1px solid #414c64;background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .pf a{color:#fff;background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pnote .pf em{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ctr{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ctr.zero .n{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock{border:1.5px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock .ic{border:1.5px solid #6f86c9;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock p{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock.on{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock.on .ic{background:#204ecf;border-color:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lock:hover{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ring .mid b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ring .mid span{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ring.all .mid b,.cs-pe-backed-support-copilot section.band:not(.pi-light) .ring.all .mid span{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .arc{fill:none;stroke:#4a5672}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .arc.on{stroke:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ring.all .arc{stroke:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lane{border:1.5px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lane>h4{background:#262d3d;border-right:1.5px solid #414c64;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd .ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd:hover{background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd.on{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd.on .ico{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd.past{border-color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .nd.past .ico{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo .step{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo .tg{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo dl{border-top:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo dt{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sinfo .acts{border-top:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8 div{border-right:1px solid #414c64;border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8 b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8 span{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg{border:1.5px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg q{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg:hover{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg[aria-pressed="true"]{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .msg:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-out{border:1.5px solid #6f86c9;border-top:4px solid #204ecf;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-out.green{border-top-color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-out small{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-out h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-out a{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li{border:1px solid #414c64;background:#313b50;color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li .n{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li .s{border:1.5px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.run{border-color:#6f86c9;background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.run .s{border-color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.done{border-color:#414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.done .s{background:#3dbe8b;border-color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.done .s::after{border-left:2px solid #313b50;border-bottom:2px solid #313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.end{border-color:#6f86c9;background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-st li.end .s{background:#09b6f9;border-color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-con{background:#0b1a4a;color:#c9d4f2;border:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-log div .tm{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .jr-log div.out span b{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .wires path{fill:none;stroke:#4a5672}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .wires path.f{stroke:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din{border:1.5px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din .ic{background:#33406a;color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din.on{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din[aria-pressed="true"]{background:#33406a;border-color:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .din:focus-visible,.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .eng{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dout{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dout .dh{border-bottom:1px solid #414c64;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dout .score{background:#33406a;color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp{border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp b i{background:#414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp .l{background:#2a3850}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp .l s{background:#2a3651}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp.on b i{background:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dp[aria-pressed="true"]{background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dcap{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dcap{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dcap .k{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dcap p b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dr .arrow{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .att{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .att h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .att h3 .ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .att .ft span{border:1px solid #414c64;color:#e6ebf7;background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gctl{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gctl .presets button{border:1.5px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gctl .presets button[aria-pressed="true"]{border-color:#6f86c9;background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw{border-top:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw .gn{color:#9aa3b5;border:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw span b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw span small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw .tg::after{background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw[aria-checked="true"] .tg{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sw:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl{border-top:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl .gn{color:#9aa3b5;border:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl label b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl label output{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl .th{background:#204ecf}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl .th::after{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .sl small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gview{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gposts::before{background:#414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp .post{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp em{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp.ok .post{background:#3dbe8b;border-color:#3dbe8b;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp.no .post{background:#313b50;border-color:#c2410c;color:#f39a6b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gp.no em{color:#f39a6b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gtoken{background:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout{border-top:4px solid #204ecf;background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout.green{border-top-color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout.warn{border-top-color:#c2410c}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gout li::before{background:#c2410c}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps li{border-right:1px solid #414c64;color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps li b{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps li.on{background:#33406a;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps li.on b{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rui{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rui .top{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rui .top i{background:rgba(255,255,255,0.06)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rtk{background:#262d3d;border-right:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rtk .meta2 span{background:#313b50;border:1px solid #414c64;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .bub{background:#313b50;border:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .bub small{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .bub.latest{border-left:3px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ctx{background:#313b50;border:1.5px dashed #204ecf;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ctx .ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .red .eh b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pill{background:#33406a;color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pill.ok{background:#2a5140;color:#1f8a5c}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dbox{border:1px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dbox[contenteditable="true"]{outline:2px solid #09b6f9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .dbox.flash{background:#2a4151}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .racts button{border:1.5px solid #6f86c9;background:#313b50;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .racts button:hover:not([disabled]){background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .racts button.pri{background:#3dbe8b;border-color:#3dbe8b;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .racts button:focus-visible{outline:2px solid #09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ok-banner{background:#2a5140;border:1.5px solid #3dbe8b;color:#83e2b8}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .ok-banner .ico{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rlog{background:#0b1a4a;color:#c9d4f2;border-top:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rlog div b{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .row{border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .hd{background:#262d3d}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .hd>*{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .hd .cop{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .lab{color:#e6ebf7;border-right:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .bot{color:#9aa3b5;border-right:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .cop{color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp .cop .ico{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp[data-v="cop"] .row:not(.hd) .cop{background:rgba(32,78,207,0.25)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .cmp[data-v="bot"] .row:not(.hd) .bot{background:#262d3d;color:#dce4f7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc{border:1.5px solid #6f86c9;border-top:4px solid #204ecf;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc:nth-child(4n+2){border-top-color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc:nth-child(4n+3){border-top-color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc:nth-child(4n+4){border-top-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc .ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rc h3{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hand{background:#204ecf;color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .hand div.i b{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pv-toast{background:#204ecf;color:#fff;border:1px solid rgba(160,185,240,.4)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .client .who .pe-link{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-eyebrow{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-nav{background:rgba(255,255,255,0.06);border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-brand{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-menu>li>a:hover,.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-menu>li>button:hover,.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-menu>li.pi-open>button{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-menu>li>a.pi-on{color:#e6ebf7;border-color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop{background:#313b50;border:1.5px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop a:hover{background:#33406a}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop a b{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop a span{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop .pi-foot{border-top:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-drop .pi-foot a{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-burger{border:1.5px solid #6f86c9;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .mod.pi-on .pi-ico{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .badges .pi-ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .gov .pi-ico{color:#3dbe8b}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-foot{background:#313b50;border-top:4px solid #6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-foot p{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-foot h4{color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-foot li a:hover{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mail code{color:#e6ebf7;background:var(--band)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mail button{border:1.5px solid #414c64;background:#313b50;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mail button:hover{border-color:#6f86c9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-foot .pi-li{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-legal{border-top:1px solid #414c64;color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-legal a{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-menu>li>button.pi-on{color:#e6ebf7;border-color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .vtabs [role="tab"] .pi-ico{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .vtabs [role="tab"][aria-selected="true"] .pi-ico{color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .search .box2 .pi-ico{color:#7da2ff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-brand .pi-b1{color:#73abf2}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-brand .pi-b2{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-btn-cyan{background:#09b6f9;color:#e6ebf7}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-btn-cyan .pi-arr{background:rgba(15,37,110,.16);color:#e6ebf7;border-left:1px solid rgba(15,37,110,.18)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-btn-cyan:hover .pi-arr{background:#204ecf;color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-btn-cyan:focus-visible{outline:2px solid #313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-cta-card::before{background:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-cta-steps li{border-bottom:1px solid rgba(160,185,240,.22);color:#fff}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-cta-steps b{border:1.5px solid #09b6f9;color:#09b6f9}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-prog{background:rgba(32,78,207,0.30);border-bottom:1px solid var(--pp-line)}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-prog .pp-list a .n{border:1px solid var(--pp-line);color:var(--pp-muted);background:#313b50}
+@media (max-width:640px){
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .lane>h4{border-bottom:1.5px solid #414c64}
+}
+@media (max-width:760px){
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8 div:nth-child(4n){border-right:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .stack8 div:nth-child(n+5){border-bottom:1px solid #414c64}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rsteps li{border-bottom:1px solid #414c64}
+}
+@media (max-width:860px){
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .rtk{border-bottom:1px solid #414c64}
+}
+@media (max-width:1100px){
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mob{border-top:1px solid #414c64;background:#313b50}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mob h4{color:#9aa3b5}
+.cs-pe-backed-support-copilot section.band:not(.pi-light) .pi-mob a{color:#e6ebf7;border-bottom:1px solid #414c64}
+}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) input,main.cs-pe-backed-support-copilot section.band:not(.pi-light) textarea,main.cs-pe-backed-support-copilot section.band:not(.pi-light) select{background:#2b3346;color:#dce4f7;border-color:#414c64}
+main.cs-pe-backed-support-copilot section.band:not(.pi-light) input::placeholder,main.cs-pe-backed-support-copilot section.band:not(.pi-light) textarea::placeholder{color:#9aa3b5}

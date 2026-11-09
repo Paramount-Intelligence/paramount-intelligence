@@ -11,6 +11,9 @@ import AddAICapabilities from "@/components/industries/b2b/AddAICapabilities";
 import IndustriesServices from "@/components/industries/IndustriesServices";
 import { pageMetadata } from "@/lib/metadata";
 
+// "Some of our project experience" reads the CaseStudy table (edited in /admin) on every request, as the browser fetch did.
+export const dynamic = "force-dynamic";
+
 export const metadata = pageMetadata({
   title: "B2B Enterprise Solutions | Paramount Intelligence",
   description:

@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function DigitalNativesPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <DigitalNatives />
     </SitePage>
   );

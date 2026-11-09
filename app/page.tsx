@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
 
 export default function Home() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <HomePage />
       <RenovationCrane />
     </SitePage>

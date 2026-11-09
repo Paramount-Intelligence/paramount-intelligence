@@ -1,51 +1,13 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { getApiUrl } from "@/lib/api";
+import { getProjectExperience } from "@/lib/project-experience";
 
-export default function ProjectExperience() {
-  const [projects, setProjects] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchCaseStudies = async () => {
-      try {
-        const response = await fetch(`${getApiUrl()}/api/case-studies`);
-        const caseStudiesData = await response.json();
-
-        // Filter for all LLM-related case studies
-        const langModelTitles = [
-          "LLM-Powered Customer Support Chatbot",
-          "AI-Powered Hiring and Candidate Assessment System",
-        ];
-
-        const filteredCaseStudies = caseStudiesData.filter((cs: any) =>
-          langModelTitles.includes(cs.title)
-        );
-
-        const projectData = filteredCaseStudies.map(
-          (caseStudy: any, index: number) => ({
-            title: caseStudy.title,
-            description: caseStudy.subtitle,
-            fullDescription: caseStudy.description.substring(0, 200) + "...",
-            imageSrc: caseStudy.heroImage,
-            imagePosition: index % 2 === 0 ? "right" : "left",
-            link: `/case-studies/${caseStudy.slug}`,
-          })
-        );
-
-        setProjects(projectData);
-      } catch (error) {
-        console.error("Error fetching case studies:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCaseStudies();
-  }, []);
+// Rendered on the server, so the cards are part of the page's HTML (lib/project-experience.ts).
+export default async function ProjectExperience() {
+  const projects = await getProjectExperience([
+    "LLM-Powered Customer Support Chatbot",
+    "AI-Powered Hiring and Candidate Assessment System",
+  ]);
 
   return (
     <section className="py-16 bg-gray-50">
@@ -54,11 +16,6 @@ export default function ProjectExperience() {
           Some of our project experience
         </h2>
 
-        {loading ? (
-          <div className="text-center py-16">
-            <p className="text-gray-600">Loading case studies...</p>
-          </div>
-        ) : (
           <div className="space-y-16">
             {projects.map((project, index) => (
               <div
@@ -131,7 +88,6 @@ export default function ProjectExperience() {
               </div>
             )}
           </div>
-        )}
       </div>
     </section>
   );

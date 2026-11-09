@@ -157,14 +157,13 @@ export default function IndustriesOverview() {
             <h2 className="title">A focused starting point, with broad engineering support</h2>
           </div>
           <div className="stack-txt">
-            <p className="lead">These pages highlight two areas of focus. We also work with Fortune 500 organizations, mid-market businesses, and consulting firms across sectors. Engagements are defined by business and technical requirements rather than industry classification alone.</p>
+            <p className="lead">These pages highlight two areas of focus. We work with Fortune 500 companies, private equity-backed businesses and their sponsors, and high-growth startups across sectors. Engagements are defined by business and technical requirements rather than industry classification alone.</p>
             <div className="chips">
-              <span>Private equity firms</span>
+              <span>Fortune 500 companies</span>
+              <span>PE sponsors</span>
               <span>Portfolio companies</span>
+              <span>High-growth startups</span>
               <span>Digital businesses</span>
-              <span>Fortune 500 organizations</span>
-              <span>Mid-market businesses</span>
-              <span>Consulting firms</span>
             </div>
             <div>
               <Link className="btn btn-navy" href="/services">Explore all services <span className="arr"><Icon name="arrow" /></span></Link>

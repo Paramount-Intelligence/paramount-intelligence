@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function AiWorkflowAutomationPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <AiWorkflowAutomation />
     </SitePage>
   );

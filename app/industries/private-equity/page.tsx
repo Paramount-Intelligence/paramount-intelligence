@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function PrivateEquityPage() {
   return (
-    <SitePage>
+    <SitePage piUpdates>
       <PrivateEquity />
     </SitePage>
   );
