@@ -1,6 +1,6 @@
 /* Paramount Intelligence — section particle forms (P1–P5), moment.com-style.
-   Every section owns its own 3D point-cloud form, anchored in the section (it scrolls away with the section;
-   it does NOT follow the scroll or the cursor). Each form is always in motion (rippling, twisting, flowing) and
+   Every section owns its own 3D point-cloud form, anchored in the section: it keeps its place in the section and
+   scrolls with it (it does not follow the cursor). Each form is always in motion (rippling, twisting, flowing) and
    every ~10 s morphs into another version of its shape family. The cursor only nudges the dots it touches:
    they scatter a little and drift back. Colours: white/light-blue on dark sections, royal/navy on light ones.
    Drawn on a canvas BEHIND each section's content. */
@@ -142,7 +142,7 @@
      "disturbed" and then fades on its own clock over SETTLE seconds, however much the cursor moves afterwards. Cells near
      the edge of the cursor start a little weaker, so a patch closes in from its edges. Faster movement also stores a small
      push in the swipe direction. Mouse and pen only. */
-  var px = -9999, py = -9999, pon = false, aon = false, lx = 0, ly = 0, vx = 0, vy = 0, SETTLE = 4.5;
+  var px = -9999, py = -9999, pon = false, aon = false, lx = 0, ly = 0, vx = 0, vy = 0, SETTLE = 3;
   var GW = 0, GH = 0, mv, mx, my, mbytes, mactive = false;
   function sizeMap() { GW = Math.ceil(VW / CELL) + 1; GH = Math.ceil(VH / CELL) + 1; mv = new Float32Array(GW * GH); mx = new Float32Array(GW * GH); my = new Float32Array(GW * GH); mbytes = new Uint8Array(GW * GH * 4); mdirty = true; }
   sizeMap();
@@ -311,6 +311,7 @@
       gl.uniform3fv(U.uColF, C[0]); gl.uniform3fv(U.uColB, C[1]);
       gl.uniform1f(U.uAlpha, L.dark ? (V.alphaD || 0.4) : (V.alphaL || 0.24));
       gl.uniform4f(U.uSec, r.left, r.top, r.width, r.height);
+      // anchored in its section: the form keeps its place in the section and moves exactly with it as the page scrolls
       gl.uniform2f(U.uCenter, r.left + L.cx, r.top + L.cy);
       gl.uniform1f(U.uScale, L.sc); gl.uniform1f(U.uDR, L.sc * 0.16 + 16);   // disturbance radius: about 75 px on a large form
       gl.uniform1f(U.uShA, FAM[L.si]); gl.uniform1f(U.uShB, FAM[(L.si + 1) % FAM.length]); gl.uniform1f(U.uMix, L.mix);
@@ -320,8 +321,9 @@
       var ctx = L.ctx;
       ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalCompositeOperation = 'source-over'; ctx.clearRect(0, 0, L.cv.width, L.cv.height);
       if (L.dark) ctx.globalCompositeOperation = 'lighter';
-      var sx = Math.max(0, r.left * DPR), sy = Math.max(0, vtop * DPR), sh2 = Math.min(ch * DPR, H - sy), sw = Math.min(w * DPR, W - sx);
-      if (sh2 > 0 && sw > 0) ctx.drawImage(gc, sx, sy, sw, sh2, 0, 0, sw, sh2);
+      // copy the on-screen part of the frame into the section's canvas, at the canvas row that is on screen
+      var sx = Math.max(0, r.left * DPR), sy = Math.max(0, vtop * DPR), dy = sy - vtop * DPR, sh2 = Math.min(ch * DPR - dy, H - sy), sw = Math.min(w * DPR, W - sx);
+      if (sh2 > 0 && sw > 0) ctx.drawImage(gc, sx, sy, sw, sh2, 0, dy, sw, sh2);
     }
   }
   rafId = requestAnimationFrame(frame);
