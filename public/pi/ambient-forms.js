@@ -1,6 +1,6 @@
 /* Paramount Intelligence — section particle forms (P1–P5), moment.com-style.
-   Every section owns its own 3D point-cloud form, fixed on screen while the page scrolls: the section's content moves
-   past it and it is seen only through its own section (it does not follow the cursor). Each form is always in motion (rippling, twisting, flowing) and
+   Every section owns its own 3D point-cloud form, anchored in the section: it keeps its place in the section and
+   scrolls with it (it does not follow the cursor). Each form is always in motion (rippling, twisting, flowing) and
    every ~10 s morphs into another version of its shape family. The cursor only nudges the dots it touches:
    they scatter a little and drift back. Colours: white/light-blue on dark sections, royal/navy on light ones.
    Drawn on a canvas BEHIND each section's content. */
@@ -311,11 +311,8 @@
       gl.uniform3fv(U.uColF, C[0]); gl.uniform3fv(U.uColB, C[1]);
       gl.uniform1f(U.uAlpha, L.dark ? (V.alphaD || 0.4) : (V.alphaL || 0.24));
       gl.uniform4f(U.uSec, r.left, r.top, r.width, r.height);
-      // fixed on screen: the form keeps its screen position while the section scrolls past it (seen only through its own
-      // section). It sits where it was placed in the section as if the section's top were just under the site header,
-      // kept within the middle half of the screen.
-      var topRest = Math.max(0, Math.min(140, layers[0].el.getBoundingClientRect().top + scrollY));
-      gl.uniform2f(U.uCenter, r.left + L.cx, Math.max(VH * 0.25, Math.min(VH * 0.75, topRest + L.cy)));
+      // anchored in its section: the form keeps its place in the section and moves exactly with it as the page scrolls
+      gl.uniform2f(U.uCenter, r.left + L.cx, r.top + L.cy);
       gl.uniform1f(U.uScale, L.sc); gl.uniform1f(U.uDR, L.sc * 0.16 + 16);   // disturbance radius: about 75 px on a large form
       gl.uniform1f(U.uShA, FAM[L.si]); gl.uniform1f(U.uShB, FAM[(L.si + 1) % FAM.length]); gl.uniform1f(U.uMix, L.mix);
       gl.uniform1f(U.uSeed, L.seed); gl.uniform1f(U.uSpin, L.spin);
