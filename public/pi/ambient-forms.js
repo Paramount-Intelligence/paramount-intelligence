@@ -24,14 +24,15 @@
   var GLOPT = { premultipliedAlpha: true, alpha: true, antialias: false, preserveDrawingBuffer: true, powerPreference: 'low-power' };
   var gl = gc.getContext('webgl', GLOPT) || gc.getContext('experimental-webgl', GLOPT);
   if (!gl) return noop;
-  // cursor trail samples: two uniform arrays of NT entries, kept well inside the WebGL minimum of 128 vertex uniform vectors
-  var NT = Math.max(8, Math.min(innerWidth < 700 ? 48 : 80, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
+  // the cursor effect reads a disturbance map in the vertex shader; without vertex textures (rare) the forms still animate,
+  // just without reacting to the cursor
+  var MAP = (gl.getParameter(gl.MAX_VERTEX_TEXTURE_IMAGE_UNITS) || 0) > 0, CELL = 12;   // map cell size, viewport px
 
   var VS = [
     'precision highp float;',
     'attribute vec4 a;',
     'uniform float uT,uMix,uShA,uShB,uScale,uStar,uAlpha,uSize,uDPR,uSeed,uSpin,uTilt,uDR;',
-    'uniform vec2 uRes,uCenter;uniform vec4 uSec;uniform vec4 uTr[' + NT + '];uniform vec2 uTv[' + NT + '];',
+    'uniform vec2 uRes,uCenter,uMapSz;uniform vec4 uSec;uniform sampler2D uMap;',
     'uniform vec3 uColF,uColB;',
     'varying vec4 vC;',
     'const float PI=3.14159265,TAU=6.2831853;',
@@ -98,11 +99,9 @@
     '  float cx=cos(uTilt),sx=sin(uTilt);p=vec3(p.x,cx*p.y-sx*p.z,sx*p.y+cx*p.z);',
     '  float persp=3.4/(3.4-p.z);',
     '  vec2 s=uCenter+vec2(p.x,-p.y)*uScale*persp;',
-    /* cursor: dots it touches get nudged and scatter a little, then drift back as the trail fades.
-       uTr: x, y, strength, radius factor (a patch shrinks from its edges as it fades, so the dots close back in).
-       uTv carries each trail point's swipe direction scaled by its speed: a fast swipe also sweeps the dots a little (a wake). */
-    '  float inf=0.0;vec2 pv=vec2(0.0);for(int i=0;i<' + NT + ';i++){vec4 q=uTr[i];if(q.z<=0.0)continue;float R=uDR*q.w;float L=length(s-q.xy);if(L<R){float f=smoothstep(0.0,1.0,1.0-L/R)*q.z;inf+=f;pv+=f*uTv[i];}}',
-    '  float pl=length(pv);if(pl>1.0)pv/=pl;inf=min(inf,1.2);',
+    /* cursor: dots under the disturbance map scatter a little, then drift back as their part of the map fades.
+       uMap (viewport, one texel per cell): r = how disturbed (already eased), gb = swipe push (a small wake), 0.5 = none. */
+    MAP ? '  vec4 mm=texture2D(uMap,clamp((s+' + (CELL / 2) + '.0)/uMapSz,0.0,1.0));float inf=mm.r*1.2;vec2 pv=(mm.gb*2.0-1.0)*step(0.004,mm.r);' : '  float inf=0.0;vec2 pv=vec2(0.0);',
     '  vec3 hh=vec3(sin(r*91.7+uT*3.0+u*13.0),cos(r*53.3+uT*2.6+v*11.0),sin(r*37.1-uT*3.4));',
     '  s+=hh.xy*inf*(3.0+11.0*fract(r*7.13))*(uScale/100.0)+pv*uDR*(0.15+0.35*fract(r*3.71));',
     '  gl_Position=vec4(s/uRes*2.0-1.0,0.0,1.0);gl_Position.y=-gl_Position.y;',
@@ -112,18 +111,24 @@
   ].join('\n');
   var FS = 'precision mediump float;varying vec4 vC;void main(){vec2 c=gl_PointCoord-0.5;float d=dot(c,c);if(d>0.25)discard;float a=vC.a*(1.0-d*3.2);gl_FragColor=vec4(vC.rgb*a,a);}';
   function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) console.error(gl.getShaderInfoLog(s)); return s; }
-  var prog, U, aLoc, pbuf, sbuf, lost = false;
+  var prog, U, aLoc, pbuf, sbuf, mtex, mdirty = false, lost = false;
   var N = Math.round((V.n || 22000) * (VW < 700 ? 0.55 : 1)), NS = 120;
   function buf(n) { var d = new Float32Array(n * 4); for (var i = 0; i < n * 4; i++) d[i] = Math.random(); var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, d, gl.STATIC_DRAW); return b; }
   function setup() {
     prog = gl.createProgram(); gl.attachShader(prog, sh(gl.VERTEX_SHADER, VS)); gl.attachShader(prog, sh(gl.FRAGMENT_SHADER, FS)); gl.linkProgram(prog);
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { console.error(gl.getProgramInfoLog(prog)); return false; }
     gl.useProgram(prog);
-    U = {}; ['uT', 'uMix', 'uShA', 'uShB', 'uScale', 'uStar', 'uAlpha', 'uSize', 'uDPR', 'uSeed', 'uSpin', 'uTilt', 'uDR', 'uRes', 'uCenter', 'uSec', 'uTr', 'uTv', 'uColF', 'uColB']
+    U = {}; ['uT', 'uMix', 'uShA', 'uShB', 'uScale', 'uStar', 'uAlpha', 'uSize', 'uDPR', 'uSeed', 'uSpin', 'uTilt', 'uDR', 'uRes', 'uCenter', 'uSec', 'uMapSz', 'uMap', 'uColF', 'uColB']
       .forEach(function (n) { U[n] = gl.getUniformLocation(prog, n); });
     aLoc = gl.getAttribLocation(prog, 'a');
     pbuf = buf(N); sbuf = buf(NS);
     gl.enableVertexAttribArray(aLoc);
+    if (MAP) {
+      mtex = gl.createTexture(); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, mtex);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
+      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+      gl.uniform1i(U.uMap, 0); mdirty = true;
+    }
     return true;
   }
   if (!setup()) return noop;
@@ -133,11 +138,28 @@
   function hexv(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16) / 255, parseInt(h.substr(2, 2), 16) / 255, parseInt(h.substr(4, 2), 16) / 255]; }
   var COL = { d: [hexv('#ffffff'), hexv('#7da2ff')], l: [hexv('#204ecf'), hexv('#0f256e')] };
 
-  /* cursor trail (viewport px). Every spot the cursor touches, including where it rests, holds a trail point (an existing
-     point nearby is refreshed instead of adding another), and fast moves are filled in every STEP px, so the whole path
-     fades back at the same pace. Faster movement also adds a small push in the swipe direction. Mouse and pen only. */
-  var trail = [], live = 0, px = -9999, py = -9999, pon = false;
-  var STEP = 20, aon = false, lx = 0, ly = 0, vx = 0, vy = 0, SETTLE = 4.5;
+  /* cursor disturbance map (viewport, one cell per CELL px). Every cell the cursor passes over or rests on is set to
+     "disturbed" and then fades on its own clock over SETTLE seconds, however much the cursor moves afterwards. Cells near
+     the edge of the cursor start a little weaker, so a patch closes in from its edges. Faster movement also stores a small
+     push in the swipe direction. Mouse and pen only. */
+  var px = -9999, py = -9999, pon = false, aon = false, lx = 0, ly = 0, vx = 0, vy = 0, SETTLE = 4.5;
+  var GW = 0, GH = 0, mv, mx, my, mbytes, mactive = false;
+  function sizeMap() { GW = Math.ceil(VW / CELL) + 1; GH = Math.ceil(VH / CELL) + 1; mv = new Float32Array(GW * GH); mx = new Float32Array(GW * GH); my = new Float32Array(GW * GH); mbytes = new Uint8Array(GW * GH * 4); mdirty = true; }
+  sizeMap();
+  function stamp(x, y, R, tx, ty) {
+    var c0 = Math.max(0, Math.floor((x - R) / CELL)), c1 = Math.min(GW - 1, Math.ceil((x + R) / CELL)), r0 = Math.max(0, Math.floor((y - R) / CELL)), r1 = Math.min(GH - 1, Math.ceil((y + R) / CELL));
+    for (var rr = r0; rr <= r1; rr++) for (var cc = c0; cc <= c1; cc++) {
+      var dd = Math.hypot(cc * CELL - x, rr * CELL - y) / R; if (dd >= 1) continue;
+      var f = Math.min(1, (1 - dd) * 1.6), k = rr * GW + cc; f = f * f * (3 - 2 * f);
+      if (f > mv[k]) mv[k] = f;
+      if (f * (Math.abs(tx) + Math.abs(ty)) > Math.abs(mx[k]) + Math.abs(my[k])) { mx[k] = tx * f; my[k] = ty * f; }
+    }
+    mactive = true;
+  }
+  function radiusAt(x, y) {   // the disturbance radius of the form under the cursor (about 75 px on a large form)
+    for (var i = 0; i < layers.length; i++) { var Ly = layers[i]; if (Ly.skip || !Ly.w) continue; var b = Ly.el.getBoundingClientRect(); if (x >= b.left && x <= b.right && y >= b.top && y <= b.bottom) return Ly.sc * 0.16 + 16; }
+    return 60;
+  }
   on(window, 'pointermove', function (e) { if (e.pointerType === 'touch') { pon = false; return; } px = e.clientX; py = e.clientY; pon = true; }, { passive: true });
   on(window, 'pointerdown', function (e) { if (e.pointerType === 'touch') pon = false; }, { passive: true });
   on(document, 'mouseout', function (e) { if (!e.relatedTarget) pon = false; });
@@ -234,49 +256,41 @@
   placeAll(); timers.push(setTimeout(function () { if (!dead) placeAll(); }, 400)); on(window, 'load', placeAll);
   var last = performance.now(), off = false;
   window.PI_BG = { L: layers, toggle: function () { off = !off; document.documentElement.classList.toggle('pi-bg-off', off); return !off; } };
-  on(window, 'resize', function () { VW = innerWidth; VH = innerHeight; layers.forEach(function (L) { L.w = 0; L.dark = isDark(L.el); }); placeAll(); });
-  var trArr = new Float32Array(NT * 4), tvArr = new Float32Array(NT * 2);
-  // lay or refresh a trail point at (x, y)
-  function touch(x, y, w, tx, ty) {
-    for (var j = trail.length - 1; j >= 0; j--) { var t = trail[j]; if (Math.abs(t.x - x) < STEP * 0.5 && Math.abs(t.y - y) < STEP * 0.5) { t.s = 1; t.w = Math.max(t.w, w); t.vx = tx; t.vy = ty; return; } }
-    trail.push({ x: x, y: y, s: 1, w: w, vx: tx, vy: ty }); if (trail.length > NT - 1) trail.shift();
-  }
-  // settle curve: holds briefly after the cursor passes, then glides back and lands gently
-  function ease(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
+  on(window, 'resize', function () { VW = innerWidth; VH = innerHeight; sizeMap(); layers.forEach(function (L) { L.w = 0; L.dark = isDark(L.el); }); placeAll(); });
   function frame(now) {
     if (dead) return;
     rafId = requestAnimationFrame(frame);
     var dt = Math.min(0.05, (now - last) / 1000); last = now;
     if (document.hidden || off || lost || gl.isContextLost()) return;
     if (reduce) dt = 0; T += dt;
-    // cursor: slot 0 is the live cursor (keeps the cloud stirred while you hover); the rest is a fading trail
-    live += ((pon && !reduce ? 1 : 0) - live) * Math.min(1, dt * (pon ? 60 : 3));   // reacts at once
+    // cursor: stamp the path since the last frame (and the resting spot) into the map, then let every cell fade
     var sk = 0, sdx = 0, sdy = 0;   // smoothed cursor speed (0..1) and direction
-    if (pon && !reduce && dt > 0) {
+    if (MAP && pon && !reduce && dt > 0) {
       if (!aon) { lx = px; ly = py; vx = vy = 0; aon = true; }   // (re)entering: no line from the old spot
       var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 20);
       vx += (ivx - vx) * kk; vy += (ivy - vy) * kk;
       var sv = Math.hypot(vx, vy); sk = Math.max(0, Math.min(1, (sv - 150) / 1050));   // full effect from about 1200 px/s
       if (sv > 1) { sdx = vx / sv; sdy = vy / sv; }
-      var dx = px - lx, dy = py - ly, d = Math.hypot(dx, dy), n = Math.min(NT - 1, Math.max(1, Math.ceil(d / STEP)));
-      for (var k = n; k >= 1; k--) touch(px - dx * (k - 1) / n, py - dy * (k - 1) / n, 1 + 0.4 * sk, sdx * sk, sdy * sk);   // ends at the cursor itself
+      var R = radiusAt(px, py), dx = px - lx, dy = py - ly, d = Math.hypot(dx, dy), ns = Math.min(400, Math.max(1, Math.ceil(d / (CELL * 0.75))));
+      for (var k = ns; k >= 1; k--) stamp(px - dx * (k - 1) / ns, py - dy * (k - 1) / ns, R, sdx * sk, sdy * sk);   // ends at the cursor itself
       lx = px; ly = py;
     } else if (!pon) aon = false;
-    // the dots drift back over about 4.5 s. If the trail grows long, the oldest patches close faster, so the shape always
-    // stays recognisable, and near capacity they fade out quickly instead of vanishing.
-    var spare = trail.length - Math.round((NT - 1) * 0.7);
-    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / SETTLE + (i < spare ? dt * 1.5 : 0);
-    while (trail.length && trail[0].s <= 0) trail.shift();
-    trArr[0] = px; trArr[1] = py; trArr[2] = live; trArr[3] = 1; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
-    for (i = 1; i < NT; i++) {
-      var q = trail[i - 1], e = q ? ease(q.s) : 0;
-      trArr[i * 4] = q ? q.x : -9999; trArr[i * 4 + 1] = q ? q.y : -9999; trArr[i * 4 + 2] = q ? e * 0.9 * q.w : 0; trArr[i * 4 + 3] = 0.35 + 0.65 * e;
-      tvArr[i * 2] = q ? q.vx : 0; tvArr[i * 2 + 1] = q ? q.vy : 0;
+    if (MAP && (mactive || mdirty)) {
+      var any = false, fall = dt / SETTLE;
+      for (var c = 0, nc = GW * GH; c < nc; c++) {
+        var m = mv[c];
+        if (m > 0) { m -= fall; if (m <= 0) { m = 0; mx[c] = 0; my[c] = 0; } else any = true; mv[c] = m; }
+        var e = m * m * (3 - 2 * m);   // eased: holds, glides back, lands gently
+        mbytes[c * 4] = Math.round(e * 255); mbytes[c * 4 + 1] = Math.round((mx[c] * e * 0.5 + 0.5) * 255); mbytes[c * 4 + 2] = Math.round((my[c] * e * 0.5 + 0.5) * 255); mbytes[c * 4 + 3] = 255;
+      }
+      gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D, mtex);
+      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, GW, GH, 0, gl.RGBA, gl.UNSIGNED_BYTE, mbytes);
+      mdirty = false; mactive = any;
     }
     var W = Math.round(VW * DPR), H = Math.round(VH * DPR);
     if (gc.width !== W || gc.height !== H) { gc.width = W; gc.height = H; }
     gl.viewport(0, 0, W, H);
-    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); gl.uniform4fv(U.uTr, trArr); gl.uniform2fv(U.uTv, tvArr);
+    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); if (MAP) gl.uniform2f(U.uMapSz, GW * CELL, GH * CELL);
     gl.uniform1f(U.uSize, V.size || 1.7); gl.uniform1f(U.uTilt, V.tilt != null ? V.tilt : 0.32);
     gl.enable(gl.BLEND);
     for (var n = 0; n < layers.length; n++) {
