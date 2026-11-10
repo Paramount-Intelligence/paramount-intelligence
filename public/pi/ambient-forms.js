@@ -25,13 +25,13 @@
   var gl = gc.getContext('webgl', GLOPT) || gc.getContext('experimental-webgl', GLOPT);
   if (!gl) return noop;
   // cursor trail samples: two uniform arrays of NT entries, kept well inside the WebGL minimum of 128 vertex uniform vectors
-  var NT = Math.max(8, Math.min(60, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
+  var NT = Math.max(8, Math.min(innerWidth < 700 ? 48 : 80, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
 
   var VS = [
     'precision highp float;',
     'attribute vec4 a;',
     'uniform float uT,uMix,uShA,uShB,uScale,uStar,uAlpha,uSize,uDPR,uSeed,uSpin,uTilt,uDR;',
-    'uniform vec2 uRes,uCenter;uniform vec4 uSec;uniform vec3 uTr[' + NT + '];uniform vec2 uTv[' + NT + '];',
+    'uniform vec2 uRes,uCenter;uniform vec4 uSec;uniform vec4 uTr[' + NT + '];uniform vec2 uTv[' + NT + '];',
     'uniform vec3 uColF,uColB;',
     'varying vec4 vC;',
     'const float PI=3.14159265,TAU=6.2831853;',
@@ -99,11 +99,12 @@
     '  float persp=3.4/(3.4-p.z);',
     '  vec2 s=uCenter+vec2(p.x,-p.y)*uScale*persp;',
     /* cursor: dots it touches get nudged and scatter a little, then drift back as the trail fades.
-       uTv carries each trail point's swipe direction scaled by its speed: a fast swipe also sweeps the dots along with it (a wake). */
-    '  float inf=0.0;vec2 pv=vec2(0.0);for(int i=0;i<' + NT + ';i++){vec3 q=uTr[i];if(q.z<=0.0)continue;float L=length(s-q.xy);if(L<uDR){float f=smoothstep(0.0,1.0,1.0-L/uDR)*q.z;inf+=f;pv+=f*uTv[i];}}',
-    '  float pl=length(pv);if(pl>1.0)pv/=pl;inf=min(inf,1.3+0.7*min(pl,1.0));',
+       uTr: x, y, strength, radius factor (a patch shrinks from its edges as it fades, so the dots close back in).
+       uTv carries each trail point's swipe direction scaled by its speed: a fast swipe also sweeps the dots a little (a wake). */
+    '  float inf=0.0;vec2 pv=vec2(0.0);for(int i=0;i<' + NT + ';i++){vec4 q=uTr[i];if(q.z<=0.0)continue;float R=uDR*q.w;float L=length(s-q.xy);if(L<R){float f=smoothstep(0.0,1.0,1.0-L/R)*q.z;inf+=f;pv+=f*uTv[i];}}',
+    '  float pl=length(pv);if(pl>1.0)pv/=pl;inf=min(inf,1.2);',
     '  vec3 hh=vec3(sin(r*91.7+uT*3.0+u*13.0),cos(r*53.3+uT*2.6+v*11.0),sin(r*37.1-uT*3.4));',
-    '  s+=hh.xy*inf*(4.0+17.0*fract(r*7.13))*(uScale/100.0)+pv*uDR*(0.35+0.65*fract(r*3.71));',
+    '  s+=hh.xy*inf*(3.0+11.0*fract(r*7.13))*(uScale/100.0)+pv*uDR*(0.15+0.35*fract(r*3.71));',
     '  gl_Position=vec4(s/uRes*2.0-1.0,0.0,1.0);gl_Position.y=-gl_Position.y;',
     '  float dep=clamp((p.z+1.3)/2.6,0.0,1.0);',
     '  gl_PointSize=uDPR*uSize*(0.7+0.7*dep)*(1.0+0.15*inf);',
@@ -132,11 +133,13 @@
   function hexv(h) { h = h.replace('#', ''); return [parseInt(h.substr(0, 2), 16) / 255, parseInt(h.substr(2, 2), 16) / 255, parseInt(h.substr(4, 2), 16) / 255]; }
   var COL = { d: [hexv('#ffffff'), hexv('#7da2ff')], l: [hexv('#204ecf'), hexv('#0f256e')] };
 
-  /* cursor trail (viewport px). Points are laid along the cursor's path every STEP px whatever the speed, so a fast
-     swipe disturbs the dots as much as a slow hover; faster movement also adds a push in the swipe direction. */
+  /* cursor trail (viewport px). Every spot the cursor touches, including where it rests, holds a trail point (an existing
+     point nearby is refreshed instead of adding another), and fast moves are filled in every STEP px, so the whole path
+     fades back at the same pace. Faster movement also adds a small push in the swipe direction. Mouse and pen only. */
   var trail = [], live = 0, px = -9999, py = -9999, pon = false;
-  var STEP = 30, ax = 0, ay = 0, aon = false, lx = 0, ly = 0, vx = 0, vy = 0;
-  on(window, 'pointermove', function (e) { px = e.clientX; py = e.clientY; pon = true; }, { passive: true });
+  var STEP = 20, aon = false, lx = 0, ly = 0, vx = 0, vy = 0, SETTLE = 4.5;
+  on(window, 'pointermove', function (e) { if (e.pointerType === 'touch') { pon = false; return; } px = e.clientX; py = e.clientY; pon = true; }, { passive: true });
+  on(window, 'pointerdown', function (e) { if (e.pointerType === 'touch') pon = false; }, { passive: true });
   on(document, 'mouseout', function (e) { if (!e.relatedTarget) pon = false; });
   on(window, 'blur', function () { pon = false; });
 
@@ -232,7 +235,12 @@
   var last = performance.now(), off = false;
   window.PI_BG = { L: layers, toggle: function () { off = !off; document.documentElement.classList.toggle('pi-bg-off', off); return !off; } };
   on(window, 'resize', function () { VW = innerWidth; VH = innerHeight; layers.forEach(function (L) { L.w = 0; L.dark = isDark(L.el); }); placeAll(); });
-  var trArr = new Float32Array(NT * 3), tvArr = new Float32Array(NT * 2);
+  var trArr = new Float32Array(NT * 4), tvArr = new Float32Array(NT * 2);
+  // lay or refresh a trail point at (x, y)
+  function touch(x, y, w, tx, ty) {
+    for (var j = trail.length - 1; j >= 0; j--) { var t = trail[j]; if (Math.abs(t.x - x) < STEP * 0.5 && Math.abs(t.y - y) < STEP * 0.5) { t.s = 1; t.w = Math.max(t.w, w); t.vx = tx; t.vy = ty; return; } }
+    trail.push({ x: x, y: y, s: 1, w: w, vx: tx, vy: ty }); if (trail.length > NT - 1) trail.shift();
+  }
   // settle curve: holds briefly after the cursor passes, then glides back and lands gently
   function ease(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
   function frame(now) {
@@ -245,33 +253,30 @@
     live += ((pon && !reduce ? 1 : 0) - live) * Math.min(1, dt * (pon ? 60 : 3));   // reacts at once
     var sk = 0, sdx = 0, sdy = 0;   // smoothed cursor speed (0..1) and direction
     if (pon && !reduce && dt > 0) {
-      if (!aon) { ax = lx = px; ay = ly = py; vx = vy = 0; aon = true; }   // (re)entering: start the path here
-      var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 20); lx = px; ly = py;
+      if (!aon) { lx = px; ly = py; vx = vy = 0; aon = true; }   // (re)entering: no line from the old spot
+      var ivx = (px - lx) / dt, ivy = (py - ly) / dt, kk = Math.min(1, dt * 20);
       vx += (ivx - vx) * kk; vy += (ivy - vy) * kk;
       var sv = Math.hypot(vx, vy); sk = Math.max(0, Math.min(1, (sv - 150) / 1050));   // full effect from about 1200 px/s
       if (sv > 1) { sdx = vx / sv; sdy = vy / sv; }
-      var dx = px - ax, dy = py - ay, d = Math.hypot(dx, dy);
-      if (d > STEP * (NT - 1)) { ax = px - dx / d * STEP * (NT - 1); ay = py - dy / d * STEP * (NT - 1); dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy); }
-      while (d >= STEP) {
-        ax += dx / d * STEP; ay += dy / d * STEP;
-        trail.push({ x: ax, y: ay, s: 1, w: 1 + 1.0 * sk, vx: sdx * sk, vy: sdy * sk }); if (trail.length > NT - 1) trail.shift();
-        dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy);
-      }
+      var dx = px - lx, dy = py - ly, d = Math.hypot(dx, dy), n = Math.min(NT - 1, Math.max(1, Math.ceil(d / STEP)));
+      for (var k = n; k >= 1; k--) touch(px - dx * (k - 1) / n, py - dy * (k - 1) / n, 1 + 0.4 * sk, sdx * sk, sdy * sk);   // ends at the cursor itself
+      lx = px; ly = py;
     } else if (!pon) aon = false;
-    // the dots drift back over about 3 s; near capacity the oldest points fade out quickly instead of vanishing
-    var spare = trail.length - (NT - 7);
-    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 3.0 + (i < spare ? dt * 3 : 0);
+    // the dots drift back over about 4.5 s. If the trail grows long, the oldest patches close faster, so the shape always
+    // stays recognisable, and near capacity they fade out quickly instead of vanishing.
+    var spare = trail.length - Math.round((NT - 1) * 0.7);
+    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / SETTLE + (i < spare ? dt * 1.5 : 0);
     while (trail.length && trail[0].s <= 0) trail.shift();
-    trArr[0] = px; trArr[1] = py; trArr[2] = live; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
+    trArr[0] = px; trArr[1] = py; trArr[2] = live; trArr[3] = 1; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
     for (i = 1; i < NT; i++) {
-      var q = trail[i - 1];
-      trArr[i * 3] = q ? q.x : -9999; trArr[i * 3 + 1] = q ? q.y : -9999; trArr[i * 3 + 2] = q ? ease(q.s) * 0.9 * q.w : 0;
+      var q = trail[i - 1], e = q ? ease(q.s) : 0;
+      trArr[i * 4] = q ? q.x : -9999; trArr[i * 4 + 1] = q ? q.y : -9999; trArr[i * 4 + 2] = q ? e * 0.9 * q.w : 0; trArr[i * 4 + 3] = 0.35 + 0.65 * e;
       tvArr[i * 2] = q ? q.vx : 0; tvArr[i * 2 + 1] = q ? q.vy : 0;
     }
     var W = Math.round(VW * DPR), H = Math.round(VH * DPR);
     if (gc.width !== W || gc.height !== H) { gc.width = W; gc.height = H; }
     gl.viewport(0, 0, W, H);
-    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); gl.uniform3fv(U.uTr, trArr); gl.uniform2fv(U.uTv, tvArr);
+    gl.uniform1f(U.uT, T); gl.uniform1f(U.uDPR, DPR); gl.uniform2f(U.uRes, VW, VH); gl.uniform4fv(U.uTr, trArr); gl.uniform2fv(U.uTv, tvArr);
     gl.uniform1f(U.uSize, V.size || 1.7); gl.uniform1f(U.uTilt, V.tilt != null ? V.tilt : 0.32);
     gl.enable(gl.BLEND);
     for (var n = 0; n < layers.length; n++) {
@@ -293,7 +298,7 @@
       gl.uniform1f(U.uAlpha, L.dark ? (V.alphaD || 0.4) : (V.alphaL || 0.24));
       gl.uniform4f(U.uSec, r.left, r.top, r.width, r.height);
       gl.uniform2f(U.uCenter, r.left + L.cx, r.top + L.cy);
-      gl.uniform1f(U.uScale, L.sc); gl.uniform1f(U.uDR, L.sc * 0.3 + 22);
+      gl.uniform1f(U.uScale, L.sc); gl.uniform1f(U.uDR, L.sc * 0.16 + 16);   // disturbance radius: about 75 px on a large form
       gl.uniform1f(U.uShA, FAM[L.si]); gl.uniform1f(U.uShB, FAM[(L.si + 1) % FAM.length]); gl.uniform1f(U.uMix, L.mix);
       gl.uniform1f(U.uSeed, L.seed); gl.uniform1f(U.uSpin, L.spin);
       gl.uniform1f(U.uStar, 1); gl.bindBuffer(gl.ARRAY_BUFFER, sbuf); gl.vertexAttribPointer(aLoc, 4, gl.FLOAT, false, 0, 0); gl.drawArrays(gl.POINTS, 0, NS);
