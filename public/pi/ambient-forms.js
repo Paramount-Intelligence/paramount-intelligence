@@ -25,7 +25,7 @@
   var gl = gc.getContext('webgl', GLOPT) || gc.getContext('experimental-webgl', GLOPT);
   if (!gl) return noop;
   // cursor trail samples: two uniform arrays of NT entries, kept well inside the WebGL minimum of 128 vertex uniform vectors
-  var NT = Math.max(8, Math.min(40, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
+  var NT = Math.max(8, Math.min(60, Math.floor(((gl.getParameter(gl.MAX_VERTEX_UNIFORM_VECTORS) || 128) - 32) / 2)));
 
   var VS = [
     'precision highp float;',
@@ -233,6 +233,8 @@
   window.PI_BG = { L: layers, toggle: function () { off = !off; document.documentElement.classList.toggle('pi-bg-off', off); return !off; } };
   on(window, 'resize', function () { VW = innerWidth; VH = innerHeight; layers.forEach(function (L) { L.w = 0; L.dark = isDark(L.el); }); placeAll(); });
   var trArr = new Float32Array(NT * 3), tvArr = new Float32Array(NT * 2);
+  // settle curve: holds briefly after the cursor passes, then glides back and lands gently
+  function ease(v) { v = Math.max(0, Math.min(1, v)); return v * v * (3 - 2 * v); }
   function frame(now) {
     if (dead) return;
     rafId = requestAnimationFrame(frame);
@@ -256,12 +258,14 @@
         dx = px - ax; dy = py - ay; d = Math.hypot(dx, dy);
       }
     } else if (!pon) aon = false;
-    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 1.1;   // the dots settle back in about a second
+    // the dots drift back over about 3 s; near capacity the oldest points fade out quickly instead of vanishing
+    var spare = trail.length - (NT - 7);
+    for (var i = 0; i < trail.length; i++) trail[i].s -= dt / 3.0 + (i < spare ? dt * 3 : 0);
     while (trail.length && trail[0].s <= 0) trail.shift();
     trArr[0] = px; trArr[1] = py; trArr[2] = live; tvArr[0] = sdx * sk; tvArr[1] = sdy * sk;
     for (i = 1; i < NT; i++) {
       var q = trail[i - 1];
-      trArr[i * 3] = q ? q.x : -9999; trArr[i * 3 + 1] = q ? q.y : -9999; trArr[i * 3 + 2] = q ? Math.pow(Math.max(0, q.s), 1.5) * 0.9 * q.w : 0;
+      trArr[i * 3] = q ? q.x : -9999; trArr[i * 3 + 1] = q ? q.y : -9999; trArr[i * 3 + 2] = q ? ease(q.s) * 0.9 * q.w : 0;
       tvArr[i * 2] = q ? q.vx : 0; tvArr[i * 2 + 1] = q ? q.vy : 0;
     }
     var W = Math.round(VW * DPR), H = Math.round(VH * DPR);
