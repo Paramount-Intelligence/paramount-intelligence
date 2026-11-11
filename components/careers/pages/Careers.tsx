@@ -37,6 +37,7 @@ const STEPS: { title: string; body: string }[] = [
 const ROLES: { href: string; title: string; meta: [string, string] }[] = [
   { href: "/careers/open-positions/ai-engineer", title: "AI Engineer", meta: ["Remote, US only", "Applied AI"] },
   { href: "/careers/open-positions/full-stack-engineer", title: "Full Stack Engineer", meta: ["Remote, US only", "Software & Product Engineering"] },
+  { href: "/careers/open-positions/personal-branding-ai-content-specialist", title: "Personal Branding & AI Content Specialist", meta: ["On-site", "Personal Branding & AI Content"] },
   { href: "/careers/open-positions/expression-of-interest", title: "Expressions of Interest", meta: ["Open to profiles", "Forward-deployed and applied AI engineering"] },
 ];
 

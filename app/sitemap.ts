@@ -25,6 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ROUTES.careers,
     `${ROUTES.careers}/ai-engineer`,
     `${ROUTES.careers}/full-stack-engineer`,
+    `${ROUTES.careers}/personal-branding-ai-content-specialist`,
     ROUTES.contact,
     ROUTES.privacyPolicy,
   ];
