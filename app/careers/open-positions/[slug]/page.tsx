@@ -5,6 +5,7 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/metadata";
 import AiEngineer from "@/components/careers/pages/AiEngineer";
 import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
+import PersonalBrandingSpecialist from "@/components/careers/pages/PersonalBrandingSpecialist";
 import ExpressionOfInterest from "@/components/careers/ExpressionOfInterest";
 
 // The open roles and the Expressions of Interest page (docs/website-redesign/reference/careers-revamp/): standalone
@@ -21,6 +22,12 @@ const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; desc
     title: "Full Stack Engineer | Careers | Paramount Intelligence",
     description:
       "Full Stack Engineer at Paramount Intelligence (full-time, 3+ years): develop and maintain scalable, high-performance web applications with React, Next.js, TypeScript, and Node.js or Python APIs.",
+  },
+  "personal-branding-ai-content-specialist": {
+    Page: PersonalBrandingSpecialist,
+    title: "Personal Branding & AI Content Specialist | Careers | Paramount Intelligence",
+    description:
+      "Personal Branding & AI Content Specialist at Paramount Intelligence: develop and manage the founder's personal brand on LinkedIn with storytelling and AI-generated video content.",
   },
   "expression-of-interest": {
     Page: ExpressionOfInterest,
