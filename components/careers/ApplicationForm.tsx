@@ -11,6 +11,7 @@ const AREAS = [
   "Cloud and platform engineering",
   "Quality and evaluation",
   "Product and consulting",
+  "Personal branding and AI content",
   "Other",
 ];
 

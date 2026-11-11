@@ -6,7 +6,7 @@ export default function PersonalBrandingSpecialist() {
     <JobPage
       id="personal-branding-ai-content-specialist"
       title="Personal Branding & AI Content Specialist"
-      area="Other"
+      area="Personal branding and AI content"
       details={[
         ["Experience", "1–2 Years"],
         ["Location Type", "On-site"],
