@@ -7,10 +7,12 @@ import AiEngineer from "@/components/careers/pages/AiEngineer";
 import FullStackEngineer from "@/components/careers/pages/FullStackEngineer";
 import PersonalBrandingSpecialist from "@/components/careers/pages/PersonalBrandingSpecialist";
 import ExpressionOfInterest from "@/components/careers/ExpressionOfInterest";
+import type { CareerPageId } from "@/lib/careers-roles";
 
 // The open roles and the Expressions of Interest page (docs/website-redesign/reference/careers-revamp/): standalone
 // job pages, without the site header and footer.
-const ROLES: Record<string, { Page: () => React.JSX.Element; title: string; description: string }> = {
+// Keyed by the pages in lib/careers-roles.ts: a role needs its entry there (title and confirmation email) to be published.
+const ROLES: Record<CareerPageId, { Page: () => React.JSX.Element; title: string; description: string }> = {
   "ai-engineer": {
     Page: AiEngineer,
     title: "AI Engineer | Careers | Paramount Intelligence",
@@ -429,10 +431,12 @@ interface PageProps {
   }>;
 }
 
+const roleFor = (slug: string) => (Object.prototype.hasOwnProperty.call(ROLES, slug) ? ROLES[slug as CareerPageId] : undefined);
+
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const path = `/careers/open-positions/${slug}`;
-  const role = ROLES[slug];
+  const role = roleFor(slug);
   if (role) return pageMetadata({ title: role.title, description: role.description, path });
   const job = jobsData[slug];
   if (!job) return {};
@@ -442,7 +446,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function JobDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const role = ROLES[slug];
+  const role = roleFor(slug);
   if (role) return <role.Page />;
   const job = jobsData[slug];
 

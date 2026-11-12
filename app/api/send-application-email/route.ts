@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { escapeHtml } from "@/lib/escape-html";
 import { emailRejected, oneEmailAddress, subjectPart } from "@/lib/form-security";
 import { mailFrom, mailTransport, missingMailSettings, safeHref } from "@/lib/mailer";
+import { applicationConfirmation } from "@/lib/application-confirmation";
 
 export const runtime = "nodejs";
 
@@ -19,6 +20,8 @@ type ApplicationFormData = {
   degree: string;
   education: string;
   semester: string;
+  /** The careers page the form was on (lib/careers-roles.ts); only used to pick the candidate's confirmation. */
+  roleId: string;
 };
 
 type ResumeAttachment = {
@@ -53,6 +56,7 @@ const parseMultipartFormData = async (
     degree: getStringValue(form.get("degree")),
     education: getStringValue(form.get("education")),
     semester: getStringValue(form.get("semester")),
+    roleId: getStringValue(form.get("roleId")),
   };
 
   const resume = form.get("resume");
@@ -82,6 +86,7 @@ const parseJsonFormData = async (request: NextRequest): Promise<ApplicationFormD
     degree: getStringValue(body.degree),
     education: getStringValue(body.education),
     semester: getStringValue(body.semester),
+    roleId: getStringValue(body.roleId),
   };
 };
 
@@ -91,10 +96,6 @@ const link = (url: string) => {
   return href ? `<a href="${escapeHtml(href)}">${escapeHtml(url)}</a>` : escapeHtml(url);
 };
 
-// The applicant's confirmation is fixed text: nothing the applicant typed goes into it.
-const CONFIRMATION_SUBJECT = "We received your application - Paramount Intelligence";
-const CONFIRMATION_TEXT =
-  "Thank you for applying to Paramount Intelligence. We have received your application and will be in touch if there is a suitable role.";
 
 // Mail settings are listed in lib/mailer.ts; applications go to CAREERS_EMAIL.
 export async function POST(request: NextRequest) {
@@ -174,12 +175,15 @@ export async function POST(request: NextRequest) {
     // The application has been delivered by now: a confirmation the applicant's address refuses is logged,
     // not reported to the applicant as a failed application.
     try {
+      // The candidate's confirmation for the role applied for (lib/application-confirmation.ts): the site's own text
+      // only, looked up by the page id; nothing the applicant typed goes into it.
+      const confirmation = applicationConfirmation(formData.roleId, Boolean(resumeAttachment));
       await transporter.sendMail({
         from,
         to: { name: "", address: email },
-        subject: CONFIRMATION_SUBJECT,
-        text: CONFIRMATION_TEXT,
-        html: `<p style="font-family: Arial, sans-serif;">${CONFIRMATION_TEXT}</p>`,
+        subject: confirmation.subject,
+        text: confirmation.text,
+        html: confirmation.html,
       });
     } catch (error) {
       console.error("send-application-email: application sent, confirmation to the applicant failed:", error);
