@@ -4,13 +4,14 @@ import { useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import Link from "next/link";
 import Icon from "@/components/site/Icon";
 import ApplicationForm from "./ApplicationForm";
+import type { CareerPageId } from "@/lib/careers-roles";
 import "./careers.css";
 
 const CAREERS = "/careers/open-positions";
 
 type JobPageProps = {
   /** Used for the tab and panel ids. */
-  id: string;
+  id: CareerPageId;
   title: string;
   /** The details column: label and value pairs. */
   details: [string, string][];
@@ -101,7 +102,7 @@ export default function JobPage({ id, title, details, overview, area }: JobPageP
               </button>
             </div>
             <div className="j-panel" role="tabpanel" id={`${id}-p2`} aria-labelledby={`${id}-t2`} hidden={tab !== 1}>
-              <ApplicationForm role={title} area={area} />
+              <ApplicationForm role={title} roleId={id} area={area} />
             </div>
           </div>
         </div>

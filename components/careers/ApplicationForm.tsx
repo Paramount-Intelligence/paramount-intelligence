@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type DragEvent } from "react";
 import Icon from "@/components/site/Icon";
 import { initSiteBehaviours } from "@/lib/site-behaviours";
+import type { CareerPageId } from "@/lib/careers-roles";
 
 const AREAS = [
   "Forward-deployed AI engineering",
@@ -20,9 +21,10 @@ const MAX_MB = 4;
 /**
  * The application form on the job pages, in the reference's layout. Validation and sending are the site's careers
  * form pipeline (lib/site-behaviours.ts: form[data-form="careers"], the same field IDs and messages, POST to
- * /api/send-application-email); `data-role` puts the role at the top of the cover letter.
+ * /api/send-application-email); `data-role` puts the role at the top of the cover letter, and `data-role-id` (the
+ * page's id in lib/careers-roles.ts) picks the confirmation email the candidate receives.
  */
-export default function ApplicationForm({ role, area = "" }: { role: string; area?: string }) {
+export default function ApplicationForm({ role, roleId, area = "" }: { role: string; roleId: CareerPageId; area?: string }) {
   const box = useRef<HTMLDivElement>(null);
   const file = useRef<HTMLInputElement>(null);
   const [over, setOver] = useState(false);
@@ -52,7 +54,7 @@ export default function ApplicationForm({ role, area = "" }: { role: string; are
 
   return (
     <div ref={box}>
-      <form className="j-form" data-form="careers" data-role={role} noValidate onReset={() => setFname("")}>
+      <form className="j-form" data-form="careers" data-role={role} data-role-id={roleId} noValidate onReset={() => setFname("")}>
         <div className="j-applying">
           <span>Applying for</span>
           <b>{role}</b>
