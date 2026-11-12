@@ -187,7 +187,6 @@ export async function POST(request: NextRequest) {
         subject: confirmation.subject,
         text: confirmation.text,
         html: confirmation.html,
-        attachments: confirmation.attachments,
         headers: { "Auto-Submitted": "auto-replied", "X-Auto-Response-Suppress": "All" },
       });
     } catch (error) {
