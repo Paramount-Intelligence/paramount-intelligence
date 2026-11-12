@@ -299,6 +299,7 @@ const SEND: Record<string, (f: HTMLFormElement) => Promise<Response>> = {
     body.append("lastName", rest.join(" "));
     body.append("email", val(f, "c-email"));
     body.append("position", val(f, "c-area"));
+    body.append("roleId", f.dataset.roleId ?? "");   // picks the candidate's confirmation email (lib/careers-roles.ts)
     body.append(/linkedin\./i.test(url) ? "linkedIn" : "portfolio", url);
     // A job page's form names its role (data-role) at the top of the cover letter.
     const role = f.dataset.role ? `Applying for: ${f.dataset.role}\n\n` : "";
