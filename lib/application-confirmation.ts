@@ -1,6 +1,7 @@
 import { escapeHtml } from "@/lib/escape-html";
 import { SITE_URL } from "@/lib/metadata";
 import { CAREER_ROLES, EXPRESSION_OF_INTEREST, isCareerRoleId, type CareerRole } from "@/lib/careers-roles";
+import { EMAIL_LOGO_PNG_BASE64, EMAIL_LOGO_SIZE } from "@/lib/email-logo";
 
 /**
  * The email a candidate receives after applying (app/api/send-application-email).
@@ -10,7 +11,15 @@ import { CAREER_ROLES, EXPRESSION_OF_INTEREST, isCareerRoleId, type CareerRole }
  * sender's choosing. An unknown or missing id (for example the older /careers/apply-now form) gets the general
  * version.
  */
-export type Confirmation = { subject: string; text: string; html: string };
+export type Confirmation = {
+  subject: string;
+  text: string;
+  html: string;
+  /** The logo, embedded in the email (shown by `cid:` in the header) so it appears without loading remote images. */
+  attachments: { filename: string; content: Buffer; cid: string; contentType: string; contentDisposition: "inline" }[];
+};
+
+const LOGO_CID = "pi-logo@paramountintelligence.co";
 
 const NAVY = "#0F256E";
 const ROYAL = "#204ECF";
@@ -86,10 +95,10 @@ function html(blocks: Block[]): string {
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F5F9;padding:24px 12px;">
 <tr><td align="center">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF;border-top:4px solid ${ROYAL};font-family:Arial,Helvetica,sans-serif;">
-<tr><td style="background:${NAVY};padding:20px 28px;">
+<tr><td style="background:#FFFFFF;padding:22px 28px;border-bottom:1px solid #D9DBE0;">
 <table role="presentation" cellpadding="0" cellspacing="0"><tr>
-<td style="padding-right:12px;"><img src="${SITE_URL}/images/logo-mark.png" width="26" height="35" alt="" style="display:block;border:0;"></td>
-<td style="font-size:17px;font-weight:700;line-height:1.15;color:#FFFFFF;">Paramount<br><span style="font-weight:400;">Intelligence</span></td>
+<td style="padding-right:12px;vertical-align:middle;"><img src="cid:${LOGO_CID}" width="${EMAIL_LOGO_SIZE.width}" height="${EMAIL_LOGO_SIZE.height}" alt="Paramount Intelligence logo" style="display:block;border:0;"></td>
+<td style="vertical-align:middle;font-size:19px;font-weight:700;line-height:1.15;color:${NAVY};">Paramount<br><span style="font-weight:400;color:${ROYAL};">Intelligence</span></td>
 </tr></table>
 </td></tr>
 <tr><td style="padding:32px 28px 12px;">
@@ -108,5 +117,12 @@ ${p(`Kind regards,<br><strong style="color:${NAVY};">The Paramount Intelligence 
 
 export function applicationConfirmation(pageId: string, withResume: boolean): Confirmation {
   const { subject, blocks } = content(pageId, withResume);
-  return { subject, text: plain(blocks), html: html(blocks) };
+  return {
+    subject,
+    text: plain(blocks),
+    html: html(blocks),
+    attachments: [
+      { filename: "paramount-intelligence.png", content: Buffer.from(EMAIL_LOGO_PNG_BASE64, "base64"), cid: LOGO_CID, contentType: "image/png", contentDisposition: "inline" },
+    ],
+  };
 }
