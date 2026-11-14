@@ -177,17 +177,15 @@ export async function POST(request: NextRequest) {
     try {
       // The candidate's confirmation for the role applied for (lib/application-confirmation.ts): the site's own text
       // only, looked up by the page id; nothing the applicant typed goes into it.
-      // Sent as "Paramount Intelligence" with a real reply path (the careers inbox) and marked as an automatic message,
-      // which mail providers expect from a legitimate transactional email.
+      // Sent plainly from the mail account itself (no separate display name or reply address), like the account's
+      // other mail, so it looks to mail providers like what that account normally sends.
       const confirmation = applicationConfirmation(formData.roleId, Boolean(resumeAttachment));
       await transporter.sendMail({
-        from: { name: "Paramount Intelligence", address: from! },
-        replyTo: { name: "Paramount Intelligence Careers", address: process.env.CAREERS_EMAIL! },
+        from,
         to: { name: "", address: email },
         subject: confirmation.subject,
         text: confirmation.text,
         html: confirmation.html,
-        headers: { "Auto-Submitted": "auto-replied", "X-Auto-Response-Suppress": "All" },
       });
     } catch (error) {
       console.error("send-application-email: application sent, confirmation to the applicant failed:", error);
