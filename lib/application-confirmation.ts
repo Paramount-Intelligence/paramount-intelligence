@@ -12,9 +12,9 @@ import { CAREER_ROLES, EXPRESSION_OF_INTEREST, isCareerRoleId, type CareerRole }
  */
 export type Confirmation = { subject: string; text: string; html: string };
 
-// The header logo, loaded from the website (public/images/email-logo-mark.png, 56 x 79, shown at half size). The company
-// name next to it is text, so it shows even where images are blocked; the empty alt avoids a broken-image label there.
-const LOGO_URL = `${SITE_URL}/images/email-logo-mark.png`;
+// A simple, mostly-text email, like what the sending (Gmail) account normally sends: the company name as text instead
+// of a logo image, and addresses written out as text rather than links. Branded images and links from an account
+// whose domain mail providers cannot match to the brand are a common reason for messages to land in spam.
 
 const NAVY = "#0F256E";
 const ROYAL = "#204ECF";
@@ -79,34 +79,21 @@ const p = (inner: string, extra = "") => `<p style="margin:0 0 16px;font-size:15
 function html(blocks: Block[]): string {
   const body = blocks
     .map((b) => {
-      const heading = b.heading ? `<p style="margin:8px 0 6px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:${ROYAL};">${escapeHtml(b.heading)}</p>` : "";
-      const link = b.link ? ` <a href="${escapeHtml(b.link)}" style="color:${ROYAL};font-weight:700;text-decoration:none;">${escapeHtml(b.link.replace(/^https?:\/\//, ""))}</a>` : "";
-      return heading + p(escapeHtml(b.text) + link);
+      const heading = b.heading ? `<p style="margin:8px 0 4px;font-size:15px;font-weight:700;color:${NAVY};">${escapeHtml(b.heading)}</p>` : "";
+      const addr = b.link ? ` ${escapeHtml(b.link.replace(/^https?:\/\//, ""))}` : "";
+      return heading + p(escapeHtml(b.text) + addr);
     })
     .join("");
   return `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Paramount Intelligence</title></head>
-<body style="margin:0;padding:0;background:#F3F5F9;">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F3F5F9;padding:24px 12px;">
-<tr><td align="center">
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#FFFFFF;border-top:4px solid ${ROYAL};font-family:Arial,Helvetica,sans-serif;">
-<tr><td style="background:#FFFFFF;padding:22px 28px;border-bottom:1px solid #D9DBE0;">
-<table role="presentation" cellpadding="0" cellspacing="0"><tr>
-<td style="padding-right:12px;vertical-align:middle;"><img src="${LOGO_URL}" width="28" height="40" alt="" style="display:block;border:0;"></td>
-<td style="vertical-align:middle;font-size:19px;font-weight:700;line-height:1.15;color:${NAVY};">Paramount<br><span style="font-weight:400;color:${ROYAL};">Intelligence</span></td>
-</tr></table>
-</td></tr>
-<tr><td style="padding:32px 28px 12px;">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;padding:0;">
+<div style="max-width:600px;margin:0 auto;padding:24px 20px;font-family:Arial,Helvetica,sans-serif;">
+<p style="margin:0 0 24px;padding-bottom:14px;border-bottom:2px solid ${ROYAL};font-size:20px;line-height:1.2;color:${NAVY};"><strong>Paramount</strong> <span style="color:${ROYAL};">Intelligence</span></p>
 ${p("Hello,")}
 ${body}
-${p(`Kind regards,<br><strong style="color:${NAVY};">The Paramount Intelligence Team</strong><br><a href="${SITE_URL}" style="color:${ROYAL};text-decoration:none;">${SITE}</a>`, "margin-top:24px;")}
-</td></tr>
-<tr><td style="padding:16px 28px 24px;border-top:1px solid #D9DBE0;">
-<p style="margin:0;font-size:12px;line-height:1.5;color:${MUTED};">${FOOTER}</p>
-</td></tr>
-</table>
-</td></tr>
-</table>
+${p(`Kind regards,<br><strong>The Paramount Intelligence Team</strong><br>${SITE}`, "margin-top:24px;")}
+<p style="margin:24px 0 0;font-size:12px;line-height:1.5;color:${MUTED};">${FOOTER}</p>
+</div>
 </body></html>`;
 }
 
