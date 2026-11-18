@@ -12,12 +12,11 @@ import { CAREER_ROLES, EXPRESSION_OF_INTEREST, isCareerRoleId, type CareerRole }
  */
 export type Confirmation = { subject: string; text: string; html: string };
 
-// A simple, mostly-text email, like what the sending (Gmail) account normally sends: the company name as text instead
-// of a logo image, and addresses written out as text rather than links. Branded images and links from an account
+// A simple, mostly-text email, like what the sending (Gmail) account normally sends: no logo image or header, the
+// company named in the sign-off, and addresses written out as text rather than links. Branded images and links from an account
 // whose domain mail providers cannot match to the brand are a common reason for messages to land in spam.
 
 const NAVY = "#0F256E";
-const ROYAL = "#204ECF";
 const TEXT = "#2B3245";
 const MUTED = "#646C7E";
 const SITE = SITE_URL.replace(/^https?:\/\//, "");
@@ -33,7 +32,7 @@ function content(pageId: string, withResume: boolean): { subject: string; blocks
 
   if (pageId === EXPRESSION_OF_INTEREST) {
     return {
-      subject: "Profile received: Paramount Intelligence",
+      subject: "Profile received",
       blocks: [
         { text: `Thank you for sharing your profile with Paramount Intelligence. We have received your details${withResume ? " and resume" : ""}.` },
         {
@@ -49,7 +48,7 @@ function content(pageId: string, withResume: boolean): { subject: string; blocks
   const review = role?.review ?? "your experience against the requirements of the role";
   const nextStep = role?.nextStep ?? "an initial discussion, followed by an interview or practical assessment";
   return {
-    subject: role ? `Application received: ${role.title}, Paramount Intelligence` : "Application received: Paramount Intelligence",
+    subject: role ? `Application received: ${role.title}` : "Application received",
     blocks: [
       {
         text: role
@@ -88,7 +87,6 @@ function html(blocks: Block[]): string {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;padding:0;">
 <div style="max-width:600px;margin:0 auto;padding:24px 20px;font-family:Arial,Helvetica,sans-serif;">
-<p style="margin:0 0 24px;padding-bottom:14px;border-bottom:2px solid ${ROYAL};font-size:20px;line-height:1.2;color:${NAVY};"><strong>Paramount</strong> <span style="color:${ROYAL};">Intelligence</span></p>
 ${p("Hello,")}
 ${body}
 ${p(`Kind regards,<br><strong>The Paramount Intelligence Team</strong><br>${SITE}`, "margin-top:24px;")}
